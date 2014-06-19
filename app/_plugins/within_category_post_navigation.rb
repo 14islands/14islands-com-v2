@@ -1,3 +1,4 @@
+# http://ajclarkson.co.uk/blog/jekyll-category-post-navigation/
 module Jekyll
   class WithinCategoryPostNavigation < Generator
     def generate(site)
