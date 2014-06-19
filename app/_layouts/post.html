@@ -4,3 +4,15 @@ layout: default
 <article class="post">
 {{ content }}
 </article>
+
+
+
+<p>
+  <h3>Using plugin to link to next/previous post in this category</h3>
+{% if page.next_in_category != nil %}
+  <a href="{{page.next_in_category.url}}" class="next-link">Previous post</a>
+{% endif %}
+{% if page.previous_in_category != nil %}
+  <a href="{{page.previous_in_category.url}}" class="previous-link">Next Post</a>
+{% endif %}
+</p>

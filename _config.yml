@@ -1,4 +1,4 @@
-# Jekyll configuration precedence:
+  # Jekyll configuration precedence:
 # 1. Gruntfile task
 # 2. config.build.yml
 # 3. config.yml
