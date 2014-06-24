@@ -14,3 +14,8 @@ Install
 Running & building
 ==================
 See wiki.
+
+
+Resources
+=========
+- http://patrickoscity.de/blog/turbolinks-with-jekyll/

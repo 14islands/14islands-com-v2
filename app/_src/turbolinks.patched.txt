@@ -1,0 +1,12 @@
+
+Turbolinks doesn't work with Livereload the way it is injected from
+grunt-contrib-connect, and gives a blank page after navigating to a new page.
+
+To fix this we need to modify turbolinks not to re-execute the livereload script
+on each page load.
+
+
+Modification: check the name of the script src and never execute livereload:
+
+Line 106:
+unless script.src.search /livereload/ > -1
