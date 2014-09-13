@@ -10,7 +10,6 @@ referer                 = null
 createDocument          = null
 xhr                     = null
 
-
 fetch = (url) ->
   url = new ComponentUrl url
 

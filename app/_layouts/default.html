@@ -20,7 +20,7 @@
     <!-- endbuild -->
 
   </head>
-  <body>
+  <body id="" class="{{page.id}}">
     <!--[if lt IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -30,15 +30,20 @@
     </div>
 
     <section class="hero">
+
         <header class="hero__item hero__logo">
-            <div class="logo-rect"><svg class="svg"><use xlink:href="#shape-logo-rect" /></svg></div>
+            <a href="/" class="logo-rect"><svg class="svg"><use xlink:href="#shape-logo-rect" /></svg></a>
         </header>
         <h1 class="hero__item hero__caption">
             Crafting digital experiences with cutting edge technologies
         </h1>
-        <nav class="hero__item hero__nav nav">
+        <nav class="hero__item hero__nav js-hero-nav nav">
             <ul class="nav__list">
-                <li class="nav__item nav__item--home" data-no-turbolink><div class="logo-clean"><svg class="svg"><use xlink:href="#shape-logo-clean" /></svg></div></li>
+                <li class="nav__item" data-no-turbolink>
+                    <a href="/" class="logo-clean js-nav-home">
+                        <svg class="svg"><use xlink:href="#shape-logo-clean" /></svg>
+                    </a>
+                </li>
                 <li class="nav__item">
                     <a class="nav__link" href="/work/">Our Work</a>
                 </li>
@@ -54,6 +59,7 @@
             </ul>
         </nav>
     </section>
+
 
     {{ content }}
 

@@ -27,10 +27,11 @@
 	color: #fff;
 	display: flex;
 	height: 100%;
-	min-height: 350px;
+	min-height: 580px;
 	flex-direction: column;
 	flex-wrap: nowrap;
 }
+
 
 .hero__item {
 	padding-left: 5%;
@@ -59,6 +60,6 @@
 
 .hero__nav {
 	background-color: #fff;
-	height: pxToRem(50);
-	line-height: pxToRem(50);
+	height: pxToRem(70);
+	line-height: pxToRem(70);
 }
