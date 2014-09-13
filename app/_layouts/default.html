@@ -19,6 +19,15 @@
     <script src="/_bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
+    <script>
+        // hide body to avoid flashing unstyled content
+        document.documentElement.className += ' hideOnLoad';
+        // make body visible after dom loaded
+        document.addEventListener('DOMContentLoaded', function(){
+          removeClass(document.documentElement, 'hideOnLoad');
+        });
+    </script>
+
   </head>
   <body id="" class="{{page.id}}">
     <!--[if lt IE 8]>
