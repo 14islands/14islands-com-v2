@@ -1,0 +1,52 @@
+//
+// Hero component
+//
+// Markup example:
+//
+// <section class="hero">
+//     <header class="hero__item hero__logo">
+//         14islands
+//     </header>
+//     <h1 class="hero__item hero__caption">
+//         Crafting digital experiences with cutting edge technologies
+//     </h1>
+//     <nav class="hero__item hero__nav nav">
+//         <ul class="nav__list">
+//             <li class="nav__item">Logo</li>
+//             <li class="nav__item"><a href="/">Our Work</a></li>
+//             <li class="nav__item"><a href="/projects">About Us</a></li>
+//             <li class="nav__item"><a href="/blog">Blog</a></li>
+//             <li class="nav__item"><a href="/blog">Contact</a></li>
+//         </ul>
+//     </nav>
+// </section>
+//
+
+.hero {
+	background-color: $green;
+	color: #fff;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+.hero__item {
+	width: 100%;
+	padding-left: 10%;
+}
+
+.hero__logo {
+	height: 50px;
+}
+
+.hero__caption {
+	max-width: 800px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.hero__nav {
+	background-color: #fff;
+	height: 50px;
+}
