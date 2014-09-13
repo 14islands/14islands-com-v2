@@ -1,9 +1,10 @@
 ---
 layout: default
-title: Blog - 14islands
+title: Notes - 14islands
 ---
 
-<h1>Blog</h1>
+<h1>Notes</h1>
+
 {% for post in site.categories.blog %}
   {% unless post.private and site.hide_private %}
     <article>
@@ -13,5 +14,3 @@ title: Blog - 14islands
     </article>
   {% endunless %}
 {% endfor %}
-
-
