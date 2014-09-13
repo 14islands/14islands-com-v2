@@ -18,6 +18,7 @@ include: ['.htaccess']
 # _config.build.yml sets future and show_drafts to false on `grunt build`
 future: true
 show_drafts: true
+hide_private: true
 
 permalink: pretty
 paginate: 1

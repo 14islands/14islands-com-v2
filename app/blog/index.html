@@ -5,11 +5,13 @@ title: Blog - 14islands
 
 <h1>Blog</h1>
 {% for post in site.categories.blog %}
-  <article>
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <time>{{ post.date | date_to_string }}</time>
-    <p>{{ post.excerpt | strip_html }}</p>
-  </article>
+  {% unless post.private and site.hide_private %}
+    <article>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <time>{{ post.date | date_to_string }}</time>
+      <p>{{ post.excerpt | strip_html }}</p>
+    </article>
+  {% endunless %}
 {% endfor %}
 
 
