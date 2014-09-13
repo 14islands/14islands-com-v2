@@ -10,11 +10,10 @@ title: Our Work - 14islands
 
 {% for post in site.categories.work %}
   {% unless post.private and site.hide_private %}
-    <article>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p>{{ post.description }} </p>
-      <p>{{ post.excerpt | strip_html }}</p>
-    </article>
+   <article class="box" style="background-color: {{ color }} ">
+      <a href="{{ post.url }}"><h2>{{ post.title }} <small>(draft: {{post.draft}})</small></h2></a>
+      <p>{{ post.description}}</p>
+   </article>
   {% endunless %}
 {% endfor %}
 

@@ -3,6 +3,7 @@ layout: post
 permalink: work/google-santa
 title: Google Santa Tracker - 14islands
 heading: Google Santa Tracker
+color: #00abf6
 description: Making Christmas happen again with Santa.
 ---
 
@@ -15,9 +16,9 @@ description: Making Christmas happen again with Santa.
 
 ## About
 
-Santa Tracker is a christmas calendar from Google that consists of 24 interactive scenes. From elves having a good time and doing some work to mini-games to keep you entertained. 
+Santa Tracker is a christmas calendar from Google that consists of 24 interactive scenes. From elves having a good time and doing some work to mini-games to keep you entertained.
 
-We had the pleasure to collaborate on 9 scenes for this massive christmas environment with lots of fun. 
+We had the pleasure to collaborate on 9 scenes for this massive christmas environment with lots of fun.
 
 
 ## The designs
@@ -31,7 +32,7 @@ Everything was vector based, a good approach to keep things flexible and resolut
 
 Building this design was a true joy. It was not uncommon to laugh about the scene because it was so captivating.
 
-Say, an elf animation moving too fast because you are experimenting with the animation? “Haha - look at that elf!”. 
+Say, an elf animation moving too fast because you are experimenting with the animation? “Haha - look at that elf!”.
 
 Anyways, here are some bits & pieces from the project:
 
