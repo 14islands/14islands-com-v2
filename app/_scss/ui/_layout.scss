@@ -19,14 +19,20 @@ body {
   padding-right: 3%;
 
   @include if-wider-than($breakpoint-two) {
-    width: 90%;
-    padding-left: 5%;
-    padding-right: 5%;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 
 .main-content {
-  margin-top: 3em;
+  margin-top: 4em;
+  h1,h2 {
+    @include type-scale($giga, $font-base, '#{$type-scale-unit-value}', $measure);
+    max-width: 800px;
+    margin-top: 1.4em;
+    margin-bottom: 1.4em;
+  }
 }
 
 .svg {
