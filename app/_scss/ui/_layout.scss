@@ -10,8 +10,6 @@ body {
   }
 }
 
-
-
 .grid-wrapper {
   max-width: $grid-max-width;
   margin: 0 auto;
@@ -25,6 +23,10 @@ body {
     padding-left: 5%;
     padding-right: 5%;
   }
+}
+
+.main-content {
+  margin-top: 3em;
 }
 
 .svg {
