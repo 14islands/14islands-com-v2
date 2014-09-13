@@ -29,5 +29,8 @@
 }
 
 .nav__link {
-	color: #999;
+	&,
+	&:visited {
+		color: #999;
+	}
 }

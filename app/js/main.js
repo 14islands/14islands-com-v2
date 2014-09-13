@@ -3,14 +3,15 @@
 var firstLoad = false;
 
 // get height of header
-var el = document.querySelector('.hero__nav');
+var el = document.querySelector('.js-hero-nav');
 var rect = el.getBoundingClientRect()
 var y = rect.top + document.body.scrollTop;
 
 
 function bindHomeLink() {
-  var aHome = document.querySelector('.nav__item--home a');
+  var aHome = document.querySelector('.js-nav-home');
   aHome.addEventListener('click', function (e) {
+    e.preventDefault();
     console.log('click home');
     TweenLite.to(window, .6, {
       scrollTo: {y: 0},
