@@ -3,7 +3,7 @@ layout: post
 permalink: work/google-santa
 title: Google Santa Tracker - 14islands
 heading: Google Santa Tracker
-color: #00abf6
+color: '#00abf6'
 description: Making Christmas happen again with Santa.
 ---
 
