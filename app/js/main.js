@@ -1,22 +1,28 @@
-
-
-var firstLoad = true;
-var turboLoaded = false;
-
-// get height of header
-var el = document.querySelector('.js-hero-nav');
-var rect = el.getBoundingClientRect()
-var y = rect.top + document.body.scrollTop;
-var yFrom = 0;
-
-console.log('y set to', y);
-
 function addClass(el, className) {
   if (el.classList)
     el.classList.add(className);
   else
     el.className += ' ' + className;
 }
+
+function removeClass(el, className) {
+  if (el.classList)
+    el.classList.remove(className);
+  else
+    el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// NAV PROTOTYPE
+//////////////////////////////////////////////////////////////////////////////
+var firstLoad = true;
+
+// get height of header
+var el = document.querySelector('.js-hero-nav');
+var rect = el.getBoundingClientRect()
+var y = rect.top + document.body.scrollTop;
+var yFrom = y;
+
 
 function bindHomeLink() {
   var aHome = document.querySelector('.js-nav-home');
@@ -36,31 +42,30 @@ function bindHomeLink() {
 bindHomeLink();
 
 document.addEventListener('page:load', bindHomeLink);
-document.addEventListener('page:receive', function () {
+document.addEventListener('page:change', function () {
+  if (!firstLoad) {
+    // always scroll from where you are
+    yFrom = document.body.scrollTop;
+  }
 
-  yFrom = document.body.scrollTop;
-  turboLoaded = true;
+  TweenLite.fromTo(window, .6, {
+    scrollTo: {y: yFrom}
+  },
+  {
+    scrollTo: {y: y},
+    ease: Circ.easeInOut,
+    onComplete: function () {
+      console.log('TODO hide header');
+      // addClass(document.querySelector('.hero'), 'hero--hidden');
+      // window.scrollTo(0,0);
+    }
+  });
 
+  firstLoad = false;
 });
-document.addEventListener('page:load', function () {
-    // if (firstLoad) {
-    //   firstLoad = false;
-    //   console.log('first load');
-    // }
-    // else
-
-        console.log('scroll from ', document.body.scrollTop, 'to', y)
-        TweenLite.fromTo(window, .7, {
-          scrollTo: {y: yFrom}
-        },
-        {
-          scrollTo: {y: y},
-          ease: Circ.easeInOut
-        });
-
-//Always scroll past hero unless turbo flag set
-
-    // }
-
-});
-
+// document.addEventListener('page:change', function () {
+//   console.log('CHANGE');
+// });
+// document.addEventListener('page:load', function () {
+//   console.log('LOAD');
+// });

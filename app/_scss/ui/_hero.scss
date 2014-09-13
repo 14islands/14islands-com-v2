@@ -22,6 +22,13 @@
 // </section>
 //
 
+body {
+  transition: opacity .3s $easeOutQuad;
+}
+.hideOnLoad body {
+  opacity: 0;
+}
+
 .hero {
 	background-color: $green;
 	color: #fff;
@@ -32,6 +39,14 @@
 	flex-wrap: nowrap;
 }
 
+.hero--hidden {
+  height: auto;
+  min-height: initial;
+  .hero__caption,
+  .hero__logo {
+    display: none;
+  }
+}
 
 .hero__item {
 	padding-left: 5%;
