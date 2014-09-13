@@ -2,3 +2,22 @@ html,
 body {
 	height: 100%;
 }
+
+.svg {
+	display: inline-block;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.logo-clean {
+	display: block;
+	height: 25px;
+	width: 60px;
+}
+
+.logo-rect {
+	height: 65px;
+	width: 190px;
+	margin-top: 1em;
+}

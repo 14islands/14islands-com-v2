@@ -4,7 +4,7 @@ var firstLoad = true;
 var turboLoaded = false;
 
 // get height of header
-var el = document.querySelector('.hero__nav');
+var el = document.querySelector('.js-hero-nav');
 var rect = el.getBoundingClientRect()
 var y = rect.top + document.body.scrollTop;
 var yFrom = 0;
@@ -19,8 +19,9 @@ function addClass(el, className) {
 }
 
 function bindHomeLink() {
-  var aHome = document.querySelector('.nav__item--home a');
+  var aHome = document.querySelector('.js-nav-home');
   aHome.addEventListener('click', function (e) {
+    e.preventDefault();
     console.log('click home');
     TweenLite.to(window, .6, {
       scrollTo: {y: 0},
@@ -64,6 +65,9 @@ document.addEventListener('page:load', function () {
         });
 
       }, 0);
+
+//Always scroll past hero unless turbo flag set
+
     // }
 
 });
