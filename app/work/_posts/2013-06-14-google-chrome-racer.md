@@ -3,6 +3,7 @@ layout: post
 permalink: work/racer
 title: Google Chrome Racer - 14islands
 heading: Chrome Racer
+color: '#090a0a'
 description: A Chrome Experiment
 ---
 

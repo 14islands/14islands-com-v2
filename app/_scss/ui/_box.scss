@@ -1,0 +1,22 @@
+.box {
+	background-color: #666; // default color, gets overriden with inline style
+	color: #fff;
+	position: relative;
+	width: 100%;
+	margin-bottom: 3rem;
+
+	&:after{
+		content: "";
+		display: block;
+		padding-top: 50%; // ratio
+	}
+}
+
+.box__content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 2rem;
+}

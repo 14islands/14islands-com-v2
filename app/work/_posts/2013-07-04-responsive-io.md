@@ -3,6 +3,7 @@ layout: post
 permalink: work/responsive.io
 title: responsive.io - 14islands
 heading: responsive.io
+color: '#4aa0ba'
 description: Perfect images for every screen
 ---
 
@@ -12,7 +13,7 @@ description: Perfect images for every screen
 
 ![responsive.io - a better way for responsive images](https://dl.dropboxusercontent.com/u/56886446/Blog/responsiveio2.jpg)
 
-## About 
+## About
 
 As web developers that build responsive web sites, we experience the same problem on every project.
 
@@ -30,10 +31,10 @@ Just look at these numbers:
 > 60% of all web traffic is images
 > -- <cite>[Source](http://httparchive.org/interesting.php#bytesperpage)</cite>
 
-> 69% of mobile web traffic is images 
+> 69% of mobile web traffic is images
 > -- <cite>[Source](http://mobile.httparchive.org/interesting.php#bytesperpage)</cite>
 
-> 57% will abandon a site after waiting 3 seconds for a page to load 
+> 57% will abandon a site after waiting 3 seconds for a page to load
 > -- <cite>[Source](http://www.radware.com/Products/FastView/?utm_source=strangeloop&utm_medium=slforward&utm_campaign=slmoving)</cite>
 
 > 87% of mobile users expect sites to load at least as fast, or faster than on their desktop.
