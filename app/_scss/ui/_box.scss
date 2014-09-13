@@ -24,3 +24,17 @@
 	right: 0;
 	padding: 5%;
 }
+
+.box__shape {
+	fill: #666;
+	position: absolute;
+	top: -3%;
+	left: 0;
+}
+
+.box__shape--odd {
+}
+
+.box__shape--even {
+	transform: scaleX(-1);
+}
