@@ -369,7 +369,17 @@ module.exports = function (grunt) {
         'coffee:dist',
         'copy:dist'
       ]
-    }
+    },
+    svgstore: {
+        options: {
+            prefix : 'shape-'
+        },
+        default : {
+            files: {
+                'images/svg-defs.svg': ['svgs/*.svg'],
+            }
+        }
+    },
   });
 
   // Define Tasks
