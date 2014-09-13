@@ -1,0 +1,141 @@
+$line-height: 1.65;
+$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
+$font-base: 16 * ($font-size/100);
+
+$measure: $font-base * $line-height;
+$type-scale-unit-value: rem !default;
+
+$tera: 117 !default; // 117 = 18 * 6.5
+$giga: 90 !default; // 90 = 18 * 5
+$mega: 72 !default; // 72 = 18 * 4
+$alpha: 60 !default; // 60 = 18 * 3.3333
+$beta: 48 !default; // 48 = 18 * 2.6667
+$gamma: 36 !default; // 36 = 18 * 2
+$delta: 24 !default; // 24 = 18 * 1.3333
+$epsilon: 21 !default; // 21 = 18 * 1.1667
+$zeta: 18 !default; // 18 = 18 * 1
+
+// $Function $Context Calculator
+// -------------------------------------//
+// divide a given font-size by base font-size & return a relative value
+
+@function context-calc($scale, $base, $value) {
+	@return ($scale/$base)#{$value};
+}
+
+// $Function $Measure-Margin
+// -------------------------------------//
+// divide 1 unit of measure by given font-size & return a relative em value
+
+@function measure-margin($scale, $measure, $value) {
+	$pixelValue: $measure/$scale;
+	$remValue: $pixelValue * $font-base;
+
+	@if $value == rem {
+		@return $pixelValue#{$value};
+	} @else if $value == em {
+		@return ($remValue/$scale)#{$value};
+	} @else {
+		@return $remValue#{$value};
+	}
+}
+
+// $Mixin $Type-Scale
+// -------------------------------------//
+
+@mixin type-scale($scale, $base, $value, $measure:"") {
+	@if $value == rem {
+		font-size: $scale#{px};
+		font-size: context-calc($scale, $base, $value);
+	} @else if $value == em {
+		font-size: context-calc($scale, $base, $value);
+	} @else {
+		font-size: $scale#{px};
+	}
+
+	@if $measure != "" {
+		@if $value == rem {
+			margin-bottom: measure-margin($scale, $measure, $value: px);
+			margin-bottom: measure-margin($scale, $measure, $value);
+		} @else if $value == em {
+			margin-bottom: measure-margin($scale, $measure, $value: em);
+		} @else {
+			margin-bottom: measure-margin($scale, $measure, $value);
+		}
+	}
+}
+
+html {
+	font-size: 100%;
+	line-height: #{$line-height};
+	@include if-wider-than($breakpoint-two) {
+		font-size: #{$font-size + "%"};
+	}
+}
+
+// Extend included classes on any element of your
+// choosing for adjusting type based on the scale
+// provided.
+// Special Props to Harry Roberts for this trick.
+
+// For example:
+
+// <h6 class="giga">Awesome Headline</h6>
+// <p class="tera">a story about a dude</p>
+
+// Our Type Scale is as follows with px fallbacks
+// for IE 6-8 as they do not understand REM units.
+//
+// 18, 21, 24, 36, 48, 60, 72, 90, 117
+
+// styles for all headings, in the style of @csswizardry
+%hN {
+	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
+	line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
+	margin-top: 0;
+}
+
+// Multi-dimensional array, where:
+// the first value is the name of the class
+// and the second value is the variable for the size
+$sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
+
+// Sass loop to associate h1-h6 tags with their appropriate greek
+// heading based on a modular scale.
+// for each size in the scale, create a class
+@each $size in $sizes {
+	.#{nth($size, 1)} {
+		@include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
+	}
+}
+
+// associate h1-h6 tags with their appropriate greek heading
+h1 {
+	@extend .alpha;
+	@extend %hN;
+}
+
+h2 {
+	@extend .beta;
+	@extend %hN;
+}
+
+h3 {
+	@extend .gamma;
+	@extend %hN;
+}
+
+h4 {
+	@extend .delta;
+	@extend %hN;
+}
+
+h5 {
+	@extend .epsilon;
+	@extend %hN;
+}
+
+h6 {
+	@extend .zeta;
+	@extend %hN;
+}

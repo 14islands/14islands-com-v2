@@ -5,6 +5,7 @@
 
 name: 14islands.com
 description: 14islands.com
+encoding: utf-8
 author:
   name: 14islands
   email: hello@14islands.com

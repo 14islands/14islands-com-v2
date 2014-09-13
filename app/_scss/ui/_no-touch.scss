@@ -1,13 +1,18 @@
 .no-touch {
 
+	a {
+		transition: color 0.2s $easeOutQuad;
+	}
+
 	a:active,
-	.no-touch a:hover {
+	a:hover {
+	  color: darken( $green, 10% );
 	  text-decoration: none;
 	  outline: 0;
 	}
 
-	.no-touch a:hover {
-	  color: darken( $green, 10% );
+	.nav__link:hover {
+		color: #000;
 	}
 
 }
