@@ -25,14 +25,23 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/work">Our Work</a>
-        <a href="/blog">Blog</a>
-        <a href="/about">About Us</a>
-      </nav>
-    </header>
+    <section class="hero">
+        <header class="hero__item hero__logo">
+            14islands
+        </header>
+        <h1 class="hero__item hero__caption">
+            Crafting digital experiences with cutting edge technologies
+        </h1>
+        <nav class="hero__item hero__nav nav">
+            <ul class="nav__list">
+                <li class="nav__item">Logo</li>
+                <li class="nav__item"><a href="/work/">Our Work</a></li>
+                <li class="nav__item"><a href="/about/">About Us</a></li>
+                <li class="nav__item"><a href="/notes/">Notes</a></li>
+                <li class="nav__item"><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
 
     {{ content }}
 

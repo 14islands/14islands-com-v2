@@ -1,0 +1,27 @@
+//
+// Nav component
+//
+// Markup example:
+//
+// <nav class="nav">
+// 	<ul class="nav__list">
+//  	<li class="nav__item">Logo</li>
+//    <li class="nav__item"><a href="/">Our Work</a></li>
+//    <li class="nav__item"><a href="/projects">About Us</a></li>
+//    <li class="nav__item"><a href="/blog">Blog</a></li>
+//    <li class="nav__item"><a href="/blog">Contact</a></li>
+// 	</ul>
+// </nav>
+
+.nav {
+}
+
+.nav__list {
+	list-style: none;
+}
+
+.nav__item {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}

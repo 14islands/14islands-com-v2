@@ -5,3 +5,4 @@
 
 future: false
 show_drafts: false
+hide_private: true

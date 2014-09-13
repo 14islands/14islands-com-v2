@@ -1,0 +1,13 @@
+.no-touch {
+
+	a:active,
+	.no-touch a:hover {
+	  text-decoration: none;
+	  outline: 0;
+	}
+
+	.no-touch a:hover {
+	  color: darken( $green, 10% );
+	}
+
+}

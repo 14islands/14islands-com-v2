@@ -1,6 +1,25 @@
+//
+// Base
+//
+@import "base/_normalize";
+@import "base/_variables";
+@import "base/_breakpoints";
+@import "base/_easings";
+@import "base/_typography";
+
+//
+// Addons
+//
+@import "addons/_clearfix";
+@import "addons/_visual-states";
 
 
-header {
-  height: 500px;
-}
-
+//
+// UI
+//
+@import "ui/_layout";
+@import "ui/_hero";
+@import "ui/_img";
+@import "ui/_links";
+@import "ui/_nav";
+@import "ui/_no-touch";

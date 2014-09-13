@@ -1,7 +1,8 @@
 ---
 layout: project
-permalink: projects/2013/google-santa-tracker
+permalink: work/2013/google-santa-tracker
 images: {hero: hero-image.jpg, another: another-image.jpg }
+private: true
 ---
 
 This is a draft project for Google Santa Tracker
