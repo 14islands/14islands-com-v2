@@ -1,7 +1,8 @@
 ---
 layout: post
 permalink: work/racer
-title: Google Chrome Racer
+title: Google Chrome Racer - 14islands
+heading: Google Chrome Racer
 description: A Chrome Experiment
 ---
 

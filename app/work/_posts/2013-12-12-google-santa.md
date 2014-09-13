@@ -1,7 +1,8 @@
 ---
 layout: post
 permalink: work/google-santa
-title: Google Santa Tracker
+title: Google Santa Tracker - 14islands
+heading: Google Santa Tracker
 description: Making Christmas happen again with Santa.
 ---
 
