@@ -7,7 +7,7 @@ description: Making Christmas happen again with Santa.
 
 # Google Santa Tracker
 
-Interactive calendar to follow Santa and his elves being busy before Christmas.
+#### Interactive calendar to follow Santa and his elves being busy before Christmas.
 
 ![Google Santa Tracker](https://dl.dropboxusercontent.com/u/1801168/blog/santa-tracker/santa-village.png)
 
