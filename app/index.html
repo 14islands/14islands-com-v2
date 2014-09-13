@@ -3,15 +3,3 @@ layout: default
 title: 14islands - Crafting web experiences with cutting edge technologies
 ---
 
-<section class="home posts">
-  <h1>Blog Posts</h1>
-  {% for post in site.categories.blog %}
-    <article><time>{{ post.date | date_to_string }}</time> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></article>
-  {% endfor %}
-</section>
-
-
-<h2>Projects</h2>
-{% for post in site.categories.projects %}
-    <article><time>{{ post.date | date_to_string }}</time> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></article>
-{% endfor %}
