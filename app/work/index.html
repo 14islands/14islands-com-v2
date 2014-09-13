@@ -5,15 +5,17 @@ title: Our Work - 14islands
 ---
 
 <header class="header">
-	<h1 class="header__title">Projects</h1>
+	<h1 class="header__title">We explore ideas and
+build great stuff.</h1>
 </header>
+
 
 {% for post in site.categories.work %}
   {% unless post.private and site.hide_private %}
   <a href="{{ post.permalink }}">
   	<article class="box" {% if post.color %} style="background-color: {{ post.color }};" {% endif %}>
   		<div class="box__content">
-	  	 	<h2>{{ post.heading }}</h2>
+	  	 	<h3>{{ post.heading }}</h3>
 	     	<p>{{ post.description }}</p>
      	</div>
    	</article>
@@ -22,7 +24,7 @@ title: Our Work - 14islands
 {% endfor %}
 
 
-<h2>Clients</h2>
+<h2>We’ve had the pleasure of working with great people.</h2>
 
 <ul>
 	<li>Montinvest</li>

@@ -2,8 +2,12 @@
 	background-color: #666; // default color, gets overriden with inline style
 	color: #fff;
 	position: relative;
-	width: 100%;
 	margin-bottom: 3rem;
+
+  @include if-wider-than($breakpoint-two) {
+    margin-left: -5%;
+    margin-right: -5%;
+  }
 
 	&:after{
 		content: "";
@@ -18,5 +22,5 @@
 	left: 0;
 	bottom: 0;
 	right: 0;
-	padding: 2rem;
+	padding: 5%;
 }
