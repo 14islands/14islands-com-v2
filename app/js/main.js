@@ -47,13 +47,7 @@ document.addEventListener('page:load', function () {
     //   firstLoad = false;
     //   console.log('first load');
     // }
-    // else {
-      console.log('change: add class');
-      var heroEl = document.querySelector('.hero');
-      addClass(heroEl, 'hero--visible');
-
-
-      setTimeout(function () {
+    // else
 
         console.log('scroll from ', document.body.scrollTop, 'to', y)
         TweenLite.fromTo(window, .7, {
@@ -63,8 +57,6 @@ document.addEventListener('page:load', function () {
           scrollTo: {y: y},
           ease: Circ.easeInOut
         });
-
-      }, 0);
 
 //Always scroll past hero unless turbo flag set
 
