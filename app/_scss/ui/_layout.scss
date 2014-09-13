@@ -3,6 +3,11 @@ body {
 	height: 100%;
 }
 
+.wrapper {
+	width: 1250px;
+	margin: 0 auto;
+}
+
 .svg {
 	display: inline-block;
   height: 100%;
@@ -20,5 +25,23 @@ body {
 	display: block;
 	height: 65px;
 	width: 190px;
-	margin-top: 1em;
+	margin-top: 1rem;
+}
+
+//
+// Generic header
+//
+
+.header {
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+}
+
+.header__title {
+	color: #333;
+	margin-bottom: 1rem;
+}
+
+.header__desc {
+	color: #888;
 }

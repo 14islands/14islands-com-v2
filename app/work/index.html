@@ -4,17 +4,19 @@ id: work
 title: Our Work - 14islands
 ---
 
-
-<h1>Our Projects</h1>
-<p>Lorem ipsum</p>
+<header class="header">
+	<h1 class="header__title">Our Projects</h1>
+	<p class="header__desc">Some other text maybe.</p>
+</header>
 
 {% for post in site.categories.work %}
   {% unless post.private and site.hide_private %}
-    <article>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p>{{ post.description }} </p>
-      <p>{{ post.excerpt | strip_html }}</p>
-    </article>
+  <a href="{{ post.url }}">
+  	<article class="box" {% if post.color %} style="background-color: {{ post.color }};" {% endif %}>
+  	 	<h2>{{ post.title }} <small>(draft: {{post.draft}})</small></h2>
+     	<p>{{ post.excerpt | strip_html }}</p>
+   	</article>
+  </a>
   {% endunless %}
 {% endfor %}
 

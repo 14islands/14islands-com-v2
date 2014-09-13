@@ -75,6 +75,12 @@ body {
 
 .hero__nav {
 	background-color: #fff;
-	height: pxToRem(70);
-	line-height: pxToRem(70);
+	height: pxToRem(80);
+	line-height: pxToRem(80);
+}
+
+.page:not(.page-home) {
+	.hero__nav {
+		border-bottom: 1px solid #f5f5f5;
+	}
 }
