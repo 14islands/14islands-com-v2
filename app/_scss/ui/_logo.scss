@@ -18,7 +18,10 @@
 .page {
 
 	.polygon {
-		transition: fill 0.5s $easeOutQuad;
+		transition-property: fill;
+		transition-duration: 0.8s;
+		transition-delay: 1s;
+		transition-timing-function: $easeOutQuad;
 	}
 
 	.polygon-down--light {
