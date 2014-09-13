@@ -1,21 +1,20 @@
 ---
 layout: default
+id: work
 title: Our Work - 14islands
 ---
 
 <h1>We love working on projects that something.</h1>
 <p>Some other text maybe.</p>
 
-
 {% for post in site.categories.work %}
   {% unless post.private and site.hide_private %}
     <article>
-      <h2><a href="{{ post.url }}">{{ post.title }} (draft: {{post.draft}})</a></h2>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
       <p>{{ post.excerpt | strip_html }}</p>
     </article>
   {% endunless %}
 {% endfor %}
-
 
 
 <h2>We build relationships based on trust and honesty.</h2>
