@@ -21,10 +21,10 @@
 
     <script>
         // hide body to avoid flashing unstyled content
-        document.documentElement.className += ' hideOnLoad';
+        document.documentElement.className += ' hide-on-load';
         // make body visible after dom loaded
         document.addEventListener('DOMContentLoaded', function(){
-          removeClass(document.documentElement, 'hideOnLoad');
+          removeClass(document.documentElement, 'hide-on-load');
         });
     </script>
 
@@ -40,14 +40,16 @@
 
     <section class="hero">
 
-        <header class="hero__item hero__logo">
+        <header class="hero__logo">
             <a href="/" class="logo-rect"><svg class="svg"><use xlink:href="#shape-logo-rect" /></svg></a>
         </header>
-        <h1 class="hero__item hero__caption">
-            Crafting digital experiences with cutting edge technologies
+        <h1 class="hero__caption">
+            <span class="hero__caption__text">
+                Crafting digital experiences with cutting edge technologies
+            </span>
         </h1>
-        <nav class="hero__item hero__nav js-hero-nav nav">
-            <ul class="nav__list">
+        <nav class="hero__nav js-hero-nav nav">
+            <ul class="nav__list grid-wrapper">
                 <li class="nav__item" data-no-turbolink>
                     <a href="/" class="logo-clean js-nav-home">
                         <svg class="svg"><use xlink:href="#shape-logo-clean" /></svg>
@@ -69,8 +71,7 @@
         </nav>
     </section>
 
-
-    <div class="wrapper">
+    <div class="grid-wrapper">
         {{ content }}
     </div>
 

@@ -3,9 +3,28 @@ body {
 	height: 100%;
 }
 
-.wrapper {
-	width: 1250px;
-	margin: 0 auto;
+body {
+  transition: opacity .3s $easeOutQuad;
+  .hide-on-load & {
+    opacity: 0;
+  }
+}
+
+
+
+.grid-wrapper {
+  max-width: $grid-max-width;
+  margin: 0 auto;
+
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+
+  @include if-wider-than($breakpoint-two) {
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
 
 .svg {
@@ -25,7 +44,6 @@ body {
 	display: block;
 	height: 65px;
 	width: 190px;
-	margin-top: 1rem;
 }
 
 //
