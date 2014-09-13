@@ -39,5 +39,5 @@ node_modules
 .tmp
 
 # Ignore sublime files
-.sublime-project
-.sublime-workspace
+*.sublime-project
+*.sublime-workspace
