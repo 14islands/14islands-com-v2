@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: work/racer
+permalink: work/responsive.io
 title: responsive.io - 14islands
 heading: responsive.io
 description: Perfect images for every screen
@@ -8,7 +8,7 @@ description: Perfect images for every screen
 
 # responsive.io
 
-Our own service for responsive websites to deliver perfect images for every screen.
+#### Our own service for responsive websites to deliver perfect images for every screen.
 
 ![responsive.io - a better way for responsive images](https://dl.dropboxusercontent.com/u/56886446/Blog/responsiveio2.jpg)
 
