@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: work/2014/google-santa
+permalink: work/google-santa
 title: Google Santa Tracker
 description: Making Christmas happen again with Santa.
 ---
@@ -9,7 +9,7 @@ description: Making Christmas happen again with Santa.
 
 Interactive calendar to follow Santa and his elves being busy before Christmas.
 
-[Google Santa Tracker](https://dl.dropboxusercontent.com/u/1801168/blog/santa-tracker/santa-village.png)
+![Google Santa Tracker](https://dl.dropboxusercontent.com/u/1801168/blog/santa-tracker/santa-village.png)
 
 
 ## About
@@ -38,20 +38,20 @@ Anyways, here are some bits & pieces from the project:
 
 Navigate around Santa-land as you would do with Street View in Google Maps.
 
-[Santa Tracker - Streets scene](https://dl.dropboxusercontent.com/u/1801168/blog/santa-tracker/santa-street%402x-01.png)
+![Santa Tracker - Streets scene](https://dl.dropboxusercontent.com/u/1801168/blog/santa-tracker/santa-street%402x-01.png)
 
 ### Airport scene
 
 The elves re-appear fully clothed.
 
-[Santa Tracker - Airport scene](https://dl.dropboxusercontent.com/u/1801168/blog/santa-tracker/santa-airport%402x.png)
+![Santa Tracker - Airport scene](https://dl.dropboxusercontent.com/u/1801168/blog/santa-tracker/santa-airport%402x.png)
 
 
 ### Call from Santa
 
 Chat with Santa as you would do on Google Hangouts.
 
-[Santa Tracker - Call from Santa](https://dl.dropboxusercontent.com/u/1801168/blog/santa-tracker/santa-callfromsanta-01%402x.png)
+![Santa Tracker - Call from Santa](https://dl.dropboxusercontent.com/u/1801168/blog/santa-tracker/santa-callfromsanta-01%402x.png)
 
 
 ## Responsiveness
