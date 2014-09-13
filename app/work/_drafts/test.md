@@ -1,6 +1,6 @@
 ---
 layout: project
-permalink: work/2013/google-santa-tracker
+permalink: work/test
 images: {hero: hero-image.jpg, another: another-image.jpg }
 private: true
 ---
