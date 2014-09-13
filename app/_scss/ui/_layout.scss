@@ -3,9 +3,30 @@ body {
 	height: 100%;
 }
 
-.wrapper {
-	width: 1250px;
-	margin: 0 auto;
+body {
+  transition: opacity .3s $easeOutQuad;
+  .hide-on-load & {
+    opacity: 0;
+  }
+}
+
+.grid-wrapper {
+  max-width: $grid-max-width;
+  margin: 0 auto;
+
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+
+  @include if-wider-than($breakpoint-two) {
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+.main-content {
+  margin-top: 3em;
 }
 
 .svg {
@@ -13,19 +34,6 @@ body {
   height: 100%;
   width: 100%;
   vertical-align: middle;
-}
-
-.logo-clean {
-	display: block;
-	height: 25px;
-	width: 60px;
-}
-
-.logo-rect {
-	display: block;
-	height: 65px;
-	width: 190px;
-	margin-top: 1rem;
 }
 
 //

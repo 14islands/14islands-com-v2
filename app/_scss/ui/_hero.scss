@@ -22,13 +22,6 @@
 // </section>
 //
 
-body {
-  transition: opacity .3s $easeOutQuad;
-}
-.hideOnLoad body {
-  opacity: 0;
-}
-
 .hero {
 	background-color: $green;
 	color: #fff;
@@ -48,36 +41,36 @@ body {
   }
 }
 
-.hero__item {
-	padding-left: 5%;
-	padding-right: 5%;
-	@include if-wider-than ($breakpoint-one) {
-		padding-left: 10%;
-		padding-right: 10%;
-	}
-}
-
 .hero__logo {
-	height: pxToRem(50);
-	line-height: pxToRem(50);
+  @extend .grid-wrapper;
+  margin-top: 2rem;
 }
 
 .hero__caption {
+  @extend .grid-wrapper;
 	font-weight: 600;
-	max-width: 800px;
 	margin-top: auto;
 	margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
 	@include if-wider-than($breakpoint-two) {
-		@include type-scale($giga, $font-base, '#{$type-scale-unit-value}', $measure);
+		@include type-scale($tera, $font-base, '#{$type-scale-unit-value}', $measure);
 		margin-top: auto;
 		margin-bottom: auto;
 	}
+}
+.hero__caption__text {
+  max-width: 800px;
+  display: inline-block;
 }
 
 .hero__nav {
 	background-color: #fff;
 	height: pxToRem(80);
 	line-height: pxToRem(80);
+  @include type-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .page:not(.page-home) {

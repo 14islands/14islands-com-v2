@@ -1,0 +1,60 @@
+//
+// Logo variations
+//
+
+.logo-clean {
+	display: block;
+	height: 25px;
+	width: 60px;
+}
+
+.logo-rect {
+	display: block;
+	height: 65px;
+	width: 190px;
+	margin-top: 1rem;
+}
+
+.page {
+
+	.polygon {
+		transition: fill 0.5s $easeOutQuad;
+	}
+
+	.polygon-down--light {
+		fill: $green;
+	}
+
+	.polygon-down--dark {
+		fill: $green-dark;
+	}
+
+	.polygon-up--light {
+		fill: $green;
+	}
+
+	.polygon-up--dark {
+		fill: $green-dark;
+	}
+
+}
+
+.page-home {
+
+	.polygon-down--light {
+		fill: $gray;
+	}
+
+	.polygon-down--dark {
+		fill: $gray-dark;
+	}
+
+	.polygon-up--light {
+		fill: $gray;
+	}
+
+	.polygon-up--dark {
+		fill: $gray-dark;
+	}
+
+}

@@ -2,6 +2,10 @@
 // colors
 //
 $green: #b7d02e;
+$green-dark: #83AA08;
+
+$gray: #999;
+$gray-dark: #444;
 
 //
 // paddings
@@ -14,3 +18,6 @@ $default-side-padding: 40;
 $breakpoint-one: 320;
 $breakpoint-two: 768;
 $breakpoint-three: 1600;
+
+// GRID STUFFZ
+$grid-max-width: 1250px;
