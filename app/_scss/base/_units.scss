@@ -1,0 +1,58 @@
+/*
+* Base pixel for all REM/EM calcs
+*/
+$base_px: 18 !default;
+
+/*
+* Function for return value with a new unit
+* (or null if no value)
+*/
+@function setUnit($value, $unit) {
+	@if $value {
+		@return #{$value}$unit;
+	}
+	@return null;
+}
+
+/*
+* Function for converting pixel values to
+* relative rem value
+* @param $context_px optional parameter for context font-size
+* --moz-device-pixel-ratiouses $base_px size as default
+*
+*/
+@function pxToRem($target_px: null, $context_px: $base_px) {
+	@if $target_px {
+ 	  @return setUnit( ($target_px / $context_px),  rem);
+ 	}
+ 	@return null;
+}
+
+/*
+* Mixin for writing out a property with a
+* rem value and a px fallback
+*/
+@mixin pxToRem($prop, $first, $second: null, $third: null, $fourth: null) {
+	#{$prop}: pxToRem($first) pxToRem($second) pxToRem($third) pxToRem($fourth);
+}
+
+/*
+* Function for ceonverting pixel values to relative rem value
+*
+* @param $context_px optional parameter for context font-size
+* --moz-device-pixel-ratiouses $base_px size as default
+*
+*/
+@function pxToEm($target_px, $context_px: $base_px) {
+	@if $target_px {
+	  @return setUnit( ($target_px / $context_px), em);
+	}
+  	@return null;
+}
+
+/*
+ *	Mixin for writing out a property with an em value and a px fallback
+ */
+@mixin pxToEm($prop, $first, $second: null, $third: null, $fourth: null, $context_px: $base_px) {
+	#{$prop}: pxToEm($first, $context_px) pxToEm($second, $context_px) pxToEm($third, $context_px) pxToEm($fourth, $context_px);
+}

@@ -25,20 +25,32 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <div style="display:none;">
+        {% include svg-defs.svg %}
+    </div>
+
     <section class="hero">
         <header class="hero__item hero__logo">
-            14islands
+            <div class="logo-rect"><svg class="svg"><use xlink:href="#shape-logo-rect" /></svg></div>
         </header>
         <h1 class="hero__item hero__caption">
             Crafting digital experiences with cutting edge technologies
         </h1>
         <nav class="hero__item hero__nav nav">
             <ul class="nav__list">
-                <li class="nav__item">Logo</li>
-                <li class="nav__item"><a href="/work/">Our Work</a></li>
-                <li class="nav__item"><a href="/about/">About Us</a></li>
-                <li class="nav__item"><a href="/notes/">Notes</a></li>
-                <li class="nav__item"><a href="/contact">Contact</a></li>
+                <li class="nav__item nav__item--home" data-no-turbolink><div class="logo-clean"><svg class="svg"><use xlink:href="#shape-logo-clean" /></svg></div></li>
+                <li class="nav__item">
+                    <a class="nav__link" href="/work/">Our Work</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="/about/">About Us</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="/notes/">Notes</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="/contact">Contact</a>
+                </li>
             </ul>
         </nav>
     </section>

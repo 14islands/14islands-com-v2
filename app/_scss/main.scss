@@ -6,13 +6,18 @@
 @import "base/_breakpoints";
 @import "base/_easings";
 @import "base/_typography";
+@import "base/_units";
+
+//
+// Vendor
+//
+@import "vendor/_typeplate";
 
 //
 // Addons
 //
 @import "addons/_clearfix";
 @import "addons/_visual-states";
-
 
 //
 // UI
@@ -23,9 +28,3 @@
 @import "ui/_links";
 @import "ui/_nav";
 @import "ui/_no-touch";
-
-
-//
-// Vendor
-//
-@import "vendor/_typeplate";

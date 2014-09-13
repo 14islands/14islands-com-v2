@@ -45,6 +45,10 @@ module.exports = function (grunt) {
         ],
         tasks: ['jekyll:server']
       },
+      svgs: {
+        files: ['<%= yeoman.app %>/svgs/*.svg'],
+        tasks: ['svgstore']
+      },
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -369,7 +373,17 @@ module.exports = function (grunt) {
         'coffee:dist',
         'copy:dist'
       ]
-    }
+    },
+    svgstore: {
+        options: {
+            prefix : 'shape-'
+        },
+        default : {
+            files: {
+                '<%= yeoman.app %>/_includes/svg-defs.svg': ['<%= yeoman.app %>/svgs/*.svg'],
+            }
+        }
+    },
   });
 
   // Define Tasks

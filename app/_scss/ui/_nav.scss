@@ -18,10 +18,16 @@
 
 .nav__list {
 	list-style: none;
+	margin-bottom: 0;
 }
 
 .nav__item {
 	display: inline-block;
 	padding: 0;
-	margin: 0;
+	margin-right: 2em;
+	margin-bottom: 0;
+}
+
+.nav__link {
+	color: #999;
 }
