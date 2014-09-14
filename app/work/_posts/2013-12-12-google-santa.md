@@ -5,6 +5,7 @@ title: Google Santa Tracker - 14islands
 heading: Google Santa Tracker
 color: '#00abf6'
 description: Making Christmas happen again with Santa.
+image: /images/work/googlesanta/list-illustration.png
 ---
 
 # Google Santa Tracker
