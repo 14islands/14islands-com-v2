@@ -5,8 +5,8 @@
 	margin-bottom: 3rem;
 
   @include if-wider-than($breakpoint-two) {
-    margin-left: -5%;
-    margin-right: -5%;
+    margin-left: -7%;
+    margin-right: -7%;
   }
 
 	&:after{
@@ -22,8 +22,19 @@
 	left: 0;
 	bottom: 0;
 	right: 0;
-	padding: 5%;
+	padding: 6%;
+
+  .box__content__headline {
+    max-width: 0px;
+    margin-top: 0.3em;
+    margin-bottom: 0;
+  }
+  .box__content__subline {
+    @include type-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
+  }
 }
+
+
 
 .box__shape {
 	fill: #666;
