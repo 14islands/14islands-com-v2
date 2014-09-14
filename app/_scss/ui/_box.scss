@@ -34,17 +34,29 @@
   .box__content__subline {
     @include type-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
   }
-  .box__content__img  {
-    float: right;
-    width: 50%;
-    height: 100%;
+  // .box__content__img  {
+  //   float: right;
+  //   width: 50%;
+  //   height: 100%;
+  //   text-align: center;
+  //   img {
+  //     height: 100%;
+  //     width: auto;
+  //   }
+  // }
+}
+.box__content__img  {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
     text-align: center;
+    min-width: 50%;
     img {
       height: 100%;
       width: auto;
     }
   }
-}
 
 
 

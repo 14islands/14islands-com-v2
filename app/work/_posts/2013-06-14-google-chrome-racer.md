@@ -2,9 +2,10 @@
 layout: post
 permalink: work/racer
 title: Google Chrome Racer - 14islands
-heading: Chrome Racer
+heading: Google Chrome Racer
 color: '#090a0a'
-description: A Chrome Experiment
+description: Retro-style slot car gaming played across screens
+image: /images/work/racer/list-illustration.png
 ---
 
 # Racer
