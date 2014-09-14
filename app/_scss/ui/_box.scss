@@ -5,8 +5,8 @@
 	margin-bottom: 3rem;
 
   @include if-wider-than($breakpoint-two) {
-    margin-left: -5%;
-    margin-right: -5%;
+    margin-left: -7%;
+    margin-right: -7%;
   }
 
 	&:after{
@@ -22,5 +22,55 @@
 	left: 0;
 	bottom: 0;
 	right: 0;
-	padding: 5%;
+	padding: 6%;
+
+  .box__content__headline {
+    width: 50%;
+    max-width: 450px;
+    margin-top: 0.3em;
+    margin-bottom: 0;
+    @include type-scale($mega, $font-base, '#{$type-scale-unit-value}', $measure);
+  }
+  .box__content__subline {
+    @include type-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
+  }
+  // .box__content__img  {
+  //   float: right;
+  //   width: 50%;
+  //   height: 100%;
+  //   text-align: center;
+  //   img {
+  //     height: 100%;
+  //     width: auto;
+  //   }
+  // }
+}
+.box__content__img  {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    min-width: 50%;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+
+
+.box__shape {
+	fill: #666;
+	position: absolute;
+	top: -3%;
+	left: 0;
+	width: 100%;
+}
+
+.box__shape--odd {
+}
+
+.box__shape--even {
+	transform: scaleX(-1);
 }

@@ -14,9 +14,23 @@ build great stuff.</h1>
   {% unless post.private and site.hide_private %}
   <a href="{{ post.permalink }}">
   	<article class="box" {% if post.color %} style="background-color: {{ post.color }};" {% endif %}>
-  		<div class="box__content">
-	  	 	<h3>{{ post.heading }}</h3>
-	     	<p>{{ post.description }}</p>
+  		{% capture thecycle %}{% cycle 'even', 'odd' %}{% endcapture %}
+  		{% if thecycle == 'even' %}
+  		<svg class="box__shape box__shape--even" viewBox="0 0 338.8 23.3" enable-background="new 0 0 338.8 23.3">
+  			<polyline fill="{{post.color}}" points="0,23.3 0,0 338.8,5.1 "/>
+  		</svg>
+  		{% else %}
+  		<svg class="box__shape box__shape--odd" viewBox="0 0 338.8 23.3" enable-background="new 0 0 338.8 23.3">
+  			<polyline fill="{{post.color}}" points="0,23.3 0,0 338.8,5.1 "/>
+  		</svg>
+  		{% endif %}
+
+      <div class="box__content">
+        <div class="box__content__img">
+          <img src="{{post.image}}"/>
+        </div>
+        <p class="box__content__subline">{{ post.heading }}</p>
+        <h2 class="box__content__headline">{{ post.description }}</h2>
      	</div>
    	</article>
   </a>
