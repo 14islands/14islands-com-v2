@@ -21,8 +21,6 @@ h6 {
   letter-spacing: -0.03em;
 }
 
-blockquote,
-code,
 q,
 h1,
 h2,
@@ -40,11 +38,6 @@ h6 {
 b,
 strong {
   font-weight: 700;
-}
-
-code {
-  white-space: pre;
-  font-family: monospace;
 }
 
 cite {
@@ -68,31 +61,6 @@ p {
   hyphens: auto;
   word-wrap: break-word;
   -webkit-font-smoothing: antialiased;
-}
-
-code,
-kbd,
-pre {
-  font-family: monospace, serif;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-pre {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.333333333em;
-  max-width: 100%;
-  overflow: auto;
-  padding: 0.666666667em;
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-pre code {
-  word-wrap: normal;
-  white-space: -moz-pre-wrap;
-  white-space: pre-wrap;
 }
 
 blockquote,
