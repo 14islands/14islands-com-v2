@@ -21,11 +21,8 @@ h6 {
   letter-spacing: -0.03em;
 }
 
-abbr,
-acronym,
 blockquote,
 code,
-kbd,
 q,
 h1,
 h2,
@@ -38,23 +35,6 @@ h6 {
   -ms-hyphens: none;
   -o-hyphens: none;
   hyphens: none;
-}
-
-address {
-  font-style: italic;
-  margin-bottom: 24px;
-}
-
-abbr {
-  font-variant: small-caps;
-  font-weight: 600;
-  text-transform: lowercase;
-  color: #808080;
-}
-
-abbr[title] {
-  border-bottom: 1px dotted #2b2b2b;
-  cursor: help;
 }
 
 b,
@@ -76,14 +56,6 @@ dfn,
 em,
 i {
   font-style: italic;
-}
-
-mark,
-ins {
-  background: #fff9c0;
-  border: 0;
-  color: inherit;
-  text-decoration: none;
 }
 
 p {
@@ -145,39 +117,4 @@ blockquote cite {
 blockquote strong,
 blockquote b {
   font-weight: 400;
-}
-
-ul,
-ol {
-  list-style: none;
-  margin: 0 0 1rem 0rem;
-  padding-left: 0rem;
-}
-
-ul {
-  list-style: disc;
-}
-
-ol {
-  list-style: decimal;
-}
-
-li  {
-  margin: 0 0 1rem;
-}
-
-li > ul,
-li > ol {
-  margin: 0 0 0 1rem;
-}
-
-del {
-  color: #767676;
-}
-
-hr {
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 0;
-  height: 1px;
-  margin-bottom: 23px;
 }
