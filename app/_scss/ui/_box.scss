@@ -16,6 +16,10 @@
 	}
 }
 
+.svg .box {
+  background-color: transparent !important;
+}
+
 .box__content {
 	position: absolute;
 	top: 0;
@@ -63,7 +67,7 @@
 .box__shape {
 	fill: #666;
 	position: absolute;
-	top: -3%;
+	top: 0;
 	left: 0;
 	width: 100%;
 }

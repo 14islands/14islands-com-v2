@@ -16,12 +16,18 @@ build great stuff.</h1>
   	<article class="box" {% if post.color %} style="background-color: {{ post.color }};" {% endif %}>
   		{% capture thecycle %}{% cycle 'even', 'odd' %}{% endcapture %}
   		{% if thecycle == 'even' %}
-  		<svg class="box__shape box__shape--even" viewBox="0 0 338.8 23.3" enable-background="new 0 0 338.8 23.3">
-  			<polyline fill="{{post.color}}" points="0,23.3 0,0 338.8,5.1 "/>
-  		</svg>
+  		<svg class="box__shape box__shape--odd" viewBox="-375 -27.5 1310 655" enable-background="new -375 -27.5 1310 655">
+        <g fill="{{post.color}}">
+          <polyline points="935,62.3 935,-27.5 -371.1,-7.8  "/>
+          <rect x="-375" y="-8" width="1310" height="635.5"/>
+        </g>
+      </svg>
   		{% else %}
-  		<svg class="box__shape box__shape--odd" viewBox="0 0 338.8 23.3" enable-background="new 0 0 338.8 23.3">
-  			<polyline fill="{{post.color}}" points="0,23.3 0,0 338.8,5.1 "/>
+  		<svg class="box__shape box__shape--odd" viewBox="-375 -27.5 1310 655" enable-background="new -375 -27.5 1310 655">
+  			<g fill="{{post.color}}">
+          <polyline points="-375,62.3 -375,-27.5 931.1,-7.8   "/>
+          <rect x="-375" y="-8" width="1310" height="635.5"/>
+        </g>
   		</svg>
   		{% endif %}
 
