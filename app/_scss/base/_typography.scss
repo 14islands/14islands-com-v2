@@ -10,7 +10,6 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-
 h1,
 h2,
 h3,
@@ -26,21 +25,14 @@ abbr,
 acronym,
 blockquote,
 code,
-dir,
 kbd,
-listing,
-plaintext,
 q,
-samp,
-tt,
-var,
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-xmp {
+h6 {
   -webkit-hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
@@ -108,9 +100,6 @@ p {
 
 code,
 kbd,
-tt,
-var,
-samp,
 pre {
   font-family: monospace, serif;
   font-size: 15px;
@@ -158,47 +147,6 @@ blockquote b {
   font-weight: 400;
 }
 
-small {
-  font-size: smaller;
-}
-
-big {
-  font-size: 125%;
-}
-
-sup,
-sub {
-  font-size: 75%;
-  height: 0;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  bottom: 1ex;
-}
-
-sub {
-  top: .5ex;
-}
-
-small {
-  font-size: 65%;
-}
-
-dl {
-  margin: 0 0 24px;
-}
-
-dt {
-  font-weight: bold;
-}
-
-dd {
-  margin: 0 0 24px;
-}
-
 ul,
 ol {
   list-style: none;
@@ -220,7 +168,7 @@ li  {
 
 li > ul,
 li > ol {
-  margin: 0 0 0 20px;
+  margin: 0 0 0 1rem;
 }
 
 del {
