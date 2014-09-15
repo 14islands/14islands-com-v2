@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: work/google-santa
+permalink: /work/google-santa
 title: Google Santa Tracker - 14islands
 heading: Google Santa Tracker
 color: '#00abf6'

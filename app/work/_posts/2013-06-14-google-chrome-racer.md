@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: work/racer
+permalink: /work/racer
 title: Google Chrome Racer - 14islands
 heading: Google Chrome Racer
 color: '#090a0a'

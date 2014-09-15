@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: work/responsive.io
+permalink: /work/responsive.io
 title: responsive.io - 14islands
 heading: responsive.io
 color: '#4aa0ba'
@@ -53,20 +53,28 @@ responsive.io automatically resizes and optimizes images on the fly, delivering 
 Speed is important, responsive.io caches all images on a global Content Delivery Network (CDN), making sure that images load from a location near you. After a resized image has been served once, the next delivery will be blazing fast.
 
 
-## The responsive.io philosophy
+## Technology
 
-Our goal is to make it easier to build responsive web sites by serving perfect images as fast as possible. We all have more important things to focus on then re-inventing the wheel.
+responsive.io is a SaaS (Software as a service) product built from start to finish by 14islands. We picked the best technology for each job.
 
-Let us do the hard work so you can focus on your website.
-We don’t apply watermarks on your images. We don’t use user-agent sniffing, cookies or other shaky techniques to resize images. Instead, we use feature detection of browser capabilities to make sure we are future proof.
+- **Ruby on Rails** for website and dashboard for users
+- **NodeJS** for fast image processing
+- **Sass** for CSS pre-processing
+- **CoffeeScript** for JavaScript pre-processing
+- **Linode** for server hosting
+- **Paymill** to handle payments and subscriptions 
+- **Mandrill** to send out transactional emails
+- **MailChip** to send out email newsletter to subscribers
+- **CloudFlare** as a CND (Content Delivery Network)
 
-responsive.io respects styles applied to each image element. It doesn’t force you to specify any custom style attributes, instead it picks up the style you’ve already specified using normal CSS or image attributes.
-
-In essence, images should behave as they would without the service, with the addition of better performance, faster downloads and a greatly improved user experience.
+We also took care of many other different aspects: strategy, design, writing content, promoting, user support, server setup and monitoring, writing terms and policies with help from lawyers among other things.
 
 
-## Conclution
+## Conclusion
 
-Please visit [responsive.io](http://responsive.io) for more details.
+There are many happy customers using responsive.io and we use it on our own project for performance. 
 
 Happy responsivizing!
+
+[Check it out](http://responsive.io/)
+
