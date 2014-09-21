@@ -52,6 +52,8 @@ responsive.io automatically resizes and optimizes images on the fly, delivering 
 
 Speed is important, responsive.io caches all images on a global Content Delivery Network (CDN), making sure that images load from a location near you. After a resized image has been served once, the next delivery will be blazing fast.
 
+![responsive.io Dashboard](/images/work/responsive.io/responsiveio-dashboard.jpg)
+
 
 ## Technology
 
@@ -68,6 +70,7 @@ responsive.io is a SaaS (Software as a service) product built from start to fini
 - **CloudFlare** as a CND (Content Delivery Network)
 
 We also took care of many other different aspects: strategy, design, writing content, promoting, user support, server setup and monitoring, writing terms and policies with help from lawyers among other things.
+
 
 
 ## Conclusion
