@@ -33,10 +33,10 @@
     max-width: 450px;
     margin-top: 0.3em;
     margin-bottom: 0;
-    @include type-scale($mega, $font-base, '#{$type-scale-unit-value}', $measure);
+    // @include type-scale($mega, $font-base, '#{$type-scale-unit-value}', $measure);
   }
   .box__content__subline {
-    @include type-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
+    // @include type-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
   }
 }
 .box__content__img  {

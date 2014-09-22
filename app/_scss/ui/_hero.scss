@@ -59,7 +59,7 @@
   @media (min-height: 720px) and (min-width: 930px) {
   // (min-height: 720px) , (min-width: $breakpoint-two) {
   	// color: red!important;
-		@include type-scale($tera, $font-base, '#{$type-scale-unit-value}', $measure);
+		// @include type-scale($tera, $font-base, '#{$type-scale-unit-value}', $measure);
 		margin-top: auto;
 		margin-bottom: auto;
   }
@@ -79,7 +79,7 @@
 	background-color: #fff;
 	height: pxToRem(80);
 	line-height: pxToRem(80);
-  @include type-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
+  // @include type-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
   margin-top: 0;
   margin-bottom: 0;
 }
