@@ -87,24 +87,29 @@ html {
   line-height: 1.4;
 
   @include if-wider-than($breakpoint-two) {
-    font-size: 25px;
+    font-size: 18px;
   }
 
 }
 
 h1 {
-  font-size: modular-scale(1rem, 4);
+  font-size: modular-scale(1rem, 5);
 }
 
 h2 {
-  font-size: modular-scale(1rem, 3);
+  font-size: modular-scale(1rem, 4);
 }
 
 h3 {
-  font-size: modular-scale(1rem, 2);
+  font-size: modular-scale(1rem, 3);
 }
 
 h4 {
+  font-size: modular-scale(1rem, 2);
+}
+
+h5,
+h6 {
   font-size: modular-scale(1rem, 1);
 }
 
@@ -125,8 +130,7 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5 {
   -webkit-hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
@@ -151,6 +155,7 @@ i {
 }
 
 p {
+  font-size: modular-scale(1rem, 1);
   // max-width: $measure;
   margin: 0 0 1rem;
   -webkit-hyphens: auto;
