@@ -5,13 +5,13 @@
 @import "base/_variables";
 @import "base/_breakpoints";
 @import "base/_easings";
-@import "base/_typography";
 @import "base/_units";
 
 //
 // Vendor
 //
-@import "vendor/_typeplate";
+// @import "vendor/_typeplate";
+// @import "vendor/_sassy-gridlover";
 
 //
 // Addons
@@ -22,6 +22,7 @@
 //
 // UI
 //
+@import "ui/_typography";
 @import "ui/_layout";
 @import "ui/_hero";
 @import "ui/_img";

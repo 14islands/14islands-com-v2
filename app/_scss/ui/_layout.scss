@@ -27,12 +27,14 @@ body {
 
 .main-content {
   margin-top: 4em;
-  h1,h2 {
-    @include type-scale($giga, $font-base, '#{$type-scale-unit-value}', $measure);
-    max-width: 800px;
-    margin-top: 1.4em;
-    margin-bottom: 1.4em;
-  }
+
+  // h1,h2 {
+  //   @include type-scale($giga, $font-base, '#{$type-scale-unit-value}', $measure);
+  //   max-width: 800px;
+  //   margin-top: 1.4em;
+  //   margin-bottom: 1.4em;
+  // }
+
 }
 
 .svg {
