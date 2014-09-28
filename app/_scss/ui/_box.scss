@@ -4,10 +4,7 @@
 	position: relative;
 	margin-bottom: 3rem;
 
-  @include if-wider-than($breakpoint-two) {
-    margin-left: -7%;
-    margin-right: -7%;
-  }
+  @extend .wide-grid;
 
 	&:after{
 		content: "";

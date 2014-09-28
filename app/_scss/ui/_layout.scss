@@ -26,7 +26,7 @@ body {
 }
 
 .main-content {
-  margin-top: 4em;
+  margin-top: $default-section-margin;
 
   // h1,h2 {
   //   @include type-scale($giga, $font-base, '#{$type-scale-unit-value}', $measure);
@@ -60,4 +60,15 @@ body {
 
 .header__desc {
 	color: #888;
+}
+
+.wide-grid {
+  @include if-wider-than($breakpoint-two) {
+    margin-left: -7%;
+    margin-right: -7%;
+  }
+}
+
+.about-page__section {
+  margin-bottom: $default-section-margin;
 }
