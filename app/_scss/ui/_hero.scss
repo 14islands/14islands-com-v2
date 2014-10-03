@@ -55,19 +55,14 @@
 	margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
+  font-size: modular-scale(1rem, 4);
 
   @media (min-height: 720px) and (min-width: 930px) {
-  // (min-height: 720px) , (min-width: $breakpoint-two) {
-  	// color: red!important;
-		// @include type-scale($tera, $font-base, '#{$type-scale-unit-value}', $measure);
-		margin-top: auto;
-		margin-bottom: auto;
+  	font-size: modular-scale(1rem, 5);
   }
-	// @include if-wider-than($breakpoint-two) {
-		// @include type-scale($tera, $font-base, '#{$type-scale-unit-value}', $measure);
-		// margin-top: auto;
-		// margin-bottom: auto;
-	// }
+  @media (min-height: 940px) and (min-width: 1600px) {
+		font-size: modular-scale(1rem, 6);
+	}
 }
 
 .hero__caption__text {
@@ -79,7 +74,7 @@
 	background-color: #fff;
 	height: pxToRem(80);
 	line-height: pxToRem(80);
-  // @include type-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
+	font-size: modular-scale(1rem, 1);
   margin-top: 0;
   margin-bottom: 0;
 }
