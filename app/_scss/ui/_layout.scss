@@ -27,14 +27,6 @@ body {
 
 .main-content {
   margin-top: $default-section-margin;
-
-  // h1,h2 {
-  //   @include type-scale($giga, $font-base, '#{$type-scale-unit-value}', $measure);
-  //   max-width: 800px;
-  //   margin-top: 1.4em;
-  //   margin-bottom: 1.4em;
-  // }
-
 }
 
 .svg {
@@ -56,6 +48,12 @@ body {
 .header__title {
 	color: #333;
 	margin-bottom: 1rem;
+  // h3 size
+  font-size: modular-scale(1rem, 3);
+  @include if-wider-than($breakpoint-two) {
+    // h1 size
+    font-size: modular-scale(1rem, 5);
+  }
 }
 
 .header__desc {

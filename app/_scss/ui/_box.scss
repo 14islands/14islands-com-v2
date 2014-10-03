@@ -27,13 +27,19 @@
 
   .box__content__headline {
     width: 50%;
-    max-width: 450px;
     margin-top: 0.3em;
     margin-bottom: 0;
-    // @include type-scale($mega, $font-base, '#{$type-scale-unit-value}', $measure);
+    font-size: modular-scale(1rem, 2);
+
+    @media (min-width: 880px) {
+    // @include if-wider-than(880px) {
+      font-size: modular-scale(1rem, 4);
+      max-width: 450px;
+    }
+
   }
   .box__content__subline {
-    // @include type-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
+
   }
 }
 .box__content__img  {
@@ -44,10 +50,12 @@
   left: 40%;
   text-align: center;
   overflow: hidden;
+
   img {
     height: 100%;
     width: auto;
   }
+
 }
 .box__content__img--right {
   text-align: right;
