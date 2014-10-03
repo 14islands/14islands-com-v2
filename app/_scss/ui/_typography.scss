@@ -3,77 +3,18 @@
 // Elements
 //
 
-$fourteenScale: 1.4;
-$ratio: $fourteenScale;
-
 //
 // DESKTOP ideal typography (for reference):
 //
-// .hero {
-//   117px
-// }
+// .hero: 117px
 //
-// h1 {
-//   90px
-// }
+// h1: 90px
 //
-// h2 {
-//   72px
-// }
+// h2: 72px
+//
+// p: 24px
+//
 
-
-/**
- * Copyright 2011-2014 thoughtbot, inc.
- * Bourbon is gree software, and may be redistributed under the terms specified in the license.
- * https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functions/_modular-scale.scss
- */
-@function modular-scale($value, $increment) {
-  $v1: nth($value, 1);
-  $v2: nth($value, length($value));
-  $value: $v1;
-
-  // scale $v2 to just above $v1
-  @while $v2 > $v1 {
-    $v2: ($v2 / $ratio); // will be off-by-1
-  }
-  @while $v2 < $v1 {
-    $v2: ($v2 * $ratio); // will fix off-by-1
-  }
-
-  // check AFTER scaling $v2 to prevent double-counting corner-case
-  $double-stranded: $v2 > $v1;
-
-  @if $increment > 0 {
-    @for $i from 1 through $increment {
-      @if $double-stranded and ($v1 * $ratio) > $v2 {
-        $value: $v2;
-        $v2: ($v2 * $ratio);
-      } @else {
-        $v1: ($v1 * $ratio);
-        $value: $v1;
-      }
-    }
-  }
-
-  @if $increment < 0 {
-    // adjust $v2 to just below $v1
-    @if $double-stranded {
-      $v2: ($v2 / $ratio);
-    }
-
-    @for $i from $increment through -1 {
-      @if $double-stranded and ($v1 / $ratio) < $v2 {
-        $value: $v2;
-        $v2: ($v2 / $ratio);
-      } @else {
-        $v1: ($v1 / $ratio);
-        $value: $v1;
-      }
-    }
-  }
-
-  @return $value;
-}
 
 
 // =============================================================
@@ -83,7 +24,7 @@ html {
   font-family: Calibre, Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
 
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.4;
 
   @include if-wider-than($breakpoint-two) {
@@ -94,18 +35,26 @@ html {
 
 h1 {
   font-size: modular-scale(1rem, 5);
+  margin-top: 2 * modular-scale(1rem, 1);
+  margin-bottom: 1 * modular-scale(1rem, 1);
 }
 
 h2 {
   font-size: modular-scale(1rem, 4);
+  margin-top: 2 * modular-scale(1rem, 1);
+  margin-bottom: 1 * modular-scale(1rem, 1);
 }
 
 h3 {
   font-size: modular-scale(1rem, 3);
+  margin-top: 1 * modular-scale(1rem, 1);
+  margin-bottom: 1 * modular-scale(1rem, 1);
 }
 
 h4 {
   font-size: modular-scale(1rem, 2);
+  margin-top: 1 * modular-scale(1rem, 1);
+  margin-bottom: 1 * modular-scale(1rem, 1);
 }
 
 h5,
