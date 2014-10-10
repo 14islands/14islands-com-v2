@@ -14,9 +14,9 @@ body {
   max-width: $grid-max-width;
   margin: 0 auto;
 
-  width: 94%;
-  padding-left: 3%;
-  padding-right: 3%;
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
 
   @include if-wider-than($breakpoint-two) {
     width: 80%;
