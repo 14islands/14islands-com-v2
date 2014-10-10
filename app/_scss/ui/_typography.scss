@@ -33,41 +33,62 @@ html {
 
 }
 
-h1 {
-  font-size: modular-scale(1rem, 5);
-  margin-top: 2 * modular-scale(1rem, 1);
-  margin-bottom: 1 * modular-scale(1rem, 1);
-}
-
-h2 {
+%h1 {
   font-size: modular-scale(1rem, 4);
   margin-top: 2 * modular-scale(1rem, 1);
   margin-bottom: 1 * modular-scale(1rem, 1);
+  @include if-wider-than($breakpoint-two) {
+    font-size: modular-scale(1rem, 5);
+  }
 }
 
-h3 {
+%h2 {
   font-size: modular-scale(1rem, 3);
-  margin-top: 1 * modular-scale(1rem, 1);
+  margin-top: 2 * modular-scale(1rem, 1);
   margin-bottom: 1 * modular-scale(1rem, 1);
+  @include if-wider-than($breakpoint-two) {
+    font-size: modular-scale(1rem, 4);
+  }
 }
 
-h4 {
+%h3 {
   font-size: modular-scale(1rem, 2);
   margin-top: 1 * modular-scale(1rem, 1);
   margin-bottom: 1 * modular-scale(1rem, 1);
+  @include if-wider-than($breakpoint-two) {
+    font-size: modular-scale(1rem, 3);
+  }
 }
 
-h5,
-h6 {
+%h4 {
   font-size: modular-scale(1rem, 1);
+  margin-top: 1 * modular-scale(1rem, 1);
+  margin-bottom: 1 * modular-scale(1rem, 1);
+  @include if-wider-than($breakpoint-two) {
+    font-size: modular-scale(1rem, 2);
+  }
+}
+
+h1 {
+  @extend %h1;
+}
+
+h2 {
+  @extend %h2;
+}
+
+h3 {
+  @extend %h3;
+}
+
+h4 {
+  @extend %h4;
 }
 
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4 {
   max-width: 800px;
   font-weight: 600;
   letter-spacing: -0.03em;
@@ -105,7 +126,7 @@ i {
 
 p {
   font-size: modular-scale(1rem, 1);
-  // max-width: $measure;
+  max-width: 700px;
   margin: 0 0 1rem;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;

@@ -75,24 +75,26 @@
 	margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
-  font-size: modular-scale(1rem, 4);
+  font-size: modular-scale(1rem, 3);
+  line-height: 1.2;
 
   @media (min-height: 720px) and (min-width: 930px) {
   	font-size: modular-scale(1rem, 5);
+  	line-height: 1;
   }
   @media (min-height: 940px) and (min-width: 1600px) {
 		font-size: modular-scale(1rem, 6);
+		line-height: 1;
 	}
 }
 
 .hero__text {
-  max-width: 800px;
+  max-width: 860px;
   display: inline-block;
 }
 
 .hero__nav {
 	background-color: #fff;
-	// background-color: $var-dark;
 	height: pxToRem(80);
 	line-height: pxToRem(80);
 	font-size: modular-scale(1rem, 1);
