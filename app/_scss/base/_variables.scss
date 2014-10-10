@@ -1,20 +1,38 @@
 //
 // colors
 //
-$green: #b7d02e;
-$green-dark: #83AA08;
+$vinter: #01a084;
+$vinter-dark: #006457;
+
+$var: #b7d02e;
+$var-dark: #83aa08;
+
+$sommar: #eccd00;
+$sommar-dark: #daa500;
+
+$host: #f8b334;
+$host-dark: #f17e0b;
 
 $gray: #999;
 $gray-dark: #444;
 
+$mono: #424242;
+$mono-dark: #2d2d2d;
+
+$natt: #535b82;
+$natt-dark: #3e404d;
+
+$green: $var;
+$green-dark: $var-dark;
+
 //
-// MArgin & padding
+// Margin & padding
 //
 $default-section-margin: 10%;
 $default-side-padding: 40;
 
 //
-// breakpoints
+// Breakpoints
 //
 $breakpoint-one: 320;
 $breakpoint-two: 768;
