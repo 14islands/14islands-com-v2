@@ -35,8 +35,11 @@ $default-side-padding: 40;
 // Breakpoints
 //
 $breakpoint-one: 320;
+$breakpoint-one-px: #{$breakpoint-one}px;
 $breakpoint-two: 768;
+$breakpoint-two-px: #{$breakpoint-two}px;
 $breakpoint-three: 1600;
+$breakpoint-three-px: #{$breakpoint-three}px;
 
 // GRID STUFFZ
 $grid-max-width: 1250px;
