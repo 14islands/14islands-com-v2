@@ -1,0 +1,38 @@
+@keyframes slide-up {
+	0% {
+		transform: translateY(120%);
+	}
+
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+
+.delay100 {
+	animation-delay: 100ms;
+}
+
+.delay250 {
+	animation-delay: 250ms;
+}
+
+.delay400 {
+	animation-delay: 400ms;
+}
+
+.delay550 {
+	animation-delay: 550ms;
+}
+
+.delay700 {
+	animation-delay: 700ms;
+}
+
+.delay850 {
+	animation-delay: 850ms;
+}
+
+.delay1000 {
+	animation-delay: 1000ms;
+}

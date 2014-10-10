@@ -108,29 +108,6 @@
 	}
 }
 
-@keyframes fade-scale-in {
-	0% {
-		transform: scaleY(0.6);
-		transform-origin: 50% 50%;
-		opacity: 0;
-	}
-
-	100% {
-		transform: scaleY(1);
-		opacity: 1;
-	}
-}
-
-@keyframes slide-up {
-	0% {
-		transform: translateY(120%);
-	}
-
-	100% {
-		transform: translateY(0%);
-	}
-}
-
 .hero__word {
 	display: inline-block;
 	position: relative;
@@ -155,32 +132,4 @@
 	animation-duration: 350ms;
 	animation-timing-function: $easeOutQuad;
 	animation-fill-mode: backwards;
-}
-
-.delay100 {
-	animation-delay: 100ms;
-}
-
-.delay250 {
-	animation-delay: 250ms;
-}
-
-.delay400 {
-	animation-delay: 400ms;
-}
-
-.delay550 {
-	animation-delay: 550ms;
-}
-
-.delay700 {
-	animation-delay: 700ms;
-}
-
-.delay850 {
-	animation-delay: 850ms;
-}
-
-.delay1000 {
-	animation-delay: 1000ms;
 }
