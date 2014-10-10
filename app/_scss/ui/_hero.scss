@@ -22,8 +22,28 @@
 // </section>
 //
 
+
+// @keyframes rainbow {
+//   0% {
+//   	background-position: 0% 82%;
+//   }
+//   50% {
+//   	background-position: 100% 19%;
+//   }
+//   100% {
+//   	background-position: 0% 82%;
+//   }
+// }
+
+
 .hero {
 	background-color: $green;
+	// background-image: linear-gradient(45deg, $vinter, $vinter-dark, $var, $var-dark, $sommar, $sommar-dark, $host, $host-dark);
+	// background-size: 1800% 1800%;
+	animation-name: rainbow;
+	animation-duration: 50s;
+	animation-timing-function: $easeInOutQuad;
+	animation-iteration-count: infinite;
 	color: #fff;
 	display: flex;
 	height: 100%;
@@ -65,13 +85,14 @@
 	}
 }
 
-.hero__caption__text {
+.hero__text {
   max-width: 800px;
   display: inline-block;
 }
 
 .hero__nav {
 	background-color: #fff;
+	// background-color: $var-dark;
 	height: pxToRem(80);
 	line-height: pxToRem(80);
 	font-size: modular-scale(1rem, 1);
@@ -83,4 +104,53 @@
 	.hero__nav {
 		border-bottom: 1px solid #f5f5f5;
 	}
+}
+
+@keyframes fade-scale-in {
+	0% {
+		transform: scaleY(0.6);
+		transform-origin: 50% 50%;
+		opacity: 0;
+	}
+
+	100% {
+		transform: scaleY(1);
+		opacity: 1;
+	}
+}
+
+.hero__word {
+	display: inline-block;
+	animation-name: fade-scale-in;
+	animation-duration: 400ms;
+	animation-timing-function: $easeOutQuad;
+	animation-fill-mode: backwards;
+}
+
+.hero__word--1 {
+	animation-delay: 100ms;
+}
+
+.hero__word--2 {
+	animation-delay: 200ms;
+}
+
+.hero__word--3 {
+	animation-delay: 300ms;
+}
+
+.hero__word--4 {
+	animation-delay: 400ms;
+}
+
+.hero__word--5 {
+	animation-delay: 500ms;
+}
+
+.hero__word--6 {
+	animation-delay: 600ms;
+}
+
+.hero__word--7 {
+	animation-delay: 700ms;
 }
