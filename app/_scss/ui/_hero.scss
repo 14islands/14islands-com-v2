@@ -121,38 +121,66 @@
 	}
 }
 
+@keyframes slide-up {
+	0% {
+		transform: translateY(125%);
+	}
+
+	100% {
+		transform: translateY(0%);
+	}
+}
+
 .hero__word {
 	display: inline-block;
-	animation-name: fade-scale-in;
+	position: relative;
+
+	// This will "block" the view for the word
+	// allowing the slide up effect to look nice
+	&:after {
+		background: $green;
+		content: '';
+		display: block;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		height: 120%;
+		width: 100%;
+	}
+}
+
+.hero__word__inner {
+	display: inline-block;
+	animation-name: slide-up;
 	animation-duration: 400ms;
 	animation-timing-function: $easeOutQuad;
 	animation-fill-mode: backwards;
 }
 
-.hero__word--1 {
+.delay100 {
 	animation-delay: 100ms;
 }
 
-.hero__word--2 {
-	animation-delay: 200ms;
+.delay250 {
+	animation-delay: 250ms;
 }
 
-.hero__word--3 {
-	animation-delay: 300ms;
-}
-
-.hero__word--4 {
+.delay400 {
 	animation-delay: 400ms;
 }
 
-.hero__word--5 {
-	animation-delay: 500ms;
+.delay550 {
+	animation-delay: 550ms;
 }
 
-.hero__word--6 {
-	animation-delay: 600ms;
-}
-
-.hero__word--7 {
+.delay700 {
 	animation-delay: 700ms;
+}
+
+.delay850 {
+	animation-delay: 850ms;
+}
+
+.delay1000 {
+	animation-delay: 1000ms;
 }
