@@ -18,7 +18,7 @@ body {
   padding-left: 5%;
   padding-right: 5%;
 
-  @include if-wider-than($breakpoint-two) {
+  @include if-wider-than($breakpoint-two-px) {
     width: 80%;
     padding-left: 10%;
     padding-right: 10%;
@@ -50,7 +50,7 @@ body {
 	margin-bottom: 1rem;
   // h3 size
   font-size: modular-scale(1rem, 3);
-  @include if-wider-than($breakpoint-two) {
+  @include if-wider-than($breakpoint-two-px) {
     // h1 size
     font-size: modular-scale(1rem, 5);
   }
@@ -61,7 +61,7 @@ body {
 }
 
 .wide-grid {
-  @include if-wider-than($breakpoint-two) {
+  @include if-wider-than($breakpoint-two-px) {
     margin-left: -7%;
     margin-right: -7%;
   }
