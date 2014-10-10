@@ -30,8 +30,10 @@
 
 .nav__link {
 	display: block;
+	letter-spacing: 0.04rem;
+
 	&,
 	&:visited {
-		color: #555;
+		color: #666;
 	}
 }
