@@ -23,7 +23,7 @@
 *
 */
 @mixin if-wider-than($px) {
-  @media (min-width: pxToEm($px)) {
+  @media (min-width: $px) {
     @content;
   }
 }
@@ -36,7 +36,7 @@
 *
 */
 @mixin if-taller-than($px) {
-  @media (min-height: pxToEm($px)) {
+  @media (min-height: $px) {
     @content;
   }
 }
