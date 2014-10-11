@@ -100,6 +100,11 @@
 	font-size: modular-scale(1rem, 1);
   margin-top: 0;
   margin-bottom: 0;
+  animation-name: slide-up;
+  animation-duration: 350ms;
+  animation-delay: 1200ms;
+  animation-timing-function: $easeOutQuad;
+  animation-fill-mode: backwards;
 }
 
 .page:not(.page-home) {
@@ -121,7 +126,7 @@
 		position: absolute;
 		top: 100%;
 		left: 0;
-		height: 120%;
+		height: 110%;
 		width: 110%;
 	}
 }
@@ -129,7 +134,7 @@
 .hero__word__inner {
 	display: inline-block;
 	animation-name: slide-up;
-	animation-duration: 350ms;
+	animation-duration: 300ms;
 	animation-timing-function: $easeOutQuad;
 	animation-fill-mode: backwards;
 }
