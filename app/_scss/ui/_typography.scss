@@ -27,7 +27,7 @@ html {
   font-size: 14px;
   line-height: 1.4;
 
-  @include if-wider-than($breakpoint-two) {
+  @include if-wider-than($breakpoint-two-px) {
     font-size: 18px;
   }
 
@@ -37,7 +37,7 @@ html {
   font-size: modular-scale(1rem, 4);
   margin-top: 2 * modular-scale(1rem, 1);
   margin-bottom: 1 * modular-scale(1rem, 1);
-  @include if-wider-than($breakpoint-two) {
+  @include if-wider-than($breakpoint-two-px) {
     font-size: modular-scale(1rem, 5);
   }
 }
@@ -46,7 +46,7 @@ html {
   font-size: modular-scale(1rem, 3);
   margin-top: 2 * modular-scale(1rem, 1);
   margin-bottom: 1 * modular-scale(1rem, 1);
-  @include if-wider-than($breakpoint-two) {
+  @include if-wider-than($breakpoint-two-px) {
     font-size: modular-scale(1rem, 4);
   }
 }
@@ -55,7 +55,7 @@ html {
   font-size: modular-scale(1rem, 2);
   margin-top: 1 * modular-scale(1rem, 1);
   margin-bottom: 1 * modular-scale(1rem, 1);
-  @include if-wider-than($breakpoint-two) {
+  @include if-wider-than($breakpoint-two-px) {
     font-size: modular-scale(1rem, 3);
   }
 }
@@ -64,7 +64,7 @@ html {
   font-size: modular-scale(1rem, 1);
   margin-top: 1 * modular-scale(1rem, 1);
   margin-bottom: 1 * modular-scale(1rem, 1);
-  @include if-wider-than($breakpoint-two) {
+  @include if-wider-than($breakpoint-two-px) {
     font-size: modular-scale(1rem, 2);
   }
 }
