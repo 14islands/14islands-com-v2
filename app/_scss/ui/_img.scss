@@ -2,12 +2,42 @@ img {
   border: 0;
   height: auto;
   width: 100%;
-  /*max-width: 100%;*/
   vertical-align: middle;
   -ms-interpolation-mode: bicubic;
-
 }
+
+img[data-src] {
+  visibility: hidden;
+}
+
 .content-image {
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+.ratio {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+
+  // David: should we have a bg while the image is loading?
+  background: #f9f9f9;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.ratio--3_2 {
+  padding-bottom: 66%; /* 3:2 ratio */
+}
+
+.ratio--4_3 {
+  padding-bottom: 75%; /* 4:2 ratio */
+}
+
+.ratio--16_9 {
+  padding-bottom: 56.25%; /* 16:9 ratio */
 }
