@@ -1,3 +1,5 @@
+/* global $, TweenLite, Circ, Turbolinks  */
+
 //////////////////////////////////////////////////////////////////////////////
 // NAV PROTOTYPE
 //////////////////////////////////////////////////////////////////////////////
@@ -15,12 +17,12 @@ $(document).pjax('a', '.main-content', {
 // (other wise page jumps to top since home page doesnt have content)
 $('.js-nav-home').on('click', function (e) {
   e.preventDefault();
-  TweenLite.to(window, .6, {
+  TweenLite.to(window, 0.6, {
     scrollTo: {y: 0},
     ease: Circ.easeInOut,
     onComplete: function () {
       // tell pjax to nav to home page
-      $.pjax({url: '/', container: '.main-content', fragment: '.main-content'})
+      $.pjax({url: '/', container: '.main-content', fragment: '.main-content'});
     }
   });
 });
@@ -33,7 +35,7 @@ $('.main-content').on('pjax:beforeReplace', function () {
   }
 
   // get scrollPosition top of navigation
-  y = window.innerHeight - document.querySelector('.js-hero-nav').offsetHeight;
+  var y = window.innerHeight - document.querySelector('.js-hero-nav').offsetHeight;
 
   TweenLite.fromTo(window, 0.6, {
     scrollTo: {y: yFrom}
