@@ -1,54 +1,39 @@
-/* global TweenLite, Circ, Turbolinks  */
-
-function addClass(el, className) {
-  if (el.classList)
-    el.classList.add(className);
-  else
-    el.className += ' ' + className;
-}
-
-function removeClass(el, className) {
-  if (el.classList)
-    el.classList.remove(className);
-  else
-    el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-}
-
 //////////////////////////////////////////////////////////////////////////////
 // NAV PROTOTYPE
 //////////////////////////////////////////////////////////////////////////////
+
 var firstLoad = true;
-
-// get height of header
-var el = document.querySelector('.js-hero-nav');
-var rect = el.getBoundingClientRect();
-var y = rect.top + document.body.scrollTop;
-var yFrom = y;
+var yFrom = document.body.scrollTop;
 
 
-function bindHomeLink() {
-  var aHome = document.querySelector('.js-nav-home');
-  aHome.addEventListener('click', function (e) {
-    e.preventDefault();
-    console.log('click home');
-    TweenLite.to(window, 0.6, {
-      scrollTo: {y: 0},
-      ease: Circ.easeInOut,
-      onComplete: function () {
-        Turbolinks.visit('/');
-      }
-    });
-    return false;
+$(document).pjax('a', '.main-content', {
+  fragment: '.main-content'
+});
+
+
+// bind home link to first scroll up -> then navigate
+// (other wise page jumps to top since home page doesnt have content)
+$('.js-nav-home').on('click', function (e) {
+  e.preventDefault();
+  TweenLite.to(window, .6, {
+    scrollTo: {y: 0},
+    ease: Circ.easeInOut,
+    onComplete: function () {
+      // tell pjax to nav to home page
+      $.pjax({url: '/', container: '.main-content', fragment: '.main-content'})
+    }
   });
-}
-bindHomeLink();
+});
 
-document.addEventListener('page:load', bindHomeLink);
-document.addEventListener('page:change', function () {
+
+$('.main-content').on('pjax:beforeReplace', function () {
   if (!firstLoad) {
     // always scroll from where you are
     yFrom = document.body.scrollTop;
   }
+
+  // get scrollPosition top of navigation
+  y = window.innerHeight - document.querySelector('.js-hero-nav').offsetHeight;
 
   TweenLite.fromTo(window, 0.6, {
     scrollTo: {y: yFrom}
@@ -57,7 +42,7 @@ document.addEventListener('page:change', function () {
     scrollTo: {y: y},
     ease: Circ.easeInOut,
     onComplete: function () {
-      console.log('TODO hide header');
+      // TODO hide header?
       // addClass(document.querySelector('.hero'), 'hero--hidden');
       // window.scrollTo(0,0);
     }
@@ -65,9 +50,4 @@ document.addEventListener('page:change', function () {
 
   firstLoad = false;
 });
-// document.addEventListener('page:change', function () {
-//   console.log('CHANGE');
-// });
-// document.addEventListener('page:load', function () {
-//   console.log('LOAD');
-// });
+

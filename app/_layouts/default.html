@@ -24,7 +24,7 @@
         document.documentElement.className += ' hide-on-load';
         // make body visible after dom loaded
         document.addEventListener('DOMContentLoaded', function(){
-          removeClass(document.documentElement, 'hide-on-load');
+          $(document.documentElement).removeClass('hide-on-load');
         });
     </script>
 
