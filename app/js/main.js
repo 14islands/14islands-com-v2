@@ -35,7 +35,7 @@ $('.main-content').on('pjax:beforeReplace', function () {
   // get scrollPosition top of navigation
   y = window.innerHeight - document.querySelector('.js-hero-nav').offsetHeight;
 
-  TweenLite.fromTo(window, .6, {
+  TweenLite.fromTo(window, 0.6, {
     scrollTo: {y: yFrom}
   },
   {
