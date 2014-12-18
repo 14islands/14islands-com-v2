@@ -12,43 +12,41 @@ function removeClass(el, className) {
     el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
 }
 
-
 //////////////////////////////////////////////////////////////////////////////
 // NAV PROTOTYPE
 //////////////////////////////////////////////////////////////////////////////
-
 var firstLoad = true;
-var yFrom = document.body.scrollTop;
+
+// get height of header
+var el = document.querySelector('.js-hero-nav');
+var rect = el.getBoundingClientRect()
+var y = rect.top + document.body.scrollTop;
+var yFrom = y;
 
 
-$(document).pjax('a', '.main-content', {
-  fragment: '.main-content'
-});
-
-
-// bind home link to first scroll up -> then navigate
-// (other wise page jumps to top since home page doesnt have content)
-$('.js-nav-home').on('click', function (e) {
-  e.preventDefault();
-  TweenLite.to(window, .6, {
-    scrollTo: {y: 0},
-    ease: Circ.easeInOut,
-    onComplete: function () {
-      // tell pjax to nav to home page
-      $.pjax({url: '/', container: '.main-content', fragment: '.main-content'})
-    }
+function bindHomeLink() {
+  var aHome = document.querySelector('.js-nav-home');
+  aHome.addEventListener('click', function (e) {
+    e.preventDefault();
+    console.log('click home');
+    TweenLite.to(window, .6, {
+      scrollTo: {y: 0},
+      ease: Circ.easeInOut,
+      onComplete: function () {
+        Turbolinks.visit('/')
+      }
+    });
+    return false;
   });
-});
+}
+bindHomeLink();
 
-
-$('.main-content').on('pjax:beforeReplace', function () {
+document.addEventListener('page:load', bindHomeLink);
+document.addEventListener('page:change', function () {
   if (!firstLoad) {
     // always scroll from where you are
     yFrom = document.body.scrollTop;
   }
-
-  // get scrollPosition top of navigation
-  y = window.innerHeight - document.querySelector('.js-hero-nav').offsetHeight;
 
   TweenLite.fromTo(window, .6, {
     scrollTo: {y: yFrom}
@@ -57,7 +55,7 @@ $('.main-content').on('pjax:beforeReplace', function () {
     scrollTo: {y: y},
     ease: Circ.easeInOut,
     onComplete: function () {
-      // TODO hide header?
+      console.log('TODO hide header');
       // addClass(document.querySelector('.hero'), 'hero--hidden');
       // window.scrollTo(0,0);
     }
@@ -65,4 +63,9 @@ $('.main-content').on('pjax:beforeReplace', function () {
 
   firstLoad = false;
 });
-
+// document.addEventListener('page:change', function () {
+//   console.log('CHANGE');
+// });
+// document.addEventListener('page:load', function () {
+//   console.log('LOAD');
+// });
