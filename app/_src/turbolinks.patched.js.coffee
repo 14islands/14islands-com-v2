@@ -30,7 +30,7 @@ transitionCacheFor = (url) ->
 enableTransitionCache = (enable = true) ->
   transitionCacheEnabled = enable
 
-fetchReplacement = (url, onLoadFunction = =>) ->
+fetchReplacement = (url, onLoadFunction) ->
   triggerEvent 'page:fetch', url: url.absolute
 
   xhr?.abort()

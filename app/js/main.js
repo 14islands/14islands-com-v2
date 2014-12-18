@@ -1,3 +1,5 @@
+/* global TweenLite, Circ, Turbolinks  */
+
 function addClass(el, className) {
   if (el.classList)
     el.classList.add(className);
@@ -19,7 +21,7 @@ var firstLoad = true;
 
 // get height of header
 var el = document.querySelector('.js-hero-nav');
-var rect = el.getBoundingClientRect()
+var rect = el.getBoundingClientRect();
 var y = rect.top + document.body.scrollTop;
 var yFrom = y;
 
@@ -29,11 +31,11 @@ function bindHomeLink() {
   aHome.addEventListener('click', function (e) {
     e.preventDefault();
     console.log('click home');
-    TweenLite.to(window, .6, {
+    TweenLite.to(window, 0.6, {
       scrollTo: {y: 0},
       ease: Circ.easeInOut,
       onComplete: function () {
-        Turbolinks.visit('/')
+        Turbolinks.visit('/');
       }
     });
     return false;
@@ -48,7 +50,7 @@ document.addEventListener('page:change', function () {
     yFrom = document.body.scrollTop;
   }
 
-  TweenLite.fromTo(window, .6, {
+  TweenLite.fromTo(window, 0.6, {
     scrollTo: {y: yFrom}
   },
   {

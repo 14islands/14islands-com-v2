@@ -346,7 +346,8 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= yeoman.app %>/js/**/*.js',
+        //'<%= yeoman.app %>/js/**/*.js',
+        '<%= yeoman.app %>/js/*.js',
         'test/spec/**/*.js'
       ]
     },
@@ -420,7 +421,7 @@ module.exports = function (grunt) {
     'coffeelint:check',
     'coffee:dist',
     'jshint:all',
-    'csslint:check'
+    //'csslint:check'
   ]);
 
   grunt.registerTask('build', [
