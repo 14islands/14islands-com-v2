@@ -264,6 +264,13 @@ module.exports = function (grunt) {
       }
     },
     svgmin: {
+      // options: {
+      //     plugins: [
+      //         {
+      //             mergePaths: false
+      //         }
+      //     ]
+      // },
       dist: {
         files: [{
           expand: true,
@@ -439,7 +446,7 @@ module.exports = function (grunt) {
     'svgmin',
     'filerev',
     'usemin',
-    'htmlmin'
+    //'htmlmin'
     ]);
 
   grunt.registerTask('deploy', [
