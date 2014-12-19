@@ -1,9 +1,10 @@
 # global $, TweenLite, Circ, Turbolinks
 window.FOURTEEN ?= {}
 
-class FOURTEEN.Navigation
+# Class for all Pjax navigation logic - including scrolling
+class FOURTEEN.PjaxNavigation
 
-  constructor: (@navigationSelector, @btnHomeSelector, @contentSelector) ->
+  constructor: (@navigationSelector, @btnHomeSelector, @contentSelector, @onLoadCallback) ->
     @$content = $(@contentSelector)
     @$navigation = $(@navigationSelector)
     @$btnHome = $(@btnHomeSelector)
@@ -23,6 +24,7 @@ class FOURTEEN.Navigation
     # hook up scrolling logic before showing new page
     @$content.on('pjax:beforeReplace', @onBeforeReplace)
     @$content.on('pjax:success', @onScrollToNavigation)
+    @$content.on('pjax:success', @onLoadCallback)
 
   onBeforeReplace: =>
     # always scroll from current scroll position before replacing content below
@@ -37,8 +39,7 @@ class FOURTEEN.Navigation
     {
       scrollTo: {y: @yTo}
       ease: Circ.easeInOut
-      onComplete: ->
-        ResponsiveIO.refresh()
+      #onComplete: ->
         # TODO hide header?
         # addClass(document.querySelector('.hero'), 'hero--hidden')
         # window.scrollTo(0,0)

@@ -1,32 +1,61 @@
+
+// make all images responsive by default
 img {
   border: 0;
   height: auto;
-  width: 100%;
+  width: 100%; // allow upscaling to avoid problems with ratio
   vertical-align: middle;
   -ms-interpolation-mode: bicubic;
 }
 
+// make responsive.io images hidden while loading
 img[data-src] {
   visibility: hidden;
 }
 
+
+@keyframes fadeInContentImage {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+// content images have:
+//  - negative margins
+//  - fade in animation on load event
 .content-image {
   margin-top: 5%;
   margin-bottom: 5%;
+
+  img {
+    will-change: opacity;
+    opacity: 0;
+
+    // class added my main.coffee
+    &.image-loaded {
+      animation-name: fadeInContentImage;
+      animation-duration: 1s;
+      animation-timing-function: $easeOutQuad;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+    }
+  }
 }
 
+// padding-bottom hack to avoid reflows on responsive images
 .ratio {
   position: relative;
   height: 0;
   overflow: hidden;
 
-  // David: should we have a bg while the image is loading?
+  // David: should we have a bg while the image is loading? might be nice
   background: #f9f9f9;
 
   img {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
   }
 }
 
