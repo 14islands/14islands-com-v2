@@ -6,6 +6,8 @@ heading: Google Santa Tracker
 color: '#00abf6'
 description: Making Christmas happen again with Santa.
 image: /images/work/googlesanta/list-illustration.png
+priority: 3
+private: false
 ---
 
 # Google Santa Tracker

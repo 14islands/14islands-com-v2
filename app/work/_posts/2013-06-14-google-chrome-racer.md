@@ -6,6 +6,8 @@ heading: Google Chrome Racer
 color: '#090a0a'
 description: Retro-style slot car gaming played across screens
 image: /images/work/racer/list-illustration.png
+priority: 5
+private: false
 ---
 
 # Racer

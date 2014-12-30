@@ -5,6 +5,8 @@ title: responsive.io - 14islands
 heading: responsive.io
 color: '#4aa0ba'
 description: Perfect images for every screen
+priority: 6
+private: true
 ---
 
 # responsive.io

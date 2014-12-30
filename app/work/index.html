@@ -10,7 +10,8 @@ title: Our Work - 14islands
   </header>
 
   <div class="block--wide-centered">
-  {% for post in site.categories.work %}
+  {% assign sorted_pages = (site.categories.work | sort: 'priority') %}
+  {% for post in sorted_pages %}
     {% unless post.private and site.hide_private %}
     <a href="{{ post.permalink }}">
       <article class="box" {% if post.color %} style="background-color: {{ post.color }};" {% endif %}>
