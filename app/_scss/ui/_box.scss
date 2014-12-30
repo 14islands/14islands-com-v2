@@ -4,8 +4,6 @@
 	position: relative;
 	margin-bottom: 3rem;
 
-  @extend .wide-grid;
-
 	&:after{
 		content: "";
 		display: block;
@@ -41,6 +39,9 @@
 }
 
 .box__subline {
+	@include if-wider-than(880px) {
+    //font-size: modular-scale(1.2rem, 1);
+  }
 }
 
 .box__graphic  {

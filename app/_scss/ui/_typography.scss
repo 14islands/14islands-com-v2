@@ -34,6 +34,10 @@ html {
 
 }
 
+/**
+ * Headings
+ */
+
 %h1 {
   font-size: modular-scale(1rem, 4);
   margin-top: 2 * modular-scale(1rem, 1);
@@ -108,7 +112,6 @@ h4 {
   }
 }
 
-q,
 h1,
 h2,
 h3,
@@ -121,21 +124,10 @@ h5 {
   hyphens: none;
 }
 
-b,
-strong {
-  font-weight: 700;
-}
 
-cite {
-  border: 0;
-}
-
-cite,
-dfn,
-em,
-i {
-  font-style: italic;
-}
+/**
+ * Paragraphs
+ */
 
 p,
 li {
@@ -161,6 +153,30 @@ p {
 ul,
 ol {
   margin: 0 0 .5rem 1.5rem;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+cite {
+  border: 0;
+}
+
+cite,
+dfn,
+em,
+i {
+  font-style: italic;
+}
+
+/**
+ * Custom styles
+ */
+
+.nano {
+  font-size: modular-scale(.8rem, 1);
 }
 
 /**

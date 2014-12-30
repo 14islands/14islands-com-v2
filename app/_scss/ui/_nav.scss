@@ -23,9 +23,43 @@
 
 .nav__item {
 	display: inline-block;
+	vertical-align: top;
 	padding: 0;
-	margin-right: 2rem;
+	margin-right: 1.6rem;
 	margin-bottom: 0;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@include if-wider-than($breakpoint-two-px) {
+		margin-right: 2rem;
+  }
+}
+
+.nav__item--logo {
+	@extend .nav__item;
+	margin-right: 2rem;
+	@include if-wider-than($breakpoint-two-px) {
+		margin-right: 4rem;
+  }
+	@include if-wider-than($breakpoint-three-px) {
+    position: absolute;
+    left: $grid-gap-px;
+  }
+}
+
+.nav__logo-clean {
+	display: block;
+	height: (25px/1.5);
+	width: (60px/1.5);
+	margin: 22px 0;
+
+	@include if-wider-than($breakpoint-two-px) {
+		height: 25px;
+		width: 60px;
+		margin: 25px 0;
+  }
 }
 
 .nav__link {
@@ -36,4 +70,13 @@
 	&:visited {
 		color: #666;
 	}
+
+	span {
+		display: none;
+	}
+	@include if-wider-than($breakpoint-two-px) {
+		span {
+			display: inline;
+		}
+  }
 }

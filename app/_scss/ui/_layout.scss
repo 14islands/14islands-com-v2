@@ -17,16 +17,17 @@ body {
 }
 
 .block--centered {
-  max-width: $grid-max-width;
+  position: relative;
+  max-width: $grid-max-width-px;
   width: 100%;
   margin: 0 auto;
-  padding-left: $side-padding;
-  padding-right: $side-padding;
+  padding-left: $side-padding-px;
+  padding-right: $side-padding-px;
 }
 
 .block--wide-centered {
   @extend .block--centered;
-  max-width: $grid-wide-max-width;
+  max-width: $grid-wide-max-width-px;
 }
 
 .u--pad-top {
@@ -42,13 +43,12 @@ body {
   @extend .u--pad-bottom;
 }
 
-
 .main-content {
   margin-top: $default-section-margin;
 }
 
 .svg {
-	display: inline-block;
+	display: block;
   height: 100%;
   width: 100%;
   vertical-align: middle;
@@ -76,11 +76,4 @@ body {
 
 .header__desc {
 	color: #888;
-}
-
-.wide-grid {
-  @include if-wider-than($breakpoint-three-px) {
-    margin-left: -10%;
-    margin-right: -10%;
-  }
 }
