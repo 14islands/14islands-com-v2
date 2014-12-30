@@ -46,4 +46,6 @@ $breakpoint-three: 1600;
 $breakpoint-three-px: #{$breakpoint-three}px;
 
 // GRID STUFFZ
-$grid-max-width: 1250px;
+$side-padding: 16px;
+$grid-max-width: 786px + (2*$side-padding);
+$grid-wide-max-width: 1178px + (2*$side-padding);

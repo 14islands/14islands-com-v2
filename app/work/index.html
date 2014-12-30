@@ -4,62 +4,66 @@ id: work
 title: Our Work - 14islands
 ---
 
-<header class="header">
-	<h1 class="header__title">We explore ideas and
-build great stuff.</h1>
-</header>
+<section class="u--pad-bottom">
+  <header class="header block--centered">
+  <h1 class="header__title">We explore ideas<br> and build great stuff.</h1>
+  </header>
 
+  <div class="block--wide-centered">
+  {% for post in site.categories.work %}
+    {% unless post.private and site.hide_private %}
+    <a href="{{ post.permalink }}">
+      <article class="box" {% if post.color %} style="background-color: {{ post.color }};" {% endif %}>
+        {% capture thecycle %}{% cycle 'even', 'odd' %}{% endcapture %}
+        {% if thecycle == 'even' %}
+        <svg class="box__shape box__shape--odd" viewBox="-375 -27.5 1310 655" enable-background="new -375 -27.5 1310 655">
+          <g fill="{{post.color}}">
+            <polyline points="935,62.3 935,-27.5 -371.1,-7.8  "/>
+            <rect x="-375" y="-8" width="1310" height="635.5"/>
+          </g>
+        </svg>
+        {% else %}
+        <svg class="box__shape box__shape--odd" viewBox="-375 -27.5 1310 655" enable-background="new -375 -27.5 1310 655">
+          <g fill="{{post.color}}">
+            <polyline points="-375,62.3 -375,-27.5 931.1,-7.8   "/>
+            <rect x="-375" y="-8" width="1310" height="635.5"/>
+          </g>
+        </svg>
+        {% endif %}
 
-{% for post in site.categories.work %}
-  {% unless post.private and site.hide_private %}
-  <a href="{{ post.permalink }}">
-  	<article class="box" {% if post.color %} style="background-color: {{ post.color }};" {% endif %}>
-  		{% capture thecycle %}{% cycle 'even', 'odd' %}{% endcapture %}
-  		{% if thecycle == 'even' %}
-  		<svg class="box__shape box__shape--odd" viewBox="-375 -27.5 1310 655" enable-background="new -375 -27.5 1310 655">
-        <g fill="{{post.color}}">
-          <polyline points="935,62.3 935,-27.5 -371.1,-7.8  "/>
-          <rect x="-375" y="-8" width="1310" height="635.5"/>
-        </g>
-      </svg>
-  		{% else %}
-  		<svg class="box__shape box__shape--odd" viewBox="-375 -27.5 1310 655" enable-background="new -375 -27.5 1310 655">
-  			<g fill="{{post.color}}">
-          <polyline points="-375,62.3 -375,-27.5 931.1,-7.8   "/>
-          <rect x="-375" y="-8" width="1310" height="635.5"/>
-        </g>
-  		</svg>
-  		{% endif %}
-
-      <div class="box__content">
-        <div class="box__graphic {{ post.imageClass }}">
-          <img src="{{post.image}}"/>
+        <div class="box__content">
+          <div class="box__graphic {{ post.imageClass }}">
+            <img src="{{post.image}}"/>
+          </div>
+          <p class="box__subline">{{ post.heading }}</p>
+          <h2 class="box__headline">{{ post.description }}</h2>
         </div>
-        <p class="box__subline">{{ post.heading }}</p>
-        <h2 class="box__headline">{{ post.description }}</h2>
-     	</div>
-   	</article>
-  </a>
-  {% endunless %}
-{% endfor %}
+      </article>
+    </a>
+    {% endunless %}
+  {% endfor %}
+  </div>
+</section>
 
-
-<h2 class="header__title">We’ve had the pleasure of working with great people.</h2>
-
-<ul>
-	<li>Montinvest</li>
-	<li>Elastica</li>
-	<li>UENO</li>
-	<li>Tictail</li>
-	<li>3Dissue</li>
-	<li>Moodelizer</li>
-	<li>FJORD</li>
-	<li>Google</li>
-	<li>Kambi Sports Solutions</li>
-	<li>Fantasy Interactive</li>
-	<li>Appear Networks</li>
-	<li>Diktator Interactive</li>
-	<li>Studio Kallbom</li>
-	<li>Theodore</li> <!-- Maybe -->
-</ul>
+<section class="u-bg-bright u--pad-both">
+  <div class="block--centered">
+    <h2 class="header__title">We’ve had the pleasure of working with great people.</h2>
+   <ul>
+    <li>Montinvest</li>
+    <li>Elastica</li>
+    <li>UENO</li>
+    <li>Tictail</li>
+    <li>3Dissue</li>
+    <li>Moodelizer</li>
+    <li>FJORD</li>
+    <li>Google</li>
+    <li>Kambi Sports Solutions</li>
+    <li>Fantasy Interactive</li>
+    <li>Appear Networks</li>
+    <li>Diktator Interactive</li>
+    <li>Studio Kallbom</li>
+    <li>Theodore</li>
+  </ul>
+  </div>
+</section>
 

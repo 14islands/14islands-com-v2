@@ -94,6 +94,18 @@ h4 {
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1;
+
+  ul + &,
+  ol + &,
+  p + &,
+  blockquote + &,
+  q + & {
+    margin-top: 3rem;
+  }
+
+  .u-bg-natt-dark & {
+    color: white;
+  }
 }
 
 q,
@@ -125,10 +137,9 @@ i {
   font-style: italic;
 }
 
-p {
+p,
+li {
   font-size: modular-scale(1rem, 1);
-  max-width: 700px;
-  margin: 0 0 1rem;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
@@ -136,11 +147,51 @@ p {
   hyphens: auto;
   word-wrap: break-word;
   -webkit-font-smoothing: antialiased;
+
+  .u-bg-natt-dark & {
+    color: #eee;
+  }
 }
 
-blockquote,
+p {
+  margin: 0 0 1rem;
+  max-width: 700px;
+}
+
+ul,
+ol {
+  margin: 0 0 .5rem 1.5rem;
+}
+
+/**
+ * Quotes
+ */
+
+blockquote {
+  display: block;
+  margin: 2rem 1rem;
+}
+
+blockquote p,
 q {
+  font-size: modular-scale(1rem, 2);
+  font-weight: 100;
+  font-style: italic;
+  line-height: 1.4;
+  color: #333333;
   quotes: none;
+
+  text-rendering: optimizeLegibility;
+}
+
+@media (min-width: $breakpoint-two-px) {
+  blockquote {
+    margin: 3rem 2rem;
+  }
+  blockquote p,
+  q {
+    //font-size: modular-scale(1rem, 2);
+  }
 }
 
 blockquote:before,

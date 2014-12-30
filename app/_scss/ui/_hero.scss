@@ -64,12 +64,12 @@
 }
 
 .hero__logo {
-  @extend .grid-wrapper;
+  @extend .block--centered;
   margin-top: 2rem;
 }
 
 .hero__caption {
-  @extend .grid-wrapper;
+  @extend .block--centered;
 	font-weight: 600;
 	margin-top: auto;
 	margin-bottom: auto;
@@ -82,10 +82,10 @@
   	font-size: modular-scale(1rem, 5);
   	line-height: 1;
   }
-  @media (min-height: 940px) and (min-width: 1600px) {
+  /*@media (min-height: 940px) and (min-width: 1600px) {
 		font-size: modular-scale(1rem, 6);
 		line-height: 1;
-	}
+	}*/
 }
 
 .hero__text {

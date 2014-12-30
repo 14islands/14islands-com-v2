@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html,
 body {
 	height: 100%;
@@ -10,20 +16,32 @@ body {
   }
 }
 
-.grid-wrapper {
+.block--centered {
   max-width: $grid-max-width;
+  width: 100%;
   margin: 0 auto;
-
-  width: 90%;
-  padding-left: 5%;
-  padding-right: 5%;
-
-  @include if-wider-than($breakpoint-two-px) {
-    width: 80%;
-    padding-left: 10%;
-    padding-right: 10%;
-  }
+  padding-left: $side-padding;
+  padding-right: $side-padding;
 }
+
+.block--wide-centered {
+  @extend .block--centered;
+  max-width: $grid-wide-max-width;
+}
+
+.u--pad-top {
+  padding-top: 5.5rem;
+}
+
+.u--pad-bottom {
+  padding-bottom: 5.5rem;
+}
+
+.u--pad-both {
+  @extend .u--pad-top;
+  @extend .u--pad-bottom;
+}
+
 
 .main-content {
   margin-top: $default-section-margin;
@@ -61,12 +79,8 @@ body {
 }
 
 .wide-grid {
-  @include if-wider-than($breakpoint-two-px) {
-    margin-left: -7%;
-    margin-right: -7%;
+  @include if-wider-than($breakpoint-three-px) {
+    margin-left: -10%;
+    margin-right: -10%;
   }
-}
-
-.about-page__section {
-  margin-bottom: $default-section-margin;
 }
