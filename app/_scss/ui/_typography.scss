@@ -26,6 +26,7 @@ html {
 
   font-size: 14px;
   line-height: 1.4;
+  color: $default-font-color;
 
   @include if-wider-than($breakpoint-two-px) {
     font-size: 18px;
