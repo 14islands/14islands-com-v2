@@ -1,0 +1,53 @@
+
+.footer {
+	margin-top: $default-section-margin;
+	margin-bottom: $default-section-margin;
+}
+
+.footer__logo {
+	width: 100px;
+	padding-bottom: 70px;
+	float: left;
+	svg {
+		width: 70px;
+	}
+	@include if-wider-than($breakpoint-two-px) {
+    width: 25%;
+    text-align: center;
+    svg {
+			width: 80px;
+		}
+  }
+}
+
+.footer__info {
+	position: relative;
+	@include if-wider-than($breakpoint-two-px) {
+    float: left;
+    width: 55%;
+  }
+}
+
+.footer__logo-title {
+	//display: none;
+	@include if-wider-than($breakpoint-two-px) {
+    display: block;
+  }
+}
+
+.footer__social {
+	clear: both;
+	padding-left: 100px;
+	margin-top: 1rem;
+	a {
+		display: block;
+		padding: .2rem 0;
+	}
+	@include if-wider-than($breakpoint-two-px) {
+    clear: none;
+    float: left;
+    width: 20%;
+    padding-left: 5%;
+    margin-top: 0;
+  }
+}

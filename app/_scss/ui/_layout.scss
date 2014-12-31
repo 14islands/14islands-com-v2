@@ -43,6 +43,7 @@ body {
   @extend .u--pad-bottom;
 }
 
+
 .main-content {
   margin-top: $default-section-margin;
 }
@@ -76,4 +77,11 @@ body {
 
 .header__desc {
 	color: #888;
+}
+
+.wide-grid {
+  @include if-wider-than($breakpoint-three-px) {
+    margin-left: -10%;
+    margin-right: -10%;
+  }
 }
