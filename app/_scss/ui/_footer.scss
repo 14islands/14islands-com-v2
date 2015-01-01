@@ -12,6 +12,9 @@
 	svg {
 		width: 70px;
 	}
+	@include if-wider-than(400px) {
+    padding-bottom: 0px;
+  }
 	@include if-wider-than($breakpoint-two-px) {
     width: 25%;
     text-align: center;
@@ -40,7 +43,7 @@
 .footer__social {
 	clear: both;
 	padding-left: 100px;
-	margin-top: 1rem;
+	margin-top: 4%;
 	a {
 		display: block;
 		padding: .2rem 0;
