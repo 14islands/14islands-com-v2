@@ -12,6 +12,11 @@
   svg {
     height: 60px;
     width: auto;
+    max-width: 200px;
+
+    // height: auto;
+    // width: 100px;
+
     * {
       fill: #fff;
     }
