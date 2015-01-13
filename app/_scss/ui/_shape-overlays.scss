@@ -1,0 +1,40 @@
+.shape-overlay {
+  position: absolute;
+
+  figcap {
+    color: #fff;
+    font-weight: 600;
+    font-style: italic;
+    position: absolute;
+
+    font-size: 1.2rem;
+    @include if-wider-than($breakpoint-three-px) {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.shape-overlay--top-left {
+  top: -5%;
+  left: -10%;
+  width: 50%;
+
+  figcap {
+    top: 19%;
+    right: 30%;
+    left: 23%;
+  }
+}
+
+.shape-overlay--bottom-right {
+  bottom: -15%;
+  right: -8%;
+  width: 40%;
+
+  figcap {
+    text-align: right;
+    top: 19%;
+    right: 22%;
+    left: 33%;
+  }
+}

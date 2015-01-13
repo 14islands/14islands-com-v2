@@ -25,6 +25,7 @@ img[data-src] {
 .content-image {
   margin-top: 5%;
   margin-bottom: 5%;
+  position: relative;
 
   img {
     will-change: opacity;
