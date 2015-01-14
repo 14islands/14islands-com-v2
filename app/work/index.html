@@ -17,30 +17,31 @@ title: Our Work - 14islands
       <article class="box" {% if post.color %} style="background-color: {{ post.color }};" {% endif %}>
         {% capture thecycle %}{% cycle 'even', 'odd' %}{% endcapture %}
         {% if thecycle == 'even' %}
-        <svg class="box__shape box__shape--odd" viewBox="-375 -27.5 1310 655" enable-background="new -375 -27.5 1310 655">
-          <g fill="{{post.color}}">
-            <polyline points="935,62.3 935,-27.5 -371.1,-7.8  "/>
-            <rect x="-375" y="-8" width="1310" height="635.5"/>
-          </g>
-        </svg>
+          <svg class="box__shape box__shape--odd" viewBox="-375 -27.5 1310 655" enable-background="new -375 -27.5 1310 655">
+            <g fill="{{post.color}}">
+              <polyline points="935,62.3 935,-27.5 -371.1,-7.8  "/>
+              <rect x="-375" y="-8" width="1310" height="635.5"/>
+            </g>
+          </svg>
         {% else %}
-        <svg class="box__shape box__shape--odd" viewBox="-375 -27.5 1310 655" enable-background="new -375 -27.5 1310 655">
-          <g fill="{{post.color}}">
-            <polyline points="-375,62.3 -375,-27.5 931.1,-7.8   "/>
-            <rect x="-375" y="-8" width="1310" height="635.5"/>
-          </g>
-        </svg>
+          <svg class="box__shape box__shape--odd" viewBox="-375 -27.5 1310 655" enable-background="new -375 -27.5 1310 655">
+            <g fill="{{post.color}}">
+              <polyline points="-375,62.3 -375,-27.5 931.1,-7.8   "/>
+              <rect x="-375" y="-8" width="1310" height="635.5"/>
+            </g>
+          </svg>
         {% endif %}
 
         <div class="box__content">
-          <div class="box__graphic {{ post.imageClass }}">
+          <div class="box__content__img {{ post.imageClass }}">
             <img src="{{post.image}}"/>
           </div>
-          <div class="box__logo">
+          <div class="box__content__logo">
             {% include client-logos/{{post.logo}} %}
           </div>
-          <!--p class="box__subline">{{ post.heading }}</p-->
-          <h2 class="box__headline">{{ post.description }}</h2>
+          <!--p class="box__content__subline">{{ post.heading }}</p-->
+          <h2 class="box__content__headline">{{ post.description }}</h2>
+          <span class="box__content__cta">Read Case Study</span>
         </div>
       </article>
     </a>
@@ -83,7 +84,7 @@ title: Our Work - 14islands
         {% include client-logos/fjord.svg %}
       </li>
 
-      <li class="client-list__item" title="UPPERQUAD">
+      <li class="client-list__item" title="Montgomery Investment Management">
         {% include client-logos/montgomery.svg %}
       </li>
 
