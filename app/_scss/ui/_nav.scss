@@ -24,25 +24,10 @@
 .nav__item {
 	display: inline-block;
 	vertical-align: top;
-	padding: 0;
-	margin-right: 1.6rem;
-	margin-bottom: 0;
-
-	&:last-child {
-		margin-right: 0;
-	}
-
-	@include if-wider-than($breakpoint-two-px) {
-		margin-right: 2rem;
-  }
 }
 
 .nav__item--logo {
 	@extend .nav__item;
-	margin-right: 2rem;
-	@include if-wider-than($breakpoint-two-px) {
-		margin-right: 4rem;
-  }
 	@include if-wider-than($breakpoint-three-px) {
     position: absolute;
     left: $grid-gap-px;
@@ -53,18 +38,25 @@
 	display: block;
 	height: (25px/1.5);
 	width: (60px/1.5);
-	margin: 22px 0;
+	margin: 24px 0;
 
+	margin-right: .85rem;
 	@include if-wider-than($breakpoint-two-px) {
 		height: 25px;
 		width: 60px;
-		margin: 25px 0;
+		margin: 28px 0;
+		margin-right: 1.5rem;
+  }
+  @include if-wider-than($breakpoint-three-px) {
+		margin-right: 0;
   }
 }
 
 .nav__link {
 	display: block;
 	letter-spacing: 0.04rem;
+	line-height: normal;
+	font-size: 1.3rem;
 
 	&,
 	&:visited {
@@ -78,5 +70,10 @@
 		span {
 			display: inline;
 		}
+  }
+
+  padding: 21px .85rem;
+	@include if-wider-than($breakpoint-two-px) {
+		padding: 30px 1.5rem;
   }
 }
