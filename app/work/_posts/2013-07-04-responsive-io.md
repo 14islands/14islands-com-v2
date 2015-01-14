@@ -2,6 +2,7 @@
 layout: post
 permalink: /work/responsive.io
 title: responsive.io - 14islands
+logo: 14islands.svg
 heading: responsive.io
 color: '#4aa0ba'
 description: Perfect images for every screen

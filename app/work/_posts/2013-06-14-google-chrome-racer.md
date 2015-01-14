@@ -2,9 +2,10 @@
 layout: post
 permalink: /work/racer
 title: Google Chrome Racer - 14islands
+logo: google.svg
 heading: Google Chrome Racer
 color: '#090a0a'
-description: Retro-style slot car gaming played across screens
+description: Retro-style slot car gaming played across screens.
 image: /images/work/racer/list-illustration.png
 priority: 5
 private: false

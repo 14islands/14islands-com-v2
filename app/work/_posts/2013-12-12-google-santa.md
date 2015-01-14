@@ -2,9 +2,10 @@
 layout: post
 permalink: /work/google-santa
 title: Google Santa Tracker - 14islands
+logo: google.svg
 heading: Google Santa Tracker
 color: '#00abf6'
-description: Making Christmas happen again with Santa.
+description: Follow Santa and his elves with Santa Tracker.
 image: /images/work/googlesanta/list-illustration.png
 priority: 3
 private: false

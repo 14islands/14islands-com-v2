@@ -36,7 +36,10 @@ title: Our Work - 14islands
           <div class="box__graphic {{ post.imageClass }}">
             <img src="{{post.image}}"/>
           </div>
-          <p class="box__subline">{{ post.heading }}</p>
+          <div class="box__logo">
+            {% include client-logos/{{post.logo}} %}
+          </div>
+          <!--p class="box__subline">{{ post.heading }}</p-->
           <h2 class="box__headline">{{ post.description }}</h2>
         </div>
       </article>
