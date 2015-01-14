@@ -31,7 +31,6 @@ html {
   @include if-wider-than($breakpoint-two-px) {
     font-size: 18px;
   }
-
 }
 
 /**
