@@ -2,11 +2,21 @@
 // Logo variations
 //
 
+$logo-rect-height-px: 65px;
+$logo-rect-width-px: 190px;
+
 .logo-rect {
 	display: block;
-	height: 65px;
-	width: 190px;
+	height: $logo-rect-height-px/1.5;;
+	width: $logo-rect-width-px/1.5;
 	margin-top: 1rem;
+
+	@include if-wider-than($breakpoint-two-px) {
+    // h1 size
+    font-size: modular-scale(1rem, 5);
+    width: $logo-rect-width-px;
+    height: $logo-rect-height-px;
+  }
 }
 
 .page {

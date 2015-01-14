@@ -12,7 +12,7 @@ body {
 body {
   transition: opacity .3s $easeOutQuad;
   .hide-on-load & {
-    //opacity: 0;
+    opacity: 0;
   }
 }
 

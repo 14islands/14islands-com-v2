@@ -1,4 +1,8 @@
+{% if page.id == 'home' %}
 <section class="hero">
+{% else %}
+<section class="hero hero--hidden">
+{% endif %}
     <header class="hero__logo">
         <a href="/" class="logo-rect"><svg class="svg"><use xlink:href="#shape-logo-rect" /></svg></a>
     </header>
