@@ -107,7 +107,7 @@
   animation-fill-mode: backwards;
 }
 
-.page:not(.page-home) {
+.hero--hidden {
 	.hero__nav {
 		border-bottom: 1px solid #f5f5f5;
 	}
