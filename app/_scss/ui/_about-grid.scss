@@ -1,0 +1,15 @@
+.about-grid {
+  display: inline-block;
+  margin: auto;
+}
+
+.about-grid__row {
+
+}
+
+.about-grid__row__item {
+  width: 360px;
+  height: 360px;
+  outline: 1px solid hotpink;
+  float: left;
+}
