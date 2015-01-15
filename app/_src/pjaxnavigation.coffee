@@ -99,13 +99,12 @@ class FOURTEEN.PjaxNavigation
         # short transition when moving between pages
         TweenLite.fromTo(@$content[0], 0.5, {
           y: @yTo/3
-          #opacity: 0
+          opacity: 0
           display: 'block'
         },
         {
           y: 0,
-          #opacity: 1
-          delay: 0.1
+          opacity: 1
           ease: Circ.easeOut
           clearProps: 'all'
         })
