@@ -30,6 +30,13 @@
 	@include if-wider-than($breakpoint-two-px) {
     float: left;
     width: 55%;
+    p {
+    	margin-bottom: 1.4rem;
+    }
+    p:last-child {
+    	margin-bottom: 0;
+    }
+
   }
 }
 
@@ -54,5 +61,8 @@
     width: 20%;
     padding-left: 5%;
     margin-top: 0;
+    a {
+			padding: 0;
+		}
   }
 }
