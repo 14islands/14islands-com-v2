@@ -46,6 +46,7 @@ body {
 
 .main-content {
   margin-top: $default-section-margin;
+  padding-top: pxToRem(80); // same as nav height
 }
 
 .svg {
