@@ -1,0 +1,14 @@
+
+.office__street-view {
+	display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px; 
+  width: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+.touch .office__street-view {
+  pointer-events: none; 
+}
