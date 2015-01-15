@@ -9,6 +9,15 @@
 
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
+    <script>
+        // hide body to avoid flashing unstyled content
+        document.documentElement.className += ' hide-on-load';
+        // make body visible after dom loaded
+        document.addEventListener('DOMContentLoaded', function(){
+          $(document.documentElement).removeClass('hide-on-load');
+        });
+    </script>
+
     <!-- build:css({app,.tmp}) /css/main.css -->
     <link rel="stylesheet" href="/css/syntax.css">
     <link rel="stylesheet" href="/css/main.css">
@@ -19,23 +28,14 @@
     <script src="/_bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
-    <script>
-        // hide body to avoid flashing unstyled content
-        document.documentElement.className += ' hide-on-load';
-        // make body visible after dom loaded
-        document.addEventListener('DOMContentLoaded', function(){
-          $(document.documentElement).removeClass('hide-on-load');
-        });
-    </script>
-
-    <link rel="prefetch" href="/work">
+    <!--link rel="prefetch" href="/work">
     <link rel="prefetch" href="/about">
     <link rel="prefetch" href="/notes">
     <link rel="prefetch" href="/contact">
     <link rel="prerender" href="/work">
     <link rel="prerender" href="/about">
     <link rel="prerender" href="/notes">
-    <link rel="prerender" href="/contact">
+    <link rel="prerender" href="/contact"-->
   </head>
   <body id="" class="page page-{{page.id}}">
 
