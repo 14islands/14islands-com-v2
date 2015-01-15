@@ -12,6 +12,7 @@ class FOURTEEN.OfficeStreetView
 	LOADED_CLASS_TIMEOUT = 700
 
 	constructor: (@$context) ->
+		console.log("initialize map")
 		@context = @$context.get(0);
 		@init()
 
@@ -33,8 +34,8 @@ class FOURTEEN.OfficeStreetView
       disableDefaultUI: true,
       scrollwheel: false,
       pov: {
-        heading: 165,
-        pitch: 0
+        heading: 336.54,
+        pitch: 20
       },
       zoom: 1
     }
