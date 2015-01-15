@@ -1,5 +1,3 @@
-window.FOURTEEN ?= {}
-
 
 # listen for load even on image tags loaded by responsive.io
 FOURTEEN.listenForResponsive_ioImageLoad = ->
@@ -15,8 +13,12 @@ FOURTEEN.listenForResponsive_ioImageLoad = ->
 
 # Logic to run after page has been loaded via PJAX
 FOURTEEN.onPjaxLoad = ->
+  # responsive images
   FOURTEEN.listenForResponsive_ioImageLoad()
   ResponsiveIO.refresh()
+
+  # components
+  FOURTEEN.componentLoader.scan()
 
 
 
@@ -30,3 +32,5 @@ new FOURTEEN.PjaxNavigation('.js-hero-nav',
                             '.js-nav-home',
                             '.js-pjax-container',
                             FOURTEEN.onPjaxLoad)
+
+FOURTEEN.componentLoader.start()
