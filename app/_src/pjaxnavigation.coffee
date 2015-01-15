@@ -41,14 +41,14 @@ class FOURTEEN.PjaxNavigation
     i = xhr.url.lastIndexOf('/')
     pageId = xhr.url.slice(i + 1)
 
-    @$body.removeClass('page-' + @currentPageId);
+    @$body.removeClass('page-' + @currentPageId)
 
     if pageId
       @currentPageId = pageId
     else
       @currentPageId = @DEFAULT_ID
 
-    @$body.addClass('page-' + @currentPageId);
+    @$body.addClass('page-' + @currentPageId)
 
 
   calculateY: =>
@@ -63,12 +63,12 @@ class FOURTEEN.PjaxNavigation
     if @currentPageId is @DEFAULT_ID
       TweenLite.to(@$hero[0], 0.8,
       {
-        y: @yTo * -1,
-        ease: Circ.easeInOut,
+        y: @yTo * -1
+        ease: Circ.easeInOut
         clearProps: 'all'
         onComplete: =>
-          console.log('hide hero');
-          @$hero.addClass('hero--hidden');
+          console.log('hide hero')
+          @$hero.addClass('hero--hidden')
       })
 
 
@@ -86,27 +86,27 @@ class FOURTEEN.PjaxNavigation
       # long transition when coming from the home page
       if @currentPageId is @DEFAULT_ID
         TweenLite.fromTo(@$content[0], 0.8, {
-          y: @yTo,
+          y: @yTo
           display: 'block'
         },
         {
           y: 0
-          ease: Circ.easeInOut,
-          delay: 0.1,
+          ease: Circ.easeInOut
+          delay: 0.1
           clearProps: 'all'
         })
       else
         # short transition when moving between pages
         TweenLite.fromTo(@$content[0], 0.5, {
-          y: @yTo/3,
-          #opacity: 0,
+          y: @yTo/3
+          #opacity: 0
           display: 'block'
         },
         {
           y: 0,
-          #opacity: 1,
-          delay: 0.1,
-          ease: Circ.easeOut,
+          #opacity: 1
+          delay: 0.1
+          ease: Circ.easeOut
           clearProps: 'all'
         })
 
@@ -123,7 +123,7 @@ class FOURTEEN.PjaxNavigation
       TweenLite.set(@$hero[0], {
         y: @yTo * -1,
       })
-      @$hero.removeClass('hero--hidden');
+      @$hero.removeClass('hero--hidden')
 
       # transition hero
       TweenLite.fromTo(@$hero[0], 0.6, {
@@ -131,8 +131,8 @@ class FOURTEEN.PjaxNavigation
       },
       {
         y: 0
-        delay: 0.2,
-        ease: Circ.easeInOut,
+        delay: 0.2
+        ease: Circ.easeInOut
         clearProps: 'all'
         onComplete: =>
           # tell pjax to nav to home page
@@ -145,6 +145,6 @@ class FOURTEEN.PjaxNavigation
       },
       {
         y: @yTo
-        ease: Circ.easeInOut,
+        ease: Circ.easeInOut
         display: 'none'
       })
