@@ -1,4 +1,10 @@
 
+# init FastClick
+$( ->
+  FastClick.attach(document.body)
+)
+
+
 # listen for load even on image tags loaded by responsive.io
 FOURTEEN.listenForResponsive_ioImageLoad = ->
   $("img[data-src]").one("load", ->
