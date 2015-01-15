@@ -30,26 +30,11 @@ class FOURTEEN.PjaxNavigation
     @$btnHome.on('click', @onNavigateToHome)
 
     # hook up scrolling logic before showing new page
-    @$content.on('pjax:beforeReplace', @onBeforeReplace)
-    @$content.on('pjax:success', @onScrollToNavigation)
+    @$content.on('pjax:beforeReplace', @onHideHero)
+    @$content.on('pjax:beforeReplace', @onHideContent)
+    @$content.on('pjax:success', @onShowContent)
     @$content.on('pjax:success', @onUpdateBodyPageId)
     @$content.on('pjax:success', @onLoadCallback)
-
-
-  showHero: =>
-    @onBeforeReplace()
-    @$hero.removeClass('hero--hidden');
-    TweenLite.set(window, {
-      scrollTo: {y: @yTo}
-    })
-
-
-  hideHero: =>
-    @$hero.addClass('hero--hidden');
-    TweenLite.set(window, {
-      scrollTo: {y: 0}
-    })
-    # window.scrollTo(0,0)
 
 
   onUpdateBodyPageId:  (e, text, status, res, xhr, t) =>
@@ -66,38 +51,100 @@ class FOURTEEN.PjaxNavigation
     @$body.addClass('page-' + @currentPageId);
 
 
-  onBeforeReplace: =>
-    # always scroll from current scroll position before replacing content below
-    @yFrom = document.body.scrollTop
+  calculateY: =>
     # update position of navigation incase browser was resized since last time
     @yTo = window.innerHeight - @$navigation.outerHeight()
 
 
-  onScrollToNavigation: (e, text, status, res, xhr, t) =>
-    # don't scroll when going back to home page
-    unless xhr.url is "/"
-      @yTo = 0 if @$hero.hasClass('hero--hidden')
+  onHideHero: (e, text, xhr) =>
+    @calculateY()
 
-      TweenLite.fromTo(window, 0.6, {
-        scrollTo: {y: @yFrom}
-      },
+    # only hide hero if we were standing on the home page before navigating
+    if @currentPageId is @DEFAULT_ID
+      TweenLite.to(@$hero[0], 0.8,
       {
-        scrollTo: {y: @yTo}
-        ease: Circ.easeInOut
+        y: @yTo * -1,
+        ease: Circ.easeInOut,
+        clearProps: 'all'
         onComplete: =>
-          @hideHero()
+          console.log('hide hero');
+          @$hero.addClass('hero--hidden');
       })
 
 
-  onNavigateToHome: (e) =>
+  onHideContent: (e, text, xhr) =>
+    # hide content, unless we are going back to home page which slides out instead
+    unless xhr.url is "/"
+      TweenLite.set(@$content[0], {
+        display: 'none'
+      })
+
+
+  onShowContent: (e, text, status, res, xhr) =>
+    # don't run when going back to home page
+    unless xhr.url is "/"
+      # long transition when coming from the home page
+      if @currentPageId is @DEFAULT_ID
+        TweenLite.fromTo(@$content[0], 0.8, {
+          y: @yTo,
+          display: 'block'
+        },
+        {
+          y: 0
+          ease: Circ.easeInOut,
+          delay: 0.1,
+          clearProps: 'all'
+        })
+      else
+        # short transition when moving between pages
+        TweenLite.fromTo(@$content[0], 0.5, {
+          y: @yTo/3,
+          #opacity: 0,
+          display: 'block'
+        },
+        {
+          y: 0,
+          #opacity: 1,
+          delay: 0.1,
+          ease: Circ.easeOut,
+          clearProps: 'all'
+        })
+
+
+
+  onNavigateToHome: (e, text, status, res, xhr) =>
     e.preventDefault()
 
-    @showHero()
+    # abort if already on home page
+    unless @currentPageId is @DEFAULT_ID
+      @calculateY()
 
-    TweenLite.to(window, 0.6, {
-      scrollTo: {y: 0}
-      ease: Circ.easeInOut
-      onComplete: =>
-        # tell pjax to nav to home page
-        $.pjax({url: '/', container: @contentSelector, fragment: @contentSelector})
-    })
+      # show and prepare hero outside of viewport
+      TweenLite.set(@$hero[0], {
+        y: @yTo * -1,
+      })
+      @$hero.removeClass('hero--hidden');
+
+      # transition hero
+      TweenLite.fromTo(@$hero[0], 0.6, {
+        y: @yTo * -1,
+      },
+      {
+        y: 0
+        delay: 0.2,
+        ease: Circ.easeInOut,
+        clearProps: 'all'
+        onComplete: =>
+          # tell pjax to nav to home page
+          $.pjax({url: '/', container: @contentSelector, fragment: @contentSelector})
+      })
+
+      # transition content
+      TweenLite.fromTo(@$content[0], 0.8, {
+        y: 0
+      },
+      {
+        y: @yTo
+        ease: Circ.easeInOut,
+        display: 'none'
+      })
