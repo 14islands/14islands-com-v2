@@ -7,13 +7,13 @@
 
 .footer__logo {
 	width: 100px;
-	padding-bottom: 70px;
+	padding-bottom: 100px;
 	float: left;
 	svg {
 		width: 70px;
 	}
 	@include if-wider-than($breakpoint-one-px) {
-    padding-bottom: 0px;
+    padding-bottom: 10%;
   }
 	@include if-wider-than($breakpoint-two-px) {
     width: 25%;
