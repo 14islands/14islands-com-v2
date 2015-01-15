@@ -6,7 +6,7 @@ logo: google.svg
 heading: Google Santa Tracker
 color: '#00abf6'
 description: Follow Santa and his elves with Santa Tracker.
-image: /images/work/googlesanta/list-illustration.png
+image: /images/work/googlesanta/santa-tracker-illustration.svg
 priority: 3
 private: false
 ---
