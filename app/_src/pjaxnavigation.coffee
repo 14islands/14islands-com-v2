@@ -21,8 +21,7 @@ class FOURTEEN.PjaxNavigation
 
     # enable PJAX
     $(document).pjax('a', @contentSelector, {
-      fragment: @contentSelector,
-      duration: 1000
+      fragment: @contentSelector
     })
 
     # bind home link to first transition -> then navigate to home
@@ -46,9 +45,9 @@ class FOURTEEN.PjaxNavigation
         $.pjax({url: '/', container: @contentSelector, fragment: @contentSelector})
     )
 
+  # handle history event for home page link
   onPopState: (e) =>
     if @getPageIdFromUrl(e.state.url) is @HOMEPAGE_ID
-      console.log('POP home page')
       @onNavigateToHome(e, true)
 
 
@@ -66,7 +65,6 @@ class FOURTEEN.PjaxNavigation
 
 
   onPjaxBeforeReplace: (e, contents, options) =>
-    console.log('beforeReplace', @currentPageId, '->', @getPageIdFromUrl(options.url));
     @calculateY()
 
     # hide hero if we were standing on the home page before navigating
@@ -90,6 +88,19 @@ class FOURTEEN.PjaxNavigation
 
     @updateBodyPageId(options)
 
+
+  updateBodyPageId: (options) =>
+    pageId = @getPageIdFromUrl(options.url)
+    @$body.removeClass('page-' + @currentPageId)
+
+    if pageId
+      @currentPageId = pageId
+    else
+      @currentPageId = @HOMEPAGE_ID
+
+    console.log('update ID to', @currentPageId)
+
+    @$body.addClass('page-' + @currentPageId)
 
 
   hideHero: =>
@@ -123,14 +134,12 @@ class FOURTEEN.PjaxNavigation
 
 
   hideContent: =>
-    console.log('hide content');
     TweenLite.set(@$content[0], {
       display: 'none'
     })
 
 
   slideOutContent: (callback) =>
-    console.log('slide out content');
     TweenLite.fromTo(@$content[0], 0.8, {
       y: 0
       display: 'block'
@@ -141,20 +150,6 @@ class FOURTEEN.PjaxNavigation
       display: 'none',
       onComplete: callback
     })
-
-
-  updateBodyPageId: (options) =>
-    pageId = @getPageIdFromUrl(options.url)
-    @$body.removeClass('page-' + @currentPageId)
-
-    if pageId
-      @currentPageId = pageId
-    else
-      @currentPageId = @HOMEPAGE_ID
-
-    console.log('update ID to', @currentPageId)
-
-    @$body.addClass('page-' + @currentPageId)
 
 
   # long transition from hero
