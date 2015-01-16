@@ -1,0 +1,24 @@
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  background-color: $green;
+  border-radius: 50%;
+
+  margin: 0 auto;
+  animation: rotateplane 1.2s infinite ease-in-out;
+}
+
+.spinner--center,
+.spinner--products {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-left: -15px;
+  z-index: 99;
+}
+
+.no-js .spinner,
+.spinner--inactive {
+  display: none;
+}

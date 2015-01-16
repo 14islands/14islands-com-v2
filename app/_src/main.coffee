@@ -26,6 +26,8 @@ FOURTEEN.onPjaxLoad = ->
   # components
   FOURTEEN.componentLoader.scan()
 
+  console.log("onPjaxLoad")
+  $(document.body).trigger("pjax:done")
 
 
 
