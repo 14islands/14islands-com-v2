@@ -44,11 +44,22 @@
   font-size: modular-scale(1rem, 1);
   max-width: 45%;
 
+  // David: setting breakpoints just based on
+  // what looks good depending on our current titles
+  // is there a better way?
   @include if-wider-than(450px) {
     font-size: modular-scale(1rem, 2);
   }
 
   @include if-wider-than(650px) {
+    font-size: modular-scale(1rem, 3);
+  }
+
+  @include if-wider-than(768px) {
+    font-size: modular-scale(1rem, 2);
+  }
+
+  @include if-wider-than(900px) {
     font-size: modular-scale(1rem, 3);
   }
 

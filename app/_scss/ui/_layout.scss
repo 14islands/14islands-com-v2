@@ -21,8 +21,13 @@ body {
   max-width: $grid-max-width-px;
   width: 100%;
   margin: 0 auto;
-  padding-left: $side-padding-px;
-  padding-right: $side-padding-px;
+
+  padding-left: $side-padding-mobile;
+    padding-right: $side-padding-mobile;
+  @include if-wider-than($breakpoint-two-px) {
+    padding-left: $side-padding-grid-px;
+    padding-right: $side-padding-grid-px;
+  }
 }
 
 .block--wide-centered {
@@ -47,6 +52,10 @@ body {
 .main-content {
   margin-top: $default-section-margin;
   padding-top: pxToRem(80); // same as nav height
+
+  .page-home & {
+    display: none;
+  }
 }
 
 .svg {
