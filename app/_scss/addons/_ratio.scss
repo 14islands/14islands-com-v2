@@ -1,0 +1,61 @@
+/**
+ * Ratio classes for fluid ratio elements.
+ *
+ * Example usage:
+ *
+ * <div class="u-ratio u-ratio--4_3">
+ *   <div class="u-ratio__content">
+ *   	This is a 4:3 ratio with the padding trick.
+ *   </div>
+ * </div>
+ *
+ */
+.u-ratio {
+	position: relative;
+}
+
+.u-ratio--rounded {
+	border-radius: 4px;
+}
+ 
+.u-ratio--circle {
+	border-radius: 500px;
+}
+
+.u-ratio:before {
+	content: '';
+	display: block;
+	padding-top: 100%; /* default 1:1 ratio */
+}
+
+.u-ratio__content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.u-ratio--1_1:before {
+	padding-top: 100%;
+}
+
+.u-ratio--2_1:before {
+	padding-top: 50%;
+}
+
+.u-ratio--1_2:before {
+	padding-top: 200%;
+}
+
+.u-ratio--4_1:before {
+	padding-top: 25%;
+}
+
+.u-ratio--4_3:before {
+	padding-top: 75%;
+}
+
+.u-ratio--16_9:before {
+	padding-top: 56.25%;
+}

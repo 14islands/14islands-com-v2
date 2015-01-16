@@ -1,3 +1,17 @@
+###
+	Map Component
+ 
+	This component will render a google map street view in it's context.
+
+	@method
+	init()
+	- Initializes the header component
+
+	@method
+	render()
+	- Called when component is visible - if hidden while instanciating
+
+###
 class FOURTEEN.OfficeStreetView
 
 	DATA_FALLBACK = "fallback"
@@ -12,12 +26,10 @@ class FOURTEEN.OfficeStreetView
 	LOADED_CLASS_TIMEOUT = 700
 
 	constructor: (@$context) ->
-		console.log("initialize map")
 		@context = @$context.get(0);
 		@init()
 
 	init: ->
-    # Hello spinner
     @$spinner = @$context.find( SELECTOR_SPINNER )
     @isDisabledOnTouch = @$context.data( DATA_TOUCH_DISABLED ) || false
 
@@ -27,6 +39,7 @@ class FOURTEEN.OfficeStreetView
     else
       @showSpinner()
       google.maps.event.addDomListener(window, 'load', @initializeMap)
+      $(document).ajaxStop(@initializeMap)
 
   initializeMap: =>
     @panoramaOptions = {
@@ -34,12 +47,12 @@ class FOURTEEN.OfficeStreetView
       disableDefaultUI: true,
       scrollwheel: false,
       pov: {
-        heading: 336.54,
-        pitch: 20
+        heading: @$context.data('heading'),
+        pitch: @$context.data('pitch')
       },
       zoom: 1
     }
-
+    
     @pano = new google.maps.StreetViewPanorama(@context, @panoramaOptions)
     @pano.setVisible(true)
     @hideSpinner()
