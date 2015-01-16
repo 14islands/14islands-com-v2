@@ -67,7 +67,6 @@ class FOURTEEN.PjaxNavigation
         ease: Circ.easeInOut
         clearProps: 'all'
         onComplete: =>
-          console.log('hide hero')
           @$hero.addClass('hero--hidden')
       })
 
