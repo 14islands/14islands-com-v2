@@ -1,9 +1,16 @@
 
+.office {
+	position: relative;
+	margin-bottom: $default-section-margin;
+	@include if-wider-than($breakpoint-two-px) {
+    margin-bottom: 8%;
+  }
+}
+
 .office__street-view {
 	display: block;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 500px; 
   width: 100%; 
   margin: 0;
   padding: 0;
@@ -11,4 +18,68 @@
 
 .touch .office__street-view {
   pointer-events: none; 
+}
+
+.office__pointer-shape {
+  padding: 0 $side-padding-mobile;
+  svg {
+    display: none;
+  }
+  @include if-wider-than($breakpoint-two-px) {
+    padding: 0;
+    position: absolute;
+    bottom: 0%;
+    right: 17%;
+    width: 40%;
+    svg {
+      display: block;
+    }
+  }
+}
+
+.office__title-wrapper {
+	@include if-wider-than($breakpoint-two-px) {
+    position: absolute;
+	  bottom: 15%;
+	  right: 38%;
+	  text-align: right;
+  }
+  @include if-wider-than(1000px) {
+   	bottom: 22%;
+  }
+  @include if-wider-than($breakpoint-three-px) {
+   	bottom: 24%;
+  }
+}
+
+.office__subtitle {
+  @include if-wider-than($breakpoint-two-px) {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: normal;
+    font-size: 1.1rem;
+  }
+  @include if-wider-than($breakpoint-three-px) {
+   	font-size: 1.3rem;
+  }
+}
+
+.office__title {
+  @include if-wider-than($breakpoint-two-px) {
+    color: #fff;
+    margin: 0;
+    font-size: 1.3rem;
+  }
+  @include if-wider-than($breakpoint-three-px) {
+    font-size: 2.2rem;
+  }
+}
+
+.office__link,
+.office__link:visited {
+	@include if-wider-than($breakpoint-two-px) {
+    color: #fefefe;
+  }
 }
