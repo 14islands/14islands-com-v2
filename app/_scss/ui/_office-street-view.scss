@@ -3,7 +3,7 @@
 	position: relative;
 	margin-bottom: $default-section-margin;
 	@include if-wider-than($breakpoint-two-px) {
-    margin-bottom: 10%;
+    margin-bottom: 8%;
   }
 }
 
@@ -21,7 +21,7 @@
 }
 
 .office__pointer-shape {
-  padding: 0 $side-padding-px;
+  padding: 0 $side-padding-mobile;
   svg {
     display: none;
   }
