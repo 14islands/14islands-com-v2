@@ -53,7 +53,7 @@ class window.ComponentLoader
     componentsToCleanUp = []
     for id, instance of @registeredComponents
       exists = currentComponents[id] == true
-      unless exists
+      unless exists 
         instance.destroy?()
         componentsToCleanUp.push(id)
     delete @registeredComponents[id] for id in componentsToCleanUp

@@ -41,30 +41,31 @@ class FOURTEEN.OfficeStreetView
 			@$body.on("pjax:done", @initializeMap)
 			
 	initializeMap: =>
-		if @$body.is(".page-contact")
-			latLong = new google.maps.LatLng(@$context.data('latitude'), @$context.data('longitude'))
-			@panoramaOptions = {
-				position: latLong,
-				disableDefaultUI: true,
-				scrollwheel: false,
-				pov: {
-					heading: @$context.data('heading'),
-					pitch: @$context.data('pitch')
-				},
-				zoom: @$context.data('zoom')
-			}
-			console.log("map initializing")
+		latLong = new google.maps.LatLng(@$context.data('latitude'), @$context.data('longitude'))
+		@panoramaOptions = {
+			position: latLong,
+			disableDefaultUI: true,
+			scrollwheel: false,
+			pov: {
+				heading: @$context.data('heading'),
+				pitch: @$context.data('pitch')
+			},
+			zoom: @$context.data('zoom')
+		}
+		
+		@pano = new google.maps.StreetViewPanorama(@context, @panoramaOptions)
+		@pano.setVisible(true)
+		@hideSpinner()
 
-			@pano = new google.maps.StreetViewPanorama(@context, @panoramaOptions)
-			@pano.setVisible(true)
-			@hideSpinner()
-
-			setTimeout(=>
-			  @$context.addClass( CLASS_MAP_LOADED )
-			, LOADED_CLASS_TIMEOUT)
+		setTimeout(=>
+		  @$context.addClass( CLASS_MAP_LOADED )
+		, LOADED_CLASS_TIMEOUT)
 
 	destroy: =>
-		google.maps.event.clearListeners(window, 'load');
+		google.maps.event.clearInstanceListeners(window);
+		google.maps.event.clearInstanceListeners(document);
+		google.maps.event.clearInstanceListeners(@context);
+
 		@$body.off("pjax:done")
 
 	setFallback: (url) ->

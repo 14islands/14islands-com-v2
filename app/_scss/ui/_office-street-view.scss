@@ -79,6 +79,7 @@
 
 .office__link,
 .office__link:visited {
+  font-size: 1.1rem;
 	@include if-wider-than($breakpoint-two-px) {
     color: #fefefe;
   }
