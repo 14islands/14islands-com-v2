@@ -41,36 +41,37 @@ class FOURTEEN.OfficeStreetView
 			@$body.on("pjax:done", @initializeMap)
 			
 	initializeMap: =>
-	  if @$body.is(".page-contact")
-	    @panoramaOptions = {
-	      position: new google.maps.LatLng(@$context.data('latitude'), @$context.data('longitude')),
-	      disableDefaultUI: true,
-	      scrollwheel: false,
-	      pov: {
-	        heading: @$context.data('heading'),
-	        pitch: @$context.data('pitch')
-	      },
-	      zoom: @$context.data('zoom')
-	    }
-	    console.log("map initializing")
-	    
-	    @pano = new google.maps.StreetViewPanorama(@context, @panoramaOptions)
-	    @pano.setVisible(true)
-	    @hideSpinner()
-	    
-	    setTimeout(=>
-	      @$context.addClass( CLASS_MAP_LOADED )
-	    , LOADED_CLASS_TIMEOUT)
+		if @$body.is(".page-contact")
+			latLong = new google.maps.LatLng(@$context.data('latitude'), @$context.data('longitude'))
+			@panoramaOptions = {
+				position: latLong,
+				disableDefaultUI: true,
+				scrollwheel: false,
+				pov: {
+					heading: @$context.data('heading'),
+					pitch: @$context.data('pitch')
+				},
+				zoom: @$context.data('zoom')
+			}
+			console.log("map initializing")
+
+			@pano = new google.maps.StreetViewPanorama(@context, @panoramaOptions)
+			@pano.setVisible(true)
+			@hideSpinner()
+
+			setTimeout(=>
+			  @$context.addClass( CLASS_MAP_LOADED )
+			, LOADED_CLASS_TIMEOUT)
 
 	destroy: =>
 		google.maps.event.clearListeners(window, 'load');
 		@$body.off("pjax:done")
 
 	setFallback: (url) ->
-	  return if (!url)
-	  @$context.css('background-image', 'url(' + url + ')')
-	  @$context.addClass( CLASSES_FALLBACK )
-
+		return if (!url)
+		@$context.attr('data-bg-src', url)
+		@$context.addClass( CLASSES_FALLBACK )
+		ResponsiveIO.refresh(@$context.get(0))
 
 	showSpinner: ->
 	  return if (!@$spinner) 
