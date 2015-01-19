@@ -1,52 +1,58 @@
 
 .footer {
 	@include clearfix;
-	margin-top: 30px;
-	margin-bottom: 50px;
-	@include if-wider-than($breakpoint-two-px) {
-    margin-top: 5%;
-		margin-bottom: 5%;
-  }
 }
 
 .footer__logo {
-	display: block;
-	padding-bottom: 1rem;
-	svg {
-		display: inline-block;
-		width: 70px;	
-	}
-	@include if-wider-than($breakpoint-two-px) {
-    float: left;
-    width: 25%;
-    text-align: center;
-    padding-bottom: 0;
+    display: block;
+    padding-bottom: 1rem;
     svg {
-			width: 80px;
-		}
-  }
+    	display: inline-block;
+    	width: 70px;	
+    }
+    @include if-wider-than($breakpoint-two-px) {
+        float: left;
+        width: 25%;
+        padding-bottom: 0;
+        svg {
+            width: 80px;
+    	}
+    }
+    @include if-wider-than($breakpoint-three-px) {
+        position: absolute;
+        left: $grid-gap-px;
+        float: none;
+        width: auto;
+    }
 }
 
 .footer__info {
-	position: relative;
-	@include if-wider-than($breakpoint-two-px) {
-    float: left;
-    width: 55%;
-    p {
-    	margin-bottom: 1.4rem;
+    position: relative;
+    @include if-wider-than($breakpoint-two-px) {
+        float: left;
+        width: 55%;
+        p {
+            margin-bottom: 1.4rem;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
     }
-    p:last-child {
-    	margin-bottom: 0;
+    @include if-wider-than($breakpoint-three-px) {
+        width: 70%;
     }
-
-  }
 }
 
 .footer__logo-title {
-	//display: none;
-	@include if-wider-than($breakpoint-two-px) {
-    display: block;
-  }
+    //display: none;
+    @include if-wider-than($breakpoint-two-px) {
+        display: block;
+    }
+}
+
+.footer__social-nav {
+    display: inline-block;
+    float: right;
 }
 
 .footer__social {
@@ -57,13 +63,16 @@
 		padding: .2rem 0;
 	}
 	@include if-wider-than($breakpoint-two-px) {
-    clear: none;
-    float: left;
-    width: 20%;
-    padding-left: 5%;
-    margin-top: 0;
-    a {
-			padding: 0;
-		}
-  }
+        clear: none;
+        float: left;
+        width: 20%;
+        padding-left: 5%;
+        margin-top: 0;
+        a {
+    		padding: 0;
+    	}
+    }
+    @include if-wider-than($breakpoint-three-px) {
+        width: 30%;
+    }
 }

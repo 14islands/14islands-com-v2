@@ -24,6 +24,10 @@
 .nav__item {
 	display: inline-block;
 	vertical-align: top;
+	@include if-wider-than($breakpoint-three-px) {
+    position:relative;
+    left: -1.5rem;
+  }
 }
 
 .nav__item--logo {
@@ -57,22 +61,21 @@
 	letter-spacing: 0.04rem;
 	line-height: normal;
 	font-size: 1.3rem;
+	padding: 21px .75rem;
 
 	&,
 	&:visited {
 		color: #666;
 	}
-
 	span {
 		display: none;
 	}
+	
 	@include if-wider-than(400px) {
 		span {
 			display: inline;
 		}
   }
-
-  padding: 21px .75rem;
 	@include if-wider-than($breakpoint-two-px) {
 		padding: 30px 1.5rem;
   }
