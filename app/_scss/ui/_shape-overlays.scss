@@ -1,40 +1,62 @@
 .shape-overlay {
-  position: absolute;
+
+  svg {
+    display: none;
+  }
+
+  @include if-wider-than($breakpoint-two-px) {
+    position: absolute;
+    svg {
+      display: block;
+    }
+  }
 
   figcap {
-    color: #fff;
-    font-weight: 600;
+    display: block;
+    font-size: 1rem;
+    color: $gray;
+    line-height: 1;
     font-style: italic;
-    position: absolute;
+    margin: 1em 1em 0;
 
-    font-size: 1.2rem;
-    @include if-wider-than($breakpoint-three-px) {
-      font-size: 1.4rem;
+    @include if-wider-than($breakpoint-two-px) {
+      color: #fff;
+      font-weight: 600;
+      position: absolute;
+
+      font-size: 1.2rem;
+      @include if-wider-than($breakpoint-three-px) {
+        font-size: 1.4rem;
+      }
     }
   }
 }
 
 .shape-overlay--top-left {
-  top: -5%;
-  left: -10%;
-  width: 50%;
+  @include if-wider-than($breakpoint-two-px) {
+    top: -3%;
+    left: -5%;
+    width: 35%;
 
-  figcap {
-    top: 19%;
-    right: 30%;
-    left: 23%;
+    figcap {
+      top: 19%;
+      right: 30%;
+      left: 18%;
+    }
   }
 }
 
 .shape-overlay--bottom-right {
-  bottom: -15%;
-  right: -8%;
-  width: 40%;
+  @include if-wider-than($breakpoint-two-px) {
+    bottom: -14%;
+    right: -5%;
+    width: 33%;
 
-  figcap {
-    text-align: right;
-    top: 19%;
-    right: 22%;
-    left: 33%;
+    figcap {
+      text-align: right;
+      top: 19%;
+      right: 20%;
+      left: 33%;
+    }
   }
 }
