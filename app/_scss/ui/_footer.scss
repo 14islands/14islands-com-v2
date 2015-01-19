@@ -1,21 +1,23 @@
 
 .footer {
 	@include clearfix;
-	margin-top: 5%;
-	margin-bottom: 5%;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	@include if-wider-than($breakpoint-two-px) {
+    margin-top: 5%;
+		margin-bottom: 5%;
+  }
 }
 
 .footer__logo {
-	width: 100px;
-	padding-bottom: 100px;
-	float: left;
+	display: block;
+	padding-bottom: 1rem;
 	svg {
-		width: 70px;
+		display: inline-block;
+		width: 70px;	
 	}
-	@include if-wider-than($breakpoint-one-px) {
-    padding-bottom: 10%;
-  }
 	@include if-wider-than($breakpoint-two-px) {
+    float: left;
     width: 25%;
     text-align: center;
     padding-bottom: 0;
@@ -49,7 +51,6 @@
 
 .footer__social {
 	clear: both;
-	padding-left: 100px;
 	margin-top: 4%;
 	a {
 		display: block;

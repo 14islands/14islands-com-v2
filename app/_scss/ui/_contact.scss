@@ -1,0 +1,30 @@
+
+.contact__social {
+	margin-top: 50px; 
+	margin-bottom: 30px; 
+	@include if-wider-than($breakpoint-two-px) {
+    margin-top: 16%;
+    margin-bottom: 3%;
+  }
+}
+
+.contact__social-button {
+	display: inline-block;
+	width: (100px/2);
+	height: (100px/2);
+	margin-right: $side-padding-mobile;
+	&:last-child {
+		margin-right: 0;
+	}
+	.no-touch &:hover circle {
+		stroke: $green;
+	}
+	.no-touch &:hover path {
+		fill: $green;
+	}
+	@include if-wider-than($breakpoint-two-px) {
+    width: 100px;
+		height: 100px;
+		margin-right: 45px;
+  }	
+}

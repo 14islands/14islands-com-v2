@@ -178,6 +178,10 @@ i {
   font-size: modular-scale(.8rem, 1);
 }
 
+.no-hyphens {
+  hyphens: none;
+}
+
 /**
  * Quotes
  */

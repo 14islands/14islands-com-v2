@@ -33,7 +33,7 @@ class FOURTEEN.OfficeStreetView
 		@isDisabledOnTouch = @$context.data( DATA_TOUCH_DISABLED ) || false
 
 		# No maps on mobile. Saves bandwidth and awkwardness scrolling.
-		if (@isDisabledOnTouch && (Modernizr.touch || navigator.msMaxTouchPoints))
+		if (@isDisabledOnTouch and (Modernizr.touch or navigator.msMaxTouchPoints))
 			@setFallback( @$context.data( DATA_FALLBACK ) )
 		else
 			@showSpinner()
