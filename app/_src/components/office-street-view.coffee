@@ -40,6 +40,22 @@ class FOURTEEN.OfficeStreetView
 			@mapsLoadListener = google.maps.event.addDomListener(window, 'load', @initializeMap)
 			@$body.on("pjax:done", @initializeMap)
 			
+
+	forceRedraw: (element) =>
+
+    return if (!element) 
+
+    n = document.createTextNode(' ')
+    disp = element.style.display # don't worry about previous display style
+
+    element.appendChild(n);
+    element.style.display = 'none'
+
+    setTimeout(() =>
+        element.style.display = disp
+        n.parentNode.removeChild(n)
+    ,20) # you can play with this timeout to make it as short as possible
+
 	initializeMap: =>
 		latLong = new google.maps.LatLng(@$context.data('latitude'), @$context.data('longitude'))
 		@panoramaOptions = {
@@ -61,11 +77,12 @@ class FOURTEEN.OfficeStreetView
 		  @$context.addClass( CLASS_MAP_LOADED )
 		, LOADED_CLASS_TIMEOUT)
 
-	destroy: =>
-		google.maps.event.clearInstanceListeners(window);
-		google.maps.event.clearInstanceListeners(document);
-		google.maps.event.clearInstanceListeners(@context);
+		@forceRedraw(@context)
 
+	destroy: =>
+		google.maps.event.clearInstanceListeners(window)
+		google.maps.event.clearInstanceListeners(document)
+		google.maps.event.clearInstanceListeners(@context)
 		@$body.off("pjax:done")
 
 	setFallback: (url) ->
