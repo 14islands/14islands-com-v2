@@ -7,6 +7,7 @@
     display: block;
     padding-bottom: 1rem;
     svg {
+        @extend .svg;
     	display: inline-block;
     	width: 70px;	
     }

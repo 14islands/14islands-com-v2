@@ -23,6 +23,7 @@
 .office__pointer-shape {
   padding: 0 $side-padding-mobile;
   svg {
+    @extend .svg;
     display: none;
   }
   @include if-wider-than($breakpoint-two-px) {
@@ -31,6 +32,7 @@
     bottom: 0%;
     right: 17%;
     width: 40%;
+    z-index: 100;
     svg {
       display: block;
     }
@@ -70,6 +72,9 @@
   @include if-wider-than($breakpoint-two-px) {
     color: #fff;
     margin: 0;
+    font-size: 1rem;
+  }
+  @include if-wider-than(1000px) {
     font-size: 1.3rem;
   }
   @include if-wider-than($breakpoint-three-px) {
