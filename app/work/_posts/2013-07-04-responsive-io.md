@@ -1,5 +1,6 @@
 ---
 layout: post
+class: responsive-io
 permalink: /work/responsive.io
 title: responsive.io - 14islands
 logo: 14islands.svg

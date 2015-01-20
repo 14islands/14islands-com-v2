@@ -75,7 +75,6 @@ class FOURTEEN.PjaxNavigation
     unless @getPageIdFromUrl(options.url) is @HOMEPAGE_ID
       @hideContent()
 
-
   onPjaxEnd: (e, unused, options) =>
     # transition in content for all pages except home
     unless @getPageIdFromUrl(options.url) is @HOMEPAGE_ID

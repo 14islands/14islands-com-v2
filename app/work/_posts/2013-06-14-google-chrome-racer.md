@@ -1,5 +1,6 @@
 ---
 layout: post
+class: google-racer
 permalink: /work/racer
 title: Google Chrome Racer - 14islands
 logo: google.svg

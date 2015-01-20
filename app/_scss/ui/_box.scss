@@ -35,6 +35,25 @@
       fill: #fff;
     }
   }
+
+  .work--project-tictail &,
+  .work--project-sthlm6000 & {
+    width: 10%;
+  }
+  .work--project-google-santa &,
+  .work--project-google-racer & {
+    width: 11%;
+  }
+  .work--project-elastica & {
+    width: 13%;
+  }
+  .work--project-kambi &,
+  .work--project-responsive-io & {
+    width: 14%;
+  }
+  .work--project-quizup & {
+    width: 15%;
+  }
 }
 
 .box__content__headline {

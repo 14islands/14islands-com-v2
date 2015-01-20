@@ -49,7 +49,7 @@ class window.ComponentLoader
 
     @cleanUp(currentComponents) if doCleanUp
 
-  cleanUp: (currentComponents) ->
+  cleanUp: (currentComponents = {}) =>
     componentsToCleanUp = []
     for id, instance of @registeredComponents
       exists = currentComponents[id] == true

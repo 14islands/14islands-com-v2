@@ -4,11 +4,6 @@ $( ->
   FastClick.attach(document.body)
 )
 
-FOURTEEN.isOfficeStreetViewLoaded = false;
-FOURTEEN.tryLoadOfficeStreatView = ->
-  if $("body").is(".page-contact") and !FOURTEEN.tryInitOfficeStreatView
-    new FOURTEEN.OfficeStreetView($(".js-office-street-view"))
-
 # listen for load even on image tags loaded by responsive.io
 FOURTEEN.listenForResponsive_ioImageLoad = ->
   $("img[data-src]").one("load", ->
@@ -30,9 +25,6 @@ FOURTEEN.onPjaxLoad = ->
   # components
   FOURTEEN.componentLoader.scan()
 
-  # google maps
-  # FOURTEEN.tryLoadOfficeStreatView()
-
   $(document.body).trigger("pjax:done")
 
 
@@ -47,9 +39,6 @@ new FOURTEEN.PjaxNavigation('.js-hero-nav',
                             '.js-pjax-container',
                             FOURTEEN.onPjaxLoad)
  
-# google maps
-# FOURTEEN.tryLoadOfficeStreatView()
-
 # component loader
 FOURTEEN.componentLoader.start()
 

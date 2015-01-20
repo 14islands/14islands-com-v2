@@ -1,5 +1,6 @@
 ---
 layout: post
+class: google-santa
 permalink: /work/google-santa
 title: Google Santa Tracker - 14islands
 logo: google.svg
