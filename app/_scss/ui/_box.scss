@@ -60,14 +60,16 @@
   width: 50%;
   margin-top: 1em;
   margin-bottom: 0;
-  font-size: modular-scale(1rem, 1);
-  max-width: 46%;
+  font-size: 1.2rem;
+  line-height: 1.2;
 
   // David: setting breakpoints just based on
   // what looks good depending on our current titles
   // is there a better way?
   @include if-wider-than(450px) {
+    max-width: 46%;
     font-size: modular-scale(1rem, 2);
+    line-height: 1;
   }
 
   @include if-wider-than(650px) {
