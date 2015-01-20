@@ -53,7 +53,9 @@
 
 .footer__social-nav {
     display: inline-block;
-    float: right;
+    @include if-wider-than($breakpoint-two-px) {
+        float: right;
+    }
 }
 
 .footer__social {
