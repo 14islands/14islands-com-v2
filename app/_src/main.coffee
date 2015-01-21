@@ -35,6 +35,7 @@ FOURTEEN.onPjaxLoad = ->
 FOURTEEN.listenForResponsive_ioImageLoad()
 
 new FOURTEEN.PjaxNavigation('.js-hero-nav',
+                            '.js-nav-link',
                             '.js-nav-home',
                             '.js-pjax-container',
                             FOURTEEN.onPjaxLoad)

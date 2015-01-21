@@ -66,6 +66,7 @@
   // David: setting breakpoints just based on
   // what looks good depending on our current titles
   // is there a better way?
+  // Hjörtur: Nope - I think that is the only way.
   @include if-wider-than(450px) {
     max-width: 46%;
     font-size: modular-scale(1rem, 2);

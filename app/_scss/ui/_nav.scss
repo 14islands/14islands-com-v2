@@ -67,6 +67,20 @@
 	&:visited {
 		color: #666;
 	}
+
+	.page-work &.nav__link--work,
+	.page-about &.nav__link--about,
+	.page-contact &.nav__link--contact {
+		color: $green;
+	}
+
+	.page-work &.nav__link--work:hover,
+	.page-about &.nav__link--about:hover,
+	.page-contact &.nav__link--contact:hover {
+		cursor: default;
+		color: $green;
+	}
+
 	span {
 		display: none;
 	}

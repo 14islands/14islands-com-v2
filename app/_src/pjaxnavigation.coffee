@@ -6,9 +6,10 @@ class FOURTEEN.PjaxNavigation
 
   HOMEPAGE_ID: 'home'
 
-  constructor: (@navigationSelector, @btnHomeSelector, @contentSelector, @onLoadCallback) ->
+  constructor: (@navigationSelector, @btnNavLinks, @btnHomeSelector, @contentSelector, @onLoadCallback) ->
     @$content = $(@contentSelector)
     @$navigation = $(@navigationSelector)
+    @$btnNavLinks = $(@btnNavLinks)
     @$btnHome = $(@btnHomeSelector)
     @init()
 
@@ -27,6 +28,7 @@ class FOURTEEN.PjaxNavigation
     # bind home link to first transition -> then navigate to home
     # (other wise page jumps to top since home page doesnt have content)
     @$btnHome.on('click', @onNavigateToHome)
+    @$btnNavLinks.on('click', @onNavigateToPage)
 
     # hook up scrolling logic before showing new page
     @$content.on('pjax:beforeReplace', @onPjaxBeforeReplace)
@@ -44,6 +46,15 @@ class FOURTEEN.PjaxNavigation
         # tell pjax to nav to home page
         $.pjax({url: '/', container: @contentSelector, fragment: @contentSelector})
     )
+
+  onNavigateToPage: (e, popState) =>
+    e.preventDefault()
+    $link = $(e.currentTarget)
+    page = $link.data("page")
+    # prevent transition to same page
+    unless @$body.is(".page-#{page}")
+      # tell pjax to nav to page
+      $.pjax({url: "/#{page}", container: @contentSelector, fragment: @contentSelector})
 
   # handle history event for home page link
   onPopState: (e) =>
@@ -74,6 +85,7 @@ class FOURTEEN.PjaxNavigation
     # hide content fast when navigating between all other pages
     unless @getPageIdFromUrl(options.url) is @HOMEPAGE_ID
       @hideContent()
+
 
   onPjaxEnd: (e, unused, options) =>
     # transition in content for all pages except home
