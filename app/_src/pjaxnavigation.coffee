@@ -40,12 +40,13 @@ class FOURTEEN.PjaxNavigation
   # slides in hero and slides out content
   onNavigateToHome: (e, popState) =>
     e.preventDefault()
-    @showHero()
-    @slideOutContent( =>
-      unless popState
-        # tell pjax to nav to home page
-        $.pjax({url: '/', container: @contentSelector, fragment: @contentSelector})
-    )
+    unless @$body.is(".page-home")
+      @showHero()
+      @slideOutContent( =>
+        unless popState
+          # tell pjax to nav to home page
+          $.pjax({url: '/', container: @contentSelector, fragment: @contentSelector})
+      )
 
   onNavigateToPage: (e, popState) =>
     e.preventDefault()
