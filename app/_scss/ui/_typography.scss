@@ -97,15 +97,6 @@ h4 {
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1;
-
-  ul + &,
-  ol + &,
-  p + &,
-  blockquote + &,
-  q + & {
-    margin-top: 3rem;
-  }
-
   .u-bg-natt-dark & {
     color: white;
   }

@@ -13,18 +13,18 @@ private: false
 ---
 
 <section class="block--centered u--pad-bottom">
-	<span>Case Study</span>
-	<h1>Tictail</h1>	
-	<h4>A better way for creatives to sell online.</h4> 
+	<span class="casestudy__label">Case Study</span>
+	<h1 class="casestudy__title">Tictail</h1>	
+	<h4 class="casestudy__subtitle">A better way for creatives to sell online.</h4> 
 </section>
 
-{% include casestudy-video.html url="http://url/to/tictail/videos" %}
+{% include casestudy-video.html url="http://player.vimeo.com/video/66140585" %}
 
-<section class="block--centered u--pad-both">
+<section id="about" class="block--centered u--pad-both">
 {% markdown %}
 ## About
 
-Tictail is a Stockholm-based startup that enables people with great products to easily sell online. Their goal was to build a modern website to  present the Tictail brand, to increase signups and importantly, help their community to succeed. 
+[Tictail](http://www.tictail.com/) is a Stockholm-based startup that enables people with great products to easily sell online. They wanted a modern website for the Tictail brand, increase signups and to help their community to succeed. 
 
 The site is fully responsive and built in Wordpress to make all content editable by the people at Tictail.
 {% endmarkdown %}
@@ -51,9 +51,12 @@ We worked in close collaboration with Tictail, often at their offices.
 Here is a picture from a Friday meeting where our very own Marco gave update about the progress to the people at Tictail.
 
 ![Friday meeting with Tictail](/images/work/tictail/friday-meeting.jpg)
+{% endmarkdown %}
+</section>
 
-Hightligts from the project:
-
+<section class="block--centered u--pad-bottom">
+{% markdown %}
+## Project Highlights
 * Transitions on scroll
 * The Hamburger 
 * Menu animation
@@ -63,7 +66,7 @@ Hightligts from the project:
 
 {% include casestudy-quote.html quote="The guys at 14islands are awesome" author="Kaj Drobin, CEO" %}
 
-<section class="block--centered u--pad-bottom">
+<section class="block--centered u--pad-both">
 {% markdown %}
 ## Technologies
 {% endmarkdown %}
@@ -73,7 +76,7 @@ Hightligts from the project:
 {% markdown %}
 ## Conclusion
 
-Overall we think the feedback about the site speaks for the project itself. 
+Overall we think the feedback speak for itself. 
 [Check it out](http://tictail.com/)
 {% endmarkdown %}
 </section>

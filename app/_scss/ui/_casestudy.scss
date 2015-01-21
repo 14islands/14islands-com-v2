@@ -1,0 +1,19 @@
+
+.casestudy__label {
+  display: inline-block;
+  font-size: modular-scale(.8rem, 1);
+  margin-top: 2 * modular-scale(1rem, 1);
+  margin-bottom: .4rem;
+  color: $gray;
+}
+
+.casestudy__title {
+	margin: 0;
+}
+
+.casestudy__subtitle {
+  margin-top: 0;
+  font-size: modular-scale(1.2rem, 1);
+  font-weight: 400;
+  color: $gray;
+}
