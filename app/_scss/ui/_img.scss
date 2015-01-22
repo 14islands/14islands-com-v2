@@ -27,6 +27,10 @@ img[data-src] {
   margin-bottom: 10%;
   position: relative;
 
+  & + .content-image {
+    margin-bottom: 0;
+  }
+
   img {
     will-change: opacity;
     opacity: 0;

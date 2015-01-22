@@ -23,7 +23,7 @@ body {
   margin: 0 auto;
 
   padding-left: $side-padding-mobile;
-    padding-right: $side-padding-mobile;
+  padding-right: $side-padding-mobile;
   @include if-wider-than($breakpoint-two-px) {
     padding-left: $side-padding-grid-px;
     padding-right: $side-padding-grid-px;

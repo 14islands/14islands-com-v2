@@ -1,5 +1,15 @@
 <section class="u-bg-bright u--pad-both">
 	<div class="block--centered">
-		<span>Responsive: {{include.url}}</span>
+		<figure class="casestudy__responsive-wrapper">
+			{% include svgs/iphone6plus.svg %}
+			<div class="casestudy__responsive-screen">
+				<img data-src="{{include.url}}" alt="{{include.alt}}" />
+			</div>
+		</figure>
+		
+		<div class="shape-overlay shape-overlay--top-left">
+      {% include shapes/about-image-bottom-right.svg %}
+       <figcap>Built for all screens</figcap>
+    </div>
 	</div>
 </section>

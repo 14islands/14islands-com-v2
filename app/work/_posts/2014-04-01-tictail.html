@@ -12,11 +12,7 @@ priority: 2
 private: false
 ---
 
-<section class="block--centered u--pad-bottom">
-	<span class="casestudy__label">Case Study</span>
-	<h1 class="casestudy__title">Tictail</h1>	
-	<h4 class="casestudy__subtitle">A better way for creatives to sell online.</h4> 
-</section>
+{% include casestudy-header.html title="Tictail" description="A better way for creatives to sell online." %}
 
 {% include casestudy-video.html url="http://player.vimeo.com/video/66140585" %}
 
@@ -30,47 +26,66 @@ The site is fully responsive and built in Wordpress to make all content editable
 {% endmarkdown %}
 </section>
 
-{% include casestudy-responsive.html url="http://url/to/tictail/images" %}
+{% include casestudy-responsive.html url="/images/work/tictail/iphone6screenshot.jpg" alt="Tictail on Mobile" %}
 
-<section class="block--centered u--pad-both">
+<section class="u--pad-both">
+	<div class="block--centered">
 {% markdown %}
-## Designs
+## Design
 
 The site was designed by our friends at [Studio Källbom](http://www.studiokallbom.se/). Studio Källbom is a talented design studio with an artistic touch.
 
 The site features a magazine like design: nice typography, bold colors and rich content to show features and tell Tictails story. We were totally inspired to make this our best work ever.
 {% endmarkdown %}
+	</div>
+	{% include wide-content-image.html src="/images/work/tictail/home-screenshot-16-9.jpg"  alt="Home page" ratio="16_9" %}
 </section>
 
-<section class="block--centered u--pad-bottom">
+<section class="u--pad-bottom">
+	<div class="block--centered">
 {% markdown %}
 ## Making it happen
 
 We worked in close collaboration with Tictail, often at their offices. 
 
 Here is a picture from a Friday meeting where our very own Marco gave update about the progress to the people at Tictail.
-
-![Friday meeting with Tictail](/images/work/tictail/friday-meeting.jpg)
 {% endmarkdown %}
+	</div>
+	{% include wide-content-image.html src="/images/work/tictail/friday-meeting-16-9.jpg" alt="The 14islands HQ" ratio="3_2" %}
+	<div class="block--centered">
+{% markdown %}
+All about the responsive image grid, how it transitions and performce well.
+{% endmarkdown %}
+	</div>
+	{% include wide-content-image.html src="/images/work/tictail/products-screenshot-16-9.jpg"  alt="Menu" ratio="16_9" %}
+	<div class="block--centered">
+{% markdown %}
+All about the menu.
+{% endmarkdown %}
+	</div>
+	</div>
+	{% include wide-content-image.html src="/images/work/tictail/menu-screenshot-16-9.jpg"  alt="Menu" ratio="16_9" %}
 </section>
 
-<section class="block--centered u--pad-bottom">
+<!-- <section class="block--centered u--pad-bottom">
 {% markdown %}
 ## Project Highlights
+* Performance
+* Wordpress
 * Transitions on scroll
 * The Hamburger 
 * Menu animation
 * Offices presented using Google Street View
 {% endmarkdown %}
-</section>
+</section> -->
 
 {% include casestudy-quote.html quote="The guys at 14islands are awesome" author="Kaj Drobin, CEO" %}
 
-<section class="block--centered u--pad-both">
+<!-- <section class="block--centered u--pad-both">
 {% markdown %}
 ## Technologies
 {% endmarkdown %}
-</section>
+</section> -->
 
 <section class="block--centered u--pad-both">
 {% markdown %}
