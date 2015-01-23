@@ -40,7 +40,8 @@ class FOURTEEN.PjaxNavigation
   # slides in hero and slides out content
   onNavigateToHome: (e, popState) =>
     e.preventDefault()
-    unless @$body.is(".page-home")
+    unless @currentPageId is @HOMEPAGE_ID
+      @calculateY() # might not have been done before if ladning on subpage
       @showHero()
       @slideOutContent( =>
         unless popState
@@ -48,14 +49,18 @@ class FOURTEEN.PjaxNavigation
           $.pjax({url: '/', container: @contentSelector, fragment: @contentSelector})
       )
 
+
+  # Triggered before navigating to a main nav page
   onNavigateToPage: (e, popState) =>
     e.preventDefault()
     $link = $(e.currentTarget)
-    page = $link.data("page")
+    url = $(e.currentTarget).attr('href')
+    pageId = @getPageIdFromUrl(url)
     # prevent transition to same page
-    unless @$body.is(".page-#{page}")
+    unless @currentPageId is pageId
       # tell pjax to nav to page
-      $.pjax({url: "/#{page}", container: @contentSelector, fragment: @contentSelector})
+      $.pjax({url: "/#{pageId}", container: @contentSelector, fragment: @contentSelector})
+
 
   # handle history event for home page link
   onPopState: (e) =>
