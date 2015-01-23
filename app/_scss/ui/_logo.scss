@@ -19,7 +19,12 @@ $logo-rect-width-px: 190px;
   }
 }
 
+
 .page {
+
+  .nav__logo-clean {
+    cursor: pointer;
+  }
 
 	.polygon {
 		transition-property: fill;
@@ -47,6 +52,11 @@ $logo-rect-width-px: 190px;
 }
 
 .page-home {
+
+  .nav__logo-clean {
+    cursor: default;
+  }
+
 
 	.polygon-down--light {
 		fill: $gray;
