@@ -12,7 +12,7 @@
 .button--primary {
 	display: block;
 	padding: 18px 26px 12px;
-	margin: 2rem 0;
+	margin: modular-scale(2rem, 1) 0;
 	max-width: 282px;
 	background: $green;
 	font-size: modular-scale(1rem, 1);
