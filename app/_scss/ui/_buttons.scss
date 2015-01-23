@@ -16,7 +16,12 @@
 	max-width: 282px;
 	background: $green;
 	font-size: modular-scale(1rem, 1);
-	color: white;
+
+	&,
+	&:visited,
+	.no-touch &:hover {
+		color: white;
+	}
 
 	.no-touch &:hover {
 		color: white;
