@@ -1,13 +1,30 @@
-.client-list {
+
+.client-ratio {
+  height: 0;
+  padding-bottom: 70%;
   margin-top: 5%;
+  position: relative;
+}
+
+.client-list {
   list-style: none;
   display: inline-block;
   padding: 0;
   margin-left: 0;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .client-list__item {
   display: inline-block;
-  padding: 1em 2.5em 1em 0;
+
+  max-width: 33%;
+  width: auto;
+  height: 25%;
+  padding: 4% 8% 4% 0;
 
   a {
     display: block;
@@ -15,12 +32,9 @@
 
   svg {
     display: block;
-    height: 60px;
     width: auto;
-    max-width: 200px;
-
-    // height: auto;
-    // width: 100px;
+    max-width: 100%;
+    height: 100%;
 
     * {
       fill: #fff;
