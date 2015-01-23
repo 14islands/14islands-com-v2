@@ -27,7 +27,8 @@ img[data-src] {
   margin-bottom: 10%;
   position: relative;
 
-  & + .content-image {
+  .casestudy & {
+    margin-top: 5%;
     margin-bottom: 0;
   }
 

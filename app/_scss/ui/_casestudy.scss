@@ -51,3 +51,31 @@
 	background-color: black;
 }
 
+.casestudy__quote {
+	margin: 0;
+	@include clearfix;
+	max-width: 700px; 
+}
+
+.casestudy__author {
+	float: right;
+}
+
+.casestudy__author-image {
+	float: left;
+	width: 84px;
+	height: 84px;
+	border-radius: 500px;
+}
+
+.casestudy__author-name,
+.casestudy__author-job-title {
+	display: block;
+	position: relative;
+	padding-left: 100px;
+}
+
+.casestudy__author-name {
+	padding-top: 20px;
+}
+
