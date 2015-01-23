@@ -110,8 +110,6 @@ class FOURTEEN.PjaxNavigation
     else
       @currentPageId = @HOMEPAGE_ID
 
-    console.log('update ID to', @currentPageId)
-
     @$body.addClass('page-' + @currentPageId)
 
 
