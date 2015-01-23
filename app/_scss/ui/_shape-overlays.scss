@@ -60,3 +60,43 @@
     }
   }
 }
+
+.shape-overlay--casestudy-video {
+  @include if-wider-than($breakpoint-two-px) {
+    bottom: -40%;
+    right: 10%;
+    width: 24%;
+
+    figcap {
+      text-align: right;
+      top: 4%;
+      left: 15%;
+      right: 10%;
+    }
+  }
+}
+
+.shape-overlay--casestudy-responsive {
+  @include if-wider-than($breakpoint-two-px) {
+    top: 12%;
+    left: 2%;
+    width: 30%;
+
+    figcap {
+      top: 8%;
+      right: 30%;
+      left: 10%;
+    }
+  }
+  @include if-wider-than($breakpoint-two-px) {
+    top: 12%;
+    left: -10%;
+    width: 42%;
+
+    figcap {
+      top: 14%;
+      right: 30%;
+      left: 10%;
+    }
+  }
+}
