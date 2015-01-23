@@ -8,6 +8,7 @@ $( ->
 FOURTEEN.listenForResponsive_ioImageLoad = ->
   $("img[data-src]").one("load", ->
     $(this).addClass('image-loaded')
+    $(this).closest('.content-image').addClass('image-loaded')
   ).each( ->
     # complete is always true for data-src images
     #if this.complete
@@ -39,7 +40,7 @@ new FOURTEEN.PjaxNavigation('.js-hero-nav',
                             '.js-nav-home',
                             '.js-pjax-container',
                             FOURTEEN.onPjaxLoad)
- 
+
 # component loader
 FOURTEEN.componentLoader.start()
 

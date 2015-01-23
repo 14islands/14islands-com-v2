@@ -56,6 +56,10 @@ img[data-src] {
   // David: should we have a bg while the image is loading? might be nice
   background: #f9f9f9;
 
+  .image-loaded & {
+    background: transparent;
+  }
+
   img {
     position: absolute;
     top: 0;
