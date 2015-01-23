@@ -1,8 +1,12 @@
 <section class="u-bg-bright u--pad-both">
 	<div class="block--centered">
-		<blockquote>
-			<p>{{include.quote}}.</p>
-			<span class="author">{{include.author}}</span>
+		<blockquote class="casestudy__quote">
+			<p>“{{include.quote}}”</p>
+			<div class="casestudy__author">
+				<img class="casestudy__author-image" data-src="{{include.author-image-src}}" />
+				<span class="casestudy__author-name">{{include.author-name}}</span>
+				<span class="casestudy__author-job-title">{{include.author-job-title}}</span>
+			</div>
 		</blockquote>
 	</div>
 </section>
