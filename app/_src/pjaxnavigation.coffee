@@ -4,20 +4,25 @@ window.FOURTEEN ?= {}
 # Class for all Pjax navigation logic - including scrolling
 class FOURTEEN.PjaxNavigation
 
+  # body pageId of home page
   HOMEPAGE_ID: 'home'
+
+  # Delay in ms before spinner should show
+  SPINNER_DELAY: 500
 
   constructor: (@navigationSelector, @btnNavLinks, @btnHomeSelector, @contentSelector, @onLoadCallback) ->
     @$content = $(@contentSelector)
     @$navigation = $(@navigationSelector)
     @$btnNavLinks = $(@btnNavLinks)
     @$btnHome = $(@btnHomeSelector)
+    @$hero = $('.hero')
+    @$body = $('body')
+    @$spinner = $('<div class="spinner spinner--center"></div>')
+    @spinnerTimer = null
     @init()
 
 
   init: ->
-    @$hero = $('.hero')
-    @$body = $('body')
-
     @currentPageId = @$body.attr('class').match(/page-(\S*)/)[1]
 
     # enable PJAX
@@ -92,8 +97,11 @@ class FOURTEEN.PjaxNavigation
     unless @getPageIdFromUrl(options.url) is @HOMEPAGE_ID
       @hideContent()
 
+    @startSpinnerTimer()
+
 
   onPjaxEnd: (e, unused, options) =>
+    @cancelSpinner()
     # transition in content for all pages except home
     unless @getPageIdFromUrl(options.url) is @HOMEPAGE_ID
       if @currentPageId is @HOMEPAGE_ID
@@ -115,7 +123,22 @@ class FOURTEEN.PjaxNavigation
     else
       @currentPageId = @HOMEPAGE_ID
 
+
     @$body.addClass('page-' + @currentPageId)
+
+
+  startSpinnerTimer: =>
+    clearTimeout(@spinnerTimer)
+    @spinnerTimer = setTimeout(@showSpinner, @SPINNER_DELAY)
+
+
+  cancelSpinner: =>
+    clearTimeout(@spinnerTimer)
+    @$spinner.remove()
+
+
+  showSpinner: =>
+    @$content.append(@$spinner)
 
 
   hideHero: =>
