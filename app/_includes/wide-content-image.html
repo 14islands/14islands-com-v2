@@ -1,4 +1,10 @@
-<div class="block--wide-centered content-image">
+
+{% if include.margin %}
+  <div class="block--wide-centered content-image content-image--margin-{{include.margin}}">
+{% else %}
+  <div class="block--wide-centered content-image content-image--margin-top">
+{% endif %}
+
   <div class="ratio ratio--{{include.ratio}}">
     <img alt="{{include.alt}}" data-src="{{include.src}}">
   </div>

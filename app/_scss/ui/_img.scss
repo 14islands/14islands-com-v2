@@ -23,14 +23,7 @@ img[data-src] {
 //  - negative margins
 //  - fade in animation on load event
 .content-image {
-  margin-top: 10%;
-  margin-bottom: 10%;
   position: relative;
-
-  .casestudy & {
-    margin-top: 5%;
-    margin-bottom: 0;
-  }
 
   img {
     will-change: opacity;
@@ -46,6 +39,32 @@ img[data-src] {
     }
   }
 }
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// MARGINS for content images
+///////////////////////////////////////////////////////////////////////////////
+
+// TODO: find same margin to use for case studies and about page
+
+.content-image--margin-top {
+  margin-top: 10%;
+  .casestudy & {
+    margin-top: 5%;
+  }
+}
+.content-image--margin-bottom {
+  margin-bottom: 10%;
+  .casestudy & {
+    margin-bottom: 5%;
+  }
+}
+.content-image--margin-both {
+  @extend .content-image--margin-top;
+  @extend .content-image--margin-bottom;
+}
+
 
 // padding-bottom hack to avoid reflows on responsive images
 .ratio {
