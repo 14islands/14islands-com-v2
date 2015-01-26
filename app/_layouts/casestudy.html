@@ -5,4 +5,19 @@ layout: default
 	{{ content }}
 </article>
 
+
+<section id="section-up-next" class="u-bg-natt-dark u--pad-both">
+  <div class="block--centered">
+    <h3>
+      Up next:
+      {% if page.next_in_category != nil %}
+        <a href="{{page.next_in_category.url}}">Next: {{page.next_in_category.title}}</a>
+      {% else %}
+        <a href="{{page.first_in_category.url}}">First: {{page.first_in_category.title}}</a>
+      {% endif %}
+    </h3>
+  </div>
+</section>
+
+
 {% include footer.html %}
