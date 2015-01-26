@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: casestudy
 class: google-racer
 permalink: /work/racer
 title: Google Chrome Racer - 14islands
@@ -9,7 +9,7 @@ color: '#090a0a'
 description: Retro-style slot car gaming played across screens.
 image: /images/work/racer/list-illustration.png
 priority: 5
-private: false
+private: true
 ---
 
 # Racer
