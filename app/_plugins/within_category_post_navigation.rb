@@ -2,8 +2,17 @@
 module Jekyll
   class WithinCategoryPostNavigation < Generator
     def generate(site)
+
       site.categories.each_pair do |category, posts|
-        posts.sort! { |a,b| b <=> a}
+
+        # sort by priority if available - otherwise default
+        posts.sort! { |a,b| if a.data["priority"] and b.data["priority"] then a.data["priority"] <=> b.data["priority"] else b <=> a end}
+
+        # remove private posts
+        if site.config["hide_private"] == true
+          posts = posts.delete_if {|x| x.data["private"] == true}
+        end
+
         posts.each do |post|
           index = posts.index post
           next_in_category = nil
@@ -18,6 +27,7 @@ module Jekyll
           end
           post.data["next_in_category"] = next_in_category unless next_in_category.nil?
           post.data["previous_in_category"] = previous_in_category unless previous_in_category.nil?
+          post.data["first_in_category"] = posts[0]
         end
       end
     end
