@@ -19,20 +19,20 @@
 }
 
 .casestudy__video-wrapper {
-	position: relative; 
-	padding-bottom: 56.25%; 
-	height: 0; 
-	overflow: hidden; 
-	max-width: 100%; 
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
 
-	iframe, 
-	object, 
-	embed { 
-		position: absolute; 
-		top: 0; 
-		left: 0; 
-		width: 100%; 
-		height: 100%; 
+	iframe,
+	object,
+	embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 }
 
@@ -54,7 +54,7 @@
 .casestudy__quote {
 	margin: 0;
 	@include clearfix;
-	max-width: 700px; 
+	max-width: 700px;
 }
 
 .casestudy__author {
@@ -79,3 +79,36 @@
 	padding-top: 20px;
 }
 
+
+
+
+// NEXT CASE STUDY FOOTER
+#next-casestudy {
+  overflow: hidden;
+}
+.next-casestudy__link {
+  margin-top: 10%;
+  display: block;
+  position: relative;
+  padding: 6%;
+}
+.next-casestudy__link__shape {
+  fill: #666;
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+}
+a.next-casestudy__link,
+a.next-casestudy__link:hover,
+a.next-casestudy__link:active {
+  color: #fff;
+}
+.next-casestudy__subline {
+  margin-bottom: 1em;
+}
+.next-casestudy__headline {
+  margin: 0;
+  width: 100%;
+  max-width: initial;
+}
