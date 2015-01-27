@@ -99,20 +99,19 @@
   top: -$default-section-margin;
   left: 0;
   width: 100%;
+}
+.next-casestudy__link__shape--hover {
+  opacity: 0;
+  transition: opacity 300ms $easeOutQuad;
 
-  * {
-    transition: fill 200ms ease-out;
+  a.next-casestudy__link:hover & {
+    opacity: 1;
   }
 }
 a.next-casestudy__link,
 a.next-casestudy__link:hover,
 a.next-casestudy__link:active {
   color: #fff;
-}
-a.next-casestudy__link:hover {
-  svg * {
-    fill: $natt-dark;
-  }
 }
 .next-casestudy__subline {
   margin-bottom: 1em;
