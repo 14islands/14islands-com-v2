@@ -1,22 +1,36 @@
 
 .casestudy__header-label {
   display: inline-block;
-  font-size: modular-scale(.8rem, 1);
-  margin-top: 2 * modular-scale(1rem, 1);
-  margin-bottom: .4rem;
+  font-size: modular-scale(.8rem, 2);
   color: $gray;
+  vertical-align: bottom;
 }
 
-.casestudy__header-title {
-	margin: 0;
+
+.casestudy__header-logo {
+  display: inline-block;
+  vertical-align: bottom;
+  height: 3.14rem;
+  margin-left: .3em;
+
+  svg {
+    display: block;
+    height: 100%;
+    width: auto;
+
+    * {
+      fill: $gray;
+    }
+  }
+
+  .google-santa-tracker & {
+    margin-bottom: -0.2rem;
+  }
+  .tictail & {
+    margin-bottom: 0rem;
+  }
 }
 
-.casestudy__header-subtitle {
-  margin-top: 0;
-  font-size: modular-scale(1.2rem, 1);
-  font-weight: 400;
-  color: $gray;
-}
 
 .casestudy__video-wrapper {
 	position: relative;
