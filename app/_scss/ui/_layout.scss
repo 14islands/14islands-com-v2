@@ -39,7 +39,10 @@ body {
   padding-top: $default-section-margin;
 }
 .u--pad-top--half {
-    padding-top: $default-section-margin--half;
+  padding-top: $default-section-margin--half;
+}
+.u--margin-top--half {
+  margin-top: $default-section-margin--half;
 }
 
 .u--pad-bottom {
@@ -47,6 +50,9 @@ body {
 }
 .u--pad-bottom--half {
   padding-bottom: $default-section-margin--half;
+}
+.u--margin-bottom--half {
+  margin-bottom: $default-section-margin--half;
 }
 
 .u--pad-both {
@@ -57,6 +63,11 @@ body {
   @extend .u--pad-top--half;
   @extend .u--pad-bottom--half;
 }
+.u--margin-both--half {
+  @extend .u--margin-top--half;
+  @extend .u--margin-bottom--half;
+}
+
 
 
 .main-content {
