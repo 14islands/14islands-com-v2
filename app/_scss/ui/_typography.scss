@@ -29,6 +29,9 @@ html {
   color: $default-font-color;
 
   @include if-wider-than($breakpoint-two-px) {
+    font-size: 16px;
+  }
+  @include if-wider-than($breakpoint-three-px) {
     font-size: 18px;
   }
 }
