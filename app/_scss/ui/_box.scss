@@ -58,11 +58,11 @@
 
   @include if-wider-than(650px) {
     font-size: modular-scale(1rem, 3);
+    margin-top: 2rem;
   }
 
   @include if-wider-than($breakpoint-two-px) {
-    font-size: modular-scale(1rem, 2);
-    margin-top: 1rem;
+    font-size: modular-scale(1rem, 2); 
   }
 
   @include if-wider-than(900px) {
@@ -72,6 +72,7 @@
   @include if-wider-than(1100px) {
     font-size: modular-scale(1rem, 4);
     max-width: 450px;
+    margin-top: 3rem;
   }
 
 }
