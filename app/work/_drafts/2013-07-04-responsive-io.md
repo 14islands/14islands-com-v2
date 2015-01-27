@@ -3,7 +3,7 @@ layout: post
 class: responsive-io
 permalink: /work/responsive.io
 title: responsive.io - 14islands
-logo: 14islands.svg
+logo: archive/14islands.svg
 heading: responsive.io
 color: '#4aa0ba'
 description: Perfect images for every screen
