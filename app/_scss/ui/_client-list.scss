@@ -3,16 +3,13 @@
   list-style: none;
   display: inline-block;
   margin-left: 0;
-
-  // padding: 0 3% 0 3%;
-  // @include if-wider-than($breakpoint-two-px) {
-  //   padding: 0 0% 0 6%;
-  // }
 }
+
 .client-list__item {
   display: inline-block;
   padding: 0 $default-section-margin/2 $default-section-margin;
 
+  // DAVID: We could use CSS3 columns instead since we dont want to support old browsers
   width: 49%;
   @include if-wider-than($breakpoint-one-px) {
     width: 32%;
