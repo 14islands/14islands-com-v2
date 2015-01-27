@@ -1,14 +1,14 @@
 .box {
-	background-color: #666; // default color, gets overriden with inline style
-	color: #fff;
-	position: relative;
-	margin-bottom: 3rem;
+  background-color: #666; // default color, gets overriden with inline style
+  color: #fff;
+  position: relative;
+  margin-bottom: 3rem;
 
-	&:after{
-		content: "";
-		display: block;
-		padding-top: 50%; // ratio
-	}
+  &:after{
+    content: "";
+    display: block;
+    padding-top: 50%; // ratio
+  }
 }
 
 .svg .box {
@@ -16,19 +16,16 @@
 }
 
 .box__content {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	padding: 6%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 6%;
 }
 
-
-
 .box__content__logo {
-  width: 10%;
-
+  width: 20%;
   svg {
     display: block;
     * {
@@ -36,32 +33,17 @@
     }
   }
 
-  .work--project-tictail &,
-  .work--project-sthlm6000 & {
+  @include if-wider-than(500px) {
     width: 10%;
-  }
-  .work--project-google-santa &,
-  .work--project-google-racer & {
-    width: 11%;
-  }
-  .work--project-elastica & {
-    width: 13%;
-  }
-  .work--project-kambi &,
-  .work--project-responsive-io & {
-    width: 14%;
-  }
-  .work--project-quizup & {
-    width: 15%;
   }
 }
 
 .box__content__headline {
-  width: 50%;
-  margin-top: 1em;
+  width: 66%;
+  margin-top: .5rem;
   margin-bottom: 0;
-  font-size: 1.2rem;
-  line-height: 1.2;
+  font-size: modular-scale(1rem, 1);
+  line-height: 1.3;
 
   // David: setting breakpoints just based on
   // what looks good depending on our current titles
@@ -71,14 +53,16 @@
     max-width: 46%;
     font-size: modular-scale(1rem, 2);
     line-height: 1;
+    margin-top: 1rem;
   }
 
   @include if-wider-than(650px) {
     font-size: modular-scale(1rem, 3);
   }
 
-  @include if-wider-than(768px) {
+  @include if-wider-than($breakpoint-two-px) {
     font-size: modular-scale(1rem, 2);
+    margin-top: 1rem;
   }
 
   @include if-wider-than(900px) {
@@ -110,16 +94,23 @@
 
 .box__content__img  {
   position: absolute;
-  top: 3%; //position under angle on box
+  top: 24%; //position under angle on box
   bottom: 0;
   right: 0;
-  left: 45%;
+  left: 58%;
   text-align: center;
   overflow: hidden;
 
   img {
     height: 100%;
     width: auto;
+  }
+
+  @include if-wider-than(450px) {
+    top: 3%; //position under angle on box
+    bottom: 0;
+    right: 0;
+    left: 45%;
   }
 }
 
@@ -131,19 +122,17 @@
   text-align: left;
 }
 
-
-
 .box__shape {
-	fill: #666;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
+  fill: #666;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .box__shape--odd {
 }
 
 .box__shape--even {
-	transform: scaleX(-1);
+  transform: scaleX(-1);
 }
