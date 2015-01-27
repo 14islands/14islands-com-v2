@@ -1,5 +1,5 @@
 
-.casestudy__header-label {
+a.casestudy__header-label {
   display: inline-block;
   font-size: modular-scale(.8rem, 2);
   color: $gray;
@@ -24,10 +24,10 @@
   }
 
   .google-santa-tracker & {
-    margin-bottom: -0.2rem;
+    margin-bottom: -0.1rem;
   }
   .tictail & {
-    margin-bottom: 0rem;
+    margin-bottom: .1rem;
   }
 }
 
