@@ -38,19 +38,28 @@ body {
 .u--pad-top {
   padding-top: $default-section-margin;
 }
+.u--pad-top--half {
+    padding-top: $default-section-margin--half;
+}
 
 .u--pad-bottom {
   padding-bottom: $default-section-margin;
+}
+.u--pad-bottom--half {
+  padding-bottom: $default-section-margin--half; // a bit more than half atually
 }
 
 .u--pad-both {
   @extend .u--pad-top;
   @extend .u--pad-bottom;
 }
+.u--pad-both--half {
+  @extend .u--pad-top--half;
+  @extend .u--pad-bottom--half;
+}
 
 
 .main-content {
-  margin-top: $default-section-margin;
   padding-top: pxToRem(80); // same as nav height
 
   .page-home & {
@@ -71,7 +80,7 @@ body {
 
 .header {
 	margin-top: 0;
-	margin-bottom: 4rem;
+	margin-bottom: 0;//4rem;
 }
 
 .header__title {

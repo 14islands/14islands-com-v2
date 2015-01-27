@@ -85,9 +85,10 @@
 // NEXT CASE STUDY FOOTER
 #next-casestudy {
   overflow: hidden;
+  margin-top: -$default-section-margin--half;
 }
 .next-casestudy__link {
-  margin-top: 10%;
+  margin-top: $default-section-margin; // needed to show sloped shape above bg
   display: block;
   position: relative;
   padding: 6%;
@@ -95,7 +96,7 @@
 .next-casestudy__link__shape {
   fill: #666;
   position: absolute;
-  top: -10%;
+  top: -$default-section-margin;
   left: 0;
   width: 100%;
 }

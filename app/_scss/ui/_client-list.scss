@@ -4,14 +4,14 @@
   display: inline-block;
   margin-left: 0;
 
-  padding: 10% 3% 10% 3%;
+  padding: 0 3% 0 3%;
   @include if-wider-than($breakpoint-two-px) {
-    padding: 10% 0% 5% 6%;
+    padding: 0 0% 0 6%;
   }
 }
 .client-list__item {
   display: inline-block;
-  padding: 4% 8% 4% 0;
+  padding: 0 $default-section-margin $default-section-margin 0;
 
   width: 49%;
   @include if-wider-than($breakpoint-one-px) {

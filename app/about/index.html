@@ -4,7 +4,7 @@ id: about
 title: About Us - 14islands
 ---
 
-<section id="we-are" class="u--pad-bottom">
+<section id="we-are" class="u--pad-both">
   <header class="header block--centered">
 	 <h1>We are<br>14islands.</h1>
   </header>
@@ -12,7 +12,9 @@ title: About Us - 14islands
   <div class="block--centered">
 	 <p>We are a web development studio that cares deeply about creating great user experiences. 14islands was founded in 2011, though our roots in the web industry stretch back more than 15 years.</p>
   </div>
-  {% include wide-content-image.html src="../images/about/we-are-14islands.jpg"  alt="The 14islands HQ" ratio="3_2" %}
+
+  {% include wide-content-image.html src="../images/about/we-are-14islands.jpg" alt="The 14islands HQ" ratio="3_2" margin="both" %}
+
 </section>
 
 <section id="we-care" class="u-bg-bright u--pad-both">
@@ -20,15 +22,9 @@ title: About Us - 14islands
     <h1>We care<br>about the web.</h1>
     <p>Digital experiences need many ingredients to make your users happy. Good design. Good performance. Responsive for all devices and screen sizes. Natural and playful interactions. Continual improvement based on usage data. This is the work we do.</p>
   </div>
-  <figure class="block--wide-centered content-image">
-    <div class="ratio ratio--3_2">
-      <img alt="Hjörtur and Marco on a hangout at the 14islands office" data-src="../images/about/we-care.jpg" />
-    </div>
-    <div class="shape-overlay shape-overlay--bottom-right">
-      {% include shapes/about-image-bottom-right.svg %}
-       <figcap>Hjörtur hanging out with Marco. Remote work is awesome.</figcap>
-    </div>
-  </figure>
+
+  {% include wide-content-image.html src="../images/about/we-care.jpg" alt="Hjörtur and Marco on a hangout at the 14islands office" ratio="3_2" margin="both" caption=true shapeClass="shape-overlay--bottom-right" shapeSVG="about-image-bottom-right.svg" %}
+
 </section>
 
 <section id="we-love" class="u--pad-both">
@@ -38,15 +34,7 @@ title: About Us - 14islands
   	<p>There’s always something cooking in the 14islands kitchen. We are constantly experimenting with emerging technologies, and never miss an opportunity to give talks or workshops on web development. </p>
   </div>
 
-  <figure class="block--wide-centered content-image">
-    <div class="ratio ratio--16_9">
-      <img alt="14islands love to share" data-src="../images/about/we-love-what-we-do.jpg" />
-    </div>
-    <div class="shape-overlay shape-overlay--top-left">
-      {% include shapes/about-image-top-left.svg %}
-      <figcap>Marco giving a Responsive Web Development workshop.</figcap>
-    </div>
-  </figure>
+  {% include wide-content-image.html src="../images/about/we-love-what-we-do.jpg" alt="Marco giving a Responsive Web Development workshop." ratio="16_9" margin="both" caption=true shapeClass="shape-overlay--top-left" shapeSVG="about-image-top-left.svg" %}
 
   <div class="block--centered">
 	 <p>The <a href="http://blog.14islands.com/">14islands blog</a> is our main channel for sharing our latest findings and clever techniques. We update our <a href="http://codepen.io/14islands/">Codepen</a> frequently with inspiring animations or small snippets of code. If we think something will benefit the community, we put it on our <a href="https://github.com/14islands">Github page</a>.</p>

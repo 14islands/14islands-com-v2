@@ -32,8 +32,8 @@ $default-font-color: #333333;
 //
 // Margin & padding
 //
-$default-section-margin: 7%;
-$default-side-padding: 40;
+$default-section-margin: 9%;
+$default-section-margin--half: $default-section-margin * 0.5 * 1.14; // a bit more than half atually
 
 //
 // Breakpoints
@@ -50,5 +50,5 @@ $side-padding-mobile: 20px;
 $side-padding-grid-px: 40px;
 $grid-max-width-px: 786px + (2*$side-padding-grid-px);
 $grid-wide-max-width-px: 1300px + (2*$side-padding-grid-px);
-$grid-gap-px: ($side-padding-grid-px + $grid-max-width-px - $grid-wide-max-width-px)/2;
+$grid-gap-px: ($side-padding-grid-px*2 + $grid-max-width-px - $grid-wide-max-width-px)/2;
 

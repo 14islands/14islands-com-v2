@@ -1,11 +1,17 @@
 
 {% if include.margin %}
-  <div class="block--wide-centered content-image content-image--margin-{{include.margin}}">
+  <figure class="block--wide-centered content-image u--pad-{{include.margin}}--half">
 {% else %}
-  <div class="block--wide-centered content-image content-image--margin-top">
+  <figure class="block--wide-centered content-image u--pad-top--half">
 {% endif %}
 
   <div class="ratio ratio--{{include.ratio}}">
     <img alt="{{include.alt}}" data-src="{{include.src}}">
   </div>
-</div>
+  {% if include.caption %}
+    <div class="shape-overlay {{include.shapeClass}}">
+      {% include shapes/{{include.shapeSVG}} %}
+      <figcap>{{include.alt}}</figcap>
+    </div>
+  {% endif %}
+</figure>
