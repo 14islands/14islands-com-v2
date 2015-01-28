@@ -13,12 +13,9 @@ priority: 3
 private: false
 ---
 
-
 {% include casestudy-header.html %}
 
-
-{% include casestudy-video.html vimeoId="118058075" %}
-
+{% include casestudy-video.html vimeo-id="109427043" %}
 
 <section id="about" class="grid u--pad-both">
   <div class="grid__row">
@@ -30,11 +27,13 @@ For the second year in a row, we helped build Google's Santa Tracker experience.
 Each day - from December 1st to December 24th - we get to follow Santa and his elves as they prepare for Christmas.
 {% endmarkdown %}
   </div>
+
+  {% include wide-content-image.html src="/images/work/google-santa-tracker/santa-tracker-village-desktop.png" alt="Santa Tracker village" ratio="3_2" %}
+
 </section>
 
 
-{% include casestudy-image.html src="/images/work/google-santa-tracker/santa-tracker-village-desktop.png" alt="Santa's village is the entry point to all the individual games and scenes. Each one is built as a separate App making it easier for the team to work in parallel." ratio="3_2" %}
-
+{% include casestudy-responsive.html url="/images/work/google-santa-tracker/santa-tracker-village-mobile.png" %}
 
 
 <section class="grid u--pad-both">
@@ -48,17 +47,18 @@ All design elements are vector based - a good approach to keep things flexible a
 {% endmarkdown %}
   </div>
 
+  {% include wide-content-image.html src="/images/work/google-santa-tracker/santa-tracker-reindeers-desktop.png" alt="Santa Tracker village" ratio="3_2" margin="top" %}
+
 </section>
 
 
-{% include casestudy-responsive.html url="/images/work/google-santa-tracker/santa-tracker-village-mobile.png" %}
-
-
-<section class="grid u--pad-both">
+<section class="grid u--pad-bottom">
   <div class="grid__row">
 {% markdown %}
 ## Bringing it to life
-Some stuff about animations to make it more about our work. We need to show how valuable our expertise and craftmanship was for the success of the projects.
+Some stuff about how the team was spread out in many countries, how we worked.
+
+Some stuff about animations.
 {% endmarkdown %}
   </div>
 
@@ -72,23 +72,20 @@ And some stuff about how we integrated with many cool Google services, such as t
 {% endmarkdown %}
   </div>
 
-  {% include wide-content-image.html src="/images/work/google-santa-tracker/santa-tracker-reindeers-desktop.png" alt="Santa Tracker village" ratio="3_2" margin="top" %}
+  {% include wide-content-image.html src="/images/work/google-santa-tracker/santa-tracker-translations-desktop.png" alt="Santa Tracker" ratio="3_2" margin="top" %}
 
   <div class="grid__row">
 {% markdown %}
-Also some stuff about how the team was spread out in many countries, how we worked.
+  The translation scene lets you listen to your favorite holiday greetings in 20 languages. Our office buddies Plan8 did an amazing job with the sound design for the whole project.
 {% endmarkdown %}
   </div>
 </section>
 
 
-{% include casestudy-image.html src="/images/work/google-santa-tracker/santa-tracker-translations-desktop.png" alt="The translation scene lets you listen to your favorite holiday greetings in 20 languages. Our office buddies Plan8 did an amazing job with the sound design for the whole project." ratio="3_2" %}
-
-
-<section class="grid u--pad-both">
+<section class="grid u--pad-bottom">
   <div class="grid__row">
 {% markdown %}
-## Technologies
+## Santa's factory
 
 As always, when working with Google, we got to play with a lot of new toys. This year Santa's factory was upgraded to use Web Components (using Polymer) and the new Web Animations specification. Read more about our <a href="#">thoughts on Web Animations on the blog</a>.
 
