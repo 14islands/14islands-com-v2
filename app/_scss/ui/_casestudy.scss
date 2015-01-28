@@ -1,7 +1,7 @@
 
 a.casestudy__header-label {
   display: inline-block;
-  font-size: modular-scale(.8rem, 2);
+  font-size: modular-scale(1rem, 1);
   color: $gray;
   vertical-align: bottom;
 }
@@ -24,10 +24,10 @@ a.casestudy__header-label {
   }
 
   .google-santa-tracker & {
-    margin-bottom: -0.1rem;
+    margin-bottom: -0.15rem;
   }
   .tictail & {
-    margin-bottom: .1rem;
+    margin-bottom: 0rem;
   }
 }
 
@@ -68,7 +68,10 @@ a.casestudy__header-label {
 .casestudy__quote {
 	margin: 0;
 	@include clearfix;
-	max-width: 700px;
+
+  @include if-wider-than($breakpoint-two-px) {
+    padding: $default-content-spacing;
+  }
 }
 
 .casestudy__author {

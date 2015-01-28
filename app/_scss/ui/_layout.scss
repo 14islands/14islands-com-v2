@@ -38,6 +38,10 @@ body {
     // add content padding on wider screen
     width: 100% - $default-content-spacing * 2;
   }
+
+  p {
+    max-width: 700px;
+  }
 }
 
 .grid__row--wide {

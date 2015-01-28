@@ -140,7 +140,6 @@ li {
 
 p {
   margin: 0 0 1rem;
-  max-width: 700px;
 }
 
 ul,
@@ -203,7 +202,13 @@ q {
   }
   blockquote p,
   q {
-    //font-size: modular-scale(1rem, 2);
+    font-size: modular-scale(1rem, 3);
+  }
+}
+@media (min-width: $breakpoint-three-px) {
+  blockquote p,
+  q {
+    font-size: modular-scale(1rem, 4);
   }
 }
 
