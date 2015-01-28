@@ -105,7 +105,6 @@ a.casestudy__header-label {
   margin-top: $default-section-spacing; // needed to show sloped shape above bg
   display: block;
   position: relative;
-  @extend .u--default-v-padding;
 }
 .next-casestudy__link__shape {
   fill: #666;
