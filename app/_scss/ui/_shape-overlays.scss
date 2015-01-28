@@ -78,14 +78,28 @@
 
 .shape-overlay--casestudy-responsive {
   @include if-wider-than($breakpoint-two-px) {
-    bottom: 0%;
-    right: 60%;
-    width: 42%;
+    top: 12%;
+    left: 0%;
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
 
     figcap {
-      top: 14%;
-      right: 30%;
-      left: 10%;
+      position: relative;
+      margin-top: 3rem;
+      max-width: 10rem;
+      box-sizing: content-box;
+      padding-right: 4rem;
+      padding-left: 2rem;
     }
+  }
+  @include if-wider-than($breakpoint-two-px) {
+    left: auto;
+    right: 65%;
   }
 }
