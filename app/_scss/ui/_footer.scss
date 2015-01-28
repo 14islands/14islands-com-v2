@@ -9,7 +9,7 @@
     svg {
         @extend .svg;
     	display: inline-block;
-    	width: 70px;	
+    	width: 70px;
     }
     @include if-wider-than($breakpoint-two-px) {
         float: left;

@@ -78,7 +78,7 @@
 	span {
 		display: none;
 	}
-	
+
 	@include if-wider-than(400px) {
 		span {
 			display: inline;

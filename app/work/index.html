@@ -4,12 +4,12 @@ id: work
 title: Our Work - 14islands
 ---
 
-<section class="u--pad-both">
-  <header class="header block--centered">
+<section class="grid u--pad-both">
+  <header class="header grid__row">
   <h1 class="header__title">We explore ideas<br> and build great stuff.</h1>
   </header>
 
-  <div class="block--wide-centered u--pad-top--half">
+  <div class="grid__row--wide u--pad-top--half">
   {% assign sorted_pages = (site.categories.work | sort: 'priority') %}
   {% for post in sorted_pages %}
     {% unless post.private and site.hide_private %}
@@ -32,7 +32,7 @@ title: Our Work - 14islands
           </svg>
         {% endif %}
 
-        <div class="box__content">
+        <div class="box__content u--default-h-padding u--default-v-padding">
           <div class="box__content__img {{ post.imageClass }}">
             <img data-src="{{post.image}}"/>
           </div>
@@ -50,11 +50,11 @@ title: Our Work - 14islands
   </div>
 </section>
 
-<section class="u-bg-natt-dark u--pad-top u--pad-bottom--half">
-  <div class="block--centered">
+<section class="grid u-bg-natt-dark u--pad-top u--pad-bottom--half">
+  <div class="grid__row">
     <h2 class="header__title">We have the pleasure to work with great people.</h2>
   </div>
-  <div class="block--wide-centered u--pad-top--half">
+  <div class="grid__row--wide u--pad-top--half">
     <ul class="client-list">
 
       <li class="client-list__item" title="Google">

@@ -21,7 +21,6 @@
   left: 0;
   bottom: 0;
   right: 0;
-  padding: 6%;
 }
 
 .box__content__logo {
@@ -39,7 +38,7 @@
 }
 
 .box__content__headline {
-  width: 66%;
+  width: 62%;
   margin-top: .5rem;
   margin-bottom: 0;
   font-size: modular-scale(1rem, 1);
@@ -62,7 +61,7 @@
   }
 
   @include if-wider-than($breakpoint-two-px) {
-    font-size: modular-scale(1rem, 2); 
+    font-size: modular-scale(1rem, 2);
   }
 
   @include if-wider-than(900px) {
@@ -111,7 +110,7 @@
     top: 3%; //position under angle on box
     bottom: 0;
     right: 0;
-    left: 45%;
+    left: 46%;
   }
 }
 

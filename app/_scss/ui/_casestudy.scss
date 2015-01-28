@@ -99,28 +99,20 @@ a.casestudy__header-label {
 // NEXT CASE STUDY FOOTER
 #next-casestudy {
   overflow: hidden;
-  margin-top: -$default-section-margin--half;
+  margin-top: -$default-section-spacing--half;
 }
 .next-casestudy__link {
-  margin-top: $default-section-margin; // needed to show sloped shape above bg
+  margin-top: $default-section-spacing; // needed to show sloped shape above bg
   display: block;
   position: relative;
-  padding: 6%;
+  @extend .u--default-v-padding;
 }
 .next-casestudy__link__shape {
   fill: #666;
   position: absolute;
-  top: -$default-section-margin;
+  top: -$default-section-spacing;
   left: 0;
   width: 100%;
-}
-.next-casestudy__link__shape--hover {
-  opacity: 0;
-  transition: opacity 300ms $easeOutQuad;
-
-  a.next-casestudy__link:hover & {
-    opacity: 1;
-  }
 }
 a.next-casestudy__link,
 a.next-casestudy__link:hover,

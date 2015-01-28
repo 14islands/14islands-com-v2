@@ -67,12 +67,12 @@
 }
 
 .hero__logo {
-  @extend .block--centered;
+  @extend .grid__row;
   margin-top: 2rem;
 }
 
 .hero__caption {
-  @extend .block--centered;
+  @extend .grid__row;
 	font-weight: 600;
 	margin-top: auto;
 	margin-bottom: auto;

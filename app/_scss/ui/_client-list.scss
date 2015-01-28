@@ -7,7 +7,7 @@
 
 .client-list__item {
   display: inline-block;
-  padding: 0 $default-section-margin/2 $default-section-margin;
+  padding: 0 $default-section-spacing/2 $default-section-spacing;
 
   // DAVID: We could use CSS3 columns instead since we dont want to support old browsers
   width: 49%;

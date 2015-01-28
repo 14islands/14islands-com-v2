@@ -78,19 +78,8 @@
 
 .shape-overlay--casestudy-responsive {
   @include if-wider-than($breakpoint-two-px) {
-    top: 12%;
-    left: 2%;
-    width: 30%;
-
-    figcap {
-      top: 8%;
-      right: 30%;
-      left: 10%;
-    }
-  }
-  @include if-wider-than($breakpoint-two-px) {
-    top: 12%;
-    left: -10%;
+    bottom: 0%;
+    right: 60%;
     width: 42%;
 
     figcap {
