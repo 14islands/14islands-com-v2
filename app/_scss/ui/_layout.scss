@@ -40,7 +40,7 @@ body {
   }
 
   p {
-    max-width: 700px;
+    max-width: $grid-paragraph-max-width-px;
   }
 }
 
