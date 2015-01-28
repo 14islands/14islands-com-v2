@@ -24,30 +24,21 @@ class FOURTEEN.Grid
 	DATA_IS_REPEATABLE = 'is-repeatable'
 
 	SELECTOR_SPINNER = '.spinner'
-	SELETOR_CELL_ITEM = '.grid__item'
+	SELETOR_CELL_ITEM = '.team-grid__item'
 	SELECTOR_SPINNER = '.spinner'
 
-	CLASS_CELL_ITEM = 'grid__item'
-	CLASS_IMG = 'grid__image'
-	CLASS_ANCHOR = 'grid__link'
-	CLASS_ANIMATE_ITEM = 'grid__item--animate'
+	CLASS_CELL_ITEM = 'team-grid__item'
+	CLASS_IMG = 'team-grid__image'
+	CLASS_ANCHOR = 'team-grid__link'
+	CLASS_ANIMATE_ITEM = 'team-grid__item--animate'
 	CLASS_SPINNER_INACTIVE = 'spinner--inactive'
 
-	IS_REPEATABLE = false
+	IS_GRID_REPEATABLE = false
 
 	SPINNER_TIMEOUT_MS = 1800
 
 	GRID_CELL_GAP = 0
 	GRID_PATTERN = {}
-	GRID_CELL_SIZES = {}
-
-	MQ_BREAKPOINT_MOBILE = '(min-width: 320px)'
-	MQ_BREAKPOINT_TABLET = '(min-width: 720px)'
-
-	GRID_CLASSES = {
-		1: 'grid__item--1x1',
-		2: 'grid__item--2x2'
-	}
 
 	MODEL = {
 		1: [],
@@ -62,6 +53,7 @@ class FOURTEEN.Grid
 
 	hasChangedBreakpoint = false
 	currentBreakpointKey = null
+	debouncedResizeFn = null
 	spinnerTimerId = null
 	watcher = null
 
@@ -90,9 +82,9 @@ class FOURTEEN.Grid
 
 
 	initializeGrid: =>
+		# debugger;
 		# Read our data from the page
 		@setGridModel()
-		# console.log "initializeGrid!", MODEL
 
 		# Check which breakpoint are we working on
 		@checkBreakpoint()
@@ -124,10 +116,10 @@ class FOURTEEN.Grid
 	###
 		Add event callbacks
 	###
-	addEventListeners: ->
+	addEventListeners: =>
 		# Check if we're not coming back here again
 		return if debouncedResizeFn isnt null
-		debouncedResizeFn = FOURTEEN.Utils.debounce onWindowResize, DEBOUNCE_THRESHOLD
+		debouncedResizeFn = FOURTEEN.Utils.debounce @onWindowResize, DEBOUNCE_THRESHOLD
 		$(window).on 'resize', debouncedResizeFn
 		@
 
@@ -139,27 +131,18 @@ class FOURTEEN.Grid
 	###
 	checkBreakpoint: () ->
 
-		if (GRID_PATTERN.hasOwnProperty('t') and
-				Modernizr.mq( MQ_BREAKPOINT_TABLET ))
+		for key of GRID_PATTERN
 
-			# Are we changing views here?
-			if (currentBreakpointKey isnt 't' and
-					currentBreakpointKey isnt null)
+			continue if GRID_PATTERN[key].hasOwnProperty('mq') is false
 
-				hasChangedBreakpoint = true
+			# if we have "mq" set and
+			# it actually matches our current resolution
+			if Modernizr.mq(GRID_PATTERN[key]['mq'])
 
-			currentBreakpointKey = 't'
+				if currentBreakpointKey isnt key and currentBreakpointKey isnt null
+					hasChangedBreakpoint = true
 
-		else if (GRID_PATTERN.hasOwnProperty('m') and
-				Modernizr.mq( MQ_BREAKPOINT_MOBILE ))
-
-			# Are we changing views here?
-			if (currentBreakpointKey isnt 'm' and
-					currentBreakpointKey isnt null)
-
-				hasChangedBreakpoint = true
-
-			currentBreakpointKey = 'm'
+				currentBreakpointKey = key
 
 	###
 		Removes watcher events callbacks
@@ -198,7 +181,7 @@ class FOURTEEN.Grid
 	###
 		Shows all items when the images have been loaded.
 	###
-	showGrid: () ->
+	showGrid: () =>
 		spinnerTimerId = setTimeout @showSpinner, SPINNER_TIMEOUT_MS
 		# imagesLoaded( context, function() {
 		if spinnerTimerId isnt null then @hideSpinner()
@@ -227,7 +210,7 @@ class FOURTEEN.Grid
 	hideSpinner: () ->
 
 	isUsingRIO: () ->
-		FOURTEEN.Utils.isLocalhost() and typeof ResponsiveIO is 'object'
+		FOURTEEN.Utils.isLocalhost() isnt true and typeof ResponsiveIO is 'object'
 
 	###
 		Callback for when it's exiting the page view
@@ -239,9 +222,11 @@ class FOURTEEN.Grid
 		Callback for when the window is resized
 	###
 	onWindowResize: () =>
+
+		return if DOMModel[0] is undefined or DOMModel[0].length is 0
+
 		currentNumberOfCols = DOMModel[0].length
 		row = 0
-		i = 0
 
 		# Which breakpoint should we base this on
 		@checkBreakpoint()
@@ -258,8 +243,9 @@ class FOURTEEN.Grid
 			spinnerTimerId = setTimeout @showSpinner, SPINNER_TIMEOUT_MS
 
 			# Add only the additional ones
-			for row in [0..numAvailable.rows]
+			while row < numAvailable.rows
 				@addGridCols row, currentNumberOfCols, numAvailable.cols
+				row++
 
 			@refreshImages currentNumberOfCols
 
@@ -270,7 +256,7 @@ class FOURTEEN.Grid
 
 			# Show only the new ones
 			# with "greater than" what we currently have
-			@showItems @$context.find(SELETOR_CELL_ITEM + ':gt('+ currentNumberOfCols +')')
+			@showItems @$context.find(SELETOR_CELL_ITEM + ':gt(' + currentNumberOfCols + ')')
 
 			# })
 
@@ -281,9 +267,9 @@ class FOURTEEN.Grid
 		@param  {Integer} startColumn From which column should we do this.
 	###
 	refreshImages: (startColumn) ->
-		return if @isUsingRIO isnt true
+		return if @isUsingRIO() isnt true
 
-		$images = $context.find('img')
+		$images = @$context.find('img')
 		_startColumn = startColumn || 0
 		i = 0
 		imagesLen = $images.length
@@ -317,7 +303,7 @@ class FOURTEEN.Grid
 			console.warn('Missing src or alt attribute in object.')
 			return ""
 
-		if (@isUsingRIO)
+		if (@isUsingRIO())
 			img = '<img class="' + CLASS_IMG + '" data-src="' + decodeURIComponent(item.src) + '" alt="' + item.alt + '" />'
 		else
 			img = '<img class="' + CLASS_IMG + '" src="' + decodeURIComponent(item.src) + '" alt="' + item.alt + '" />'
@@ -330,22 +316,18 @@ class FOURTEEN.Grid
 		@param  {Object} child Element to be appended into this <li>
 		@return {String}       A fresh new <li> in a string format.
 	###
-	createLiTagString: ( child, customClass, x, y ) ->
+	createLiTagString: ( child, type, left, top ) ->
 		_child = child || ""
-		_classes = []
-
-		_classes.push( CLASS_CELL_ITEM )
-		_classes.push( customClass )
-
+		_style = ""
 		_style = 'visibility: hidden;'
-		_style +=  Modernizr.prefixed('transform')
-		_style += ':'
-		_style += 'transform3d('
-		_style += x + 'px,'
-		_style += y + 'px,'
-		_style += '0)'
+		_style += 'top: ' + top + 'px;'
+		_style += 'left: ' + left + 'px;'
 
-		return '<li class="' + _classes.join(" ") + '" style="' + _style + '">' + _child + '</li>'
+		if GRID_PATTERN[currentBreakpointKey]['sizes'].hasOwnProperty(type)
+			_style += 'width: ' + GRID_PATTERN[currentBreakpointKey]['sizes'][type] + 'px;'
+			_style += 'height: ' + GRID_PATTERN[currentBreakpointKey]['sizes'][type] + 'px;'
+
+		return '<li class="' + CLASS_CELL_ITEM + '" style="' + _style + '">' + _child + '</li>'
 
 	###
 		Creates a <a> tag to be inserted in it's <li> parent
@@ -419,10 +401,15 @@ class FOURTEEN.Grid
 
 		# Don't let it extrapolate our modal length
 		# just to find out the type number
-		colMod = col % GRID_PATTERN[currentBreakpointKey][row].length
+		colMod = col % GRID_PATTERN[currentBreakpointKey]['types'][row].length
 
 		# Find out it's type
-		return GRID_PATTERN[currentBreakpointKey][row][colMod]
+		return GRID_PATTERN[currentBreakpointKey]['types'][row][colMod]
+
+
+	isUnrepetableItem: (item) ->
+		return false if item.hasOwnProperty('unrepeatable') isnt true
+		JSON.parse item.unrepeatable
 
 	###
 		Gets an individual item from the model.
@@ -443,8 +430,8 @@ class FOURTEEN.Grid
 
 			# Add it back to the end
 			# if it's repeatable
-			if ( IS_REPEATABLE )
-				MODEL[ type ].push( item )
+			if IS_GRID_REPEATABLE and @isUnrepetableItem(item) isnt true
+				MODEL[ type ].push item
 
 		return item
 
@@ -462,11 +449,10 @@ class FOURTEEN.Grid
 		y = 0
 
 		# Blanks are just dummies, no need to create anything
+		# return empty string to concatenate
 		return "" if (type is 0)
 
 		item = @getItem type
-
-		# console.log 'item >> ', item
 
 		if item
 
@@ -478,10 +464,10 @@ class FOURTEEN.Grid
 		x = @calculateX col, row
 		y = @calculateY row
 
-		if anchor isnt ""
-			return @createLiTagString anchor, GRID_CLASSES[ type ], x, y
+		if anchor
+			return @createLiTagString anchor, type, x, y
 		else
-			return @createLiTagString img, GRID_CLASSES[ type ], x, y
+			return @createLiTagString img, type, x, y
 
 	###
 		Calculates the X axis that the cell should be in,
@@ -506,10 +492,12 @@ class FOURTEEN.Grid
 		previousCols = DOMModel[row].slice(0, col)
 		numPreviousCols = previousCols.length
 
-		for i in [0..numPreviousCols]
+		while i < numPreviousCols
 
 			currentType = previousCols[i]
 			previousType = previousCols[i - 1]
+
+			i += 1
 
 			# we want to skip this
 			# if it's a blank followed by a 2x2
@@ -556,17 +544,17 @@ class FOURTEEN.Grid
 		@param  {String}  key  a valid object key from grid-model or none
 		@return {Integer}      It's value (width or height)
 	###
-	getSizeValue: ( type, key ) ->
+	getSizeValue: ( type, key ) =>
 		value = 0
 
-		if (typeof GRID_CELL_SIZES[currentBreakpointKey][type] is 'object' and
-				GRID_CELL_SIZES[currentBreakpointKey][type].hasOwnProperty(key))
+		if (typeof GRID_PATTERN[currentBreakpointKey]['sizes'][type] is 'object' and
+				GRID_PATTERN[currentBreakpointKey]['sizes'][type].hasOwnProperty(key))
 
-			value = GRID_CELL_SIZES[currentBreakpointKey][type][key]
+			value = GRID_PATTERN[currentBreakpointKey]['sizes'][type][key]
 
 		else
 
-			value = GRID_CELL_SIZES[currentBreakpointKey][type]
+			value = GRID_PATTERN[currentBreakpointKey]['sizes'][type]
 
 		return parseInt( value, 10 )
 
@@ -578,7 +566,6 @@ class FOURTEEN.Grid
 		i = 0
 
 		while i < numItems
-		# for i in [0..numItems]
 			@showItem $items.eq( i )
 			i++
 
@@ -607,6 +594,8 @@ class FOURTEEN.Grid
 				.css( Modernizr.prefixed('transitionDelay'), delay + 'ms' )
 		, 50
 
+		@
+
 	###
 		Setups the grid by finding out information
 		on how many elements we can have in this available width.
@@ -620,7 +609,7 @@ class FOURTEEN.Grid
 		totalAvailableWidth = @$context.outerWidth()
 
 		# How many rows are desired
-		numAvailable.rows = GRID_PATTERN[currentBreakpointKey].length
+		numAvailable.rows = GRID_PATTERN[currentBreakpointKey]['types'].length
 
 		# How many cols we can fit
 		# We base how many cols we can have with the smallest square size = 1
@@ -637,12 +626,11 @@ class FOURTEEN.Grid
 		modelKey = @$context.data( DATA_MAP_MODEL )
 
 		# Set our gap
-		GRID_CELL_GAP = @$context.data( DATA_GAP ) || 20
+		GRID_CELL_GAP = @$context.data( DATA_GAP ) || 0
 
-		IS_REPEATABLE = parseInt( @$context.data( DATA_IS_REPEATABLE ), 10 ) || 1
+		IS_GRID_REPEATABLE = parseInt( @$context.data( DATA_IS_REPEATABLE ), 10 ) || 1
 
 		GRID_PATTERN = @getObjFromKey patternKey
-		GRID_CELL_SIZES = @getObjFromKey cellSizesKey
 		MODEL = @getObjFromKey modelKey
 
 	getObjFromKey: (key) =>
