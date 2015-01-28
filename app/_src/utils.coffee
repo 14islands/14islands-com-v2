@@ -27,9 +27,8 @@ class FOURTEEN.Utils
 		Simple checks if we are dealing with localhost
 	###
 	@isLocalhost: () ->
-			(document.location.hostname is 'localhost') or
-			(document.location.hostname is '0.0.0.0') or
-			(document.location.hostname is '127.0.0.1')
+		hosts = ['localhost', '0.0.0.0', '127.0.0.1']
+		hosts.indexOf(document.location.hostname) isnt -1
 
 	###
 		Returns a random number
