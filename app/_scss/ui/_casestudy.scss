@@ -3,12 +3,10 @@ a.casestudy__header-label {
   display: inline-block;
   font-size: modular-scale(1rem, 1);
   color: $gray;
-  vertical-align: bottom;
 }
 
 .casestudy__header-logo {
   display: inline-block;
-  vertical-align: bottom;
   height: 3.14rem;
   margin-left: .3em;
 
@@ -23,10 +21,10 @@ a.casestudy__header-label {
   }
 
   .google-santa-tracker & {
-    margin-bottom: -0.15rem;
+    margin-bottom: -0.99rem;
   }
   .tictail & {
-    margin-bottom: 0rem;
+    margin-bottom: -0.73rem;
   }
 }
 
@@ -77,8 +75,8 @@ a.casestudy__header-label {
   margin-bottom: 1.3rem;
   svg {
     width: 70px;
-    float: left; 
-    
+    float: left;
+
     filter: grayscale(100%);
     opacity: .7;
     transition: all 300ms $easeOutQuad;
@@ -108,7 +106,7 @@ a.casestudy__header-label {
   font-size: 1.6rem;
   .casestudy__technology-item:hover & {
     color: black;
-  } 
+  }
 }
 
 .casestudy__technology-description {
@@ -179,7 +177,7 @@ a.next-casestudy__link:active {
   margin-bottom: 1em;
 }
 .next-casestudy__headline {
-  margin: 0;
+  margin-top: 0;
   width: 100%;
   max-width: initial;
 }
