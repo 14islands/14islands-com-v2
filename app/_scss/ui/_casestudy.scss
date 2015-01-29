@@ -67,10 +67,12 @@ a.casestudy__header-label {
 
 .casestudy__technology-list {
   padding-top: 5%;
+  text-align: center;
 }
 
 .casestudy__technology-item {
   display: inline-block;
+  text-align: left;
   width: 100%;
   margin-bottom: 1.3rem;
   svg {
