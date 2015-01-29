@@ -4,12 +4,12 @@ id: about
 title: About Us - 14islands
 ---
 
-<section id="we-are" class="u--pad-both">
-  <header class="header block--centered">
+<section id="we-are" class="grid u--pad-both">
+  <header class="header grid__row">
 	 <h1>We are<br>14islands.</h1>
   </header>
 
-  <div class="block--centered">
+  <div class="grid__row">
 	 <p>We are a web development studio that cares deeply about creating great user experiences. 14islands was founded in 2011, though our roots in the web industry stretch back more than 15 years.</p>
   </div>
 
@@ -17,8 +17,8 @@ title: About Us - 14islands
 
 </section>
 
-<section id="we-care" class="u-bg-bright u--pad-both">
-  <div class="block--centered">
+<section id="we-care" class="grid u-bg-bright u--pad-both">
+  <div class="grid__row">
     <h1>We care<br>about the web.</h1>
     <p>Digital experiences need many ingredients to make your users happy. Good design. Good performance. Responsive for all devices and screen sizes. Natural and playful interactions. Continual improvement based on usage data. This is the work we do.</p>
   </div>
@@ -27,8 +27,8 @@ title: About Us - 14islands
 
 </section>
 
-<section id="we-love" class="u--pad-both">
-  <div class="block--centered">
+<section id="we-love" class="grid u--pad-both">
+  <div class="grid__row">
   	<h1>We love<br>what we do.</h1>
 
   	<p>There’s always something cooking in the 14islands kitchen. We are constantly experimenting with emerging technologies, and never miss an opportunity to give talks or workshops on web development. </p>
@@ -36,19 +36,118 @@ title: About Us - 14islands
 
   {% include wide-content-image.html src="../images/about/we-love-what-we-do.jpg" alt="Marco giving a Responsive Web Development workshop." ratio="16_9" margin="both" caption=true shapeClass="shape-overlay--top-left" shapeSVG="about-image-top-left.svg" %}
 
-  <div class="block--centered">
+  <div class="grid__row">
 	 <p>The <a href="http://blog.14islands.com/">14islands blog</a> is our main channel for sharing our latest findings and clever techniques. We update our <a href="http://codepen.io/14islands/">Codepen</a> frequently with inspiring animations or small snippets of code. If we think something will benefit the community, we put it on our <a href="https://github.com/14islands">Github page</a>.</p>
   </div>
 
 </section>
 
-<section id="meet-us" class="u-bg-natt-dark u--pad-top">
-  <div class="block--centered">
+<section id="meet-us" class="grid u-bg-natt-dark u--pad-top">
+  <div class="grid__row">
     <h1>Meet the<br>islanders.</h1>
     <p>We are proud of our multicultural background and our differences only make us stronger as a team. We like to keep it playful and belive in having fun.</p>
   </div>
 
-  <div class="u-bg-natt-dark wide-grid">
+  <div class="u-bg-natt-dark">
+
+    <script>
+      var FOURTEEN = FOURTEEN || {};
+      FOURTEEN.modelTeam = {
+        1: [
+          {
+            "src": "../images/about/team-grid/180px-rio.jpg",
+            "alt": "Responsive.io"
+          },
+          {
+            "src": "../images/about/team-grid/180px-piano.jpg",
+            "alt": "Musical instruments in our office"
+          },
+          {
+            "src": "../images/about/team-grid/180px-poster-bullshit.jpg",
+            "alt": "BS free zone poster"
+          },
+          {
+            "src": "../images/about/team-grid/180px-David-Marco.jpg",
+            "alt": "David and Marco cracking"
+          },
+          {
+            "src": "../images/about/team-grid/180px-bike.jpg",
+            "alt": "Biking is good"
+          },
+          {
+            "src": "../images/about/team-grid/180px-breakfast.jpg",
+            "alt": "Healthy breakfast every Monday"
+          },
+          {
+            "src": "../images/about/team-grid/180px-fuckit-shipit.jpg",
+            "alt": "Fuck it, Ship it."
+          },
+          {
+            "src": "../images/about/team-grid/180px-logo-schematics.jpg",
+            "alt": "14islands branding"
+          },
+          {
+            "src": "../images/about/team-grid/180px-midnatsloppet.jpg",
+            "alt": "Midnatsloppet 2014"
+          },
+          {
+            "src": "../images/about/team-grid/180px-plan8.jpg",
+            "alt": "Our office"
+          },
+          {
+            "src": "../images/about/team-grid/180px-plant.jpg",
+            "alt": "Bonzai"
+          },
+          {
+            "src": "../images/about/team-grid/180px-wood.jpg",
+            "alt": "Logo carved in wood"
+          }
+        ],
+        2: [
+          // {
+          //   "src": "../images/about/team-grid/360px-David.jpg",
+          //   "alt": "David Lindkvist",
+          //   "unrepeatable": "true"
+          // },
+          {
+            "src": "../images/about/team-grid/360px-bench.jpg",
+            "alt": ""
+          },
+          {
+            "src": "../images/about/team-grid/360px-Iceland.jpg",
+            "alt": "Iceland"
+          },
+          // {
+          //   "src": "../images/about/team-grid/360px-Hjortur.jpg",
+          //   "alt": "Hjörtur Hilmarsson",
+          //   "unrepeatable": "true"
+          // },
+          // {
+          //   "src": "../images/about/team-grid/360px-Marco.jpg",
+          //   "alt": "Marco Barbosa",
+          //   "unrepeatable": "true"
+          // },
+          {
+            "src": "../images/about/team-grid/360px-Brasil.jpg",
+            "alt": "Brasil"
+          }
+        ]
+      };
+    </script>
+
+    <ul class="team-grid js-component-grid" data-gap="0" data-map-model="modelTeam" data-map-pattern="ABOUT_GRID_PATTERN_BLOCKS" data-map-sizes="ABOUT_GRID_CELL_SIZES_BLOCKS" data-is-repeatable="1">
+      <li class="team-grid__item team-grid__item--animate" style="visibility: visible; top: 0px; left: 0px; width: 360px; height: 360px; transition-delay: 90ms; -webkit-transition-delay: 90ms;">
+        <img class="team-grid__image" src="../images/about/team-grid/360px-David.jpg" alt="David Lindkvist">
+      </li>
+      <li class="team-grid__item team-grid__item--animate" style="visibility: visible; top: 360px; left: 360px; width: 360px; height: 360px; transition-delay: 90ms; -webkit-transition-delay: 90ms;">
+        <img class="team-grid__image" src="../images/about/team-grid/360px-Hjortur.jpg" alt="Hjörtur Hilmarsson">
+      </li>
+      <li class="team-grid__item team-grid__item--animate" style="visibility: visible; top: 720px; left: 0px; width: 360px; height: 360px; transition-delay: 90ms; -webkit-transition-delay: 90ms;">
+        <img class="team-grid__image" src="../images/about/team-grid/360px-Marco.jpg" alt="Marco Barbosa">
+      </li>
+    </ul>
+
+    <!-- add noscript fallback here -->
 
     <!--div class="about-grid">
       <div class="about-grid__row">

@@ -16,43 +16,72 @@ body {
   }
 }
 
-.block--centered {
-  position: relative;
-  max-width: $grid-max-width-px;
-  width: 100%;
-  margin: 0 auto;
 
-  padding-left: $side-padding-mobile;
-  padding-right: $side-padding-mobile;
-  @include if-wider-than($breakpoint-two-px) {
-    padding-left: $side-padding-grid-px;
-    padding-right: $side-padding-grid-px;
+
+///////////////////////////////////////////////////////////////////////////////
+// GRID LAYOUT
+///////////////////////////////////////////////////////////////////////////////
+
+.grid {
+  padding-left: $default-grid-spacing;
+  padding-right: $default-grid-spacing;
+}
+
+.grid__row {
+  position: relative;
+  margin: 0 auto;
+  max-width: $grid-max-width-px;
+
+  // no content padding on mobile
+  width: 100%;
+  @include if-wider-than($breakpoint-one-px) {
+    // add content padding on wider screen
+    width: 100% - $default-content-spacing * 2;
+  }
+
+  p {
+    max-width: $grid-paragraph-max-width-px;
   }
 }
 
-.block--wide-centered {
-  @extend .block--centered;
-  max-width: $grid-wide-max-width-px;
+.grid__row--wide {
+  position: relative;
+  margin: 0 auto;
+  max-width: $grid-max-width--wide-px;
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// SECTION & CONTENT PADDING
+///////////////////////////////////////////////////////////////////////////////
+.u--default-h-padding {
+  padding-left: $default-content-spacing;
+  padding-right: $default-content-spacing;
+}
+.u--default-v-padding {
+  padding-top: $default-content-spacing;
+  padding-bottom: $default-content-spacing;
 }
 
 .u--pad-top {
-  padding-top: $default-section-margin;
+  padding-top: $default-section-spacing;
 }
 .u--pad-top--half {
-  padding-top: $default-section-margin--half;
+  padding-top: $default-section-spacing--half;
 }
 .u--margin-top--half {
-  margin-top: $default-section-margin--half;
+  margin-top: $default-section-spacing--half;
 }
 
 .u--pad-bottom {
-  padding-bottom: $default-section-margin;
+  padding-bottom: $default-section-spacing;
 }
 .u--pad-bottom--half {
-  padding-bottom: $default-section-margin--half;
+  padding-bottom: $default-section-spacing--half;
 }
 .u--margin-bottom--half {
-  margin-bottom: $default-section-margin--half;
+  margin-bottom: $default-section-spacing--half;
 }
 
 .u--pad-both {
@@ -70,6 +99,13 @@ body {
 
 
 
+
+///////////////////////////////////////////////////////////////////////////////
+// GLOBAL STYLES
+///////////////////////////////////////////////////////////////////////////////
+
+
+
 .main-content {
   padding-top: pxToRem(80); // same as nav height
 
@@ -77,6 +113,7 @@ body {
     display: none;
   }
 }
+
 
 .svg {
 	display: block;
@@ -109,9 +146,3 @@ body {
 	color: #888;
 }
 
-.wide-grid {
-  @include if-wider-than($breakpoint-three-px) {
-    margin-left: -10%;
-    margin-right: -10%;
-  }
-}

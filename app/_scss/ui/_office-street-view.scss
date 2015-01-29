@@ -1,7 +1,7 @@
 
 .office {
 	position: relative;
-	margin-bottom: $default-section-margin;
+	margin-bottom: $default-section-spacing;
 	@include if-wider-than($breakpoint-two-px) {
     margin-bottom: 8%;
   }
@@ -11,17 +11,17 @@
 	display: block;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%; 
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
 .touch .office__street-view {
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .office__pointer-shape {
-  padding: 0 $side-padding-mobile;
+  padding: 0 $default-content-spacing;
   svg {
     @extend .svg;
     display: none;

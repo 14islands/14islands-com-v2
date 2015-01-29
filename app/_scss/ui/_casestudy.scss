@@ -1,7 +1,7 @@
 
 a.casestudy__header-label {
   display: inline-block;
-  font-size: modular-scale(.8rem, 2);
+  font-size: modular-scale(1rem, 1);
   color: $gray;
   vertical-align: bottom;
 }
@@ -23,21 +23,15 @@ a.casestudy__header-label {
   }
 
   .google-santa-tracker & {
-    margin-bottom: -0.1rem;
+    margin-bottom: -0.15rem;
   }
   .tictail & {
-    margin-bottom: .1rem;
+    margin-bottom: 0rem;
   }
 }
 
 
 .casestudy__video-wrapper {
-	position: relative;
-	padding-bottom: 57%;
-	height: 0;
-	overflow: hidden;
-	max-width: 100%;
-
 	iframe,
 	object,
 	embed {
@@ -45,8 +39,15 @@ a.casestudy__header-label {
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 110%; // just to cut out bottom of test tictail video
+		height: 100%;
 	}
+}
+
+.casestudy__image figcap {
+  font-style: italic;
+  @include if-wider-than($breakpoint-one-px) {
+    font-size: modular-scale(1rem, 1);
+  }
 }
 
 .casestudy__responsive-wrapper {
@@ -116,7 +117,10 @@ a.casestudy__header-label {
 .casestudy__quote {
 	margin: 0;
 	@include clearfix;
-	max-width: 700px;
+
+  @include if-wider-than($breakpoint-two-px) {
+    padding: $default-content-spacing;
+  }
 }
 
 .casestudy__author {
@@ -147,28 +151,22 @@ a.casestudy__header-label {
 // NEXT CASE STUDY FOOTER
 #next-casestudy {
   overflow: hidden;
-  margin-top: -$default-section-margin--half;
+  margin-top: -$default-section-spacing--half;
 }
 .next-casestudy__link {
-  margin-top: $default-section-margin; // needed to show sloped shape above bg
+  margin-top: $default-section-spacing; // needed to show sloped shape above bg
   display: block;
   position: relative;
-  padding: 6%;
 }
 .next-casestudy__link__shape {
   fill: #666;
   position: absolute;
-  top: -$default-section-margin;
+  top: -$default-section-spacing;
   left: 0;
   width: 100%;
 }
 .next-casestudy__link__shape--hover {
-  opacity: 0;
-  transition: opacity 300ms $easeOutQuad;
-
-  a.next-casestudy__link:hover & {
-    opacity: 1;
-  }
+  display: none;
 }
 a.next-casestudy__link,
 a.next-casestudy__link:hover,

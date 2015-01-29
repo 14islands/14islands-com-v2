@@ -10,4 +10,16 @@
 	  text-decoration: none;
 	  outline: 0;
 	}
+
+
+  // Case Study: Up Next
+  .next-casestudy__link__shape--hover {
+    display: block;
+    opacity: 0;
+    transition: opacity 300ms $easeOutQuad;
+  }
+  a.next-casestudy__link:hover .next-casestudy__link__shape--hover {
+    opacity: 1;
+  }
+
 }

@@ -4,12 +4,12 @@ id: work
 title: Our Work - 14islands
 ---
 
-<section class="u--pad-both">
-  <header class="header block--centered">
+<section class="grid u--pad-both">
+  <header class="header grid__row">
   <h1 class="header__title">We explore ideas<br> and build great stuff.</h1>
   </header>
 
-  <div class="block--wide-centered u--pad-top--half">
+  <div class="grid__row--wide u--pad-top--half">
   {% assign sorted_pages = (site.categories.work | sort: 'priority') %}
   {% for post in sorted_pages %}
     {% unless post.private and site.hide_private %}
@@ -32,14 +32,13 @@ title: Our Work - 14islands
           </svg>
         {% endif %}
 
-        <div class="box__content">
+        <div class="box__content u--default-h-padding u--default-v-padding">
           <div class="box__content__img {{ post.imageClass }}">
             <img data-src="{{post.image}}"/>
           </div>
           <div class="box__content__logo">
             {% include client-logos/{{post.logo}} %}
           </div>
-          <!--p class="box__content__subline">{{ post.heading }}</p-->
           <h2 class="box__content__headline">{{ post.headline }}</h2>
           <span class="box__content__cta">Read Case Study</span>
         </div>
@@ -50,59 +49,83 @@ title: Our Work - 14islands
   </div>
 </section>
 
-<section class="u-bg-natt-dark u--pad-top u--pad-bottom--half">
-  <div class="block--centered">
+<section class="grid u-bg-natt-dark u--pad-top u--pad-bottom--half">
+  <div class="grid__row">
     <h2 class="header__title">We have the pleasure to work with great people.</h2>
   </div>
-  <div class="block--wide-centered u--pad-top--half">
-    <ul class="client-list">
+  <div class="grid__row--wide u--pad-top--half">
+    <ul class="client-list u--default-h-padding">
 
-      <li class="client-list__item" title="Google">
-        {% include client-logos/logo_google.svg %}
+      <li class="client-list__item">
+        <a href="https://www.google.com" target="_blank" title="Google">
+          {% include client-logos/logo_google.svg %}
+        </a>
       </li>
 
-      <li class="client-list__item" title="QuizUp">
-        {% include client-logos/logo_quizup.svg %}
+      <li class="client-list__item">
+        <a href="https://quizup.com" target="_blank" title="QuizUp">
+          {% include client-logos/logo_quizup.svg %}
+        </a>
       </li>
 
-      <li class="client-list__item" title="Tictail">
-        {% include client-logos/logo_tictail.svg %}
+      <li class="client-list__item">
+        <a href="https://tictail.com" target="_blank" title="Tictail">
+          {% include client-logos/logo_tictail.svg %}
+        </a>
       </li>
 
-      <li class="client-list__item" title="Elastica">
-        {% include client-logos/logo_elastica.svg %}
+      <li class="client-list__item">
+        <a href="https://elastica.net" target="_blank" title="Tictail">
+          {% include client-logos/logo_elastica.svg %}
+        </a>
       </li>
 
-      <li class="client-list__item" title="UENO">
-        {% include client-logos/logo_ueno.svg %}
+      <li class="client-list__item">
+        <a href="http://ueno.co" target="_blank" title="Elastica">
+          {% include client-logos/logo_ueno.svg %}
+        </a>
       </li>
 
-      <li class="client-list__item" title="Linas Matkasse">
-        {% include client-logos/logo_linas-matkasse.svg %}
+      <li class="client-list__item">
+        <a href="https://www.linasmatkasse.se" target="_blank" title="Linas Matkasse">
+          {% include client-logos/logo_linas-matkasse.svg %}
+        </a>
       </li>
 
-      <li class="client-list__item" title="FJORD">
-        {% include client-logos/logo_fjord.svg %}
+      <li class="client-list__item">
+        <a href="http://www.fjordnet.com" target="_blank" title="FJORD">
+          {% include client-logos/logo_fjord.svg %}
+        </a>
       </li>
 
-      <li class="client-list__item" title="Montgomery Investment Management">
-        {% include client-logos/logo_montgomery.svg %}
+      <li class="client-list__item">
+        <a href="http://www.montinvest.com" target="_blank" title="Montgomery Investment Management">
+          {% include client-logos/logo_montgomery.svg %}
+        </a>
       </li>
 
-      <li class="client-list__item" title="UPPERQUAD">
-        {% include client-logos/logo_upperquad.svg %}
+      <li class="client-list__item">
+        <a href="http://upperquad.com" target="_blank" title="UPPERQUAD">
+          {% include client-logos/logo_upperquad.svg %}
+        </a>
       </li>
 
-      <li class="client-list__item" title="Kambi Sports Solutions">
-        {% include client-logos/logo_kambi.svg %}
+      <li class="client-list__item">
+        <a href="http://kambi.com" target="_blank" title="Kambi Sports Solutions">
+          {% include client-logos/logo_kambi.svg %}
+        </a>
       </li>
 
-      <li class="client-list__item" title="BVD">
-        {% include client-logos/logo_bvd.svg %}
+      <li class="client-list__item">
+        <a href="http://bvd.se" target="_blank" title="BVD">
+          {% include client-logos/logo_bvd.svg %}
+        </a>
       </li>
 
-      <li class="client-list__item" title="Plan8">
-        {% include client-logos/logo_plan8.svg %}
+      <li class="client-list__item">
+        <a href="http://plan8.se" target="_blank" title="Plan8">
+          {% include client-logos/logo_plan8.svg %}
+        </a>
       </li>
     </ul>
 

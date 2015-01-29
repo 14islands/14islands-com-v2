@@ -30,10 +30,20 @@ $default-font-color: #333333;
 
 
 //
-// Margin & padding
+// LAYOUT GRID SETUP
 //
-$default-section-margin: 9%;
-$default-section-margin--half: $default-section-margin * 0.5 * 1.14; // a bit more than half atually
+$default-section-spacing: 9%; // vertical padding between page sections
+$default-section-spacing--half: $default-section-spacing / 1.68; // golden ratio
+
+// Content padding & margin
+$default-grid-spacing: 6%; // grid margin
+$default-content-spacing: 6%; // content padding
+
+$grid-paragraph-max-width-px: 700px; // max width for content paragraphs
+$grid-max-width-px: 768px; // max width for content area
+$grid-max-width--wide-px: 1300px; // max width for outer grid
+$grid-gap-px: ($grid-max-width-px - $grid-max-width--wide-px)/2;
+
 
 //
 // Breakpoints
@@ -42,13 +52,6 @@ $breakpoint-one: 400;
 $breakpoint-one-px: #{$breakpoint-one}px;
 $breakpoint-two: 768;
 $breakpoint-two-px: #{$breakpoint-two}px;
-$breakpoint-three: 1400;
+$breakpoint-three: 1500;
 $breakpoint-three-px: #{$breakpoint-three}px;
-
-// GRID STUFFZ
-$side-padding-mobile: 20px;
-$side-padding-grid-px: 40px;
-$grid-max-width-px: 786px + (2*$side-padding-grid-px);
-$grid-wide-max-width-px: 1300px + (2*$side-padding-grid-px);
-$grid-gap-px: ($side-padding-grid-px*2 + $grid-max-width-px - $grid-wide-max-width-px)/2;
 

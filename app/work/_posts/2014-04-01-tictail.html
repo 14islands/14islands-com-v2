@@ -15,9 +15,10 @@ private: false
 
 {% include casestudy-header.html %}
 
-{% include casestudy-video.html vimeo-id="109427043" %}
+{% include casestudy-video.html vimeoId="117856659" %}
 
-<section id="about" class="block--centered u--pad-both">
+<section id="about" class="grid u--pad-both">
+  <div class="grid__row">
 {% markdown %}
 ## About
 
@@ -25,12 +26,13 @@ private: false
 
 The site experience is both fun, fast and responsive. It was  also built in Wordpress to make content fully editable by the people at Tictail.
 {% endmarkdown %}
+  </div>
 </section>
 
 {% include casestudy-responsive.html url="/images/work/tictail/iphone6screenshot.jpg" %}
 
-<section class="u--pad-both">
-  <div class="block--centered">
+<section class="grid u--pad-both">
+  <div class="grid__row">
 {% markdown %}
 ## Design
 
@@ -39,11 +41,13 @@ The site was designed by our friends at [Studio Källbom](http://www.studiokallb
 The site features a magazine like design: nice typography, bold colors and rich content to show features and tell Tictails story. We were totally inspired to make this our best work ever.
 {% endmarkdown %}
   </div>
+
   {% include wide-content-image.html src="/images/work/tictail/home-screenshot-16-9.jpg"  alt="Home page" ratio="16_9" %}
+
 </section>
 
-<section class="u--pad-bottom">
-  <div class="block--centered">
+<section class="grid u--pad-bottom">
+  <div class="grid__row">
 {% markdown %}
 ## Making it happen
 
@@ -52,14 +56,15 @@ We worked in close collaboration with Tictail, often at their offices.
 Here is a picture from a Friday meeting where our very own Marco gave an update about the progress to the people at Tictail.
 {% endmarkdown %}
   </div>
+
   {% include wide-content-image.html src="/images/work/tictail/friday-meeting-16-9.jpg" alt="The 14islands HQ" ratio="16_9" %}
-  <!-- <div class="block--centered">
+  <!-- <div class="grid__row">
 {% markdown %}
 All about the responsive image grid, how it transitions and performce well.
 {% endmarkdown %}
   </div>
   {% include wide-content-image.html src="/images/work/tictail/products-screenshot-16-9.jpg"  alt="Menu" ratio="16_9" %}
-  <div class="block--centered">
+  <div class="grid__row">
 {% markdown %}
 All about the menu.
 {% endmarkdown %}
@@ -68,71 +73,71 @@ All about the menu.
   {% include wide-content-image.html src="/images/work/tictail/menu-screenshot-16-9.jpg"  alt="Menu" ratio="16_9" %}-->
 </section>
 
-<section class="u--pad-bottom">
-  <div class="block--centered">
+<section class="grid u--pad-bottom">
+  <div class="grid__row">
 {% markdown %}
 ## Technologies
 
-The external technologies used for this project.
+The site was built using the following technologies.
 {% endmarkdown %}
   </div>
-  <div class="block--wide-centered casestudy__technology-list">
-      <a class="casestudy__technology-item" href="#">
+  <div class="grid__row--wide casestudy__technology-list">
+      <a class="casestudy__technology-item" href="https://wordpress.org/">
          {% include technology-logos/logo_wordpress.svg %}
          <h3 class="casestudy__technology-title">Wordpress</h3>  
          <p class="casestudy__technology-description">Content management.</p>     
       </a><!-- Remove spacing
-      --><a class="casestudy__technology-item" href="#">
+      --><a class="casestudy__technology-item" href="http://www.advancedcustomfields.com/">
          {% include technology-logos/logo_acf.svg %}
          <h3 class="casestudy__technology-title">Advanced Fields</h3>  
          <p class="casestudy__technology-description">Multible content types for WordPress.</p>     
       </a><!-- Remove spacing
-      --><a class="casestudy__technology-item" href="#">
+      --><a class="casestudy__technology-item" href="http://www.advancedcustomfields.com/">
          {% include technology-logos/logo_seo-by-yoast.svg %}
          <h3 class="casestudy__technology-title">SEO by Yoast</h3>  
          <p class="casestudy__technology-description">SEO optimization for WordPress.</p>     
       </a><!-- Remove spacing
-      --><a class="casestudy__technology-item" href="#">
+      --><a class="casestudy__technology-item" href="https://gridsetapp.com/">
          {% include technology-logos/logo_gridset-app.svg %}
          <h3 class="casestudy__technology-title">GridsetApp</h3>  
          <p class="casestudy__technology-description">Responsive Grid Systems.</p>     
       </a><!-- Remove spacing
-      --><a class="casestudy__technology-item" href="#">
+      --><a class="casestudy__technology-item" href="https://responsive.io/">
          {% include technology-logos/logo_responsive-io.svg %}
          <h3 class="casestudy__technology-title">responsive.io</h3>  
          <p class="casestudy__technology-description">Responsive Images.</p>     
       </a><!-- Remove spacing
-      --><a class="casestudy__technology-item" href="#">
+      --><a class="casestudy__technology-item" href="http://sass-lang.com/">
          {% include technology-logos/logo_sass.svg %}
          <h3 class="casestudy__technology-title">Sass</h3>  
          <p class="casestudy__technology-description">CSS pre-processing.</p>     
       </a><!-- Remove spacing
-      --><a class="casestudy__technology-item" href="#">
+      --><a class="casestudy__technology-item" href="http://modernizr.com/">
          {% include technology-logos/logo_modernizr.svg %}
          <h3 class="casestudy__technology-title">Modernizr</h3>  
          <p class="casestudy__technology-description">Browser and device feature detection.</p>     
       </a><!-- Remove spacing
-      --><a class="casestudy__technology-item" href="#">
+      --><a class="casestudy__technology-item" href="https://github.com/sakabako/scrollMonitor">
          {% include technology-logos/logo_github.svg %}
          <h3 class="casestudy__technology-title">ScrollMonitor</h3>  
          <p class="casestudy__technology-description">Scroll detection.</p>     
       </a><!-- Remove spacing
-      --><a class="casestudy__technology-item" href="#">
+      --><a class="casestudy__technology-item" href="http://jquery.com/">
          {% include technology-logos/logo_jquery.svg %}
          <h3  class="casestudy__technology-title">jQuery</h3>  
          <p class="casestudy__technology-description">DOM manipulation and more.</p>     
       </a><!-- Remove spacing
-      --><a class="casestudy__technology-item" href="#">
+      --><a class="casestudy__technology-item" href="https://github.com/ftlabs/fastclick">
          {% include technology-logos/logo_github.svg %}
          <h3 class="casestudy__technology-title">FastClick</h3>  
          <p class="casestudy__technology-description">Eliminate 300ms delay for touch events.</p>     
       </a><!-- Remove spacing
-      --><a class="casestudy__technology-item" href="#">
+      --><a class="casestudy__technology-item" href="http://gruntjs.com/">
          {% include technology-logos/logo_grunt.svg %}
          <h3 class="casestudy__technology-title">Grunt</h3>  
          <p class="casestudy__technology-description">Task Automation.</p>     
       </a><!-- Remove spacing
-      --><a class="casestudy__technology-item" href="#">
+      --><a class="casestudy__technology-item" href="http://gruntjs.com/">
          {% include technology-logos/logo_bower.svg %}
          <h3 class="casestudy__technology-title">Bower</h3>  
          <p class="casestudy__technology-description">Front-end package manager.</p>
@@ -142,7 +147,8 @@ The external technologies used for this project.
 
 {% include casestudy-quote.html quote="Working with the fellows at 14islands was a true pleasure to us. Friendly and professional wizkids." author-image-src="/images/work/tictail/kaj-2-1.png" author-name="Kaj Drobin" author-job-title="CPO and Founder at Tictail" %}
 
-<section class="block--centered u--pad-both">
+<section class="grid u--pad-both">
+  <div class="grid__row">
 {% markdown %}
 ## A sense of pride
 
@@ -150,4 +156,5 @@ We are really happy with how this website turned out, and we have gotten really 
 {% endmarkdown %}
 
 {% include casestudy-button.html site-url="https://tictail.com/" %}
+  </div>
 </section>

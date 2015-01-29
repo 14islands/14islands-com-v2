@@ -79,24 +79,27 @@
 .shape-overlay--casestudy-responsive {
   @include if-wider-than($breakpoint-two-px) {
     top: 12%;
-    left: 2%;
-    width: 30%;
+    left: 0%;
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
 
     figcap {
-      top: 8%;
-      right: 30%;
-      left: 10%;
+      position: relative;
+      margin-top: 3rem;
+      max-width: 10rem;
+      box-sizing: content-box;
+      padding-right: 4rem;
+      padding-left: 2rem;
     }
   }
   @include if-wider-than($breakpoint-two-px) {
-    top: 12%;
-    left: -10%;
-    width: 42%;
-
-    figcap {
-      top: 14%;
-      right: 30%;
-      left: 10%;
-    }
+    left: auto;
+    right: 65%;
   }
 }

@@ -1,0 +1,48 @@
+.team-grid {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+	min-height: 1100px;
+}
+
+
+.team-grid--fallback {
+	display: none;
+}
+
+.no-js {
+	.team-grid {
+		display: none;
+	}
+	.team-grid--fallback {
+		display: block;
+	}
+}
+
+.team-grid__item {
+  list-style: none;
+  display: inline-block;
+  overflow: hidden;
+  position: absolute;
+}
+
+.team-grid__link {
+  display: block;
+  overflow: hidden;
+}
+
+.team-grid__image {
+  display: block;
+  transition: transform 250ms $easeOutQuad;
+}
+
+.team-grid__item--fallback {
+  display: block;
+  float: left;
+  opacity: 1;
+  position: static;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
