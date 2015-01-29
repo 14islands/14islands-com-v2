@@ -1,48 +1,140 @@
+$breakpoint-grid: 1079px;
+$breakpoint-mobile-larger: 640px;
+$grid-block-size: 360px;
+
 .team-grid {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	position: relative;
 	overflow: hidden;
-	min-height: 1100px;
-}
-
-
-.team-grid--fallback {
-	display: none;
-}
-
-.no-js {
-	.team-grid {
-		display: none;
-	}
-	.team-grid--fallback {
-		display: block;
-	}
+	margin-top: 10%;
 }
 
 .team-grid__item {
   list-style: none;
-  display: inline-block;
-  overflow: hidden;
-  position: absolute;
+  display: block;
+  float: left;
+  @include if-wider-than($breakpoint-grid) {
+  	float: none;
+  	position: absolute;
+	}
 }
 
-.team-grid__link {
-  display: block;
-  overflow: hidden;
+// Nodes appended by JS
+.team-grid__item--appended {
+	display: none;
+	@include if-wider-than($breakpoint-grid) {
+		display: block;
+	}
+}
+
+//
+// Individual nodes
+//
+.team-grid__item--employee {
+	width: 100%;
+	position: relative;
+
+	@include if-wider-than($breakpoint-grid) {
+		position: absolute;
+		width: $grid-block-size;
+		height: $grid-block-size;
+	}
+}
+
+.team-grid__item--David {
+	@include if-wider-than($breakpoint-grid) {
+		top: $grid-block-size * 0; // first row
+		left: $grid-block-size * 0; // first col
+	}
+}
+
+.team-grid__item--Hjortur {
+	@include if-wider-than($breakpoint-grid) {
+		top: $grid-block-size * 1; // second row
+		left: $grid-block-size * 1; // second col
+	}
+}
+
+.team-grid__item--Marco {
+	@include if-wider-than($breakpoint-grid) {
+		top: $grid-block-size * 2; // third row
+		left: $grid-block-size * 0; // first col
+	}
 }
 
 .team-grid__image {
-  display: block;
+  display: inline-block;
   transition: transform 250ms $easeOutQuad;
+  vertical-align: top;
+  width: 49%;
+  @include if-wider-than($breakpoint-grid) {
+  	width: 100%;
+  }
 }
 
-.team-grid__item--fallback {
-  display: block;
-  float: left;
-  opacity: 1;
-  position: static;
-  margin-right: 20px;
-  margin-bottom: 20px;
+//
+// Text
+//
+.team-grid__caption {
+	display: inline-block;
+	width: 50%;
+
+	// vertical centering
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	// we need absolute here as well
+	// to ensure it spans to 100% height
+	position: absolute;
+	left: 50%;
+	top: 0;
+	height: 100%;
+
+	@include if-wider-than($breakpoint-grid) {
+			position: absolute;
+			left: $grid-block-size;
+			top: 0;
+			width: $grid-block-size;
+			height: $grid-block-size;
+	}
+}
+
+// cetering fallback
+.no-flexbox .team-grid__caption {
+	margin: 15%;
+}
+
+.team-grid__caption__inner {
+	// different widths could cause the flexbox
+	// to miss-align the columns
+	min-width: 130px;
+}
+
+.team-grid__text-points {
+	list-style: none;
+	margin-left: 0;
+	margin-bottom: 0;
+}
+
+.team-grid__title {
+	font-size: 1.6rem;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 1rem;
+	margin-left: 0;
+	@include if-wider-than($breakpoint-mobile-larger) {
+		font-size: 2rem;
+	}
+}
+
+.team-grid__text-points__item {
+	font-size: 1.3rem;
+	line-height: 1.1;
+	@include if-wider-than($breakpoint-mobile-larger) {
+		font-size: 1.5rem;
+		line-height: 1.2;
+	}
 }

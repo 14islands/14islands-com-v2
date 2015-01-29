@@ -14,7 +14,7 @@
 ###
 class FOURTEEN.Grid
 
-	DEBOUNCE_THRESHOLD = 500
+	DEBOUNCE_THRESHOLD = 200
 
 	DATA_NUM_ROWS = 'num-rows'
 	DATA_GAP = 'gap'
@@ -27,7 +27,7 @@ class FOURTEEN.Grid
 	SELETOR_CELL_ITEM = '.team-grid__item'
 	SELECTOR_SPINNER = '.spinner'
 
-	CLASS_CELL_ITEM = 'team-grid__item'
+	CLASS_CELL_ITEM = 'team-grid__item team-grid__item--appended'
 	CLASS_IMG = 'team-grid__image'
 	CLASS_ANCHOR = 'team-grid__link'
 	CLASS_ANIMATE_ITEM = 'team-grid__item--animate'
@@ -82,18 +82,18 @@ class FOURTEEN.Grid
 
 
 	initializeGrid: =>
-		# debugger;
 		# Read our data from the page
 		@setGridModel()
 
 		# Check which breakpoint are we working on
 		@checkBreakpoint()
 
-		# Setup the grid on how many cols and rows
-		@gridSetup()
+		if currentBreakpointKey isnt null
+			# Setup the grid on how many cols and rows
+			@gridSetup()
 
-		# Go!
-		@createGrid()
+			# Go!
+			@createGrid()
 
 		# Animate them in only when in viewport
 		# if (Modernizr.touch or navigator.msMaxTouchPoints)
@@ -131,6 +131,8 @@ class FOURTEEN.Grid
 	###
 	checkBreakpoint: () ->
 
+		currentBreakpointKey = null
+
 		for key of GRID_PATTERN
 
 			continue if GRID_PATTERN[key].hasOwnProperty('mq') is false
@@ -139,10 +141,12 @@ class FOURTEEN.Grid
 			# it actually matches our current resolution
 			if Modernizr.mq(GRID_PATTERN[key]['mq'])
 
+				currentBreakpointKey = key
+
 				if currentBreakpointKey isnt key and currentBreakpointKey isnt null
 					hasChangedBreakpoint = true
 
-				currentBreakpointKey = key
+				@
 
 	###
 		Removes watcher events callbacks
@@ -223,13 +227,18 @@ class FOURTEEN.Grid
 	###
 	onWindowResize: () =>
 
-		return if DOMModel[0] is undefined or DOMModel[0].length is 0
+		@checkBreakpoint()
 
-		currentNumberOfCols = DOMModel[0].length
+		if currentBreakpointKey is null
+			# if we are getting out of a grid
+			# at least resize the whole container down to it's normal size
+			@updateContextHeight true
+			return
+
+		currentNumberOfCols = if DOMModel[0] isnt undefined then DOMModel[0].length else 0
 		row = 0
 
 		# Which breakpoint should we base this on
-		@checkBreakpoint()
 		@gridSetup()
 
 		# First of all, if we have to update positions
@@ -238,7 +247,7 @@ class FOURTEEN.Grid
 			return @changeGridLayout()
 
 		# Can we add more?
-		if (numAvailable.cols > currentNumberOfCols)
+		if numAvailable.cols > currentNumberOfCols
 
 			spinnerTimerId = setTimeout @showSpinner, SPINNER_TIMEOUT_MS
 
@@ -254,9 +263,11 @@ class FOURTEEN.Grid
 
 			if spinnerTimerId isnt null then @hideSpinner()
 
-			# Show only the new ones
-			# with "greater than" what we currently have
-			@showItems @$context.find(SELETOR_CELL_ITEM + ':gt(' + currentNumberOfCols + ')')
+		@updateContextHeight()
+
+		# Show only the new ones
+		# with "greater than" what we currently have
+		@showItems @$context.find(SELETOR_CELL_ITEM + ':gt(' + currentNumberOfCols + ')')
 
 			# })
 
@@ -316,7 +327,7 @@ class FOURTEEN.Grid
 		@param  {Object} child Element to be appended into this <li>
 		@return {String}       A fresh new <li> in a string format.
 	###
-	createLiTagString: ( child, type, left, top ) ->
+	createDivTagString: ( child, type, left, top ) ->
 		_child = child || ""
 		_style = ""
 		_style = 'visibility: hidden;'
@@ -327,7 +338,7 @@ class FOURTEEN.Grid
 			_style += 'width: ' + GRID_PATTERN[currentBreakpointKey]['sizes'][type] + 'px;'
 			_style += 'height: ' + GRID_PATTERN[currentBreakpointKey]['sizes'][type] + 'px;'
 
-		return '<li class="' + CLASS_CELL_ITEM + '" style="' + _style + '">' + _child + '</li>'
+		return '<div class="' + CLASS_CELL_ITEM + '" style="' + _style + '">' + _child + '</div>'
 
 	###
 		Creates a <a> tag to be inserted in it's <li> parent
@@ -344,12 +355,13 @@ class FOURTEEN.Grid
 	###
 	createGrid: () ->
 		@addGridRows()
+		@updateContextHeight()
 		@refreshImages()
 
 	###
 		Creates the rows of the grid.
 	###
-	addGridRows: (start, end) ->
+	addGridRows: (start, end) =>
 		_start = start || 0
 		_end = end || numAvailable.rows
 		row = _start
@@ -358,8 +370,18 @@ class FOURTEEN.Grid
 			@addGridCols row
 			row++
 
-		# Update our context height
-		@$context.height numAvailable.rows * (@getCellHeight('1') + GRID_CELL_GAP)
+	###
+		Updates the container (context) height
+		based on number of rows
+		or just reset it if passed true as an argument
+
+		@param {Boolean} reset If we are resetting the containers height
+	###
+	updateContextHeight: (reset) =>
+		if reset is true
+			@$context.height 'auto'
+		else
+			@$context.height numAvailable.rows * (@getCellHeight('1') + GRID_CELL_GAP)
 
 	###
 		Creates the cols of the grid.
@@ -370,7 +392,7 @@ class FOURTEEN.Grid
 	###
 	addGridCols: ( row, start, end ) ->
 		type = null
-		liItems = ""
+		strItems = ""
 		_start = start || 0
 		_end = end || numAvailable.cols
 		col = _start
@@ -386,11 +408,11 @@ class FOURTEEN.Grid
 			DOMModel[row][col] = type
 
 			# Call the creation
-			liItems += @addGridCell( type, col, row )
+			strItems += @addGridCell( type, col, row )
 
 			col++
 
-		@$context.append( liItems )
+		@$context.append( strItems )
 
 	###
 		Returns a type of item e.g 1 or 2
@@ -465,9 +487,9 @@ class FOURTEEN.Grid
 		y = @calculateY row
 
 		if anchor
-			return @createLiTagString anchor, type, x, y
+			return @createDivTagString anchor, type, x, y
 		else
-			return @createLiTagString img, type, x, y
+			return @createDivTagString img, type, x, y
 
 	###
 		Calculates the X axis that the cell should be in,
