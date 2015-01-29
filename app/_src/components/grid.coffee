@@ -23,9 +23,11 @@ class FOURTEEN.Grid
 	DATA_MAP_SIZES = 'map-sizes'
 	DATA_IS_REPEATABLE = 'is-repeatable'
 
-	SELECTOR_SPINNER = '.spinner'
+	SELECTOR_SPINNER = '.js-spinner'
 	SELETOR_CELL_ITEM = '.team-grid__item'
+	SELETOR_CELL_APPENDED_ITEM = '.team-grid__item--appended'
 	SELECTOR_SPINNER = '.spinner'
+	SELECTOR_IMAGES = '.team-grid__image'
 
 	CLASS_CELL_ITEM = 'team-grid__item team-grid__item--appended'
 	CLASS_IMG = 'team-grid__image'
@@ -35,7 +37,7 @@ class FOURTEEN.Grid
 
 	IS_GRID_REPEATABLE = false
 
-	SPINNER_TIMEOUT_MS = 1800
+	SPINNER_TIMEOUT_MS = 1500
 
 	GRID_CELL_GAP = 0
 	GRID_PATTERN = {}
@@ -56,6 +58,7 @@ class FOURTEEN.Grid
 	debouncedResizeFn = null
 	spinnerTimerId = null
 	watcher = null
+	imagesLoaded = null
 
 	###
 	We rely on a DOMModel object
@@ -89,6 +92,7 @@ class FOURTEEN.Grid
 		@checkBreakpoint()
 
 		if currentBreakpointKey isnt null
+
 			# Setup the grid on how many cols and rows
 			@gridSetup()
 
@@ -96,22 +100,23 @@ class FOURTEEN.Grid
 			@createGrid()
 
 		# Animate them in only when in viewport
-		# if (Modernizr.touch or navigator.msMaxTouchPoints)
-			# Except for mobile...
-		@onEnterViewport()
-
-		# else
-			# watcher = scrollMonitor.create( context, -300 )
-			# addWatcherListeners()
-			# watcher.recalculateLocation()
+		if Modernizr.touch or
+			navigator.msMaxTouchPoints or
+			typeof scrollMonitor isnt 'object'
+				# Except for mobile...
+				@onEnterViewport()
+		else
+			watcher = scrollMonitor.create( @$context, -200 )
+			watcher.recalculateLocation()
+			@addWatcherListeners()
 
 	###
 		Add watcher event callbacks
 	###
-	addWatcherListeners: ->
+	addWatcherListeners: =>
 		if watcher isnt null
-			watcher.enterViewport onEnterViewport
-			watcher.exitViewport onExitViewport
+			watcher.enterViewport @onEnterViewport
+			watcher.exitViewport @onExitViewport
 
 	###
 		Add event callbacks
@@ -171,25 +176,23 @@ class FOURTEEN.Grid
 	###
 		Callback for when it's visible on the page view
 	###
-	onEnterViewport: () ->
+	onEnterViewport: () =>
 		return if @hasBeenShown
 		@showGrid()
-
-		# imagesLoaded( context, function() {
 		@addEventListeners()
 		# in case we have resized before all this happened
 		@onWindowResize()
 		@hasBeenShown = true
-		# })
 
 	###
 		Shows all items when the images have been loaded.
 	###
 	showGrid: () =>
+		return if currentBreakpointKey is null
 		spinnerTimerId = setTimeout @showSpinner, SPINNER_TIMEOUT_MS
-		# imagesLoaded( context, function() {
-		if spinnerTimerId isnt null then @hideSpinner()
-		@showItems( @$context.find( SELETOR_CELL_ITEM ) )
+		$.when( imagesLoaded.getState() ).done =>
+			if spinnerTimerId isnt null then @hideSpinner()
+			@showItems( @$context.find( SELETOR_CELL_APPENDED_ITEM ) )
 
 	###
 		Resets the model to it's initial state
@@ -210,11 +213,14 @@ class FOURTEEN.Grid
 		@showGrid()
 		hasChangedBreakpoint = false
 
-	showSpinner: () ->
-	hideSpinner: () ->
+	showSpinner: () =>
+		FOURTEEN.Utils.showSpinner @$spinner
+
+	hideSpinner: () =>
+		FOURTEEN.Utils.hideSpinner @$spinner
 
 	isUsingRIO: () ->
-		FOURTEEN.Utils.isLocalhost() isnt true and typeof ResponsiveIO is 'object'
+		typeof ResponsiveIO is 'object'
 
 	###
 		Callback for when it's exiting the page view
@@ -258,18 +264,16 @@ class FOURTEEN.Grid
 
 			@refreshImages currentNumberOfCols
 
-			# Show them
-			# imagesLoaded( context, function() {
+		@updateContextHeight()
+
+		# Show them
+		$.when( imagesLoaded.getState() ).done =>
 
 			if spinnerTimerId isnt null then @hideSpinner()
 
-		@updateContextHeight()
-
-		# Show only the new ones
-		# with "greater than" what we currently have
-		@showItems @$context.find(SELETOR_CELL_ITEM + ':gt(' + currentNumberOfCols + ')')
-
-			# })
+			# Show only the new ones
+			# with "greater than" what we currently have
+			@showItems @$context.find(SELETOR_CELL_ITEM + ':gt(' + currentNumberOfCols + ')')
 
 	###
 		Goes through the images and call RIO to
@@ -278,14 +282,16 @@ class FOURTEEN.Grid
 		@param  {Integer} startColumn From which column should we do this.
 	###
 	refreshImages: (startColumn) ->
-		return if @isUsingRIO() isnt true
+		# return if @isUsingRIO() isnt true
 
-		$images = @$context.find('img')
+		$images = @$context.find( SELETOR_CELL_APPENDED_ITEM + ' img' )
 		_startColumn = startColumn || 0
 		i = 0
 		imagesLen = $images.length
 
 		$images.slice(_startColumn, imagesLen)
+
+		imagesLoaded = new FOURTEEN.RIOImagesLoaded( $images )
 
 		for i in [0..imagesLen]
 			ResponsiveIO.refresh( $images[i] )
@@ -603,7 +609,7 @@ class FOURTEEN.Grid
 
 			throw new Error('showItem: Object missing to display')
 
-		delay = FOURTEEN.Utils.getRoundUp( FOURTEEN.Utils.getRandomNumber(50, 150) )
+		delay = FOURTEEN.Utils.getRoundUp( FOURTEEN.Utils.getRandomNumber(100, 400) )
 
 		# Prepare
 		$item

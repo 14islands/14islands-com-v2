@@ -15,10 +15,18 @@ $grid-block-size: 360px;
   list-style: none;
   display: block;
   float: left;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 300ms;
+  transition-timing-function: $easeInOutQuad;
   @include if-wider-than($breakpoint-grid) {
   	float: none;
   	position: absolute;
 	}
+}
+
+.team-grid__item--animate {
+	opacity: 1;
 }
 
 // Nodes appended by JS
@@ -35,40 +43,53 @@ $grid-block-size: 360px;
 .team-grid__item--employee {
 	width: 100%;
 	position: relative;
+	opacity: 1;
+
+	// Alternate rows on mobile
+	// need max-width here to
+	// avoid affecting the desktop view
+	@media (max-width: $breakpoint-grid - 1px) {
+		&:nth-of-type(even) {
+			.team-grid__image {
+				float: right;
+			}
+			.team-grid__caption {
+				left: 0;
+			}
+		}
+	}
 
 	@include if-wider-than($breakpoint-grid) {
 		position: absolute;
 		width: $grid-block-size;
 		height: $grid-block-size;
+
+		&:nth-of-type(1) {
+			top: $grid-block-size * 0; // first row
+			left: $grid-block-size * 0; // first col
+		}
+
+		&:nth-of-type(2) {
+			top: $grid-block-size * 1; // second row
+			left: $grid-block-size * 1; // second col
+		}
+
+		&:nth-of-type(3) {
+			top: $grid-block-size * 2; // third row
+			left: $grid-block-size * 0; // first col
+		}
 	}
+
 }
 
-.team-grid__item--David {
-	@include if-wider-than($breakpoint-grid) {
-		top: $grid-block-size * 0; // first row
-		left: $grid-block-size * 0; // first col
-	}
-}
-
-.team-grid__item--Hjortur {
-	@include if-wider-than($breakpoint-grid) {
-		top: $grid-block-size * 1; // second row
-		left: $grid-block-size * 1; // second col
-	}
-}
-
-.team-grid__item--Marco {
-	@include if-wider-than($breakpoint-grid) {
-		top: $grid-block-size * 2; // third row
-		left: $grid-block-size * 0; // first col
-	}
-}
-
+//
+// Image
+//
 .team-grid__image {
   display: inline-block;
   transition: transform 250ms $easeOutQuad;
   vertical-align: top;
-  width: 49%;
+  width: 50%;
   @include if-wider-than($breakpoint-grid) {
   	width: 100%;
   }
@@ -107,7 +128,7 @@ $grid-block-size: 360px;
 	margin: 15%;
 }
 
-.team-grid__caption__inner {
+.flexbox .team-grid__caption__inner {
 	// different widths could cause the flexbox
 	// to miss-align the columns
 	min-width: 130px;
