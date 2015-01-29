@@ -9,25 +9,20 @@ body {
 	height: 100%;
 }
 
-body {
-  transition: opacity .3s $easeOutQuad;
-  .hide-on-load & {
-    opacity: 0;
-  }
-}
-
-
 
 ///////////////////////////////////////////////////////////////////////////////
 // GRID LAYOUT
 ///////////////////////////////////////////////////////////////////////////////
 
 .grid {
+  display: block;
   padding-left: $default-grid-spacing;
   padding-right: $default-grid-spacing;
+  max-width: none;
 }
 
 .grid__row {
+  display: block;
   position: relative;
   margin: 0 auto;
   max-width: $grid-max-width-px;
@@ -45,6 +40,7 @@ body {
 }
 
 .grid__row--wide {
+  display: block;
   position: relative;
   margin: 0 auto;
   max-width: $grid-max-width--wide-px;
@@ -107,10 +103,16 @@ body {
 
 
 .main-content {
-  padding-top: pxToRem(80); // same as nav height
+  margin-top: pxToRem(80); // same as nav height
 
   .page-home & {
     display: none;
+  }
+
+  will-change: opacity, transform;
+  transition: opacity 300ms $easeOutQuad;
+  .loading & {
+    opacity: 0;
   }
 }
 

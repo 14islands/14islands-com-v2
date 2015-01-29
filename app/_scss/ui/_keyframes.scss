@@ -4,35 +4,53 @@
 	}
 
 	100% {
-		transform: translateY(0%);
+		transform: none;
 	}
 }
 
+@keyframes slide-up-3d {
+  0% {
+    transform: translate3d(0, 120%, 0);
+  }
 
-.delay100 {
-	animation-delay: 100ms;
+  100% {
+    transform: translate3d(0, 0%, 0);
+  }
 }
 
-.delay250 {
-	animation-delay: 250ms;
+
+.delay500 {
+	animation-delay: 500ms;
 }
 
-.delay400 {
-	animation-delay: 400ms;
-}
-
-.delay550 {
-	animation-delay: 550ms;
+.delay600 {
+	animation-delay: 600ms;
 }
 
 .delay700 {
 	animation-delay: 700ms;
 }
 
-.delay850 {
-	animation-delay: 850ms;
+.delay800 {
+	animation-delay: 800ms;
+}
+
+.delay900 {
+	animation-delay: 900ms;
 }
 
 .delay1000 {
 	animation-delay: 1000ms;
+}
+
+.delay1100 {
+	animation-delay: 1100ms;
+}
+
+.delay1200 {
+  animation-delay: 1200ms;
+}
+
+.delay1300 {
+  animation-delay: 1300ms;
 }
