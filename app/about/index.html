@@ -42,10 +42,12 @@ title: About Us - 14islands
 
 </section>
 
-<section id="meet-us" class="grid u-bg-natt-dark u--pad-top">
-  <div class="grid__row">
-    <h1>Meet the<br>islanders.</h1>
-    <p>We are proud of our multicultural background and our differences only make us stronger as a team. We like to keep it playful and belive in having fun.</p>
+<section id="meet-us" class="u-bg-natt-dark u--pad-top">
+  <div class="grid">
+    <div class="grid__row">
+      <h1>Meet the<br>islanders.</h1>
+      <p>We are proud of our multicultural background and our differences only make us stronger as a team. We like to keep it playful and belive in having fun.</p>
+    </div>
   </div>
 
   <div class="u-bg-natt-dark">
@@ -104,11 +106,6 @@ title: About Us - 14islands
           }
         ],
         2: [
-          // {
-          //   "src": "../images/about/team-grid/360px-David.jpg",
-          //   "alt": "David Lindkvist",
-          //   "unrepeatable": "true"
-          // },
           {
             "src": "../images/about/team-grid/360px-bench.jpg",
             "alt": ""
@@ -117,16 +114,6 @@ title: About Us - 14islands
             "src": "../images/about/team-grid/360px-Iceland.jpg",
             "alt": "Iceland"
           },
-          // {
-          //   "src": "../images/about/team-grid/360px-Hjortur.jpg",
-          //   "alt": "Hjörtur Hilmarsson",
-          //   "unrepeatable": "true"
-          // },
-          // {
-          //   "src": "../images/about/team-grid/360px-Marco.jpg",
-          //   "alt": "Marco Barbosa",
-          //   "unrepeatable": "true"
-          // },
           {
             "src": "../images/about/team-grid/360px-Brasil.jpg",
             "alt": "Brasil"
@@ -135,40 +122,48 @@ title: About Us - 14islands
       };
     </script>
 
-    <ul class="team-grid js-component-grid" data-gap="0" data-map-model="modelTeam" data-map-pattern="ABOUT_GRID_PATTERN_BLOCKS" data-map-sizes="ABOUT_GRID_CELL_SIZES_BLOCKS" data-is-repeatable="1">
-      <li class="team-grid__item team-grid__item--animate" style="visibility: visible; top: 0px; left: 0px; width: 360px; height: 360px; transition-delay: 90ms; -webkit-transition-delay: 90ms;">
+    <div class="team-grid js-component-grid" data-gap="0" data-map-model="modelTeam" data-map-pattern="ABOUT_GRID_PATTERN_BLOCKS" data-map-sizes="ABOUT_GRID_CELL_SIZES_BLOCKS" data-is-repeatable="1">
+      <figure class="team-grid__item team-grid__item--employee team-grid__item--David">
         <img class="team-grid__image" src="../images/about/team-grid/360px-David.jpg" alt="David Lindkvist">
-      </li>
-      <li class="team-grid__item team-grid__item--animate" style="visibility: visible; top: 360px; left: 360px; width: 360px; height: 360px; transition-delay: 90ms; -webkit-transition-delay: 90ms;">
+        <figcaption class="team-grid__caption">
+          <div class="team-grid__caption__inner">
+            <h2 class="team-grid__title">David <br />Lindkvist</h2>
+            <ul class="team-grid__text-points">
+              <li class="team-grid__text-points__item">Co-founder.</li>
+              <li class="team-grid__text-points__item">Serious drummer.</li>
+              <li class="team-grid__text-points__item">Swedish.</li>
+            </ul>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="team-grid__item team-grid__item--employee team-grid__item--Hjortur">
         <img class="team-grid__image" src="../images/about/team-grid/360px-Hjortur.jpg" alt="Hjörtur Hilmarsson">
-      </li>
-      <li class="team-grid__item team-grid__item--animate" style="visibility: visible; top: 720px; left: 0px; width: 360px; height: 360px; transition-delay: 90ms; -webkit-transition-delay: 90ms;">
+        <figcaption class="team-grid__caption">
+          <div class="team-grid__caption__inner">
+            <h2 class="team-grid__title">Hjörtur <br />Hilmarsson</h2>
+            <ul class="team-grid__text-points">
+              <li class="team-grid__text-points__item">Co-founder.</li>
+              <li class="team-grid__text-points__item">Super dad.</li>
+              <li class="team-grid__text-points__item">Icelandic.</li>
+            </ul>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="team-grid__item team-grid__item--employee team-grid__item--Marco">
         <img class="team-grid__image" src="../images/about/team-grid/360px-Marco.jpg" alt="Marco Barbosa">
-      </li>
-    </ul>
+        <figcaption class="team-grid__caption">
+          <div class="team-grid__caption__inner">
+            <h2 class="team-grid__title">Marco <br />Barbosa</h2>
+            <ul class="team-grid__text-points">
+              <li class="team-grid__text-points__item">Partner.</li>
+              <li class="team-grid__text-points__item">Likes to barbecue.</li>
+              <li class="team-grid__text-points__item">Brazilian.</li>
+            </ul>
+          </div>
+        </figcaption>
+      </figure>
 
     <!-- add noscript fallback here -->
-
-    <!--div class="about-grid">
-      <div class="about-grid__row">
-        <div class="about-grid__row__item"></div>
-        <div class="about-grid__row__item"></div>
-        <div class="about-grid__row__item"></div>
-        <div class="about-grid__row__item"></div>
-      </div>
-      <div class="about-grid__row">
-        <div class="about-grid__row__item"></div>
-        <div class="about-grid__row__item"></div>
-        <div class="about-grid__row__item"></div>
-        <div class="about-grid__row__item"></div>
-      </div>
-      <div class="about-grid__row">
-        <div class="about-grid__row__item"></div>
-        <div class="about-grid__row__item"></div>
-        <div class="about-grid__row__item"></div>
-        <div class="about-grid__row__item"></div>
-      </div>
-    </div-->
 
   </div>
 </section>
