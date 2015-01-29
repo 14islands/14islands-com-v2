@@ -34,7 +34,11 @@ title: Our Work - 14islands
 
         <div class="box__content u--default-h-padding u--default-v-padding">
           <div class="box__content__img {{ post.imageClass }}">
-            <img data-src="{{post.image}}"/>
+            {% if {{post.image}} contains '.svg' %}
+              <img src="{{post.image}}"/>
+            {% else %}
+              <img data-src="{{post.image}}"/>
+            {% endif %}
           </div>
           <div class="box__content__logo">
             {% include client-logos/{{post.logo}} %}

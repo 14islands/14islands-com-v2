@@ -59,9 +59,9 @@
 .nav__link {
 	display: block;
 	letter-spacing: 0.04rem;
-	line-height: normal;
+	line-height: 1;
 	font-size: 1.3rem;
-	padding: 21px .75rem;
+	padding: 22px .75rem;
 
 	&,
 	&:visited {
@@ -85,6 +85,6 @@
 		}
   }
 	@include if-wider-than($breakpoint-two-px) {
-		padding: 30px 1.5rem;
+		padding: 28px 1.5rem;
   }
 }

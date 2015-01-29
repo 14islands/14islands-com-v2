@@ -21,7 +21,7 @@
 
 
 html {
-  font-family: Calibre, Helvetica, Arial;
+  font-family: CalibreWeb, Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
 
   font-size: 14px;
@@ -43,7 +43,7 @@ html {
 %h1 {
   font-size: modular-scale(1rem, 4);
   margin-top: 2 * modular-scale(1rem, 1);
-  margin-bottom: 1 * modular-scale(1rem, 1);
+  margin-bottom: 2 * modular-scale(1rem, 1);
   @include if-wider-than($breakpoint-two-px) {
     font-size: modular-scale(1rem, 5);
   }
@@ -52,7 +52,7 @@ html {
 %h2 {
   font-size: modular-scale(1rem, 3);
   margin-top: 2 * modular-scale(1rem, 1);
-  margin-bottom: 1 * modular-scale(1rem, 1);
+  margin-bottom: 2 * modular-scale(1rem, 1);
   @include if-wider-than($breakpoint-two-px) {
     font-size: modular-scale(1rem, 4);
   }

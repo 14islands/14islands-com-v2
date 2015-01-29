@@ -40,10 +40,10 @@
 	background-color: $green;
 	// background-image: linear-gradient(45deg, $vinter, $vinter-dark, $var, $var-dark, $sommar, $sommar-dark, $host, $host-dark);
 	// background-size: 1800% 1800%;
-	animation-name: rainbow;
-	animation-duration: 50s;
-	animation-timing-function: $easeInOutQuad;
-	animation-iteration-count: infinite;
+	// animation-name: rainbow;
+	// animation-duration: 50s;
+	// animation-timing-function: $easeInOutQuad;
+	// animation-iteration-count: infinite;
 	color: #fff;
 	display: flex;
 	height: 100%;
@@ -55,6 +55,8 @@
 
   position: absolute;
   top: 0;
+
+  will-change: transform;
 }
 
 .hero--hidden {
@@ -67,28 +69,47 @@
 }
 
 .hero__logo {
-  @extend .grid__row;
   margin-top: 2rem;
+
+  //opacity: 0;
+  will-change: opacity;
+  // transition: opacity 500ms $easeOutQuad;
+  // .loaded & {
+  //   opacity: 1;
+  // }
+
+  transition: transform 500ms $easeInQuint;
+  transform: translate3d(0, -160%, 0);
+  .loaded & {
+    transform: none;
+  }
 }
 
 .hero__caption {
-  @extend .grid__row;
 	font-weight: 600;
 	margin-top: auto;
 	margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
   font-size: modular-scale(1rem, 3);
   line-height: 1.2;
 
-  @media (min-height: 720px) and (min-width: 930px) {
-  	font-size: modular-scale(1rem, 5);
-  	line-height: 1;
+  @media (min-height: 600px) and (min-width: 450px) {
+    font-size: modular-scale(1rem, 4);
+    line-height: 1;
   }
-  /*@media (min-height: 940px) and (min-width: 1600px) {
-		font-size: modular-scale(1rem, 6);
+
+  @media (min-height: 700px) and (min-width: 700px) {
+    font-size: modular-scale(1rem, 5);
+    line-height: 1;
+  }
+
+  // @media (min-height: 720px) and (min-width: 930px) {
+  // 	font-size: modular-scale(1rem, 5);
+  // 	line-height: 1;
+  // }
+  @media (min-height: 940px) and (min-width: 1600px) {
+		font-size: modular-scale(1.14rem, 5);
 		line-height: 1;
-	}*/
+	}
 }
 
 .hero__text {
@@ -97,17 +118,29 @@
 }
 
 .hero__nav {
+  position: relative;
+  z-index: 1000;
 	background-color: #fff;
 	height: pxToRem(80);
 	line-height: pxToRem(80);
 	font-size: modular-scale(1rem, 1);
   margin-top: 0;
   margin-bottom: 0;
-  animation-name: slide-up;
-  animation-duration: 350ms;
-  animation-delay: 1200ms;
-  animation-timing-function: $easeOutQuad;
-  animation-fill-mode: backwards;
+
+  opacity: 0;
+  will-change: transform;
+  .loaded & {
+    opacity: 1;
+    animation-duration: 500ms;
+    animation-timing-function: $easeOutQuint;
+    animation-fill-mode: backwards;
+  }
+  .loaded.csstransforms & {
+      animation-name: slide-up;
+  }
+  .loaded.csstransforms3d & {
+    animation-name: slide-up-3d;
+  }
 }
 
 .hero--hidden {
@@ -127,7 +160,7 @@
 		content: '';
 		display: block;
 		position: absolute;
-		top: 100%;
+		top: 115%;
 		left: 0;
 		height: 110%;
 		width: 110%;
@@ -136,8 +169,18 @@
 
 .hero__word__inner {
 	display: inline-block;
-	animation-name: slide-up;
-	animation-duration: 300ms;
-	animation-timing-function: $easeOutQuad;
-	animation-fill-mode: backwards;
+  opacity: 0;
+  will-change: transform;
+  .loaded & {
+    opacity: 1;
+  	animation-duration: 500ms;
+  	animation-timing-function: $easeOutQuint;
+  	animation-fill-mode: backwards;
+  }
+  .loaded.csstransforms & {
+      animation-name: slide-up;
+  }
+  .loaded.csstransforms3d & {
+    animation-name: slide-up-3d;
+  }
 }
