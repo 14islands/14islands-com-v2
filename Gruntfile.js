@@ -123,6 +123,9 @@ module.exports = function (grunt) {
         loadPath: 'app/_bower_components'
       },
       dist: {
+        options: {
+          style: 'compressed'
+        },
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/_scss',
@@ -440,7 +443,6 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concat',
     'autoprefixer:dist',
-    'cssmin',
     'uglify',
     'imagemin',
     'svgmin',
