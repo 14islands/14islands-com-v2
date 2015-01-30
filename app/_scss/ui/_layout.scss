@@ -135,12 +135,9 @@ body {
 
 .header__title {
 	color: #333;
-	margin-bottom: 1rem;
-  // h3 size
-  font-size: modular-scale(1rem, 3);
-  @include if-wider-than($breakpoint-two-px) {
-    // h1 size
-    font-size: modular-scale(1rem, 5);
+  @include if-narrower-than($breakpoint-two-px) {
+    // h3 size
+    font-size: modular-scale(1rem, 3);
   }
 }
 
