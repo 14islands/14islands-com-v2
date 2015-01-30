@@ -64,7 +64,6 @@ a.casestudy__header-label {
 }
 
 .casestudy__technology-list {
-  padding-top: 5%;
   text-align: center;
 }
 
@@ -76,6 +75,7 @@ a.casestudy__header-label {
   svg {
     width: 70px;
     float: left;
+    margin-top: 0.2rem;
 
     filter: grayscale(100%);
     opacity: .7;
