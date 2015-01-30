@@ -1,49 +1,8 @@
 //
 // Hero component
 //
-// Markup example:
-//
-// <section class="hero">
-//     <header class="hero__item hero__logo">
-//         14islands
-//     </header>
-//     <h1 class="hero__item hero__caption">
-//         Crafting digital experiences with cutting edge technologies
-//     </h1>
-//     <nav class="hero__item hero__nav nav">
-//         <ul class="nav__list">
-//             <li class="nav__item">Logo</li>
-//             <li class="nav__item"><a href="/">Our Work</a></li>
-//             <li class="nav__item"><a href="/projects">About Us</a></li>
-//             <li class="nav__item"><a href="/blog">Blog</a></li>
-//             <li class="nav__item"><a href="/blog">Contact</a></li>
-//         </ul>
-//     </nav>
-// </section>
-//
-
-
-// @keyframes rainbow {
-//   0% {
-//   	background-position: 0% 82%;
-//   }
-//   50% {
-//   	background-position: 100% 19%;
-//   }
-//   100% {
-//   	background-position: 0% 82%;
-//   }
-// }
-
 
 .hero {
-	background-color: $green;
-	// background-image: linear-gradient(45deg, $vinter, $vinter-dark, $var, $var-dark, $sommar, $sommar-dark, $host, $host-dark);
-	// background-size: 1800% 1800%;
-	// animation-name: rainbow;
-	// animation-duration: 50s;
-	// animation-timing-function: $easeInOutQuad;
-	// animation-iteration-count: infinite;
 	color: #fff;
 	display: flex;
 	height: 100%;
@@ -53,10 +12,19 @@
 	width: 100%;
 	overflow: hidden;
 
-  position: absolute;
+  position: fixed;
+  z-index: 99999;
   top: 0;
 
   will-change: transform;
+}
+
+.hero__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: $green;
 }
 
 .hero--hidden {
@@ -71,13 +39,7 @@
 .hero__logo {
   margin-top: 2rem;
 
-  //opacity: 0;
-  will-change: opacity;
-  // transition: opacity 500ms $easeOutQuad;
-  // .loaded & {
-  //   opacity: 1;
-  // }
-
+  will-change: transform;
   transition: transform 500ms $easeInQuint;
   transform: translate3d(0, -160%, 0);
   .loaded & {
@@ -102,12 +64,8 @@
     line-height: 1;
   }
 
-  // @media (min-height: 720px) and (min-width: 930px) {
-  // 	font-size: modular-scale(1rem, 5);
-  // 	line-height: 1;
-  // }
   @media (min-height: 940px) and (min-width: 1600px) {
-		font-size: modular-scale(1.14rem, 5);
+		font-size: modular-scale(1.14rem, 5); // not following scale
 		line-height: 1;
 	}
 }
@@ -127,21 +85,36 @@
   margin-top: 0;
   margin-bottom: 0;
 
-  opacity: 0;
   will-change: transform;
-  .loaded & {
-    opacity: 1;
-    animation-duration: 500ms;
-    animation-timing-function: $easeOutQuint;
-    animation-fill-mode: backwards;
+
+  // only run loading animation on home-page
+  .page-home & {
+    opacity: 0;
+    .loaded & {
+      opacity: 1;
+      animation-duration: 500ms;
+      animation-timing-function: $easeOutQuint;
+      animation-fill-mode: backwards;
+    }
   }
+
+  // keep animation-name on other pages,
+  // otherwise animation will restart when going back to home page
   .loaded.csstransforms & {
-      animation-name: slide-up;
+    animation-name: slide-up;
   }
   .loaded.csstransforms3d & {
     animation-name: slide-up-3d;
   }
+
+  // Sticky header animation
+  transition: transform 400ms $easeOutQuad;
+  &.sticky-nav--hidden {
+    transition: transform 400ms $easeInQuad;
+    transform: translateY(-100%);
+  }
 }
+
 
 .hero--hidden {
 	.hero__nav {

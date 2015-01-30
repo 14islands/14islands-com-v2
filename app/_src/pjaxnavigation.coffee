@@ -10,7 +10,7 @@ class FOURTEEN.PjaxNavigation
   # Delay in ms before spinner should show
   SPINNER_DELAY: 500
 
-  constructor: (@navigationSelector, @btnNavLinks, @btnHomeSelector, @contentSelector, @onLoadCallback) ->
+  constructor: (@navigationSelector, @btnNavLinks, @btnHomeSelector, @contentSelector, @onEndCallback) ->
     @$content = $(@contentSelector)
     @$navigation = $(@navigationSelector)
     @$btnNavLinks = $(@btnNavLinks)
@@ -39,7 +39,7 @@ class FOURTEEN.PjaxNavigation
     @$content.on('pjax:beforeReplace', @onPjaxBeforeReplace)
     @$content.on('pjax:popstate', @onPopState)
     @$content.on('pjax:end', @onPjaxEnd)
-    @$content.on('pjax:end', @onLoadCallback)
+    @$content.on('pjax:end', @onEndCallback)
 
 
   # slides in hero and slides out content

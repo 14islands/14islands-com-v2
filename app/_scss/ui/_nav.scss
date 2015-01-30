@@ -68,11 +68,14 @@
 		color: #666;
 	}
 
-	.no-touch &:hover,
+	.no-touch &:hover {
+    color: black;
+  }
 	.page-work &.nav__link--work,
 	.page-about &.nav__link--about,
 	.page-contact &.nav__link--contact {
-		color: black;
+    color: black;
+    cursor: default;
 	}
 
 	span {
