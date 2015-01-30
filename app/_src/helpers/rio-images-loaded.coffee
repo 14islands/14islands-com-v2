@@ -1,3 +1,21 @@
+# Helper that returns a promise with the of the loading images.
+# For example, if you want to animate a section only when
+# all images have been loaded through Responsive.io.
+#
+# E.g.:
+#
+# refreshImages: ($images) ->
+# 	i = 0
+# 	imagesLen = $images.length
+# 	imagesLoaded = new FOURTEEN.RIOImagesLoaded( $images )
+# 	for i in [0..imagesLen] do ResponsiveIO.refresh( $images[i] )
+#
+# init: () =>
+# 	$.when( imagesLoaded.getState() ).done =>
+# 		# hide spinner..
+# 		# animate stuff....
+#
+
 class FOURTEEN.RIOImagesLoaded
 
 	DATA_RIO_WIDTH = 'rio-width'
