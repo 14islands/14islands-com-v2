@@ -28,6 +28,20 @@
   }
 }
 
+
+/*
+* Breakpoint more narrow than number of pixels
+*
+* @example
+* @include if-wider-than(960) { color: hotpink; }
+*
+*/
+@mixin if-narrower-than($px) {
+  @media (max-width: $px) {
+    @content;
+  }
+}
+
 /*
 * Breakpoint taller than number of pixels
 *
