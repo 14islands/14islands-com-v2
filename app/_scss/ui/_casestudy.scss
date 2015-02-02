@@ -61,6 +61,11 @@ a.casestudy__header-label {
 	top: 9%;
 	left: 5%;
 	background-color: black;
+
+  noscript {
+    position: absolute;
+    top: 0;
+  }
 }
 
 .casestudy__technology-list {

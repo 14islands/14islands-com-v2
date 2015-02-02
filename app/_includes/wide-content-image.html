@@ -6,7 +6,7 @@
 {% endif %}
 
   <div class="ratio ratio--{{include.ratio}}">
-    <img alt="{{include.alt}}" data-src="{{include.src}}">
+    {% include rio-image.html src=include.src alt=include.alt %}
   </div>
   {% if include.caption %}
     <div class="shape-overlay {{include.shapeClass}}">

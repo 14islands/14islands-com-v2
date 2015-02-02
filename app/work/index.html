@@ -37,7 +37,7 @@ title: Our Work - 14islands
             {% if {{post.image}} contains '.svg' %}
               <img src="{{post.image}}"/>
             {% else %}
-              <img data-src="{{post.image}}"/>
+              {% include rio-image.html src=post.image alt=post.name %}
             {% endif %}
           </div>
           <div class="box__content__logo">

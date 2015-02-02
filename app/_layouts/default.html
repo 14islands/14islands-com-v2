@@ -28,12 +28,10 @@
 
     <script>
         // hide body to avoid flashing unstyled content
-        document.documentElement.className += ' loading';
+        document.documentElement.className += ' js-loading';
         // make body visible after dom loaded
         document.addEventListener('DOMContentLoaded', function(){
-          //setTimeout(function () {
-            $(document.documentElement).removeClass('loading').addClass('loaded');
-          //}, 100);
+          $(document.documentElement).removeClass('js-loading').addClass('js-loaded');
         });
     </script>
 

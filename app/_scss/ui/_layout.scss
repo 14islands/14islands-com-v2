@@ -111,7 +111,7 @@ body {
 
   will-change: opacity, transform;
   transition: opacity 300ms $easeOutQuad;
-  .loading & {
+  .js-loading & {
     opacity: 0;
   }
 }

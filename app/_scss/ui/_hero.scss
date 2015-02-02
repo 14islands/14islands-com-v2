@@ -39,10 +39,12 @@
 .hero__logo {
   margin-top: 2rem;
 
-  will-change: transform;
-  transition: transform 500ms $easeInQuint;
-  transform: translate3d(0, -160%, 0);
-  .loaded & {
+  .js & {
+    will-change: transform;
+    transition: transform 500ms $easeInQuint;
+    transform: translate3d(0, -160%, 0);
+  }
+  .js-loaded & {
     transform: none;
   }
 }
@@ -91,8 +93,10 @@
 
   // only run loading animation on home-page
   .page-home & {
-    opacity: 0;
-    .loaded & {
+    .js & {
+      opacity: 0;
+    }
+    .js-loaded & {
       opacity: 1;
       animation-duration: 500ms;
       animation-timing-function: $easeOutQuint;
@@ -102,10 +106,10 @@
 
   // keep loading animation-name on other pages,
   // otherwise animation will restart when going back to home page
-  .loaded.csstransforms & {
+  .js-loaded.csstransforms & {
     animation-name: slide-up;
   }
-  .loaded.csstransforms3d & {
+  .js-loaded.csstransforms3d & {
     animation-name: slide-up-3d;
   }
 }
@@ -157,18 +161,20 @@
 
 .hero__word__inner {
 	display: inline-block;
-  opacity: 0;
-  will-change: transform;
-  .loaded & {
+  .js & {
+    opacity: 0;
+    will-change: transform;
+  }
+  .js-loaded & {
     opacity: 1;
   	animation-duration: 500ms;
   	animation-timing-function: $easeOutQuint;
   	animation-fill-mode: backwards;
   }
-  .loaded.csstransforms & {
+  .js-loaded.csstransforms & {
       animation-name: slide-up;
   }
-  .loaded.csstransforms3d & {
+  .js-loaded.csstransforms3d & {
     animation-name: slide-up-3d;
   }
 }

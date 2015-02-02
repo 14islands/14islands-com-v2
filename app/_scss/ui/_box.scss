@@ -105,6 +105,11 @@
     height: 100%;
     width: auto;
   }
+  noscript {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 
   @include if-wider-than(450px) {
     top: 3%; //position under angle on box

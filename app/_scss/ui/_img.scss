@@ -22,7 +22,7 @@ img[data-src] {
 // content images have:
 //  - negative margins
 //  - fade in animation on load event
-.content-image {
+.js .content-image {
   position: relative;
 
   img {
@@ -55,7 +55,7 @@ img[data-src] {
     background: transparent;
   }
 
-  img {
+  img, noscript {
     position: absolute;
     top: 0;
     left: 0;
