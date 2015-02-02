@@ -6,9 +6,9 @@ class window.ComponentLoader
     @registeredComponents = {}
 
   start: ->
-    @scan(document.body, false)
+    @scan document.body, false
 
-  scan: (context = document.body, doCleanUp = true) ->
+  scan: (context = document.body, doCleanUp = true, data) ->
     currentComponents = {}
     $elements = $("[class*='#{COMPONENT_PREFIX}']", context)
     for el in $elements
@@ -40,7 +40,7 @@ class window.ComponentLoader
               $element.data('component-id', componentId)
               currentComponents[componentId] = true
 
-              instance = new reference($element)
+              instance = new reference($element, data)
               instance.open?()
               @registeredComponents[componentId] = instance
       else

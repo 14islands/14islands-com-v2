@@ -42,7 +42,7 @@ class FOURTEEN.Grid
 	GRID_CELL_GAP = 0
 	GRID_PATTERN = {}
 
-	MODEL = {
+	data = {
 		1: [],
 		2: []
 	}
@@ -75,16 +75,28 @@ class FOURTEEN.Grid
 	###
 	DOMModel = []
 
-	constructor: (@$context) ->
+	constructor: (@$context, data) ->
 		@context = @$context.get(0)
 		@$body = $('body')
 		@$spinner = @$context.find( SELECTOR_SPINNER )
 
-		@initializeGrid()
-		# @$body.on("pjax:done", @initializeGrid)
+		if data?.isPjax
+			# wait for animation to be done
+			@$body.one FOURTEEN.PjaxNavigation.EVENT_ANIMATION_SHOWN, @initializeGrid
+		else
+			@initializeGrid()
+
+	destroy: =>
+		@removeWatcherListeners()
+		@removeEventListeners()
+		if spinnerTimerId isnt null then clearTimeout spinnerTimerId
 
 
+	###
+		Makes the grid happen
+	###
 	initializeGrid: =>
+		console.log "initializeGrid", Math.random()
 		# Read our data from the page
 		@setGridModel()
 
@@ -118,6 +130,10 @@ class FOURTEEN.Grid
 			watcher.enterViewport @onEnterViewport
 			watcher.exitViewport @onExitViewport
 
+	removeWatcherListeners: =>
+		watcher.destroy()
+		watcher = null
+
 	###
 		Add event callbacks
 	###
@@ -127,6 +143,11 @@ class FOURTEEN.Grid
 		debouncedResizeFn = FOURTEEN.Utils.debounce @onWindowResize, DEBOUNCE_THRESHOLD
 		$(window).on 'resize', debouncedResizeFn
 		@
+
+	removeEventListeners: =>
+		$(window).off 'resize', debouncedResizeFn
+		debouncedResizeFn = null
+
 
 	###
 		This function detects which breakpoint are we working on now
@@ -144,7 +165,7 @@ class FOURTEEN.Grid
 
 			# if we have "mq" set and
 			# it actually matches our current resolution
-			if Modernizr.mq(GRID_PATTERN[key]['mq'])
+			if Modernizr.mq(GRID_PATTERN[key]['mq']) and currentBreakpointKey isnt key
 
 				currentBreakpointKey = key
 
@@ -450,16 +471,16 @@ class FOURTEEN.Grid
 		item = false
 
 		if ( type and
-				MODEL.hasOwnProperty( type ) and
-				MODEL[ type ] and
-				MODEL[ type ].length > 0 )
+				data.hasOwnProperty( type ) and
+				data[ type ] and
+				data[ type ].length > 0 )
 
-			item = MODEL[ type ].shift()
+			item = data[ type ].shift()
 
 			# Add it back to the end
 			# if it's repeatable
 			if IS_GRID_REPEATABLE and @isUnrepetableItem(item) isnt true
-				MODEL[ type ].push item
+				data[ type ].push item
 
 		return item
 
@@ -644,6 +665,10 @@ class FOURTEEN.Grid
 		numAvailable.cols = Math.ceil( totalAvailableWidth / @getCellWidth('1') )
 		numAvailable.cells = numAvailable.cols * numAvailable.rows
 
+		# debugger
+
+		console.log "gridSetup: ", numAvailable
+
 	###
 		Reads our data from the HTML
 		given it's keys.
@@ -655,11 +680,10 @@ class FOURTEEN.Grid
 
 		# Set our gap
 		GRID_CELL_GAP = @$context.data( DATA_GAP ) || 0
-
 		IS_GRID_REPEATABLE = parseInt( @$context.data( DATA_IS_REPEATABLE ), 10 ) || 1
-
 		GRID_PATTERN = @getObjFromKey patternKey
-		MODEL = @getObjFromKey modelKey
+		data = @getObjFromKey modelKey
+		console.log "setGridModel: ", data
 
 	getObjFromKey: (key) =>
 		if ( !key )

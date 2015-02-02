@@ -6,7 +6,7 @@ $( ->
 
 # listen for load even on image tags loaded by responsive.io
 FOURTEEN.listenForResponsive_ioImageLoad = ->
-  $("img[data-src]").one("load", ->
+  $('img[data-src]').one('load', ->
     $(this).addClass('image-loaded')
     $(this).closest('.content-image').addClass('image-loaded')
   ).each( ->
@@ -16,7 +16,6 @@ FOURTEEN.listenForResponsive_ioImageLoad = ->
       #$(this).load()
   )
 
-
 # Logic to run after page has been loaded via PJAX
 FOURTEEN.onPjaxEnd = ->
   # responsive images
@@ -24,9 +23,9 @@ FOURTEEN.onPjaxEnd = ->
   ResponsiveIO.refresh()
 
   # components
-  FOURTEEN.componentLoader.scan()
+  FOURTEEN.componentLoader.scan document.body, true, {isPjax:true}
 
-  $(document.body).trigger("pjax:done")
+  $(document.body).trigger('pjax:done')
 
 
 

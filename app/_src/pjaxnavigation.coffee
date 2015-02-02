@@ -4,6 +4,8 @@ window.FOURTEEN ?= {}
 # Class for all Pjax navigation logic - including scrolling
 class FOURTEEN.PjaxNavigation
 
+  @EVENT_ANIMATION_SHOWN: 'pjax-animation:shown'
+
   # body pageId of home page
   HOMEPAGE_ID: 'home'
 
@@ -20,7 +22,6 @@ class FOURTEEN.PjaxNavigation
     @$spinner = $('<div class="spinner spinner--center"></div>')
     @spinnerTimer = null
     @init()
-
 
   init: ->
     @currentPageId = @$body.attr('class').match(/page-(\S*)/)[1]
@@ -110,7 +111,6 @@ class FOURTEEN.PjaxNavigation
       else
         # fast transition between other pages
         @showContent()
-
     @updateBodyPageId(options)
 
 
@@ -200,7 +200,9 @@ class FOURTEEN.PjaxNavigation
       y: 0
       ease: Circ.easeInOut
       delay: 0.1
-      clearProps: 'all'
+      clearProps: 'all',
+      onComplete: (param) =>
+        @$body.trigger @constructor.EVENT_ANIMATION_SHOWN
     })
 
 
@@ -215,6 +217,7 @@ class FOURTEEN.PjaxNavigation
       y: 0,
       opacity: 1
       ease: Circ.easeOut
-      clearProps: 'all'
+      clearProps: 'all',
+      onComplete: (param) =>
+        @$body.trigger @constructor.EVENT_ANIMATION_SHOWN
     })
-
