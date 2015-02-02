@@ -85,6 +85,8 @@
   margin-top: 0;
   margin-bottom: 0;
 
+
+  // load animation
   will-change: transform;
 
   // only run loading animation on home-page
@@ -98,7 +100,7 @@
     }
   }
 
-  // keep animation-name on other pages,
+  // keep loading animation-name on other pages,
   // otherwise animation will restart when going back to home page
   .loaded.csstransforms & {
     animation-name: slide-up;
@@ -106,14 +108,27 @@
   .loaded.csstransforms3d & {
     animation-name: slide-up-3d;
   }
+}
 
-  // Sticky header animation
-  transition: transform 400ms $easeOutQuad;
+
+
+////////////////////////////////////////////
+// Sticky header animation
+////////////////////////////////////////////
+.hero__nav {
+  will-change: transform;
+  transition: transform 400ms $easeOutQuad; // showing
   &.sticky-nav--hidden {
-    transition: transform 400ms $easeInQuad;
-    transform: translateY(-100%);
+    transition: transform 350ms $easeInQuad; // hiding
+    .csstransforms & {
+      transform: translateY(-100%);
+    }
+    .csstransforms3d & {
+      transform: translate3d(0, -100%, 0);
+    }
   }
 }
+
 
 
 .hero--hidden {
