@@ -29,7 +29,7 @@
   @include if-wider-than($breakpoint-two-px) {
     padding: 0;
     position: absolute;
-    bottom: 0%;
+    bottom: -15%;
     right: 17%;
     width: 40%;
     z-index: 100;
