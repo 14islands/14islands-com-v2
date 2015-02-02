@@ -18,7 +18,7 @@ FOURTEEN.listenForResponsive_ioImageLoad = ->
 
 
 # Logic to run after page has been loaded via PJAX
-FOURTEEN.onPjaxLoad = ->
+FOURTEEN.onPjaxEnd = ->
   # responsive images
   FOURTEEN.listenForResponsive_ioImageLoad()
   ResponsiveIO.refresh()
@@ -39,9 +39,10 @@ new FOURTEEN.PjaxNavigation('.js-hero-nav',
                             '.js-nav-link',
                             '.js-nav-home',
                             '.js-pjax-container',
-                            FOURTEEN.onPjaxLoad)
+                            FOURTEEN.onPjaxEnd)
 
 # component loader
 FOURTEEN.componentLoader.start()
 
-
+# init sticky header
+new FOURTEEN.StickyNav($('.hero__nav'))
