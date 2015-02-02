@@ -1,19 +1,20 @@
-# Helper that returns a promise with the of the loading images.
+# Helper that returns a promise with the status of the loading images.
+#
 # For example, if you want to animate a section only when
 # all images have been loaded through Responsive.io.
 #
-# E.g.:
+# E.g. usage:
 #
 # refreshImages: ($images) ->
-# 	i = 0
 # 	imagesLen = $images.length
 # 	imagesLoaded = new FOURTEEN.RIOImagesLoaded( $images )
 # 	for i in [0..imagesLen] do ResponsiveIO.refresh( $images[i] )
 #
 # init: () =>
 # 	$.when( imagesLoaded.getState() ).done =>
-# 		# hide spinner..
-# 		# animate stuff....
+# 		# hide spinner...
+# 		# animate stuff...
+# 		# etc...
 #
 
 class FOURTEEN.RIOImagesLoaded
