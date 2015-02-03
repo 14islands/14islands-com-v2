@@ -341,7 +341,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           dir: '<%= yeoman.dist %>',
-          remote: '../',
+          remote: 'https://github.com/14islands/14islands-com.git',
           branch: 'gh-pages',
           commit: true,
           push: true,
