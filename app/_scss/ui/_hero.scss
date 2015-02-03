@@ -6,7 +6,6 @@
 	color: #fff;
 	display: flex;
 	height: 100%;
-	min-height: 450px;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	width: 100%;
@@ -25,6 +24,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   background-color: $green;
+  overflow: hidden;
 }
 
 .hero--hidden {
@@ -55,6 +55,11 @@
 	margin-bottom: auto;
   font-size: modular-scale(1rem, 3);
   line-height: 1.2;
+
+  display: none;
+  @include if-taller-than(350px) {
+    display: block;
+  }
 
   @media (min-height: 600px) and (min-width: 450px) {
     font-size: modular-scale(1rem, 4);
@@ -91,17 +96,15 @@
   // load animation
   will-change: transform;
 
-  // only run loading animation on home-page
-  .page-home & {
-    .js & {
-      opacity: 0;
-    }
-    .js-loaded & {
-      opacity: 1;
-      animation-duration: 500ms;
-      animation-timing-function: $easeOutQuint;
-      animation-fill-mode: backwards;
-    }
+  // only run intro animation once
+  .js & {
+    opacity: 0;
+  }
+  .js-loaded & {
+    opacity: 1;
+    animation-duration: 500ms;
+    animation-timing-function: $easeOutQuint;
+    animation-fill-mode: backwards;
   }
 
   // keep loading animation-name on other pages,
