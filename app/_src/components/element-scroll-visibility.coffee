@@ -28,6 +28,7 @@ class FOURTEEN.ElementScrollVisibility
 
     constructor: (@$context, data) ->
         @context = @$context.get(0)
+        @$body = $(document.body)
 
         if data?.isPjax
             @$body.one FOURTEEN.PjaxNavigation.EVENT_ANIMATION_SHOWN, @addEventListeners
