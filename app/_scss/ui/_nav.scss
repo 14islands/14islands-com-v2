@@ -48,7 +48,7 @@ $nav-item-padding: 1.5rem;
 	@include if-wider-than($breakpoint-two-px) {
 		height: 25px;
 		width: 60px;
-		margin: 28px 0;
+		margin: 25px 0;
 		margin-right: $nav-item-padding;
   }
 }
@@ -85,6 +85,6 @@ $nav-item-padding: 1.5rem;
 		}
   }
 	@include if-wider-than($breakpoint-two-px) {
-		padding: 28px $nav-item-padding;
+		padding: 25px $nav-item-padding;
   }
 }
