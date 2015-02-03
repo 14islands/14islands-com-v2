@@ -31,12 +31,22 @@ title: Styleguide - 14islands
   </div>
   <div class="grid__row--wide" style="outline: 1px solid hotpink">
     <h2>.grid__row--wide</h1>
-    <div class="u--default-h-padding">
+    A container with .grid__row--wide will strech the full width of the wide grid
+    <div class="grid__row--wide__content">
       <div style="outline: 1px solid hotpink">
-        <h2>.u--default-h-padding</h1>
+        <h2>.grid__row--wide__content</h1>
+        Children with text content needs to have the .grid__row--wide__content class to get padding.
       </div>
     </div>
   </div>
+
+  <div class="grid__row--wide-content" style="outline: 1px solid hotpink">
+    <h2>.grid__row--wide--content</h1>
+    <div style="outline: 1px solid hotpink">
+      Content inside a .grid__row--wide--content automatically gets the correct padding.
+    </div>
+  </div>
+
 </section>
 
 <section class="grid u-bg-bright u--pad-both">

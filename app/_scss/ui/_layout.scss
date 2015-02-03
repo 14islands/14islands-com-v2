@@ -46,6 +46,25 @@ body {
   max-width: $grid-max-width--wide-px;
 }
 
+.grid__row--wide__content {
+  @extend .u--default-h-padding;
+}
+
+.grid__row--wide-content {
+  @extend .grid__row--wide;
+  @extend .u--default-h-padding;
+
+  @include if-wider-than($breakpoint-three-px) {
+    // the growign margin introduced by max-width
+    // would make a percentage padding to wide
+    // BUT we can calculate the fixed px value to use
+    $maxPadding: $grid-max-width--wide-px * (0.01 * strip-units($default-content-spacing));
+    padding-left: $maxPadding !important;
+    padding-right: $maxPadding !important;
+  }
+}
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////////
