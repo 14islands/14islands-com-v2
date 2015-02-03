@@ -12,6 +12,7 @@
 //    <li class="nav__item"><a href="/blog">Contact</a></li>
 // 	</ul>
 // </nav>
+$nav-item-padding: 1.5rem;
 
 .nav {
 }
@@ -26,15 +27,14 @@
 	vertical-align: top;
 	@include if-wider-than($breakpoint-three-px) {
     position:relative;
-    left: -1.5rem;
+    left: -$nav-item-padding;
   }
 }
 
 .nav__item--logo {
 	@extend .nav__item;
 	@include if-wider-than($breakpoint-three-px) {
-    position: absolute;
-    left: $grid-gap-px;
+    display: none;
   }
 }
 
@@ -49,10 +49,7 @@
 		height: 25px;
 		width: 60px;
 		margin: 28px 0;
-		margin-right: 1.5rem;
-  }
-  @include if-wider-than($breakpoint-three-px) {
-		margin-right: 0;
+		margin-right: $nav-item-padding;
   }
 }
 
@@ -88,6 +85,6 @@
 		}
   }
 	@include if-wider-than($breakpoint-two-px) {
-		padding: 28px 1.5rem;
+		padding: 28px $nav-item-padding;
   }
 }

@@ -19,11 +19,18 @@
     	}
     }
     @include if-wider-than($breakpoint-three-px) {
-        position: absolute;
-        left: $grid-gap-px;
-        float: none;
-        width: auto;
+        display: none;
     }
+}
+
+.footer__logo--wide-grid {
+  position: absolute;
+  display: none;
+  @include if-wider-than($breakpoint-three-px) {
+    display: block;
+    float: none;
+    width: auto;
+  }
 }
 
 .footer__info {

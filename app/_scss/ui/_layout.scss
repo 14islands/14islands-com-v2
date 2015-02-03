@@ -21,6 +21,7 @@ body {
   max-width: none;
 }
 
+// A normal grid row
 .grid__row {
   display: block;
   position: relative;
@@ -39,6 +40,7 @@ body {
   }
 }
 
+// A wide grid row
 .grid__row--wide {
   display: block;
   position: relative;
@@ -46,10 +48,17 @@ body {
   max-width: $grid-max-width--wide-px;
 }
 
+// reset a child of a wide row to be a normal row
+.grid__row--wide__normal {
+  @extend .grid__row;
+}
+
+// Add content padding around a wide row child
 .grid__row--wide__content {
   @extend .u--default-h-padding;
 }
 
+// A wide row with automatically content padding for all children
 .grid__row--wide-content {
   @extend .grid__row--wide;
   @extend .u--default-h-padding;
