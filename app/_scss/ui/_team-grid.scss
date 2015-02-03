@@ -170,7 +170,7 @@ $grid-block-size: 360px;
 	.team-grid__title {
 		opacity: 0;
 		transition-property: opacity, transform;
-		transition-duration: 300ms;
+		transition-duration: 250ms;
 		transition-timing-function: $easeOutQuad;
 	}
 
@@ -186,18 +186,22 @@ $grid-block-size: 360px;
 			opacity: 1;
 		}
 
-		.team-grid__title,
-		.team-grid__text-points__item {
-			opacity: 1;
-			transform: translateX(0%);
-		}
+		.is-fully-visible {
 
-		.team-grid__text-points__item {
-			@for $i from 1 through 3 {
-				&:nth-of-type(#{$i}) {
-					transition-delay: $i * 100ms;
+			.team-grid__title,
+			.team-grid__text-points__item {
+				opacity: 1;
+				transform: translateX(0%);
+			}
+
+			.team-grid__text-points__item {
+				@for $i from 1 through 3 {
+					&:nth-of-type(#{$i}) {
+						transition-delay: $i * 100ms;
+					}
 				}
 			}
+
 		}
 
 	}
