@@ -30,6 +30,7 @@ a.casestudy__header-label {
 
 
 .casestudy__video-wrapper {
+  cursor: pointer !important;
 	iframe,
 	object,
 	embed {
@@ -38,10 +39,12 @@ a.casestudy__header-label {
 		left: 0;
 		width: 100%;
 		height: 100%;
+    cursor: pointer !important;
 	}
 }
 
-.casestudy__image figcap {
+.casestudy__image__caption {
+  margin-top: 1rem;
   font-style: italic;
   @include if-wider-than($breakpoint-one-px) {
     font-size: modular-scale(1rem, 1);
@@ -122,10 +125,6 @@ a.casestudy__header-label {
 .casestudy__quote {
 	margin: 0;
 	@include clearfix;
-
-  @include if-wider-than($breakpoint-two-px) {
-    padding: $default-content-spacing;
-  }
 }
 
 .casestudy__author {
