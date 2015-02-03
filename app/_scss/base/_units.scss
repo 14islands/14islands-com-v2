@@ -14,6 +14,15 @@ $base_px: 18 !default;
 	@return null;
 }
 
+
+/*
+ * Strips unit from number
+ */
+@function strip-units($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+
 /*
 * Function for converting pixel values to
 * relative rem value
