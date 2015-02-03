@@ -343,7 +343,8 @@ module.exports = function (grunt) {
           remote: '../',
           branch: 'gh-pages',
           commit: true,
-          push: true
+          push: true,
+          message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
         }
       }
     },
@@ -434,7 +435,7 @@ module.exports = function (grunt) {
     'clean:server',
     'jekyll:check',
     'sass:server',
-    'coffeelint:check',
+    // 'coffeelint:check',
     'coffee:dist',
     'jshint:all',
     //'csslint:check'
@@ -450,8 +451,8 @@ module.exports = function (grunt) {
     'concat',
     'autoprefixer:dist',
     'uglify',
-    'imagemin',
-    'svgmin',
+    // 'imagemin',
+    // 'svgmin',
     'filerev',
     'usemin',
     //'htmlmin'
