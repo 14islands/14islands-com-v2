@@ -192,7 +192,12 @@ class FOURTEEN.PjaxNavigation
 
   # long transition from hero
   slideInContent: =>
-    TweenLite.fromTo(@$content[0], 0.8, {
+    TweenLite.set(@$content[0], {
+      display: 'block'
+      clearProps: 'all'
+    })
+
+    TweenLite.fromTo(@$content.find('.pjax-animate'), 0.8, {
       y: @yTo
       display: 'block'
     },
@@ -208,14 +213,20 @@ class FOURTEEN.PjaxNavigation
 
   # fast content transition between normal pages
   showContent: =>
-    TweenLite.fromTo(@$content[0], 0.5, {
+    TweenLite.set(@$content[0], {
+      display: 'block'
+      clearProps: 'all'
+    })
+
+    # slide
+    TweenLite.fromTo(@$content.find('.pjax-animate'), 0.5, {
       y: @yTo/3
-      opacity: 0
+      #opacity: 0
       display: 'block'
     },
     {
       y: 0,
-      opacity: 1
+      #opacity: 1
       ease: Circ.easeOut
       clearProps: 'all',
       onComplete: (param) =>
