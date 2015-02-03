@@ -163,7 +163,7 @@ $grid-block-size: 360px;
 //
 // Animations (for employees)
 //
-.js {
+.js .no-touch {
 
 	.team-grid__item--employee,
 	.team-grid__text-points__item,
@@ -205,5 +205,4 @@ $grid-block-size: 360px;
 		}
 
 	}
-
 }
