@@ -340,6 +340,7 @@ module.exports = function (grunt) {
     buildcontrol: {
       dist: {
         options: {
+          dir: '<%= yeoman.dist %>',
           remote: '../',
           branch: 'gh-pages',
           commit: true,
@@ -451,7 +452,7 @@ module.exports = function (grunt) {
     'concat',
     'autoprefixer:dist',
     'uglify',
-    'imagemin',
+    // 'imagemin',
     'filerev',
     'usemin',
     //'htmlmin'
