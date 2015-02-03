@@ -73,3 +73,15 @@ class FOURTEEN.Utils
 			onComplete: ->
 				$spinner.addClass 'spinner--inactive'
 		}
+
+	@whichAnimationEvent: () ->
+		t = undefined
+		el = document.createElement('div')
+		animationNames =
+		  'WebkitAnimation': 'webkitAnimationEnd'
+		  'MozAnimation': 'animationend'
+		  'OAnimation': 'oAnimationEnd oanimationend'
+		  'animation': 'animationend'
+		for t of animationNames
+		  if el.style[t] != undefined
+		    return animationNames[t]

@@ -34,6 +34,7 @@ class FOURTEEN.Grid
 	CLASS_ANCHOR = 'team-grid__link'
 	CLASS_ANIMATE_ITEM = 'team-grid__item--animate'
 	CLASS_SPINNER_INACTIVE = 'spinner--inactive'
+	CLASS_READY = 'grid-show'
 
 	IS_GRID_REPEATABLE = false
 
@@ -96,7 +97,6 @@ class FOURTEEN.Grid
 		Makes the grid happen
 	###
 	initializeGrid: =>
-		console.log "initializeGrid", Math.random()
 		# Read our data from the page
 		@setGridModel()
 
@@ -118,7 +118,7 @@ class FOURTEEN.Grid
 				# Except for mobile...
 				@onEnterViewport()
 		else
-			watcher = scrollMonitor.create( @$context, 500 )
+			watcher = scrollMonitor.create( @$context, -300 )
 			watcher.recalculateLocation()
 			@addWatcherListeners()
 
@@ -213,6 +213,7 @@ class FOURTEEN.Grid
 		spinnerTimerId = setTimeout @showSpinner, SPINNER_TIMEOUT_MS
 		$.when( imagesLoaded.getState() ).done =>
 			if spinnerTimerId isnt null then @hideSpinner()
+			@$context.addClass CLASS_READY
 			@showItems( @$context.find( SELETOR_CELL_APPENDED_ITEM ) )
 
 	###
@@ -665,9 +666,6 @@ class FOURTEEN.Grid
 		numAvailable.cols = Math.ceil( totalAvailableWidth / @getCellWidth('1') )
 		numAvailable.cells = numAvailable.cols * numAvailable.rows
 
-		# debugger
-
-		console.log "gridSetup: ", numAvailable
 
 	###
 		Reads our data from the HTML
@@ -683,7 +681,6 @@ class FOURTEEN.Grid
 		IS_GRID_REPEATABLE = parseInt( @$context.data( DATA_IS_REPEATABLE ), 10 ) || 1
 		GRID_PATTERN = @getObjFromKey patternKey
 		data = @getObjFromKey modelKey
-		console.log "setGridModel: ", data
 
 	getObjFromKey: (key) =>
 		if ( !key )

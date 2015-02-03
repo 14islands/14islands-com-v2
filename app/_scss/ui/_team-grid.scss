@@ -159,3 +159,51 @@ $grid-block-size: 360px;
 		line-height: 1.2;
 	}
 }
+
+//
+// Animations (for employees)
+//
+.js {
+
+	.team-grid__item--employee,
+	.team-grid__text-points__item,
+	.team-grid__title {
+		opacity: 0;
+		transition-property: opacity, transform;
+		transition-duration: 250ms;
+		transition-timing-function: $easeOutQuad;
+	}
+
+	.team-grid__title,
+	.team-grid__text-points__item {
+		opacity: 0;
+		transform: translateX(-10%);
+	}
+
+	.grid-show {
+
+		.team-grid__item--employee {
+			opacity: 1;
+		}
+
+		.is-fully-visible {
+
+			.team-grid__title,
+			.team-grid__text-points__item {
+				opacity: 1;
+				transform: translateX(0%);
+			}
+
+			.team-grid__text-points__item {
+				@for $i from 1 through 3 {
+					&:nth-of-type(#{$i}) {
+						transition-delay: $i * 100ms;
+					}
+				}
+			}
+
+		}
+
+	}
+
+}
