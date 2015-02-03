@@ -98,9 +98,13 @@ h3,
 h4 {
   max-width: 800px;
   font-weight: 600;
+  color: #333;
   letter-spacing: -0.03em;
   line-height: 1;
-  .u-bg-natt-dark & {
+  .u-bg-natt-dark &,
+  &.hero__caption,
+  &.box__content__headline,
+  &.next-casestudy__headline {
     color: white;
   }
 }
