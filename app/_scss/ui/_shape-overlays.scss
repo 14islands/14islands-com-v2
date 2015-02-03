@@ -42,6 +42,7 @@
       top: 19%;
       right: 30%;
       left: 18%;
+      margin: 0 0 .5rem 0;
     }
   }
 }
@@ -57,6 +58,7 @@
       top: 19%;
       right: 20%;
       left: 33%;
+      margin: 0 .5rem 0 0;
     }
   }
 }
@@ -92,13 +94,14 @@
     figcap {
       position: relative;
       margin-top: 3rem;
+      margin-bottom: 8rem;
       max-width: 10rem;
       box-sizing: content-box;
       padding-right: 4rem;
       padding-left: 2rem;
     }
   }
-  @include if-wider-than($breakpoint-two-px) {
+  @include if-wider-than($breakpoint-three-px) {
     left: auto;
     right: 62%;
   }
