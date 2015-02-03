@@ -41,7 +41,7 @@ html {
  */
 
 %h1 {
-  font-size: modular-scale(1rem, 4);
+  font-size: modular-scale(1rem, 3);
   margin-top: 2 * modular-scale(1rem, 1);
   margin-bottom: 2 * modular-scale(1rem, 1);
   @include if-wider-than($breakpoint-two-px) {

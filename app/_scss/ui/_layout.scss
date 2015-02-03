@@ -132,14 +132,6 @@ svg {
 	margin-bottom: 0;
 }
 
-.header__title {
-	color: #333;
-  @include if-narrower-than($breakpoint-two-px) {
-    // h3 size
-    font-size: modular-scale(1rem, 3);
-  }
-}
-
 .header__desc {
 	color: #888;
 }

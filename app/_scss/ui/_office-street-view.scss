@@ -23,7 +23,6 @@
 .office__pointer-shape {
   padding: 0 $default-content-spacing;
   svg {
-    @extend .svg;
     display: none;
   }
   @include if-wider-than($breakpoint-two-px) {
