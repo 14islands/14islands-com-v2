@@ -94,7 +94,7 @@ a.casestudy__header-label {
     width: (100%/2);
     margin-bottom: 2rem;
   }
-  @include if-wider-than($breakpoint-three-px) {
+  @include if-wider-than(1200px) {
     width: (100%/3);
   }
 }
