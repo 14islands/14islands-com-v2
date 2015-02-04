@@ -65,7 +65,9 @@ class FOURTEEN.PjaxNavigation
     # prevent transition to same page
     unless @currentPageId is pageId
       # tell pjax to nav to page
-      $.pjax({url: "/#{pageId}", container: @contentSelector, fragment: @contentSelector})
+      # console.log "pageId ", pageId
+      $.pjax({url: url, container: @contentSelector, fragment: @contentSelector})
+      # $.pjax({url: "/#{pageId}", container: @contentSelector, fragment: @contentSelector})
 
 
   # handle history event for home page link
