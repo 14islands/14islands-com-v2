@@ -2,6 +2,11 @@ $breakpoint-grid: 1079px;
 $breakpoint-mobile-larger: 640px;
 $grid-block-size: 360px;
 
+// this section doesn't work without js!
+.no-js #meet-us {
+	display: none;
+}
+
 .team-grid {
 	list-style: none;
 	margin: 0;
