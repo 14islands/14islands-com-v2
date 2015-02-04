@@ -10,7 +10,7 @@ class FOURTEEN.PjaxNavigation
   HOMEPAGE_ID: 'home'
 
   # Delay in ms before spinner should show
-  SPINNER_DELAY: 500
+  SPINNER_DELAY: 650 # default pjax timeout
 
   constructor: (@navigationSelector, @btnNavLinks, @btnHomeSelector, @contentSelector, @onEndCallback) ->
     @$content = $(@contentSelector)
@@ -27,6 +27,7 @@ class FOURTEEN.PjaxNavigation
     @currentPageId = @$body.attr('class').match(/page-(\S*)/)[1]
 
     # enable PJAX
+    $.pjax.defaults.timeout = 10000 # we show a spinner so set this to 10s to prevent a full page reload
     $(document).pjax('a', @contentSelector, {
       fragment: @contentSelector
     })
@@ -37,7 +38,8 @@ class FOURTEEN.PjaxNavigation
     @$btnNavLinks.on('click', @onNavigateToPage)
 
     # hook up scrolling logic before showing new page
-    @$content.on('pjax:beforeReplace', @onPjaxBeforeReplace)
+    @$content.on('pjax:send', @onPjaxSend)
+    @$content.on('pjax:start', @onPjaxStart)
     @$content.on('pjax:popstate', @onPopState)
     @$content.on('pjax:end', @onPjaxEnd)
     @$content.on('pjax:end', @onEndCallback)
@@ -65,7 +67,6 @@ class FOURTEEN.PjaxNavigation
     # prevent transition to same page
     unless @currentPageId is pageId
       # tell pjax to nav to page
-      # console.log "pageId ", pageId
       $.pjax({url: url, container: @contentSelector, fragment: @contentSelector})
       # $.pjax({url: "/#{pageId}", container: @contentSelector, fragment: @contentSelector})
 
@@ -89,7 +90,12 @@ class FOURTEEN.PjaxNavigation
     @yTo = window.innerHeight - @$navigation.outerHeight()
 
 
-  onPjaxBeforeReplace: (e, contents, options) =>
+  # only called if actual ajax request is made
+  onPjaxSend: (e, xhr, options) =>
+    @startSpinnerTimer()
+
+
+  onPjaxStart: (e, unused, options) =>
     @calculateY()
 
     # hide hero if we were standing on the home page before navigating
@@ -99,8 +105,6 @@ class FOURTEEN.PjaxNavigation
     # hide content fast when navigating between all other pages
     unless @getPageIdFromUrl(options.url) is @HOMEPAGE_ID
       @hideContent()
-
-    @startSpinnerTimer()
 
 
   onPjaxEnd: (e, unused, options) =>
@@ -140,7 +144,7 @@ class FOURTEEN.PjaxNavigation
 
 
   showSpinner: =>
-    @$content.append(@$spinner)
+    @$content.after(@$spinner)
 
 
   hideHero: =>
