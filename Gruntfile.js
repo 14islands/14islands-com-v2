@@ -206,7 +206,8 @@ module.exports = function (grunt) {
       server: {
         options: {
           config: '_config.yml',
-          dest: '.jekyll'
+          dest: '.jekyll',
+          raw: 'baseurl: '
         }
       },
       check: {
