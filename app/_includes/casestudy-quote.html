@@ -3,7 +3,7 @@
 		<blockquote class="casestudy__quote">
 			<p>“{{include.quote}}”</p>
 			<div class="casestudy__author">
-				<img class="casestudy__author-image" data-src="{{include.author-image-src}}" />
+        {% include rio-image.html src=include.author-image-src alt=include.author-name class="casestudy__author-image"%}
 				<span class="casestudy__author-name">{{include.author-name}}</span>
 				<span class="casestudy__author-job-title">{{include.author-job-title}}</span>
 			</div>
