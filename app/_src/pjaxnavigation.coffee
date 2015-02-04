@@ -51,10 +51,11 @@ class FOURTEEN.PjaxNavigation
     unless @currentPageId is @HOMEPAGE_ID
       @calculateY() # might not have been done before if ladning on subpage
       @showHero()
+      url = $(e.currentTarget).attr('href')
       @slideOutContent( =>
         unless popState
           # tell pjax to nav to home page
-          $.pjax({url: '/', container: @contentSelector, fragment: @contentSelector})
+          $.pjax({url: url, container: @contentSelector, fragment: @contentSelector})
       )
 
 
@@ -68,7 +69,6 @@ class FOURTEEN.PjaxNavigation
     unless @currentPageId is pageId
       # tell pjax to nav to page
       $.pjax({url: url, container: @contentSelector, fragment: @contentSelector})
-      # $.pjax({url: "/#{pageId}", container: @contentSelector, fragment: @contentSelector})
 
 
   # handle history event for home page link

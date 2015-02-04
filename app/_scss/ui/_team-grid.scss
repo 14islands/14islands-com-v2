@@ -185,6 +185,10 @@ $grid-block-size: 360px;
 		transform: translateX(-10%);
 	}
 
+	.team-grid__title {
+		transition-duration: 380ms; // a little longer for a "punchline" :)
+	}
+
 	.grid-show {
 
 		.team-grid__item--employee {
