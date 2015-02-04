@@ -21,6 +21,9 @@ module.exports = function (grunt) {
       app: 'app',
       dist: 'dist'
     },
+    site: {
+      baseprefix: '/14islands/'
+    },
     watch: {
       sass: {
         files: ['<%= yeoman.app %>/_scss/**/*.{scss,sass}'],
@@ -203,7 +206,8 @@ module.exports = function (grunt) {
       server: {
         options: {
           config: '_config.yml',
-          dest: '.jekyll'
+          dest: '.jekyll',
+          raw: 'baseurl: '
         }
       },
       check: {
@@ -340,10 +344,12 @@ module.exports = function (grunt) {
     buildcontrol: {
       dist: {
         options: {
-          remote: '../',
+          dir: '<%= yeoman.dist %>',
+          remote: 'https://github.com/14islands/14islands-com.git',
           branch: 'gh-pages',
           commit: true,
-          push: true
+          push: true,
+          message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
         }
       }
     },
@@ -401,6 +407,40 @@ module.exports = function (grunt) {
             }
         }
     },
+    'string-replace': {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'dist/',
+          src: [
+            '**/*.html'
+          ],
+          dest: 'dist/',
+        }],
+        options: {
+          replacements: [
+            {
+              pattern: 'css/main',
+              replacement: function (match, p1) {
+                return '/14islands-com/css/main';
+              },
+            },
+            {
+              pattern: 'js/head-scripts',
+              replacement: function (match, p1) {
+                return '/14islands-com/js/head-scripts';
+              },
+            },
+            {
+              pattern: 'js/footer-scripts',
+              replacement: function (match, p1) {
+                return '/14islands-com/js/footer-scripts';
+              },
+            }
+          ]
+        }
+      }
+    }
   });
 
   // Define Tasks
@@ -434,7 +474,7 @@ module.exports = function (grunt) {
     'clean:server',
     'jekyll:check',
     'sass:server',
-    'coffeelint:check',
+    // 'coffeelint:check',
     'coffee:dist',
     'jshint:all',
     //'csslint:check'
@@ -450,10 +490,10 @@ module.exports = function (grunt) {
     'concat',
     'autoprefixer:dist',
     'uglify',
-    'imagemin',
-    'svgmin',
+    // 'imagemin',
     'filerev',
     'usemin',
+    'string-replace',
     //'htmlmin'
     ]);
 

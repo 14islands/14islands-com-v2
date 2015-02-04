@@ -13,7 +13,7 @@ title: Our Work - 14islands
   {% assign sorted_pages = (site.categories.work | sort: 'priority') %}
   {% for post in sorted_pages %}
     {% unless post.private and site.hide_private %}
-    <a href="{{ post.permalink }}" class="work--project-{{ post.class }}">
+    <a href="{{ site.baseurl }}{{ post.permalink }}" class="work--project-{{ post.class }}">
       <article class="box" {% if post.color %} style="background-color: {{ post.color }};" {% endif %}>
         {% capture thecycle %}{% cycle 'even', 'odd' %}{% endcapture %}
         {% if thecycle == 'even' %}
@@ -35,9 +35,10 @@ title: Our Work - 14islands
         <div class="grid__row--wide__content box__content u--default-v-padding">
           <div class="box__content__img {{ post.imageClass }}">
             {% if {{post.image}} contains '.svg' %}
-              <img src="{{post.image}}"/>
+              <img src="{{site.baseurl}}{{post.image}}"/>
             {% else %}
-              {% include rio-image.html src=post.image alt=post.name %}
+            {% capture fullsrc %} {{site.baseurl}}{{post.image}} {% endcapture %}
+              {% include rio-image.html src=fullsrc alt=post.name %}
             {% endif %}
           </div>
           <div class="box__content__logo">

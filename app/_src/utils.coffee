@@ -74,14 +74,18 @@ class FOURTEEN.Utils
 				$spinner.addClass 'spinner--inactive'
 		}
 
+	###
+		Returns the browser prefixed
+		string for the animation end event
+	###
 	@whichAnimationEvent: () ->
 		t = undefined
 		el = document.createElement('div')
 		animationNames =
-		  'WebkitAnimation': 'webkitAnimationEnd'
-		  'MozAnimation': 'animationend'
-		  'OAnimation': 'oAnimationEnd oanimationend'
-		  'animation': 'animationend'
+			'WebkitAnimation': 'webkitAnimationEnd'
+			'MozAnimation': 'animationend'
+			'OAnimation': 'oAnimationEnd oanimationend'
+			'animation': 'animationend'
 		for t of animationNames
-		  if el.style[t] != undefined
-		    return animationNames[t]
+			if el.style[t] != undefined
+				return animationNames[t]

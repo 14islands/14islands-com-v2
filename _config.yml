@@ -4,6 +4,9 @@
 # 3. config.yml
 
 name: 14islands.com
+# this is necessary for jekyll + gh-pages
+# see here: http://jekyllrb.com/docs/github-pages/
+baseurl: /14islands-com
 description: 14islands.com
 encoding: utf-8
 author:
