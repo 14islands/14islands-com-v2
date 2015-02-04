@@ -68,7 +68,6 @@ class FOURTEEN.PjaxNavigation
     unless @currentPageId is pageId
       # tell pjax to nav to page
       $.pjax({url: url, container: @contentSelector, fragment: @contentSelector})
-      # $.pjax({url: "/#{pageId}", container: @contentSelector, fragment: @contentSelector})
 
 
   # handle history event for home page link
