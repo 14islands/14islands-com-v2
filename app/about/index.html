@@ -13,7 +13,6 @@ title: About Us - 14islands
 	 <p>We are a web development studio that cares deeply about creating great user experiences. 14islands was founded in 2011, though our roots in the web industry stretch back more than 15 years.</p>
   </div>
 
-  {% capture fullsrc %} {{site.baseurl}}/images/about/we-are-14islands.jpg {% endcapture %}
   {% include wide-content-image.html src="../images/about/we-are-14islands.jpg" alt="The 14islands HQ" ratio="3_2" margin="both" %}
 
 </section>
@@ -24,8 +23,7 @@ title: About Us - 14islands
     <p>Digital experiences need many ingredients to make users happy. Good design. Good performance. Responsive for all devices and screen sizes. Natural and playful interactions. Continual improvement based on usage data. This is the work we do.</p>
   </div>
 
-  {% capture fullsrc %} {{site.baseurl}}/images/about/we-care.jpg {% endcapture %}
-  {% include wide-content-image.html src=fullsrc alt="Hjörtur and Marco on a hangout at the 14islands office" ratio="3_2" margin="both" caption=true shapeClass="shape-overlay--bottom-right" shapeSVG="about-image-bottom-right.svg" %}
+  {% include wide-content-image.html src="../images/about/we-care.jpg" alt="Hjörtur and Marco on a hangout at the 14islands office" ratio="3_2" margin="both" caption=true shapeClass="shape-overlay--bottom-right" shapeSVG="about-image-bottom-right.svg" %}
 
 </section>
 
@@ -36,9 +34,7 @@ title: About Us - 14islands
   	<p>There’s always something cooking in the 14islands kitchen. We are constantly experimenting with emerging technologies, and never miss an opportunity to give talks or workshops on web development. </p>
   </div>
 
-
-  {% capture fullsrc %} {{site.baseurl}}/images/about/we-love-what-we-do.jpg {% endcapture %}
-  {% include wide-content-image.html src=fullsrc alt="Marco giving a Responsive Web Development workshop." ratio="16_9" margin="both" caption=true shapeClass="shape-overlay--top-left" shapeSVG="about-image-top-left.svg" %}
+  {% include wide-content-image.html src="/images/about/we-love-what-we-do.jpg" alt="Marco giving a Responsive Web Development workshop." ratio="16_9" margin="both" caption=true shapeClass="shape-overlay--top-left" shapeSVG="about-image-top-left.svg" %}
 
   <div class="grid__row">
 	 <p>The <a href="http://blog.14islands.com/">14islands blog</a> is our main channel for sharing our latest findings and clever techniques. We update our <a href="http://codepen.io/14islands/">Codepen</a> frequently with inspiring animations or small snippets of code. If we think something will benefit the community, we put it on our <a href="https://github.com/14islands">Github page</a>.</p>
@@ -61,65 +57,65 @@ title: About Us - 14islands
       FOURTEEN.modelTeam = {
         1: [
           {
-            "src": "{{site.baseurl}}/images/about/team-grid/single-rio.jpg",
+            "src": "../images/about/team-grid/single-rio.jpg",
             "alt": "Responsive.io"
           },
           {
-            "src": "{{site.baseurl}}/images/about/team-grid/single-piano.jpg",
+            "src": "../images/about/team-grid/single-piano.jpg",
             "alt": "Musical instruments in our office"
           },
           {
-            "src": "{{site.baseurl}}/images/about/team-grid/single-poster-bullshit.jpg",
+            "src": "../images/about/team-grid/single-poster-bullshit.jpg",
             "alt": "BS free zone poster"
           },
           {
-            "src": "{{site.baseurl}}/images/about/team-grid/single-David-Marco.jpg",
+            "src": "../images/about/team-grid/single-David-Marco.jpg",
             "alt": "David and Marco cracking"
           },
           {
-            "src": "{{site.baseurl}}/images/about/team-grid/single-bike.jpg",
+            "src": "../images/about/team-grid/single-bike.jpg",
             "alt": "Biking is good"
           },
           {
-            "src": "{{site.baseurl}}/images/about/team-grid/single-breakfast.jpg",
+            "src": "../images/about/team-grid/single-breakfast.jpg",
             "alt": "Healthy breakfast every Monday"
           },
           {
-            "src": "{{site.baseurl}}/images/about/team-grid/single-fuckit-shipit.jpg",
+            "src": "../images/about/team-grid/single-fuckit-shipit.jpg",
             "alt": "Fuck it, Ship it."
           },
           {
-            "src": "{{site.baseurl}}/images/about/team-grid/single-logo-schematics.jpg",
+            "src": "../images/about/team-grid/single-logo-schematics.jpg",
             "alt": "14islands branding"
           },
           {
-            "src": "{{site.baseurl}}/images/about/team-grid/single-midnatsloppet.jpg",
+            "src": "../images/about/team-grid/single-midnatsloppet.jpg",
             "alt": "Midnatsloppet 2014"
           },
           {
-            "src": "{{site.baseurl}}/images/about/team-grid/single-plan8.jpg",
+            "src": "../images/about/team-grid/single-plan8.jpg",
             "alt": "Our office"
           },
           {
-            "src": "{{site.baseurl}}/images/about/team-grid/single-plant.jpg",
+            "src": "../images/about/team-grid/single-plant.jpg",
             "alt": "Bonzai"
           },
           {
-            "src": "{{site.baseurl}}/images/about/team-grid/single-wood.jpg",
+            "src": "../images/about/team-grid/single-wood.jpg",
             "alt": "Logo carved in wood"
           }
         ],
         2: [
           {
-            "src": "{{site.baseurl}}/images/about/team-grid/double-bench.jpg",
+            "src": "../images/about/team-grid/double-bench.jpg",
             "alt": ""
           },
           {
-            "src": "{{site.baseurl}}/images/about/team-grid/double-Iceland.jpg",
+            "src": "../images/about/team-grid/double-Iceland.jpg",
             "alt": "Iceland"
           },
           {
-            "src": "{{site.baseurl}}/images/about/team-grid/double-Brasil.jpg",
+            "src": "../images/about/team-grid/double-Brasil.jpg",
             "alt": "Brasil"
           }
         ]
@@ -129,7 +125,7 @@ title: About Us - 14islands
     <div class="team-grid js-component-grid" data-gap="0" data-map-model="modelTeam" data-map-pattern="ABOUT_GRID_PATTERN_BLOCKS" data-map-sizes="ABOUT_GRID_CELL_SIZES_BLOCKS" data-is-repeatable="1">
       <div class="js-spinner spinner spinner--center spinner--inactive"></div>
       <figure class="team-grid__item team-grid__item--employee">
-        <img class="team-grid__image" src="{{site.baseurl}}/images/about/team-grid/double-David.jpg" alt="David Lindkvist">
+        <img class="team-grid__image" src="../images/about/team-grid/double-David.jpg" alt="David Lindkvist">
         <figcaption class="team-grid__caption js-component-element-scroll-visibility">
           <div class="team-grid__caption__inner">
             <h2 class="team-grid__title">David <br />Lindkvist</h2>
@@ -142,7 +138,7 @@ title: About Us - 14islands
         </figcaption>
       </figure>
       <figure class="team-grid__item team-grid__item--employee">
-        <img class="team-grid__image" src="{{site.baseurl}}/images/about/team-grid/double-Hjortur.jpg" alt="Hjörtur Hilmarsson">
+        <img class="team-grid__image" src="../images/about/team-grid/double-Hjortur.jpg" alt="Hjörtur Hilmarsson">
         <figcaption class="team-grid__caption js-component-element-scroll-visibility">
           <div class="team-grid__caption__inner">
             <h2 class="team-grid__title">Hjörtur <br />Hilmarsson</h2>
@@ -155,7 +151,7 @@ title: About Us - 14islands
         </figcaption>
       </figure>
       <figure class="team-grid__item team-grid__item--employee">
-        <img class="team-grid__image" src="{{site.baseurl}}/images/about/team-grid/double-Marco.jpg" alt="Marco Barbosa">
+        <img class="team-grid__image" src="../images/about/team-grid/double-Marco.jpg" alt="Marco Barbosa">
         <figcaption class="team-grid__caption js-component-element-scroll-visibility">
           <div class="team-grid__caption__inner">
             <h2 class="team-grid__title">Marco <br />Barbosa</h2>
