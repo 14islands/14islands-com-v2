@@ -63,7 +63,7 @@
     left: 0;
     background-color: #38a538;
     .reindeer-cam  {
-      background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00000.png');
+      background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00000.png');
       background-position: center bottom;
     }
     .reindeer-cam__frames {
@@ -80,7 +80,7 @@
     left: 33.33%;
     background-color: #ef4136;
     .reindeer-cam  {
-      background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00000.png');
+      background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00000.png');
     }
     .reindeer-cam__frames {
       width: $treadmillFrames * 100%;
@@ -95,7 +95,7 @@
     left: 66.66%;
     background-color: #f5d02a;
     .reindeer-cam  {
-      background-image: url('/images/work/google-santa-tracker/jumprope_x2/Jumprope_00000.png');
+      background-image: url('../images/work/google-santa-tracker/jumprope_x2/Jumprope_00000.png');
     }
     .reindeer-cam__frames {
       width: $jumpropeFrames * 100%;
@@ -109,147 +109,147 @@
 
 
   .reindeer-cam__frame--benchpress:nth-child(1) {
-    background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00000.png');
+    background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00000.png');
   }
   .reindeer-cam__frame--benchpress:nth-child(2) {
-    background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00002.png');
+    background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00002.png');
   }
   .reindeer-cam__frame--benchpress:nth-child(3) {
-    background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00004.png');
+    background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00004.png');
   }
   .reindeer-cam__frame--benchpress:nth-child(4) {
-    background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00006.png');
+    background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00006.png');
   }
   .reindeer-cam__frame--benchpress:nth-child(5) {
-    background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00008.png');
+    background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00008.png');
   }
   .reindeer-cam__frame--benchpress:nth-child(6) {
-    background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00010.png');
+    background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00010.png');
   }
   .reindeer-cam__frame--benchpress:nth-child(7) {
-    background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00012.png');
+    background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00012.png');
   }
   .reindeer-cam__frame--benchpress:nth-child(8) {
-    background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00014.png');
+    background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00014.png');
   }
   .reindeer-cam__frame--benchpress:nth-child(9) {
-    background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00016.png');
+    background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00016.png');
   }
   .reindeer-cam__frame--benchpress:nth-child(10) {
-    background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00018.png');
+    background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00018.png');
   }
   .reindeer-cam__frame--benchpress:nth-child(11) {
-    background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00020.png');
+    background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00020.png');
   }
   .reindeer-cam__frame--benchpress:nth-child(12) {
-    background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00022.png');
+    background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00022.png');
   }
   .reindeer-cam__frame--benchpress:nth-child(13) {
-    background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00024.png');
+    background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00024.png');
   }
   .reindeer-cam__frame--benchpress:nth-child(14) {
-    background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00026.png');
+    background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00026.png');
   }
   .reindeer-cam__frame--benchpress:nth-child(15) {
-    background-image: url('/images/work/google-santa-tracker/benchpress_x2/benchpress_00028.png');
+    background-image: url('../images/work/google-santa-tracker/benchpress_x2/benchpress_00028.png');
   }
 
 
 
   .reindeer-cam__frame--treadmill:nth-child(1) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00000.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00000.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(2) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00002.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00002.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(3) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00004.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00004.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(4) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00006.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00006.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(5) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00008.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00008.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(6) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00010.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00010.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(7) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00012.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00012.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(8) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00014.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00014.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(9) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00016.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00016.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(10) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00018.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00018.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(11) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00020.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00020.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(12) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00022.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00022.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(13) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00024.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00024.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(14) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00026.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00026.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(15) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00028.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00028.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(16) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00030.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00030.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(17) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00032.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00032.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(18) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00034.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00034.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(19) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00036.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00036.png');
   }
   .reindeer-cam__frame--treadmill:nth-child(20) {
-    background-image: url('/images/work/google-santa-tracker/treadmill_x2/treadmill00038.png');
+    background-image: url('../images/work/google-santa-tracker/treadmill_x2/treadmill00038.png');
   }
 
 
   .reindeer-cam__frame--jumprope:nth-child(1) {
-    background-image: url('/images/work/google-santa-tracker/jumprope_x2/Jumprope_00000.png');
+    background-image: url('../images/work/google-santa-tracker/jumprope_x2/Jumprope_00000.png');
   }
   .reindeer-cam__frame--jumprope:nth-child(2) {
-    background-image: url('/images/work/google-santa-tracker/jumprope_x2/Jumprope_00001.png');
+    background-image: url('../images/work/google-santa-tracker/jumprope_x2/Jumprope_00001.png');
   }
   .reindeer-cam__frame--jumprope:nth-child(3) {
-    background-image: url('/images/work/google-santa-tracker/jumprope_x2/Jumprope_00002.png');
+    background-image: url('../images/work/google-santa-tracker/jumprope_x2/Jumprope_00002.png');
   }
   .reindeer-cam__frame--jumprope:nth-child(4) {
-    background-image: url('/images/work/google-santa-tracker/jumprope_x2/Jumprope_00003.png');
+    background-image: url('../images/work/google-santa-tracker/jumprope_x2/Jumprope_00003.png');
   }
   .reindeer-cam__frame--jumprope:nth-child(5) {
-    background-image: url('/images/work/google-santa-tracker/jumprope_x2/Jumprope_00004.png');
+    background-image: url('../images/work/google-santa-tracker/jumprope_x2/Jumprope_00004.png');
   }
   .reindeer-cam__frame--jumprope:nth-child(6) {
-    background-image: url('/images/work/google-santa-tracker/jumprope_x2/Jumprope_00005.png');
+    background-image: url('../images/work/google-santa-tracker/jumprope_x2/Jumprope_00005.png');
   }
   .reindeer-cam__frame--jumprope:nth-child(7) {
-    background-image: url('/images/work/google-santa-tracker/jumprope_x2/Jumprope_00006.png');
+    background-image: url('../images/work/google-santa-tracker/jumprope_x2/Jumprope_00006.png');
   }
   .reindeer-cam__frame--jumprope:nth-child(8) {
-    background-image: url('/images/work/google-santa-tracker/jumprope_x2/Jumprope_00007.png');
+    background-image: url('../images/work/google-santa-tracker/jumprope_x2/Jumprope_00007.png');
   }
   .reindeer-cam__frame--jumprope:nth-child(9) {
-    background-image: url('/images/work/google-santa-tracker/jumprope_x2/Jumprope_00008.png');
+    background-image: url('../images/work/google-santa-tracker/jumprope_x2/Jumprope_00008.png');
   }
   .reindeer-cam__frame--jumprope:nth-child(10) {
-    background-image: url('/images/work/google-santa-tracker/jumprope_x2/Jumprope_00009.png');
+    background-image: url('../images/work/google-santa-tracker/jumprope_x2/Jumprope_00009.png');
   }
   .reindeer-cam__frame--jumprope:nth-child(11) {
-    background-image: url('/images/work/google-santa-tracker/jumprope_x2/Jumprope_00010.png');
+    background-image: url('../images/work/google-santa-tracker/jumprope_x2/Jumprope_00010.png');
   }
 }
 
