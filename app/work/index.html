@@ -35,9 +35,9 @@ title: Our Work - 14islands
         <div class="grid__row--wide__content box__content u--default-v-padding">
           <div class="box__content__img {{ post.imageClass }}">
             {% if {{post.image}} contains '.svg' %}
-              <img src="{{site.baseurl}}{{post.image}}"/>
+              <img src="..{{post.image}}"/>
             {% else %}
-            {% capture fullsrc %} {{site.baseurl}}{{post.image}} {% endcapture %}
+            {% capture fullsrc %}..{{post.image}}{% endcapture %}
               {% include rio-image.html src=fullsrc alt=post.name %}
             {% endif %}
           </div>
