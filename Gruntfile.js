@@ -408,9 +408,14 @@ module.exports = function (grunt) {
     },
     'string-replace': {
       dist: {
-        files: {
-          'dist/index.html': 'dist/index.html'
-        },
+        files: [{
+          expand: true,
+          cwd: 'dist/',
+          src: [
+            '**/*.html'
+          ],
+          dest: 'dist/',
+        }],
         options: {
           replacements: [
             {
