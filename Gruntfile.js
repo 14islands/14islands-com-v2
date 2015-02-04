@@ -21,6 +21,9 @@ module.exports = function (grunt) {
       app: 'app',
       dist: 'dist'
     },
+    site: {
+      baseprefix: '/14islands/'
+    },
     watch: {
       sass: {
         files: ['<%= yeoman.app %>/_scss/**/*.{scss,sass}'],
@@ -403,6 +406,35 @@ module.exports = function (grunt) {
             }
         }
     },
+    'string-replace': {
+      dist: {
+        files: {
+          'dist/index.html': 'dist/index.html'
+        },
+        options: {
+          replacements: [
+            {
+              pattern: 'css/main',
+              replacement: function (match, p1) {
+                return '/14islands-com/css/main'
+              },
+            },
+            {
+              pattern: 'js/head-scripts',
+              replacement: function (match, p1) {
+                return '/14islands-com/js/head-scripts'
+              },
+            },
+            {
+              pattern: 'js/footer-scripts',
+              replacement: function (match, p1) {
+                return '/14islands-com/js/footer-scripts'
+              },
+            }
+          ]
+        }
+      }
+    }
   });
 
   // Define Tasks
@@ -455,6 +487,7 @@ module.exports = function (grunt) {
     // 'imagemin',
     'filerev',
     'usemin',
+    'string-replace',
     //'htmlmin'
     ]);
 
