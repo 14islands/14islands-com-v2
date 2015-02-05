@@ -14,8 +14,3 @@ Install
 Running & building
 ==================
 See wiki.
-
-
-Resources
-=========
-- 
