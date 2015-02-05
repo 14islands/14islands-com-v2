@@ -489,7 +489,7 @@ module.exports = function (grunt) {
     'autoprefixer:dist',
     'uglify',
     // 'imagemin',
-    'filerev',
+    // 'filerev',
     'usemin',
     // 'htmlmin'
     ]);
