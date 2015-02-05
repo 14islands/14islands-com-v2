@@ -28,10 +28,17 @@ FOURTEEN.onPjaxEnd = ->
   $(document.body).trigger('pjax:done')
 
 
+FOURTEEN.onWindowLoad = ->
+  # prefetch work page - must have same path + querystring as pjax request will have
+  # This will only work when using Cloudflare configured to cache HTML
+  $.get('work?_pjax=.js-pjax-container')
+
+
 
 #####################################################################
 # BOOTSTRAP
 #####################################################################
+$(window).load(FOURTEEN.onWindowLoad);
 FOURTEEN.listenForResponsive_ioImageLoad()
 
 new FOURTEEN.PjaxNavigation('.js-hero-nav',
@@ -45,3 +52,4 @@ FOURTEEN.componentLoader.start()
 
 # init sticky header
 new FOURTEEN.StickyNav($('.hero__nav'))
+
