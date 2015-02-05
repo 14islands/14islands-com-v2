@@ -493,30 +493,21 @@ module.exports = function (grunt) {
     // 'imagemin',
     'filerev',
     'usemin',
-    'string-replace',
-    //'htmlmin'
-    ]);
-
-  grunt.registerTask('build-live', [
-    'clean',
-    'svgstore',
-    // Jekyll cleans files from the target directory, so must run first
-    'jekyll:dist',
-    'concurrent:dist',
-    'useminPrepare',
-    'concat',
-    'autoprefixer:dist',
-    'uglify',
-    // 'imagemin',
-    'filerev',
-    'usemin',
     //'htmlmin'
     ]);
 
   grunt.registerTask('deploy', [
     'check',
     'test',
-    'build-live',
+    'build',
+    'string-replace',
+    'buildcontrol',
+    ]);
+
+  grunt.registerTask('deploy-live', [
+    'check',
+    'test',
+    'build',
     'buildcontrol'
     ]);
 
