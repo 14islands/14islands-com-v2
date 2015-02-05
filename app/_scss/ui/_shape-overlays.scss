@@ -11,7 +11,7 @@
     }
   }
 
-  figcap {
+  figcaption {
     display: block;
     font-size: 1rem;
     color: $gray;
@@ -38,7 +38,7 @@
     left: -5%;
     width: 35%;
 
-    figcap {
+    figcaption {
       top: 19%;
       right: 30%;
       left: 18%;
@@ -53,7 +53,7 @@
     right: -5%;
     width: 33%;
 
-    figcap {
+    figcaption {
       text-align: right;
       top: 19%;
       right: 20%;
@@ -69,7 +69,7 @@
     right: -1%;
     width: 24%;
 
-    figcap {
+    figcaption {
       text-align: right;
       top: 4%;
       left: 15%;
@@ -91,7 +91,7 @@
       bottom: 0;
     }
 
-    figcap {
+    figcaption {
       position: relative;
       margin-top: 3rem;
       margin-bottom: 8rem;
