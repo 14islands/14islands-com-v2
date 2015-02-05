@@ -6,7 +6,7 @@
 //   sass: _scss
 //   javascript: js
 //   coffeescript: _src
-//   images: img
+//   images: images
 //   fonts: fonts
 
 module.exports = function (grunt) {
@@ -49,8 +49,8 @@ module.exports = function (grunt) {
         tasks: ['jekyll:server']
       },
       svgs: {
-        files: ['<%= yeoman.app %>/svgs/*.svg'],
-        tasks: ['svgstore']
+        files: ['<%= yeoman.app %>/_includes/svgs/**/*.svg', 'images/*.svg'],
+        tasks: ['svgmin']
       },
       livereload: {
         options: {
@@ -60,7 +60,7 @@ module.exports = function (grunt) {
           '.jekyll/**/*.html',
           '.tmp/css/**/*.css',
           '{.tmp,<%= yeoman.app %>}/<%= js %>/**/*.js',
-          '<%= yeoman.app %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}'
+          '<%= yeoman.app %>/images/**/*.{gif,jpg,jpeg,png,webp}'
         ]
       }
     },
@@ -232,7 +232,7 @@ module.exports = function (grunt) {
     htmlmin: {
       dist: {
         options: {
-          collapseWhitespace: true,
+          collapseWhitespace: false,
           collapseBooleanAttributes: true,
           removeAttributeQuotes: true,
           removeRedundantAttributes: true
@@ -271,19 +271,28 @@ module.exports = function (grunt) {
       }
     },
     svgmin: {
-      // options: {
-      //     plugins: [
-      //         {
-      //             mergePaths: false
-      //         }
-      //     ]
-      // },
+      options: {
+          plugins: [
+            {
+              removeViewBox: false
+            },
+            {
+              mergePaths: false
+            }
+          ]
+      },
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= yeoman.dist %>',
-          src: '**/*.svg',
-          dest: '<%= yeoman.dist %>'
+          cwd: '<%= yeoman.app %>',
+          src: [
+            '_includes/svgs/**/*.svg',
+            '!_includes/svgs/**/*min.svg',
+            'images/**/*.svg',
+            '!images/**/*min.svg',
+          ],
+          dest: '<%= yeoman.app %>',
+          ext: '.min.svg',
         }]
       }
     },
@@ -335,7 +344,7 @@ module.exports = function (grunt) {
           src: [
             '<%= yeoman.dist %>/js/**/*.js',
             '<%= yeoman.dist %>/css/**/*.css',
-            '<%= yeoman.dist %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}',
+            '<%= yeoman.dist %>/images/**/*.{gif,jpg,jpeg,png,svg,webp}',
             // '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
           ]
         }]
@@ -396,16 +405,6 @@ module.exports = function (grunt) {
         'coffee:dist',
         'copy:dist'
       ]
-    },
-    svgstore: {
-        options: {
-            prefix : 'shape-'
-        },
-        default : {
-            files: {
-                '<%= yeoman.app %>/_includes/svg-defs.svg': ['<%= yeoman.app %>/svgs/*.svg'],
-            }
-        }
     },
     'string-replace': {
       dist: {
@@ -482,7 +481,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean',
-    'svgstore',
     // Jekyll cleans files from the target directory, so must run first
     'jekyll:dist',
     'concurrent:dist',
@@ -493,7 +491,7 @@ module.exports = function (grunt) {
     // 'imagemin',
     'filerev',
     'usemin',
-    //'htmlmin'
+    // 'htmlmin'
     ]);
 
   grunt.registerTask('deploy', [
