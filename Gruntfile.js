@@ -493,6 +493,7 @@ module.exports = function (grunt) {
     // 'imagemin',
     'filerev',
     'usemin',
+    'buildcontrol'
     //'htmlmin'
     ]);
 
@@ -501,14 +502,6 @@ module.exports = function (grunt) {
     'test',
     'build',
     'string-replace',
-    'buildcontrol',
-    ]);
-
-  grunt.registerTask('deploy-live', [
-    'check',
-    'test',
-    'build',
-    'buildcontrol'
     ]);
 
   grunt.registerTask('default', [
