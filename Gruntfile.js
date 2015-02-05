@@ -60,7 +60,7 @@ module.exports = function (grunt) {
           '.jekyll/**/*.html',
           '.tmp/css/**/*.css',
           '{.tmp,<%= yeoman.app %>}/<%= js %>/**/*.js',
-          '<%= yeoman.app %>/images/**/*.{gif,jpg,jpeg,png,svg,webp}'
+          '<%= yeoman.app %>/images/**/*.{gif,jpg,jpeg,png,webp}'
         ]
       }
     },
@@ -285,7 +285,12 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
-          src: ['_includes/svgs/**/*.svg', 'images/*.svg'],
+          src: [
+            '_includes/svgs/**/*.svg',
+            '!_includes/svgs/**/*min.svg',
+            'images/**/*.svg',
+            '!images/**/*min.svg',
+          ],
           dest: '<%= yeoman.app %>',
           ext: '.min.svg',
         }]
