@@ -25,10 +25,9 @@ class FOURTEEN.OfficeStreetView
 
 	LOADED_CLASS_TIMEOUT = 700
 
-	constructor: (@$context) ->
+	constructor: (@$context, @data, @instanceId) ->
 		@context = @$context.get(0);
 		@$body = $("body")
-		@mapsLoadListener = null
 		@$spinner = @$context.find( SELECTOR_SPINNER )
 		@isDisabledOnTouch = @$context.data( DATA_TOUCH_DISABLED ) || false
 
@@ -37,9 +36,22 @@ class FOURTEEN.OfficeStreetView
 			@setFallback( @$context.data( DATA_FALLBACK ) )
 		else
 			@showSpinner()
-			@mapsLoadListener = google.maps.event.addDomListener(window, 'load', @initializeMap)
-			@$body.on("pjax:done", @initializeMap)
-			
+			window.onload = @appendMapScriptToBody
+			#google.maps.event.addDomListener(window, 'load', @appendMapScriptToBody)
+			@$body.on("pjax:done", @appendMapScriptToBody)
+
+	appendMapScriptToBody: =>
+		# Append script time to page on first view
+		unless @$body.find("#google-maps-script-tag").length > 0
+			FOURTEEN.initializeMap = @initializeMap
+			script = document.createElement('script')
+			script.id = 'google-maps-script-tag'
+			script.type = 'text/javascript'
+			script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDhL8nwKWYtU4LdyiiMUp5zJ_8kRFRoAQA&v=3.exp&callback=FOURTEEN.initializeMap'
+			document.body.appendChild(script)
+		else
+			@initializeMap()
+				
 	initializeMap: =>
 		latLong = new google.maps.LatLng(@$context.data('latitude'), @$context.data('longitude'))
 		@panoramaOptions = {
