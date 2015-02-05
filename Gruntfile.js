@@ -49,7 +49,7 @@ module.exports = function (grunt) {
         tasks: ['jekyll:server']
       },
       svgs: {
-        files: ['<%= yeoman.app %>/_includes/svgs/*.svg'],
+        files: ['<%= yeoman.app %>/_includes/svgs/**/*.svg', 'images/*.svg'],
         tasks: ['svgmin']
       },
       livereload: {
@@ -271,21 +271,25 @@ module.exports = function (grunt) {
       }
     },
     svgmin: {
-      // options: {
-      //     plugins: [
-      //         {
-      //             mergePaths: false
-      //         }
-      //     ]
-      // },
-      // dist: {
-      //   files: [{
-      //     expand: true,
-      //     cwd: '<%= yeoman.dist %>',
-      //     src: '**/*.svg',
-      //     dest: '<%= yeoman.dist %>'
-      //   }]
-      // }
+      options: {
+          plugins: [
+            {
+              removeViewBox: false
+            },
+            {
+              mergePaths: false
+            }
+          ]
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>',
+          src: ['_includes/svgs/**/*.svg', 'images/*.svg'],
+          dest: '<%= yeoman.app %>',
+          ext: '.min.svg',
+        }]
+      }
     },
     copy: {
       dist: {
