@@ -232,7 +232,7 @@ module.exports = function (grunt) {
     htmlmin: {
       dist: {
         options: {
-          collapseWhitespace: true,
+          collapseWhitespace: false,
           collapseBooleanAttributes: true,
           removeAttributeQuotes: true,
           removeRedundantAttributes: true
@@ -491,7 +491,7 @@ module.exports = function (grunt) {
     // 'imagemin',
     'filerev',
     'usemin',
-    'htmlmin'
+    // 'htmlmin'
     ]);
 
   grunt.registerTask('deploy', [
