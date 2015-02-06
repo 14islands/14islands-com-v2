@@ -29,10 +29,14 @@ FOURTEEN.onPjaxEnd = ->
 
 
 FOURTEEN.onWindowLoad = ->
-  # prefetch work page - must have same path + querystring as pjax request will have
-  # This will only work when using Cloudflare configured to cache HTML
+  # prefetch main pages - must have same path + querystring as pjax request will have
+  # This will only work when sending far future headers for HTML
   if location.pathname is "/"
-    $.get('work/?_pjax=.js-pjax-container')
+    $.get('work/?_pjax=.js-pjax-container', ->
+      $.get('about/?_pjax=.js-pjax-container', ->
+        $.get('contact/?_pjax=.js-pjax-container')
+      )
+    )
 
 
 
