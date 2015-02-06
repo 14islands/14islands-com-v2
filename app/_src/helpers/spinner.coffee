@@ -63,6 +63,7 @@ class FOURTEEN.Spinner
 		TweenLite.to @$spinner, .3, {
 			opacity: 0,
 			ease: Power4.EaseOut,
+			clearProps: "all",
 			onComplete:  =>
 				@hasDeffered = false
 				@$spinner.addClass CLASS_INACTIVE
