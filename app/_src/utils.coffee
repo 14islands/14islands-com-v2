@@ -56,25 +56,6 @@ class FOURTEEN.Utils
 		return result
 
 	###
-		Shows the given spinner	element
-	###
-	@showSpinner: ($spinner) ->
-		return if !$spinner
-		$spinner.removeClass 'spinner--inactive'
-
-	###
-		Hides the given spinner
-	###
-	@hideSpinner: ($spinner) ->
-		return if !$spinner
-		TweenLite.to $spinner, .3, {
-			opacity: 0,
-			ease: Power4.EaseOut,
-			onComplete: ->
-				$spinner.addClass 'spinner--inactive'
-		}
-
-	###
 		Returns the browser prefixed
 		string for the animation end event
 	###

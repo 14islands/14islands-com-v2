@@ -23,10 +23,8 @@ class FOURTEEN.Grid
 	DATA_MAP_SIZES = 'map-sizes'
 	DATA_IS_REPEATABLE = 'is-repeatable'
 
-	SELECTOR_SPINNER = '.js-spinner'
 	SELETOR_CELL_ITEM = '.team-grid__item'
 	SELETOR_CELL_APPENDED_ITEM = '.team-grid__item--appended'
-	SELECTOR_SPINNER = '.spinner'
 	SELECTOR_IMAGES = '.team-grid__image'
 
 	CLASS_CELL_ITEM = 'team-grid__item team-grid__item--appended'
@@ -79,7 +77,7 @@ class FOURTEEN.Grid
 	constructor: (@$context, data) ->
 		@context = @$context.get(0)
 		@$body = $('body')
-		@$spinner = @$context.find( SELECTOR_SPINNER )
+		@spinner = new FOURTEEN.Spinner @$context, {isWhite: true}
 
 		if data?.isPjax
 			# wait for animation to be done
@@ -236,10 +234,10 @@ class FOURTEEN.Grid
 		hasChangedBreakpoint = false
 
 	showSpinner: () =>
-		FOURTEEN.Utils.showSpinner @$spinner
+		@spinner.show()
 
 	hideSpinner: () =>
-		FOURTEEN.Utils.hideSpinner @$spinner
+		@spinner.hide()
 
 	isUsingRIO: () ->
 		typeof ResponsiveIO is 'object'
