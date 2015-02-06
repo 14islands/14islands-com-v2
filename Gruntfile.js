@@ -344,7 +344,7 @@ module.exports = function (grunt) {
           src: [
             '<%= yeoman.dist %>/js/**/*.js',
             '<%= yeoman.dist %>/css/**/*.css',
-            '<%= yeoman.dist %>/images/**/*.{gif,jpg,jpeg,png,svg,webp}',
+            // '<%= yeoman.dist %>/images/**/*.{gif,jpg,jpeg,png,svg,webp}',
             // '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
           ]
         }]
@@ -489,7 +489,7 @@ module.exports = function (grunt) {
     'autoprefixer:dist',
     'uglify',
     // 'imagemin',
-    // 'filerev',
+    'filerev',
     'usemin',
     // 'htmlmin'
     ]);
