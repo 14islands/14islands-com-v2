@@ -18,17 +18,14 @@ class FOURTEEN.OfficeStreetView
 	DATA_TOUCH_DISABLED = "is-touch-disabled"
 
 	CLASSES_FALLBACK = "bg-cover bg-color--blank"
-	CLASS_SPINNER_INACTIVE = "spinner--inactive"
 	CLASS_MAP_LOADED = "map-loaded"
-
-	SELECTOR_SPINNER = '.spinner'
 
 	LOADED_CLASS_TIMEOUT = 700
 
 	constructor: (@$context, @data, @instanceId) ->
 		@context = @$context.get(0);
 		@$body = $("body")
-		@$spinner = @$context.find( SELECTOR_SPINNER )
+		@spinner = new FOURTEEN.Spinner @$context
 		@isDisabledOnTouch = @$context.data( DATA_TOUCH_DISABLED ) || false
 
 		# No maps on mobile. Saves bandwidth and awkwardness scrolling.
@@ -65,9 +62,9 @@ class FOURTEEN.OfficeStreetView
 			zoom: @$context.data('zoom')
 		}
 
+		@hideSpinner()
 		@pano = new google.maps.StreetViewPanorama(@context, @panoramaOptions)
 		@pano.setVisible(true)
-		@hideSpinner()
 
 		setTimeout(=>
 		  @$context.addClass( CLASS_MAP_LOADED )
@@ -76,7 +73,6 @@ class FOURTEEN.OfficeStreetView
 		google.maps.event.trigger(@context, 'resize');
 
 	destroy: =>
-		console.log("map destroy")
 		google.maps.event.clearInstanceListeners(window)
 		google.maps.event.clearInstanceListeners(document)
 		google.maps.event.clearInstanceListeners(@context)
@@ -89,7 +85,7 @@ class FOURTEEN.OfficeStreetView
 		ResponsiveIO.refresh(@$context.get(0))
 
 	showSpinner: ->
-		FOURTEEN.Utils.showSpinner @$spinner
+		@spinner.show()
 
 	hideSpinner: ->
-		FOURTEEN.Utils.hideSpinner @$spinner
+		@spinner.hide()

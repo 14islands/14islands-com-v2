@@ -3,6 +3,7 @@
 //
 
 .hero {
+  background-color: $green;
 	color: #fff;
 	display: flex;
 	height: 100%;
@@ -23,7 +24,6 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  background-color: $green;
   overflow: hidden;
 }
 
@@ -41,10 +41,10 @@
 
   .js-loading & {
     will-change: transform;
-    transition: transform 500ms $easeInQuint;
     transform: translate3d(0, -160%, 0);
   }
   .js-loaded & {
+    transition: transform 500ms $easeInQuint;
     transform: none;
   }
 }
@@ -91,7 +91,14 @@
 	font-size: modular-scale(1rem, 1);
   margin-top: 0;
   margin-bottom: 0;
+}
 
+
+
+////////////////////////////////////////////
+// NAV LOADING ANIMATION
+////////////////////////////////////////////
+.page-home .hero__nav {
 
   // load animation
   will-change: transform;
@@ -106,7 +113,6 @@
     animation-timing-function: $easeOutQuint;
     animation-fill-mode: backwards;
   }
-
   // keep loading animation-name on other pages,
   // otherwise animation will restart when going back to home page
   .js-loaded.csstransforms & {
@@ -115,6 +121,11 @@
   .js-loaded.csstransforms3d & {
     animation-name: slide-up-3d;
   }
+
+  // don't run intro animtion after navigating using pjax
+  .js-loaded.pjax & {
+    animation-name: none;
+  }
 }
 
 
@@ -122,17 +133,33 @@
 ////////////////////////////////////////////
 // Sticky header animation
 ////////////////////////////////////////////
-.hero__nav {
+@keyframes sticky-nav-show {
+  from { transform: translateY(-100%); }
+  to   { transform: none }
+}
+@keyframes sticky-nav-hide {
+  from { transform: none }
+  to   { transform: translateY(-100%); }
+}
+@keyframes sticky-nav-hide3d {
+  from { transform: none }
+  to   { transform: translate3d(0, -100%, 0); }
+}
+.hero {
   will-change: transform;
-  transition: transform 400ms $easeOutQuad; // showing
-  &.sticky-nav--hidden {
-    transition: transform 350ms $easeInQuad; // hiding
+  transition: none;
+
+  // only hide nagivation is hero is hidden
+  &.hero--hidden.sticky-nav--hidden {
     .csstransforms & {
-      transform: translateY(-100%);
+      animation: sticky-nav-hide 350ms $easeOutQuad 1 forwards;
     }
     .csstransforms3d & {
-      transform: translate3d(0, -100%, 0);
+      animation: sticky-nav-hide3d 350ms $easeOutQuad 1 forwards;
     }
+  }
+  &.sticky-nav--visible {
+    animation: sticky-nav-show 400ms $easeOutQuad 1 none;
   }
 }
 

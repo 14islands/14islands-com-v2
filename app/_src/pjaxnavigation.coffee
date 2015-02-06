@@ -5,32 +5,10 @@ window.FOURTEEN ?= {}
 class FOURTEEN.PjaxNavigation
 
   @EVENT_ANIMATION_SHOWN: 'pjax-animation:shown'
-  @SPINNER_HTML: '
-  <div class="spinner spinner--center">
-    <svg viewBox="195.9 88.8 109 55.5">
-      <g class="down" opacity="0.4">
-        <polygon fill="#F8B334" points="234.5,117.3 261.7,144.3 278,139.2 283.6,133.9 287.1,141.3 298.2,131 301.8,128.8 304.9,117.3
-          "/>
-        <polygon fill="#F8B334" points="224.8,117.3 224.1,119.5 219.1,124.9 215.1,121.8 215.1,126.9 209,128.9 197,117.3   "/>
-        <polygon fill="#F17E0B" points="197,117.3 195.9,117.3 198.5,122.3 202.3,122.3   "/>
-        <polygon fill="#F17E0B" points="215.1,126.9 215.1,121.8 219.1,124.9 218,126.2   "/>
-        <polygon fill="#F17E0B" points="234.5,117.3 232.4,117.3 237.5,131.9 247.2,129.9   "/>
-        <polygon fill="#F17E0B" points="278,139.2 283.6,133.9 287.1,141.3   "/>
-      </g>
-      <g class="down">
-        <polygon fill="#F8B334" points="234.5,115.7 261.7,88.8 278,94.1 283.6,99.4 287.1,92 298.2,102.3 301.8,104.4 304.9,115.7   "/>
-        <polygon fill="#F8B334" points="224.8,115.7 224.1,113.7 219.1,108.3 215.1,111.5 215.1,106.5 209,104.2 197,115.7   "/>
-        <polygon fill="#F17E0B" points="197,115.7 195.9,115.7 198.5,110.3 202.7,110.3   "/>
-        <polygon fill="#F17E0B" points="215.1,106.5 215.1,111.5 219.1,108.3 218,107.1   "/>
-        <polygon fill="#F17E0B" points="234.5,115.7 232.4,115.7 237.5,101.3 247.2,103.2   "/>
-        <polygon fill="#F17E0B" points="278,94 283.6,99.4 287.1,92  "/>
-      </g>
-    </svg>
-  </div>
-  '
 
   # body pageId of home page
   HOMEPAGE_ID: 'home'
+  hasPjaxClass = false
 
   # Delay in ms before spinner should show
   SPINNER_DELAY: 650 # default pjax timeout
@@ -42,7 +20,7 @@ class FOURTEEN.PjaxNavigation
     @$btnHome = $(@btnHomeSelector)
     @$hero = $('.hero')
     @$body = $('body')
-    @$spinner = $(@constructor.SPINNER_HTML)
+    @spinner = new FOURTEEN.Spinner @$body
     @spinnerTimer = null
     @init()
 
@@ -75,6 +53,7 @@ class FOURTEEN.PjaxNavigation
       @calculateY() # might not have been done before if ladning on subpage
       @showHero()
       url = $(e.currentTarget).attr('href')
+      @setPjaxClass()
       @slideOutContent( =>
         unless popState
           # tell pjax to nav to home page
@@ -89,6 +68,7 @@ class FOURTEEN.PjaxNavigation
     url = $(e.currentTarget).attr('href')
     pageId = @getPageIdFromUrl(url)
     # prevent transition to same page
+    @setPjaxClass()
     unless @currentPageId is pageId
       # tell pjax to nav to page
       $.pjax({url: url, container: @contentSelector, fragment: @contentSelector})
@@ -99,6 +79,12 @@ class FOURTEEN.PjaxNavigation
     if @getPageIdFromUrl(e.state.url) is @HOMEPAGE_ID
       @onNavigateToHome(e, true)
 
+
+  setPjaxClass: =>
+    ## add class to html element to show pjax has happened
+    unless hasPjaxClass
+      $('html').addClass('pjax')
+      hasPjaxClass = true
 
   getPageIdFromUrl: (url) ->
     index = url.lastIndexOf("/")
@@ -163,11 +149,11 @@ class FOURTEEN.PjaxNavigation
 
   cancelSpinner: =>
     clearTimeout(@spinnerTimer)
-    @$spinner.remove()
+    @spinner.hide()
 
 
   showSpinner: =>
-    @$content.after(@$spinner)
+    @spinner.show()
 
 
   hideHero: =>
