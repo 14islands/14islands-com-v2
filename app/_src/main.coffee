@@ -51,5 +51,5 @@ new FOURTEEN.PjaxNavigation('.js-hero-nav',
 FOURTEEN.componentLoader.start()
 
 # init sticky header
-new FOURTEEN.StickyNav($('.hero__nav'))
+new FOURTEEN.StickyNav($('.hero'))
 

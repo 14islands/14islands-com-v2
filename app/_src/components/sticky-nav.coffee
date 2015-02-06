@@ -12,6 +12,7 @@
 class FOURTEEN.StickyNav
 
   HIDDEN_CLASS = 'sticky-nav--hidden'
+  VISIBLE_CLASS = 'sticky-nav--visible'
   THROTTLE_DELAY = 50
 
   # Speed/Distance required to change appearance per scroll frame
@@ -40,13 +41,13 @@ class FOURTEEN.StickyNav
 
   show: =>
     if @isHidden
-      @$context.removeClass(HIDDEN_CLASS)
+      @$context.addClass(VISIBLE_CLASS).removeClass(HIDDEN_CLASS)
       @isHidden = false
 
 
   hide: =>
     unless @isHidden
-      @$context.addClass(HIDDEN_CLASS)
+      @$context.addClass(HIDDEN_CLASS).removeClass(VISIBLE_CLASS)
       @isHidden = true
 
 

@@ -31,6 +31,7 @@ class FOURTEEN.PjaxNavigation
 
   # body pageId of home page
   HOMEPAGE_ID: 'home'
+  hasPjaxClass = false
 
   # Delay in ms before spinner should show
   SPINNER_DELAY: 650 # default pjax timeout
@@ -75,6 +76,7 @@ class FOURTEEN.PjaxNavigation
       @calculateY() # might not have been done before if ladning on subpage
       @showHero()
       url = $(e.currentTarget).attr('href')
+      @setPjaxClass()
       @slideOutContent( =>
         unless popState
           # tell pjax to nav to home page
@@ -89,6 +91,7 @@ class FOURTEEN.PjaxNavigation
     url = $(e.currentTarget).attr('href')
     pageId = @getPageIdFromUrl(url)
     # prevent transition to same page
+    @setPjaxClass()
     unless @currentPageId is pageId
       # tell pjax to nav to page
       $.pjax({url: url, container: @contentSelector, fragment: @contentSelector})
@@ -99,6 +102,12 @@ class FOURTEEN.PjaxNavigation
     if @getPageIdFromUrl(e.state.url) is @HOMEPAGE_ID
       @onNavigateToHome(e, true)
 
+
+  setPjaxClass: =>
+    ## add class to html element to show pjax has happened
+    unless hasPjaxClass
+      $('html').addClass('pjax')
+      hasPjaxClass = true
 
   getPageIdFromUrl: (url) ->
     index = url.lastIndexOf("/")
