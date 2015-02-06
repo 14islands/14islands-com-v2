@@ -31,7 +31,6 @@ class FOURTEEN.Grid
 	CLASS_IMG = 'team-grid__image'
 	CLASS_ANCHOR = 'team-grid__link'
 	CLASS_ANIMATE_ITEM = 'team-grid__item--animate'
-	CLASS_SPINNER_INACTIVE = 'spinner--inactive'
 	CLASS_READY = 'grid-show'
 
 	IS_GRID_REPEATABLE = false
