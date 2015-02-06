@@ -1,6 +1,6 @@
 ###
 	Map Component
- 
+
 	This component will render a google map street view in it's context.
 
 	@method
@@ -51,7 +51,7 @@ class FOURTEEN.OfficeStreetView
 			document.body.appendChild(script)
 		else
 			@initializeMap()
-				
+
 	initializeMap: =>
 		latLong = new google.maps.LatLng(@$context.data('latitude'), @$context.data('longitude'))
 		@panoramaOptions = {
@@ -64,7 +64,7 @@ class FOURTEEN.OfficeStreetView
 			},
 			zoom: @$context.data('zoom')
 		}
-		
+
 		@pano = new google.maps.StreetViewPanorama(@context, @panoramaOptions)
 		@pano.setVisible(true)
 		@hideSpinner()
@@ -89,18 +89,7 @@ class FOURTEEN.OfficeStreetView
 		ResponsiveIO.refresh(@$context.get(0))
 
 	showSpinner: ->
-	  return if (!@$spinner) 
-	  # jQuery's fadeOut might add some dirty inline CSS...
-	  @$spinner.css({
-	    'display': 'block',
-	    'visibility': 'visible'
-	  })
-
-	  @$spinner.removeClass( CLASS_SPINNER_INACTIVE )
+		FOURTEEN.Utils.showSpinner @$spinner
 
 	hideSpinner: ->
-	  return if (!@$spinner)
-	  @$spinner.fadeOut(300, => 
-	  	@$spinner.addClass(CLASS_SPINNER_INACTIVE)
-	  )
-   
+		FOURTEEN.Utils.hideSpinner @$spinner
