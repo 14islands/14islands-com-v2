@@ -199,10 +199,10 @@ class FOURTEEN.Grid
 	###
 	onEnterViewport: () =>
 		return if @hasBeenShown
+		@isShowing = true
 		@showGrid()
 		@addEventListeners()
-		# in case we have resized before all this happened
-		@onWindowResize()
+		@onWindowResize() # in case we have resized before all this happened
 		@hasBeenShown = true
 
 	###
@@ -254,6 +254,8 @@ class FOURTEEN.Grid
 		Callback for when the window is resized
 	###
 	onWindowResize: () =>
+
+		return if @isShowing
 
 		@checkBreakpoint()
 
@@ -618,6 +620,8 @@ class FOURTEEN.Grid
 		while i < numItems
 			@showItem $items.eq( i )
 			i++
+
+		@isShowing = false
 
 	###
 		Shows an item by setting an active class.

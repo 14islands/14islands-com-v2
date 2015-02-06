@@ -1,12 +1,39 @@
+$startDelay: 0.1s;
 
 .spinner {
-  width: 30px;
-  height: 30px;
-  background-color: $green;
-  border-radius: 50%;
-
+  width: 90px;
+  height: 90px;
   margin: 0 auto;
-  animation: rotateplane 1.2s infinite ease-in-out;
+
+   svg {
+    display: block;
+
+    * {
+      stroke: #666;
+      #stroke: $green;
+      stroke-width: 1;
+      fill-opacity: 0;
+
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+    }
+
+    .up * {
+      animation-name: dash;
+      animation-duration: 4s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+    }
+
+    .down * {
+      animation-name: dash;
+      animation-duration: 4s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+    }
+  }
 }
 
 .spinner--center,
@@ -21,4 +48,21 @@
 .no-js .spinner,
 .spinner--inactive {
   display: none;
+}
+
+@keyframes dash {
+  70%,80% {
+    stroke-dashoffset: 0;
+  }
+  85% {
+    stroke-opacity: 1;
+  }
+  95% {
+    stroke: $green;
+    stroke-dashoffset: -200;
+    stroke-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: -200;
+  }
 }
