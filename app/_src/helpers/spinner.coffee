@@ -54,12 +54,12 @@ class FOURTEEN.Spinner
 			@deffered.resolve()
 		, BEFORE_HIDE_DURATION_MS
 
-	hide: (callback, isToBeRemoved) =>
-		return @animateOut callback, isToBeRemoved unless @hasDeffered
+	hide: (callback) =>
+		return @animateOut callback unless @hasDeffered
 		$.when( @deffered.promise() ).done =>
-			@animateOut callback, isToBeRemoved
+			@animateOut callback
 
-	animateOut: (callback, isToBeRemoved) =>
+	animateOut: (callback) =>
 		TweenLite.to @$spinner, .3, {
 			opacity: 0,
 			ease: Power4.EaseOut,
@@ -67,5 +67,4 @@ class FOURTEEN.Spinner
 				@hasDeffered = false
 				@$spinner.addClass CLASS_INACTIVE
 				callback() if typeof callback is 'function'
-				@removeEl() if isToBeRemoved is true
 		}
