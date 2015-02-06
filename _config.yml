@@ -9,7 +9,7 @@ name: 14islands.com
 baseurl: /14islands-com
 description: 14islands is a web development studio that cares deeply about creating great user experiences.
 keywords: "Web Development, Web Design, UX, Web Developers, Digital, Studio, Agency, Stockholm, Consulting, Training, HTML, CSS, JavaScript, WordPress"
-og_type: "website"
+og_type: website
 og_image: "/images/about/we-love-what-we-do.jpg"
 encoding: utf-8
 locale: en_US
