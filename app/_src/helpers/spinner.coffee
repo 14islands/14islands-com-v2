@@ -52,7 +52,7 @@ class FOURTEEN.Spinner
 		@hasDeffered = true
 		setTimeout =>
 			@deffered.resolve()
-		, BEFORE_HIDE_DURATION_MS * 1.2
+		, BEFORE_HIDE_DURATION_MS
 
 	hide: (callback, isToBeRemoved) =>
 		return @animateOut callback, isToBeRemoved unless @hasDeffered
