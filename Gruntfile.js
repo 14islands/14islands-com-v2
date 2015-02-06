@@ -419,19 +419,19 @@ module.exports = function (grunt) {
         options: {
           replacements: [
             {
-              pattern: 'css/main',
+              pattern: '/css/main',
               replacement: function (match, p1) {
                 return '/14islands-com/css/main';
               },
             },
             {
-              pattern: 'js/head-scripts',
+              pattern: '/js/head-scripts',
               replacement: function (match, p1) {
                 return '/14islands-com/js/head-scripts';
               },
             },
             {
-              pattern: 'js/footer-scripts',
+              pattern: '/js/footer-scripts',
               replacement: function (match, p1) {
                 return '/14islands-com/js/footer-scripts';
               },
