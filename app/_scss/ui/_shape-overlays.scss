@@ -19,15 +19,22 @@
     font-style: italic;
     margin: 1em 1em 0;
 
+    @include if-wider-than($breakpoint-one-px) {
+      font-size: 1.2em;
+    }
+
+    // enables shape
     @include if-wider-than($breakpoint-two-px) {
       color: #fff;
       font-weight: 600;
       position: absolute;
-
-      font-size: 1.2rem;
-      @include if-wider-than($breakpoint-three-px) {
-        font-size: 1.4rem;
-      }
+      font-size: 1rem;
+    }
+    @include if-wider-than(900px) {
+      font-size: 1.2em;
+    }
+    @include if-wider-than(1200px) {
+      font-size: 1.4em;
     }
   }
 }
