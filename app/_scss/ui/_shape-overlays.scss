@@ -8,6 +8,8 @@
     position: absolute;
     svg {
       display: block;
+      width: 100%;
+      height: auto;
     }
   }
 
@@ -44,6 +46,7 @@
     top: -3%;
     left: -5%;
     width: 35%;
+    height: 40%;
 
     figcaption {
       top: 19%;
@@ -59,6 +62,7 @@
     bottom: -14%;
     right: -5%;
     width: 33%;
+    height: 44%;
 
     figcaption {
       text-align: right;

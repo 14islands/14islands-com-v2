@@ -32,7 +32,7 @@ class FOURTEEN.OfficeStreetView
 		if (@isDisabledOnTouch and (Modernizr.touch or navigator.msMaxTouchPoints))
 			@setFallback( @$context.data( DATA_FALLBACK ) )
 		else
-			@showSpinner()
+			@spinner.show()
 			window.onload = @appendMapScriptToBody
 			#google.maps.event.addDomListener(window, 'load', @appendMapScriptToBody)
 			@$body.on("pjax:done", @appendMapScriptToBody)
@@ -62,15 +62,16 @@ class FOURTEEN.OfficeStreetView
 			zoom: @$context.data('zoom')
 		}
 
-		@hideSpinner()
-		@pano = new google.maps.StreetViewPanorama(@context, @panoramaOptions)
-		@pano.setVisible(true)
+		@spinner.hide(=>
+			@pano = new google.maps.StreetViewPanorama(@context, @panoramaOptions)
+			@pano.setVisible(true)
 
-		setTimeout(=>
-		  @$context.addClass( CLASS_MAP_LOADED )
-		, LOADED_CLASS_TIMEOUT)
+			setTimeout(=>
+			  @$context.addClass( CLASS_MAP_LOADED )
+			, LOADED_CLASS_TIMEOUT)
 
-		google.maps.event.trigger(@context, 'resize');
+			google.maps.event.trigger(@context, 'resize');
+		)
 
 	destroy: =>
 		google.maps.event.clearInstanceListeners(window)
@@ -83,9 +84,3 @@ class FOURTEEN.OfficeStreetView
 		@$context.attr('data-bg-src', url)
 		@$context.addClass( CLASSES_FALLBACK )
 		ResponsiveIO.refresh(@$context.get(0))
-
-	showSpinner: ->
-		@spinner.show()
-
-	hideSpinner: ->
-		@spinner.hide()

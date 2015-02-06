@@ -117,16 +117,17 @@ class FOURTEEN.PjaxNavigation
 
 
   onPjaxEnd: (e, unused, options) =>
-    @cancelSpinner()
-    # transition in content for all pages except home
-    unless @getPageIdFromUrl(options.url) is @HOMEPAGE_ID
-      if @currentPageId is @HOMEPAGE_ID
-        # long transition when coming from the home page
-        @slideInContent()
-      else
-        # fast transition between other pages
-        @showContent()
-    @updateBodyPageId(options)
+    @cancelSpinner( =>
+      # transition in content for all pages except home
+      unless @getPageIdFromUrl(options.url) is @HOMEPAGE_ID
+        if @currentPageId is @HOMEPAGE_ID
+          # long transition when coming from the home page
+          @slideInContent()
+        else
+          # fast transition between other pages
+          @showContent()
+      @updateBodyPageId(options)
+    )
 
 
   updateBodyPageId: (options) =>
@@ -147,9 +148,9 @@ class FOURTEEN.PjaxNavigation
     @spinnerTimer = setTimeout(@showSpinner, @SPINNER_DELAY)
 
 
-  cancelSpinner: =>
+  cancelSpinner: (callback) =>
     clearTimeout(@spinnerTimer)
-    @spinner.hide()
+    @spinner.hide(callback)
 
 
   showSpinner: =>

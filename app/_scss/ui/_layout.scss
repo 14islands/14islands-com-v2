@@ -38,6 +38,11 @@ body {
   p {
     max-width: $grid-paragraph-max-width-px;
   }
+
+  > h1:first-child,
+  > h2:first-child {
+    margin-top: 0;
+  }
 }
 
 // A wide grid row

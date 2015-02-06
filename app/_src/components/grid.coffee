@@ -31,7 +31,6 @@ class FOURTEEN.Grid
 	CLASS_IMG = 'team-grid__image'
 	CLASS_ANCHOR = 'team-grid__link'
 	CLASS_ANIMATE_ITEM = 'team-grid__item--animate'
-	CLASS_SPINNER_INACTIVE = 'spinner--inactive'
 	CLASS_READY = 'grid-show'
 
 	IS_GRID_REPEATABLE = false
@@ -208,11 +207,17 @@ class FOURTEEN.Grid
 	###
 	showGrid: () =>
 		return if currentBreakpointKey is null
-		spinnerTimerId = setTimeout @showSpinner, SPINNER_TIMEOUT_MS
+		spinnerTimerId = setTimeout @spinner.show, SPINNER_TIMEOUT_MS
 		$.when( imagesLoaded.getState() ).done =>
-			if spinnerTimerId isnt null then @hideSpinner()
-			@$context.addClass CLASS_READY
-			@showItems( @$context.find( SELETOR_CELL_APPENDED_ITEM ) )
+			if spinnerTimerId isnt null
+				clearTimeout spinnerTimerId
+				@spinner.hide(=>
+					@$context.addClass CLASS_READY
+					@showItems( @$context.find( SELETOR_CELL_APPENDED_ITEM ) )
+				)
+			else
+				@$context.addClass CLASS_READY
+				@showItems( @$context.find( SELETOR_CELL_APPENDED_ITEM ) )
 
 	###
 		Resets the model to it's initial state
@@ -232,12 +237,6 @@ class FOURTEEN.Grid
 		@createGrid()
 		@showGrid()
 		hasChangedBreakpoint = false
-
-	showSpinner: () =>
-		@spinner.show()
-
-	hideSpinner: () =>
-		@spinner.hide()
 
 	isUsingRIO: () ->
 		typeof ResponsiveIO is 'object'
@@ -277,7 +276,7 @@ class FOURTEEN.Grid
 		# Can we add more?
 		if numAvailable.cols > currentNumberOfCols
 
-			spinnerTimerId = setTimeout @showSpinner, SPINNER_TIMEOUT_MS
+			spinnerTimerId = setTimeout @spinner.show, SPINNER_TIMEOUT_MS
 
 			# Add only the additional ones
 			while row < numAvailable.rows
@@ -291,11 +290,16 @@ class FOURTEEN.Grid
 		# Show them
 		$.when( imagesLoaded.getState() ).done =>
 
-			if spinnerTimerId isnt null then @hideSpinner()
+			if spinnerTimerId isnt null
+				clearTimeout spinnerTimerId
+				@spinner.hide(=>
+					@showItems @$context.find(SELETOR_CELL_ITEM + ':gt(' + currentNumberOfCols + ')')
+				)
+			else
+				# Show only the new ones
+				# with "greater than" what we currently have
+				@showItems @$context.find(SELETOR_CELL_ITEM + ':gt(' + currentNumberOfCols + ')')
 
-			# Show only the new ones
-			# with "greater than" what we currently have
-			@showItems @$context.find(SELETOR_CELL_ITEM + ':gt(' + currentNumberOfCols + ')')
 
 	###
 		Goes through the images and call RIO to
