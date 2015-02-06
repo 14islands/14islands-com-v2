@@ -39,7 +39,7 @@
 .hero__logo {
   margin-top: 2rem;
 
-  .js & {
+  .js-loading & {
     will-change: transform;
     transition: transform 500ms $easeInQuint;
     transform: translate3d(0, -160%, 0);
@@ -97,7 +97,7 @@
   will-change: transform;
 
   // only run intro animation once
-  .js & {
+  .js-loading & {
     opacity: 0;
   }
   .js-loaded & {
@@ -175,7 +175,7 @@
 
 .hero__word__inner {
 	display: inline-block;
-  .js & {
+  .js-loading & {
     opacity: 0;
     will-change: transform;
   }

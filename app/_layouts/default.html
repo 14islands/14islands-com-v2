@@ -36,13 +36,13 @@
     <meta name="theme-color" content="#ffffff">
 
     <script>
-       document.documentElement.className = document.documentElement.className.replace("no-js","js");
-        // hide body to avoid flashing unstyled content
-        document.documentElement.className += ' js-loading';
-        // make body visible after dom loaded
-        document.addEventListener('DOMContentLoaded', function(){
-          $(document.documentElement).removeClass('js-loading').addClass('js-loaded');
-        });
+      // hide body to avoid flashing unstyled content
+      var htmlEL = document.documentElement;
+      htmlEL.className += ' js-loading';
+      // make body visible after dom loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        htmlEL.className = htmlEL.className.replace('js-loading', 'js-loaded');
+      });
     </script>
 
     <!-- build:css({app,.tmp}) /css/main.css -->
