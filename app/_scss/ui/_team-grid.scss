@@ -24,6 +24,7 @@ $grid-block-size: 360px;
   transition-property: opacity;
   transition-duration: 300ms;
   transition-timing-function: $easeInOutQuad;
+  transform: translateZ(0);
   @include if-wider-than($breakpoint-grid) {
   	float: none;
   	position: absolute;
