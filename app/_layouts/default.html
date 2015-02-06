@@ -27,6 +27,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <script>
+       document.documentElement.className = document.documentElement.className.replace("no-js","js");
         // hide body to avoid flashing unstyled content
         document.documentElement.className += ' js-loading';
         // make body visible after dom loaded
@@ -40,10 +41,6 @@
     <link rel="stylesheet" href="/css/main.css">
     <!-- endbuild -->
 
-     <!-- build:js({app,.tmp}) js/head-scripts.js -->
--    <!-- Replace with a custom modernizer build for production -->
--    <script src="/_bower_components/modernizr/modernizr.js"></script>
--    <!-- endbuild -->
   </head>
   <body id="" class="page page-{{page.id}}">
 
