@@ -44,6 +44,7 @@ class FOURTEEN.Spinner
 
 	removeEl: ->
 		@$spinner.remove() if @$spinner.length
+		@isAppended = false
 
 	show: =>
 		@appendEl() unless @isAppended
@@ -54,9 +55,9 @@ class FOURTEEN.Spinner
 		, BEFORE_HIDE_DURATION_MS * 1.2
 
 	hide: (isToBeRemoved) =>
-		return @animateOut(isToBeRemoved) if @hasDeffered isnt true
+		return @animateOut(isToBeRemoved) unless @hasDeffered
 		$.when( @deffered.promise() ).done =>
-			@animateOut(isToBeRemoved)
+			@animateOut isToBeRemoved
 
 	animateOut: (isToBeRemoved) =>
 		TweenLite.to @$spinner, .3, {
