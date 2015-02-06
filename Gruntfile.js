@@ -439,6 +439,17 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+    cloudflare: {
+      /* Action, default is to purge the cache */
+      a: 'fpurge_ts',
+      /* CloudFlare credentials */
+      /* API key */
+      tkn: process.env.CLOUDFLARE_API_KEY,
+      /* CloudFlare e-mail */
+      email: process.env.CLOUDFLARE_EMAIL,
+      /* Domain */
+      z: process.env.CLOUDFLARE_DOMAIN
     }
   });
 
@@ -499,7 +510,8 @@ module.exports = function (grunt) {
     'test',
     'build',
     // 'string-replace',
-    'buildcontrol'
+    'buildcontrol',
+    'cloudflare'
     ]);
 
   grunt.registerTask('default', [
