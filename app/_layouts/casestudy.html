@@ -1,5 +1,6 @@
 ---
 layout: default
+og_type: article
 ---
 <article class="casestudy {{page.class}} u--pad-top">
   {{ content }}
@@ -10,7 +11,6 @@ layout: default
 {% else %}
   {% assign nextpage = page.first_in_category %}
 {% endif %}
-
 
 <section id="next-casestudy" class="next-casestudy">
   <a class="grid u--default-v-padding next-casestudy__link" href="{{ site.baseurl }}{{ nextpage.permalink }}" class="work--project-{{ nextpage.class }}" {% if nextpage.color %} style="background-color: {{ nextpage.color }};" {% endif %}>
