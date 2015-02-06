@@ -87,8 +87,9 @@ class FOURTEEN.PjaxNavigation
       hasPjaxClass = true
 
   getPageIdFromUrl: (url) ->
-    index = url.lastIndexOf("/")
-    name = url.slice(index + 1)
+    indexStart = url.indexOf("/") + 1
+    indexEnd = url.lastIndexOf("/")
+    name = url.slice(indexStart, indexEnd)
     if name and name.length
       return name
     return @HOMEPAGE_ID
