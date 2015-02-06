@@ -167,8 +167,21 @@ a.casestudy__header-label {
   position: absolute;
   top: -$default-section-spacing;
   left: 0;
-  width: 100%;
-  height: auto;
+  right: 0;
+
+  height: 0;
+  padding-bottom: 571/1142 * 100%; // need svg ratio for IE10
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 .next-casestudy__link__shape--hover {
   display: none;
