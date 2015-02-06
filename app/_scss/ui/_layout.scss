@@ -137,7 +137,8 @@ body {
     display: none;
   }
 
-  will-change: opacity, transform;
+  // avois showing font replacement flash when loading subpages
+  will-change: opacity, transform; // transform is used by hero animation
   transition: opacity 300ms $easeOutQuad;
   .js-loading & {
     opacity: 0;
