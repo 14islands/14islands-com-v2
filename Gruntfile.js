@@ -498,7 +498,7 @@ module.exports = function (grunt) {
     'check',
     'test',
     'build',
-    'string-replace',
+    // 'string-replace',
     'buildcontrol'
     ]);
 
