@@ -4,9 +4,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Our Work - 14islands</title>
-    <meta name="description" content="">
+    <meta name="description" content="14islands is a web development studio that cares deeply about creating great user experiences.">
+    <meta name="keywords" content="Web Development, Web Design, UX, Web Developers, Digital, Studio, Agency, Stockholm, Consulting, Training, HTML, CSS, JavaScript, WordPress">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Our Work - 14islands" />
+    <meta property="og:description" content="14islands is a web development studio that cares deeply about creating great user experiences." />
+    <meta property="og:image" content="/images/about/we-love-what-we-do.jpg" />
+    <meta property="og:url" content="https://14islands.com/work" />
+    <meta property="og:site_name" content="14islands" />
+    
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -27,16 +36,16 @@
     <meta name="theme-color" content="#ffffff">
 
     <script>
-       document.documentElement.className = document.documentElement.className.replace("no-js","js");
-        // hide body to avoid flashing unstyled content
-        document.documentElement.className += ' js-loading';
-        // make body visible after dom loaded
-        document.addEventListener('DOMContentLoaded', function(){
-          $(document.documentElement).removeClass('js-loading').addClass('js-loaded');
-        });
+      // hide body to avoid flashing unstyled content
+      var htmlEL = document.documentElement;
+      htmlEL.className += ' js-loading';
+      // make body visible after dom loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        htmlEL.className = htmlEL.className.replace('js-loading', 'js-loaded');
+      });
     </script>
 
-    <link rel="stylesheet" href="/14islands-com/css/main.92b0.css"/>
+    <link rel="stylesheet" href="/14islands-com/css/main.716c.css"/>
 
   </head>
   <body id="" class="page page-work">
@@ -77,7 +86,7 @@
         </li>
       </ul>
       <div class="grid__row--wide__content hero__nav__wide-logo">
-        <a href="/14islands-com" class="nav__logo-clean js-nav-home" title="Back to Home page">
+        <a href="/14islands-com/" class="nav__logo-clean js-nav-home" title="Back to Home page">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="29.5 357.6 133.6 67.6" enable-background="new 29.5 357.6 133.6 67.6"><g opacity=".4"><path class="polygon polygon-down--light" d="M76.8 392.3l33.3 32.9 19.9-6.4 7-6.5 4.2 9.1 13.6-12.6 4.4-2.6 3.9-13.9z"/><path class="polygon polygon-down--light" d="M64.9 392.3l-.9 2.5-6 6.6-4.8-3.9v6.2l-7.5 2.6-14.9-14z"/><path class="polygon polygon-down--dark" d="M30.8 392.3h-1.3l3.1 6.2h4.9z"/><path class="polygon polygon-down--dark" d="M53.2 403.7v-6.2l4.8 3.9-1.2 1.5z"/><path class="polygon polygon-down--dark" d="M76.8 392.3h-2.5l6.2 17.7 11.8-2.4z"/><path class="polygon polygon-down--dark" d="M130 418.7l7-6.5 4.2 9.2z"/></g><path class="polygon polygon-up--light" d="M76.8 391l33.3-33.4 19.9 6.2 7 6.4 4.2-9.2 13.6 12.6 4.4 3 3.9 14.4z"/><path class="polygon polygon-up--light" d="M64.9 391l-.9-2.9-6-6.9-4.8 3.7v-6.2l-7.5-2.2-14.9 14.5z"/><path class="polygon polygon-up--dark" d="M30.8 391h-1.3l3.1-6.3h4.7z"/><path class="polygon polygon-up--dark" d="M53.2 378.7v6.2l4.8-3.8-1.2-1.6z"/><path class="polygon polygon-up--dark" d="M76.8 391h-2.5l6.2-18.1 11.8 2.6z"/><path class="polygon polygon-up--dark" d="M130 363.6l7 6.5 4.2-9.2z"/></svg>
         </a>
       </div>
@@ -287,7 +296,7 @@
 
 <script src="//src.responsive.io/r.js"></script>
 
-<script src="/14islands-com/js/footer-scripts.f8e7.js"></script>
+<script src="/14islands-com/js/footer-scripts.82aa.js"></script>
 
 
 
