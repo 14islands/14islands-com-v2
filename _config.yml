@@ -10,7 +10,7 @@ baseurl:
 description: 14islands is a web development studio that cares deeply about creating great user experiences.
 keywords: "Web Development, Web Design, UX, Web Developers, Digital, Studio, Agency, Stockholm, Consulting, Training, HTML, CSS, JavaScript, WordPress"
 og_type: website
-og_image: "/images/about/we-love-what-we-do.jpg"
+og_image: "/images/home-page-screenshot.png"
 encoding: utf-8
 locale: en_US
 author:
