@@ -651,7 +651,7 @@ class FOURTEEN.Grid
 		setTimeout ->
 			$item
 				.addClass( CLASS_ANIMATE_ITEM )
-				.addCLass( CLASS_CELL_VISIBLE )
+				.addClass( CLASS_CELL_VISIBLE )
 				.css( Modernizr.prefixed('transitionDelay'), delay + 'ms' )
 		, 50
 
