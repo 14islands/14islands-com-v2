@@ -28,6 +28,7 @@ class FOURTEEN.Grid
 	SELECTOR_IMAGES = '.team-grid__image'
 
 	CLASS_CELL_ITEM = 'team-grid__item team-grid__item--appended'
+	CLASS_CELL_VISIBLE = 'team-grid__item--visible'
 	CLASS_IMG = 'team-grid__image'
 	CLASS_ANCHOR = 'team-grid__link'
 	CLASS_ANIMATE_ITEM = 'team-grid__item--animate'
@@ -56,6 +57,8 @@ class FOURTEEN.Grid
 	debouncedResizeFn = null
 	spinnerTimerId = null
 	watcher = null
+	isWorking = false
+	hasBeenShown = false
 	imagesLoaded = null
 
 	###
@@ -195,12 +198,11 @@ class FOURTEEN.Grid
 		Callback for when it's visible on the page view
 	###
 	onEnterViewport: () =>
-		return if @hasBeenShown
-		@isShowing = true
+		return if hasBeenShown
 		@showGrid()
 		@addEventListeners()
 		@onWindowResize() # in case we have resized before all this happened
-		@hasBeenShown = true
+		hasBeenShown = true
 
 	###
 		Shows all items when the images have been loaded.
@@ -212,11 +214,9 @@ class FOURTEEN.Grid
 			if spinnerTimerId isnt null
 				clearTimeout spinnerTimerId
 				@spinner.hide(=>
-					@$context.addClass CLASS_READY
 					@showItems( @$context.find( SELETOR_CELL_APPENDED_ITEM ) )
 				)
 			else
-				@$context.addClass CLASS_READY
 				@showItems( @$context.find( SELETOR_CELL_APPENDED_ITEM ) )
 
 	###
@@ -245,18 +245,16 @@ class FOURTEEN.Grid
 		Callback for when it's exiting the page view
 	###
 	onExitViewport: () =>
-		if @hasBeenShown then @removeWatcherListeners()
+		if hasBeenShown then @removeWatcherListeners()
 
 	###
 		Callback for when the window is resized
 	###
 	onWindowResize: () =>
 
-		return if @isShowing
-
 		@checkBreakpoint()
 
-		if currentBreakpointKey is null
+		if currentBreakpointKey is null or isWorking
 			# if we are getting out of a grid
 			# at least resize the whole container down to it's normal size
 			@updateContextHeight true
@@ -293,12 +291,12 @@ class FOURTEEN.Grid
 			if spinnerTimerId isnt null
 				clearTimeout spinnerTimerId
 				@spinner.hide(=>
-					@showItems @$context.find(SELETOR_CELL_ITEM + ':gt(' + currentNumberOfCols + ')')
+					@showItems @$context.find(SELETOR_CELL_APPENDED_ITEM).not(CLASS_CELL_VISIBLE)
 				)
 			else
 				# Show only the new ones
 				# with "greater than" what we currently have
-				@showItems @$context.find(SELETOR_CELL_ITEM + ':gt(' + currentNumberOfCols + ')')
+				@showItems @$context.find(SELETOR_CELL_APPENDED_ITEM).not(CLASS_CELL_VISIBLE)
 
 
 	###
@@ -615,15 +613,21 @@ class FOURTEEN.Grid
 	###
 		Shows a group of items by calling show on each of them.
 	###
-	showItems: ( $items ) ->
+	showItems: ( $items ) =>
 		numItems = $items.length
 		i = 0
+
+		isWorking = true
+
+		unless @$context.hasClass CLASS_READY
+			@$context.addClass CLASS_READY
 
 		while i < numItems
 			@showItem $items.eq( i )
 			i++
 
-		@isShowing = false
+		isWorking = false
+
 
 	###
 		Shows an item by setting an active class.
@@ -647,6 +651,7 @@ class FOURTEEN.Grid
 		setTimeout ->
 			$item
 				.addClass( CLASS_ANIMATE_ITEM )
+				.addCLass( CLASS_CELL_VISIBLE )
 				.css( Modernizr.prefixed('transitionDelay'), delay + 'ms' )
 		, 50
 
