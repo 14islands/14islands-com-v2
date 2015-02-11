@@ -43,7 +43,6 @@ class FOURTEEN.PjaxNavigation
     @$content.on('pjax:start', @onPjaxStart)
     @$content.on('pjax:popstate', @onPopState)
     @$content.on('pjax:end', @onPjaxEnd)
-    @$content.on('pjax:end', @onEndCallback)
 
 
   # slides in hero and slides out content
@@ -128,6 +127,7 @@ class FOURTEEN.PjaxNavigation
           # fast transition between other pages
           @showContent()
       @updateBodyPageId(options)
+      @onEndCallback() if @onEndCallback
     )
 
 
