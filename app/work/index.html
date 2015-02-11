@@ -5,8 +5,8 @@ og_url: /work
 title: Our Work - 14islands
 ---
 
-<section class="grid u--pad-both pjax-animate">
-  <header class="header grid__row">
+<section class="grid u--pad-both">
+  <header class="grid__row pjax-animate">
   <h1>We explore ideas<br> and build great stuff.</h1>
   </header>
 
@@ -14,11 +14,11 @@ title: Our Work - 14islands
   {% assign sorted_pages = (site.categories.work | sort: 'priority') %}
   {% for post in sorted_pages %}
     {% unless post.private and site.hide_private %}
-    <a href="{{ site.baseurl }}{{ post.permalink }}" class="work--project-{{ post.class }}">
+    <a href="{{ site.baseurl }}{{ post.permalink }}" class="work--project-{{ post.class }} pjax-animate">
       <article class="box" {% if post.color %} style="background-color: {{ post.color }};" {% endif %}>
         {% capture thecycle %}{% cycle 'even', 'odd' %}{% endcapture %}
         {% if thecycle == 'even' %}
-          <svg class="box__shape box__shape--odd" viewBox="-375 -27.5 1310 655" enable-background="new -375 -27.5 1310 655">
+          <svg class="box__shape box__shape--even" viewBox="-375 -27.5 1310 655" enable-background="new -375 -27.5 1310 655">
             <g fill="{{post.color}}">
               <polyline points="935,62.3 935,-27.5 -371.1,-7.8  "/>
               <rect x="-375" y="-8" width="1310" height="635.5"/>

@@ -86,12 +86,6 @@
   }
 }
 
-// .box__content__subline {
-//  @include if-wider-than(880px) {
-//     //font-size: modular-scale(1.2rem, 1);
-//   }
-// }
-
 .box__content__img  {
   position: absolute;
   top: 24%; //position under angle on box
@@ -133,11 +127,19 @@
   top: 0;
   left: 0;
   width: 100%;
+  transition-property: transform;
+  transition-duration: 200ms;
+  transition-timing-function: $easeOutQuad;
+  backface-visibility: hidden;
 }
 
-.box__shape--odd {
-}
-
-.box__shape--even {
-  transform: scaleX(-1);
+.no-touch {
+  .box:hover {
+    .box__shape--odd {
+      transform: rotate(-1deg);
+    }
+    .box__shape--even {
+      transform: rotate(1deg);
+    }
+  }
 }

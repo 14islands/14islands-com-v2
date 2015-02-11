@@ -43,7 +43,6 @@ class FOURTEEN.PjaxNavigation
     @$content.on('pjax:start', @onPjaxStart)
     @$content.on('pjax:popstate', @onPopState)
     @$content.on('pjax:end', @onPjaxEnd)
-    @$content.on('pjax:end', @onEndCallback)
 
 
   # slides in hero and slides out content
@@ -128,6 +127,7 @@ class FOURTEEN.PjaxNavigation
           # fast transition between other pages
           @showContent()
       @updateBodyPageId(options)
+      @onEndCallback() if @onEndCallback
     )
 
 
@@ -238,12 +238,10 @@ class FOURTEEN.PjaxNavigation
     # slide
     TweenLite.fromTo(@$content.find('.pjax-animate'), 0.5, {
       y: @yTo/3
-      #opacity: 0
       display: 'block'
     },
     {
       y: 0,
-      #opacity: 1
       ease: Circ.easeOut
       clearProps: 'all',
       onComplete: (param) =>

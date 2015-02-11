@@ -16,6 +16,14 @@
 	&:last-child {
 		margin-right: 0;
 	}
+
+	.no-touch & circle,
+	.no-touch & path {
+		transition-property: stroke, fill;
+		transition-timing-function: $easeOutQuad;
+		transition-duration: 150ms;
+	}
+
 	.no-touch &:hover circle {
 		stroke: $green;
 	}
