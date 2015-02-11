@@ -28,7 +28,7 @@ class FOURTEEN.PjaxNavigation
     @currentPageId = @$body.attr('class').match(/page-(\S*)/)[1]
 
     # enable PJAX
-    $.pjax.defaults.timeout = 10000 # we show a spinner so set this to 10s to prevent a full page reload
+    $.pjax.defaults?.timeout = 10000 # we show a spinner so set this to 10s to prevent a full page reload
     $(document).pjax('a', @contentSelector, {
       fragment: @contentSelector
     })
@@ -203,6 +203,7 @@ class FOURTEEN.PjaxNavigation
       y: @yTo
       ease: Circ.easeInOut
       display: 'none',
+      clearProps: 'all'
       onComplete: callback
     })
 
@@ -211,18 +212,21 @@ class FOURTEEN.PjaxNavigation
   slideInContent: =>
     TweenLite.set(@$content[0], {
       display: 'block'
-      clearProps: 'all'
+      visibility: 'hidden'
     })
 
     TweenLite.fromTo(@$content.find('.pjax-animate'), 0.8, {
       y: @yTo
-      display: 'block'
     },
     {
       y: 0
       ease: Circ.easeInOut
       delay: 0.1
-      clearProps: 'all',
+      clearProps: 'all'
+      onStart: =>
+        TweenLite.set(@$content[0], {
+          visibility: 'visible'
+        })
       onComplete: (param) =>
         @$body.trigger @constructor.EVENT_ANIMATION_SHOWN
     })
@@ -232,18 +236,23 @@ class FOURTEEN.PjaxNavigation
   showContent: =>
     TweenLite.set(@$content[0], {
       display: 'block'
-      clearProps: 'all'
+      visibility: 'hidden'
     })
 
     # slide
     TweenLite.fromTo(@$content.find('.pjax-animate'), 0.5, {
-      y: @yTo/3
-      display: 'block'
+      y: @yTo/4
     },
     {
       y: 0,
       ease: Circ.easeOut
-      clearProps: 'all',
+      clearProps: 'all'
+      onStart: =>
+        TweenLite.set(@$content[0], {
+          visibility: 'visible'
+        })
       onComplete: (param) =>
         @$body.trigger @constructor.EVENT_ANIMATION_SHOWN
     })
+
+
