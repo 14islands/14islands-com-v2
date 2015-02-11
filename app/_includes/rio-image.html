@@ -1,4 +1,9 @@
-<img alt="{{include.alt}}" data-src="{{site.baseurl}}{{include.src}}" class="{{include.class}}">
+{% if include.lazy %}
+  <img alt="{{include.alt}}" data-lazy-src="{{site.baseurl}}{{include.src}}" class="{{include.class}} js-component-lazy-rio-image" data-lazy-offset="500">
+{% else %}
+  <img alt="{{include.alt}}" data-src="{{site.baseurl}}{{include.src}}" class="{{include.class}}">
+{% endif %}
+
 <noscript>
   <img alt="{{include.alt}}" src="{{site.baseurl}}{{include.src}}" class="{{include.class}}">
 </noscript>

@@ -6,7 +6,7 @@ $( ->
 
 # listen for load even on image tags loaded by responsive.io
 FOURTEEN.listenForResponsive_ioImageLoad = ->
-  $('img[data-src]').one('load', ->
+  $('img[data-src], img[data-lazy-src]').one('load', ->
     $(this).addClass('image-loaded')
     $(this).closest('.content-image').addClass('image-loaded')
   ).each( ->
