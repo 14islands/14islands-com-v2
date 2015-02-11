@@ -18,7 +18,7 @@ title: Our Work - 14islands
       <article class="box" {% if post.color %} style="background-color: {{ post.color }};" {% endif %}>
         {% capture thecycle %}{% cycle 'even', 'odd' %}{% endcapture %}
         {% if thecycle == 'even' %}
-          <svg class="box__shape box__shape--odd" viewBox="-375 -27.5 1310 655" enable-background="new -375 -27.5 1310 655">
+          <svg class="box__shape box__shape--even" viewBox="-375 -27.5 1310 655" enable-background="new -375 -27.5 1310 655">
             <g fill="{{post.color}}">
               <polyline points="935,62.3 935,-27.5 -371.1,-7.8  "/>
               <rect x="-375" y="-8" width="1310" height="635.5"/>
