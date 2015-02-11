@@ -238,12 +238,10 @@ class FOURTEEN.PjaxNavigation
     # slide
     TweenLite.fromTo(@$content.find('.pjax-animate'), 0.5, {
       y: @yTo/3
-      #opacity: 0
       display: 'block'
     },
     {
       y: 0,
-      #opacity: 1
       ease: Circ.easeOut
       clearProps: 'all',
       onComplete: (param) =>

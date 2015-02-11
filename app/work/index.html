@@ -5,8 +5,8 @@ og_url: /work
 title: Our Work - 14islands
 ---
 
-<section class="grid u--pad-both pjax-animate">
-  <header class="header grid__row">
+<section class="grid u--pad-both">
+  <header class="grid__row pjax-animate">
   <h1>We explore ideas<br> and build great stuff.</h1>
   </header>
 
@@ -14,7 +14,7 @@ title: Our Work - 14islands
   {% assign sorted_pages = (site.categories.work | sort: 'priority') %}
   {% for post in sorted_pages %}
     {% unless post.private and site.hide_private %}
-    <a href="{{ site.baseurl }}{{ post.permalink }}" class="work--project-{{ post.class }}">
+    <a href="{{ site.baseurl }}{{ post.permalink }}" class="work--project-{{ post.class }} pjax-animate">
       <article class="box" {% if post.color %} style="background-color: {{ post.color }};" {% endif %}>
         {% capture thecycle %}{% cycle 'even', 'odd' %}{% endcapture %}
         {% if thecycle == 'even' %}
