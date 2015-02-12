@@ -90,6 +90,7 @@ class FOURTEEN.Grid
 	destroy: =>
 		@removeWatcherListeners()
 		@removeEventListeners()
+		hasBeenShown = false
 		if spinnerTimerId isnt null then clearTimeout spinnerTimerId
 
 
