@@ -90,6 +90,8 @@ class FOURTEEN.Grid
 	destroy: =>
 		@removeWatcherListeners()
 		@removeEventListeners()
+		@resetDOMModel()
+		hasBeenShown = false
 		if spinnerTimerId isnt null then clearTimeout spinnerTimerId
 
 
@@ -104,12 +106,10 @@ class FOURTEEN.Grid
 		@checkBreakpoint()
 
 		if currentBreakpointKey isnt null
-
 			# Setup the grid on how many cols and rows
 			@gridSetup()
 
-			# Go!
-			@createGrid()
+		@updateContextHeight()
 
 		# Animate them in only when in viewport
 		if Modernizr.touch or
@@ -118,7 +118,7 @@ class FOURTEEN.Grid
 				# Except for mobile...
 				@onEnterViewport()
 		else
-			watcher = scrollMonitor.create( @$context, -300 )
+			watcher = scrollMonitor.create( @$context, 500 )
 			watcher.recalculateLocation()
 			@addWatcherListeners()
 
@@ -130,9 +130,6 @@ class FOURTEEN.Grid
 			watcher.enterViewport @onEnterViewport
 			watcher.exitViewport @onExitViewport
 
-	removeWatcherListeners: =>
-		watcher.destroy()
-		watcher = null
 
 	###
 		Add event callbacks
@@ -148,6 +145,13 @@ class FOURTEEN.Grid
 		$(window).off 'resize', debouncedResizeFn
 		debouncedResizeFn = null
 
+
+	###
+		Removes watcher events callbacks
+	###
+	removeWatcherListeners: () =>
+		if watcher isnt null
+			watcher.destroy()
 
 	###
 		This function detects which breakpoint are we working on now
@@ -174,18 +178,6 @@ class FOURTEEN.Grid
 
 				@
 
-	###
-		Removes watcher events callbacks
-	###
-	removeWatcherListeners: () ->
-		if watcher isnt null
-			watcher.destroy()
-
-	###
-		Removes event callbacks
-	###
-	removeEventListeners: () ->
-		$(window).off( 'resize', debouncedResizeFn )
 
 
 	###
@@ -199,7 +191,9 @@ class FOURTEEN.Grid
 	###
 	onEnterViewport: () =>
 		return if hasBeenShown
-		@showGrid()
+		if currentBreakpointKey isnt null
+			@createGrid()
+			@showGrid()
 		@addEventListeners()
 		@onWindowResize() # in case we have resized before all this happened
 		hasBeenShown = true
@@ -260,7 +254,7 @@ class FOURTEEN.Grid
 			@updateContextHeight true
 			return
 
-		currentNumberOfCols = if DOMModel[0] isnt undefined then DOMModel[0].length else 0
+		currentNumberOfCols = if DOMModel[0]? then DOMModel[0].length else 0
 		row = 0
 
 		# Which breakpoint should we base this on
@@ -385,7 +379,6 @@ class FOURTEEN.Grid
 	###
 	createGrid: () ->
 		@addGridRows()
-		@updateContextHeight()
 		@refreshImages()
 
 	###
@@ -408,7 +401,7 @@ class FOURTEEN.Grid
 		@param {Boolean} reset If we are resetting the containers height
 	###
 	updateContextHeight: (reset) =>
-		if reset is true
+		if reset is true or currentBreakpointKey is null
 			@$context.height 'auto'
 		else
 			@$context.height numAvailable.rows * (@getCellHeight('1') + GRID_CELL_GAP)

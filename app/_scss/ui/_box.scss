@@ -132,14 +132,3 @@
   transition-timing-function: $easeOutQuad;
   backface-visibility: hidden;
 }
-
-.no-touch {
-  .box:hover {
-    .box__shape--odd {
-      transform: rotate(-1deg);
-    }
-    .box__shape--even {
-      transform: rotate(1deg);
-    }
-  }
-}
