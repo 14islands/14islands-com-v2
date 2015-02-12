@@ -90,6 +90,7 @@ class FOURTEEN.Grid
 	destroy: =>
 		@removeWatcherListeners()
 		@removeEventListeners()
+		@resetDOMModel()
 		hasBeenShown = false
 		if spinnerTimerId isnt null then clearTimeout spinnerTimerId
 
@@ -129,9 +130,6 @@ class FOURTEEN.Grid
 			watcher.enterViewport @onEnterViewport
 			watcher.exitViewport @onExitViewport
 
-	removeWatcherListeners: =>
-		watcher.destroy()
-		watcher = null
 
 	###
 		Add event callbacks
@@ -147,6 +145,13 @@ class FOURTEEN.Grid
 		$(window).off 'resize', debouncedResizeFn
 		debouncedResizeFn = null
 
+
+	###
+		Removes watcher events callbacks
+	###
+	removeWatcherListeners: () =>
+		if watcher isnt null
+			watcher.destroy()
 
 	###
 		This function detects which breakpoint are we working on now
@@ -173,18 +178,6 @@ class FOURTEEN.Grid
 
 				@
 
-	###
-		Removes watcher events callbacks
-	###
-	removeWatcherListeners: () ->
-		if watcher isnt null
-			watcher.destroy()
-
-	###
-		Removes event callbacks
-	###
-	removeEventListeners: () ->
-		$(window).off( 'resize', debouncedResizeFn )
 
 
 	###
