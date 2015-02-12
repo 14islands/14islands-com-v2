@@ -117,7 +117,7 @@ class FOURTEEN.Grid
 				# Except for mobile...
 				@onEnterViewport()
 		else
-			watcher = scrollMonitor.create( @$context, -360 )
+			watcher = scrollMonitor.create( @$context, 500 )
 			watcher.recalculateLocation()
 			@addWatcherListeners()
 
