@@ -56,7 +56,8 @@ class FOURTEEN.Grid
 	currentBreakpointKey = null
 	debouncedResizeFn = null
 	spinnerTimerId = null
-	watcher = null
+	showWatcher = null
+	loadWatcher = null
 	isWorking = false
 	hasBeenShown = false
 	imagesLoaded = null
@@ -88,9 +89,11 @@ class FOURTEEN.Grid
 			@initializeGrid()
 
 	destroy: =>
-		@removeWatcherListeners()
+		@destroyShowWatcher()
+		@destroyLoadWatcher()
 		@removeEventListeners()
 		@resetDOMModel()
+		@spinner.hide()
 		hasBeenShown = false
 		if spinnerTimerId isnt null then clearTimeout spinnerTimerId
 
@@ -116,23 +119,20 @@ class FOURTEEN.Grid
 			navigator.msMaxTouchPoints or
 			typeof scrollMonitor isnt 'object'
 				# Except for mobile...
-				@onEnterViewport()
+				@onShowEnterViewport()
 		else
-			watcher = scrollMonitor.create( @$context, 500 )
-			watcher.recalculateLocation()
-			@addWatcherListeners()
+			loadWatcher = scrollMonitor.create( @$context, 2000 )
+			loadWatcher.enterViewport @onLoadEnterViewport
 
-	###
-		Add watcher event callbacks
-	###
-	addWatcherListeners: =>
-		if watcher isnt null
-			watcher.enterViewport @onEnterViewport
-			watcher.exitViewport @onExitViewport
+			showWatcher = scrollMonitor.create( @$context, -150 )
+			showWatcher.enterViewport @onShowEnterViewport
+			showWatcher.exitViewport @onShowExitViewport
+
+		@addEventListeners()
 
 
 	###
-		Add event callbacks
+		Add general events callbacks
 	###
 	addEventListeners: =>
 		# Check if we're not coming back here again
@@ -141,17 +141,27 @@ class FOURTEEN.Grid
 		$(window).on 'resize', debouncedResizeFn
 		@
 
+	###
+		Remove general events callbacks
+	###
 	removeEventListeners: =>
 		$(window).off 'resize', debouncedResizeFn
 		debouncedResizeFn = null
 
 
 	###
-		Removes watcher events callbacks
+		Removes showWatcher events callbacks
 	###
-	removeWatcherListeners: () =>
-		if watcher isnt null
-			watcher.destroy()
+	destroyShowWatcher: () =>
+		if showWatcher isnt null
+			showWatcher.destroy()
+
+	###
+		Removes loadWatcher event callbacks
+	###
+	destroyLoadWatcher: () =>
+		if loadWatcher isnt null
+			loadWatcher.destroy()
 
 	###
 		This function detects which breakpoint are we working on now
@@ -179,24 +189,24 @@ class FOURTEEN.Grid
 				@
 
 
-
 	###
 
 		Callbacks
 
 	####
+	onLoadEnterViewport: () =>
+		@destroyLoadWatcher()
+		if currentBreakpointKey isnt null
+			@createGrid()
 
 	###
 		Callback for when it's visible on the page view
 	###
-	onEnterViewport: () =>
+	onShowEnterViewport: () =>
 		return if hasBeenShown
-		if currentBreakpointKey isnt null
-			@createGrid()
-			@showGrid()
-		@addEventListeners()
-		@onWindowResize() # in case we have resized before all this happened
+		@showGrid()
 		hasBeenShown = true
+
 
 	###
 		Shows all items when the images have been loaded.
@@ -238,8 +248,8 @@ class FOURTEEN.Grid
 	###
 		Callback for when it's exiting the page view
 	###
-	onExitViewport: () =>
-		if hasBeenShown then @removeWatcherListeners()
+	onShowExitViewport: () =>
+		if hasBeenShown then @destroyShowWatcher()
 
 	###
 		Callback for when the window is resized
