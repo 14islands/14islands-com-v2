@@ -26,6 +26,9 @@ a.casestudy__header-label {
   .tictail & {
     margin-bottom: -0.73rem;
   }
+  .elastica & {
+    margin-bottom: -1.15rem;
+  }
 }
 
 
@@ -63,7 +66,8 @@ a.casestudy__header-label {
 	width: 90%;
 	top: 9%;
 	left: 5%;
-	background-color: black;
+  bottom: 12%;
+	background-color: $bright;
 
   noscript {
     position: absolute;
