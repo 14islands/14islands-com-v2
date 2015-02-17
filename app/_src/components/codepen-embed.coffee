@@ -3,6 +3,8 @@ class FOURTEEN.CodePenEmbed
 	ASSET_EI_JS_URL = '//assets.codepen.io/assets/embed/ei.js'
 	DATA_SLUG = 'slug'
 	DATA_OFFSET = 'offset'
+	DATA_RATIO = 'ratio'
+	HEIGHT = 400
 	watcher = null
 
 	constructor: (@$context) ->
@@ -21,13 +23,14 @@ class FOURTEEN.CodePenEmbed
 		watcher.destroy() if watcher isnt null
 
 	injectCodePenMarkup: =>
-		slug = @$context.data DATA_SLUG
+		slug = @getSlug()
 
 		if slug?
 			height = @getHeight()
 			tmpl = @getTemplate height: height, slug: slug
 
-			@$context.append tmpl
+			@$context.append(tmpl)
+			@$context.css('height', height)
 
 			setTimeout =>
 				@initCodePenJS()
@@ -37,12 +40,17 @@ class FOURTEEN.CodePenEmbed
 		script = document.createElement 'script'
 		script.src = ASSET_EI_JS_URL
 		script.async = true
-		@$context.append script
+		script.insertBefore
+		@$context.before script
 
 	initCodePenJS: ->
-		if typeof CodePenEmbed isnt 'object'
-			@injectCodePenJS() # CodePenEmbed will auto-execute after appended
-		else
+		scriptSelector = 'script[src="' + ASSET_EI_JS_URL + '"]'
+		isCodePenJSInjected = ($(scriptSelector).length > 0)
+		if isCodePenJSInjected isnt true
+			# Note: CodePenEmbed will auto-execute
+			# after it's loaded (ei.js)
+			@injectCodePenJS()
+		else if typeof CodePenEmbed is 'object'
 			CodePenEmbed.init()
 
 	getTemplate: (params) ->
@@ -50,7 +58,11 @@ class FOURTEEN.CodePenEmbed
 
 	getHeight: ->
 		ratio = @getRatio()
-		400
+		HEIGHT * ratio
+
+	getSlug: ->
+		@$context.data DATA_SLUG
 
 	getRatio: ->
-		1
+		ratio = @$context.data DATA_RATIO
+		return if ratio then parseInt(ratio, 10) else 1
