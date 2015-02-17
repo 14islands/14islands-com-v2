@@ -30,7 +30,6 @@ class FOURTEEN.CodePenEmbedOnScroll
 			tmpl = @getTemplate height: height, slug: slug
 
 			@$context.append(tmpl)
-			@$context.css('height', height)
 
 			setTimeout =>
 				@initCodePenJS()
