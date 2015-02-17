@@ -50,7 +50,7 @@ class FOURTEEN.CodePenEmbedOnScroll
 			# after it's loaded (ei.js)
 			@injectCodePenScriptTag()
 		else if typeof CodePenEmbed is 'object'
-				CodePenEmbed.init()
+			CodePenEmbed.init()
 
 	getTemplate: (params) ->
 		"<p data-height=\"#{params.height}\" data-theme-id=\"6678\" data-slug-hash=\"#{params.slug}\" data-default-tab=\"result\" data-user=\"14islands\" class=\"codepen\"></p>"
