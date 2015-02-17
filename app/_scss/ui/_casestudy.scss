@@ -59,6 +59,7 @@ a.casestudy__header-label {
 	position: relative;
 	max-width: 394px;
 	margin: 0 auto;
+  width: 70%;
 }
 
 .casestudy__responsive-screen {
@@ -68,6 +69,7 @@ a.casestudy__header-label {
 	left: 5%;
   bottom: 12%;
 	background-color: $bright;
+  overflow: hidden;
 
   noscript {
     position: absolute;
