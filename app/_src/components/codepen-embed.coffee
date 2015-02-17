@@ -1,4 +1,4 @@
-class FOURTEEN.CodePenEmbed
+class FOURTEEN.CodePenEmbedOnScroll
 
 	ASSET_EI_JS_URL = '//assets.codepen.io/assets/embed/ei.js'
 	DATA_SLUG = 'slug'
@@ -50,8 +50,9 @@ class FOURTEEN.CodePenEmbed
 			# Note: CodePenEmbed will auto-execute
 			# after it's loaded (ei.js)
 			@injectCodePenJS()
-		else if typeof CodePenEmbed is 'object'
-			CodePenEmbed.init()
+		else
+			if typeof CodePenEmbed is 'object'
+				CodePenEmbed.init()
 
 	getTemplate: (params) ->
 		"<p data-height=\"#{params.height}\" data-theme-id=\"6678\" data-slug-hash=\"#{params.slug}\" data-default-tab=\"result\" data-user=\"14islands\" class=\"codepen\"></p>"
