@@ -35,7 +35,7 @@ class FOURTEEN.CodePenEmbedOnScroll
 				@initCodePenJS()
 			, 100
 
-	injectCodePenJS: ->
+	injectCodePenScriptTag: ->
 		script = document.createElement 'script'
 		script.src = ASSET_EI_JS_URL
 		script.async = true
@@ -48,7 +48,7 @@ class FOURTEEN.CodePenEmbedOnScroll
 		if isCodePenJSInjected isnt true
 			# Note: CodePenEmbed will auto-execute
 			# after it's loaded (ei.js)
-			@injectCodePenJS()
+			@injectCodePenScriptTag()
 		else if typeof CodePenEmbed is 'object'
 				CodePenEmbed.init()
 
