@@ -49,8 +49,7 @@ class FOURTEEN.CodePenEmbedOnScroll
 			# Note: CodePenEmbed will auto-execute
 			# after it's loaded (ei.js)
 			@injectCodePenJS()
-		else
-			if typeof CodePenEmbed is 'object'
+		else if typeof CodePenEmbed is 'object'
 				CodePenEmbed.init()
 
 	getTemplate: (params) ->
