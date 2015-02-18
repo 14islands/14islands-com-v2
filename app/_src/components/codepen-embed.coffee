@@ -26,7 +26,6 @@ class FOURTEEN.CodePenEmbedOnScroll
 		if slug?
 			height = @getHeight()
 			tmpl = @getTemplate height: height, slug: slug
-
 			@$context.append(tmpl)
 
 	injectCodePenScriptTag: ->
@@ -41,11 +40,11 @@ class FOURTEEN.CodePenEmbedOnScroll
 
 	getHeight: ->
 		ratio = @getRatio()
-		HEIGHT * ratio
+		parseInt(@$context.outerWidth(), 10) / ratio
 
 	getSlug: ->
 		@$context.data DATA_SLUG
 
 	getRatio: ->
 		ratio = @$context.data DATA_RATIO
-		return if ratio then parseInt(ratio, 10) else 1
+		return if ratio then parseInt(ratio, 10) else 2
