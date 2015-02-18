@@ -7,16 +7,25 @@ class FOURTEEN.CodePenEmbedOnScroll
 	HEIGHT = 400
 	watcher = null
 
-	constructor: (@$context) ->
-		if typeof scrollMonitor is 'object'
-			@addEventListeners()
+	constructor: (@$context, data) ->
+		if data?.isPjax
+			# wait for animation to be done
+			@$body.one FOURTEEN.PjaxNavigation.EVENT_ANIMATION_SHOWN, @init
 		else
-			@injectCodePenMarkup()
+			@init()
 
-	addEventListeners: () =>
-		offset = @$context.data DATA_OFFSET or -100
-		watcher = scrollMonitor.create( @$context, offset )
-		watcher.enterViewport @onEnterViewport
+	init: ->
+		if typeof scrollMonitor is 'object'
+			offset = @$context.data DATA_OFFSET or -50
+			watcher = scrollMonitor.create( @$context, offset )
+			watcher.enterViewport @onEnterViewport
+		else
+			@onEnterViewport()
+
+	destroy: () =>
+		if watcher isnt null
+			watcher.destroy()
+			watcher = null
 
 	onEnterViewport: =>
 		@injectCodePenMarkup()
@@ -45,11 +54,12 @@ class FOURTEEN.CodePenEmbedOnScroll
 	initCodePenJS: ->
 		scriptSelector = 'script[src="' + ASSET_EI_JS_URL + '"]'
 		isCodePenJSInjected = ($(scriptSelector).length > 0)
-		if isCodePenJSInjected isnt true
+		if isCodePenJSInjected isnt true or true
 			# Note: CodePenEmbed will auto-execute
 			# after it's loaded (ei.js)
 			@injectCodePenScriptTag()
 		else if typeof CodePenEmbed is 'object'
+			# TODO this needs to wait for it to load !
 			CodePenEmbed.init()
 
 	getTemplate: (params) ->
