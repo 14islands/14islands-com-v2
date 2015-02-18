@@ -6,19 +6,16 @@ class FOURTEEN.CodePenEmbedOnScroll
 	DEFAULT_RATIO = 2
 
 	constructor: (@$context, data) ->
+		@$body = $('body')
 		if data?.isPjax
 			# wait for animation to be done
 			@$body.one FOURTEEN.PjaxNavigation.EVENT_ANIMATION_SHOWN, @init
 		else
 			@init()
 
-	init: ->
+	init: =>
 		@injectCodePenMarkup()
-
-	destroy: () =>
-		if watcher isnt null
-			watcher.destroy()
-			watcher = null
+		@injectCodePenJS()
 
 	injectCodePenMarkup: =>
 		slug = @getSlug()
@@ -27,6 +24,17 @@ class FOURTEEN.CodePenEmbedOnScroll
 			height = @getHeight()
 			tmpl = @getTemplate height: height, slug: slug
 			@$context.append(tmpl)
+
+	injectCodePenJS: ->
+		scriptSelector = 'script[src="' + ASSET_EI_JS_URL + '"]'
+		isCodePenJSInjected = ($(scriptSelector).length > 0)
+		if isCodePenJSInjected is true
+			CodePenEmbed.init() if typeof CodePenEmbed is 'object'
+		else
+			script = document.createElement 'script'
+			script.src = ASSET_EI_JS_URL
+			script.async = true
+			@$body.append script
 
 	getTemplate: (params) ->
 		"<p data-height=\"#{params.height}\" data-theme-id=\"6678\" data-slug-hash=\"#{params.slug}\" data-default-tab=\"result\" data-user=\"14islands\" class=\"codepen\"></p>"
