@@ -15,21 +15,12 @@ class FOURTEEN.CodePenEmbedOnScroll
 			@init()
 
 	init: ->
-		if typeof scrollMonitor is 'object'
-			offset = @$context.data DATA_OFFSET or -50
-			watcher = scrollMonitor.create( @$context, offset )
-			watcher.enterViewport @onEnterViewport
-		else
-			@onEnterViewport()
+		@injectCodePenMarkup()
 
 	destroy: () =>
 		if watcher isnt null
 			watcher.destroy()
 			watcher = null
-
-	onEnterViewport: =>
-		@injectCodePenMarkup()
-		watcher.destroy() if watcher isnt null
 
 	injectCodePenMarkup: =>
 		slug = @getSlug()
@@ -40,27 +31,12 @@ class FOURTEEN.CodePenEmbedOnScroll
 
 			@$context.append(tmpl)
 
-			setTimeout =>
-				@initCodePenJS()
-			, 100
-
 	injectCodePenScriptTag: ->
 		script = document.createElement 'script'
 		script.src = ASSET_EI_JS_URL
 		script.async = true
 		script.insertBefore
 		@$context.before script
-
-	initCodePenJS: ->
-		scriptSelector = 'script[src="' + ASSET_EI_JS_URL + '"]'
-		isCodePenJSInjected = ($(scriptSelector).length > 0)
-		if isCodePenJSInjected isnt true or true
-			# Note: CodePenEmbed will auto-execute
-			# after it's loaded (ei.js)
-			@injectCodePenScriptTag()
-		else if typeof CodePenEmbed is 'object'
-			# TODO this needs to wait for it to load !
-			CodePenEmbed.init()
 
 	getTemplate: (params) ->
 		"<p data-height=\"#{params.height}\" data-theme-id=\"6678\" data-slug-hash=\"#{params.slug}\" data-default-tab=\"result\" data-user=\"14islands\" class=\"codepen\"></p>"
