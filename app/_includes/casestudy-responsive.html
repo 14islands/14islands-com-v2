@@ -3,11 +3,14 @@
 		<figure class="casestudy__responsive-wrapper">
 			{% include svgs/devices/iphone6plus.min.svg %}
       {% if include.parallax %}
-        <div class="casestudy__responsive-screen js-component-parallax-scroll">
+        {% if include.parallaxDirection == "horizontal" %}
+          {% assign directionClass = "casestudy__responsive-screen--horizontal-scroll" %}
+        {% endif %}
+        <div class="casestudy__responsive-screen js-component-parallax-scroll {{directionClass}}" data-parallax-direction="{{include.parallaxDirection}}" data-parallax-offset="{{include.parallaxOffset}}">
       {% else %}
 		  	<div class="casestudy__responsive-screen">
       {% endif %}
-        {% include image.html src=include.url alt="Built from mobile up to big screens" %}
+        {% include rio-image.html src=include.url alt="Built from mobile up to big screens" %}
 			</div>
 		</figure>
 		<div class="shape-overlay shape-overlay--casestudy-responsive">

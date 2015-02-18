@@ -6,7 +6,7 @@
 # the context's position inside the viewport
 #
 # HTML5 Data Attributes:
-#  - data-parallax-offset : viewport offset specified in percentage of window height (float)
+#  - data-parallax-offset : viewport offset specified in percentage of context height (float)
 #  - data-parallax-direction : direction to scroll [horizontal|vertical(default)]
 #
 # Example usage:
@@ -23,16 +23,16 @@ class FOURTEEN.ParallaxScroll
   DIRECTION_HORIZONTAL = 'horizontal'
 
   constructor: (@$context, data) ->
+    @context = @$context.get(0)
     @$body = $(document.body)
     @$document = $(document)
     @$window = $(window)
-    @context = @$context.get(0)
     @$content = @$context.children().first()
     @updating = false
 
     @onWindowResizeDebounced = FOURTEEN.Utils.debounce(@onWindowResize, 500)
 
-    @offsetPercentage = parseFloat(@$context.data('parallax-offset') or -0.4)
+    @offsetPercentage = parseFloat(@$context.data('parallax-offset') or 0.0)
     @direction = if @$context.data('parallax-direction') is DIRECTION_HORIZONTAL then DIRECTION_HORIZONTAL else DIRECTION_VERTICAL
 
     if data?.isPjax
@@ -42,21 +42,33 @@ class FOURTEEN.ParallaxScroll
 
 
   init: () =>
+    # wait for image to load
+    # TODO - make more generic in case we are not scrolling images
+    @$context.find('img').one('load', =>
+      @initParallax()
+    ).each( ->
+      # data-src images are always complete before responsive.io load the real image
+      if !this.hasAttribute('data-src') and this.complete
+        $(this).load()
+    )
 
+
+  initParallax: =>
     if scrollMonitor?
-      # TODO check direction and support horizontal movement
       @contextHeight = @$context.height();
-
-      # TODO wait for responsive.io to finish loading image
+      @contextWidth  = @$context.width();
       @contentHeight = @$content.height();
+      @contentWidth  = @$content.width();
 
-      offset = @$window.height() * @offsetPercentage
+      #console.log "INIT PARALAX", @contextHeight+'x'+@contextWidth, @contentHeight+'x'+@contentWidth
+      offset = @contextHeight * @offsetPercentage
 
       @watcher = scrollMonitor.create @$context, offset
       @watcher.enterViewport @onEnterViewport
       @watcher.exitViewport @onExitViewport
 
       @$window.on('resize', @onWindowResizeDebounced);
+      @onScrollChanged()
 
 
   destroy: =>
@@ -74,11 +86,17 @@ class FOURTEEN.ParallaxScroll
 
 
   updatePosition: =>
-    # TODO check direction and support horizontal movement
-    TweenLite.set(@$content[0], {
-      y: -1 * (@contentHeight - @contextHeight) * @percentageScrolled,
-      force3D: true
-    });
+    if @direction is DIRECTION_VERTICAL
+      prop =
+        y: Math.round(-1 * (@contentHeight - @contextHeight) * @percentageScrolled)
+        force3D: true
+
+    else if @direction is DIRECTION_HORIZONTAL
+      prop =
+        x: Math.round(-1 * (@contentWidth - @contextWidth) * @percentageScrolled)
+        force3D: true
+
+    TweenLite.set(@$content[0], prop);
     @updating = false
 
 

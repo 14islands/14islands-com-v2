@@ -75,6 +75,18 @@ a.casestudy__header-label {
     position: absolute;
     top: 0;
   }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &.casestudy__responsive-screen--horizontal-scroll {
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
 }
 
 .casestudy__technology-list {
