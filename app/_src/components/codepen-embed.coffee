@@ -40,4 +40,7 @@ class FOURTEEN.CodePenEmbedOnScroll
 
 	getRatio: ->
 		ratio = @$context.data DATA_RATIO
-		return if ratio then parseInt(ratio, 10) else DEFAULT_RATIO
+		if ratio?
+			return parseInt(ratio, 10)
+		else
+			return DEFAULT_RATIO
