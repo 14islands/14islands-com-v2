@@ -2,10 +2,8 @@ class FOURTEEN.CodePenEmbedOnScroll
 
 	ASSET_EI_JS_URL = '//assets.codepen.io/assets/embed/ei.js'
 	DATA_SLUG = 'slug'
-	DATA_OFFSET = 'offset'
 	DATA_RATIO = 'ratio'
 	HEIGHT = 400
-	watcher = null
 
 	constructor: (@$context, data) ->
 		if data?.isPjax
