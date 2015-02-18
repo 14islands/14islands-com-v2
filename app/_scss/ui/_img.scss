@@ -64,12 +64,8 @@ img[data-src] {
   }
 }
 
-.ratio--3_2 {
-  padding-bottom: 66%; /* 3:2 ratio */
-}
-
-.ratio--4_3 {
-  padding-bottom: 75%; /* 4:2 ratio */
+.ratio--2_1 {
+  padding-bottom: 50%; /* 2:1 ratio */
 }
 
 .ratio--16_9 {
@@ -79,3 +75,18 @@ img[data-src] {
 .ratio--16_10 {
   padding-bottom: 62.5%; /* 16:10 ratio */
 }
+
+.ratio--3_2 {
+  padding-bottom: 66%; /* 3:2 ratio */
+}
+
+.ratio--4_3 {
+  padding-bottom: 75%; /* 4:3 ratio */
+}
+
+.ratio--5_4 {
+  padding-bottom: 80%; /* 5:4 ratio */
+}
+
+
+
