@@ -28,13 +28,6 @@ class FOURTEEN.CodePenEmbedOnScroll
 			tmpl = @getTemplate height: height, slug: slug
 			@$context.append(tmpl)
 
-	injectCodePenScriptTag: ->
-		script = document.createElement 'script'
-		script.src = ASSET_EI_JS_URL
-		script.async = true
-		script.insertBefore
-		@$context.before script
-
 	getTemplate: (params) ->
 		"<p data-height=\"#{params.height}\" data-theme-id=\"6678\" data-slug-hash=\"#{params.slug}\" data-default-tab=\"result\" data-user=\"14islands\" class=\"codepen\"></p>"
 
