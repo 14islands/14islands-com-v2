@@ -32,7 +32,8 @@ class FOURTEEN.ElementScrollVisibility
         @repeat = @$context.data DATA_REPEAT or 0
         @$body = $(document.body)
 
-        @repeat = JSON.parse @repeat
+        if @repeat?
+            @repeat = JSON.parse(@repeat)
 
         if data?.isPjax
             @$body.one FOURTEEN.PjaxNavigation.EVENT_ANIMATION_SHOWN, @addEventListeners
