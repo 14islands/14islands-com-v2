@@ -26,6 +26,9 @@ a.casestudy__header-label {
   .tictail & {
     margin-bottom: -0.73rem;
   }
+  .elastica & {
+    margin-bottom: -1.15rem;
+  }
 }
 
 
@@ -56,6 +59,7 @@ a.casestudy__header-label {
 	position: relative;
 	max-width: 394px;
 	margin: 0 auto;
+  width: 70%;
 }
 
 .casestudy__responsive-screen {
@@ -63,11 +67,25 @@ a.casestudy__header-label {
 	width: 90%;
 	top: 9%;
 	left: 5%;
-	background-color: black;
+  bottom: 12%;
+	background-color: $bright;
+  overflow: hidden;
 
   noscript {
     position: absolute;
     top: 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &.casestudy__responsive-screen--horizontal-scroll {
+    img {
+      height: 100%;
+      width: auto;
+    }
   }
 }
 
