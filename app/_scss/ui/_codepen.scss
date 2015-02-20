@@ -1,7 +1,31 @@
 .codepen-embed {
 
+	position: relative;
+	width: 100%;
+
+	&:before {
+		content: '';
+		display: block;
+		padding-top: 56.25%;
+	}
+
+	// > div is our codepen wrapper
+	// that contains the iframe
+	> div {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
 	&.has-exited {
-		visibility: hidden;
+
+		// > div is our codepen wrapper
+		// that contains the iframe
+		> div {
+			display: none;
+		}
 	}
 
 }
