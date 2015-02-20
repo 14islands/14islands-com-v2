@@ -85,15 +85,18 @@ class FOURTEEN.ParallaxScroll
     @init()
 
 
+  round: (number) =>
+    Math.round(number*100) / 100;
+
   updatePosition: =>
     if @direction is DIRECTION_VERTICAL
       prop =
-        y: Math.round(-1 * (@contentHeight - @contextHeight) * @percentageScrolled)
+        y: @round(-1 * (@contentHeight - @contextHeight) * @percentageScrolled)
         force3D: true
 
     else if @direction is DIRECTION_HORIZONTAL
       prop =
-        x: Math.round(-1 * (@contentWidth - @contextWidth) * @percentageScrolled)
+        x: @round(-1 * (@contentWidth - @contextWidth) * @percentageScrolled)
         force3D: true
 
     TweenLite.set(@$content[0], prop);

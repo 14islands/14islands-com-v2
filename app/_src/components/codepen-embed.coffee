@@ -27,7 +27,9 @@ class FOURTEEN.CodePenEmbedOnScroll
 
   injectCodePenJS: ->
     if $('#codepen-script-tag').length > 0
-      CodePenEmbed.init() if typeof CodePenEmbed is 'object'
+      if typeof CodePenEmbed is 'object'
+        CodePenEmbed.init()
+        CodePenEmbed.showCodePenEmbeds()
     else
       script = document.createElement 'script'
       script.id = 'codepen-script-tag'
