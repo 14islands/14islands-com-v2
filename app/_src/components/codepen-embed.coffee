@@ -29,7 +29,9 @@ class FOURTEEN.CodePenEmbedOnScroll
     scriptSelector = 'script[src="' + ASSET_EI_JS_URL + '"]'
     isCodePenJSInjected = ($(scriptSelector).length > 0)
     if isCodePenJSInjected is true
-      CodePenEmbed.init() if typeof CodePenEmbed is 'object'
+      if typeof CodePenEmbed is 'object'
+        CodePenEmbed.init()
+        CodePenEmbed.showCodePenEmbeds()
     else
       script = document.createElement 'script'
       script.src = ASSET_EI_JS_URL
