@@ -25,10 +25,15 @@ class FOURTEEN.ElementScrollVisibility
     CSS_ANIMATED_CLASS = 'has-animated'
     CSS_EXIT_CLASS = 'has-exited'
     DATA_OFFSET = 'offset'
+    DATA_REPEAT = 'scroll-repeat'
 
     constructor: (@$context, data) ->
         @context = @$context.get(0)
+        @repeat = @$context.data DATA_REPEAT or 0
         @$body = $(document.body)
+
+        if @repeat?
+            @repeat = JSON.parse(@repeat)
 
         if data?.isPjax
             @$body.one FOURTEEN.PjaxNavigation.EVENT_ANIMATION_SHOWN, @addEventListeners
@@ -52,9 +57,18 @@ class FOURTEEN.ElementScrollVisibility
             @watcher.destroy()
             @watcher = null
 
+    reset: () =>
+        @$context.removeClass CSS_PARTIALLY_VISIBLE_CLASS
+        @$context.removeClass CSS_FULLY_VISIBLE_CLASS
+        @$context.removeClass CSS_ANIMATE_CLASS
+        @hasExited = false
+        @hasPartiallyPlayed = false
+        @hasFullyPlayed = false
+
     onEnterViewport: () =>
         return if @hasPartiallyPlayed
         @hasPartiallyPlayed = true
+        @$context.removeClass CSS_EXIT_CLASS
         @$context.addClass CSS_PARTIALLY_VISIBLE_CLASS
 
     onFullyEnterViewport: () =>
@@ -75,4 +89,7 @@ class FOURTEEN.ElementScrollVisibility
         return if @hasExited
         @hasExited = true
         @$context.addClass CSS_EXIT_CLASS
-        @removeEventListeners() if @hasPartiallyPlayed and @hasFullyPlayed
+        if @repeat
+            @reset()
+        else if @hasPartiallyPlayed and @hasFullyPlayed
+            @removeEventListeners()
