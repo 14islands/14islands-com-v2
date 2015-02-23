@@ -42,14 +42,21 @@ img[data-src] {
 
 
 
-// padding-bottom hack to avoid reflows on responsive images
+// psuedo element padding hack to avoid reflows on responsive images
+// http://www.mademyday.de/css-height-equals-width-with-pure-css.html
 .ratio {
   position: relative;
-  height: 0;
   overflow: hidden;
 
   // David: should we have a bg while the image is loading? might be nice
   background: #f9f9f9;
+
+
+  &:before{
+    content: "";
+    display: block;
+    padding-top: 100%;  /* initial ratio of 1:1*/
+  }
 
   .image-loaded & {
     background: transparent;
@@ -65,28 +72,39 @@ img[data-src] {
 }
 
 .ratio--2_1 {
-  padding-bottom: 50%; /* 2:1 ratio */
+  &:before {
+    padding-top: 50%; /* 2:1 ratio */
+  }
 }
 
 .ratio--16_9 {
-  padding-bottom: 56.25%; /* 16:9 ratio */
+  &:before {
+    padding-top: 56.25%; /* 16:9 ratio */
+  }
 }
 
 .ratio--16_10 {
-  padding-bottom: 62.5%; /* 16:10 ratio */
+  &:before {
+    padding-top: 62.5%; /* 16:10 ratio */
+  }
 }
 
 .ratio--3_2 {
-  padding-bottom: 66%; /* 3:2 ratio */
+  &:before {
+    padding-top: 66%; /* 3:2 ratio */
+  }
 }
 
 .ratio--4_3 {
-  padding-bottom: 75%; /* 4:3 ratio */
+  &:before {
+    padding-top: 75%; /* 4:3 ratio */
+  }
 }
 
 .ratio--5_4 {
-  padding-bottom: 80%; /* 5:4 ratio */
+  &:before {
+    padding-top: 80%; /* 5:4 ratio */
+  }
 }
-
 
 
