@@ -48,9 +48,14 @@ class FOURTEEN.CodePenEmbedOnScroll
   getSlug: ->
     @$context.data DATA_SLUG
 
+  # ratio string must be formatted like so "16_9" "4_3" - also used by CSS
   getRatio: ->
-    ratio = @$context.data DATA_RATIO
-    if ratio?.length
-      return parseFloat(ratio)
+    ratio = @$context.data(DATA_RATIO) + ""
+    parts = ratio?.split('_')
+
+    if parts.length > 1
+      width = parseInt(parts[0], 10)
+      height = parseInt(parts[1], 10)
+      return width / height;
     else
       return DEFAULT_RATIO
