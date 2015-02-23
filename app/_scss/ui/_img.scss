@@ -48,30 +48,29 @@ img[data-src] {
   position: relative;
   overflow: hidden;
 
+  &:before{
+    content: "";
+    display: block;
+    padding-top: 100%;  /* initial ratio of 1:1*/
+  }
+}
+
+.ratio > img,
+.ratio > noscript,
+.ratio__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
   // David: should we have a bg while the image is loading? might be nice
   background: #f9f9f9;
   .u-bg-bright & {
     background: #ffffff;
   }
-
-
-  &:before{
-    content: "";
-    display: block;
-    padding-top: 100%;  /* initial ratio of 1:1*/
-  }
-
   .image-loaded & {
     background: transparent;
-  }
-
-  img, noscript {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
   }
 }
 
