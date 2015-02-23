@@ -3,7 +3,7 @@
 
 	// > div is our codepen wrapper
 	// that contains the iframe
-	> div {
+	> div:not(.spinner) {
 		position: absolute;
 		top: 0;
 		left: 0;

@@ -48,8 +48,12 @@ img[data-src] {
   position: relative;
   overflow: hidden;
 
+
   // David: should we have a bg while the image is loading? might be nice
   background: #f9f9f9;
+  .u-bg-bright & {
+    background: #ffffff;
+  }
 
 
   &:before{
