@@ -33,6 +33,8 @@ class FOURTEEN.ElementScrollVisibility
         @repeat = @$context.data DATA_REPEAT or 0
         @forceLoop = @$context.data DATA_FORCE_LOOP or 0
 
+        @isInViewport = false
+
         @$body = $(document.body)
         @animationEndEvent = FOURTEEN.Utils.whichAnimationEvent()
 
@@ -67,22 +69,39 @@ class FOURTEEN.ElementScrollVisibility
     reset: () =>
         @$context.removeClass CSS_PARTIALLY_VISIBLE_CLASS
         @$context.removeClass CSS_FULLY_VISIBLE_CLASS
-        @$context.removeClass CSS_ANIMATE_CLASS
+        @onAnimationReset()
         @hasExited = false
         @hasPartiallyPlayed = false
         @hasFullyPlayed = false
 
+
+    onAnimationReset: =>
+      @$context.removeClass CSS_ANIMATE_CLASS
+      @$context.removeClass CSS_ANIMATED_CLASS
+
+    onAnimationPlay: =>
+      @$context.addClass CSS_ANIMATE_CLASS
+      @$context.one @animationEndEvent, @onAnimationEnd if @animationEndEvent
+
     onAnimationEnd: =>
         @$context.addClass CSS_ANIMATED_CLASS
 
+        # force Javascript animations to loop by resetting and replaying
         if @forceLoop
-            @$context.removeClass CSS_ANIMATE_CLASS
-            setTimeout =>
-                @$context.removeClass CSS_ANIMATED_CLASS
-                @$context.addClass CSS_ANIMATE_CLASS
-            , 500
+            if @isInViewport
+                # only replay if still in viewport
+                setTimeout =>
+                    @onAnimationReset()
+                    setTimeout =>
+                        @onAnimationPlay()
+                    , 500
+                , 500
+            else
+              @onAnimationReset()
+
 
     onEnterViewport: () =>
+        @isInViewport = true
         return if @hasPartiallyPlayed
         @hasPartiallyPlayed = true
         @$context.removeClass CSS_EXIT_CLASS
@@ -91,10 +110,10 @@ class FOURTEEN.ElementScrollVisibility
     onFullyEnterViewport: () =>
         return if @hasFullyPlayed
         @hasFullyPlayed = true
-        @$context.addClass CSS_FULLY_VISIBLE_CLASS + " " + CSS_ANIMATE_CLASS
-        @$context.on @animationEndEvent, @onAnimationEnd if @animationEndEvent
+        @onAnimationPlay()
 
     onExitViewport: () =>
+        @isInViewport = false
         return if @hasExited
         @hasExited = true
         @$context.off @animationEndEvent, @onAnimationEnd if @animationEndEvent
