@@ -52,7 +52,9 @@ class FOURTEEN.CodePenEmbedOnScroll
 
   onExitViewport: =>
     @isInViewport = false
-    @removeEmbed()
+    # no need to remove what the user has already seen.
+    # as longs as pens only run once - no looping
+    # @removeEmbed()
 
 
   # embed for a short time before removing again - browser will cache resources
