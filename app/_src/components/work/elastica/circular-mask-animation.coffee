@@ -2,6 +2,8 @@
 #
 # CircularMask animation component.
 #
+# For Elastica Case Study
+#
 # @author 14islands
 #
 ###

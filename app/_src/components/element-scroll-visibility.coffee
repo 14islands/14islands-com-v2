@@ -110,6 +110,7 @@ class FOURTEEN.ElementScrollVisibility
     onFullyEnterViewport: () =>
         return if @hasFullyPlayed
         @hasFullyPlayed = true
+        @$context.addClass CSS_FULLY_VISIBLE_CLASS
         @onAnimationPlay()
 
     onExitViewport: () =>
