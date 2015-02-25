@@ -1,0 +1,49 @@
+//////////////////////////////////////////////////////////////
+// Animation styles
+//////////////////////////////////////////////////////////////
+$aspect-ratio: 1.11;
+$max-width-px: 500px;
+
+.elastica-circular-mask-animation {
+  background-color: #F6772C;
+  padding: 5%;
+
+  img,
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+}
+
+// prevent reflows when image loads
+.elastica-circular-mask-animation__ratio  {
+  max-width: $max-width-px;
+  margin: auto;
+  @include aspectRatio($aspect-ratio);
+}
+
+@keyframes elastica-circular-mask-animation-flash {
+  0%, 85% { transform: scale(0) rotate(-70deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.elastica-circular-mask-animation__ratio__flash {
+  position: absolute;
+  width: 4%;
+  height: 4%;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjIsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNTRweCIgaGVpZ2h0PSI1NHB4IiB2aWV3Qm94PSIwIDAgNTQgNTQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU0IDU0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRkZGRkZGIiBkPSJNNTQsMEw3LjgsMjguOGwxNy41LDBMMCw1NGw1MC42LTMyLjJsLTE3LjQsMEw1NCwweiIvPg0KPC9zdmc+DQo=);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  top: 36%;
+  left: 62.66%;
+
+  transform: scale(0);
+  .animate & {
+    transform: scale(1);
+    animation: elastica-circular-mask-animation-flash 3.5s 1;
+  }
+}
