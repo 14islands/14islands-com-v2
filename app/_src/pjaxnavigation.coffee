@@ -86,11 +86,16 @@ class FOURTEEN.PjaxNavigation
       hasPjaxClass = true
 
   getPageIdFromUrl: (url) ->
-    indexStart = url.indexOf("/") + 1
+    url = url.replace(/http\S*:\/\//, '') # remove protocol
+    indexStart = url.indexOf("/")
     indexEnd = url.lastIndexOf("/")
-    name = url.slice(indexStart, indexEnd)
-    if name and name.length
-      return name
+
+    # must have more than one slash, otherwise must be the root
+    unless indexStart is indexEnd
+      name = url.slice(indexStart + 1, indexEnd)
+      if name and name.length
+        return name
+
     return @HOMEPAGE_ID
 
 
