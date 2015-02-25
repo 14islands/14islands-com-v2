@@ -122,15 +122,17 @@ class FOURTEEN.PjaxNavigation
 
 
   onPjaxEnd: (e, unused, options) =>
+    isPoppingHistory = options?.push isnt true
+
     @cancelSpinner( =>
       # transition in content for all pages except home
       unless @getPageIdFromUrl(options.url) is @HOMEPAGE_ID
         if @currentPageId is @HOMEPAGE_ID
           # long transition when coming from the home page
-          @slideInContent()
+          @slideInContent(isPoppingHistory)
         else
           # fast transition between other pages
-          @showContent()
+          @showContent(isPoppingHistory)
       @updateBodyPageId(options)
       @onEndCallback() if @onEndCallback
     )
@@ -214,13 +216,17 @@ class FOURTEEN.PjaxNavigation
 
 
   # long transition from hero
-  slideInContent: =>
+  slideInContent: (isPoppingHistory) =>
     TweenLite.set(@$content[0], {
       display: 'block'
       visibility: 'hidden'
     })
 
-    TweenLite.fromTo(@$content.find('.pjax-animate'), 0.8, {
+    # only animate top parts for performance
+    # UNLESS user is navigating back/forward - then we have to move everything because of scroll history
+    $el = if isPoppingHistory then @$content else @$content.find('.pjax-animate')
+
+    TweenLite.fromTo($el, 0.8, {
       y: @yTo
     },
     {
@@ -238,26 +244,33 @@ class FOURTEEN.PjaxNavigation
 
 
   # fast content transition between normal pages
-  showContent: =>
-    TweenLite.set(@$content[0], {
-      display: 'block'
-      visibility: 'hidden'
-    })
+  showContent: (isPoppingHistory) =>
 
-    # slide
-    TweenLite.fromTo(@$content.find('.pjax-animate'), 0.5, {
-      y: @yTo/4
-    },
-    {
-      y: 0,
-      ease: Circ.easeOut
-      clearProps: 'all'
-      onStart: =>
-        TweenLite.set(@$content[0], {
-          visibility: 'visible'
-        })
-      onComplete: (param) =>
-        @$body.trigger @constructor.EVENT_ANIMATION_SHOWN
-    })
+    # only animate if user is navigating using links and we know scroll is at top of new page
+    if isPoppingHistory
+      TweenLite.set(@$content[0], {
+        display: 'block'
+      })
+    else
+      TweenLite.set(@$content[0], {
+        display: 'block'
+        visibility: 'hidden'
+      })
+
+      # slide
+      TweenLite.fromTo(@$content.find('.pjax-animate'), 0.5, {
+        y: @yTo/4
+      },
+      {
+        y: 0,
+        ease: Circ.easeOut
+        clearProps: 'all'
+        onStart: =>
+          TweenLite.set(@$content[0], {
+            visibility: 'visible'
+          })
+        onComplete: (param) =>
+          @$body.trigger @constructor.EVENT_ANIMATION_SHOWN
+      })
 
 
