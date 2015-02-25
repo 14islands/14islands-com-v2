@@ -5,8 +5,8 @@
   <figure class="grid__row--wide content-image u--margin-top--half {{include.class}}">
 {% endif %}
 
-  <div class="ratio ratio--{{include.ratio}}">
-    {% include rio-image.html src=include.src alt=include.alt class="ratio__content"%}
+  <div class="u-ratio u-ratio--{{include.ratio}} u-ratio--placeholder">
+    {% include rio-image.html src=include.src alt=include.alt class="u-ratio__content"%}
   </div>
   {% if include.caption %}
     <div class="shape-overlay {{include.shapeClass}}">

@@ -4,7 +4,7 @@
 	// > div is our codepen wrapper
 	// that contains the iframe
 	> div:not(.spinner) {
-		@extend .ratio__content;
+		@extend .u-ratio__content;
 	}
 
 }

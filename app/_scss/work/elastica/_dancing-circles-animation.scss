@@ -29,11 +29,7 @@ $animation-delay: 1s;
 .elastica-dancing-circles-animation__ratio {
   max-width: $canvas-width;
   margin: auto;
-
-  @extend .ratio;
-  &:before {
-    padding-top: $aspect-ratio * 100%;
-  }
+  @include aspectRatio($aspect-ratio);
 }
 
 .elastica-dancing-circles-animation__ratio__tower {

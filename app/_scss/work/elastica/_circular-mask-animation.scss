@@ -22,11 +22,7 @@ $max-width-px: 500px;
 .elastica-circular-mask-animation__ratio  {
   max-width: $max-width-px;
   margin: auto;
-
-  @extend .ratio;
-  &:before {
-    padding-top: $aspect-ratio * 100%;
-  }
+  @include aspectRatio($aspect-ratio);
 }
 
 @keyframes elastica-circular-mask-animation-flash {
