@@ -125,6 +125,11 @@ class FOURTEEN.PjaxNavigation
     isPoppingHistory = options?.push isnt true
 
     @cancelSpinner( =>
+
+      # trigger callback first since some components
+      # bind to the EVENT_ANIMATION_SHOWN event
+      @onEndCallback() if @onEndCallback
+
       # transition in content for all pages except home
       unless @getPageIdFromUrl(options.url) is @HOMEPAGE_ID
         if @currentPageId is @HOMEPAGE_ID
@@ -133,8 +138,8 @@ class FOURTEEN.PjaxNavigation
         else
           # fast transition between other pages
           @showContent(isPoppingHistory)
+
       @updateBodyPageId(options)
-      @onEndCallback() if @onEndCallback
     )
 
 
@@ -146,7 +151,6 @@ class FOURTEEN.PjaxNavigation
       @currentPageId = pageId
     else
       @currentPageId = @HOMEPAGE_ID
-
 
     @$body.addClass('page-' + @currentPageId)
 
@@ -251,6 +255,8 @@ class FOURTEEN.PjaxNavigation
       TweenLite.set(@$content[0], {
         display: 'block'
       })
+      @$body.trigger @constructor.EVENT_ANIMATION_SHOWN
+
     else
       TweenLite.set(@$content[0], {
         display: 'block'
