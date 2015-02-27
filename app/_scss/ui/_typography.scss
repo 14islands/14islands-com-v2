@@ -60,7 +60,7 @@ html {
 
 %h3 {
   font-size: modular-scale(1rem, 2);
-  margin-top: 1 * modular-scale(1rem, 1);
+  margin-top: 2 * modular-scale(1rem, 1);
   margin-bottom: 1 * modular-scale(1rem, 1);
   @include if-wider-than($breakpoint-two-px) {
     font-size: modular-scale(1rem, 3);
@@ -69,7 +69,7 @@ html {
 
 %h4 {
   font-size: modular-scale(1rem, 1);
-  margin-top: 1 * modular-scale(1rem, 1);
+  margin-top: 2 * modular-scale(1rem, 1);
   margin-bottom: 1 * modular-scale(1rem, 1);
   @include if-wider-than($breakpoint-two-px) {
     font-size: modular-scale(1rem, 2);
@@ -149,7 +149,7 @@ p {
 
 ul,
 ol {
-  margin: 0 0 .5rem 1.5rem;
+  margin: 0 0 .5rem 2rem;
 }
 
 b,
