@@ -93,7 +93,7 @@ Javascript has problems on how it handles Unicode characters - and they can be p
 #### Josh Holmes
 ([@joshholmes](http://twitter.com/joshholmes))
 
-Josh talks about smart homes and how the “internet of things” is just a busy word that has been around for a while. He passionately talked about hardware and how it’s involving so fast nowadays.
+Josh talks about smart homes and how the “internet of things” is just a buzz word that has been around for a while. He passionately talked about hardware and how it’s evolving so fast nowadays.
 
 —
 
