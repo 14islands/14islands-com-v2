@@ -114,7 +114,7 @@ The DevTools team is focusing on keeping the interface more usable by adding mor
 #### A tomato, a picture, an elephant and a bunch of jugglers
 **AQuest ([@id_aquest](http://twitter.com/id_aquest))**
 
-AQuest impressive slides were showing how they tell stories through their projects. Very inspiring work. (www.aquest.it)
+AQuest impressive slides were showing how they tell stories through their projects. Very [inspiring work](www.aquest.it).
 
 #### Responsive Web Design: Clever Tips and Techniques
 **Vitaly Friedman ([@smashingmag](http://twitter.com/smashingmag))**
