@@ -76,7 +76,7 @@ This presentation was the most impressive and unconventional one of the event.
 
 It started with a great mashup video of famous movies that have been giving their take or influencing design interface.
 
-> The human body is the next computer interface
+> The human body is the next computer interface.
 
 Claudio and David mention how “responsive” should mean more than just adapting to different screen sizes and used many movies as example throughough the presentation.
 
