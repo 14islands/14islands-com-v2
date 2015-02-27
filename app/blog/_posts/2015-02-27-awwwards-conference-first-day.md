@@ -133,4 +133,4 @@ Phil shared a great talk with some exccelent slides on how we are going forward 
 
 —
 
-_You can also find a nice set of curated tweets about the conference by doing a search on our Twitter account [@14islands #AwwwardsBCN](https://twitter.com/search?f=realtime&q=14islands%20%23AwwwardsBCN&src=typd)_
+_You can also find a nice set of curated tweets about the conference by doing a search on our Twitter account [@14islands #AwwwardsBCN](https://twitter.com/search?q=%4014islands%20%23AwwwardsBCN&src=typd)_
