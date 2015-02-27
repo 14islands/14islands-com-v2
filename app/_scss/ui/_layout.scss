@@ -35,8 +35,10 @@ body {
     width: 100% - $default-content-spacing * 2;
   }
 
-  p {
-    max-width: $grid-paragraph-max-width-px;
+  p ,
+  ul,
+  ol {
+    max-width: $grid-paragraph-max-width;
   }
 
   > h1:first-child,
