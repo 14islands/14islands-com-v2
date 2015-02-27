@@ -97,7 +97,7 @@ But now they finally reached that point of staying ahead with some DevTools anim
 
 You will now be able to slow down animations, change their easing with a nice inline bezier-curve visualisation tool and even review all the properties that are being animates in a nice timeline frame fashion.
 
-Devotees is actually an open source project and Paul asked for feedback if somebody ever got an idea that would like to share.
+DevTools is actually an open source project and Paul asked for feedback if somebody ever got an idea that would like to share.
 
 Finally, the DevTools team just got themselves a designer for the first time and that is exiting news as we can expect the DevTools to look more user friendly and have a better look and feel. [@maxwkr](http://twitter.com/maxwkr) is the new designer dedicated to DevTools.
 
