@@ -47,7 +47,7 @@ They really value having fun while doing work and that was shown on the presenta
 Dog studio won the Developer Awwward on the [Dragone project](http://www.dragone.com/).
 
 ## Responsive Design: Current State of Affairs and Where do we go from here?
-**Divya Manian ([@divya](http://twitter.com/divya)**
+**Divya Manian ([@divya](http://twitter.com/divya))**
 
 Divya started the presentation by giving an overview on Responsive Web Design.
 
