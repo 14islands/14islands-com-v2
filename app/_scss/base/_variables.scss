@@ -39,7 +39,7 @@ $default-section-spacing--half: 6%; // well, actually a two thirds
 $default-grid-spacing: 6%; // grid margin
 $default-content-spacing: 6%; // content padding
 
-$grid-paragraph-max-width-px: 700px; // max width for content paragraphs
+$grid-paragraph-max-width-px: 650px; // max width for content paragraphs
 $grid-max-width-px: 768px; // max width for content area
 $grid-max-width--wide-px: 1300px; // max width for outer grid
 $grid-gap-px: ($grid-max-width-px - $grid-max-width--wide-px)/2;
