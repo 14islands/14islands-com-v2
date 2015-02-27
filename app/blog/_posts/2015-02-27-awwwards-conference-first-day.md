@@ -97,15 +97,15 @@ Paul mentioned that DevTools team has been trying to be ahead of the trend curve
 
 For instance, when the `border-radius` finally got browser prefix-free, people stopped using it. The same thing with background gradients and so on.
 
-But now they finally reached that point of staying ahead with some DevTools animations features. The animations panel is a great step ahead and it caused some applauses and gasps from the audience.
+But now they finally reached that point of staying ahead with some DevTools animations features. The animations panel is a great step ahead and it caused some applauses and gasps from the audience when it was showed some new features.
 
-You will now be able to slow down animations, change their easing with a nice inline bezier-curve visualisation tool and even review all the properties that are being animates in a nice timeline frame fashion.
+You will now be able to slow down animations, change their easing with a nice inline bezier-curve visualisation tool and even review all the properties that are being animated in a nice timeline frame-by-frame fashion.
 
 DevTools is actually an open source project and Paul asked for feedback if somebody ever got an idea that would like to share.
 
 Finally, the DevTools team just got themselves a designer for the first time and that is exciting news as we can expect the DevTools to look more user friendly and have a better look and feel. [@maxwkr](http://twitter.com/maxwkr) is the new designer dedicated to DevTools.
 
-The DevTools team is focusing on keeping the interface more usable by adding more “SCRIM” to it:
+The DevTools team (with it’s new designer) is focusing on keeping the interface more usable by adding more “SCRIM” to it:
 
 - Smart
 - Colorful
