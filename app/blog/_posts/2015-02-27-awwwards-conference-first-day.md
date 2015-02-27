@@ -95,13 +95,11 @@ In one of the most interesting talks of the day, Paul Kabaus from Google shared 
 
 Paul mentioned that DevTools team has been trying to be ahead of the trend curve and haven’t succeeded until now.
 
-For instance, when the `border-radius` finally got browser prefix-free, people stopped using it. The same thing with background gradients and so on.
+It looks like they finally reached that point of staying ahead with some DevTools animations features. The animations panel is a great step ahead and it caused some applauses and gasps from the audience when it was showed some new features.
 
-But now they finally reached that point of staying ahead with some DevTools animations features. The animations panel is a great step ahead and it caused some applauses and gasps from the audience when it was showed some new features.
+You will soon be able to slow down animations, change their easing with a nice inline bezier-curve visualisation tool and even review all the properties that are being animated in a nice timeline frame-by-frame fashion.
 
-You will now be able to slow down animations, change their easing with a nice inline bezier-curve visualisation tool and even review all the properties that are being animated in a nice timeline frame-by-frame fashion.
-
-DevTools is actually an open source project and Paul asked for feedback if somebody ever got an idea that would like to share.
+DevTools is actually an open source project and Paul asked for [feedback](https://trello.com/b/GKotpgkR/devtools-for-designers) if somebody ever got an idea that would like to share.
 
 Finally, the DevTools team just got themselves a designer for the first time and that is exciting news as we can expect the DevTools to look more user friendly and have a better look and feel. [@maxwkr](http://twitter.com/maxwkr) is the new designer dedicated to DevTools.
 
