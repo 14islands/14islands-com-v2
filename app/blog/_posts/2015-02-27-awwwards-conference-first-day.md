@@ -3,7 +3,7 @@ layout: post
 title:  "Awwwards conference - first day highlights"
 ---
 
-# Awwwards conference 
+# Awwwards conference
 ## First day highlights
 
 *We had the chance to attend the [Awwwards](http://conference.awwwards.com/) conference this year - a great event about web design in Barcelona. This the first post of a two day series*.
@@ -14,7 +14,7 @@ title:  "Awwwards conference - first day highlights"
 
 This year the conference was held in the beautiful Barcelona.
 
-You can find some talk highlights of the first day below.
+Some talk highlights of the first day below.
 
 ### Real artists ship
 **Haraldur Thorleifsson ([@hthorleifsson](http://twitter.com/hthorleifsson))**
@@ -41,7 +41,7 @@ Responsive initially meant quick to react. Speed is part of responsive. Images a
 
 He emphasised the importance of keeping the responsive images solution in the HTML instead of Javascript.
 
-One example was Opera Mini browser, where the user can actually turn on a setting to get low quality images. That could probably fail for websites  with images relying on some Javascript logic. 
+One example was Opera Mini browser, where the user can actually turn on a setting to get low quality images. That could probably fail for websites  with images relying on some Javascript logic.
 
 A browser knows things that you as a developer can’t possible know.
 
@@ -82,7 +82,7 @@ Don’t fail to consider what yours users want. Coke did not understand the deep
 
 Ask the users if they want it new before doing it. Users are not that tolerant to changes.
 
-It’s important to meet users and have meaningful conversations with them. Make sure to get close to them and use it as an ongoing part of your process. Get feedback when they use your product and when they leave it. 
+It’s important to meet users and have meaningful conversations with them. Make sure to get close to them and use it as an ongoing part of your process. Get feedback when they use your product and when they leave it.
 
 Be personal and try to connect with your users in a more emotional level.
 
