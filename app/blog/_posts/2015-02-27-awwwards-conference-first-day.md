@@ -41,7 +41,9 @@ Responsive initially meant quick to react. Speed is part of responsive. Images a
 
 He emphasised the importance of keeping the responsive images solution in the HTML instead of Javascript.
 
-One example was Opera Mini browser, where the user can actually turn on a setting to get low quality images. That could probably fail for websites  with images relying on some Javascript logic. A browser knows things that you as a developer can’t possible know.
+One example was Opera Mini browser, where the user can actually turn on a setting to get low quality images. That could probably fail for websites  with images relying on some Javascript logic. 
+
+A browser knows things that you as a developer can’t possible know.
 
 Decoding and de-compressing images takes previous time in all browsers and so it’s important that user gets the correct image size.
 
@@ -80,7 +82,9 @@ Don’t fail to consider what yours users want. Coke did not understand the deep
 
 Ask the users if they want it new before doing it. Users are not that tolerant to changes.
 
-Meet users and have meaningful conversations with them. Make sure to get close to them and use it as an ongoing part of your process. Get feedback when they use your product and when they leave it. Be personal and try to connect with them in a more emotional level.
+It’s important to meet users and have meaningful conversations with them. Make sure to get close to them and use it as an ongoing part of your process. Get feedback when they use your product and when they leave it. 
+
+Be personal and try to connect with your users in a more emotional level.
 
 ### Designing with Chrome DevTools
 **Paul Bakaus ([@pbakaus](http://twitter.com/))**
