@@ -1,6 +1,9 @@
 ---
 layout: post
 title:  "Awwwards conference - first day highlights"
+description: We had the chance to attend the Awwwards conference. Here are the talks highlights of the first day.
+og_image: https://pbs.twimg.com/media/B-mSzd3UUAAQujq.jpg:large
+og_url: /blog/2015/02/27/awwwards-conference-first-day/
 ---
 
 # Awwwards conference - first day highlights
