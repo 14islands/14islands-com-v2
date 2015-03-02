@@ -53,6 +53,7 @@ body {
   position: relative;
   margin: 0 auto;
   max-width: $grid-max-width--wide-px;
+  width: 100%;
 }
 
 // reset a child of a wide row to be a normal row

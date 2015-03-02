@@ -10,7 +10,7 @@ og_url: /blog/2015/02/27/awwwards-conference-first-day/
 
 *We had the chance to attend the [Awwwards](http://conference.awwwards.com/) conference this year - a great event about web design. This the second post of a two day series. Read about the [first day here]({% post_url 2015-02-27-awwwards-conference-first-day %}).*
 
-{% include post-image.html alt="Awwwards Conference 2015" src="https://pbs.twimg.com/media/B-mJ3lSXIAAjiZM.jpg:large" %}
+{% include post-image.html alt="Awwwards Conference 2015" src="/images/blog/awwwards/awwwards-day-two.jpg" margin="both" ratio="16_10" %}
 
 The second day of the conference successfully kept the momemtum that we have experienced in the previous day. Talks highlights of the second day can be found below.
 
