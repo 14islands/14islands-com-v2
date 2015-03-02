@@ -23,6 +23,7 @@ class FOURTEEN.StickyNav
     @$document = $(document)
     @isHidden = false
     @isBusyChecking = false
+    @animationEndEvent = FOURTEEN.Utils.whichAnimationEvent()
 
     @init()
 
@@ -43,6 +44,8 @@ class FOURTEEN.StickyNav
     if @isHidden
       @$context.addClass(VISIBLE_CLASS).removeClass(HIDDEN_CLASS)
       @isHidden = false
+      @$context.one @animationEndEvent, =>
+        @$context.removeClass(VISIBLE_CLASS)
 
 
   hide: =>

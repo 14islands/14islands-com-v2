@@ -11,8 +11,8 @@ hoverColor: '#db6927'
 logo: logo_elastica.svg
 image: /images/work/elastica/elastica-illustration.svg
 priority: 4
-private: true
-og_image: /images/work/elastica/elastica-illustration.svg
+private: false
+og_image: /images/work/elastica/elastica-cloudsoc-desktop-2_1.jpg
 og_url: /work/elastica/
 ---
 
@@ -54,7 +54,7 @@ The site was partially built in Wordpress, in order to give the Elastica marketi
 {% markdown %}
 ## Design &amp; UX
 
-This is one of many successful projects we've done together with [UENO](http://ueno.co). The Elastica website features bold colors, long storylike pages and creative animations.
+This is one of many successful projects we've done together with [UENO](http://ueno.co){:target="_blank"}. The Elastica website features bold colors, long storylike pages and creative animations.
 
 {% endmarkdown %}
 	</div>
@@ -89,30 +89,35 @@ In addition to crafting a fully responsive experience, the goal was to create an
 {% endmarkdown %}
   </div>
 
-{% include casestudy-codepen.html slug="xyAsh" ratio=1.7 %}
+  <div class="grid__row--wide u--margin-both--half">
+    {% include work/elastica/satellites-animation.html %}
+  </div>
 
-<div class="grid__row">
-{% markdown %}
-We used a mix of techniques ranging from CSS3 animations, JavaScript animations and HTML5 Canvas rendering to get the right result.
-{% endmarkdown %}
- </div>
-
-{% include casestudy-codepen.html slug="znLKm" ratio=1.7 %}
-
-<div class="grid__row">
+  <div class="grid__row">
 {% markdown %}
 Animations on the Elastica website run based on the scroll position, and they are timed to play exactly when entering the viewport (these examples are looping so you can enjoy them over and over again).
 {% endmarkdown %}
- </div>
+  </div>
 
-{% include casestudy-codepen.html slug="poydt" ratio=1.7 %}
+  <div class="grid__row--wide u--margin-both--half">
+    {% include work/elastica/circular-mask-animation.html %}
+  </div>
 
-<div class="grid__row">
+  <div class="grid__row">
 {% markdown %}
-All in all, we ended up handcrafting over 20 animations, and we had a lot of fun doing it.
+We used a mix of techniques ranging from CSS3 animations, JavaScript animations and HTML5 Canvas rendering to get the right result.
 {% endmarkdown %}
+  </div>
 
-</div>
+  <div class="grid__row--wide u--margin-both--half">
+    {% include work/elastica/dancing-circles-animation.html %}
+  </div>
+
+  <div class="grid__row">
+{% markdown %}
+All in all, we ended up handcrafting over 20 animations, and we had a lot of fun doing it. You can find the source code for these animations and more at our [Codepen page](http://codepen.io/14islands/){:target="_blank"}.
+{% endmarkdown %}
+  </div>
 </section>
 
 
@@ -126,53 +131,53 @@ All in all, we ended up handcrafting over 20 animations, and we had a lot of fun
 	</div>
 
 <div class="grid__row--wide-content casestudy__technology-list u--pad-top--half">
-  <a class="casestudy__technology-item" href="https://wordpress.org/">
+  <a class="casestudy__technology-item" href="https://wordpress.org/" target="_blank">
      {% include svgs/technology-logos/logo_wordpress.min.svg %}
      <h3 class="casestudy__technology-title">Wordpress</h3>
      <p class="casestudy__technology-description">Content management.</p>
   </a><!-- Remove spacing
-  --><a class="casestudy__technology-item" href="http://www.advancedcustomfields.com/">
+  --><a class="casestudy__technology-item" href="http://www.advancedcustomfields.com/" target="_blank">
      {% include svgs/technology-logos/logo_acf.min.svg %}
      <h3 class="casestudy__technology-title">Advanced Custom Fields</h3>
      <p class="casestudy__technology-description">Multible content types for WordPress.</p>
   </a><!-- Remove spacing
-  --><a class="casestudy__technology-item" href="https://yoast.com/wordpress/plugins/seo/">
+  --><a class="casestudy__technology-item" href="https://yoast.com/wordpress/plugins/seo/" target="_blank">
      {% include svgs/technology-logos/logo_seo-by-yoast.min.svg %}
      <h3 class="casestudy__technology-title">SEO by Yoast</h3>
      <p class="casestudy__technology-description">SEO optimization for WordPress.</p>
   </a><!-- Remove spacing
-  --><a class="casestudy__technology-item" href="https://responsive.io/">
+  --><a class="casestudy__technology-item" href="https://responsive.io/" target="_blank">
      {% include svgs/technology-logos/logo_responsive-io.min.svg %}
      <h3 class="casestudy__technology-title">responsive.io</h3>
      <p class="casestudy__technology-description">Responsive Images.</p>
   </a><!-- Remove spacing
-  --><a class="casestudy__technology-item" href="http://sass-lang.com/">
+  --><a class="casestudy__technology-item" href="http://sass-lang.com/" target="_blank">
      {% include svgs/technology-logos/logo_sass.min.svg %}
      <h3 class="casestudy__technology-title">Sass</h3>
      <p class="casestudy__technology-description">CSS pre-processing.</p>
   </a><!-- Remove spacing
-  --><a class="casestudy__technology-item" href="http://modernizr.com/">
+  --><a class="casestudy__technology-item" href="http://modernizr.com/" target="_blank">
      {% include svgs/technology-logos/logo_modernizr.min.svg %}
      <h3 class="casestudy__technology-title">Modernizr</h3>
      <p class="casestudy__technology-description">Browser and device feature detection.</p>
   </a><!-- Remove spacing
   --><!-- Remove spacing
-  --><a class="casestudy__technology-item" href="http://jquery.com/">
+  --><a class="casestudy__technology-item" href="http://jquery.com/" target="_blank">
      {% include svgs/technology-logos/logo_jquery.min.svg %}
      <h3  class="casestudy__technology-title">jQuery</h3>
      <p class="casestudy__technology-description">DOM manipulation and more.</p>
   </a><!-- Remove spacing
-  --><a class="casestudy__technology-item" href="http://gruntjs.com/">
+  --><a class="casestudy__technology-item" href="http://gruntjs.com/" target="_blank">
      {% include svgs/technology-logos/logo_grunt.min.svg %}
      <h3 class="casestudy__technology-title">Grunt</h3>
      <p class="casestudy__technology-description">Task Automation.</p>
   </a><!-- Remove spacing
-  --><a class="casestudy__technology-item" href="http://bower.io/">
+  --><a class="casestudy__technology-item" href="http://bower.io/" target="_blank">
      {% include svgs/technology-logos/logo_bower.min.svg %}
      <h3 class="casestudy__technology-title">Bower</h3>
      <p class="casestudy__technology-description">Front-end package manager.</p>
   </a><!-- Remove spacing
-  --><a class="casestudy__technology-item" href="https://github.com/14islands/component-loader">
+  --><a class="casestudy__technology-item" href="https://github.com/14islands/component-loader" target="_blank">
      {% include svgs/technology-logos/logo_github.min.svg %}
      <h3 class="casestudy__technology-title">Component Loader</h3>
      <p class="casestudy__technology-description">Generic framework for JS components.</p>
@@ -181,11 +186,11 @@ All in all, we ended up handcrafting over 20 animations, and we had a lot of fun
 
 </section>
 
-{%comment%}
-{% include casestudy-quote.html quote="I'm so lucky to have been able to collaborate with such talented folks. Everything 14islands developed came out even better than I could have imagined." author-image-src="/images/work/google-santa-tracker/ariana-nicolay.jpg" author-name="Ariana Nicolay" author-job-title="Visual Designer at Google" %}
-{%endcomment%}
 
-<section class="grid u--pad-bottom">
+{% include casestudy-quote.html quote="14islands brought the project to life and made it better than I could have imagined. Their attention to detail sets them apart and I highly recommend teaming up with them." author-image-src="/images/work/elastica/haraldur-thorleifsson.jpg" author-name="Haraldur Thorleifsson" author-job-title="Creative Director at UENO" %}
+
+
+<section class="grid u--pad-both">
 	<div class="grid__row">
 		{% markdown %}
 
