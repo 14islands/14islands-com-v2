@@ -147,6 +147,11 @@ p {
   margin: 0 0 1rem;
 }
 
+.post .media {
+  margin-top: modular-scale(1rem, 1);
+  margin-bottom: modular-scale(1rem, 1);
+}
+
 ul,
 ol {
   margin: 0 0 .5rem 2rem;
