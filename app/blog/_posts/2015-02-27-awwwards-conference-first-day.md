@@ -125,7 +125,7 @@ Some tips and tricks on Responsive Web Design and how Vitaly approaches performa
 #### Responsive Web Typography
 **Marko Dugonjić ([@markodugonjic](http://twitter.com/markodugonjic))**
 
-Marko shared some tips on responsive typography that goes beyond  changing sizes on breakpoints. He mentioned how we should be aware of the reading distance from the device, letter and word spacing and how we can influence a better reading experience. You can find the slides on his [Speaker Deck](https://speakerdeck.com/maratz/responsive-web-typography-at-awwwards-barcelona)
+Marko shared some tips on responsive typography that goes beyond  changing sizes on breakpoints. He mentioned how we should be aware of the reading distance from the device, letter and word spacing and how we can influence a better reading experience. You can find the slides on [Speaker Deck](https://speakerdeck.com/maratz/responsive-web-typography-at-awwwards-barcelona).
 
 #### Betting on the Web to #Win
 **Phil Hawksworth ([@philhawksworth](http://twitter.com/philhawksworth))**
