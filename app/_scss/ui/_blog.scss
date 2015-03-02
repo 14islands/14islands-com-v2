@@ -39,3 +39,33 @@
 		margin-left: 25%;
 	}
 }
+
+.related-posts {
+  @include clearfix;
+}
+
+.related-posts__label {
+  margin-top: 0;
+}
+
+.related-posts__title {
+  margin-top: 0;
+}
+
+.related-posts__previous,
+.related-posts__next {
+  display: block;
+  width: 40%;
+  vertical-align: top;
+}
+
+@include if-wider-than($breakpoint-two-px) {
+  .related-posts__previous {
+    float: left;
+  }
+
+  .related-posts__next {
+    float: right;
+    text-align: right;
+  }
+}

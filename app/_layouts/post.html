@@ -2,24 +2,29 @@
 layout: default
 og_type: article
 ---
-<article class="post grid u--pad-top pjax-animate">
+<article class="post grid u--pad-both pjax-animate">
 	<section class="grid__row">
 		{{ content }}
 	</section>
 </article>
 
-<!--
-<section class="grid__row u--pad-both">
-	<p>
-	  <h3>Related</h3>
-	{% if page.next_in_category != nil %}
-	  <a href="{{page.next_in_category.url}}" class="next-link">Previous post</a>
-	{% endif %}
-	{% if page.previous_in_category != nil %}
-	  <a href="{{page.previous_in_category.url}}" class="previous-link">Next Post</a>
-	{% endif %}
-	</p>
+
+<section class="related-posts grid u--pad-both u-bg-bright">
+	<div class="grid__row grid__row--wide-content">
+    <div class="related-posts__previous">
+  	{% if page.next_in_category != nil %}
+      <h4 class="related-posts__label">Previous post</h4>
+  	  <h3 class="related-posts__title"><a href="{{page.next_in_category.url}}" class="next-link">{{page.next_in_category.title}}</a></h3>
+  	{% endif %}
+    </div>
+    <div class="related-posts__next">
+  	{% if page.previous_in_category != nil %}
+      <h4 class="related-posts__label">Next post</h4>
+  	  <h3 class="related-posts__title"><a href="{{page.previous_in_category.url}}" class="previous-link">{{page.previous_in_category.title}}</a></h3>
+  	{% endif %}
+  	</div>
+  </div>
 </section>
--->
+
 
 {% include footer.html %}
