@@ -3,14 +3,13 @@ layout: post
 title:  "Awwwards conference - first day highlights"
 ---
 
-# Awwwards conference
-## First day highlights
+# Awwwards conference (first day)
 
-*We had the chance to attend the [Awwwards](http://conference.awwwards.com/) conference this year - a great event about web design in Barcelona. This the first post of a two day series*.
+*We had the chance to attend the [Awwwards](http://conference.awwwards.com/) conference this year - a great event about web design. This the first post of a two day series. You can find the [second day highlights here]({% post_url 2015-02-27-awwwards-conference-second-day %}).*
 
 —
 
-[Awwwards](http://conference.awwwards.com/) is an organisation that aims to recognise and share the most inspiring projects around the world. It consists of a talented jury who promotes projects with awards on different web design categories. Every year they host a conference with different talks and a prize-giving ceremony.
+[Awwwards](http://conference.awwwards.com/) is an organisation that aims to recognise and share the most inspiring projects around the world. It consists of a talented jury who promotes projects with awards for different web design categories. Every year they host a conference with different talks and a prize-giving ceremony.
 
 This year the conference was held in the beautiful Barcelona.
 
@@ -19,11 +18,11 @@ Some talk highlights of the first day below.
 ### Real artists ship
 **Haraldur Thorleifsson ([@hthorleifsson](http://twitter.com/hthorleifsson))**
 
-Our friend “Halli” started the presentation by asking all designers in the room who had a good project but that actually hasn’t been shipped. Many hands were raised and the point of the talk was made.
+Our friend “Halli” started the presentation by asking all designers in the room who had a good project but that actually never been shipped. Many hands were raised and the point of the talk was made.
 
 > Photoshop is like a fake world that we create for ourselves.
 
-Hali recommends following a set of rules for delivering good design work:
+Hali recommends following a set of principles for delivering good design work:
 
 - Test
 - Create your own wireframes
@@ -37,7 +36,7 @@ Bruce provided a humorous talk on the technical subject of responsive images.
 
 > Safari is the North Korea of browsers. They don’t usually say what they are working on.
 
-Responsive initially meant quick to react. Speed is part of responsive. Images are most part of the website and they are not inadequately responsive.
+Responsive initially meant quick to react. Speed is part of responsive. Images are the most part of the website and they are not inadequately responsive.
 
 He emphasised the importance of keeping the responsive images solution in the HTML instead of Javascript.
 
@@ -47,7 +46,7 @@ A browser knows things that you as a developer can’t possible know.
 
 Decoding and de-compressing images takes previous time in all browsers and so it’s important that user gets the correct image size.
 
-There a few updates on responsive images being shipped to browsers lately: `<picture>, srcset, sizes.`
+There a few updates on responsive images being shipped to some browsers lately: `<picture>, srcset, sizes.`
 
 ### Side Projects are Stupid
 **Tobias Van Schneider ([@schneidertobias](http://twitter.com/))**
@@ -126,7 +125,7 @@ Some tips and tricks on Responsive Web Design and how Vitaly approaches performa
 #### Responsive Web Typography
 **Marko Dugonjić ([@markodugonjic](http://twitter.com/markodugonjic))**
 
-Marko shared some tips on responsive typography that goes beyond  changing sizes on breakpoints. He mentioned how we should be aware of the reading distance from the device, letter and word spacing and how we can influence a better reading experience.
+Marko shared some tips on responsive typography that goes beyond  changing sizes on breakpoints. He mentioned how we should be aware of the reading distance from the device, letter and word spacing and how we can influence a better reading experience. You can find the slides on his [Speaker Deck](https://speakerdeck.com/maratz/responsive-web-typography-at-awwwards-barcelona)
 
 #### Betting on the Web to #Win
 **Phil Hawksworth ([@philhawksworth](http://twitter.com/philhawksworth))**

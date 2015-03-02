@@ -3,18 +3,17 @@ layout: post
 title:  "Awwwards conference - second day highlights"
 ---
 
-# Awwwards conference
-## Second day highlights
+# Awwwards conference (second day)
 
-*We had the chance to attend the [Awwwards](http://conference.awwwards.com/) conference this year - a great event about web design in Barcelona. This the second post of a two day series. Read about the first day here.*
+*We had the chance to attend the [Awwwards](http://conference.awwwards.com/) conference this year - a great event about web design. This the second post of a two day series. Read about the [first day here]({% post_url 2015-02-27-awwwards-conference-first-day %}).*
 
 —
 
-### Collaboration - Making/Thinking/Illustrating Together 
+### Collaboration - Making/Thinking/Illustrating Together
 **Sofie Hannibal ([@HvassHannibal](http://twitter.com/HvassHannibal))**
 
 Sofia showed the inspiring work behind [Hvass&Hannibal
-](http://www.hvasshannibal.dk/) - a Danish arts and design studio based in Copenhagen. 
+](http://www.hvasshannibal.dk/) - a Danish arts and design studio based in Copenhagen.
 
 She also shared the questions and challenges - that often took them outside of their comfort zone - that her small studio faced with time.
 
@@ -33,14 +32,14 @@ After some examples of “rewinding the brain” he got to the point of the talk
 
 We need to count to what we can’t predict. When an escalator fails, it becomes stairs. We need to build more escalators. HTML and CSS are both fault tolerant where as JavaScript is not.
 
-During the talk he often asked to question “Do websites need to look exactly the same in every browser?” [The answer is NO](http://dowebsitesneedtolookexactlythesameineverybrowser.com/). 
+During the talk he often asked to question “Do websites need to look exactly the same in every browser?” [The answer is NO](http://dowebsitesneedtolookexactlythesameineverybrowser.com/).
 
 ## No guts, No glory
 **Henry Daubrez ([@upskydown](http://twitter.com/upskydown))**
 
-Dogstudio shared the importance of their culture and how that affected their work. 
+Dogstudio shared the importance of their culture and how that affected their work.
 
-> Everybody in the company has dog nicknames. 
+> Everybody in the company has dog nicknames.
 
 They really value having fun while doing work and that was shown on the presentation by how having fun and taking bold decisions helped shape and drive the company to where it is at the moment.
 
@@ -65,14 +64,14 @@ One of the most awaited talks of day, Ricardo and Jaume showed how WebGL started
 
 > Very happy to have been able to share 3 dreams of black as a [open source project](https://github.com/dataarts/3-dreams-of-black).
 
-Some pretty impressive experiments were shown, among them the experimental site for the “Gravity” movie. The way how WebGL is entering the Virtual Reality field is very exciting.
+Some pretty impressive experiments were shown, among them the experimental site for the “Gravity” movie. The way how WebGL is entering the Virtual Reality field is very exciting. [WebVR](http://webvr.info/) is the api for virtual reality on the web.
 
 Mr.Doob (Ricardo) was also proud to show a new [open-source Three.js editor](http://threejs.org/editor/) that he has been working on and that will allow you to work with WebGl 3D graphics in the browser and get a nice copy-and-paste code output.
 
 ## Where we’re going we don’t need roads
 **David Navarro ([@davidnavarro](http://twitter.com/davidnavarro)) & Claudio Guglieri ([@claudioguglieri](http://twitter.com/claudioguglieri))**
 
-This presentation was the most impressive and unconventional one of the event. 
+This presentation was the most impressive and unconventional one of the event.
 
 It started with a great mashup video of famous movies that have been giving their take or influencing design interface.
 
