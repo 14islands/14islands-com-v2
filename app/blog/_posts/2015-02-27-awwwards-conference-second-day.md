@@ -2,7 +2,7 @@
 layout: post
 title:  "Awwwards conference - second day highlights"
 description: We had the chance to attend the Awwwards conference. Here are the talks highlights of the first day.
-og_image: https://pbs.twimg.com/media/B-mJ3lSXIAAjiZM.jpg:large
+og_image: https://pbs.twimg.com/media/B-2eUvGXAAEqws9.jpg:large
 og_url: /blog/2015/02/27/awwwards-conference-first-day/
 ---
 
