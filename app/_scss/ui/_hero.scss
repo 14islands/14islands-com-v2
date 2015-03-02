@@ -137,6 +137,10 @@
   from { transform: translateY(-100%); }
   to   { transform: none }
 }
+@keyframes sticky-nav-show3d {
+  from { transform: translate3d(0, -100%, 0); }
+  to   { transform: none }
+}
 @keyframes sticky-nav-hide {
   from { transform: none }
   to   { transform: translateY(-100%); }
@@ -149,17 +153,24 @@
   will-change: transform;
   transition: none;
 
-  // only hide nagivation is hero is hidden
-  &.hero--hidden.sticky-nav--hidden {
-    .csstransforms & {
-      animation: sticky-nav-hide 350ms $easeOutQuad 1 forwards;
+  // only animate nagivation if hero is hidden
+  &.hero--hidden {
+    &.sticky-nav--hidden {
+      .csstransforms & {
+        animation: sticky-nav-hide 350ms $easeOutQuad 1 forwards;
+      }
+      .csstransforms3d & {
+        animation: sticky-nav-hide3d 350ms $easeOutQuad 1 forwards;
+      }
     }
-    .csstransforms3d & {
-      animation: sticky-nav-hide3d 350ms $easeOutQuad 1 forwards;
+    &.sticky-nav--visible {
+      .csstransforms & {
+        animation: sticky-nav-show 400ms $easeOutQuad 1 none;
+      }
+      .csstransforms3d & {
+        animation: sticky-nav-show3d 400ms $easeOutQuad 1 none;
+      }
     }
-  }
-  &.sticky-nav--visible {
-    animation: sticky-nav-show 400ms $easeOutQuad 1 none;
   }
 }
 

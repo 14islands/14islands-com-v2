@@ -1,0 +1,188 @@
+//////////////////////////////////////////////////////////////
+// Animation styles
+//////////////////////////////////////////////////////////////
+
+// All sizes and distances specified in percentage of max size to be responsive
+$aspect-ratio: 0.80;
+$relative-size: 20%;
+$max-width-px: 700px;
+
+$background-color: #1F2228;
+$border-width: 3px;
+
+$transition-easing: $easeOutQuart;
+$transition-scale-duration: 0.4s;
+$transition-rotation-duration: 2s;
+$transition-satellite-delay: .15s;
+$transition-satellite-duration: .8s;
+
+
+.elastica-satellites-animation {
+  background: $background-color;
+  padding: 5% 0;
+}
+
+.elastica-satellites-animation__ratio {
+  max-width: $max-width-px;
+  margin: auto;
+  @include aspectRatio($aspect-ratio);
+}
+
+@keyframes elastica-satellites-animation-rotator {
+	0%   { transform: rotate(-45deg) scale(.3); }
+	20%  { transform: rotate(-45deg) scale(1);  }
+	100% { transform: rotate(0deg)   scale(1);  }
+}
+@keyframes elastica-satellites-animation-core {
+	0%   { transform: rotate(45deg) }
+	20%  { transform: rotate(45deg) }
+	100% { transform: rotate(0) }
+}
+
+.elastica-satellites-animation__rotator {
+	position: absolute;
+	height: $relative-size;
+	width: $relative-size * $aspect-ratio;
+	top: 50% - ($relative-size * 0.9);
+	left: 50% - ($relative-size * $aspect-ratio * 0.5);
+
+  transform: rotate(-45deg) scale(.2);
+  visibility: hidden;
+
+  .animate & {
+		visibility: visible;
+		transform: rotate(0deg) scale(1);
+		animation: $transition-rotation-duration elastica-satellites-animation-rotator $transition-easing 1;
+  }
+}
+
+.elastica-satellites-animation__rotator__core {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: $border-width solid #1ca8dd;
+  background: #fff;
+
+  box-sizing: content-box;
+
+  // rotate in opposite direction to make it look static
+  transform: rotate(45deg);
+  .animate & {
+    visibility: visible;
+    transform: rotate(0);
+    animation: $transition-rotation-duration elastica-satellites-animation-core $transition-easing 1;
+  }
+
+	svg {
+    display: block;
+    margin: auto;
+    width: 55%;
+    height: 100%;
+    margin-top: 1%;
+    position: relative;
+    left: 2%
+	}
+}
+
+.elastica-satellites-animation__satellite {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.elastica-satellites-animation__satellite__core {
+	position: absolute;
+	background: #fff;
+	border-radius: 50%;
+	background: $background-color;
+
+  .animate & {
+    transition: transform $transition-satellite-duration $transition-easing;
+  }
+}
+
+.elastica-satellites-animation__satellite__leg {
+  position: absolute;
+  height: 3px;
+  background: transparent;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+
+  overflow: hidden;
+  transform: translateZ(0); // avoid flicker
+
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #444;
+
+    backface-visibility: hidden;
+    transform: translateX(-100%);
+    .animate & {
+      transition: transform $transition-satellite-duration $transition-easing;
+    }
+  }
+}
+
+@mixin satellite($size, $border-color, $length, $deg, $delay) {
+
+  //adjust position based on relative size
+  $sLength: $length / $size * 100%;
+
+  // rotate to degres
+  transform: rotate($deg) translateZ(0);
+
+  .elastica-satellites-animation__satellite__core {
+    width: $size;
+    height: $size;
+    top: (100-$size)/2;
+    left: (100-$size)/2;
+    border: $border-width solid $border-color;
+
+    .animate & {
+      transition-delay: $delay;
+      transform: translate($sLength, 0);
+      .csstransforms3d & {
+        transform: translate3d($sLength, 0, 0);
+      }
+    }
+  }
+  .elastica-satellites-animation__satellite__leg {
+    // length minus satellite
+    right: -($length - $size);
+    .fill {
+      .animate & {
+        transition-delay: $delay;
+        transform: translateX(0%);
+      }
+    }
+  }
+}
+
+
+//////////////////////////////////////////////////////////////
+// init one-by-one with size, color, polar coordinates, delay
+//////////////////////////////////////////////////////////////
+.elastica-satellites-animation__satellite:nth-child(1) {
+	@include satellite(71%, #787b83, 225%, 155deg, $transition-scale-duration+$transition-satellite-delay*0);
+}
+.elastica-satellites-animation__satellite:nth-child(2) {
+	@include satellite(62%, #9ec92e, 140%, 245deg, $transition-scale-duration+$transition-satellite-delay*1);
+}
+.elastica-satellites-animation__satellite:nth-child(3) {
+	@include satellite(85%, #d1d5d6, 190%, 345deg, $transition-scale-duration+$transition-satellite-delay*2);
+}
+.elastica-satellites-animation__satellite:nth-child(4) {
+	@include satellite(78%, #ffbb30, 215%, 105deg, $transition-scale-duration+$transition-satellite-delay*3);
+}
+.elastica-satellites-animation__satellite:nth-child(5) {
+	@include satellite(54%, #ffffff, 140%, 55deg, $transition-scale-duration+$transition-satellite-delay*4);
+}

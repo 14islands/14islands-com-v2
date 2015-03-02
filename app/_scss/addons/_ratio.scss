@@ -1,65 +1,107 @@
 /**
  * Ratio classes for fluid ratio elements.
  *
+ * psuedo element padding hack to avoid reflows on responsive images
+ * http://www.mademyday.de/css-height-equals-width-with-pure-css.html
+ *
  * Example usage:
  *
  * <div class="u-ratio u-ratio--4_3">
  *   <div class="u-ratio__content">
- *   	This is a 4:3 ratio with the padding trick.
+ *    This is a 4:3 ratio with the padding trick.
  *   </div>
  * </div>
  *
  */
 .u-ratio {
-	position: relative;
+  position: relative;
+  overflow: hidden; // to make sure no reflow happens when images load
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 100%; /* default 1:1 ratio */
+  }
 }
+
+// mixin version
+@mixin aspectRatio($ratioFloat) {
+  @extend .u-ratio;
+  &:before {
+    padding-top: $ratioFloat * 100%;
+  }
+}
+
 
 .u-ratio--rounded {
-	border-radius: 4px;
+  border-radius: 4px;
 }
- 
+
 .u-ratio--circle {
-	border-radius: 500px;
+  border-radius: 500px;
 }
 
-.u-ratio:before {
-	content: '';
-	display: block;
-	padding-top: 100%; /* default 1:1 ratio */
+// a background placeholder while the image is loading
+.u-ratio--placeholder {
+  background: #f9f9f9;
+  .u-bg-bright & {
+    background: #ffffff;
+  }
 }
 
+
+// content inside ratio wrapper
 .u-ratio__content {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
-.u-ratio--1_1:before {
-	padding-top: 100%;
+
+// standard ratios
+.u-ratio--4_1:before {
+  padding-top: 25%;
 }
 
 .u-ratio--2_1:before {
-	padding-top: 50%;
-}
-
-.u-ratio--1_2:before {
-	padding-top: 200%;
-}
-
-.u-ratio--4_1:before {
-	padding-top: 25%;
-}
-
-.u-ratio--4_3:before {
-	padding-top: 75%;
+  padding-top: 50%;
 }
 
 .u-ratio--16_9:before {
-	padding-top: 56.25%;
+  padding-top: 56.25%;
 }
 
-.u-ratio--custom_40:before {
-	padding-top: 40%;
+.u-ratio--16_10:before {
+  padding-top: 62.5%; /* 16:10 ratio */
 }
+
+.u-ratio--3_2:before {
+  padding-top: 66%; /* 3:2 ratio */
+}
+
+.u-ratio--4_3:before {
+  padding-top: 75%;
+}
+
+.u-ratio--5_4:before {
+  padding-top: 80%; /* 5:4 ratio */
+}
+
+.u-ratio--1_1:before {
+  padding-top: 100%;
+}
+
+.u-ratio--1_2:before {
+  padding-top: 200%;
+}
+
+
+
+.u-ratio--custom_40:before {
+  padding-top: 40%;
+}
+
+
+

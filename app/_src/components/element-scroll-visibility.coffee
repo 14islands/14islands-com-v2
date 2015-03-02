@@ -25,10 +25,24 @@ class FOURTEEN.ElementScrollVisibility
     CSS_ANIMATED_CLASS = 'has-animated'
     CSS_EXIT_CLASS = 'has-exited'
     DATA_OFFSET = 'offset'
+    DATA_REPEAT = 'scroll-repeat'
+    DATA_FORCE_LOOP = 'force-loop'
 
     constructor: (@$context, data) ->
         @context = @$context.get(0)
+        @repeat = @$context.data DATA_REPEAT or 0
+        @forceLoop = @$context.data DATA_FORCE_LOOP or 0
+
+        @isInViewport = false
+
         @$body = $(document.body)
+        @animationEndEvent = FOURTEEN.Utils.whichAnimationEvent()
+
+        if @repeat?
+            @repeat = JSON.parse(@repeat)
+
+        if @forceLoop?
+            @forceLoop = JSON.parse(@forceLoop)
 
         if data?.isPjax
             @$body.one FOURTEEN.PjaxNavigation.EVENT_ANIMATION_SHOWN, @addEventListeners
@@ -52,27 +66,60 @@ class FOURTEEN.ElementScrollVisibility
             @watcher.destroy()
             @watcher = null
 
+    reset: () =>
+        @$context.removeClass CSS_PARTIALLY_VISIBLE_CLASS
+        @$context.removeClass CSS_FULLY_VISIBLE_CLASS
+        @onAnimationReset()
+        @hasExited = false
+        @hasPartiallyPlayed = false
+        @hasFullyPlayed = false
+
+
+    onAnimationReset: =>
+      @$context.removeClass CSS_ANIMATE_CLASS
+      @$context.removeClass CSS_ANIMATED_CLASS
+
+    onAnimationPlay: =>
+      @$context.addClass CSS_ANIMATE_CLASS
+      @$context.one @animationEndEvent, @onAnimationEnd if @animationEndEvent
+
+    onAnimationEnd: =>
+        @$context.addClass CSS_ANIMATED_CLASS
+
+        # force Javascript animations to loop by resetting and replaying
+        if @forceLoop
+            if @isInViewport
+                # only replay if still in viewport
+                setTimeout =>
+                    @onAnimationReset()
+                    setTimeout =>
+                        @onAnimationPlay()
+                    , 500
+                , 500
+            else
+              @onAnimationReset()
+
+
     onEnterViewport: () =>
+        @isInViewport = true
         return if @hasPartiallyPlayed
         @hasPartiallyPlayed = true
+        @$context.removeClass CSS_EXIT_CLASS
         @$context.addClass CSS_PARTIALLY_VISIBLE_CLASS
 
     onFullyEnterViewport: () =>
         return if @hasFullyPlayed
         @hasFullyPlayed = true
-        @$context.addClass CSS_FULLY_VISIBLE_CLASS + " " + CSS_ANIMATE_CLASS
-
-        animationEnd = FOURTEEN.Utils.whichAnimationEvent()
-
-        if (animationEnd)
-            @$context.on animationEnd, ->
-                @$context.addClass CSS_ANIMATED_CLASS
-                setTimeout ->
-                    @$context.addClass CSS_ANIMATE_CLASS
-                , 50
+        @$context.addClass CSS_FULLY_VISIBLE_CLASS
+        @onAnimationPlay()
 
     onExitViewport: () =>
+        @isInViewport = false
         return if @hasExited
         @hasExited = true
+        @$context.off @animationEndEvent, @onAnimationEnd if @animationEndEvent
         @$context.addClass CSS_EXIT_CLASS
-        @removeEventListeners() if @hasPartiallyPlayed and @hasFullyPlayed
+        if @repeat
+            @reset()
+        else if @hasPartiallyPlayed and @hasFullyPlayed
+            @removeEventListeners()
