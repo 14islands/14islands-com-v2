@@ -12,7 +12,7 @@ og_url: /blog/2015/02/27/awwwards-conference-first-day/
 
 —
 
-{% include rio-image.html alt="Awwwards Conference 2015 - Halli" src="/images/blog/awwwards/2015-03-02_12-42-13.jpeg" %}
+{% include post-image.html alt="Awwwards Conference 2015 - Halli" src="/images/blog/awwwards/2015-03-02_12-42-13.jpeg" %}
 
 [Awwwards](http://conference.awwwards.com/) is an organisation that aims to recognise and share the most inspiring projects around the world. It consists of a talented jury who promotes projects with awards for different web design categories. Every year they host a conference with different talks and a prize-giving ceremony.
 
@@ -25,7 +25,7 @@ Some talk highlights of the first day below.
 
 Our friend “Halli” started the presentation by asking all designers in the room who had a good project but that actually never been shipped. Many hands were raised and the point of the talk was made.
 
-> Photoshop is like a fake world that we create for ourselves.
+> "Photoshop is like a fake world that we create for ourselves."
 
 Hali recommends following a set of principles for delivering good design work:
 
@@ -39,7 +39,7 @@ Hali recommends following a set of principles for delivering good design work:
 
 Bruce provided a humorous talk on the technical subject of responsive images.
 
-> Safari is the North Korea of browsers. They don’t usually say what they are working on.
+> "Safari is the North Korea of browsers. They don’t usually say what they are working on."
 
 Responsive initially meant quick to react. Speed is part of responsive. Images are the most part of the website and they are not inadequately responsive.
 
@@ -58,7 +58,7 @@ There a few updates on responsive images being shipped to some browsers lately: 
 
 Tobias encourages having side projects and the importance of keeping them simple.
 
-> Side projects are stupid because they have to be simple.
+> "Side projects are stupid because they have to be simple."
 
 He shares his five principles on taking on a side project:
 
@@ -76,7 +76,7 @@ Doing something just to make people laugh can also work as a good project goal.
 
 Meagan spoke of the importance of Empathy on design. How to consider the user feelings when designing something.
 
-> Make sure to get close to your users and use it as an ongoing part of your process.
+> "Make sure to get close to your users and use it as an ongoing part of your process."
 
 Real human needs are the most valuable constraint we have.
 
@@ -95,7 +95,7 @@ Be personal and try to connect with your users in a more emotional level.
 
 In one of the most interesting talks of the day, Paul Kabaus from Google shared some features that are coming to Chrome DevTools soon.
 
-> The first rule of upcoming features is to not talk about upcoming features.
+> "The first rule of upcoming features is to not talk about upcoming features."
 
 Paul mentioned that DevTools team has been trying to be ahead of the trend curve and haven’t succeeded until now.
 
