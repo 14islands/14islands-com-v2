@@ -3,7 +3,7 @@ layout: post
 title:  "Awwwards conference - first day highlights"
 ---
 
-# Awwwards conference (first day)
+# Awwwards conference - first day highlights
 
 *We had the chance to attend the [Awwwards](http://conference.awwwards.com/) conference this year - a great event about web design. This the first post of a two day series. You can find the [second day highlights here]({% post_url 2015-02-27-awwwards-conference-second-day %}).*
 
