@@ -12,7 +12,7 @@ og_url: /blog/2015/02/27/awwwards-conference-first-day/
 
 —
 
-{% include rio-image.html alt="Awwwards Conference 2015 - Halli" src="https://pbs.twimg.com/media/B-mSzd3UUAAQujq.jpg:large" %}
+{% include rio-image.html alt="Awwwards Conference 2015 - Halli" src="/images/blog/awwwards/2015-03-02_12-42-13.jpeg" %}
 
 [Awwwards](http://conference.awwwards.com/) is an organisation that aims to recognise and share the most inspiring projects around the world. It consists of a talented jury who promotes projects with awards for different web design categories. Every year they host a conference with different talks and a prize-giving ceremony.
 

@@ -12,7 +12,7 @@ og_url: /blog/2015/02/27/awwwards-conference-first-day/
 
 —
 
-{% include rio-image.html alt="Awwwards Conference 2015 - Halli" src="https://pbs.twimg.com/media/B-mJ3lSXIAAjiZM.jpg:large" %}
+{% include rio-image.html alt="Awwwards Conference 2015" src="https://pbs.twimg.com/media/B-2eUvGXAAEqws9.jpg:large" %}
 
 ## Collaboration - Making/Thinking/Illustrating Together
 **Sofie Hannibal ([@HvassHannibal](http://twitter.com/HvassHannibal))**
