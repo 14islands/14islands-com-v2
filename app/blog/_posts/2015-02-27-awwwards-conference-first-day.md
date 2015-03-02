@@ -9,13 +9,15 @@ title:  "Awwwards conference - first day highlights"
 
 —
 
+{% include rio-image.html alt="Awwwards Conference 2015 - Halli" src="https://pbs.twimg.com/media/B-mSzd3UUAAQujq.jpg:large" %}
+
 [Awwwards](http://conference.awwwards.com/) is an organisation that aims to recognise and share the most inspiring projects around the world. It consists of a talented jury who promotes projects with awards for different web design categories. Every year they host a conference with different talks and a prize-giving ceremony.
 
 This year the conference was held in the beautiful Barcelona.
 
 Some talk highlights of the first day below.
 
-### Real artists ship
+## Real artists ship
 **Haraldur Thorleifsson ([@hthorleifsson](http://twitter.com/hthorleifsson))**
 
 Our friend “Halli” started the presentation by asking all designers in the room who had a good project but that actually never been shipped. Many hands were raised and the point of the talk was made.
@@ -29,7 +31,7 @@ Hali recommends following a set of principles for delivering good design work:
 - Photoshop lies
 - Only deal with decision makers
 
-### Responsive images
+## Responsive images
 **Bruce Lawson ([@brucel](http://twitter.com/brucel))**
 
 Bruce provided a humorous talk on the technical subject of responsive images.
@@ -48,7 +50,7 @@ Decoding and de-compressing images takes previous time in all browsers and so it
 
 There a few updates on responsive images being shipped to some browsers lately: `<picture>, srcset, sizes.`
 
-### Side Projects are Stupid
+## Side Projects are Stupid
 **Tobias Van Schneider ([@schneidertobias](http://twitter.com/))**
 
 Tobias encourages having side projects and the importance of keeping them simple.
@@ -66,7 +68,7 @@ Some projects were being shown that were “stupid” but that actually gave a l
 
 Doing something just to make people laugh can also work as a good project goal.
 
-### Empathy
+## Empathy
 **Meagan Fisher ([@HvassHannibal](http://twitter.com/))**
 
 Meagan spoke of the importance of Empathy on design. How to consider the user feelings when designing something.
@@ -85,7 +87,7 @@ It’s important to meet users and have meaningful conversations with them. Make
 
 Be personal and try to connect with your users in a more emotional level.
 
-### Designing with Chrome DevTools
+## Designing with Chrome DevTools
 **Paul Bakaus ([@pbakaus](http://twitter.com/))**
 
 In one of the most interesting talks of the day, Paul Kabaus from Google shared some features that are coming to Chrome DevTools soon.
@@ -110,24 +112,24 @@ The DevTools team (with it’s new designer) is focusing on keeping the interfac
 - Intuitive
 - Material
 
-### Other talks of the day:
+## Other talks of the day:
 
-#### A tomato, a picture, an elephant and a bunch of jugglers
+### A tomato, a picture, an elephant and a bunch of jugglers
 **AQuest ([@id_aquest](http://twitter.com/id_aquest))**
 
 AQuest impressive slides were showing how they tell stories through their projects. Very [inspiring work](www.aquest.it).
 
-#### Responsive Web Design: Clever Tips and Techniques
+### Responsive Web Design: Clever Tips and Techniques
 **Vitaly Friedman ([@smashingmag](http://twitter.com/smashingmag))**
 
 Some tips and tricks on Responsive Web Design and how Vitaly approaches performance budget with his clients. Recommended reading: [Improving Smashing Magazine’s Performance: A Case Study](http://www.smashingmagazine.com/2014/09/08/improving-smashing-magazine-performance-case-study/)
 
-#### Responsive Web Typography
+### Responsive Web Typography
 **Marko Dugonjić ([@markodugonjic](http://twitter.com/markodugonjic))**
 
 Marko shared some tips on responsive typography that goes beyond  changing sizes on breakpoints. He mentioned how we should be aware of the reading distance from the device, letter and word spacing and how we can influence a better reading experience. You can find the slides on [Speaker Deck](https://speakerdeck.com/maratz/responsive-web-typography-at-awwwards-barcelona).
 
-#### Betting on the Web to #Win
+### Betting on the Web to #Win
 **Phil Hawksworth ([@philhawksworth](http://twitter.com/philhawksworth))**
 
 Phil shared a great talk with some exccelent slides on how we are going forward with the web. Interesting examples and concepts from the past to the present and how we are keeping up with all the trends and innovation changes.

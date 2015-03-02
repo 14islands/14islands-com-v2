@@ -9,7 +9,9 @@ title:  "Awwwards conference - second day highlights"
 
 —
 
-### Collaboration - Making/Thinking/Illustrating Together
+{% include rio-image.html alt="Awwwards Conference 2015 - Halli" src="https://pbs.twimg.com/media/B-mJ3lSXIAAjiZM.jpg:large" %}
+
+## Collaboration - Making/Thinking/Illustrating Together
 **Sofie Hannibal ([@HvassHannibal](http://twitter.com/HvassHannibal))**
 
 Sofia showed the inspiring work behind [Hvass&Hannibal
@@ -21,7 +23,7 @@ She also shared the questions and challenges - that often took them outside of t
 
 Very honest and interesting to see the process and thoughts behind each presented project.
 
-### Enhance!
+## Enhance!
 **Jeremy Keith ([@adactio](http://twitter.com/adactio))**
 
 Jeremy Keith started the talk by saying he wanted to change our minds by rewinding our brain. Small symbols and figures that are usually hidden but when told by somebody get very hard to un-see it.
@@ -82,14 +84,14 @@ Claudio and David mention how “responsive” should mean more than just adapti
 Interfaces should interact with human emotions through: Speech, Vision and Touch.
 
 
-### Other talks of the day:
+## Other talks of the day:
 
-#### Javascript <3 Unicode
+### Javascript <3 Unicode
 **Mathias Bynens ([@mathias](http://twitter.com/mathias))**
 
 Javascript has problems on how it handles Unicode characters - and they can be pretty funny. In the talk he walked through some problems and showed some upcoming ES6 features that will help solve this.
 
-#### Josh Holmes
+### Josh Holmes
 ([@joshholmes](http://twitter.com/joshholmes))
 
 Josh talks about smart homes and how the “internet of things” is just a buzz word that has been around for a while. He passionately talked about hardware and how it’s evolving so fast nowadays.
