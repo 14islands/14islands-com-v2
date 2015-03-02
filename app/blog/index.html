@@ -12,7 +12,7 @@ title: Blog - 14islands
 
 {% for post in site.categories.blog %}
   {% unless post.private and site.hide_private %}
-    <article class="grid__row post-row">
+    <article class="grid__row post-row pjax-animate">
     	<header class="post-row__header">
     		<datetime class="post-row__date">{{ post.date | date: "%-d %B %Y" }}</datetime>
     		<h2 class="post-row__title post-row__info">
