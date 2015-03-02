@@ -29,7 +29,7 @@ Our friend “Halli” started the presentation by asking all designers in the r
 
 Hali recommends following a set of principles for delivering good design work:
 
-- Test
+- Understand the problem
 - Create your own wireframes
 - Photoshop lies
 - Only deal with decision makers
