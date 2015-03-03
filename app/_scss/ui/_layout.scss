@@ -35,8 +35,10 @@ body {
     width: 100% - $default-content-spacing * 2;
   }
 
-  p {
-    max-width: $grid-paragraph-max-width-px;
+  p ,
+  ul,
+  ol {
+    max-width: $grid-paragraph-max-width;
   }
 
   > h1:first-child,
@@ -51,6 +53,7 @@ body {
   position: relative;
   margin: 0 auto;
   max-width: $grid-max-width--wide-px;
+  width: 100%;
 }
 
 // reset a child of a wide row to be a normal row
