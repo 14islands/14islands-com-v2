@@ -21,6 +21,7 @@ class FOURTEEN.Easing
     'use strict'
     return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b
 
+
   @easeInQuad: (t, b, c, d) ->
     'use strict'
     t /= d
@@ -38,6 +39,22 @@ class FOURTEEN.Easing
       return c/2*t*t + b
     t--
     return -c/2 * (t*(t-2) - 1) + b
+
+
+  @easeOutCirc: (t, b, c, d) ->
+    'use strict'
+    t /= d
+    t--
+    return c * Math.sqrt(1 - t*t) + b
+
+  @easeInOutCirc: (t, b, c, d) ->
+    'use strict'
+    t /= d/2
+    if (t < 1)
+      return -c/2 * (Math.sqrt(1 - t*t) - 1) + b
+    t -= 2
+    return c/2 * (Math.sqrt(1 - t*t) + 1) + b
+
 
   @easeInOutQuart: (t, b, c, d) ->
     'use strict'

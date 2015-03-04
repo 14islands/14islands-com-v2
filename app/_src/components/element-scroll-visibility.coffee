@@ -8,6 +8,8 @@
 # - is-partially-visible
 # - is-fully-visible
 # - has-exited
+# - animate
+# - has-animated
 #
 # Example usage:
 #
@@ -17,7 +19,7 @@
 #
 ###
 
-class FOURTEEN.ElementScrollVisibility
+class FOURTEEN.ElementScrollVisibility extends FOURTEEN.BaseComponent
 
     CSS_PARTIALLY_VISIBLE_CLASS = 'is-partially-visible'
     CSS_FULLY_VISIBLE_CLASS = 'is-fully-visible'
@@ -35,7 +37,6 @@ class FOURTEEN.ElementScrollVisibility
 
         @isInViewport = false
 
-        @$body = $(document.body)
         @animationEndEvent = FOURTEEN.Utils.whichAnimationEvent()
 
         if @repeat?
@@ -44,13 +45,18 @@ class FOURTEEN.ElementScrollVisibility
         if @forceLoop?
             @forceLoop = JSON.parse(@forceLoop)
 
-        if data?.isPjax
-            @$body.one FOURTEEN.PjaxNavigation.EVENT_ANIMATION_SHOWN, @addEventListeners
-        else
-            @addEventListeners()
+        # FOURTEEN.BaseComponent()
+        super(@$context, data)
+
+
+    # @override FOURTEEN.BaseComponent.onReady
+    onReady: () ->
+        @addEventListeners()
+
 
     destroy: () =>
         @removeEventListeners()
+
 
     addEventListeners: () =>
         offset = @$context.data('offset') or -100
