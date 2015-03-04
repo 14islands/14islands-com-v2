@@ -75,7 +75,7 @@ class FOURTEEN.BaseComponent
   # checks if script was already loaded
   # .. if not loads a script (from the browser cache if possible)
   loadScript_: (url, options) ->
-    unless FOURTEEN.BaseComponent.loadedScripts_[url]? or @shouldLoad?()
+    unless FOURTEEN.BaseComponent.loadedScripts_[url]?
       options = $.extend( options || {}, {
         dataType: 'script',
         cache: true,
