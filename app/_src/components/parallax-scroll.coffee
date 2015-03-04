@@ -77,7 +77,7 @@ class FOURTEEN.ParallaxScroll
       @watcher = null
 
     @$window.off('resize', @onWindowResizeDebounced);
-    @$document.off('state:change', @onScrollChanged)
+    @$document.off(FOURTEEN.ScrollState.EVENT_SCROLL_FRAME, @onScrollChanged)
 
 
   onWindowResize: =>
@@ -116,11 +116,11 @@ class FOURTEEN.ParallaxScroll
 
 
   onEnterViewport: =>
-    @$document.on('state:change', @onScrollChanged)
+    @$document.on(FOURTEEN.ScrollState.EVENT_SCROLL_FRAME, @onScrollChanged)
 
 
   onExitViewport: =>
-    @$document.off('state:change', @onScrollChanged)
+    @$document.off(FOURTEEN.ScrollState.EVENT_SCROLL_FRAME, @onScrollChanged)
     @onScrollChanged()
 
 

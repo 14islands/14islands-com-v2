@@ -20,12 +20,8 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
 
 
   constructor: (@$context, data) ->
-    @panoramaHasLoaded = false
-    @isScrolling = false
-
-    # debounce scroll callbacks to know when scroll starts and ends
-    @onScrollStartDebounced = FOURTEEN.Utils.debounce(@onScrollStart, 500, true)
-    @onScrollEndDebounced = FOURTEEN.Utils.debounce(@onScrollEnd, 500)
+    @panoramaHasLoaded_ = false
+    @isScrolling_ = false
 
     # FOURTEEN.ElementScrollVisibility()
     super(@$context, data)
@@ -34,28 +30,23 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
   onReady: ->
     super() #FOURTEEN.ElementScrollVisibility.onReady
 
-    @$document.on('state:change', @onScrollStartDebounced)
-    @$document.on('state:change', @onScrollEndDebounced)
-
     # maps API already loaded, init panorama
     if google?.maps?.StreetViewPanorama?
-      @onGoogleMapsApiLoaded()
+      @onGoogleMapsApiLoaded_()
       FOURTEEN.onGoogleMapsLoaded = -> # empty function
     else
       # we need a global callback for the maps api load event
-      FOURTEEN.onGoogleMapsLoaded = @onGoogleMapsApiLoaded
-
+      FOURTEEN.onGoogleMapsLoaded = @onGoogleMapsApiLoaded_
 
 
   destroy: ->
-    @$document.off('state:change', @onScrollStartDebounced)
-    @$document.off('state:change', @onScrollEndDebounced)
+    @removeScrollEventListeners_()
     @cancelAutoRotate_()
-    @panoramaHasLoaded = false
-    @isScrolling = false
-    if @pano?
-      @pano.setVisible(false)
-      @pano = undefined
+    @panoramaHasLoaded_ = false
+    @isScrolling_ = false
+    if @pano_?
+      @pano_.setVisible(false)
+      @pano_ = undefined
     if google?
       google.maps.event.removeListener(@panoramaLoadListener_) if @panoramaLoadListener_?
       google.maps.event.removeListener(@panoramaPovListener_) if @panoramaPovListener_?
@@ -73,7 +64,7 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
 
 
   # Google maps api loads a number of dependencies async and then calls this function
-  onGoogleMapsApiLoaded: =>
+  onGoogleMapsApiLoaded_: =>
     panoramaOptions = {
       position: new google.maps.LatLng( @$context.data('latitude'), @$context.data('longitude') )
       disableDefaultUI: true
@@ -85,52 +76,64 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
       zoom: 1
     }
 
-    @pano = new google.maps.StreetViewPanorama( @$context[0], panoramaOptions )
+    @pano_ = new google.maps.StreetViewPanorama( @$context[0], panoramaOptions )
 
-    @panoramaLoadListener_ = google.maps.event.addListener(@pano,
+    @panoramaLoadListener_ = google.maps.event.addListener(@pano_,
                                                            'pano_changed',
                                                            @onPanoLoaded_)
 
-    @panoramaPovListener_ = google.maps.event.addListener(@pano,
+    @panoramaPovListener_ = google.maps.event.addListener(@pano_,
                                                           'pov_changed',
                                                           @cancelAutoRotate_)
 
 
   autoRotate_: =>
-    if @panoramaHasLoaded
-      pov = @pano.getPov()
+    if @panoramaHasLoaded_ and @isInViewport and not @isScrolling_
+      pov = @pano_.getPov()
       pov.heading += ROTATE_DISTANCE
-      @pano.setPov(pov)
-      @povTimeout = requestAnimationFrame(@autoRotate_)
+      @pano_.setPov(pov)
+      @animationFrame_ = requestAnimationFrame(@autoRotate_)
 
 
   cancelAutoRotate_: =>
-    cancelAnimationFrame(@povTimeout)
+    cancelAnimationFrame(@animationFrame_)
 
 
   onPanoLoaded_: =>
-    unless @panoramaHasLoaded
-      @panoramaHasLoaded = true
-      @pano.setVisible(true)
+    unless @panoramaHasLoaded_
+      @panoramaHasLoaded_ = true
+      @pano_.setVisible(true)
       if @isInViewport
         @autoRotate_()
 
 
-  onScrollStart: =>
-    @isScrolling = true
+  bindScrollEventListeners_: ->
+    @$document.on(FOURTEEN.ScrollState.EVENT_SCROLL_START, @onScrollStart_)
+    @$document.on(FOURTEEN.ScrollState.EVENT_SCROLL_STOP, @onScrollStop_)
+
+
+  removeScrollEventListeners_: ->
+    @$document.off(FOURTEEN.ScrollState.EVENT_SCROLL_START, @onScrollStart_)
+    @$document.off(FOURTEEN.ScrollState.EVENT_SCROLL_STOP, @onScrollStop_)
+
+
+  onScrollStart_: =>
+    @isScrolling_ = true
     @cancelAutoRotate_()
 
 
-  onScrollEnd: =>
-    @isScrolling = false
+  onScrollStop_: =>
+    @isScrolling_ = false
     @autoRotate_()
 
 
   onEnterViewport: =>
     super()
-    @autoRotate_() unless @isScrolling
+    @bindScrollEventListeners_()
 
 
   onExitViewport: =>
     super()
+    @removeScrollEventListeners_()
     @cancelAutoRotate_()
+
