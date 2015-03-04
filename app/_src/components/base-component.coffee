@@ -23,12 +23,14 @@
 class FOURTEEN.BaseComponent
 
   numberOfScriptsLoaded_: 0
+  loadedScripts_: {}
 
   # override with all resources that should be loaded async
   scripts: []
 
   constructor: (@$context, data) ->
     @$body = $('body')
+    @$document = $(document)
 
     # Shared functionality - wait for pjax animation before running init
     if data?.isPjax
@@ -49,24 +51,33 @@ class FOURTEEN.BaseComponent
     @onReady() if @onReady?
 
 
-  # load a script from the browser cache if possible
+  # checks if script was already loaded
+  # .. if not loads a script (from the browser cache if possible)
   loadScript_: (url, options) ->
-    options = $.extend( options || {}, {
-      dataType: 'script',
-      cache: true,
-      url: url
-    })
-    # Return the jqXHR object so we can chain callbacks
-    return jQuery.ajax(options)
+    unless @loadedScripts_[url]?
+      options = $.extend( options || {}, {
+        dataType: 'script',
+        cache: true,
+        url: url
+      })
+      # Return the jqXHR object so we can chain callbacks
+      return jQuery.ajax(options)
+    else
+      return $.Deferred().resolve().promise()
 
 
   # loads all async scripts
   loadAsyncScripts_: =>
-    @loadScript_(script).done(@onScriptLoaded_) for script in @scripts
+    for url in @scripts
+      do (url) =>
+        @loadScript_(url).done( =>
+          @onScriptLoaded_(url)
+        )
 
 
   # triggers loaded callback when all scripts have finished loading
-  onScriptLoaded_: (script, textStatus) =>
+  onScriptLoaded_: (url) =>
+    @loadedScripts_[url] = true
     if ++@numberOfScriptsLoaded_ is @scripts.length
       @onAsyncScriptsLoaded()
 

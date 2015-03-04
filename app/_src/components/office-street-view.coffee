@@ -39,7 +39,7 @@ class FOURTEEN.OfficeStreetView
 
 	appendMapScriptToBody: =>
 		# Append script time to page on first view
-		unless @$body.find("#google-maps-script-tag").length > 0
+		unless google?.maps?.StreetViewPanorama?
 			FOURTEEN.initializeMap = @initializeMap
 			script = document.createElement('script')
 			script.id = 'google-maps-script-tag'
