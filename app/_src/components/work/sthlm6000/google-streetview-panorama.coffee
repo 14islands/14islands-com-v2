@@ -12,10 +12,9 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
 
   ROTATE_DISTANCE = 0.1 #degrees per frame
 
-
   # @override FOURTEEN.BaseComponent.scripts
   scripts: [
-    'https://maps.googleapis.com/maps/api/js?key=AIzaSyDhL8nwKWYtU4LdyiiMUp5zJ_8kRFRoAQA&v=3.exp&callback=FOURTEEN.GoogleStreetviewPanorama.onGoogleMapsLoaded'
+    'https://maps.googleapis.com/maps/api/js?key=AIzaSyDhL8nwKWYtU4LdyiiMUp5zJ_8kRFRoAQA&v=3.exp&callback=FOURTEEN.onGoogleMapsLoaded'
     'https://rawgit.com/davatron5000/Lettering.js/master/jquery.lettering.js'
   ]
 
@@ -23,9 +22,6 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
   constructor: (@$context, data) ->
     @panoramaHasLoaded = false
     @isScrolling = false
-
-    # we need a global callback for the maps api load event
-    FOURTEEN.GoogleStreetviewPanorama.onGoogleMapsLoaded = @onGoogleMapsApiLoaded
 
     # debounce scroll callbacks to know when scroll starts and ends
     @onScrollStartDebounced = FOURTEEN.Utils.debounce(@onScrollStart, 500, true)
@@ -36,7 +32,7 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
 
 
   onReady: ->
-    super()
+    super() #FOURTEEN.ElementScrollVisibility.onReady
 
     @$document.on('state:change', @onScrollStartDebounced)
     @$document.on('state:change', @onScrollEndDebounced)
@@ -44,6 +40,11 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
     # maps API already loaded, init panorama
     if google?.maps?.StreetViewPanorama?
       @onGoogleMapsApiLoaded()
+      FOURTEEN.onGoogleMapsLoaded = -> # empty function
+    else
+      # we need a global callback for the maps api load event
+      FOURTEEN.onGoogleMapsLoaded = @onGoogleMapsApiLoaded
+
 
 
   destroy: ->

@@ -1,6 +1,8 @@
 ###
 #
-# Base Component
+# Base Component - Common shared functionality
+#
+# See PROTECTED METHODS that can be used in subclasses
 #
 # How to use:
 #   1. Extend this class using 'extends' keyword in coffeescript
@@ -8,8 +10,6 @@
 #
 #       constructor: (@$context, data) ->
 #         super(@$context, data)
-#
-#   3. override onReady() in subclass to be notified when component is ready to do work (after pjax animation)
 #
 #
 # How to load 3rd party scripts async:
@@ -23,7 +23,7 @@
 class FOURTEEN.BaseComponent
 
   numberOfScriptsLoaded_: 0
-  loadedScripts_: {}
+  @loadedScripts_: {} #static - shared between instances
 
   # override with all resources that should be loaded async
   scripts: []
@@ -40,21 +40,42 @@ class FOURTEEN.BaseComponent
       @init_()
 
 
-  ###
-  ## PRIVATE METHODS
-  ###
 
+  #############################################################################
+  ## PROTECTED METHODS - OVERRIDE IN SUBCLASS
+  #############################################################################
+
+  # OPTIONAL: callback when component is ready to do work
+  # Is called after pjax aimation ends
+  # Is called before scripts starts to load
+  onReady: =>
+    # Override me
+
+
+  # OPTIONAL: override in subclass
+  # Is called when all scripts in the array has finished loading
+  onAsyncScriptsLoaded: =>
+    # Override me
+
+
+
+  #############################################################################
+  ## PRIVATE METHODS
+  #############################################################################
+
+  # @private
   init_: (data) =>
-    # load scripts if provided
-    @loadAsyncScripts_() if @scripts?.length
     # trigger callback in subclass if exists
     @onReady() if @onReady?
+    # load scripts if provided
+    @loadAsyncScripts_() if @scripts?.length
 
 
+  # @private
   # checks if script was already loaded
   # .. if not loads a script (from the browser cache if possible)
   loadScript_: (url, options) ->
-    unless @loadedScripts_[url]?
+    unless FOURTEEN.BaseComponent.loadedScripts_[url]? or @shouldLoad?()
       options = $.extend( options || {}, {
         dataType: 'script',
         cache: true,
@@ -66,6 +87,7 @@ class FOURTEEN.BaseComponent
       return $.Deferred().resolve().promise()
 
 
+  # @private
   # loads all async scripts
   loadAsyncScripts_: =>
     for url in @scripts
@@ -75,21 +97,12 @@ class FOURTEEN.BaseComponent
         )
 
 
+  # @private
   # triggers loaded callback when all scripts have finished loading
   onScriptLoaded_: (url) =>
-    @loadedScripts_[url] = true
+    FOURTEEN.BaseComponent.loadedScripts_[url] = true
     if ++@numberOfScriptsLoaded_ is @scripts.length
       @onAsyncScriptsLoaded()
 
 
-  ###
-  ## PROTECTED METHODS - OVERRIDE IN SUBCLASS
-  ###
-
-  # OPTIONAL: callback when component is ready to do work (after pjax aimation)
-  onReady: =>
-
-
-  # OPTIONAL: override in subclass
-  onAsyncScriptsLoaded: =>
 
