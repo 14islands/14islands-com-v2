@@ -22,22 +22,45 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
 
   constructor: (@$context, data) ->
     @panoramaHasLoaded = false
+    @isScrolling = false
 
     # we need a global callback for the maps api load event
     FOURTEEN.GoogleStreetviewPanorama.onGoogleMapsLoaded = @onGoogleMapsApiLoaded
+
+    # debounce scroll callbacks to know when scroll starts and ends
+    @onScrollStartDebounced = FOURTEEN.Utils.debounce(@onScrollStart, 500, true)
+    @onScrollEndDebounced = FOURTEEN.Utils.debounce(@onScrollEnd, 500)
 
     # FOURTEEN.ElementScrollVisibility()
     super(@$context, data)
 
 
+  onReady: ->
+    super()
+
+    @$document.on('state:change', @onScrollStartDebounced)
+    @$document.on('state:change', @onScrollEndDebounced)
+
+    # maps API already loaded, init panorama
+    if google?.maps?.StreetViewPanorama?
+      @onGoogleMapsApiLoaded()
+
+
   destroy: ->
+    @$document.off('state:change', @onScrollStartDebounced)
+    @$document.off('state:change', @onScrollEndDebounced)
+    @cancelAutoRotate_()
+    @panoramaHasLoaded = false
+    @isScrolling = false
     if @pano?
       @pano.setVisible(false)
       @pano = undefined
     if google?
-      google.maps.event.removeListener(this.panoramaLoadListener_) if @this.panoramaLoadListener_?
-      google.maps.event.removeListener(this.panoramaPovListener_) if @this.panoramaPovListener_?
-    @cancelAutoRotate_()
+      google.maps.event.removeListener(@panoramaLoadListener_) if @panoramaLoadListener_?
+      google.maps.event.removeListener(@panoramaPovListener_) if @panoramaPovListener_?
+      google.maps.event.clearInstanceListeners(window)
+      google.maps.event.clearInstanceListeners(document)
+      google.maps.event.clearInstanceListeners(@$context[0])
 
 
   # @override FOURTEEN.BaseComponent.onAsyncScriptsLoaded
@@ -85,15 +108,26 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
 
 
   onPanoLoaded_: =>
-    @panoramaHasLoaded = true
-    @pano.setVisible(true)
-    if @isInViewport
-      @autoRotate_()
+    unless @panoramaHasLoaded
+      @panoramaHasLoaded = true
+      @pano.setVisible(true)
+      if @isInViewport
+        @autoRotate_()
+
+
+  onScrollStart: =>
+    @isScrolling = true
+    @cancelAutoRotate_()
+
+
+  onScrollEnd: =>
+    @isScrolling = false
+    @autoRotate_()
 
 
   onEnterViewport: =>
     super()
-    @autoRotate_()
+    @autoRotate_() unless @isScrolling
 
 
   onExitViewport: =>
