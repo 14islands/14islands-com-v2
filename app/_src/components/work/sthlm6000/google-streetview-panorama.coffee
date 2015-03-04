@@ -35,8 +35,8 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
       @pano.setVisible(false)
       @pano = undefined
     if google?
-      google.maps.event.removeListener(this.panoramaLoadListener_) if @this.panoramaLoadListener_?
-      google.maps.event.removeListener(this.panoramaPovListener_) if @this.panoramaPovListener_?
+      google.maps.event.removeListener(@panoramaLoadListener_) if @panoramaLoadListener_?
+      google.maps.event.removeListener(@panoramaPovListener_) if @panoramaPovListener_?
     @cancelAutoRotate_()
 
 
