@@ -11,7 +11,7 @@
 class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
 
   DURATION_NUMBER_MS = 1000
-  READY_CLASS = 'ready'
+  READY_CLASS = 'js-ready'
   DONUT_SVG_SELECTOR = '#js-sthlm6000-donut-svg'
   STATS_NUMBERS_SELECTOR = '.js-sthlm6000-stats-number'
   TOTAL_NUMBERS = 0
