@@ -14,7 +14,7 @@
 #
 # How to load 3rd party scripts async:
 #   1. Override the 'scripts' prototype array with string of each script to load
-#   2. Override the onAsyncScriptsLoaded() callback to be notified when all scripts have loaded (always happens after onReady())
+#   2. Override the onScriptsLoaded() callback to be notified when all scripts have loaded (always happens after onReady())
 #
 # @author 14islands
 #
@@ -22,10 +22,15 @@
 
 class FOURTEEN.BaseComponent
 
-  numberOfScriptsLoaded_: 0
-  @loadedScripts_: {} #static - shared between instances
+  #static vars - shared between instances
+  @loadedScripts_: {}
 
-  # override with all resources that should be loaded async
+  # prototype vars
+  numberOfScriptsLoaded_: 0
+  asyncScriptsLoaded: false
+
+  # @protected
+  # override in subclass with all resources that should be loaded async
   scripts: []
 
   constructor: (@$context, data) ->
@@ -54,7 +59,7 @@ class FOURTEEN.BaseComponent
 
   # OPTIONAL: override in subclass
   # Is called when all scripts in the array has finished loading
-  onAsyncScriptsLoaded: =>
+  onScriptsLoaded: =>
     # Override me
 
 
@@ -102,7 +107,8 @@ class FOURTEEN.BaseComponent
   onScriptLoaded_: (url) =>
     FOURTEEN.BaseComponent.loadedScripts_[url] = true
     if ++@numberOfScriptsLoaded_ is @scripts.length
-      @onAsyncScriptsLoaded()
+      @asyncScriptsLoaded = true
+      @onScriptsLoaded()
 
 
 

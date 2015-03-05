@@ -55,10 +55,10 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
       google.maps.event.clearInstanceListeners(@$context[0])
 
 
-  # @override FOURTEEN.BaseComponent.onAsyncScriptsLoaded
+  # @override FOURTEEN.BaseComponent.onScriptsLoaded
   # Normally this is all you need, but since Maps load a number of other files async,
   # ... we also need to wait for Maps to call the loaded callback
-  onAsyncScriptsLoaded: =>
+  onScriptsLoaded: =>
     # init lettering
     @$context.find(".js-title").lettering()
 

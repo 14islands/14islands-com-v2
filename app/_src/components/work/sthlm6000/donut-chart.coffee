@@ -46,12 +46,12 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
 
     TOTAL_NUMBERS = @numbers.length - 1
 
-
-  onAsyncScriptsLoaded: =>
+  # @override FOURTEEN.ElementScrollVisibility.onScriptsLoadedSync
+  onScriptsLoadedSync: =>
     @init()
 
-  onEnterViewport: () =>
-    super()
+  # @override FOURTEEN.ElementScrollVisibility.onFullyEnterViewportSync
+  onFullyEnterViewportSync: =>
     @run()
 
   run: () =>
@@ -161,4 +161,3 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
   init: () =>
     @initSvg()
     @createNumberTweens()
-    @
