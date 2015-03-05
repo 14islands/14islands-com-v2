@@ -19,25 +19,48 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
   OUTER_RADIUS = 268
   INNER_RADIUS = 92
 
+
   scripts: [
     'http://rawgithub.com/mbostock/d3/master/d3.min.js',
     'http://rawgithub.com/tweenjs/tween.js/master/build/tween.min.js'
   ]
 
   constructor: (@$context, data) ->
-    @numbers = []
-    @numbersTweens = []
-    @paths = []
-    grandTotal = 0
+
+    @isInitialized = false
 
     # calls FOURTEEN.ElementScrollVisibility()
     super(@$context, data)
 
+    @reset()
+
+  onAsyncScriptsLoaded: =>
+    @init()
+
+  onEnterViewport: () =>
+    super()
+    @init() if @isInitialized is false
+    @run()
+
+  onExitViewport: () =>
+    super()
+    @reset()
+
+  reset: () =>
+    @numbers = []
+    @numbersTweens = []
+    @paths = []
+
+    grandTotal = 0
+    @numbers.length = 0
+
     for $number in @$context.find('.js-sthlm6000-stats-number')
+      $number = jQuery($number)
+      $number.text(0)
       @numbers.push
-        $el: jQuery($number),
-        value: parseInt(jQuery($number).data(DATA_NUM), 10)
-      grandTotal += parseInt(jQuery($number).data(DATA_NUM), 10)
+        $el: $number,
+        value: parseInt($number.data(DATA_NUM), 10)
+      grandTotal += parseInt($number.data(DATA_NUM), 10)
 
     # Last one is just padding
     @numbers.push
@@ -46,13 +69,12 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
 
     TOTAL_NUMBERS = @numbers.length - 1
 
+    if @svg isnt null
+      jQuery('#js-sthlm6000-donut-svg').empty()
+      @svg = null
 
-  onAsyncScriptsLoaded: =>
-    @init()
+    @isInitialized = false
 
-  onEnterViewport: () =>
-    super()
-    @run()
 
   run: () =>
     # Play number tweens one by one
@@ -161,4 +183,5 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
   init: () =>
     @initSvg()
     @createNumberTweens()
+    @isInitialized = true
     @
