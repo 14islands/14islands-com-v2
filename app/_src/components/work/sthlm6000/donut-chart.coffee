@@ -12,6 +12,8 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
 
   DURATION_NUMBER_MS = 1000
   READY_CLASS = 'ready'
+  DONUT_SVG_SELECTOR = '#js-sthlm6000-donut-svg'
+  STATS_NUMBERS_SELECTOR = '.js-sthlm6000-stats-number'
   TOTAL_NUMBERS = 0
   DATA_NUM = 'num'
   COLORS = ['#8bffb8', '#36ffa1', '#00e587', '#ffffff']
@@ -63,7 +65,7 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
 
     grandTotal = 0
 
-    for $number in @$context.find('.js-sthlm6000-stats-number')
+    for $number in @$context.find(STATS_NUMBERS_SELECTOR)
       $number = jQuery($number)
       $number.text(0)
       @numbers.push
@@ -79,7 +81,7 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
     TOTAL_NUMBERS = @numbers.length - 1
 
     if @svg isnt null
-      jQuery('#js-sthlm6000-donut-svg').empty()
+      jQuery(DONUT_SVG_SELECTOR).empty()
       @svg = null
 
   run: () =>
@@ -151,7 +153,7 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
    * and prepare the arcs.
   ###
   initSvg: () =>
-    @svg = d3.select('#js-sthlm6000-donut-svg')
+    @svg = d3.select(DONUT_SVG_SELECTOR)
 
     # Our doughnut pie chart
     # we associate the path d attribute with our
