@@ -19,11 +19,15 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
 
 
   constructor: (@$context, data) ->
+    # FOURTEEN.ElementScrollVisibility()
+    super(@$context, data)
+
     @panoramaHasLoaded_ = false
     @isScrolling_ = false
 
-    # FOURTEEN.ElementScrollVisibility()
-    super(@$context, data)
+    @spinner = new FOURTEEN.Spinner @$context, {isBlack: true}
+    @spinner.show()
+
 
 
   onReady: ->
@@ -69,6 +73,7 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
     }
 
     @pano_ = new google.maps.StreetViewPanorama( @$context[0], panoramaOptions )
+    @pano_.setVisible(false)
 
     @panoramaLoadListener_ = google.maps.event.addListener(@pano_,
                                                            'pano_changed',
@@ -93,10 +98,13 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
 
   onPanoLoaded_: =>
     unless @panoramaHasLoaded_
-      @panoramaHasLoaded_ = true
-      @pano_.setVisible(true)
-      if @isInViewport
-        @autoRotate_()
+      @spinner.hide(=>
+        @$context.addClass('js-has-loaded')
+        @panoramaHasLoaded_ = true
+        @pano_.setVisible(true)
+        if @isInViewport
+          @autoRotate_()
+      )
 
 
   bindScrollEventListeners_: ->

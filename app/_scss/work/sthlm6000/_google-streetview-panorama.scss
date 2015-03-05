@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////
 
 $sthlm6000green: #00e689;
+$google-maps-loading-bg: #e5e3df;
 
 .sthlm600-google-streetview-panorama {
   background-size: cover;
@@ -11,6 +12,8 @@ $sthlm6000green: #00e689;
   width: 100%;
   margin: 0;
   padding: 0;
+
+  background-color: $google-maps-loading-bg;
 
   h2 {
     line-height: 1;
@@ -74,7 +77,7 @@ $sthlm6000green: #00e689;
     padding-top: 10px; // let the kerning work
     position: relative;
 
-    .is-fully-visible & {
+    .js-has-loaded.is-fully-visible & {
       opacity: 1;
     }
   }

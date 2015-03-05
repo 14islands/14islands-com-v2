@@ -28,6 +28,11 @@ $size-default: 90px;
     stroke: #fff;
   }
 }
+.spinner--black {
+  svg {
+    stroke: $gray;
+  }
+}
 
 .spinner--center {
   position: absolute;
