@@ -36,16 +36,15 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
     @reset()
 
 
-  # @override FOURTEEN.ElementScrollVisibility.onScriptsLoadedSync
+   # @override FOURTEEN.ElementScrollVisibility.onScriptsLoadedSync
   onScriptsLoadedSync: =>
+    # hide spinner immediately when loaded to avoid race condition with run()
+    @spinner.hideImmediate()
     @init()
 
   # @override FOURTEEN.ElementScrollVisibility.onFullyEnterViewportSync
   onFullyEnterViewportSync: =>
-    @spinner.hide(=>
-      @$context.addClass READY_CLASS
-      @run()
-    )
+    @run()
 
   # @override FOURTEEN.ElementScrollVisibility.onExitViewportSync
   onExitViewportSync: =>
@@ -191,4 +190,5 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
   init: () =>
     @initSvg()
     @createNumberTweens()
+    @$context.addClass READY_CLASS
     @
