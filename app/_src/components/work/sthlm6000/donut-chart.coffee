@@ -50,7 +50,6 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
     @paths = []
 
     grandTotal = 0
-    @numbers.length = 0
 
     for $number in @$context.find('.js-sthlm6000-stats-number')
       $number = jQuery($number)
