@@ -58,11 +58,17 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
 		@spinner.hide()
 
 	reset: () =>
+		cancelAnimationFrame(@nextFrame)
+		@nextFrame = undefined
 		@numbers = []
 		@numbersTweens = []
 		@paths = []
 
 		grandTotal = 0
+
+		# remove all tweens that might still be running
+		if TWEEN?
+			TWEEN.removeAll()
 
 		for $number in @$context.find(STATS_NUMBERS_SELECTOR)
 			$number = jQuery($number)
@@ -96,7 +102,8 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
 		@
 
 	requestTick: (time) =>
-		requestAnimationFrame @requestTick
+		# keep looping as long as there are still tweens running
+		@nextFrame = requestAnimationFrame @requestTick if TWEEN?.getAll()?.length
 		TWEEN.update()
 		@
 
