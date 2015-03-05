@@ -89,6 +89,9 @@ class FOURTEEN.DancingCirclesAnimation extends FOURTEEN.ElementScrollVisibility
     # init FOURTEEN.ElementScrollVisibility
     super(@$context, data)
 
+
+	# @protected
+	# @override FOURTEEN.ElementScrollVisibility.destroy
   destroy: ->
     super()
     cancelAnimationFrame(@animationFrame)
@@ -168,11 +171,13 @@ class FOURTEEN.DancingCirclesAnimation extends FOURTEEN.ElementScrollVisibility
     circle.draw(@ctx, time) for circle in @circles
 
 
+	# @protected
   # @override FOURTEEN.ElementScrollVisibility.onAnimationPlay
   onAnimationPlay: =>
     super()
     @runAnimation()
 
+  # @protected
   # @override FOURTEEN.ElementScrollVisibility.onAnimationReset
   onAnimationReset: =>
     super()

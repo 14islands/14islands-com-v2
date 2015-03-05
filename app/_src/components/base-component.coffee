@@ -22,97 +22,100 @@
 
 class FOURTEEN.BaseComponent
 
-  #static vars - shared between instances
-  @loadedScripts_: {}
+	#static vars - shared between instances
+	@loadedScripts_: {}
 
-  # prototype vars
-  numberOfScriptsLoaded_: 0
-  asyncScriptsLoaded: false
+	# prototype vars
+	numberOfScriptsLoaded_: 0
+	asyncScriptsLoaded: false
 
-  # @protected
-  # override in subclass with all resources that should be loaded async
-  scripts: []
+	# @protected
+	# override in subclass with all resources that should be loaded async
+	scripts: []
 
-  constructor: (@$context, data) ->
-    @$body = $('body')
-    @$document = $(document)
+	constructor: (@$context, data) ->
+		@$body = $('body')
+		@$document = $(document)
 
-    # Shared functionality - wait for pjax animation before running init
-    if data?.isPjax
-      # wait for animation to be done before loading scripts
-      @$body.one FOURTEEN.PjaxNavigation.EVENT_ANIMATION_SHOWN, @init_
-    else
-      @init_()
-
-
-
-  #############################################################################
-  ## PROTECTED METHODS - OVERRIDE IN SUBCLASS
-  #############################################################################
-
-  # RECOMMENDED: clean up any resources when navigating away from page
-  destroy: ->
-    # Override me with call to super()
-
-  # OPTIONAL: callback when component is ready to do work
-  # Is called after pjax aimation ends
-  # Is called before scripts starts to load
-  onReady: ->
-    # Override me
-
-
-  # OPTIONAL: override in subclass
-  # Is called when all scripts in the array has finished loading
-  onScriptsLoaded: ->
-    # Override me
+		# Shared functionality - wait for pjax animation before running init
+		if data?.isPjax
+			# wait for animation to be done before loading scripts
+			@$body.one FOURTEEN.PjaxNavigation.EVENT_ANIMATION_SHOWN, @init_
+		else
+			@init_()
 
 
 
-  #############################################################################
-  ## PRIVATE METHODS
-  #############################################################################
+	#############################################################################
+	## PROTECTED METHODS - OVERRIDE IN SUBCLASS
+	#############################################################################
 
-  # @private
-  init_: (data) =>
-    # trigger callback in subclass if exists
-    @onReady() if @onReady?
-    # load scripts if provided
-    @loadAsyncScripts_() if @scripts?.length
+	# @protected
+	# RECOMMENDED: clean up any resources when navigating away from page
+	destroy: ->
+		# Override me with call to super()
 
-
-  # @private
-  # checks if script was already loaded
-  # .. if not loads a script (from the browser cache if possible)
-  loadScript_: (url, options) =>
-    unless FOURTEEN.BaseComponent.loadedScripts_[url]?
-      options = $.extend( options || {}, {
-        dataType: 'script',
-        cache: true,
-        url: url
-      })
-      # Return the jqXHR object so we can chain callbacks
-      return jQuery.ajax(options)
-    else
-      return $.Deferred().resolve().promise()
+	# @protected
+	# OPTIONAL: callback when component is ready to do work
+	# Is called after pjax aimation ends
+	# Is called before scripts starts to load
+	onReady: ->
+		# Override me
 
 
-  # @private
-  # loads all async scripts
-  loadAsyncScripts_: =>
-    for url in @scripts
-      do (url) =>
-        @loadScript_(url).done( =>
-          @onScriptLoaded_(url)
-        )
+	# @protected
+	# OPTIONAL: override in subclass
+	# Is called when all scripts in the array has finished loading
+	onScriptsLoaded: ->
+		# Override me
 
 
-  # @private
-  # triggers loaded callback when all scripts have finished loading
-  onScriptLoaded_: (url) =>
-    FOURTEEN.BaseComponent.loadedScripts_[url] = true
-    if ++@numberOfScriptsLoaded_ is @scripts.length
-      @asyncScriptsLoaded = true
-      @onScriptsLoaded()
+
+	#############################################################################
+	## PRIVATE METHODS
+	#############################################################################
+
+	# @private
+	init_: (data) =>
+		# trigger callback in subclass if exists
+		@onReady() if @onReady?
+		# load scripts if provided
+		@loadAsyncScripts_() if @scripts?.length
+
+
+	# @private
+	# checks if script was already loaded
+	# .. if not loads a script (from the browser cache if possible)
+	loadScript_: (url, options) =>
+		unless FOURTEEN.BaseComponent.loadedScripts_[url]?
+			options = $.extend( options || {}, {
+				dataType: 'script',
+				cache: true,
+				url: url
+			})
+			# Return the jqXHR object so we can chain callbacks
+			return jQuery.ajax(options)
+		else
+			return $.Deferred().resolve().promise()
+
+
+	# @private
+	# loads all async scripts
+	loadAsyncScripts_: =>
+		for url in @scripts
+			do (url) =>
+				@loadScript_(url).done( =>
+					@onScriptLoaded_(url)
+				)
+
+
+	# @private
+	# triggers loaded callback when all scripts have finished loading
+	onScriptLoaded_: (url) =>
+		FOURTEEN.BaseComponent.loadedScripts_[url] = true
+		if ++@numberOfScriptsLoaded_ is @scripts.length
+			@asyncScriptsLoaded = true
+			@onScriptsLoaded()
 
 
 
