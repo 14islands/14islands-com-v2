@@ -19,32 +19,17 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
   OUTER_RADIUS = 268
   INNER_RADIUS = 92
 
+
   scripts: [
     'http://rawgithub.com/mbostock/d3/master/d3.min.js',
     'http://rawgithub.com/tweenjs/tween.js/master/build/tween.min.js'
   ]
 
   constructor: (@$context, data) ->
-    @numbers = []
-    @numbersTweens = []
-    @paths = []
-    grandTotal = 0
-
     # calls FOURTEEN.ElementScrollVisibility()
     super(@$context, data)
+    @reset()
 
-    for $number in @$context.find('.js-sthlm6000-stats-number')
-      @numbers.push
-        $el: jQuery($number),
-        value: parseInt(jQuery($number).data(DATA_NUM), 10)
-      grandTotal += parseInt(jQuery($number).data(DATA_NUM), 10)
-
-    # Last one is just padding
-    @numbers.push
-      $el: null
-      value: 6000 - grandTotal
-
-    TOTAL_NUMBERS = @numbers.length - 1
 
   # @override FOURTEEN.ElementScrollVisibility.onScriptsLoadedSync
   onScriptsLoadedSync: =>
@@ -53,6 +38,38 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
   # @override FOURTEEN.ElementScrollVisibility.onFullyEnterViewportSync
   onFullyEnterViewportSync: =>
     @run()
+
+  onExitViewport: () =>
+    super()
+    @reset()
+    @init() # prepare for entering viewport again
+
+  reset: () =>
+    @numbers = []
+    @numbersTweens = []
+    @paths = []
+
+    grandTotal = 0
+    @numbers.length = 0
+
+    for $number in @$context.find('.js-sthlm6000-stats-number')
+      $number = jQuery($number)
+      $number.text(0)
+      @numbers.push
+        $el: $number,
+        value: parseInt($number.data(DATA_NUM), 10)
+      grandTotal += parseInt($number.data(DATA_NUM), 10)
+
+    # Last one is just padding
+    @numbers.push
+      $el: null
+      value: 6000 - grandTotal
+
+    TOTAL_NUMBERS = @numbers.length - 1
+
+    if @svg isnt null
+      jQuery('#js-sthlm6000-donut-svg').empty()
+      @svg = null
 
   run: () =>
     # Play number tweens one by one
@@ -161,3 +178,4 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
   init: () =>
     @initSvg()
     @createNumberTweens()
+    @
