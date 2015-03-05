@@ -79,7 +79,7 @@ $nav-item-padding: 1.5rem;
 		display: none;
 	}
 
-	@include if-wider-than(400px) {
+	@include if-wider-than(420px) {
 		span {
 			display: inline;
 		}

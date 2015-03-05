@@ -1,0 +1,215 @@
+//
+// colors
+//
+$sthlm6000-green: rgba(0, 230, 137, 1);
+
+//
+// paddings
+//
+$default-side-padding: 40;
+
+//
+// breakpoints
+//
+$breakpoint-one: 320px;
+$breakpoint-two: 768px;
+$breakpoint-three: 1600px;
+
+/*
+* Base pixel for all REM/EM calcs
+*/
+$base_px: 16 !default;
+
+$base-one-px: 16;
+$base-two-px: 22;
+$base-three-px: 30;
+
+%wrapper {
+	padding: 0 pxToRem($default-side-padding);
+	margin: 0 auto;
+	max-width: 768px;
+  @include if-wider-than($breakpoint-two) {
+    padding: 0 pxToRem(50);
+  }
+	@include if-wider-than($breakpoint-three) {
+    padding: 0 pxToRem(50, $base-three-px);
+    max-width: pxToRem(890, $base-three-px);
+  }
+}
+
+
+//
+// Chart
+//
+
+.sthlm6000-about {
+	background-color: $sthlm6000-green;
+}
+
+.sthlm6000-about__chart {
+	padding-top: pxToRem(30);
+	color: #fff;
+	position: relative;
+	overflow: hidden;
+
+	@include if-wider-than($breakpoint-two) {
+    padding-top: 0;
+	}
+}
+
+.sthlm6000-about__chart__container {
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+	@include clearfix;
+
+	@include if-wider-than(960px) {
+		width: 960px;
+	}
+}
+
+
+.sthlm6000-about__chart__graphic {
+	height: 0;
+	position: relative;
+	width: 100%;
+	padding-top: 55%;
+	max-width: 538px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+
+	@include if-wider-than($breakpoint-two) {
+		padding-top: 75%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+    margin-bottom: 0;
+	}
+
+	@include if-wider-than(900px) {
+		display: block;
+		float: left;
+		margin-bottom: 0;
+		padding-top: 65%;
+		margin-left: 40px;
+		margin-right: 40px;
+		width: 53%;
+	}
+
+	@include if-wider-than($breakpoint-three) {
+		padding-top: 75%;
+	}
+
+	> svg {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+}
+
+.sthlm6000-about__chart__caption {
+	@include if-wider-than(900px) {
+		float: left;
+		margin-top: 5rem;
+	}
+}
+
+.flexbox {
+	.sthlm6000-about__chart__container {
+		@include if-wider-than($breakpoint-two) {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	.sthlm6000-about__chart__graphic {
+		margin-left: 0;
+		margin-right: 0;
+		@include if-wider-than(900px) {
+			margin-left: 0;
+			margin-right: 40px;
+		}
+	}
+
+	.sthlm6000-about__chart__caption {
+		@include if-wider-than(900px) {
+			margin-top: 0;
+		}
+	}
+
+}
+
+
+
+
+//
+// Stats component
+//
+// Markup example:
+//
+// <ul class="stats">
+//		<li class="stats__item">
+//			<span class="stats__item__number">586</span>
+//			<span class="stats__item__label">Paborjade byggen</span>
+//		</li>
+// 		(...)
+// </ul>
+
+.sthlm6000-stats {
+	@extend %wrapper;
+	@include if-wider-than(900px) {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.sthlm6000-stats__item {
+	list-style: none;
+	margin-bottom: 1rem;
+
+	@include if-wider-than(500px) {
+		vertical-align: top;
+		display: inline-block;
+		width: 32%;
+	}
+
+	@include if-wider-than(900px) {
+		display: block;
+		width: auto;
+
+		margin-bottom: 1rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.sthlm6000-stats__item--centered {
+	text-align: center;
+}
+
+.sthlm6000-stats__item__number {
+	display: block;
+	font-size: pxToRem(60);
+	font-weight: 600;
+	@include if-wider-than($breakpoint-two) {
+		font-size: 60px;
+	}
+}
+
+.sthlm6000-stats__item__label {
+	color: #000;
+	font-size: 1rem;
+	display: inline-block;
+	@include if-wider-than(500px) {
+		width: 55%;
+	}
+	@include if-wider-than(900px) {
+		width: auto;
+	}
+}
