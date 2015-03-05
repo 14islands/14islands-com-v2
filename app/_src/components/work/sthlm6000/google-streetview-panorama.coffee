@@ -39,6 +39,7 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
 
 
   destroy: ->
+    super()
     @removeScrollEventListeners_()
     @cancelAutoRotate_()
     @panoramaHasLoaded_ = false

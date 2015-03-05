@@ -51,15 +51,16 @@ class FOURTEEN.ElementScrollVisibility extends FOURTEEN.BaseComponent
 
 
   # @override FOURTEEN.BaseComponent.onReady
-  onReady: () ->
-    @addEventListeners()
+  onReady: ->
+    @addEventListeners_()
 
 
-  destroy: () =>
-    @removeEventListeners()
+  destroy: ->
+    super()
+    @removeEventListeners_()
 
 
-  addEventListeners: () =>
+  addEventListeners_: =>
     offset = @$context.data('offset') or -100
     if scrollMonitor?
       @watcher = scrollMonitor.create @$context, offset
@@ -68,12 +69,12 @@ class FOURTEEN.ElementScrollVisibility extends FOURTEEN.BaseComponent
       @watcher.exitViewport @onExitViewport
       @watcher.recalculateLocation()
 
-  removeEventListeners: () =>
+  removeEventListeners_: =>
     if @watcher
       @watcher.destroy()
       @watcher = null
 
-  reset: () =>
+  reset_: =>
     @$context.removeClass CSS_PARTIALLY_VISIBLE_CLASS
     @$context.removeClass CSS_FULLY_VISIBLE_CLASS
     @onAnimationReset()
@@ -129,7 +130,7 @@ class FOURTEEN.ElementScrollVisibility extends FOURTEEN.BaseComponent
     @onFullyEnterViewportSync() if @isFullyInViewport
 
 
-  onEnterViewport: () =>
+  onEnterViewport: =>
     @isInViewport = true
     @onEnterViewportSync() if @asyncScriptsLoaded
     return if @hasPartiallyPlayed
@@ -137,7 +138,7 @@ class FOURTEEN.ElementScrollVisibility extends FOURTEEN.BaseComponent
     @$context.removeClass CSS_EXIT_CLASS
     @$context.addClass CSS_PARTIALLY_VISIBLE_CLASS
 
-  onFullyEnterViewport: () =>
+  onFullyEnterViewport: =>
     @isFullyInViewport = true
     @onFullyEnterViewportSync() if @asyncScriptsLoaded
     return if @hasFullyPlayed
@@ -145,7 +146,7 @@ class FOURTEEN.ElementScrollVisibility extends FOURTEEN.BaseComponent
     @$context.addClass CSS_FULLY_VISIBLE_CLASS
     @onAnimationPlay()
 
-  onExitViewport: () =>
+  onExitViewport: =>
     @isInViewport = false
     @isFullyInViewport = false
     return if @hasExited
@@ -153,6 +154,6 @@ class FOURTEEN.ElementScrollVisibility extends FOURTEEN.BaseComponent
     @$context.off @animationEndEvent, @onAnimationEnd if @animationEndEvent
     @$context.addClass CSS_EXIT_CLASS
     if @repeat
-      @reset()
+      @reset_()
     else if @hasPartiallyPlayed and @hasFullyPlayed
-      @removeEventListeners()
+      @removeEventListeners_()

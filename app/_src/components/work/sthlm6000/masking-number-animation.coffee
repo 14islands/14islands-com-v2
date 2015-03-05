@@ -23,27 +23,31 @@ class FOURTEEN.MaskingNumberAnimation extends FOURTEEN.ElementScrollVisibility
     @maxValue         = 6000
     @targetPercentage  = 100 - (@targetValue / @maxValue) * 100
 
-    @resetAnimation()
+    @resetAnimation_()
 
     # init FOURTEEN.ElementScrollVisibility
     super(@$context, data)
 
 
-  runAnimation: =>
+  destroy: ->
+    super()
+    cancelAnimationFrame(@nextFrame)
+
+  runAnimation_: =>
     @animationStarted = Date.now()
-    @moveCover(@targetPercentage)
-    @animateNumbers()
+    @moveCover_(@targetPercentage)
+    @animateNumbers_()
 
 
-  resetAnimation: =>
+  resetAnimation_: =>
     cancelAnimationFrame(@nextFrame)
     @animationStarted = -1
-    @moveCover(100)
+    @moveCover_(100)
     @currentValue = -1
     @updateNumber(0)
 
 
-  moveCover: (percentage) ->
+  moveCover_: (percentage) ->
     if Modernizr.csstransforms3d
       @$cover.css @transformProp, 'translate3d(-' + percentage + '%, 0, 0)'
       @$content.css @transformProp, 'translate3d(' + percentage + '%, 0, 0)'
@@ -65,8 +69,8 @@ class FOURTEEN.MaskingNumberAnimation extends FOURTEEN.ElementScrollVisibility
 
 
   # Animation frame
-  animateNumbers: =>
-    @nextFrame = requestAnimationFrame(@animateNumbers) if @currentValue < @targetValue
+  animateNumbers_: =>
+    @nextFrame = requestAnimationFrame(@animateNumbers_) if @currentValue < @targetValue
     newValue = Math.round(FOURTEEN.Easing.easeInOutCirc(@timeElapsed(), 0, @targetValue, DURATION))
     @updateNumber(newValue)
 
@@ -74,9 +78,9 @@ class FOURTEEN.MaskingNumberAnimation extends FOURTEEN.ElementScrollVisibility
   # @override FOURTEEN.ElementScrollVisibility.onAnimationPlay
   onAnimationPlay: =>
     super()
-    @runAnimation()
+    @runAnimation_()
 
   # @override FOURTEEN.ElementScrollVisibility.onAnimationReset
   onAnimationReset: =>
     super()
-    @resetAnimation()
+    @resetAnimation_()

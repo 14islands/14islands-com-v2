@@ -22,6 +22,7 @@ class FOURTEEN.CircularMaskAnimation extends FOURTEEN.ElementScrollVisibility
     @endX = 280
     @endY = 170
     @startSize = 0
+    @ctx = undefined
 
     @animationStarted
     @isLoaded = false
@@ -32,6 +33,11 @@ class FOURTEEN.CircularMaskAnimation extends FOURTEEN.ElementScrollVisibility
     # init FOURTEEN.ElementScrollVisibility
     super(@$context, data)
 
+  destroy: ->
+    super()
+    @isLoaded = false
+    @ctx = undefined
+    @canvas = undefined
 
   runAnimation: =>
     @animationStarted = Date.now()

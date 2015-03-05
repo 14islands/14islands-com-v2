@@ -50,16 +50,20 @@ class FOURTEEN.BaseComponent
   ## PROTECTED METHODS - OVERRIDE IN SUBCLASS
   #############################################################################
 
+  # RECOMMENDED: clean up any resources when navigating away from page
+  destroy: ->
+    # Override me
+
   # OPTIONAL: callback when component is ready to do work
   # Is called after pjax aimation ends
   # Is called before scripts starts to load
-  onReady: =>
+  onReady: ->
     # Override me
 
 
   # OPTIONAL: override in subclass
   # Is called when all scripts in the array has finished loading
-  onScriptsLoaded: =>
+  onScriptsLoaded: ->
     # Override me
 
 
@@ -79,7 +83,7 @@ class FOURTEEN.BaseComponent
   # @private
   # checks if script was already loaded
   # .. if not loads a script (from the browser cache if possible)
-  loadScript_: (url, options) ->
+  loadScript_: (url, options) =>
     unless FOURTEEN.BaseComponent.loadedScripts_[url]?
       options = $.extend( options || {}, {
         dataType: 'script',
