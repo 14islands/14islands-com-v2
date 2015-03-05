@@ -168,6 +168,27 @@ $base-three-px: 30;
 	}
 }
 
+.js {
+
+	.sthlm6000-stats,
+	.sthlm6000-about__chart__graphic {
+		opacity: 0;
+		transition-property: opacity;
+		transition-timing-function: $easeOutQuad;
+		transition-duration: 250ms;
+
+	}
+
+	.ready {
+		.sthlm6000-stats,
+		.sthlm6000-about__chart__graphic {
+			opacity: 1;
+		}
+	}
+
+}
+
+
 .sthlm6000-stats__item {
 	list-style: none;
 	margin-bottom: 1rem;

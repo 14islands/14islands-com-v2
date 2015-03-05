@@ -11,6 +11,7 @@
 class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
 
   DURATION_NUMBER_MS = 1000
+  READY_CLASS = 'ready'
   TOTAL_NUMBERS = 0
   DATA_NUM = 'num'
   COLORS = ['#8bffb8', '#36ffa1', '#00e587', '#ffffff']
@@ -28,6 +29,8 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
   constructor: (@$context, data) ->
     # calls FOURTEEN.ElementScrollVisibility()
     super(@$context, data)
+    @spinner = new FOURTEEN.Spinner @$context, {isWhite: true}
+    @spinner.show()
     @reset()
 
 
@@ -37,12 +40,21 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
 
   # @override FOURTEEN.ElementScrollVisibility.onFullyEnterViewportSync
   onFullyEnterViewportSync: =>
-    @run()
+    @spinner.hide(=>
+      @$context.addClass READY_CLASS
+      @run()
+    )
 
   # @override FOURTEEN.ElementScrollVisibility.onExitViewportSync
   onExitViewportSync: =>
     @reset()
     @init() # prepare for entering viewport again
+
+  destroy: () =>
+    super()
+    @$context.removeClass READY_CLASS
+    @reset()
+    @spinner.hide()
 
   reset: () =>
     @numbers = []
