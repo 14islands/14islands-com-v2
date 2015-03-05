@@ -15,7 +15,6 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
   # @override FOURTEEN.BaseComponent.scripts
   scripts: [
     'https://maps.googleapis.com/maps/api/js?key=AIzaSyDhL8nwKWYtU4LdyiiMUp5zJ_8kRFRoAQA&v=3.exp&callback=FOURTEEN.onGoogleMapsLoaded'
-    'https://rawgit.com/davatron5000/Lettering.js/master/jquery.lettering.js'
   ]
 
 
@@ -53,14 +52,6 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
       google.maps.event.clearInstanceListeners(window)
       google.maps.event.clearInstanceListeners(document)
       google.maps.event.clearInstanceListeners(@$context[0])
-
-
-  # @override FOURTEEN.BaseComponent.onScriptsLoaded
-  # Normally this is all you need, but since Maps load a number of other files async,
-  # ... we also need to wait for Maps to call the loaded callback
-  onScriptsLoaded: =>
-    # init lettering
-    @$context.find(".js-title").lettering()
 
 
   # Google maps api loads a number of dependencies async and then calls this function
