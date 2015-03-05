@@ -52,7 +52,7 @@ class FOURTEEN.BaseComponent
 
   # RECOMMENDED: clean up any resources when navigating away from page
   destroy: ->
-    # Override me
+    # Override me with call to super()
 
   # OPTIONAL: callback when component is ready to do work
   # Is called after pjax aimation ends

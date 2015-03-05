@@ -108,10 +108,13 @@ class FOURTEEN.ElementScrollVisibility extends FOURTEEN.BaseComponent
         @onAnimationReset()
 
 
+
   ###
     The following functions are always called in synchronous order
+    NOTE: they will not be called if the @scripts array is empty
     1. onScriptsLoadedSync
     2. onEnterViewportSync
+    3. onFullyEnterViewportSync
   ###
 
   onScriptsLoadedSync: =>
@@ -122,6 +125,13 @@ class FOURTEEN.ElementScrollVisibility extends FOURTEEN.BaseComponent
 
   onFullyEnterViewportSync: =>
     # override me
+
+  # This function is only called if all scripts have been loaded
+  # NOTE: it will not be called if the @scripts array is empty
+  onExitViewportSync: =>
+    # override me
+
+
 
   # @override FOURTEEN.BaseComponent.onScriptsLoaded
   onScriptsLoaded: =>
@@ -149,6 +159,7 @@ class FOURTEEN.ElementScrollVisibility extends FOURTEEN.BaseComponent
   onExitViewport: =>
     @isInViewport = false
     @isFullyInViewport = false
+    @onExitViewportSync() if @asyncScriptsLoaded
     return if @hasExited
     @hasExited = true
     @$context.off @animationEndEvent, @onAnimationEnd if @animationEndEvent

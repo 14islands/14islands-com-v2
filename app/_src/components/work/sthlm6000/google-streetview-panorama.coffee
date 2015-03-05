@@ -80,7 +80,7 @@ class FOURTEEN.GoogleStreetviewPanorama extends FOURTEEN.ElementScrollVisibility
 
 
   autoRotate_: =>
-    if @panoramaHasLoaded_ and @isInViewport and not @isScrolling_
+    if @panoramaHasLoaded_ and @isFullyInViewport and not @isScrolling_
       pov = @pano_.getPov()
       pov.heading += ROTATE_DISTANCE
       @pano_.setPov(pov)

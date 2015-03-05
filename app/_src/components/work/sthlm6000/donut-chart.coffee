@@ -39,8 +39,8 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
   onFullyEnterViewportSync: =>
     @run()
 
-  onExitViewport: () =>
-    super()
+  # @override FOURTEEN.ElementScrollVisibility.onExitViewportSync
+  onExitViewportSync: =>
     @reset()
     @init() # prepare for entering viewport again
 
