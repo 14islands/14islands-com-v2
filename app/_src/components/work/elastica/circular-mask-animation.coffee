@@ -16,7 +16,7 @@ class FOURTEEN.CircularMaskAnimation extends FOURTEEN.ElementScrollVisibility
 
   constructor: (@$context, data) ->
     @canvas = $('canvas', @$context)[0]
-    @srcImg = $('.elastica-circular-mask-animation__ratio__mask')[0]
+    @srcImg = $('.js-canvas-mask')[0]
     @startX = 150
     @startY = @canvas.height - LENS_RADIUS
     @endX = 280
