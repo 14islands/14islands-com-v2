@@ -25,8 +25,6 @@ FOURTEEN.onPjaxEnd = ->
   # components
   FOURTEEN.componentLoader.scan document.body, true, {isPjax:true}
 
-  $(document.body).trigger('pjax:done')
-
 
 FOURTEEN.onWindowLoad = ->
   # prefetch main pages - must have same path + querystring as pjax request will have

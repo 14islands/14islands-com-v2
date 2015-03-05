@@ -5,7 +5,10 @@
 
   Holds info about scroll position, speed, direction, document / viewport size, etc
 
-  Triggers "state:change" event when scroll state has changed
+  Triggers events for
+    - Scroll Start
+    - Scroll Stop
+    - Each scroll frame while scrolling
 
   Note:
    - This implementation uses ScrollMonitor to read the state, to avoid
@@ -14,13 +17,18 @@
 ###
 class ScrollState
 
+  # constants
+  EVENT_SCROLL_START : 'scroll:start'
+  EVENT_SCROLL_STOP  : 'scroll:stop'
+  EVENT_SCROLL_FRAME : 'scroll:frame'
+
   # private vars
   $document = $(document)
   updating  = false
   latestFrame = Date.now()
 
   # prototype state vars
-  @scrollDiff         : 0  # delta from last scroll position
+  scrollDiff         : 0  # delta from last scroll position
   scrollDistance      : 0  # absolute delta
   scrollDirection     : 0  # -1, 0, or 1
   msSinceLatestChange : 0
@@ -36,7 +44,23 @@ class ScrollState
 
   constructor: ->
     @updateState()
+
+    # debounce scroll callbacks to know when scroll starts and ends
+    @onScrollStartDebounced = FOURTEEN.Utils.debounce(@onScrollStart, 500, true)
+    @onScrollStopDebounced = FOURTEEN.Utils.debounce(@onScrollStop, 500)
+
+    $(window).on('scroll', @onScrollStartDebounced)
+    $(window).on('scroll', @onScrollStopDebounced)
     $(window).on('scroll', @updateState)
+
+
+  onScrollStart: =>
+    $document.trigger(@EVENT_SCROLL_START, @)
+
+
+  onScrollStop: =>
+    $document.trigger(@EVENT_SCROLL_STOP, @)
+
 
   # static state
   updateState: =>
@@ -65,7 +89,8 @@ class ScrollState
       @isScrolledToBottom = @viewportBottom >= @documentHeight
 
       @latestFrame = now
-      $document.trigger('state:change', @)
+
+      $document.trigger(@EVENT_SCROLL_FRAME, @)
 
       updating = false
 
