@@ -103,5 +103,8 @@
   padding-top: 40%;
 }
 
-
+// speakerdeck's chrome needs to be added to ratio
+.u-ratio--speakerdeck:before {
+	margin-bottom: 65px;
+}
 
