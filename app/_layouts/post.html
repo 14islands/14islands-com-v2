@@ -8,22 +8,19 @@ og_type: article
 	</section>
 </article>
 
+{% if page.next_in_category != nil %}
+  {% assign nextpage = page.next_in_category %}
+{% else %}
+  {% assign nextpage = page.first_in_category %}
+{% endif %}
 
-<section class="related-posts grid u--pad-both u-bg-bright">
-	<div class="grid__row grid__row--wide-content">
-    <div class="related-posts__previous">
-  	{% if page.next_in_category != nil %}
-      <h4 class="related-posts__label">Previous post</h4>
-  	  <h3 class="related-posts__title"><a href="{{page.next_in_category.url}}" class="next-link">{{page.next_in_category.title}}</a></h3>
-  	{% endif %}
-    </div>
-    <div class="related-posts__next">
-  	{% if page.previous_in_category != nil %}
-      <h4 class="related-posts__label">Next post</h4>
-  	  <h3 class="related-posts__title"><a href="{{page.previous_in_category.url}}" class="previous-link">{{page.previous_in_category.title}}</a></h3>
-  	{% endif %}
-  	</div>
-  </div>
+<section class="related-posts">
+	<a class="related-posts__link grid u--default-v-padding u-bg-bright" href="{{ site.baseurl }}{{ nextpage.url }}">
+		<div class="grid__row">
+	    <p class="related-posts__label">Read Next</p>
+	    <h2 class="related-posts__title">{{ nextpage.title }}</h2>
+	  </div>
+	</a>
 </section>
 
 
