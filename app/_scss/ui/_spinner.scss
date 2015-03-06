@@ -2,58 +2,64 @@ $animation-duration: 2.5s;
 $size-default: 90px;
 
 .spinner {
-  width: $size-default;
-  height: $size-default;
-  margin: 0 auto;
+	width: $size-default;
+	height: $size-default;
+	margin: 0 auto;
 
-   svg {
-    display: block;
+	 svg {
+		display: block;
 
-    fill-opacity: 0;
-    stroke: $green;
-    stroke-width: 1.7px;
-    stroke-dasharray: 200;
-    stroke-dashoffset: 200;
+		fill-opacity: 0;
+		stroke: $green;
+		stroke-width: 1.7px;
+		stroke-dasharray: 200;
+		stroke-dashoffset: 200;
 
-    animation-name: dash;
-    animation-duration: $animation-duration;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-  }
+		animation-name: dash;
+		animation-duration: $animation-duration;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+		animation-iteration-count: infinite;
+	}
 }
 
+
 .spinner--white {
-  svg {
-    stroke: #fff;
-  }
+	svg {
+		stroke: #fff;
+	}
+}
+.spinner--black {
+	svg {
+		stroke: $gray;
+	}
 }
 
 .spinner--center {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  margin-left: ($size-default/2) * -1;
-  z-index: 99;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin-left: ($size-default/2) * -1;
+	z-index: 99;
 }
 
 .no-js .spinner,
 .spinner--inactive {
-  display: none;
+	display: none;
 }
 
 @keyframes dash {
-  70%,80% {
-    stroke-dashoffset: 0;
-  }
-  85% {
-    stroke-opacity: 1;
-  }
-  95% {
-    stroke-dashoffset: -200;
-    stroke-opacity: 0;
-  }
-  100% {
-    stroke-dashoffset: -200;
-  }
+	70%,80% {
+		stroke-dashoffset: 0;
+	}
+	85% {
+		stroke-opacity: 1;
+	}
+	95% {
+		stroke-dashoffset: -200;
+		stroke-opacity: 0;
+	}
+	100% {
+		stroke-dashoffset: -200;
+	}
 }

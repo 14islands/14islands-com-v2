@@ -1,0 +1,92 @@
+//////////////////////////////////////////////////////////////
+// Animation styles
+//////////////////////////////////////////////////////////////
+
+$sthlm6000green: #00e689;
+$google-maps-loading-bg: #e5e3df;
+
+.sthlm600-google-streetview-panorama {
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+
+	background-color: $google-maps-loading-bg;
+
+	h2 {
+		line-height: 1;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		font-weight: 600;
+		letter-spacing: -2px;
+
+		font-size: 5em;
+		@media only screen and (min-width: 720px) {
+			font-size: 7em;
+		}
+		@media only screen and (min-width: 1200px) {
+			font-size: 9em;
+		}
+	}
+
+	/* This parent can be any width and height */
+	.block {
+		text-align: center;
+		height: 100%;
+	}
+
+	/* The ghost, nudged to maintain perfect centering */
+	.block:before {
+		content: '';
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+		margin-right: -0.25em; /* Adjusts for spacing */
+	}
+
+	/* The element to be centered, can
+		 also be of any width and height */
+	.centered {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+
+.sthlm600-google-streetview-panorama img {
+	border: none !important;
+	max-width: none !important;
+}
+
+.sthlm600-google-streetview-panorama__header {
+	pointer-events: none;
+	text-align: center;
+	width: 100%;
+	z-index: 2;
+ }
+
+.sthlm600-google-streetview-panorama__location {
+	display: inline-block;
+	color: $sthlm6000green;
+
+	span {
+		opacity: 0;
+		transition: opacity 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		padding-top: 10px; // let the kerning work
+		position: relative;
+
+		.js-has-loaded.is-fully-visible & {
+			opacity: 1;
+		}
+	}
+}
+
+$initial-delay-ms: 0;
+$gap-delay-ms: 50;
+@for $i from 1 to 50 {
+	.sthlm600-google-streetview-panorama__location span:nth-of-type(#{$i}) {
+		transition-delay: (($i * $gap-delay-ms) + $initial-delay-ms) * 1ms;
+	}
+}

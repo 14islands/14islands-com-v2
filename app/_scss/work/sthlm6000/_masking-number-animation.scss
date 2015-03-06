@@ -1,0 +1,124 @@
+//////////////////////////////////////////////////////////////
+// Animation styles
+//////////////////////////////////////////////////////////////
+
+$sthlm6000green: #00e689;
+
+
+.sthlm6000-masking-number-animation {
+  -webkit-font-smoothing: antialiased;
+  background-color: #ffffff;
+  position: relative;
+  overflow:hidden;
+}
+
+
+.sthlm6000-masking-number-animation__text-container {
+  // left align so text doesn't jump horizontally
+  left: 50%;
+  position: relative;
+  margin-left: -7.6em;
+
+  h1 {
+    letter-spacing: -.01em;
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 600;
+
+    font-size: 6em;
+  }
+  h2 {
+    line-height: 1;
+    margin-top: -.5em;
+    margin-bottom: 0;
+    font-weight: normal;
+
+    font-size: 1em;
+    margin-left: 2.6em;
+  }
+
+  @media (min-width: 720px) {
+    margin-left: -15.2em;
+    h1 {
+      font-size: 12em;
+    }
+    h2 {
+      font-size: 1.5em;
+      margin-left: 5.2em;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    margin-left: -21.4em;
+    h1 {
+      font-size: 17em;
+    }
+    h2 {
+      font-size: 1.9em;
+      margin-left: 6.35em;
+    }
+  }
+}
+
+
+.sthlm6000-masking-number-animation__back {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateZ(0);
+}
+
+.sthlm6000-masking-number-animation__cover,
+.sthlm6000-masking-number-animation__cover__rel,
+.sthlm6000-masking-number-animation__cover__rel__content {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $sthlm6000green;
+  visibility: hidden;
+
+  h1, h2 {
+    color: white;
+  }
+
+  .animate & {
+    visibility: visible;
+    transition: transform 2s $easeInOutCirc;
+  }
+}
+
+.sthlm6000-masking-number-animation__cover__rel {
+  overflow:hidden;
+}
+
+// vcentring
+.sthlm6000-masking-number-animation__back,
+.sthlm6000-masking-number-animation__cover__rel__content {
+  /* This parent can be any width and height */
+  height: 100%;
+  text-align: left;
+
+  /* The ghost, nudged to maintain perfect centering */
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+  }
+
+  /* The element to be centered, can
+     also be of any width and height */
+  .sthlm6000-masking-number-animation__text-container {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+

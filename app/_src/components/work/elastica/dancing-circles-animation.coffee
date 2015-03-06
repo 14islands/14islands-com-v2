@@ -82,10 +82,23 @@ class FOURTEEN.DancingCirclesAnimation extends FOURTEEN.ElementScrollVisibility
     @backgroundColor = @$context.data('background-color')
 
     @isStarted = false
+    @ctx = undefined
+    @animationFrame = undefined
     @initDraw()
 
     # init FOURTEEN.ElementScrollVisibility
     super(@$context, data)
+
+
+	# @protected
+	# @override FOURTEEN.ElementScrollVisibility.destroy
+  destroy: ->
+    super()
+    cancelAnimationFrame(@animationFrame)
+    @isStarted = false
+    @canvas = undefined
+    @ctx = undefined
+    @animationFrame = undefined
 
 
   runAnimation: ->
@@ -146,7 +159,7 @@ class FOURTEEN.DancingCirclesAnimation extends FOURTEEN.ElementScrollVisibility
     time = @timeElapsed()
 
     if @isStarted and time < ANIMATION_DURATION
-      requestAnimationFrame(@draw)
+      @animationFrame = requestAnimationFrame(@draw)
 
     @ctx.clearRect(0, 0, @canvas.width, @canvas.height)
 
@@ -158,11 +171,13 @@ class FOURTEEN.DancingCirclesAnimation extends FOURTEEN.ElementScrollVisibility
     circle.draw(@ctx, time) for circle in @circles
 
 
+	# @protected
   # @override FOURTEEN.ElementScrollVisibility.onAnimationPlay
   onAnimationPlay: =>
     super()
     @runAnimation()
 
+  # @protected
   # @override FOURTEEN.ElementScrollVisibility.onAnimationReset
   onAnimationReset: =>
     super()

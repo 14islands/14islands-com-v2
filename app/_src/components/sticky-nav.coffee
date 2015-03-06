@@ -29,7 +29,7 @@ class FOURTEEN.StickyNav
 
 
   init: ->
-    @$document.on('state:change', @onStateChanged)
+    @$document.on(FOURTEEN.ScrollState.EVENT_SCROLL_FRAME, @onStateChanged)
 
 
   onStateChanged: (e, state) =>
@@ -77,5 +77,5 @@ class FOURTEEN.StickyNav
 
   destroy: =>
     @show()
-    @$document.off('state:change', @onScrollDebounced)
+    @$document.off(FOURTEEN.ScrollState.EVENT_SCROLL_FRAME, @onScrollDebounced)
 

@@ -89,14 +89,13 @@ class FOURTEEN.CodePenEmbedOnScroll
 
 
   injectCodePenJS: ->
-    scriptSelector = 'script[src="' + ASSET_EI_JS_URL + '"]'
-    isCodePenJSInjected = ($(scriptSelector).length > 0)
-    if isCodePenJSInjected is true
+    if $('#codepen-script-tag').length > 0
       if typeof CodePenEmbed is 'object'
         CodePenEmbed.init()
         CodePenEmbed.showCodePenEmbeds()
     else
       script = document.createElement 'script'
+      script.id = 'codepen-script-tag'
       script.src = ASSET_EI_JS_URL
       script.async = true
       @$body.append script
