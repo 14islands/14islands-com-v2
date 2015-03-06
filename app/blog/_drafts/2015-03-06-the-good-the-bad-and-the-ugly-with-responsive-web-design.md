@@ -17,6 +17,6 @@ Last week we traveled to Barcelona and got the opportunity to visit [Elespacio](
 
 Responsive Web Design has been around for a while and it’s worth taking a step back to see what a successful responsive project actually requires.
 
-The goal with the talk was to share some opinionated thoughts on what is positive and what is worth paying attention for on our current development workflow. An inside look behind some Responsive Web Design case studies was shown, as well as how we addressed the good, the bad and the ugly points behind those projects.
+The goal with the talk was to share some opinionated thoughts on what is positive and what should we pay attention to on our current development workflow. An inside look behind some Responsive Web Design case studies were shown, as well as how we addressed some of the good, the bad and the ugly points behind each of those projects.
 
 Big thanks to [Elespacio](http://www.elespacio.net/) for inviting us to the very interesting *Space is the place 2* event. Hope to see you all again soon!
