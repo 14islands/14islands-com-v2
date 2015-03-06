@@ -22,4 +22,16 @@
     opacity: 1;
   }
 
+  // Blog: Read next
+  .related-posts__link {
+		transition: background $easeOutQuad 300ms;
+		&:hover {
+			background: $natt-dark;
+			.related-posts__label,
+			.related-posts__title {
+				color: #fff;
+			}
+		}
+	}
+
 }
