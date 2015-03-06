@@ -39,7 +39,7 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
 	 # @override FOURTEEN.ElementScrollVisibility.onScriptsLoadedSync
 	onScriptsLoadedSync: =>
 		# hide spinner immediately when loaded to avoid race condition with run()
-		@spinner.hideImmediate()
+		@spinner.hideImmediately()
 		@init()
 
 	# @override FOURTEEN.ElementScrollVisibility.onFullyEnterViewportSync

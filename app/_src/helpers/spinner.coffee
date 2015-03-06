@@ -62,7 +62,7 @@ class FOURTEEN.Spinner
 		$.when( @deffered.promise() ).done =>
 			@animateOut callback
 
-	hideImmediate: ->
+	hideImmediately: ->
 		@hasDeffered = false
 		@hide()
 
