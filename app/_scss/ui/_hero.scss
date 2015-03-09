@@ -16,6 +16,11 @@
   z-index: 99999;
   top: 0;
 
+  // reserve space in hero to always shows absolute nav when no flexgox
+	.no-flexbox & {
+	  min-height: pxToRem(80);
+	}
+
   will-change: transform;
 }
 
@@ -51,10 +56,14 @@
 
 .hero__caption {
 	font-weight: 600;
-	margin-top: auto;
-	margin-bottom: auto;
-  font-size: modular-scale(1rem, 3);
+	font-size: modular-scale(1rem, 3);
   line-height: 1.2;
+
+  margin-top: auto;
+	margin-bottom: auto;
+  .no-flexbox & {
+  	margin-top: 1em;
+  }
 
   display: none;
   @include if-taller-than(350px) {
@@ -91,6 +100,14 @@
 	font-size: modular-scale(1rem, 1);
   margin-top: 0;
   margin-bottom: 0;
+
+  // anchor to bottom
+  .no-flexbox & {
+  	position: absolute;
+  	bottom: 0;
+  	left: 0;
+  	right: 0;
+  }
 }
 
 
