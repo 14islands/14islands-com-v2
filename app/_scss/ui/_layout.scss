@@ -9,6 +9,10 @@ body {
 	height: 100%;
 }
 
+body {
+	overflow-y: scroll;
+}
+
 .browsehappy	 {
 	position: absolute;
 	z-index: 999999;
