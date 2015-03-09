@@ -9,6 +9,17 @@ body {
 	height: 100%;
 }
 
+.browsehappy	 {
+	position: absolute;
+	z-index: 999999;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 5%;
+	background: #fff;
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // GRID LAYOUT
