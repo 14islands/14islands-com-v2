@@ -28,14 +28,20 @@ img[data-src] {
   img {
     will-change: opacity;
     opacity: 0;
-
-    // class added my main.coffee
-    &.image-loaded {
-      animation-name: fadeInContentImage;
-      animation-duration: 1s;
-      animation-timing-function: $easeOutQuad;
-      animation-iteration-count: 1;
-      animation-fill-mode: both;
-    }
   }
+}
+  // class added my main.coffee
+.js.cssanimations .content-image {
+	img.image-loaded{
+    animation-name: fadeInContentImage;
+    animation-duration: 1s;
+    animation-timing-function: $easeOutQuad;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
+}
+.js.no-cssanimations .content-image {
+	img.image-loaded {
+		opacity: 1;
+	}
 }
