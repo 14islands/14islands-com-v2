@@ -138,7 +138,7 @@ $transition-satellite-duration: .8s;
   $sLength: $length / $size * 100%;
 
   // rotate to degres
-  transform: rotate($deg) translateZ(0);
+  transform: rotate($deg);
 
   .elastica-satellites-animation__satellite__core {
     width: $size;
