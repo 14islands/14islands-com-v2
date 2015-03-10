@@ -37,14 +37,23 @@ body {
 		color: #fff;
 	}
 }
-.no-touch .browsehappy {
-	a:hover,
-	a:active {
-	color: #fff;
-		text-decoration: underline;
-	}
-}
 
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: $green;
+    text-shadow: none;
+}
+::selection {
+    background: $green;
+    text-shadow: none;
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // GRID LAYOUT

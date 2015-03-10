@@ -12,6 +12,16 @@
 	}
 
 
+	// upgrade browser message
+	.browsehappy {
+		a:hover,
+		a:active {
+		color: #fff;
+			text-decoration: underline;
+		}
+	}
+
+
   // Case Study: Up Next
   .next-casestudy__link__shape--hover {
     display: block;
