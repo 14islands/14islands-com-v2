@@ -144,7 +144,7 @@ li {
   }
 }
 
-p {
+p, .highlight {
   margin: 0 0 1rem;
 }
 
@@ -240,4 +240,9 @@ blockquote cite {
 blockquote strong,
 blockquote b {
   font-weight: 400;
+}
+
+code {
+	font-size: 0.8em;
+  color: lighten($default-font-color, 10%);
 }
