@@ -3,17 +3,17 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Awwwards conference - first day highlights</title>
-		<meta name="description" content="We had the chance to attend the Awwwards conference. Here are the talks highlights of the first day.">
+		<title>Transitioning to Web Animations from GreenSock GSAP</title>
+		<meta name="description" content="We recently got a chance to work with the new Web Animations specification when building this year’s Google Santa Tracker. We normally use GreenSock GSAP for complex animation sequences and it was interesting to see that the standards are catching up.">
 		<meta name="keywords" content="Web Development, Web Design, UX, Web Developers, Digital, Studio, Agency, Stockholm, Consulting, Training, HTML, CSS, JavaScript, WordPress">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Awwwards conference - first day highlights" />
-		<meta property="og:description" content="We had the chance to attend the Awwwards conference. Here are the talks highlights of the first day." />
+		<meta property="og:title" content="Transitioning to Web Animations from GreenSock GSAP" />
+		<meta property="og:description" content="We recently got a chance to work with the new Web Animations specification when building this year’s Google Santa Tracker. We normally use GreenSock GSAP for complex animation sequences and it was interesting to see that the standards are catching up." />
 		<meta property="og:image" content="https://14islands.com/images/blog/awwwards/awwwards-day-one.jpg" />
-		<meta property="og:url" content="https://14islands.com/blog/2015/02/27/awwwards-conference-first-day/" />
+		<meta property="og:url" content="https://14islands.com/blog/2015/03/10/transitioning-to-web-animations-from-greensock-gsap/" />
 		<meta property="og:site_name" content="14islands" />
 
 		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -48,7 +48,7 @@
 		<link rel="stylesheet" href="/css/main.3f31.css"/>
 
 	</head>
-	<body id="" class="page page-/blog/2015/02/27/awwwards-conference-first-day">
+	<body id="" class="page page-/blog/2015/03/10/transitioning-to-web-animations-from-greensock-gsap">
 
 		<!--[if lt IE 9]>
 				<p class="browsehappy"><span>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.<span></p>
@@ -98,176 +98,204 @@
 		<main class="main-content js-pjax-container">
 				<article class="post grid u--pad-both pjax-animate">
 	<section class="grid__row">
-		<h1>Awwwards conference - first day highlights</h1>
+		<h1>Transitioning to Web&nbsp;Animations from GreenSock GSAP</h1>
 
-<p><em>We had the chance to attend the <a href="http://conference.awwwards.com/">Awwwards</a> conference this year - a great event about web design. This the first post of a two day series. You can find the <a href="/blog/2015/02/27/awwwards-conference-second-day/">second day highlights here</a>.</em></p>
+<p><strong>We recently got a chance to work with the new Web Animations specification when building this year&#39;s <a href="/work/google-santa-tracker/">Google Santa Tracker</a>. We normally use GreenSock GSAP for complex animation sequences and it was interesting to see that the standards are catching up.</strong></p>
 
-<p></section></p>
+<p>This is not meant as a head-to-head comparison of the two technologies, this is simply a documentation of our experience switching from GreenSock GSAP to Web Animations. </p>
 
-<p><figure class="grid__row grid__row--wide content-image u--margin-both--half "></p>
+<p><em><strong>Please note</strong> that the <a href="http://w3c.github.io/web-animations/">Web Animations specification</a> is very much a <a href="https://github.com/w3c/web-animations/commits/master">work in progress</a> so things may have changed since this post was written.</em></p>
 
-<p><div class="u-ratio u-ratio--16_10 u-ratio--placeholder">
-    <img alt="Awwwards Conference 2015" data-src="/images/blog/awwwards/awwwards-day-one.jpg" class="u-ratio__content">
-<noscript>
-  <img alt="Awwwards Conference 2015" src="/images/blog/awwwards/awwwards-day-one.jpg" class="u-ratio__content">
-</noscript>
-  </div></p>
+<h2>Background</h2>
 
-<p></figure></p>
+<p>There are many <a href="http://greensock.com/why-gsap/">reasons to use GSAP</a> — even <a href="https://developers.google.com/web/fundamentals/look-and-feel/animations/css-vs-javascript">Google recommends</a> it. Imagine how surprised we were to learn that this year, Google wanted us to use Web Animations for Santa Tracker. </p>
 
-<p><section class="grid__row"></p>
+<p>There are good <a href="https://www.polymer-project.org/0.5/platform/web-animations.html#why-web-animations">reasons for a new animation specification</a> too. For complex scenarios, we need to be able to create animations purely in JavaScript and have it run as efficiently as any CSS Animation or Transition. </p>
 
-<p><a href="http://conference.awwwards.com/">Awwwards</a> is an organisation that aims to recognise and share the most inspiring projects around the world. It consists of a talented jury who promotes projects with awards for different web design categories. Every year they host a conference with different talks and a prize-giving ceremony.</p>
+<p>At the time of writing only Chrome and Opera has native support for Web Animations. There&#39;s an <a href="https://github.com/web-animations/web-animations-js">official polyfill</a> which works on modern versions of all major browsers.</p>
 
-<p>This year the conference was held in the beautiful Barcelona.</p>
+<h2>Tweening</h2>
 
-<p>Some talk highlights of the first day below.</p>
+<p>Let’s compare some common animation tasks using both frameworks. The most basic animation is to tween an object’s properties from state A to state B. We want to get the best performance possible so this means <a href="http://csstriggers.com/">avoiding properties</a> that cause a <code>layout</code> or <code>paint</code>, so that the GPU can carry out the work.</p>
 
-<h2>Real artists ship</h2>
+<h3>Basic GSAP tween</h3>
 
-<p><strong>Haraldur Thorleifsson (<a href="http://twitter.com/hthorleifsson">@hthorleifsson</a>)</strong></p>
+<p>GSAP let&#39;s you tween any CSS property or DOM attribute, and uses a plugin architecture so you can load only the parts of the framework that you need. GSAP’s <a href="http://greensock.com/docs/#/HTML5/GSAP/Plugins/CSSPlugin/">CSS plugin</a> automatically uses <code>matrix()</code> or <code>translate()</code> transforms to animate the x-property.</p>
 
-<p>Our friend “Halli” started the presentation by asking all designers in the room who had a good project but that actually never been shipped. Many hands were raised and the point of the talk was made.</p>
+<p><figure
+    class="js-component-code-pen-embed-on-scroll codepen-embed grid__row--wide u--margin-both--half "
+    style="height: 160px"
+    data-slug="xbybpZ"
+    data-ratio=""
+    data-height="160"
+    data-tab="js">
+  <div class="codepen-embed__content"></div>
+    <noscript>See the Pen <a href="http://codepen.io/14islands/pen/xbybpZ/">xbybpZ</a> by 14islands (<a href="http://codepen.io/14islands">@14islands</a>) on <a href="http://codepen.io">CodePen</a>.</noscript>
+</figure></p>
 
-<blockquote>
-<p>&quot;Photoshop is like a fake world that we create for ourselves.&quot;</p>
-</blockquote>
+<p>GSAP has most common easing functions <a href="http://greensock.com/docs/#/HTML5/GSAP/Easing/">built in</a>. You can force <code>matrix3d()</code> or <code>translate3d()</code> using the <a href="http://greensock.com/docs/#/HTML5/GSAP/Plugins/CSSPlugin/">force3D</a> flag  to make the browser put that element onto its own compositor layer (<a href="http://wesleyhales.com/blog/2013/10/26/Jank-Busting-Apples-Home-Page/">use sparingly</a>). </p>
 
-<p>Hali recommends following a set of principles for delivering good design work:</p>
+<p><em><strong>Note:</strong> GSAP even lets you define properties that are not generally tweenable and will apply the property for you like position:&quot;absolute&quot; and display:&quot;none&quot;.</em></p>
+
+<h3>Basic Web Animations tween</h3>
+
+<p>Web Animations also supports tweening any CSS property or DOM attribute, but you need to specify values for both the start keyframe and the end keyframe. You can provide <a href="https://github.com/14islands/14islands-com/blob/master/app/_scss/base/_easings.scss">custom easings</a> using bezier curves (same as CSS easing).</p>
+
+<p>This example is the most basic way of applying an animation directly to a DOM element.</p>
+
+<p><figure
+    class="js-component-code-pen-embed-on-scroll codepen-embed grid__row--wide u--margin-both--half "
+    style="height: 310px"
+    data-slug="RNeNoV"
+    data-ratio=""
+    data-height="310"
+    data-tab="js">
+  <div class="codepen-embed__content"></div>
+    <noscript>See the Pen <a href="http://codepen.io/14islands/pen/RNeNoV/">RNeNoV</a> by 14islands (<a href="http://codepen.io/14islands">@14islands</a>) on <a href="http://codepen.io">CodePen</a>.</noscript>
+</figure></p>
+
+<p>One thing to watch out for is the fill mode. By default, Web Animations fill mode is set to <code>none</code> which means the element resets to whatever state it had before the animation. Setting it to <code>forwards</code> makes it keep the last keyframe state. Again, this behaves just like the CSS Animations counterpart.</p>
+
+<h2>Synchronizing tweens &amp; Timeline controls</h2>
+
+<p>Both GSAP and Web Animations have timeline abstractions. You can queue tweens on the timeline in sequence, in parallel and make them overlap. You can also pause, seek and adjust the playback rate of the entire timeline animation.</p>
+
+<h3>GSAP timeline</h3>
+
+<p>The GSAP Timeline let&#39;s you add tweens, callbacks and labels with exact control of the timing offset between them. By default, tweens are added to the timeline in sequential order.</p>
+
+<p><figure
+    class="js-component-code-pen-embed-on-scroll codepen-embed grid__row--wide u--margin-both--half "
+    style="height: 333px"
+    data-slug="MYPwww"
+    data-ratio=""
+    data-height="333"
+    data-tab="js">
+  <div class="codepen-embed__content"></div>
+    <noscript>See the Pen <a href="http://codepen.io/14islands/pen/MYPwww/">MYPwww</a> by 14islands (<a href="http://codepen.io/14islands">@14islands</a>) on <a href="http://codepen.io">CodePen</a>.</noscript>
+</figure></p>
+
+<p>The <code>timeline</code> instance can be used to control all tweens by pausing, reversing, seeking and changing playback rate.</p>
+
+<h3>Web Animations timeline</h3>
+
+<p>Web Animations lets you create and combine AnimationSequences and AnimationGroups to synchronize the timing of individual tweens. They can be nested inside each other to create complex animations. A player must be created to play the outermost sequence/group.</p>
+
+<p><figure
+    class="js-component-code-pen-embed-on-scroll codepen-embed grid__row--wide u--margin-both--half "
+    style="height: 555px"
+    data-slug="vEVOXr"
+    data-ratio=""
+    data-height="555"
+    data-tab="js">
+  <div class="codepen-embed__content"></div>
+    <noscript>See the Pen <a href="http://codepen.io/14islands/pen/vEVOXr/">vEVOXr</a> by 14islands (<a href="http://codepen.io/14islands">@14islands</a>) on <a href="http://codepen.io">CodePen</a>.</noscript>
+</figure></p>
+
+<p>The Web Animations player also supports pausing, reversing, seeking and changing playback rate.</p>
+
+<h2>Advanced JavaScript callbacks - A real life example</h2>
+
+<p>In one of the trickier scenes in this year’s Santa Tracker we had to animate random characters traveling on a conveyor belt.  Half-way through their journey they would enter a magic closet that dressed them in a random color.</p>
+
+<h3>GSAP callbacks</h3>
+
+<p>The GSAP implementation of this is pretty straight forward thanks to the <code>TimelineLite.add()</code> function which can synchronize JavaScript callbacks alongside tweens.</p>
+
+<p><figure
+    class="js-component-code-pen-embed-on-scroll codepen-embed grid__row--wide u--margin-both--half "
+    style="height: 550px"
+    data-slug="dPgOdK"
+    data-ratio=""
+    data-height="550"
+    data-tab="js">
+  <div class="codepen-embed__content"></div>
+    <noscript>See the Pen <a href="http://codepen.io/14islands/pen/dPgOdK/">dPgOdK</a> by 14islands (<a href="http://codepen.io/14islands">@14islands</a>) on <a href="http://codepen.io">CodePen</a>.</noscript>
+</figure></p>
+
+<p>GSAP also provides handy <code>onStart</code>, <code>onUpdate</code>, <code>onComplete</code> and <code>onReverseComplete</code> callbacks on both the Timeline and on individual Tweens.</p>
+
+<h3>Web Animations callbacks</h3>
+
+<p>This is where it gets a bit tricky. Web Animations only gives us a <code>finish</code> event on the player instance.</p>
+
+<p>To schedule callbacks at a specific time during an animation, you need to manually <a href="https://github.com/web-animations/web-animations-js/issues/20">wrap your callback in an animation</a> and make sure it runs only once:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">myCallback</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Animation</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">tf</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">tf</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Run callback here!&#39;</span><span class="p">);</span>
+<span class="p">},</span> <span class="p">{</span> <span class="nx">duration</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;forwards&#39;</span> <span class="p">});</span></code></pre></div>
+
+<p>The equivalent of the above GSAP animation sequence ends up looking like this with Web Animations:</p>
+
+<p><figure
+    class="js-component-code-pen-embed-on-scroll codepen-embed grid__row--wide u--margin-both--half "
+    style="height: 940px"
+    data-slug="pvxRWd"
+    data-ratio=""
+    data-height="940"
+    data-tab="js">
+  <div class="codepen-embed__content"></div>
+    <noscript>See the Pen <a href="http://codepen.io/14islands/pen/pvxRWd/">pvxRWd</a> by 14islands (<a href="http://codepen.io/14islands">@14islands</a>) on <a href="http://codepen.io">CodePen</a>.</noscript>
+</figure></p>
+
+<p>You are probably wondering why we bind to the <code>finish</code> event like that. The latest version of the <a href="http://w3c.github.io/web-animations/#promise-objects">spec.</a> mentions that the event has been removed and that it should expose <code>ready</code> and <code>finished</code> promises instead. There’s an open <a href="https://github.com/web-animations/web-animations-js/issues/17">issue for the polyfill</a> tracking this.</p>
+
+<p>Until this has been implemented everywhere, we need to do something like this to be future proof:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">finish</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">finished</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">player</span><span class="p">.</span><span class="nx">finished</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">fn</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">player</span><span class="p">.</span><span class="nx">onfinish</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">;</span>  <span class="c1">// or something to concat methods</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>If you need to do a lot of work with JavaScript callbacks, there’s an <a href="https://github.com/samthor/animation-callback">AnimationCallback class</a> from <a href="https://github.com/samthor">Sam Thorogood</a> that is worth checking out.</p>
+
+<p>We would love to see more events and easier scheduling of callbacks added to the spec.</p>
+
+<h2>Summary</h2>
+
+<p>It turns out that Web Animations was a pretty good fit for the project, and we had a lot of fun working with it. It’s more mature that we thought, but it’s definitely a bit rough around the edges.</p>
+
+<p><strong>Things to watch out for:</strong></p>
 
 <ul>
-<li>Understand the problem</li>
-<li>Create your own wireframes</li>
-<li>Photoshop lies</li>
-<li>Only deal with decision makers</li>
-</ul>
-
-<h2>Responsive images</h2>
-
-<p><strong>Bruce Lawson (<a href="http://twitter.com/brucel">@brucel</a>)</strong></p>
-
-<p>Bruce provided a humorous talk on the technical subject of responsive images.</p>
-
-<blockquote>
-<p>&quot;Safari is the North Korea of browsers. They don’t usually say what they are working on.&quot;</p>
-</blockquote>
-
-<p>Responsive initially meant quick to react. Speed is part of responsive. Images are the most part of the website and they are not inadequately responsive.</p>
-
-<p>He emphasised the importance of keeping the responsive images solution in the HTML instead of Javascript.</p>
-
-<p>One example was Opera Mini browser, where the user can actually turn on a setting to get low quality images. That could probably fail for websites  with images relying on some Javascript logic.</p>
-
-<p>A browser knows things that you as a developer can’t possible know.</p>
-
-<p>Decoding and de-compressing images takes previous time in all browsers and so it’s important that user gets the correct image size.</p>
-
-<p>There a few updates on responsive images being shipped to some browsers lately: <code>&lt;picture&gt;, srcset, sizes.</code></p>
-
-<h2>Side Projects are Stupid</h2>
-
-<p><strong>Tobias Van Schneider (<a href="http://twitter.com/">@schneidertobias</a>)</strong></p>
-
-<p>Tobias encourages having side projects and the importance of keeping them simple.</p>
-
-<blockquote>
-<p>&quot;Side projects are stupid because they have to be simple.&quot;</p>
-</blockquote>
-
-<p>He shares his five principles on taking on a side project:</p>
-
-<ol>
-<li>Keep It Simple Stupid (KISS)</li>
-<li>Ignore everybody</li>
-<li>Trust your gut</li>
-<li>Being a jack of all trades</li>
-<li>Stay busy 
-Some projects were being shown that were “stupid” but that actually gave a lot of experience while doing it. Having no clear plan on an idea can end paying off in the long run.</li>
-</ol>
-
-<p>Doing something just to make people laugh can also work as a good project goal.</p>
-
-<h2>Empathy</h2>
-
-<p><strong>Meagan Fisher (<a href="http://twitter.com/">@HvassHannibal</a>)</strong></p>
-
-<p>Meagan spoke of the importance of Empathy on design. How to consider the user feelings when designing something.</p>
-
-<blockquote>
-<p>&quot;Make sure to get close to your users and use it as an ongoing part of your process.&quot;</p>
-</blockquote>
-
-<p>Real human needs are the most valuable constraint we have.</p>
-
-<p>An experiment was made with Coca-cola back in the days where they have added more salt, sugar and caffeine in their old recipe expecting to increase sales. It did not. People got furious about changing their more-than-one-hundred-year-old  taste and protested.</p>
-
-<p>Don’t fail to consider what yours users want. Coke did not understand the deep emotions of so many of their customers and so their old Coke taste came back.</p>
-
-<p>Ask the users if they want it new before doing it. Users are not that tolerant to changes.</p>
-
-<p>It’s important to meet users and have meaningful conversations with them. Make sure to get close to them and use it as an ongoing part of your process. Get feedback when they use your product and when they leave it.</p>
-
-<p>Be personal and try to connect with your users in a more emotional level.</p>
-
-<h2>Designing with Chrome DevTools</h2>
-
-<p><strong>Paul Bakaus (<a href="http://twitter.com/">@pbakaus</a>)</strong></p>
-
-<p>In one of the most interesting talks of the day, Paul Kabaus from Google shared some features that are coming to Chrome DevTools soon.</p>
-
-<blockquote>
-<p>&quot;The first rule of upcoming features is to not talk about upcoming features.&quot;</p>
-</blockquote>
-
-<p>Paul mentioned that DevTools team has been trying to be ahead of the trend curve and haven’t succeeded until now.</p>
-
-<p>It looks like they finally reached that point of staying ahead with some DevTools animations features. The animations panel is a great step ahead and it caused some applauses and gasps from the audience when it was showed some new features.</p>
-
-<p>You will soon be able to slow down animations, change their easing with a nice inline bezier-curve visualisation tool and even review all the properties that are being animated in a nice timeline frame-by-frame fashion.</p>
-
-<p>DevTools is actually an open source project and Paul asked for <a href="https://trello.com/b/GKotpgkR/devtools-for-designers">feedback</a> if somebody ever got an idea that would like to share.</p>
-
-<p>Finally, the DevTools team just got themselves a designer for the first time and that is exciting news as we can expect the DevTools to look more user friendly and have a better look and feel. <a href="http://twitter.com/maxwkr">@maxwkr</a> is the new designer dedicated to DevTools.</p>
-
-<p>The DevTools team (with it’s new designer) is focusing on keeping the interface more usable by adding more “SCRIM” to it:</p>
+<li>The Web Animations syntax is very verbose compared to GSAP.</li>
+<li>The way we found to schedule JavaScript callbacks with Web Animations feels like a hack.</li>
+<li>It’s not clear if Web Animations players are cheap to create, or if we should be recycling them.</li>
+<li>The <code>finish</code> event/promise is in flux.</li>
+<li>It’s confusing to have <a href="https://github.com/web-animations/web-animations-js#different-build-targets">3 versions of the polyfill</a>
 
 <ul>
-<li>Smart</li>
-<li>Colorful</li>
-<li>Responsive</li>
-<li>Intuitive</li>
-<li>Material</li>
+<li>We ran into different bugs using different polyfill versions.</li>
+<li>It can be hard to keep track of which polyfill version is being used on your project. <a href="https://github.com/Polymer/core-animation/commit/ff06630b1b280fa1245b9f4f366a76c92c8d325a">Polymer is currently shipped</a> with the <code>next-lite</code> polyfill.</li>
+</ul></li>
+<li>Web Animations gives you fine-grained control of the animation <code>fill-mode</code>. This is powerful but can get complicated as <a href="https://www.polymer-project.org/0.5/platform/web-animations.html#controlling-the-animation-timing">this example illustrates</a>.</li>
 </ul>
 
-<h2>Other talks of the day:</h2>
+<p>There’s a lot of advanced functionality in GSAP that probably won’t be covered by Web Animations, but at least we will have a native choice going forward. GSAP should be able to optimize its engine even further by taking animations entirely off the main JavaScript thread.</p>
 
-<h3>A tomato, a picture, an elephant and a bunch of jugglers</h3>
+<p><em>Normally, we would not recommend using unproven technology for  a project of this scale on a non-flexible deadline. In this case, the client asked for it and understood the risk.</em> </p>
 
-<p><strong>AQuest (<a href="http://twitter.com/id_aquest">@id_aquest</a>)</strong></p>
+<h3>Resources:</h3>
 
-<p>AQuest impressive slides were showing how they tell stories through their projects. Very <a href="www.aquest.it">inspiring work</a>.</p>
+<ul>
+<li><a href="http://w3c.github.io/web-animations/">Web Animations Specification Draft</a></li>
+<li><a href="https://github.com/web-animations/web-animations-js">Official Web Animations polyfill</a></li>
+<li><a href="https://www.polymer-project.org/0.5/platform/web-animations.html">Polymer Web Animations documentation</a></li>
+<li><a href="https://github.com/samthor/animation-callback">AnimationCallback util for triggering JavaScript callbacks at given intervals with Web Animations</a></li>
+</ul>
 
-<h3>Responsive Web Design: Clever Tips and Techniques</h3>
-
-<p><strong>Vitaly Friedman (<a href="http://twitter.com/smashingmag">@smashingmag</a>)</strong></p>
-
-<p>Some tips and tricks on Responsive Web Design and how Vitaly approaches performance budget with his clients. Recommended reading: <a href="http://www.smashingmagazine.com/2014/09/08/improving-smashing-magazine-performance-case-study/">Improving Smashing Magazine’s Performance: A Case Study</a></p>
-
-<h3>Responsive Web Typography</h3>
-
-<p><strong>Marko Dugonjić (<a href="http://twitter.com/markodugonjic">@markodugonjic</a>)</strong></p>
-
-<p>Marko shared some tips on responsive typography that goes beyond  changing sizes on breakpoints. He mentioned how we should be aware of the reading distance from the device, letter and word spacing and how we can influence a better reading experience. You can find the slides on <a href="https://speakerdeck.com/maratz/responsive-web-typography-at-awwwards-barcelona">Speaker Deck</a>.</p>
-
-<h3>Betting on the Web to #Win</h3>
-
-<p><strong>Phil Hawksworth (<a href="http://twitter.com/philhawksworth">@philhawksworth</a>)</strong></p>
-
-<p>Phil shared a great talk with some exccelent slides on how we are going forward with the web. Interesting examples and concepts from the past to the present and how we are keeping up with all the trends and innovation changes.</p>
-
-<p>—</p>
-
-<p><em>You can also find a nice set of curated tweets about the conference by doing a search on our Twitter account <a href="https://twitter.com/search?q=%4014islands%20%23AwwwardsBCN&amp;src=typd">@14islands #AwwwardsBCN</a></em></p>
+<!--
+</section>
+<section class="grid__row">
+    <hr>
+    David Lindkvist
+</section>
+<section class="grid__row">
+-->
 
 	</section>
 </article>
@@ -277,10 +305,10 @@ Some projects were being shown that were “stupid” but that actually gave a l
 
 
 <section class="related-posts">
-	<a class="related-posts__link grid u--default-v-padding u-bg-bright" href="/blog/2015/03/06/the-good-the-bad-and-the-ugly-with-responsive-web-design/">
+	<a class="related-posts__link grid u--default-v-padding u-bg-bright" href="">
 		<div class="grid__row">
 	    <p class="related-posts__label">Read Next</p>
-	    <h2 class="related-posts__title">The good, the bad and the ugly with responsive web design</h2>
+	    <h2 class="related-posts__title"></h2>
 	  </div>
 	</a>
 </section>
