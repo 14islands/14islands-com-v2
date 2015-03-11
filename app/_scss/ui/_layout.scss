@@ -1,7 +1,7 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 html,
@@ -47,12 +47,12 @@ body {
  */
 
 ::-moz-selection {
-    background: $green;
-    text-shadow: none;
+		background: $green;
+		text-shadow: none;
 }
 ::selection {
-    background: $green;
-    text-shadow: none;
+		background: $green;
+		text-shadow: none;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -60,70 +60,74 @@ body {
 ///////////////////////////////////////////////////////////////////////////////
 
 .grid {
-  display: block;
-  padding-left: $default-grid-spacing;
-  padding-right: $default-grid-spacing;
-  max-width: none;
+	display: block;
+	padding-left: $default-grid-spacing;
+	padding-right: $default-grid-spacing;
+	max-width: none;
 }
 
 // A normal grid row
 .grid__row {
-  display: block;
-  position: relative;
-  margin: 0 auto;
-  max-width: $grid-max-width-px;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	max-width: $grid-max-width-px;
 
-  // no content padding on mobile
-  width: 100%;
-  @include if-wider-than($breakpoint-one-px) {
-    // add content padding on wider screen
-    width: 100% - $default-content-spacing * 2;
-  }
+	// no content padding on mobile
+	width: 100%;
+	@include if-wider-than($breakpoint-one-px) {
+		// add content padding on wider screen
+		width: 100% - $default-content-spacing * 2;
+	}
 
-  p ,
-  ul,
-  ol {
-    max-width: $grid-paragraph-max-width;
-  }
+	p ,
+	ul,
+	ol {
+		max-width: $grid-paragraph-max-width;
+	}
+	figure {
+		max-width: $grid-paragraph-max-width;
+		margin-left: 0;
+	}
 
-  > h1:first-child,
-  > h2:first-child {
-    margin-top: 0;
-  }
+	> h1:first-child,
+	> h2:first-child {
+		margin-top: 0;
+	}
 }
 
 // A wide grid row
 .grid__row--wide {
-  display: block;
-  position: relative;
-  margin: 0 auto;
-  max-width: $grid-max-width--wide-px;
-  width: 100%;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	max-width: $grid-max-width--wide-px;
+	width: 100%;
 }
 
 // reset a child of a wide row to be a normal row
 .grid__row--wide__normal {
-  @extend .grid__row;
+	@extend .grid__row;
 }
 
 // Add content padding around a wide row child
 .grid__row--wide__content {
-  @extend .u--default-h-padding;
+	@extend .u--default-h-padding;
 }
 
 // A wide row with automatically content padding for all children
 .grid__row--wide-content {
-  @extend .grid__row--wide;
-  @extend .u--default-h-padding;
+	@extend .grid__row--wide;
+	@extend .u--default-h-padding;
 
-  @include if-wider-than($breakpoint-three-px) {
-    // the growign margin introduced by max-width
-    // would make a percentage padding to wide
-    // BUT we can calculate the fixed px value to use
-    $maxPadding: $grid-max-width--wide-px * (0.01 * strip-units($default-content-spacing));
-    padding-left: $maxPadding !important;
-    padding-right: $maxPadding !important;
-  }
+	@include if-wider-than($breakpoint-three-px) {
+		// the growign margin introduced by max-width
+		// would make a percentage padding to wide
+		// BUT we can calculate the fixed px value to use
+		$maxPadding: $grid-max-width--wide-px * (0.01 * strip-units($default-content-spacing));
+		padding-left: $maxPadding !important;
+		padding-right: $maxPadding !important;
+	}
 }
 
 
@@ -133,45 +137,45 @@ body {
 // SECTION & CONTENT PADDING
 ///////////////////////////////////////////////////////////////////////////////
 .u--default-h-padding {
-  padding-left: $default-content-spacing;
-  padding-right: $default-content-spacing;
+	padding-left: $default-content-spacing;
+	padding-right: $default-content-spacing;
 }
 .u--default-v-padding {
-  padding-top: $default-content-spacing;
-  padding-bottom: $default-content-spacing;
+	padding-top: $default-content-spacing;
+	padding-bottom: $default-content-spacing;
 }
 
 .u--pad-top {
-  padding-top: $default-section-spacing;
+	padding-top: $default-section-spacing;
 }
 .u--pad-top--half {
-  padding-top: $default-section-spacing--half;
+	padding-top: $default-section-spacing--half;
 }
 .u--margin-top--half {
-  margin-top: $default-section-spacing--half;
+	margin-top: $default-section-spacing--half;
 }
 
 .u--pad-bottom {
-  padding-bottom: $default-section-spacing;
+	padding-bottom: $default-section-spacing;
 }
 .u--pad-bottom--half {
-  padding-bottom: $default-section-spacing--half;
+	padding-bottom: $default-section-spacing--half;
 }
 .u--margin-bottom--half {
-  margin-bottom: $default-section-spacing--half;
+	margin-bottom: $default-section-spacing--half;
 }
 
 .u--pad-both {
-  @extend .u--pad-top;
-  @extend .u--pad-bottom;
+	@extend .u--pad-top;
+	@extend .u--pad-bottom;
 }
 .u--pad-both--half {
-  @extend .u--pad-top--half;
-  @extend .u--pad-bottom--half;
+	@extend .u--pad-top--half;
+	@extend .u--pad-bottom--half;
 }
 .u--margin-both--half {
-  @extend .u--margin-top--half;
-  @extend .u--margin-bottom--half;
+	@extend .u--margin-top--half;
+	@extend .u--margin-bottom--half;
 }
 
 
@@ -184,25 +188,25 @@ body {
 
 
 .main-content {
-  margin-top: pxToRem(80); // same as nav height
+	margin-top: pxToRem(80); // same as nav height
 
-  .page-home & {
-    display: none;
-  }
+	.page-home & {
+		display: none;
+	}
 
-  // avois showing font replacement flash when loading subpages
-  // don't put will-change on this container since it's MASSIVE
-  transition: opacity 300ms $easeOutQuad;
-  .js-loading & {
-    opacity: 0;
-  }
+	// avois showing font replacement flash when loading subpages
+	// don't put will-change on this container since it's MASSIVE
+	transition: opacity 300ms $easeOutQuad;
+	.js-loading & {
+		opacity: 0;
+	}
 }
 
 svg {
 	display: block;
-  height: 100%;
-  width: 100%;
-  vertical-align: middle;
+	height: 100%;
+	width: 100%;
+	vertical-align: middle;
 }
 
 //
@@ -219,6 +223,6 @@ svg {
 }
 
 .pjax-animate {
-  will-change: transform;
+	will-change: transform;
 }
 

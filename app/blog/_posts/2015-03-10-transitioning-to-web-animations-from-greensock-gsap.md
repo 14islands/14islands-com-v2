@@ -33,7 +33,7 @@ At the time of writing only Chrome and Opera has native support for Web Animatio
 Let’s compare some common animation tasks using both frameworks. The most basic animation is to tween an object’s properties from state A to state B. We want to get the best performance possible so this means [avoiding properties](http://csstriggers.com/) that cause a `layout` or `paint`, so that the GPU can carry out the work.
 
 ### Basic GSAP tween
-GSAP let's you tween any CSS property or DOM attribute, and uses a plugin architecture so you can load only the parts of the framework that you need. GSAP’s [CSS plugin](http://greensock.com/docs/#/HTML5/GSAP/Plugins/CSSPlugin/) automatically uses `matrix()` or `translate()` transforms to animate the x-property.
+GSAP can tween any CSS property or DOM attribute, and uses a plugin architecture so you can load only the parts of the framework that you need. The [CSS plugin](http://greensock.com/docs/#/HTML5/GSAP/Plugins/CSSPlugin/) automatically uses `matrix()` or `translate()` transforms to animate the x-property.
 
 
 {% include codepen-embed.html slug="xbybpZ" tab="js" height="160" %}
@@ -60,7 +60,7 @@ One thing to watch out for is the fill mode. By default, Web Animations fill mod
 Both GSAP and Web Animations have timeline abstractions. You can queue tweens on the timeline in sequence, in parallel and make them overlap. You can also pause, seek and adjust the playback rate of the entire timeline animation.
 
 ### GSAP timeline
-The GSAP Timeline let's you add tweens, callbacks and labels with exact control of the timing offset between them. By default, tweens are added to the timeline in sequential order.
+The GSAP Timeline lets you add tweens, callbacks and labels with exact control of the timing offset between them. By default, tweens are added to the timeline in sequential order.
 
 
 {% include codepen-embed.html slug="MYPwww" tab="js" height="333" %}
