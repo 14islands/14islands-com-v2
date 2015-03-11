@@ -3,7 +3,6 @@ layout: post
 title:  "Transitioning to Web Animations from GreenSock GSAP"
 description: "We recently got a chance to work with the new Web Animations specification when building this year’s Google Santa Tracker. We normally use GreenSock GSAP for complex animation sequences and it was interesting to see that the standards are catching up."
 og_image: /images/blog/awwwards/awwwards-day-one.jpg
-private: true
 ---
 
 {%comment%}
@@ -16,7 +15,7 @@ private: true
 
 **We recently got a chance to work with the new Web Animations specification when building this year's [Google Santa Tracker](/work/google-santa-tracker/). We normally use GreenSock GSAP for complex animation sequences and it was interesting to see that the standards are catching up.**
 
-This is not meant as a head-to-head comparison of the two technologies, this is simply a documentation of our experiences switching from GreenSock GSAP to Web Animations. 
+This is not meant as a head-to-head comparison of the two technologies, this is simply a documentation of our experience switching from GreenSock GSAP to Web Animations. 
 
 _**Please note** that the [Web Animations specification](http://w3c.github.io/web-animations/) is very much a [work in progress](https://github.com/w3c/web-animations/commits/master) so things may have changed since this post was written._
 
