@@ -1,0 +1,18 @@
+{% if include.ratio %}
+{% capture ratioClass %}u-ratio u-ratio--{{include.ratio}}{% endcapture %}
+{% endif %}
+
+{% if include.height %}
+{% capture ratioStyle %}height: {{include.height}}px{% endcapture %}
+{% endif %}
+
+<figure
+    class="js-component-code-pen-embed-on-scroll codepen-embed grid__row--wide u--margin-both--half {{ratioClass}}"
+    style="{{ratioStyle}}"
+    data-slug="{{include.slug}}"
+    data-ratio="{{include.ratio}}"
+    data-height="{{include.height}}"
+    data-tab="{{include.tab}}">
+  <div class="codepen-embed__content"></div>
+	<noscript>See the Pen <a href="http://codepen.io/14islands/pen/{{include.slug}}/">{{include.slug}}</a> by 14islands (<a href="http://codepen.io/14islands">@14islands</a>) on <a href="http://codepen.io">CodePen</a>.</noscript>
+</figure>

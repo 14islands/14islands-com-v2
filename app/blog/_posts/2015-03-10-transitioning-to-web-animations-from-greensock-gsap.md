@@ -39,8 +39,9 @@ Let’s compare some common animation tasks using both frameworks. The most basi
 ### Basic GSAP tween
 GSAP let's you tween any CSS property or DOM attribute, and uses a plugin architecture so you can load only the parts of the framework that you need. GSAP’s [CSS plugin](http://greensock.com/docs/#/HTML5/GSAP/Plugins/CSSPlugin/) automatically uses `matrix()` or `translate()` transforms to animate the x-property.
 
-<p data-height="160" data-theme-id="6678" data-slug-hash="xbybpZ" data-default-tab="js" data-user="14islands" class='codepen'>See the Pen <a href='http://codepen.io/14islands/pen/xbybpZ/'>Basic GSAP Tween</a> by 14islands (<a href='http://codepen.io/14islands'>@14islands</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+{% include codepen-embed.html slug="xbybpZ" tab="js" height="160" %}
+
 
 GSAP has most common easing functions [built in](http://greensock.com/docs/#/HTML5/GSAP/Easing/). You can force `matrix3d()` or `translate3d()` using the [force3D](http://greensock.com/docs/#/HTML5/GSAP/Plugins/CSSPlugin/) flag  to make the browser put that element onto its own compositor layer ([use sparingly](http://wesleyhales.com/blog/2013/10/26/Jank-Busting-Apples-Home-Page/)). 
 
@@ -52,8 +53,9 @@ Web Animations also supports tweening any CSS property or DOM attribute, but you
 
 This example is the most basic way of applying an animation directly to a DOM element.
 
-<p data-height="310" data-theme-id="6678" data-slug-hash="RNeNoV" data-default-tab="js" data-user="14islands" class='codepen'>See the Pen <a href='http://codepen.io/14islands/pen/RNeNoV/'>Basic Web Animations Tween</a> by 14islands (<a href='http://codepen.io/14islands'>@14islands</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+{% include codepen-embed.html slug="RNeNoV" tab="js" height="310" %}
+
 
 One thing to watch out for is the fill mode. By default, Web Animations fill mode is set to `none` which means the element resets to whatever state it had before the animation. Setting it to `forwards` makes it keep the last keyframe state. Again, this behaves just like the CSS Animations counterpart.
 
@@ -64,16 +66,18 @@ Both GSAP and Web Animations have timeline abstractions. You can queue tweens on
 ### GSAP timeline
 The GSAP Timeline let's you add tweens, callbacks and labels with exact control of the timing offset between them. By default, tweens are added to the timeline in sequential order.
 
-<p data-height="333" data-theme-id="6678" data-slug-hash="MYPwww" data-default-tab="js" data-user="14islands" class='codepen'>See the Pen <a href='http://codepen.io/14islands/pen/MYPwww/'>Basic GSAP TimeLine</a> by 14islands (<a href='http://codepen.io/14islands'>@14islands</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+{% include codepen-embed.html slug="MYPwww" tab="js" height="333" %}
+
 
 The `timeline` instance can be used to control all tweens by pausing, reversing, seeking and changing playback rate.
 
 ### Web Animations timeline
 Web Animations lets you create and combine AnimationSequences and AnimationGroups to synchronize the timing of individual tweens. They can be nested inside each other to create complex animations. A player must be created to play the outermost sequence/group.
 
-<p data-height="555" data-theme-id="6678" data-slug-hash="vEVOXr" data-default-tab="js" data-user="14islands" class='codepen'>See the Pen <a href='http://codepen.io/14islands/pen/vEVOXr/'>Basic Web Animations TimeLine</a> by 14islands (<a href='http://codepen.io/14islands'>@14islands</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+{% include codepen-embed.html slug="vEVOXr" tab="js" height="555" %}
+
 
 The Web Animations player also supports pausing, reversing, seeking and changing playback rate.
 
@@ -84,8 +88,9 @@ In one of the trickier scenes in this year’s Santa Tracker we had to animate r
 ### GSAP callbacks
 The GSAP implementation of this is pretty straight forward thanks to the `TimelineLite.add()` function which can synchronize JavaScript callbacks alongside tweens.
 
-<p data-height="550" data-theme-id="6678" data-slug-hash="dPgOdK" data-default-tab="js" data-user="14islands" class='codepen'>See the Pen <a href='http://codepen.io/14islands/pen/dPgOdK/'>GSAP Callbacks</a> by 14islands (<a href='http://codepen.io/14islands'>@14islands</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+{% include codepen-embed.html slug="dPgOdK" tab="js" height="550" %}
+
 
 GSAP also provides handy `onStart`, `onUpdate`, `onComplete` and `onReverseComplete` callbacks on both the Timeline and on individual Tweens.
 
@@ -104,8 +109,9 @@ var myCallback = new Animation(elem, function(tf) {
 
 The equivalent of the above GSAP animation sequence ends up looking like this with Web Animations:
 
-<p data-height="940" data-theme-id="6678" data-slug-hash="pvxRWd" data-default-tab="js" data-user="14islands" class='codepen'>See the Pen <a href='http://codepen.io/14islands/pen/pvxRWd/'>Web Animations Callbacks</a> by 14islands (<a href='http://codepen.io/14islands'>@14islands</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+{% include codepen-embed.html slug="pvxRWd" tab="js" height="940" %}
+
 
 You are probably wondering why we bind to the `finish` event like that. The latest version of the [spec.](http://w3c.github.io/web-animations/#promise-objects) mentions that the event has been removed and that it should expose `ready` and `finished` promises instead. There’s an open [issue for the polyfill](https://github.com/web-animations/web-animations-js/issues/17) tracking this.
 

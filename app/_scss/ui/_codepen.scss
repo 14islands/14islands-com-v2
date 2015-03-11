@@ -1,10 +1,7 @@
-.codepen-embed {
+.codepen-embed.u-ratio {
   // this wrapper has the ratio
 
-	// > div is our codepen wrapper
-	// that contains the iframe
-	> div:not(.spinner) {
+	.embed__content {
 		@extend .u-ratio__content;
 	}
-
 }
