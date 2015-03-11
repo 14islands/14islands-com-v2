@@ -12,7 +12,7 @@
 		<meta property="og:type" content="article" />
 		<meta property="og:title" content="Transitioning to Web Animations from GreenSock GSAP" />
 		<meta property="og:description" content="We recently got a chance to work with the new Web Animations specification when building this year’s Google Santa Tracker. We normally use GreenSock GSAP for complex animation sequences and it was interesting to see that the standards are catching up." />
-		<meta property="og:image" content="https://14islands.com/images/blog/awwwards/awwwards-day-one.jpg" />
+		<meta property="og:image" content="https://14islands.com/images/blog/web-animations-vs-greensock-gsap/web-animations-vs-greensock-gsap.png" />
 		<meta property="og:url" content="https://14islands.com/blog/2015/03/10/transitioning-to-web-animations-from-greensock-gsap/" />
 		<meta property="og:site_name" content="14islands" />
 
@@ -194,13 +194,13 @@
 
 <p>The Web Animations player also supports pausing, reversing, seeking and changing playback rate.</p>
 
-<h2>Advanced JavaScript callbacks - A real life example</h2>
+<h2>Events and Callbacks</h2>
 
 <p>In one of the trickier scenes in this year’s Santa Tracker we had to animate random characters traveling on a conveyor belt.  Half-way through their journey they would enter a magic closet that dressed them in a random color.</p>
 
-<h3>GSAP callbacks</h3>
+<h3>GSAP callback</h3>
 
-<p>The GSAP implementation of this is pretty straight forward thanks to the <code>TimelineLite.add()</code> function which can synchronize JavaScript callbacks alongside tweens.</p>
+<p>The GSAP implementation of this use case is pretty straight forward thanks to the <code>TimelineLite.add()</code> function which can synchronize JavaScript callbacks alongside tweens.</p>
 
 <p><figure
     class="js-component-code-pen-embed-on-scroll codepen-embed grid__row--wide u--margin-both--half "
@@ -215,7 +215,7 @@
 
 <p>GSAP also provides handy <code>onStart</code>, <code>onUpdate</code>, <code>onComplete</code> and <code>onReverseComplete</code> callbacks on both the Timeline and on individual Tweens.</p>
 
-<h3>Web Animations callbacks</h3>
+<h3>Web Animations callback</h3>
 
 <p>This is where it gets a bit tricky. Web Animations only gives us a <code>finish</code> event on the player instance.</p>
 
