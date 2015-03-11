@@ -2,7 +2,7 @@
 layout: post
 title:  "Transitioning to Web Animations from GreenSock GSAP"
 description: "We recently got a chance to work with the new Web Animations specification when building this year’s Google Santa Tracker. We normally use GreenSock GSAP for complex animation sequences and it was interesting to see that the standards are catching up."
-og_image: /images/blog/awwwards/awwwards-day-one.jpg
+og_image: /images/blog/web-animations-vs-greensock-gsap/web-animations-vs-greensock-gsap.png
 private: true
 ---
 
@@ -19,11 +19,6 @@ private: true
 This is not meant as a head-to-head comparison of the two technologies, this is simply a documentation of our experience switching from GreenSock GSAP to Web Animations. 
 
 _**Please note** that the [Web Animations specification](http://w3c.github.io/web-animations/) is very much a [work in progress](https://github.com/w3c/web-animations/commits/master) so things may have changed since this post was written._
-
-
-{% comment %}
-{% include post-image.html alt="Awwwards Conference 2015" src="/images/blog/awwwards/awwwards-day-one.jpg" margin="both" ratio="16_10" %}
-{% endcomment %}
 
 
 ## Background 
@@ -83,11 +78,11 @@ Web Animations lets you create and combine AnimationSequences and AnimationGroup
 The Web Animations player also supports pausing, reversing, seeking and changing playback rate.
 
 
-## Advanced JavaScript callbacks - A real life example
+## Events and Callbacks
 In one of the trickier scenes in this year’s Santa Tracker we had to animate random characters traveling on a conveyor belt.  Half-way through their journey they would enter a magic closet that dressed them in a random color.
 
-### GSAP callbacks
-The GSAP implementation of this is pretty straight forward thanks to the `TimelineLite.add()` function which can synchronize JavaScript callbacks alongside tweens.
+### GSAP callback
+The GSAP implementation of this use case is pretty straight forward thanks to the `TimelineLite.add()` function which can synchronize JavaScript callbacks alongside tweens.
 
 
 {% include codepen-embed.html slug="dPgOdK" tab="js" height="550" %}
@@ -96,7 +91,7 @@ The GSAP implementation of this is pretty straight forward thanks to the `Timeli
 GSAP also provides handy `onStart`, `onUpdate`, `onComplete` and `onReverseComplete` callbacks on both the Timeline and on individual Tweens.
 
 
-### Web Animations callbacks
+### Web Animations callback
 This is where it gets a bit tricky. Web Animations only gives us a `finish` event on the player instance.
 
 To schedule callbacks at a specific time during an animation, you need to manually [wrap your callback in an animation](https://github.com/web-animations/web-animations-js/issues/20) and make sure it runs only once:
