@@ -20,3 +20,5 @@ The goal with the talk was to share some opinionated thoughts on what is positiv
 {% include blog-speakerdeck.html id="c9abb26aa48547998a2bf3bd2d5058d6" ratio="4_3" %}
 
 Big thanks to [Elespacio](http://www.elespacio.net/) for inviting us to the very interesting *Space is the place 2* event. Hope to see you all again soon!
+
+{% include blog-author-marco.html %}

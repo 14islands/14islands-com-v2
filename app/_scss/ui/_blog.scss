@@ -52,6 +52,30 @@
 }
 
 
+.post__author {
+	@include clearfix;
+}
+
+.post__author-image {
+	float: left;
+	width: 84px;
+	height: 84px;
+	border-radius: 500px;
+}
+
+.post__author-name,
+.post__author-job-title {
+	display: block;
+	position: relative;
+	padding-left: 100px;
+}
+
+.post__author-name {
+	padding-top: 20px;
+}
+
+
+
 .related-posts__label {
   margin-top: 0;
 }

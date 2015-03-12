@@ -143,4 +143,4 @@ It turns out that Web Animations was a pretty good fit for [the project](/work/g
 * [Polymer Web Animations documentation](https://www.polymer-project.org/0.5/platform/web-animations.html)
 * [AnimationCallback util for triggering JavaScript callbacks at given intervals with Web Animations](https://github.com/samthor/animation-callback)
 
-{% include blog-author.html author="david" %}
+{% include blog-author-david.html %}
