@@ -7,7 +7,7 @@ og_image: /images/blog/talks/wordpress-as-a-cms/wordpress-as-a-cms.jpg
 
 # Lessons learned using WordPress as a CMS
 
-The very first Wordpress Stockholm Meetup was held at Aftonbladet. We had an opportunity to speak at the Meetup and share our lessons learned on using Wordpress as a CMS.
+The very first Wordpress Stockholm Meetup was held at Aftonbladet 11th of March 2015. We had the opportunity to speak at the Meetup and share our lessons learned on using Wordpress as a CMS.
 
 WordPress was initially designed as a blogging platform, but is now being used to drive content for full-blown websites. This talk explored ways to make WordPress work better as a CMS while building unique themes for clients.
 
