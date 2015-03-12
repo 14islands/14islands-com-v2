@@ -9,8 +9,6 @@ og_image: /images/blog/talks/wordpress-as-a-cms/wordpress-as-a-cms.jpg
 
 The very first Wordpress Stockholm Meetup was held at Aftonbladet. We had an opportunity to speak at the Meetup and share our lessons learned on using Wordpress as a CMS.
 
-{% include post-image.html alt="WordPress as a CMS" src="/images/blog/talks/wordpress-as-a-cms/wordpress-as-a-cms.jpg" margin="both" ratio="4_3" %}
-
 WordPress was initially designed as a blogging platform, but is now being used to drive content for full-blown websites. This talk explored ways to make WordPress work better as a CMS while building unique themes for clients.
 
 [Video Recording from the event is available](http://bloggar.aftonbladet.se/utvecklingsbloggen/2015/03/10/schedule-live-stream-wordpress-stockholm-meetup-wpsthlm/) (starts at 1:34) and slides are displayed below.
