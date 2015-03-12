@@ -5,7 +5,7 @@ description: Responsive Web Design has been around for a while and it’s worth 
 og_image: /images/blog/talks/the-good-the-bad-and-the-ugly/the-good-the-bad-and-the-ugly.001.jpg
 ---
 
-# The good, the bad and the ugly with responsive web design
+# The good, the bad and&nbsp;the ugly with responsive web design
 
 One of the great benefits of attending conferences is that you get to meet interesting people and share ideas.
 

@@ -83,9 +83,11 @@ body {
 	p ,
 	ul,
 	ol {
+		width: 100%;
 		max-width: $grid-paragraph-max-width;
 	}
 	figure {
+		width: 100%;
 		max-width: $grid-paragraph-max-width;
 		margin-left: 0;
 	}
