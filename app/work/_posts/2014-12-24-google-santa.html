@@ -23,43 +23,42 @@ og_image: /images/work/google-santa-tracker/santa-tracker-village-desktop.png
 
 
 <section id="about" class="grid u--pad-both">
-  <div class="grid__row">
+	<div class="grid__row">
 {% markdown %}
 ## 'Tis the Season
 
 We’ve had the pleasure to build 16 interactive scenes for the calendar over the past two years. It's a fully responsive experience with lots of animations and playfulness.
 
-<!--Each day &#8212; from December 1st to December 24th &#8212; you get to follow Santa and his elves as they prepare for Christmas.-->
 {% endmarkdown %}
-  </div>
+	</div>
 
 {% include wide-content-image.html src="/images/work/google-santa-tracker/santa-tracker-village-desktop.png" alt="Santa's village is the entry point to all the individual games and scenes." ratio="16_10" margin="both" %}
 
-  <div class="grid__row">
+	<div class="grid__row">
 {% markdown %}
 Santa's village is the entry point to all the individual games and scenes. Each one is built as a separate App making it easier for the team to work in parallel.
 {% endmarkdown %}
-  </div>
+	</div>
 </section>
 
 {% include casestudy-responsive.html url="/images/work/google-santa-tracker/santa-tracker-village-mobile-wide.png" parallax=true parallaxOffset="0" parallaxDirection="horizontal" %}
 
 <section class="grid u--pad-both">
-  <div class="grid__row">
+	<div class="grid__row">
 {% markdown %}
 ## Decorations
 
 The overall experience was directed by our friends [UPPERQUAD](http://upperquad.com){:target="_blank"}. The design features colourful flat elements such as moving animals and elves in different colour outfits.
 {% endmarkdown %}
-  </div>
+	</div>
 
-  {% include wide-content-image.html src="/images/work/google-santa-tracker/santa-tracker-playground-desktop.png" alt="The playground scene features many fun animations and eyes that follow the mouse." ratio="16_10" margin="both" %}
+	{% include wide-content-image.html src="/images/work/google-santa-tracker/santa-tracker-playground-desktop.png" alt="The playground scene features many fun animations and eyes that follow the mouse." ratio="16_10" margin="both" %}
 
-  <div class="grid__row">
+	<div class="grid__row">
 {% markdown %}
 All design elements are vector based &#8212; a good approach to keep things flexible and resolution independent. As always, we made everything work on different kinds of devices, this year we even added support for Chromecast and Android Wear integration.
 {% endmarkdown %}
-  </div>
+	</div>
 
 </section>
 
@@ -68,87 +67,89 @@ All design elements are vector based &#8212; a good approach to keep things flex
 
 
 <section class="grid u--pad-both u-bg-bright">
-  <div class="grid__row">
+	<div class="grid__row">
 {% markdown %}
 ## Bringing it to life
 
 Apart from coding the colourful characters and their surroundings, our job was to bring the whole experience to life.
 Animations and interactions should feel natural and work nicely together to make scenes playful and as fun as possible.
 {% endmarkdown %}
-  </div>
+	</div>
 
-  <div class="grid__row content-image u--pad-both--half">
-    {% include work/google-santa-tracker/reindeer-animations.html %}
-  </div>
+	<div class="grid__row content-image u--pad-both--half">
+		{% include work/google-santa-tracker/reindeer-animations.html %}
+	</div>
 
-  <div class="grid__row">
+	<div class="grid__row">
 {% markdown %}
 Many of the scenes were fully fledged games, such as the matching game where you play against the clock to beat santa on his own playfield. We built the logic for these games with multiple levels and score keeping.
 {% endmarkdown %}
-  </div>
+	</div>
 
-  {% include wide-content-image.html src="/images/work/google-santa-tracker/santa-tracker-matching-game-desktop.png" alt="Santa Tracker Matching Game" ratio="16_10" margin="both" %}
+	{% include wide-content-image.html src="/images/work/google-santa-tracker/santa-tracker-matching-game-desktop.png" alt="Santa Tracker Matching Game" ratio="16_10" margin="both" %}
 
-  <div class="grid__row">
+	<div class="grid__row">
 {% markdown %}
 We also integrated with many cool Google services such as the Street View Panorama and the Text-to-Speech API. The translations scene lets you listen to your favourite holiday greetings in 20 different languages &#8212; including Elvish.
 {% endmarkdown %}
-  </div>
+	</div>
 
-  {% include wide-content-image.html src="/images/work/google-santa-tracker/santa-tracker-translations-desktop.png" alt="Santa Translation scene" ratio="16_10" margin="both" %}
+	{% include wide-content-image.html src="/images/work/google-santa-tracker/santa-tracker-translations-desktop.png" alt="Santa Translation scene" ratio="16_10" margin="both" %}
 
-  <div class="grid__row">
+	<div class="grid__row">
 {% markdown %}
 Our office buddies [Plan8](http://plan8.se/){:target="_blank"} did an amazing job with the sound design for the whole project.
 {% endmarkdown %}
-  </div>
+	</div>
 </section>
 
 <section class="grid u--pad-both">
-  <div class="grid__row">
+	<div class="grid__row">
 {% markdown %}
 ## Technologies
 
-As always, when working with Google, we got to play with a lot of new toys. This year Santa's factory was upgraded to use Web Components (using Polymer) and the new Web Animations specification. <!--Read more about our [thoughts on Web Animations on the blog](#)-->
+As always, when working with Google, we got to play with a lot of new toys. This year Santa's factory was upgraded to use Web Components (using Polymer) and the new Web Animations specification.
+
+You can read about our experience [transitioning from GreenSock GSAP to Web Animations](/blog/2015/03/13/transitioning-to-web-animations-from-greensock-gsap/) on the blog.
 {% endmarkdown %}
-  </div>
-  <div class="grid__row--wide-content casestudy__technology-list u--pad-top--half">
-    <a class="casestudy__technology-item" href="https://www.polymer-project.org/" target="_blank">
-       {% include svgs/technology-logos/logo_polymer.min.svg %}
-       <h3 class="casestudy__technology-title">Polymer</h3>
-       <p class="casestudy__technology-description">Web Components polyfill.</p>
-    </a><!-- Remove spacing
-    --><a class="casestudy__technology-item" href="https://github.com/web-animations/web-animations-js" target="_blank">
-       {% include svgs/technology-logos/logo_github.min.svg %}
-       <h3 class="casestudy__technology-title">Web Animations</h3>
-       <p class="casestudy__technology-description">Animations polyfill.</p>
-    </a><!-- Remove spacing
-    --><a class="casestudy__technology-item" href="http://sass-lang.com/" target="_blank">
-       {% include svgs/technology-logos/logo_sass.min.svg %}
-       <h3 class="casestudy__technology-title">Sass</h3>
-       <p class="casestudy__technology-description">CSS pre-processing.</p>
-    </a><!-- Remove spacing
-    --><a class="casestudy__technology-item" href="http://modernizr.com/" target="_blank">
-       {% include svgs/technology-logos/logo_modernizr.min.svg %}
-       <h3 class="casestudy__technology-title">Modernizr</h3>
-       <p class="casestudy__technology-description">Browser and device feature detection.</p>
-    </a><!-- Remove spacing
-    --><a class="casestudy__technology-item" href="http://jquery.com/" target="_blank">
-       {% include svgs/technology-logos/logo_jquery.min.svg %}
-       <h3  class="casestudy__technology-title">jQuery</h3>
-       <p class="casestudy__technology-description">DOM manipulation and more.</p>
-    </a><!-- Remove spacing
-    --><a class="casestudy__technology-item" href="http://gulpjs.com/" target="_blank">
-       {% include svgs/technology-logos/logo_gulp.min.svg %}
-       <h3 class="casestudy__technology-title">Gulp</h3>
-       <p class="casestudy__technology-description">Task Automation.</p>
-    </a><!-- Remove spacing
-    --><a class="casestudy__technology-item" href="http://bower.io/" target="_blank">
-       {% include svgs/technology-logos/logo_bower.min.svg %}
-       <h3 class="casestudy__technology-title">Bower</h3>
-       <p class="casestudy__technology-description">Front-end package manager.</p>
-    </a>
-  </div>
+	</div>
+	<div class="grid__row--wide-content casestudy__technology-list u--pad-top--half">
+		<a class="casestudy__technology-item" href="https://www.polymer-project.org/" target="_blank">
+			 {% include svgs/technology-logos/logo_polymer.min.svg %}
+			 <h3 class="casestudy__technology-title">Polymer</h3>
+			 <p class="casestudy__technology-description">Web Components polyfill.</p>
+		</a><!-- Remove spacing
+		--><a class="casestudy__technology-item" href="https://github.com/web-animations/web-animations-js" target="_blank">
+			 {% include svgs/technology-logos/logo_github.min.svg %}
+			 <h3 class="casestudy__technology-title">Web Animations</h3>
+			 <p class="casestudy__technology-description">Web Animations polyfill.</p>
+		</a><!-- Remove spacing
+		--><a class="casestudy__technology-item" href="http://sass-lang.com/" target="_blank">
+			 {% include svgs/technology-logos/logo_sass.min.svg %}
+			 <h3 class="casestudy__technology-title">Sass</h3>
+			 <p class="casestudy__technology-description">CSS pre-processing.</p>
+		</a><!-- Remove spacing
+		--><a class="casestudy__technology-item" href="http://modernizr.com/" target="_blank">
+			 {% include svgs/technology-logos/logo_modernizr.min.svg %}
+			 <h3 class="casestudy__technology-title">Modernizr</h3>
+			 <p class="casestudy__technology-description">Browser and device feature detection.</p>
+		</a><!-- Remove spacing
+		--><a class="casestudy__technology-item" href="http://jquery.com/" target="_blank">
+			 {% include svgs/technology-logos/logo_jquery.min.svg %}
+			 <h3  class="casestudy__technology-title">jQuery</h3>
+			 <p class="casestudy__technology-description">DOM manipulation and more.</p>
+		</a><!-- Remove spacing
+		--><a class="casestudy__technology-item" href="http://gulpjs.com/" target="_blank">
+			 {% include svgs/technology-logos/logo_gulp.min.svg %}
+			 <h3 class="casestudy__technology-title">Gulp</h3>
+			 <p class="casestudy__technology-description">Task Automation.</p>
+		</a><!-- Remove spacing
+		--><a class="casestudy__technology-item" href="http://bower.io/" target="_blank">
+			 {% include svgs/technology-logos/logo_bower.min.svg %}
+			 <h3 class="casestudy__technology-title">Bower</h3>
+			 <p class="casestudy__technology-description">Front-end package manager.</p>
+		</a>
+	</div>
 </section>
 
 {% comment %}
@@ -158,7 +159,7 @@ As always, when working with Google, we got to play with a lot of new toys. This
 {% include casestudy-quote.html quote="14islands were absolutely amazing in what they could do, despite challenging deadlines and working with brand new technologies. We are hugely impressed with their work and always appreciate the chance to collaborate with them." author-image-src="/images/work/google-santa-tracker/phil-ruppanner.jpg" author-name="Phil Ruppanner" author-job-title="Creative Director / Founder at UPPERQUAD" %}
 
 <section class="grid u--pad-both">
-  <div class="grid__row">
+	<div class="grid__row">
 {% markdown %}
 ## The best of all gifts
 
@@ -172,7 +173,7 @@ The site has won multiple awards both years we were involved:
 {% endmarkdown %}
 
 {% include casestudy-button.html site-url="https://santatracker.google.com/" %}
-  </div>
+	</div>
 </section>
 
 
