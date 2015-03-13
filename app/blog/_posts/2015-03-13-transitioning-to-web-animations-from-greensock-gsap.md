@@ -1,17 +1,9 @@
 ---
 layout: post
-title:  "Transitioning to Web Animations from GreenSock GSAP"
+title:  "Transitioning from GreenSock GSAP to Web&nbsp;Animations"
 description: "We recently got a chance to work with the new Web Animations specification when building this year’s Google Santa Tracker. We normally use GreenSock GSAP for complex animation sequences so we were interested to see if the standards are catching up."
-og_image: /images/blog/web-animations-vs-greensock-gsap/web-animations-vs-greensock-gsap.png
-private: true
+og_image: /images/blog/web-animations/web-animations.png
 ---
-
-{%comment%}
-# Web Animations vs GreenSock GSAP
-# How to use Web&nbsp;Animations vs. GreenSock GSAP
-# Migrating to Web&nbsp;Animations from GreenSock GSAP
-# Transitioning to Web&nbsp;Animations from GreenSock GSAP
-{%endcomment%}
 
 # Transitioning from GreenSock GSAP to Web&nbsp;Animations
 
