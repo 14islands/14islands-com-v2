@@ -5,7 +5,7 @@ description: Responsive Web Design has been around for a while and it’s worth 
 og_image: /images/blog/talks/the-good-the-bad-and-the-ugly/the-good-the-bad-and-the-ugly.001.jpg
 ---
 
-# The good, the bad and the ugly with responsive web design
+# The good, the bad and&nbsp;the ugly with responsive web design
 
 One of the great benefits of attending conferences is that you get to meet interesting people and share ideas.
 
@@ -20,3 +20,5 @@ The goal with the talk was to share some opinionated thoughts on what is positiv
 {% include blog-speakerdeck.html id="c9abb26aa48547998a2bf3bd2d5058d6" ratio="4_3" %}
 
 Big thanks to [Elespacio](http://www.elespacio.net/) for inviting us to the very interesting *Space is the place 2* event. Hope to see you all again soon!
+
+{% include blog-author-marco.html %}

@@ -1,3 +1,14 @@
+.post {
+	figure {
+		//add a slight negative margin when paragraph max width is reached
+		$marignRatio: strip-units(1 + (0.01 * $default-content-spacing*2));
+	 	@include if-wider-than($grid-max-width-px * $marignRatio) {
+			margin-left: - 1rem;
+			max-width: $grid-paragraph-max-width + 2rem;
+		}
+	}
+}
+
 .post-row {
 	padding-top: 4%;
 	padding-bottom: 4%;
@@ -39,6 +50,30 @@
 		margin-left: 25%;
 	}
 }
+
+
+.post__author {
+	@include clearfix;
+}
+
+.post__author-image {
+	float: left;
+	width: 84px;
+	height: 84px;
+	border-radius: 500px;
+}
+
+.post__author-name,
+.post__author-job-title {
+	display: block;
+	position: relative;
+	padding-left: 100px;
+}
+
+.post__author-name {
+	padding-top: 20px;
+}
+
 
 
 .related-posts__label {

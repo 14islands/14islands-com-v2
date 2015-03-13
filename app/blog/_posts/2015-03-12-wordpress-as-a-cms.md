@@ -16,3 +16,5 @@ WordPress was initially designed as a blogging platform, but is now being used t
 {% include blog-speakerdeck.html id="d35924a02f7a4d2f97e08064552e0ca3" ratio="16_9" %}
 
 Big thanks to everyone involved!
+
+{% include blog-author-hjortur.html %}
