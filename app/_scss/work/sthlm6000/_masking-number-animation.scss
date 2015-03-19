@@ -119,6 +119,10 @@ $sthlm6000green: #00e689;
   .sthlm6000-masking-number-animation__text-container {
     display: inline-block;
     vertical-align: middle;
+
+    h1 {
+	    word-wrap: normal;
+	  }
   }
 }
 
