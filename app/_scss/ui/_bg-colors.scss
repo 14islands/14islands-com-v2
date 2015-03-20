@@ -9,3 +9,10 @@
 .u-bg-natt-dark {
  	background-color: $natt-dark;
 }
+
+.u-bg-brand {
+	background-color: $green; // switch dynamically later somehow
+}
+.u-bg-brand--dark {
+	background-color: $green-dark; // switch dynamically later somehow
+}

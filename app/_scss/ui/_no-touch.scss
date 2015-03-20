@@ -44,4 +44,13 @@
 		}
 	}
 
+	// Blog: show comments link
+	.post-comments__cta {
+		margin: 0;
+		transition: background $easeOutQuad 300ms;
+		&:hover {
+			@extend .u-bg-brand--dark;
+		}
+	}
+
 }
