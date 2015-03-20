@@ -12,7 +12,7 @@ $default-side-padding: 40;
 // breakpoints
 //
 $breakpoint-one: 320px;
-$breakpoint-two: 768px;
+$breakpoint-two: 900px;
 $breakpoint-three: 1600px;
 
 /*
@@ -128,8 +128,8 @@ $base-three-px: 30;
 		}
 	}
 	.sthlm6000-about__chart__graphic {
-		margin-left: 0;
-		margin-right: 0;
+		// margin-left: 0;
+		// margin-right: 0;
 		@include if-wider-than(900px) {
 			margin-left: 0;
 			margin-right: 40px;
