@@ -24,8 +24,8 @@ class FOURTEEN.SthlmAboutChart extends FOURTEEN.ElementScrollVisibility
 
 
 	scripts: [
-		'http://cdn.rawgit.com/mbostock/d3/v3.5.5/d3.min.js',
-		'http://cdn.rawgit.com/tweenjs/tween.js/r14/build/tween.min.js'
+		'//cdn.rawgit.com/mbostock/d3/v3.5.5/d3.min.js',
+		'//cdn.rawgit.com/tweenjs/tween.js/r14/build/tween.min.js'
 	]
 
 	constructor: (@$context, data) ->
