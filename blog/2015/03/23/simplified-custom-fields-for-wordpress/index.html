@@ -3,17 +3,17 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Blog - 14islands</title>
-		<meta name="description" content="14islands is a web development studio that cares deeply about creating great user experiences.">
-		<meta name="keywords" content="Web Development, Web Design, UX, Web Developers, Digital, Studio, Agency, Stockholm, Consulting, Training, HTML, CSS, JavaScript, WordPress">
+		<title>How to simplify custom fields for WordPress</title>
+		<meta name="description" content="For creating new posts, pages or other post types - WordPress only includes two fields by default, a title and free-form WYSIWYG editor. In reality, there is most often a need for more dynamic content for our sites.">
+		<meta name="keywords" content="WordPress, Custom Fields, Advanced Custom Fields, ACF, Meta boxes, Meta data">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<meta property="og:locale" content="en_US" />
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Blog - 14islands" />
-		<meta property="og:description" content="14islands is a web development studio that cares deeply about creating great user experiences." />
-		<meta property="og:image" content="https://14islands.com/images/home-page-screenshot.png" />
-		<meta property="og:url" content="https://14islands.com/blog/" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="How to simplify custom fields for WordPress" />
+		<meta property="og:description" content="For creating new posts, pages or other post types - WordPress only includes two fields by default, a title and free-form WYSIWYG editor. In reality, there is most often a need for more dynamic content for our sites." />
+		<meta property="og:image" content="https://14islands.com/images/blog/wordpress/customfields/customfields-hero.png" />
+		<meta property="og:url" content="https://14islands.com/blog/2015/03/23/simplified-custom-fields-for-wordpress/" />
 		<meta property="og:site_name" content="14islands" />
 
 		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -48,7 +48,7 @@
 		<link rel="stylesheet" href="/css/main.fae1.css"/>
 
 	</head>
-	<body id="" class="page page-blog">
+	<body id="" class="page page-/blog/2015/03/23/simplified-custom-fields-for-wordpress">
 
 		<!--[if lt IE 9]>
 				<p class="browsehappy"><span>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.<span></p>
@@ -96,83 +96,98 @@
 
 
 		<main class="main-content js-pjax-container">
-				<section class="grid u--pad-top">
+				<article class="post grid u--pad-both pjax-animate">
+	<section class="grid__row">
+		<h1 id="how-to-simplify-custom-fields-for-wordpress">How to simplify custom fields for WordPress</h1>
 
-	<header class="grid__row pjax-animate u--margin-bottom--half">
-		<h1>Bloggin'</h1>
-	</header>
+<p>For creating new posts, pages or other post types - WordPress only includes two fields by default, a title and free-form WYSIWYG editor.</p>
 
+<p><img src="/images/blog/wordpress/customfields/wordpress-default-fields.png" alt="WordPress default fields" /></p>
 
-  
+<p>In reality, there is most often a need for more dynamic content for our sites. This could be additional text, numbers, images, galleries, maps, relationships, repeating information and other types of content.</p>
 
-  
+<p>Take the <a href="https://tictail.com/">Tictail</a> home page as an example, it’s a page including lots of different content types. Behind the scenes this content is all editable within WordPress.</p>
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">13 March 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/03/13/transitioning-to-web-animations-from-greensock-gsap/">
-	      		Transitioning from GreenSock GSAP to Web&nbsp;Animations
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
-
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">12 March 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/03/12/wordpress-as-a-cms/">
-	      		Lessons learned using WordPress as a CMS
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
-
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">6 March 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/03/06/the-good-the-bad-and-the-ugly-with-responsive-web-design/">
-	      		The good, the bad and the ugly with responsive web design
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
-
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">27 February 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/02/27/awwwards-conference-second-day/">
-	      		Awwwards conference - second day highlights
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
-
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">27 February 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/02/27/awwwards-conference-first-day/">
-	      		Awwwards conference - first day highlights
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
+<figure class="grid__row grid__row--wide content-image u--margin-both--half ">
 
 
+  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder">
+    <img alt="Tictail Home Page Example" data-src="/images/blog/wordpress/customfields/tictail-home-page-example.jpg" class="u-ratio__content" />
+<noscript>
+  <img alt="Tictail Home Page Example" src="/images/blog/wordpress/customfields/tictail-home-page-example.jpg" class="u-ratio__content" />
+</noscript>
+  </div>
+  
+</figure>
+
+<p>How is this possible? The answer is custom fields.</p>
+
+<h2 id="native-custom-fields">Native Custom Fields</h2>
+
+<p>WordPress has a simple custom fields functionality built into the admin interface. When creating new posts or pages, it’s possible to put in additional meta data.</p>
+
+<p><img src="/images/blog/wordpress/customfields/wordpress-custom-fields-ui.png" alt="WordPress Custom Fields User Interface" /></p>
+
+<p>The metadata is stored as key/value pairs in a <em>wp_postmeta</em> table in the WordPress database. However, the admin interface only offers simple text fields to edit these values. </p>
+
+<p>To enhance this experience with different field types, you have to develop your own fields. Smashing Magazine has a good write-up about <a href="http://www.smashingmagazine.com/2011/10/04/create-custom-post-meta-boxes-wordpress/">the coding process of doing this</a>. In a nutshell, it’s  a multi-step process that can take a lot of time and the potential for error increases with every custom field type.</p>
+
+<p>We decided to go and look for plugins/libraries to solve this common task to save up development and testing time. The most promising option we have found is Advanced Custom Fields. </p>
+
+<h2 id="advanced-custom-fields">Advanced Custom Fields</h2>
+
+<p>Advanced Custom Fields (ACF) is a popular plugin by many WordPress developers. It includes a clean admin interface, good documentation and a simple API. It also offers an extensive list of custom field types and a way to make your own fields.</p>
+
+<p><img src="/images/blog/wordpress/customfields/acf-custom-field-types.png" alt="Custom field types with ACF" /></p>
+
+<p>There is both a <a href="http://www.advancedcustomfields.com/">free version</a> of ACF and a more feature rich <a href="http://www.advancedcustomfields.com/pro/">PRO version</a> costing $100 AUD (around $77 USD) for unlimited number of sites.</p>
+
+<p>Using ACF speeds up the development process and improves the experience for editors when managing content. </p>
+
+<p>The main caveat is that ACF stores custom fields in the WordPress database. This potentially slows loading and when fields change it requires syncing of databases instead of keeping the logic in code.</p>
+
+<p>A recent version of ACF PRO includes a new feature called <a href="http://www.advancedcustomfields.com/resources/local-json/">Local JSON</a> aimed to solve this problem. Local JSON stores field groups in a JSON file instead of database. The file acts as a cache and is automatically updated when making field changes through the admin interface.</p>
+
+<p>The ACF documentation hints that the future of ACF could indeed be database-less. </p>
+
+<blockquote>
+  <p>The wp-admin field group edit screen will not load data from local json files. This functionality will hopefully soon make it’s way into the plugin.</p>
+</blockquote>
+
+<h2 id="the-future">The Future</h2>
+
+<p>As with <a href="/blog/2015/03/26/simplify-custom-fields-for-wordpress/">the multilingual support</a>, it’s surprising that common field types are not part of WordPress core.</p>
+
+<p>There are individual efforts being made to solve the problem. Apart from ACF there are other interesting developments going on, an example is a library called <a href="http://wp-papi.github.io/">wp-papi</a>. WP-Papi offers an API approach to custom fields and its easy to imagine that something like this might make it into the core some day in the future.</p>
+
+<p>In the meantime, we hope the tips in this article will prove to be useful for you.</p>
+
+<p>Have questions or feedback? Reply to <a href="https://twitter.com/14islands">our tweet about it</a>.</p>
+
+<div class="post__author u--pad-top">
+	<img alt="Hjörtur Hilmarsson" data-src="/images/about/team-grid/double-Hjortur.jpg" class="post__author-image" />
+<noscript>
+  <img alt="Hjörtur Hilmarsson" src="/images/about/team-grid/double-Hjortur.jpg" class="post__author-image" />
+</noscript>
+	<span class="post__author-name"><strong>Hjörtur Hilmarsson</strong> <a href="https://twitter.com/hjortureh" target="_blank">@hjortureh</a></span>
+	<span class="post__author-job-title">Creative web developer / Co-Founder at 14islands</span>
+</div>
+
+
+	</section>
+</article>
+
+
+  
+
+
+<section class="related-posts">
+	<a class="related-posts__link grid u--default-v-padding u-bg-bright" href="">
+		<div class="grid__row">
+	    <p class="related-posts__label">Read Next</p>
+	    <h2 class="related-posts__title"></h2>
+	  </div>
+	</a>
 </section>
 
 
