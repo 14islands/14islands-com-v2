@@ -74,8 +74,6 @@ If you like, take a look at [one of the guidelines we wrote for one of our clien
 
 This will make the outcome better for everyone.
 
-
-
 ## Conclusion 
 
 Multilingual support should be a core part of every CMS. 
