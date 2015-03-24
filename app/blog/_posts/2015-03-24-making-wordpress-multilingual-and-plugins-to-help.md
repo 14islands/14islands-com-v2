@@ -48,6 +48,8 @@ OR, if you're lucky and words are not the same in the different languages:
 
 This is the reason why we looked next into WPML.
 
+UPDATE: [Jürgen Genser](https://twitter.com/juergengenser)  kindly pointed out to us on Twitter [this plugin to use the same slug for multiple languages in Polylang](https://github.com/grappler/polylang-slug).  
+
 
 ## WPML
 
