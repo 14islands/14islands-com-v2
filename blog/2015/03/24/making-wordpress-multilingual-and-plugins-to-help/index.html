@@ -3,17 +3,17 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>How to simplify custom fields for WordPress</title>
-		<meta name="description" content="For creating new posts, pages or other post types - WordPress only includes two fields by default, a title and free-form WYSIWYG editor. In reality, there is most often a need for more dynamic content for our sites.">
-		<meta name="keywords" content="WordPress, Custom Fields, Advanced Custom Fields, ACF, Meta boxes, Meta data">
+		<title>Making WordPress multilingual and plugins to help</title>
+		<meta name="description" content="One important feature missing when using WordPress as a CMS is multilingual support. Translations of dynamic content for different languages needs a plugin">
+		<meta name="keywords" content="WordPress, multilingual, multi-lang, multi-languages, internationalisation, Wordpress.org">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="How to simplify custom fields for WordPress" />
-		<meta property="og:description" content="For creating new posts, pages or other post types - WordPress only includes two fields by default, a title and free-form WYSIWYG editor. In reality, there is most often a need for more dynamic content for our sites." />
-		<meta property="og:image" content="https://14islands.com/images/blog/wordpress/customfields/customfields-hero.png" />
-		<meta property="og:url" content="https://14islands.com/blog/2015/03/23/simplified-custom-fields-for-wordpress/" />
+		<meta property="og:title" content="Making WordPress multilingual and plugins to help" />
+		<meta property="og:description" content="One important feature missing when using WordPress as a CMS is multilingual support. Translations of dynamic content for different languages needs a plugin" />
+		<meta property="og:image" content="https://14islands.com/images/blog/wordpress/multilingual/multilingual-hero.png" />
+		<meta property="og:url" content="https://14islands.com/blog/2015/03/24/making-wordpress-multilingual-and-plugins-to-help/" />
 		<meta property="og:site_name" content="14islands" />
 
 		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -45,10 +45,10 @@
 			});
 		</script>
 
-		<link rel="stylesheet" href="/css/main.fae1.css"/>
+		<link rel="stylesheet" href="/css/main.07a5.css"/>
 
 	</head>
-	<body id="" class="page page-/blog/2015/03/23/simplified-custom-fields-for-wordpress">
+	<body id="" class="page page-/blog/2015/03/24/making-wordpress-multilingual-and-plugins-to-help">
 
 		<!--[if lt IE 9]>
 				<p class="browsehappy"><span>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.<span></p>
@@ -98,69 +98,82 @@
 		<main class="main-content js-pjax-container">
 				<article class="post grid u--pad-both pjax-animate">
 	<section class="grid__row">
-		<h1 id="how-to-simplify-custom-fields-for-wordpress">How to simplify custom fields for WordPress</h1>
+		<h1 id="making-wordpress-multilingual-and-plugins-to-help">Making WordPress multilingual and plugins to help</h1>
 
-<p>For creating new posts, pages or other post types - WordPress only includes two fields by default, a title and free-form WYSIWYG editor.</p>
+<p>One important feature missing when using WordPress as a CMS is multilingual support. This means that we are on our own to figure out ways to-do this.</p>
 
-<p><img src="/images/blog/wordpress/customfields/wordpress-default-fields.png" alt="WordPress default fields" /></p>
+<p>First, lets set the record straight.</p>
 
-<p>In reality, there is most often a need for more dynamic content for our sites. This could be additional text, numbers, images, galleries, maps, relationships, repeating information and other types of content.</p>
+<ol>
+  <li>WordPress does support <a href="http://codex.wordpress.org/Translating_WordPress">translation of static text strings inside PHP using *.po files</a> in different languages.</li>
+  <li>Also, if you want to show different content for different languages and countries, <a href="http://codex.wordpress.org/Create_A_Network">a multi-site setup</a> might be the path for you.</li>
+</ol>
 
-<p>Take the <a href="https://tictail.com/">Tictail</a> home page as an example, it’s a page including lots of different content types. Behind the scenes this content is all editable within WordPress.</p>
+<p>However, for translation of dynamic content in different languages within WordPress you need a plugin - assuming you don’t wont write this logic yourself.</p>
 
-<figure class="grid__row grid__row--wide content-image u--margin-both--half ">
+<h2 id="the-plugins">The plugins</h2>
 
+<p>Enter the WordPress plugin forest. After doing a lot of research we found two multilingual plugins worthy of our attention. These are <a href="https://polylang.wordpress.com/">Polylang</a> and <a href="https://wpml.org/">WPML</a>. </p>
 
-  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder">
-    <img alt="Tictail Home Page Example" data-src="/images/blog/wordpress/customfields/tictail-home-page-example.jpg" class="u-ratio__content" />
-<noscript>
-  <img alt="Tictail Home Page Example" src="/images/blog/wordpress/customfields/tictail-home-page-example.jpg" class="u-ratio__content" />
-</noscript>
-  </div>
-  
-</figure>
+<h2 id="polylang">Polylang</h2>
 
-<p>How is this possible? The answer is custom fields.</p>
+<p>Polylang is the newer player and looks very promising already. The user interface is good and the code-base is clearly written and crafted by a professional, so it feels good using it. Polylang is free.</p>
 
-<h2 id="native-custom-fields">Native Custom Fields</h2>
+<p>It has limitations. As an example, one common “best practise” is to construct urls for different languages like this:</p>
 
-<p>WordPress has a simple custom fields functionality built into the admin interface. When creating new posts or pages, it’s possible to put in additional meta data.</p>
+<pre><code>/jobs - Default language 
+/es/jobs - Spanish
+/se/jobs - Swedish
+</code></pre>
 
-<p><img src="/images/blog/wordpress/customfields/wordpress-custom-fields-ui.png" alt="WordPress Custom Fields User Interface" /></p>
+<p>These urls are simply not possible in Polylang because <a href="https://wordpress.org/support/topic/whats-a-slug">“the slug”</a> is used as a unique identity in WordPress. It makes it really hard to work around the issue. Instead Polylang recommends these kind of urls:</p>
 
-<p>The metadata is stored as key/value pairs in a <em>wp_postmeta</em> table in the WordPress database. However, the admin interface only offers simple text fields to edit these values. </p>
+<pre><code>/jobs
+/es-jobs
+/se-jobs
+</code></pre>
 
-<p>To enhance this experience with different field types, you have to develop your own fields. Smashing Magazine has a good write-up about <a href="http://www.smashingmagazine.com/2011/10/04/create-custom-post-meta-boxes-wordpress/">the coding process of doing this</a>. In a nutshell, it’s  a multi-step process that can take a lot of time and the potential for error increases with every custom field type.</p>
+<p>OR, if you’re lucky and words are not the same in the different languages:</p>
 
-<p>We decided to go and look for plugins/libraries to solve this common task to save up development and testing time. The most promising option we have found is Advanced Custom Fields. </p>
+<pre><code>/jobs
+/empleos
+/jobb
+</code></pre>
 
-<h2 id="advanced-custom-fields">Advanced Custom Fields</h2>
+<p>This is the reason why we looked next into WPML.</p>
 
-<p>Advanced Custom Fields (ACF) is a popular plugin by many WordPress developers. It includes a clean admin interface, good documentation and a simple API. It also offers an extensive list of custom field types and a way to make your own fields.</p>
+<h2 id="wpml">WPML</h2>
 
-<p><img src="/images/blog/wordpress/customfields/acf-custom-field-types.png" alt="Custom field types with ACF" /></p>
+<p>WPML has been around for a long time, it’s widely used and seems to be the most mature option out there. It costs <a href="https://wpml.org/purchase/">$195 as a one time purchase</a> and includes many features.</p>
 
-<p>There is both a <a href="http://www.advancedcustomfields.com/">free version</a> of ACF and a more feature rich <a href="http://www.advancedcustomfields.com/pro/">PRO version</a> costing $100 AUD (around $77 USD) for unlimited number of sites.</p>
+<p>WPML makes it possible to change “the slug”, making the desired url pattern possible:</p>
 
-<p>Using ACF speeds up the development process and improves the experience for editors when managing content. </p>
+<pre><code>/jobs
+/es/jobs
+/se/jobs
+</code></pre>
 
-<p>The main caveat is that ACF stores custom fields in the WordPress database. This potentially slows loading and when fields change it requires syncing of databases instead of keeping the logic in code.</p>
+<p>To accomplish this and other features, WPML goes deep into the core functionality of WordPress. It even adds extra tables to the database, and it unfortunately has a reputation of being slow. They do have some <a href="https://wpml.org/2012/01/can-your-site-run-faster/">caching recommendations</a>, but from what we’ve read: performance is a concern for content heavy websites.</p>
 
-<p>A recent version of ACF PRO includes a new feature called <a href="http://www.advancedcustomfields.com/resources/local-json/">Local JSON</a> aimed to solve this problem. Local JSON stores field groups in a JSON file instead of database. The file acts as a cache and is automatically updated when making field changes through the admin interface.</p>
+<p>Apart from this caveat, the plugin worked well for our needs. We had no conflicts with other plugins such as <a href="http://www.advancedcustomfields.com/">ACF</a>, another core plugin on the project. </p>
 
-<p>The ACF documentation hints that the future of ACF could indeed be database-less. </p>
+<p>At the moment WPML is still the best plugin out there for bigger WordPress sites.</p>
 
-<blockquote>
-  <p>The wp-admin field group edit screen will not load data from local json files. This functionality will hopefully soon make it’s way into the plugin.</p>
-</blockquote>
+<h2 id="the-editor-process">The editor process</h2>
 
-<h2 id="the-future">The Future</h2>
+<p>As a word of advice, including multilingual plugins in WordPress can make the editorial process quote a lot more complicated. I highly recommend writing easy-to-follow guidelines for editors to prevent them from getting lost. </p>
 
-<p>As with <a href="/blog/2015/03/26/simplify-custom-fields-for-wordpress/">the multilingual support</a>, it’s surprising that common field types are not part of WordPress core.</p>
+<p>If you like, take a look at <a href="https://docs.google.com/document/d/14Aw-igKKskUq4TrRkT1o9IGcy5f1glm23812ybXYnYM/edit?usp=sharing">one of the guidelines we wrote for one of our clients</a> on writing pages and posts in different languages using WPML. </p>
 
-<p>There are individual efforts being made to solve the problem. Apart from ACF there are other interesting developments going on, an example is a library called <a href="http://wp-papi.github.io/">wp-papi</a>. WP-Papi offers an API approach to custom fields and its easy to imagine that something like this might make it into the core some day in the future.</p>
+<p>This will make the outcome better for everyone.</p>
 
-<p>In the meantime, we hope the tips in this article will prove to be useful for you.</p>
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Multilingual support should be a core part of every CMS. </p>
+
+<p>WordPress is still showing its roots as a blogging platform but lets hope it will evolve fast and multilingual additions will be part of the core sooner than later.</p>
+
+<p>In the meantime, our recommendation is to use Polylang for simple use cases, or when money is a limitation. WPML for bigger sites.</p>
 
 <p>Have questions or feedback? Reply to <a href="https://twitter.com/14islands">our tweet about it</a>.</p>
 
@@ -182,10 +195,10 @@
 
 
 <section class="related-posts">
-	<a class="related-posts__link grid u--default-v-padding u-bg-bright" href="">
+	<a class="related-posts__link grid u--default-v-padding u-bg-bright" href="/blog/2015/03/13/transitioning-to-web-animations-from-greensock-gsap/">
 		<div class="grid__row">
 	    <p class="related-posts__label">Read Next</p>
-	    <h2 class="related-posts__title"></h2>
+	    <h2 class="related-posts__title">Transitioning from GreenSock GSAP to Web&nbsp;Animations</h2>
 	  </div>
 	</a>
 </section>
