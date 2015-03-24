@@ -32,7 +32,6 @@
   }
 }
 
-
 .u-ratio--rounded {
   border-radius: 4px;
 }
@@ -69,6 +68,10 @@
   padding-top: 50%;
 }
 
+.u-ratio--16_5:before {
+  padding-top: 31.25%;
+}
+
 .u-ratio--16_9:before {
   padding-top: 56.25%;
 }
@@ -85,6 +88,10 @@
   padding-top: 75%;
 }
 
+.u-ratio--3_4:before {
+  padding-top: 133%;
+}
+
 .u-ratio--5_4:before {
   padding-top: 80%; /* 5:4 ratio */
 }
@@ -96,8 +103,6 @@
 .u-ratio--1_2:before {
   padding-top: 200%;
 }
-
-
 
 .u-ratio--custom_40:before {
   padding-top: 40%;

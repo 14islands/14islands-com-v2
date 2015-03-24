@@ -11,13 +11,13 @@ private: true
 
 For creating new posts, pages or other post types - WordPress only includes two fields by default, a title and free-form WYSIWYG editor.
 
-![WordPress default fields](/images/blog/wordpress/customfields/wordpress-default-fields.png)
+{% include post-image.html alt="WordPress default fields" src="/images/blog/wordpress/customfields/wordpress-default-fields.png" margin="both" ratio="16_9" %}
 
 In reality, there is most often a need for more dynamic content for our sites. This could be additional text, numbers, images, galleries, maps, relationships, repeating information and other types of content.
 
 Take the [Tictail](https://tictail.com/) home page as an example, it's a page including lots of different content types. Behind the scenes this content is all editable within WordPress.
 
-{% include post-image.html alt="Tictail Home Page Example" src="/images/blog/wordpress/customfields/tictail-home-page-example.jpg" margin="both" ratio="16_9" %}
+{% include post-image.html alt="Tictail Home Page Example" src="/images/blog/wordpress/customfields/tictail-home-page-example-medium.jpg" margin="both" ratio="16_9" %}
 
 How is this possible? The answer is custom fields.
 
@@ -26,7 +26,7 @@ How is this possible? The answer is custom fields.
 
 WordPress has a simple custom fields functionality built into the admin interface. When creating new posts or pages, it's possible to put in additional meta data.
 
-![WordPress Custom Fields User Interface](/images/blog/wordpress/customfields/wordpress-custom-fields-ui.png)
+{% include post-image.html alt="WordPress Custom Fields User Interface" src="/images/blog/wordpress/customfields/wordpress-custom-fields-ui.png" margin="both" ratio="16_5" %}
 
 The metadata is stored as key/value pairs in a *wp_postmeta* table in the WordPress database. However, the admin interface only offers simple text fields to edit these values. 
 
@@ -39,9 +39,9 @@ We decided to go and look for plugins/libraries to solve this common task to sav
 
 Advanced Custom Fields (ACF) is a popular plugin by many WordPress developers. It includes a clean admin interface, good documentation and a simple API. It also offers an extensive list of custom field types and a way to make your own fields.
 
-![Custom field types with ACF](/images/blog/wordpress/customfields/acf-custom-field-types.png)
+{% include post-image.html alt="Custom field types with ACF" src="/images/blog/wordpress/customfields/acf-custom-field-types.png" margin="both" ratio="3_4" %}
 
-There is both a [free version](http://www.advancedcustomfields.com/) of ACF and a more feature rich [PRO version](http://www.advancedcustomfields.com/pro/) costing $100 AUD (around $77 USD) for unlimited number of sites.
+There is both a [free version](http://www.advancedcustomfields.com/) of ACF and a more feature rich [PRO version](http://www.advancedcustomfields.com/pro/) costing $100 AUD ($77 USD by the time of this writing) for unlimited number of sites.
 
 Using ACF speeds up the development process and improves the experience for editors when managing content. 
 
@@ -51,12 +51,12 @@ A recent version of ACF PRO includes a new feature called [Local JSON](http://ww
 
 The ACF documentation hints that the future of ACF could indeed be database-less. 
 
-> The wp-admin field group edit screen will not load data from local json files. This functionality will hopefully soon make it’s way into the plugin.
+	The wp-admin field group edit screen will not load data from local json files. This functionality will hopefully soon make it’s way into the plugin.
 
 
 ## The Future
 
-As with [the multilingual support](/blog/2015/03/26/simplify-custom-fields-for-wordpress/), it's surprising that common field types are not part of WordPress core.
+As with [the multilingual support](/2015/03/24/making-wordpress-multilingual-and-plugins-to-help/), it's surprising that common field types are not part of WordPress core.
 
 There are individual efforts being made to solve the problem. Apart from ACF there are other interesting developments going on, an example is a library called [wp-papi](http://wp-papi.github.io/). WP-Papi offers an API approach to custom fields and its easy to imagine that something like this might make it into the core some day in the future.
 

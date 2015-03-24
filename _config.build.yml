@@ -3,6 +3,6 @@
 # 2. config.build.yml
 # 3. config.yml
 
-future: false
+future: true
 show_drafts: false
 hide_private: true
