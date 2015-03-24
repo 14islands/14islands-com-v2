@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Making WordPress multilingual and plugins to help"
-description: "One important feature missing when using WordPress as a CMS is multilingual support. Translations of dynamic content for different languages needs a plugin"
+description: "One important feature missing when using WordPress as a CMS is multilingual support. Translations of dynamic content for different languages needs a plugin."
 keywords: WordPress, multilingual, multi-lang, multi-languages, internationalisation, Wordpress.org
 og_image: /images/blog/wordpress/multilingual/multilingual-hero.png
 private: false
@@ -82,6 +82,6 @@ WordPress is still showing its roots as a blogging platform but lets hope it wil
 
 In the meantime, our recommendation is to use Polylang for simple use cases, or when money is a limitation. WPML for bigger sites.
 
-Have questions or feedback? Reply to [our tweet about it](https://twitter.com/14islands).
+Have questions or feedback? Reply to [our tweet about it](https://twitter.com/14islands/status/580388887643701249).
 
 {% include blog-author-hjortur.html %}
