@@ -36,7 +36,7 @@
   .related-posts__link {
 		transition: background $easeOutQuad 300ms;
 		&:hover {
-			background: $natt-dark;
+			background: $natt;
 			.related-posts__label,
 			.related-posts__title {
 				color: #fff;
@@ -49,7 +49,8 @@
 		margin: 0;
 		transition: background $easeOutQuad 300ms;
 		&:hover {
-			@extend .u-bg-brand--dark;
+			color: #fff;
+			@extend .u-bg-brand;
 		}
 	}
 

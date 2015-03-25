@@ -11,42 +11,7 @@ og_type: article
 
 
 {% if page.comments %}
-<section class="post-comments grid u--pad-bottom">
-
-	<!--div  class="grid__row u-bg-brand">
-		<a href="#" title="Show comments for post"><h4 class="post-comments__cta ">Show Comments (<span class="disqus-comment-count" data-disqus-identifier="{{ page.url }}">0</span>)
-		</h4></a>
-	</div>
-
-	<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = '14islands-com';
-
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script-->
-
-	<div  class="grid__row" id="disqus_thread"></div>
-	<script type="text/javascript">
-	    /* * * CONFIGURATION VARIABLES * * */
-	    var disqus_shortname = '14islands-com';
-	    var disqus_identifier = '{{ page.url }}';
-
-	    /* * * DON'T EDIT BELOW THIS LINE * * */
-	    (function() {
-	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	    })();
-	</script>
-	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-</section>
+	{% include blog-comments.html %}
 {% endif %}
 
 
@@ -57,7 +22,7 @@ og_type: article
 {% endif %}
 
 <section class="related-posts">
-	<a class="related-posts__link grid u--default-v-padding u-bg-bright" href="{{ site.baseurl }}{{ nextpage.url }}">
+	<a class="related-posts__link grid u--default-v-padding u-bg-natt-dark" href="{{ site.baseurl }}{{ nextpage.url }}">
 		<div class="grid__row">
 	    <p class="related-posts__label">Read Next</p>
 	    <h2 class="related-posts__title">{{ nextpage.title }}</h2>
