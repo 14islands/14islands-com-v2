@@ -4,7 +4,6 @@ title:  "How to simplify custom fields for WordPress"
 description: "For creating new posts, pages or other post types - WordPress only includes two fields by default, a title and free-form WYSIWYG editor. In reality, there is most often a need for more dynamic content for our sites."
 keywords: WordPress, Custom Fields, Advanced Custom Fields, ACF, Meta boxes, Meta data
 og_image: /images/blog/wordpress/customfields/customfields-hero.png
-private: true
 ---
 
 # How to simplify custom fields for WordPress
@@ -56,7 +55,7 @@ The ACF documentation hints that the future of ACF could indeed be database-less
 
 ## The Future
 
-As with [the multilingual support](/2015/03/24/making-wordpress-multilingual-and-plugins-to-help/), it's surprising that common field types are not part of WordPress core.
+As with [the multilingual support](/blog/2015/03/24/making-wordpress-multilingual-and-plugins-to-help/), it's surprising that common field types are not part of WordPress core.
 
 There are individual efforts being made to solve the problem. Apart from ACF there are other interesting developments going on, an example is a library called [wp-papi](http://wp-papi.github.io/). WP-Papi offers an API approach to custom fields and its easy to imagine that something like this might make it into the core some day in the future.
 
