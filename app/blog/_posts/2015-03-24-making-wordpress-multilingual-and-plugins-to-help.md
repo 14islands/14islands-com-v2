@@ -4,7 +4,6 @@ title:  "Making WordPress multilingual and plugins to help"
 description: "One important feature missing when using WordPress as a CMS is multilingual support. Translations of dynamic content for different languages needs a plugin."
 keywords: WordPress, multilingual, multi-lang, multi-languages, internationalisation, Wordpress.org
 og_image: /images/blog/wordpress/multilingual/multilingual-hero.png
-private: false
 ---
 
 # Making WordPress multilingual and plugins to help
