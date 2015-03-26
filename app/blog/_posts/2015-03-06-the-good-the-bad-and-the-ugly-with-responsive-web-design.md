@@ -3,6 +3,7 @@ layout: post
 title: "The good, the bad and the ugly with responsive web design"
 description: Responsive Web Design has been around for a while and it’s worth taking a step back to see what a successful responsive project actually requires.
 og_image: /images/blog/talks/the-good-the-bad-and-the-ugly/the-good-the-bad-and-the-ugly.001.jpg
+comments: true
 ---
 
 # The good, the bad and&nbsp;the ugly with responsive web design
