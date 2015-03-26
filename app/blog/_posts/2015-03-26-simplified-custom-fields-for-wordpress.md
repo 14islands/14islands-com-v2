@@ -57,7 +57,7 @@ The ACF documentation hints that the future of ACF could indeed be database-less
 
 As with [the multilingual support](/blog/2015/03/24/making-wordpress-multilingual-and-plugins-to-help/), it's surprising that common field types are not part of WordPress core.
 
-There are individual efforts being made to solve the problem. Apart from ACF there are other interesting developments going on, an example is a library called [wp-papi](http://wp-papi.github.io/). WP-Papi offers an API approach to custom fields and its easy to imagine that something like this might make it into the core some day in the future.
+There are individual efforts being made to solve the problem. Apart from ACF there are other interesting developments going on, an example is a library called [Papi](http://wp-papi.github.io/). Papi offers an API approach to custom fields and its easy to imagine that something like this might make it into the core some day in the future.
 
 In the meantime, we hope the tips in this article will prove to be useful for you.
 
