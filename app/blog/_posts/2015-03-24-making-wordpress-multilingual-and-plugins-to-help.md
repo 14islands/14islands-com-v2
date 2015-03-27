@@ -83,6 +83,6 @@ WordPress is still showing its roots as a blogging platform but lets hope it wil
 
 In the meantime, our recommendation is to use Polylang for simple use cases, or when money is a limitation. WPML for bigger sites.
 
-Have questions or feedback? Reply to [our tweet about it](https://twitter.com/14islands/status/580388887643701249).
+Have questions or feedback? Reply to [our tweet](https://twitter.com/14islands/status/580388887643701249) or comment below.
 
 {% include blog-author-hjortur.html %}
