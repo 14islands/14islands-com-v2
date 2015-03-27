@@ -4,9 +4,22 @@ og_type: article
 ---
 <article class="post grid u--pad-both pjax-animate">
 	<section class="grid__row">
+		<span class="post__date">March 13, 2015</span>
 		{{ content }}
 	</section>
 </article>
+
+
+{% if page.comments != Nil %}
+	{% assign showComments = page.comments %}
+{% else %}
+	{% assign showComments = site.comments %}
+{% endif %}"
+
+{% if showComments %}
+	{% include blog-comments.html %}
+{% endif %}
+
 
 {% if page.next_in_category != nil %}
   {% assign nextpage = page.next_in_category %}
@@ -14,8 +27,9 @@ og_type: article
   {% assign nextpage = page.first_in_category %}
 {% endif %}
 
+
 <section class="related-posts">
-	<a class="related-posts__link grid u--default-v-padding u-bg-bright" href="{{ site.baseurl }}{{ nextpage.url }}">
+	<a class="related-posts__link grid u--default-v-padding u-bg-natt-dark" href="{{ site.baseurl }}{{ nextpage.url }}">
 		<div class="grid__row">
 	    <p class="related-posts__label">Read Next</p>
 	    <h2 class="related-posts__title">{{ nextpage.title }}</h2>

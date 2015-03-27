@@ -36,11 +36,21 @@
   .related-posts__link {
 		transition: background $easeOutQuad 300ms;
 		&:hover {
-			background: $natt-dark;
+			background: $natt;
 			.related-posts__label,
 			.related-posts__title {
 				color: #fff;
 			}
+		}
+	}
+
+	// Blog: show comments link
+	.post-comments__cta {
+		margin: 0;
+		transition: background $easeOutQuad 300ms;
+		&:hover {
+			color: #fff;
+			@extend .u-bg-brand;
 		}
 	}
 

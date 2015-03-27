@@ -61,6 +61,6 @@ There are individual efforts being made to solve the problem. Apart from ACF the
 
 In the meantime, we hope the tips in this article will prove to be useful for you.
 
-Have questions or feedback? Reply to [our tweet about it](https://twitter.com/14islands/status/581099041678888961).
+Have questions or feedback? Reply to [our tweet](https://twitter.com/14islands/status/581099041678888961) or comment below.
 
 {% include blog-author-hjortur.html %}

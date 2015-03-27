@@ -22,9 +22,11 @@
 	.no-touch &:hover {
 		color: white;
 	}
+}
 
-	.no-touch &:hover {
-		color: white;
+.no-touch .button--primary {
+	transition: background $easeOutQuad 300ms;
+	&:hover {
 		background-color: darken($green, 2%);
 	}
 }

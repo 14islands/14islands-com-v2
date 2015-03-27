@@ -9,6 +9,14 @@
 	}
 }
 
+
+.post__date {
+  display: inline-block;
+  font-size: modular-scale(1rem, 1);
+  color: $gray;
+}
+
+
 .post-row {
 	padding-top: 4%;
 	padding-bottom: 4%;
@@ -51,7 +59,9 @@
 	}
 }
 
-
+/////////////////////////////////////////
+// POST AUTHOR
+/////////////////////////////////////////
 .post__author {
 	@include clearfix;
 }
@@ -75,11 +85,25 @@
 }
 
 
-
+/////////////////////////////////////////
+// NEXT UP
+/////////////////////////////////////////
 .related-posts__label {
   margin-top: 0;
 }
-
 .related-posts__title {
   margin-top: 0;
+}
+
+
+/////////////////////////////////////////
+// COMMENTS
+/////////////////////////////////////////
+.post-comments {
+
+}
+.post-comments__cta {
+	color: $gray;
+	padding: 1em;
+	text-align: center;
 }
