@@ -38,3 +38,8 @@ paginate_path: 'page:num'
 markdown: Kramdown
 
 highlighter: pygments
+
+# should blog posts allow comments by default?
+comments: true
+# should blog comments be expanded by default?
+comments_expanded: false

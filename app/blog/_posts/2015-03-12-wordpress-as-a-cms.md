@@ -3,8 +3,6 @@ layout: post
 title: "Lessons learned using WordPress as a CMS"
 description: WordPress was initially designed as a blogging platform, but is now being used to drive content for full-blown websites. This talk will explore ways to make WordPress work as an CMS and lessons learned while building unique themes for clients.
 og_image: /images/blog/talks/wordpress-as-a-cms/wordpress-as-a-cms.jpg
-comments: true
-comments_expanded: false
 ---
 
 # Lessons learned using WordPress as a CMS

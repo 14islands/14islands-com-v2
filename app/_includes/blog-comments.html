@@ -1,7 +1,8 @@
 <section class="js-component-disqus-embed post-comments grid u--pad-bottom"
          data-disqus-shortname="14islands-com"
          data-disqus-identifier="{{page.url}}"
-         data-disqus-expanded="{{page.comments_expanded}}">
+         data-disqus-expanded="{% if page.comments_expanded != Nil %}{{ page.comments_expanded }}{% else %}{{ site.comments_expanded }}{% endif %}">
+
 
 	<a href="#" data-disquss-count class="grid__row u-bg-bright" title="Show comments for post">
 		<h4 class="post-comments__cta ">
