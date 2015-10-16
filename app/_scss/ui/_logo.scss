@@ -34,19 +34,19 @@ $logo-rect-width-px: 190px;
 	}
 
 	.polygon-down--light {
-		fill: $green;
+		fill: $brand-color;
 	}
 
 	.polygon-down--dark {
-		fill: $green-dark;
+		fill: $brand-color-dark;
 	}
 
 	.polygon-up--light {
-		fill: $green;
+		fill: $brand-color;
 	}
 
 	.polygon-up--dark {
-		fill: $green-dark;
+		fill: $brand-color-dark;
 	}
 
 }
@@ -58,19 +58,19 @@ $logo-rect-width-px: 190px;
   }
 
 
-	.polygon-down--light {
+	.hero__nav .polygon-down--light {
 		fill: $gray;
 	}
 
-	.polygon-down--dark {
+	.hero__nav .polygon-down--dark {
 		fill: $gray-dark;
 	}
 
-	.polygon-up--light {
+	.hero__nav .polygon-up--light {
 		fill: $gray;
 	}
 
-	.polygon-up--dark {
+	.hero__nav .polygon-up--dark {
 		fill: $gray-dark;
 	}
 

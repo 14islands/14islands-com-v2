@@ -1,0 +1,38 @@
+/**
+ * Classes paint elements with brand colors
+ * - switch dynamically later somehow
+ */
+
+.brand-color {
+	color: $brand-color;
+}
+
+.brand-color--dark {
+	color: $brand-color-dark;
+}
+
+
+.brand-bg {
+	background-color: $brand-color;
+}
+.brand-bg--dark {
+	background-color: $brand-color-dark;
+}
+
+
+.brand-fill {
+	fill: $brand-color;
+}
+
+.brand-fill--dark {
+	fill: $brand-color-dark;
+}
+
+
+.brand-border {
+	border-color: $brand-color;
+}
+
+.brand-border--dark {
+	border-color: $brand-color-dark;
+}

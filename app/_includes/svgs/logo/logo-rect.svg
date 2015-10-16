@@ -46,22 +46,22 @@
 	<g>
 		<circle fill="#FFFFFF" cx="152.6" cy="152.6" r="152.6"/>
 		<g id="down_74_" opacity="0.4">
-			<polygon fill="#B7D02E" points="122.4,204 175.4,256.5 207.1,246.3 218.2,235.9 225,250.4 246.7,230.4 253.6,226.2 259.8,204
+			<polygon class="polygon-down--light" fill="#B7D02E" points="122.4,204 175.4,256.5 207.1,246.3 218.2,235.9 225,250.4 246.7,230.4 253.6,226.2 259.8,204
 				"/>
-			<polygon fill="#B7D02E" points="103.4,204 102,208 92.4,218.6 84.7,212.3 84.7,222.2 72.8,226.4 49.1,204 			"/>
-			<polygon fill="#83AA08" points="49.1,204 47,204 52,214 59.7,214 			"/>
-			<polygon fill="#83AA08" points="84.7,222.2 84.7,212.3 92.4,218.5 90.5,220.9 			"/>
-			<polygon fill="#83AA08" points="122.4,204 118.3,204 128.2,232.2 147,228.4 			"/>
-			<polygon fill="#83AA08" points="207.1,246.2 218.2,235.8 225,250.4 			"/>
+			<polygon class="polygon-down--light" fill="#B7D02E" points="103.4,204 102,208 92.4,218.6 84.7,212.3 84.7,222.2 72.8,226.4 49.1,204 			"/>
+			<polygon class="polygon-down--dark" fill="#83AA08" points="49.1,204 47,204 52,214 59.7,214 			"/>
+			<polygon class="polygon-down--dark" fill="#83AA08" points="84.7,222.2 84.7,212.3 92.4,218.5 90.5,220.9 			"/>
+			<polygon class="polygon-down--dark" fill="#83AA08" points="122.4,204 118.3,204 128.2,232.2 147,228.4 			"/>
+			<polygon class="polygon-down--dark" fill="#83AA08" points="207.1,246.2 218.2,235.8 225,250.4 			"/>
 		</g>
 		<g id="up_74_">
-			<polygon fill="#B7D02E" points="122.4,202 175.4,148.8 207.1,158.6 218.2,168.9 225,154.2 246.7,174.2 253.6,179.1 259.8,202
+			<polygon class="polygon-up--light" fill="#B7D02E" points="122.4,202 175.4,148.8 207.1,158.6 218.2,168.9 225,154.2 246.7,174.2 253.6,179.1 259.8,202
 				"/>
-			<polygon fill="#B7D02E" points="103.4,202 102,197.3 92.4,186.4 84.7,192.2 84.7,182.4 72.8,178.9 49.1,202 			"/>
-			<polygon fill="#83AA08" points="49.1,202 47,202 52,192 59.5,192 			"/>
-			<polygon fill="#83AA08" points="84.7,182.4 84.7,192.2 92.4,186.2 90.5,183.6 			"/>
-			<polygon fill="#83AA08" points="122.4,202 118.3,202 128.2,173.2 147,177.3 			"/>
-			<polygon fill="#83AA08" points="207.1,158.3 218.2,168.7 225,154.1 			"/>
+			<polygon class="polygon-up--light" fill="#B7D02E" points="103.4,202 102,197.3 92.4,186.4 84.7,192.2 84.7,182.4 72.8,178.9 49.1,202 			"/>
+			<polygon class="polygon-up--dark" fill="#83AA08" points="49.1,202 47,202 52,192 59.5,192 			"/>
+			<polygon class="polygon-up--dark" fill="#83AA08" points="84.7,182.4 84.7,192.2 92.4,186.2 90.5,183.6 			"/>
+			<polygon class="polygon-up--dark" fill="#83AA08" points="122.4,202 118.3,202 128.2,173.2 147,177.3 			"/>
+			<polygon class="polygon-up--dark" fill="#83AA08" points="207.1,158.3 218.2,168.7 225,154.1 			"/>
 		</g>
 	</g>
 </g>
