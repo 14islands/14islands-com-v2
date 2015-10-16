@@ -14,7 +14,7 @@
 	padding: 15px 26px 15px;
 	margin: modular-scale(2rem, 1) 0;
 	max-width: 282px;
-	background: $green;
+	background: $brand-color;
 	font-size: modular-scale(1rem, 1);
 
 	&,
@@ -27,7 +27,7 @@
 .no-touch .button--primary {
 	transition: background $easeOutQuad 300ms;
 	&:hover {
-		background-color: darken($green, 2%);
+		background-color: darken($brand-color, 2%);
 	}
 }
 

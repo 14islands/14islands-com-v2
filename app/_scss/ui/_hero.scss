@@ -3,7 +3,7 @@
 //
 
 .hero {
-  background-color: $green;
+  background-color: $brand-color;
 	color: #fff;
 	display: flex;
 	height: 100%;
@@ -217,7 +217,7 @@
 	// This will "block" the view for the word
 	// allowing the slide up effect to look nice
 	&:after {
-		background: $green;
+		background: $brand-color;
 		content: '';
 		display: block;
 		position: absolute;

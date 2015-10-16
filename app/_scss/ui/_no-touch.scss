@@ -6,7 +6,7 @@
 
 	a:active,
 	a:hover {
-	  color: darken( $green-dark, 10% );
+	  color: darken( $brand-link-color, 10% );
 	  text-decoration: none;
 	  outline: 0;
 	}
@@ -50,7 +50,7 @@
 		transition: background $easeOutQuad 300ms;
 		&:hover {
 			color: #fff;
-			@extend .u-bg-brand;
+			background-color: $brand-color;
 		}
 	}
 
