@@ -4,7 +4,7 @@ og_type: article
 ---
 <article class="post grid u--pad-both pjax-animate">
 	<section class="grid__row">
-		<span class="post__date">March 13, 2015</span>
+		<span class="post__date">{{ page.date | date: "%-d %B %Y" }}</span>
 		{{ content }}
 	</section>
 </article>
