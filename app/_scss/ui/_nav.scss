@@ -53,6 +53,13 @@ $nav-item-padding: 1.5rem;
   }
 }
 
+.nav__item--show-on-bp2 {
+	display: none;
+	@include if-wider-than($breakpoint-two-px) {
+		display: inline-block;
+	}
+}
+
 .nav__link {
 	display: block;
 	letter-spacing: 0.04rem;
