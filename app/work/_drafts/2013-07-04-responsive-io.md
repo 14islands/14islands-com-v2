@@ -7,7 +7,7 @@ logo: archive/14islands.svg
 heading: responsive.io
 color: '#4aa0ba'
 description: Perfect images for every screen
-priority: 6
+priority: 99
 private: true
 ---
 
