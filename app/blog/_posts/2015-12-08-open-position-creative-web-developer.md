@@ -18,5 +18,5 @@ We believe in quality over quantity and always set the bar high for the work we 
 
 ## I’m excited, what to do next?
 
-Glad you asked, drop a line to [jobs@14islands.com](mailto:jobs@14islands.com) and tell us a bit about yourself. Share with us some code examples, maybe your Github page or Codepens you’ve done. We look forward to hearing from you!
+Glad you asked, drop a line to [jobs@14islands.com](mailto:jobs@14islands.com) and tell us a bit about yourself. Share some code examples with us, maybe your Github page or Codepens you’ve done. We look forward to hearing from you!
 
