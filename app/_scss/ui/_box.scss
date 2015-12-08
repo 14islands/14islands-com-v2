@@ -95,6 +95,10 @@
   text-align: center;
   overflow: hidden;
 
+  .work--project-spg & {
+    padding-top: 5%;
+  }
+
   img {
     height: 100%;
     width: auto;

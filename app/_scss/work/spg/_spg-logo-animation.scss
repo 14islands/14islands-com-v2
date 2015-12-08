@@ -1,0 +1,70 @@
+$easeInCubic    : cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$easeOutCubic   : cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$easeInOutCubic : cubic-bezier(0.645, 0.045, 0.355, 1.000);
+
+// Circ
+$easeInCirc     : cubic-bezier(0.600, 0.040, 0.980, 0.335);
+$easeOutCirc    : cubic-bezier(0.075, 0.820, 0.165, 1.000);
+$easeInOutCirc  : cubic-bezier(0.785, 0.135, 0.150, 0.860);
+
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+$charDuation: 2000ms;
+$charDelay: $charDuation*0.25;
+
+.spg-logo-animation {
+  display: flex;
+  align-items: center;
+  background-color: white;
+
+  svg {
+    margin: auto;
+    width: 75%;
+  }
+
+  line,
+  path {
+    visibility: hidden;
+  }
+
+  &.do-Animate line,
+  &.do-Animate path {
+    visibility: visible;
+    animation: dash $charDuation $easeInOutCubic;
+    animation-fill-mode: both;
+    
+    // G horizontal line
+    &:nth-child(1) {
+      stroke-dasharray: 26;
+      stroke-dashoffset: -26;
+      animation-duration: $charDuation*0.25;
+      animation-delay: $charDelay * 2 + $charDuation * 0.75;
+      animation-timing-function: $easeOutCubic;
+    }
+    // G curve
+    &:nth-child(2) {
+      stroke-dasharray: 146;
+      stroke-dashoffset: -146;
+      animation-duration: $charDuation*0.75;
+      animation-delay: $charDelay * 2;
+      animation-timing-function: $easeInCubic;
+    }
+    // P
+    &:nth-child(6) {
+      stroke-dasharray: 111;
+      stroke-dashoffset: 111;
+      animation-delay: $charDelay;
+    }
+    // S
+    &:nth-child(7) {
+      stroke-dasharray: 103;
+      stroke-dashoffset: -103;
+      animation-delay: 0;
+    }
+  }
+}
