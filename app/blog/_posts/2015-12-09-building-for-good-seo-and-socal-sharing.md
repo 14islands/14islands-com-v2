@@ -11,7 +11,7 @@ Search Engine Optimization (SEO) has gotten a bad reputation for cheap tricks th
 
 However, there are solid practises that we recommend to consider when building any website. Search algorithms have been evolving fast adopting to mobile growth, and with the rise of social networks we should consider the shareability of our sites.
 
-Here are few SEO and social sharing tips we consider as developers.
+Here are few SEO and social sharing tips we use as developers.
 
 
 ## Responsive
@@ -75,7 +75,7 @@ If you don’t know how to implement HTTPS, you can check out services such as C
 
 When people share links to our site on social networks, we have lots of control over how that information will show up. This is done by using the [Open Graph protocol](http://ogp.me/){:target="_blank"}.
 
-The Open Graph protocol is supported by a wide range of social platforms. For a given site, consider the target audience and optimise the Open Graph tags to make sure it previews well.
+The Open Graph protocol is supported by a wide range of social platforms. For a given site, consider the target audience and optimise the Open Graph tags to make sure pages have nice previews.
 
 Here are few documentation pages from popular social sites:
 
@@ -84,7 +84,7 @@ Here are few documentation pages from popular social sites:
 * [Google+ Developer Docs](https://developers.google.com/+/web/snippet/){:target="_blank"}
 * [Pinterest Rich Pins Docs](https://help.pinterest.com/en/articles/enable-rich-pins-your-site){:target="_blank"}
 
-There is a super useful [article on the Moz blog](https://moz.com/blog/meta-data-templates-123){:target="_blank"} on how to combine and test these Open Graph tags before implementing. 
+There is a super useful [article on the Moz blog](https://moz.com/blog/meta-data-templates-123){:target="_blank"} on how to combine and test these Open Graph tags when implementing. 
 
 ## Mind the basics
 
