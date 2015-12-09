@@ -9,7 +9,7 @@ og_image: /images/blog/seo/open-graph-image.png
 
 Search Engine Optimization (SEO) has gotten a bad reputation for cheap tricks that people use to “game the system” to get ahead in search results. 
 
-However, there are solid practises that we recommend to consider when building any website. Search algorithms have been evolving fast to adopt to the growth mobile, and with the rise of social networks we should consider the shareability of our content.
+However, there are solid practises that we recommend to consider when building any website. Search algorithms have been evolving fast adopting to mobile growth, and with the rise of social networks we should consider the shareability of our sites.
 
 Here are few SEO and social sharing tips we consider as developers.
 
@@ -92,10 +92,10 @@ Finally, follow good practises for the site.
 
 Use **Progressive Enhancement** principles so your site is always accessible by search engines.
 
-Use solid markup and correct tags for their intended purpose. Use **Heading 1** (<h1>) for the main heading, **Heading 2** (<h2>) for secondary etc. The [HTML validation](https://validator.w3.org/){:target="_blank"} is useful to check and eliminate syntax errors.
+Use solid markup and correct tags for their intended purpose. **Heading 1** (<h1>) for the main heading, **Heading 2** (<h2>) for secondary etc. The [HTML validator tool](https://validator.w3.org/){:target="_blank"} is useful to check and eliminate syntax errors.
 
-The good’ol **title** tag and **description** meta tag are prominent in search results and important for indexing, so craft these with gold. 
+The good’ol **title** tag and **description** meta tag are shown in search results and also important for indexing, so craft these with gold. 
 
-In the end, the quality of content on the site is most likely determine its success.
+In the end, the quality of content on the site is most likely to determine its success.
 
 {% include blog-author-hjortur.html %}
