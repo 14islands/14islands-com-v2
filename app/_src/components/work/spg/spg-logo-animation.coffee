@@ -30,5 +30,5 @@ class FOURTEEN.SpgLogoAnimation extends FOURTEEN.ElementScrollVisibility
 	# @override FOURTEEN.ElementScrollVisibility.onExitViewportSync
 	onExitViewport: =>
 		super()
-	# @$context.removeClass('do-Animate');
+		# @$context.removeClass('do-Animate');
 		

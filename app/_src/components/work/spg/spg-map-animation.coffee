@@ -17,11 +17,6 @@ class FOURTEEN.SpgMapAnimation extends FOURTEEN.ElementScrollVisibility
 		'//api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js',
 		'//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'
 	]
-
-	links: [
-		'//api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css',
-		'//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css'
-	]
 	###
 
 	constructor: (@$context, data) ->
@@ -29,10 +24,25 @@ class FOURTEEN.SpgMapAnimation extends FOURTEEN.ElementScrollVisibility
 		@initMap_()
 		@initMapMarkers_();
 		@addEventListeners_();
-		# @showAll();
-
+		
 		# init FOURTEEN.ElementScrollVisibility
 		super(@$context, data)
+		#@spinner = new FOURTEEN.Spinner @$context, {isWhite: true}
+		#@spinner.show()
+		#@reset()
+
+	# @override FOURTEEN.ElementScrollVisibility.onScriptsLoadedSync
+	onScriptsLoadedSync: =>
+		# @showAll();
+
+	# @override FOURTEEN.ElementScrollVisibility.onFullyEnterViewportSync
+	onFullyEnterViewportSync: =>
+		#@run()
+
+	# @override FOURTEEN.ElementScrollVisibility.onExitViewportSync
+	onExitViewportSync: =>
+		#@reset()
+		#@init() # prepare for entering viewport again
 	
 	addEventListeners_: () =>
 		#@map.on('popupopen', @onPopupOpen_);
@@ -131,7 +141,7 @@ class FOURTEEN.SpgMapAnimation extends FOURTEEN.ElementScrollVisibility
 	
 	destroy: () =>
 		@removeEventListeners_();
-		super.destroy();
+		super();
 	
 	@showAll: () =>
 		$(document).trigger(EVENT_MAP_TOGGLE_LAYER);
