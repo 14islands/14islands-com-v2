@@ -3,12 +3,16 @@ layout: post
 title: "Building sites for good SEO and sharing on social networks"
 description: "We strive to use the most modern practises for search engine optimisation (SEO) and social networks. Here are few to consider for any site."
 og_image: /images/blog/seo/open-graph-image.png
-private: true
 ---
 
 # Building sites for good SEO and sharing on social networks
 
-As we build websites, we strive to use the most modern practises for search engine optimisation (SEO) and social networks. Here are few to consider for any site.
+Search Engine Optimization (SEO) has gotten a bad reputation for cheap tricks that people use to “game the system” to get ahead in search results. 
+
+However, there are solid practises that we recommend to consider when building any website. Search algorithms have been evolving fast to adopt to the growth mobile, and with the rise of social networks we should consider the shareability of our content.
+
+Here are few SEO and social sharing tips we consider as developers.
+
 
 ## Responsive
 
@@ -86,14 +90,12 @@ There is a super useful [article on the Moz blog](https://moz.com/blog/meta-data
 
 Finally, follow good practises for the site.
 
-Use Progressive Enhancement principles to make sure your site is always accessible by search engines.
+Use **Progressive Enhancement** principles so your site is always accessible by search engines.
 
-Use solid markup. Use correct tags for their intended purpose. Use Heading 1 (h1) for the main heading, Heading 2 (h2) for secondary and so forth. The [HTML validation](https://validator.w3.org/){:target="_blank"} is as useful as always to check and eliminate syntax errors.
+Use solid markup and correct tags for their intended purpose. Use **Heading 1** (<h1>) for the main heading, **Heading 2** (<h2>) for secondary etc. The [HTML validation](https://validator.w3.org/){:target="_blank"} is useful to check and eliminate syntax errors.
 
-The good old title tag and description meta tags are the most prominent in search results and important for indexing - so make sure to craft these with gold. 
+The good’ol **title** tag and **description** meta tag are prominent in search results and important for indexing, so craft these with gold. 
 
-Google became popular because their PageRank algorithm delivered superial search results over the oldish engines like Yahoo and Alta Vista. back in the days. PageRank looks at who’s linking to your pages in what context. This still relevant today, so making sure your site is mention on external sources is still an important strategy.
-
-Above all, good content is king.
+In the end, the quality of content on the site is most likely determine its success.
 
 {% include blog-author-hjortur.html %}
