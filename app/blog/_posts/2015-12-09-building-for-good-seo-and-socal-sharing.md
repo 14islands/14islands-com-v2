@@ -2,7 +2,7 @@
 layout: post
 title: "Building sites for good SEO and sharing on social networks"
 description: "We strive to use the most modern practises for search engine optimisation (SEO) and social networks. Here are few to consider for any site."
-og_image: /images/blog/seo/open-graph-image.jpg
+og_image: /images/blog/seo/open-graph-image.png
 private: true
 ---
 
@@ -84,7 +84,7 @@ There is a super useful [article on the Moz blog](https://moz.com/blog/meta-data
 
 ## Mind the basics
 
-Finally, mind the following basics when working on the site.
+Finally, follow good practises for the site.
 
 Use Progressive Enhancement principles to make sure your site is always accessible by search engines.
 
