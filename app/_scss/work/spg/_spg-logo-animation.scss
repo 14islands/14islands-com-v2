@@ -1,21 +1,17 @@
-$easeInCubic    : cubic-bezier(0.550, 0.055, 0.675, 0.190);
-$easeOutCubic   : cubic-bezier(0.215, 0.610, 0.355, 1.000);
 $easeInOutCubic : cubic-bezier(0.645, 0.045, 0.355, 1.000);
 
-// Circ
-$easeInCirc     : cubic-bezier(0.600, 0.040, 0.980, 0.335);
-$easeOutCirc    : cubic-bezier(0.075, 0.820, 0.165, 1.000);
-$easeInOutCirc  : cubic-bezier(0.785, 0.135, 0.150, 0.860);
+$logo-dashoffset-s: 103;
+$logo-dashoffset-p: 111;
+$logo-dashoffset-g-line: 26;
+$logo-dashoffset-g-curve: 146;
 
+$char-in-duration: 1500ms;
+$char-out-duration: 1000ms; 
+$start-delay: 0; 
+$char-delay-ratio: 0.25;
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-$charDuation: 2000ms;
-$charDelay: $charDuation*0.25;
+$char-in-delay: $char-in-duration * $char-delay-ratio;
+$char-out-delay: $char-out-duration * $char-delay-ratio;
 
 .spg-logo-animation {
   display: flex;
@@ -30,41 +26,96 @@ $charDelay: $charDuation*0.25;
   line,
   path {
     visibility: hidden;
+
+    // initial hidden state
+    animation-timing-function: $easeInOutCubic;
+    animation-fill-mode: both;
+    stroke: #22334B;
+
+    // G horizontal line
+    &:nth-child(1) {
+      stroke-dasharray: $logo-dashoffset-g-line;
+    }
+    // G curve
+    &:nth-child(2) {
+      stroke-dasharray: $logo-dashoffset-g-curve;
+    }
+    // P
+    &:nth-child(3) {
+      stroke-dasharray: $logo-dashoffset-p;
+    }
+    // S
+    &:nth-child(4) {
+      stroke-dasharray: $logo-dashoffset-s;
+    }
   }
 
   &.do-Animate line,
   &.do-Animate path {
-    visibility: visible;
-    animation: dash $charDuation $easeInOutCubic;
-    animation-fill-mode: both;
-    
+   visibility: visible;
+
     // G horizontal line
     &:nth-child(1) {
-      stroke-dasharray: 26;
-      stroke-dashoffset: -26;
-      animation-duration: $charDuation*0.25;
-      animation-delay: $charDelay * 2 + $charDuation * 0.75;
+      animation-name: animation-logo-draw-g-line;
+      animation-duration: $char-in-duration*0.25;
+      animation-delay: $start-delay + $char-in-delay * 2 + $char-in-duration * 0.75;
       animation-timing-function: $easeOutCubic;
     }
     // G curve
     &:nth-child(2) {
-      stroke-dasharray: 146;
-      stroke-dashoffset: -146;
-      animation-duration: $charDuation*0.75;
-      animation-delay: $charDelay * 2;
+      animation-name: animation-logo-draw-g-curve;
+      animation-duration: $char-in-duration*0.75;
+      animation-delay: $start-delay + $char-in-delay * 2;
       animation-timing-function: $easeInCubic;
     }
     // P
-    &:nth-child(6) {
-      stroke-dasharray: 111;
-      stroke-dashoffset: 111;
-      animation-delay: $charDelay;
+    &:nth-child(3) {
+      animation-name: animation-logo-draw-p;
+      animation-delay: $start-delay + $char-in-delay;
+      animation-duration: $char-in-duration;
     }
     // S
-    &:nth-child(7) {
-      stroke-dasharray: 103;
-      stroke-dashoffset: -103;
-      animation-delay: 0;
+    &:nth-child(4) {
+      animation-name: animation-logo-draw-s;
+      animation-delay: $start-delay;
+      animation-duration: $char-in-duration;
     }
+
+  }
+}
+
+@keyframes animation-logo-draw-s {
+  from {
+    stroke-dashoffset: $logo-dashoffset-s;
+  }
+  to {
+    stroke-dashoffset: $logo-dashoffset-s * 2;
+  }
+}
+
+@keyframes animation-logo-draw-p {
+  from {
+    stroke-dashoffset: $logo-dashoffset-p;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animation-logo-draw-g-line {
+  from {
+    stroke-dashoffset: $logo-dashoffset-g-line;
+  }
+  to {
+    stroke-dashoffset: $logo-dashoffset-g-line * 2;
+  }
+}
+
+@keyframes animation-logo-draw-g-curve {
+  from {
+    stroke-dashoffset: $logo-dashoffset-g-curve;
+  }
+  to {
+    stroke-dashoffset: $logo-dashoffset-g-curve * 2;
   }
 }
