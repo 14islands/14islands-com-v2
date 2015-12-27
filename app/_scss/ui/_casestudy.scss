@@ -30,7 +30,8 @@ a.casestudy__header-label {
   .elastica & {
     margin-bottom: -1.15rem;
   }
-  .spg & {
+  .spg &,
+  .oyyo & {
     margin-bottom: -0.43rem
   }
 }
@@ -64,6 +65,10 @@ a.casestudy__header-label {
 	max-width: 394px;
 	margin: 0 auto;
   width: 70%;
+
+  path:nth-child(2) {
+    fill: #abaeb1;
+  } 
 }
 
 .casestudy__responsive-screen {
