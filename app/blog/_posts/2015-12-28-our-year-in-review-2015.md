@@ -78,7 +78,7 @@ Talks and workshops is also among the fun things we did this year. Marco did one
 
 Breaking news, or not really, but we had our first newspaper appearance in a newspaper in Iceland. Its called [Fréttabladid](http://www.visir.is/section/FRETTABLADID) and is the biggest traditional paper in Iceland. That was something new.
 
-{% include post-image.html alt="Icelandic newspaper" src="/images/blog/year-in-review/icelandic-newspaper.jpg" margin="both" ratio="16_9" %}
+{% include post-image.html alt="Icelandic newspaper" src="/images/blog/year-in-review/icelandic-newspaper.jpg" margin="both" ratio="1_1" %}
 
 
 ## Wave of (cool) client work
