@@ -41,7 +41,7 @@ In February we jumped on an airplane to Barcelona to enter this years Awwwards c
 
 ## Kingdom of the North
 
-One of the great things about conferences is we get time to mingle with people we’ve admired for many years. Fellow Stockholmers North Kingdom were at Awwwards to accept the award “Site of the the year” for the [Hobbit Chrome Experiment](http://www.northkingdom.com/cases/a-journey-through-middle-earth/).  This opportunity started the spark that lead to us helping them out on new projects. Marco collaborated with them [on a project for Disney](http://www.northkingdom.com/cases/finding-new-fantasyland/), and Hjörtur collaborated with them on [a space mission](http://www.syfy.com/theexpanse/enterthefuture/)for Syfy. Such an inspiring place, with lots of talented people.
+One of the great things about conferences is we get time to mingle with people we’ve admired for many years. Fellow Stockholmers [North Kingdom](http://www.northkingdom.com/) were at Awwwards to accept the award “Site of the the year” for the [Hobbit Chrome Experiment](http://www.northkingdom.com/cases/a-journey-through-middle-earth/).  This opportunity started the spark that lead to us helping them out on new projects. Marco collaborated with them [on a project for Disney](http://www.northkingdom.com/cases/finding-new-fantasyland/), and Hjörtur collaborated with them on [a space mission](http://www.syfy.com/theexpanse/enterthefuture/) for Syfy. Such an inspiring place, with lots of talented people.
 
 {% include post-image.html alt="North Kingdom office in Stockholm" src="/images/blog/year-in-review/NK-office-1_1.jpg" margin="both" ratio="1_1" %}
 
