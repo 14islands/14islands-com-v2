@@ -42,14 +42,14 @@ _MISSING PICTURE_
 
 ## Kingdom of the North
 
-One of the great things about conferences is we get time to mingle with people we’ve admired for many years. Fellow Stockholmers North Kingdom were at Awwwards to accept the award “Site of the the year” for the [Hobbit Chrome Experiment](http://www.northkingdom.com/cases/a-journey-through-middle-earth/).  This opportunity started the spark that lead to us helping them out on new projects. Marco collaborated with them [on a project for Disney](http://www.northkingdom.com/cases/finding-new-fantasyland/), and Hjörtur collaborated with them on [a space mission f](http://www.syfy.com/theexpanse/enterthefuture/)or Syfy. Such an inspiring place, with lots of talented people.
+One of the great things about conferences is we get time to mingle with people we’ve admired for many years. Fellow Stockholmers North Kingdom were at Awwwards to accept the award “Site of the the year” for the [Hobbit Chrome Experiment](http://www.northkingdom.com/cases/a-journey-through-middle-earth/).  This opportunity started the spark that lead to us helping them out on new projects. Marco collaborated with them [on a project for Disney](http://www.northkingdom.com/cases/finding-new-fantasyland/), and Hjörtur collaborated with them on [a space mission](http://www.syfy.com/theexpanse/enterthefuture/)for Syfy. Such an inspiring place, with lots of talented people.
 
 {% include post-image.html alt="North Kingdom office in Stockholm" src="/images/blog/year-in-review/NK-office-1_1.jpg" margin="both" ratio="1_1" %}
 
 
 ## Korea, China and America
 
-Life ain’t all about business. The team also visited various places around the world.  Hjörtur made a trip to South Korea  on a parental leave with his 5 year old son and stayed there for 3 months, doing meditation. David who had been working remotely from Colombia and Brazil continued his America trip to Argentina and finally to Brooklyn, New York - catching up with our old friends [Anton&Irene](http://antonandirene.com/) among others. Marco traveled across the globe to visit Chengdu, China.
+Life ain’t all about business. The team also visited various places around the world.  Hjörtur made a trip to South Korea  on a parental leave with his 5 year old son and stayed there for 3 months, doing meditation. David who had been working remotely from Colombia and Brazil continued his America trip to Argentina and finally to Brooklyn, New York - catching up with our old friends [Anton & Irene](http://antonandirene.com/) among others. Marco traveled across the globe to visit Chengdu, China.
 
 {% include post-image.html alt="Hjörtur and his son meditating" src="/images/blog/year-in-review/fatherandson_16_9.jpg" margin="both" ratio="16_9" %}
 _Picture taken in the Meditation Center, South Korea._
@@ -77,21 +77,21 @@ Talks and workshops is also among the fun things we did this year. Marco did one
 
 ## In the papers
 
-Breaking news, or not really, but we had our first newspaper appearance in a newspaper in Iceland. Its called Fréttabladid and is the biggest traditional paper in Iceland. That was something new.
+Breaking news, or not really, but we had our first newspaper appearance in a newspaper in Iceland. Its called [Fréttabladid](http://www.visir.is/section/FRETTABLADID) and is the biggest traditional paper in Iceland. That was something new.
 
 {% include post-image.html alt="Icelandic newspaper" src="/images/blog/year-in-review/icelandic-newspaper.jpg" margin="both" ratio="16_9" %}
 
 
 ## Wave of (cool) client work
 
-The year ended with lots of cool projects. We did the Oyyo webshop using Shopify with our friends at Studio Källbom. We built a new website for SPG with our friends at BVD. And we worked on the Facebook TechPrep website and Google Santa Tracker 2015 with our friends at Upperquad, and many others.
+The year ended with lots of cool projects. We did the [Oyyo](http://oyyo.se/) webshop using [Shopify](https://shopify.com) with our friends at [Studio Källbom](http://www.studiokallbom.se/). We built a new website for [SPG](http://spg.se/) with our friends at [BVD](http://bvd.se/). And we worked on the [Facebook TechPrep](https://techprep.fb.com/) website and [Google Santa Tracker 2015](https://santatracker.google.com/#village) with our friends at [Upperquad](http://upperquad.com/), and many others.
 
 {% include post-image.html alt="Santa Tracker 2015" src="/images/blog/year-in-review/santa-screenshot_16_9.png" margin="both" ratio="16_9" %}
 
 
 ## Julbord in Sandhamn
 
-After all the hard work, talks and traveling, the 14islanders decided to reap their harvest in Sandhamn, an island in the beautiful archipelago located in Stockholm. We filled our stomachs with traditional Swedish christmas-food and sung Swedish drinking songs as we toasted the traditional schnaps. 
+After all the hard work, talks and traveling, the 14islanders decided to reap their harvest in [Sandhamn](https://en.wikipedia.org/wiki/Sandhamn), an island in the beautiful archipelago located in Stockholm. We filled our stomachs with traditional [Swedish christmas-food](https://sweden.se/culture-traditions/christmas/) and sung Swedish drinking songs as we toasted the traditional schnaps.
 
 {% include post-image.html alt="Julbord in Sandhamn" src="/images/blog/year-in-review/julbord_16_9.jpg" margin="both" ratio="16_9" %}
 
