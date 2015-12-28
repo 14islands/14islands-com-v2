@@ -58,7 +58,7 @@ _Picture taken in the Meditation Center, South Korea._
 
 A great deal of our friends work at [Fjord](www.fjordnet.se) - an avant-garde design agency with an amazing culture. We were brought in to lead and help with a couple of projects for clients such as H&M and others.
 
-> "Do good work with good people."
+> "Do great work with great people."
 
 This opportunity also gave us a good inside view from an inspiring service design agency. [Fjord](www.fjordnet.se) became a very close partner to us and we are proud to have built this strong relationship with them through the year.
 
