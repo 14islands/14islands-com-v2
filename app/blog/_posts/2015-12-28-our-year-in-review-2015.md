@@ -16,8 +16,7 @@ We've had a great year and this time is a good opportunity to take a short pause
 
 In January the team was distributed on the opposite ends of the planet. David and Marco were staying in [Florianópolis](https://www.google.se/maps/place/Florian%C3%B3polis+-+State+of+Santa+Catarina,+Brazil/@-27.6141654,-48.6229081,11z/data=!3m1!4b1!4m2!3m1!1s0x952749bfe17eb89f:0xd3d6e34c9fba2a18), Marco's home town in the south of Brazil. They had fun, drank cocktails, took surfing classes while licking the sun at the beach.  Meanwhile in -10°C at the other side of the planet, Hjörtur had holiday with his friends and family in his home country, Iceland.
 
-_MISSING PICTURE_
-
+{% include post-image.html alt="Brasil & Iceland" src="/images/blog/year-in-review/year_start_16_9.jpg" margin="both" ratio="16_9" %}
 
 ## New year, new website
 
@@ -37,7 +36,7 @@ _Yes, that is a chicken grilling on a can of beer._
 
 In February we jumped on an airplane to Barcelona to enter this years Awwwards conference. It’s an event about web design that also recognizes the most inspiring projects in the industry. It was a great experience, warmer than Stockholm, and we met tons of old friends and cool people. We wrote summaries for [day 1](http://14islands.com/blog/2015/02/27/awwwards-conference-first-day/) and [day 2](http://14islands.com/blog/2015/02/27/awwwards-conference-first-day/) at the conference.
 
-_MISSING PICTURE_
+{% include post-image.html alt="Friends at Awwwards conference 2015" src="/images/blog/year-in-review/awwwards.jpg" margin="both" ratio="1_1" %}
 
 
 ## Kingdom of the North
