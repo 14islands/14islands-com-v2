@@ -1,0 +1,340 @@
+@keyframes header-animate-in {from {transform: translateY(-100%); opacity: 0; } to {transform: none; opacity: 1;}}
+@keyframes header-animate-out {from {transform: none; opacity: 1; } to {transform: translateY(-100%); opacity: 0;}}
+
+#mff-form__progressbar {
+	background-color: #efefef;
+
+	$padding: 10%;
+	$height-small: 3.4em;
+	$height-large: 4.4em;
+	$height-floating-small: 2.5em;
+	$height-floating-large: 3.1em;
+	$itemWidth: (100-$padding)/5;
+	$itemWidthAdditional: (100-$padding)/3;
+
+	$transition-duration: .3s;
+	$transition-easing: ease-out;
+	$translate-z: 40px;
+
+	perspective: 1000px;
+	backface-visibility: hidden;
+
+	transition-property: background;
+	transition-duration: 0.3s;
+	transition-timing-function: $easeOutQuad;
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 20; //needs to be less than site header (z-index:25)
+
+	height: $height-small;
+	@include if-large-progressbar {
+		height: $height-large;
+	}
+
+	.svg-wrapper {
+		fill: #fff;
+		height: 100%;
+	}
+
+	#twocolumns {
+		@include if-small-progressbar {
+			padding: 0;
+		}
+	}
+
+  &.mff-form__progressbar--fixed {
+		position: fixed;
+		top: 0;
+		z-index: 500;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+
+		will-change: height, box-shadow;
+
+		height: $height-floating-small;
+  	@include if-large-progressbar {
+  		height: $height-floating-large;
+		}
+
+		.toolbar & {
+			top: 30px;
+		}
+
+		.mff-form__progressbar__list__step__title {
+			margin: 0.6em;
+		}
+	}
+
+  &.mff-form__progressbar--animate-in {
+		transform: none;
+		animation: header-animate-in 250ms $easeOutQuad;
+	}
+
+	&.mff-form__progressbar--animate-out {
+		// transform: translateY(-100%);
+		// animation: header-animate-out 250ms $easeOutQuad;
+	}
+
+	&.mff-form__progressbar--notice {
+		.mff-form__progressbar__message {
+			background-color: #35DB8C;
+		}
+	}
+
+	.mff-form__progressbar__close {
+		display: none;
+		position: absolute;
+		top: 50%;
+		right: 2em;
+		margin-top: -0.8em;
+		font-size: 0.8em;
+		cursor: pointer;
+		text-decoration: underline;
+	}
+
+	&.mff-form__progressbar--pinned {
+		.mff-form__progressbar__close {
+			display: block;
+		}
+	}
+
+	&.mff-form__progressbar--error {
+		.mff-form__progressbar__message {
+			background-color: #DB355D;
+		}
+	}
+
+	.mff-form__progressbar__cube {
+		transform-style: preserve-3d;
+		transition-property: transform;
+		transition-duration: .2s;
+		transition-timing-function: $easeOutQuad;
+		overflow: visible; // #two-columns adds overflow hidden
+		width: 100%;
+		height: 100%;
+		transform-origin: 0 0;
+
+		&.mff-form__progressbar--flip-immediately {
+			transition-duration: 0;
+		}
+
+		&.mff-form__progressbar--flip {
+			.mff-form__progressbar__message {
+				display: block;
+			}
+		}
+
+		.csstransformspreserve3d & {
+			&.mff-form__progressbar--flip {
+				transform: translateZ($translate-z * -1) rotateX(90deg);
+
+				.mff-form__progressbar__message {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.mff-form__progressbar__face {
+
+	}
+
+	.mff-form__progressbar__steps {
+		margin-bottom: 0;
+		height: 100%;
+		backface-visibility: hidden;
+	}
+
+
+	.mff-form__progressbar__message {
+		box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+		line-height: 1.3em;
+		font-size: 1.5em;
+		color: #fff;
+		font-weight: bold;
+
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000;
+
+		.csstransformspreserve3d & {
+			display: block;
+			position: static;
+			transform: rotateX(-90deg);
+			transform-origin: 0% 0%;
+		}
+
+		transition-property: opacity;
+		transition-duration: 0.2s;
+		transition-timing-function: $easeOutQuad;
+		backface-visibility: hidden;
+
+		min-height: 100%;
+		.mff-svg-wrapper {
+			position: absolute;
+			top: 50%;
+			margin-top: -25px;
+		}
+		.mff-form__text__wrapper {
+			position: relative;
+			margin-bottom: 0;
+		}
+	}
+
+	.mff-form__progressbar__text {
+		display: block;
+		padding: .7em 5em .8em 3em;
+	}
+	&.mff-form__progressbar--fixed .mff-form__progressbar__text {
+		padding: .3em 5em .3em 3em;
+	}
+
+	.mff-form__progressbar__list {
+		list-style: none;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+		height: 100%;
+		position: relative; // for items to appear in top of blue indicator
+	}
+
+	.mff-form__progressbar__list__step {
+		display: inline-block;
+		width: $itemWidth;
+		margin: 0;
+		position: relative;
+		z-index: 10;
+		text-align: center;
+		vertical-align: top;
+	}
+	.mff-form__progressbar__list__step__title {
+		color: #cccccc;
+		font-weight: bold;
+		margin: 1.2em;
+		text-transform: uppercase;
+		transition: color $transition-duration $transition-easing;
+		white-space: nowrap;
+		display: inline-block;
+
+		font-size: 12px;
+		@include if-large-progressbar {
+			font-size: 18px;
+		}
+
+		.mff-form__progressbar__list__step__icon {
+			display: none;
+			width: 25px;
+			height: 18px;
+			vertical-align: middle;
+			fill: $gray;
+			margin-top: -5px;
+			transition: fill $transition-duration $transition-easing;
+		}
+	}
+	&.mff-form__progressbar--step1 .mff-form__progressbar__list__step:nth-child(1),
+	&.mff-form__progressbar--step2 .mff-form__progressbar__list__step:nth-child(2),
+	&.mff-form__progressbar--step3 .mff-form__progressbar__list__step:nth-child(3),
+	&.mff-form__progressbar--step4 .mff-form__progressbar__list__step:nth-child(4),
+	&.mff-form__progressbar--step5 .mff-form__progressbar__list__step:nth-child(5) {
+		.mff-form__progressbar__list__step__title {
+			border-bottom: 2px solid lighten($blue, 20%);
+			@include if-large-progressbar {
+				border-bottom: none;
+				span {
+					color: #fff;
+					border-bottom: 2px solid transparent;
+				}
+				.mff-form__progressbar__list__step__icon {
+					fill: #fff;
+				}
+			}
+		}
+	}
+
+	.mff-form__progressbar__indicator {
+		@include if-large-progressbar {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			z-index: 1;
+			left: 0%;
+			width: $itemWidth;
+			background: $blue;
+			box-shadow: 0 -5px 0 5px #fff;
+			transform: skewX(-45deg);
+			transition: left $transition-duration $transition-easing;
+		}
+	}
+	&.mff-form__progressbar--step1 .mff-form__progressbar__indicator {
+		left: $padding/2 + ($itemWidth*0);
+	}
+	&.mff-form__progressbar--step2 .mff-form__progressbar__indicator {
+		left: $padding/2 + ($itemWidth*1);
+	}
+	&.mff-form__progressbar--step3 {
+		.mff-form__progressbar__indicator {
+			left: $padding/2 + ($itemWidth*2);
+		}
+	}
+	&.mff-form__progressbar--step4 {
+		.mff-form__progressbar__indicator {
+			left: $padding/2 + ($itemWidth*3);
+		}
+		.mff-form__progressbar__list--additional {
+			.mff-form__progressbar__indicator {
+				left: $padding/2 + ($itemWidthAdditional*1);
+			}
+		}
+	}
+	&.mff-form__progressbar--step5 {
+		.mff-form__progressbar__indicator {
+			left: $padding/2 + ($itemWidth*4);
+		}
+		.mff-form__progressbar__list--additional {
+			.mff-form__progressbar__indicator {
+				left: $padding/2 + ($itemWidthAdditional*2);
+			}
+		}
+	}
+
+	.mff-form__progressbar--step-completed,
+	.mff-form__progressbar--step-available {
+		cursor: pointer;
+		.mff-form__progressbar__list__step__title {
+			span {
+				color: $blue-darker;
+				border-bottom: 2px solid transparent;
+				transition: all 200ms $easeOutQuad;
+			}
+			.mff-form__progressbar__list__step__icon {
+				fill: $blue-darker;
+			}
+		}
+	}
+
+	.mff-form__progressbar--step-completed .mff-form__progressbar__list__step__title {
+		.mff-form__progressbar__list__step__icon {
+			@include if-large-progressbar {
+				display: inline;
+			}
+		}
+	}
+
+	// ADJUST STYLE FOR 3 MENU ITEMS
+	.mff-form__progressbar__list--additional {
+		.mff-form__progressbar__list__step,
+		.mff-form__progressbar__indicator {
+			width: $itemWidthAdditional;
+		}
+
+		.mff-form__progressbar__list__step:nth-child(2),
+		.mff-form__progressbar__list__step:nth-child(3) {
+			display: none;
+		}
+	}
+
+}

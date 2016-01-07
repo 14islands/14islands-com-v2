@@ -1,0 +1,848 @@
+/*!
+Pure v0.5.0
+Copyright 2014 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+https://github.com/yui/pure/blob/master/LICENSE.md
+*/
+
+.mff-form {
+
+	.form-required {
+    color: #f00;
+  }
+
+	.pure-g {
+		margin-top: 1rem;
+	}
+
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+
+  ::-webkit-input-placeholder {
+     color: $form-placeholder;
+     font-style: italic;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+     color: $form-placeholder !important;
+     font-style: italic;
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+     color: $form-placeholder !important;
+     font-style: italic;
+  }
+
+  :-ms-input-placeholder {
+     color: $form-placeholder !important;
+     font-style: italic;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="week"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  select,
+  textarea {
+      padding: 0.6rem;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 70%;
+      display: inline-block;
+      color: #555;
+      border: 1px solid #ccc;
+      box-shadow: inset 0 1px 3px #ddd;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      transition-property: border, color;
+      transition-duration: 250ms;
+      transition-timing-function: $easeOutQuad;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+      margin-right: 0.4em;
+  }
+
+  /*
+  Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+  since IE8 won't execute CSS that contains a CSS3 selector.
+  */
+  input:not([type]) {
+      padding: 0.7em;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-shadow: inset 0 1px 3px #ddd;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+
+
+  /* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
+  /* May be able to remove this tweak as color inputs become more standardized across browsers. */
+  input[type="color"] {
+      padding: 0.2em 0.5em;
+  }
+
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="week"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="color"]:focus,
+  select:focus,
+  textarea:focus {
+      outline: 0;
+      outline: thin dotted \9; /* IE6-9 */
+      border-color: #666;
+      color: #222;
+  }
+
+  /*
+  Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+  since IE8 won't execute CSS that contains a CSS3 selector.
+  */
+  input:not([type]):focus {
+      outline: 0;
+      outline: thin dotted \9; /* IE6-9 */
+      border-color: #555;
+  }
+
+  input[type="file"]:focus,
+  input[type="radio"]:focus,
+  input[type="checkbox"]:focus {
+      outline: thin dotted #333;
+  }
+
+
+  input[type="text"][disabled],
+  input[type="password"][disabled],
+  input[type="email"][disabled],
+  input[type="url"][disabled],
+  input[type="date"][disabled],
+  input[type="month"][disabled],
+  input[type="time"][disabled],
+  input[type="datetime"][disabled],
+  input[type="datetime-local"][disabled],
+  input[type="week"][disabled],
+  input[type="number"][disabled],
+  input[type="search"][disabled],
+  input[type="tel"][disabled],
+  input[type="color"][disabled],
+  select[disabled],
+  textarea[disabled] {
+      cursor: not-allowed;
+      background-color: #eaeded;
+      color: #cad2d3;
+  }
+
+  /*
+  Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+  since IE8 won't execute CSS that contains a CSS3 selector.
+  */
+  input:not([type])[disabled] {
+      cursor: not-allowed;
+      background-color: #eaeded;
+      color: #cad2d3;
+  }
+  input[readonly],
+  select[readonly],
+  textarea[readonly] {
+      background: #eee; /* menu hover bg color */
+      color: #777; /* menu text color */
+      border-color: #ccc;
+  }
+
+  select {
+      border: 1px solid #ccc;
+      box-shadow: 0 0 3px #ddd;
+      background-color: #f4f4f4;
+  }
+  select[multiple] {
+      height: auto;
+  }
+
+  .label,
+  label {
+      color: #666;
+      font-size: 0.85rem;
+      font-weight: bold;
+      margin: 0.5em 0;
+  }
+
+  .push-label {
+      margin-top: 2em;
+  }
+
+  .label {
+      display: block;
+      font-weight: bold;
+  }
+
+  .label--inline {
+      @include if-large-breakpoint {
+          display: inline-block;
+          margin-right: 1em;
+      }
+  }
+
+  label {
+      cursor: pointer;
+  }
+
+  fieldset {
+      margin: 5% 0 0;
+      padding: 0.35em 0 0.75em;
+      border: 0;
+
+      fieldset {
+          margin: 3em 0 0;
+      }
+      .fieldset--no-top-margin {
+          margin-top: 0;
+      }
+  }
+
+  .legend,
+  legend {
+      display: block;
+      width: 100%;
+      padding: 0.4rem 0;
+      margin-bottom: 0.4rem;
+      color: #333;
+      border-bottom: 1px solid #e5e5e5;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.93rem;
+  }
+
+  .legend {
+      border-bottom: none;
+  }
+
+  input.mff-date {
+      min-width: 11em;
+  }
+
+  .mff-validated-input {
+      display: inline-block;
+      position: relative;
+
+      .mff-validated-input__icon {
+          display: none;
+          position: absolute;
+          top: -12px;
+          right: -15px;
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+          background: $blue;
+
+          .csstransforms & {
+              display: block;
+              transform: scale(0);
+          }
+
+          .mff-validated-input__icon__error,
+          .mff-validated-input__icon__ok {
+              display: none;
+              width: 17px;
+              fill: white;
+              height: 100%;
+              margin: auto;
+          }
+      }
+  }
+
+  .mff-error,
+  .mff-success {
+      .mff-validated-input__icon {
+          display: block;
+          .csstransforms & {
+              transition: transform .2s $easeOutBack;
+              transform: scale(0.8);
+              @include if-large-breakpoint {
+                  transform: scale(1);
+              }
+          }
+      }
+  }
+
+
+  .mff-error {
+      input {
+          border-color: $red;
+          position: relative;
+      }
+      .mff-tip {
+          display: block;
+          color: $red;
+          visibility: visible;
+      }
+      .mff-validated-input__icon {
+          background: $red;
+          .mff-validated-input__icon__error {
+              display: block;
+              width: 13px;
+          }
+      }
+  }
+  .mff-success {
+      input {
+          border-color: $blue;
+      }
+      .mff-validated-input__icon .mff-validated-input__icon__ok {
+          display: block;
+      }
+  }
+}
+
+//
+// Checkbox and radio buttons
+//
+.mff-checkbox,
+.mff-radio {
+    margin: 0.5em 0;
+    display: block;
+
+    small {
+        display: block;
+        color: #666;
+        margin-left: 35px;
+    }
+}
+
+.mff-radio__el,
+.mff-checkbox__el {
+    border: 2px solid #dadada;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    top: -4px;
+
+    @media screen and (min-width: 48em) {
+        top: -1px;
+    }
+}
+
+.mff-radio-group,
+.mff-checkbox-group {
+    .mff-radio,
+    .mff-checkbox {
+        display: inline-block;
+        margin-right: 1em;
+        vertical-align: middle;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+//
+// Checkbox
+//
+.mff-checkbox__el {
+    border-radius: 2px;
+    transition-property: background, border;
+    transition-duration: 0.1s;
+    transition-timing-function: $easeOutQuad;
+}
+
+.mff-checkbox__el__fill {
+    position: absolute;
+    top: -1px;
+    left: 3px;
+    height: 100%;
+    font-size: 1.4em;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(6px) scale(0.5);
+    transition-property: transform, opacity;
+    transition-duration: 0.1s;
+    transition-timing-function: $easeOutQuad;
+
+    > svg {
+        fill: #fff;
+        width: 15px;
+        height: 100%;
+    }
+}
+
+.mff-checkbox input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+
+    &:checked {
+
+        + .mff-checkbox__el {
+            border-color: $blue-darker;
+            background-color: $blue-darker;
+
+            .mff-checkbox__el__fill {
+                opacity: 1;
+                transform: translateY(0px) scale(1);
+            }
+        }
+    }
+
+    &:focus {
+        + .mff-checkbox__el {
+            box-shadow: 0 0 0 5px #FFDF9D;
+        }
+    }
+}
+
+//
+// Radio buttons
+//
+.mff-radio__el {
+    border-radius: 50%;
+    transition-property: border;
+    transition-duration: 0.1s;
+    transition-timing-function: $easeOutQuad;
+}
+
+.mff-radio__el__fill {
+    background: $blue-darker;
+    opacity: 0;
+    transform: scale(0.1);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    transition-property: transform, opacity;
+    transition-duration: 0.1s;
+    transition-timing-function: $easeOutQuad;
+}
+
+.mff-radio input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+
+    &:checked {
+
+        + .mff-radio__el {
+            border-color: $blue-darker;
+
+            .mff-radio__el__fill {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+    &:focus {
+        + .mff-radio__el {
+            box-shadow: 0 0 0 5px #FFDF9D;
+        }
+    }
+}
+
+// radio button disabled style
+.mff-radio input[type="radio"][disabled] + .mff-radio__el {
+    cursor: not-allowed;
+    border-color: #cad2d3;
+    color: #cad2d3;
+    background: #eaeded;
+    .mff-radio__el__fill {
+        background: transparent;
+    }
+}
+
+
+//
+// Toggle button
+//
+.mff-toggle__el {
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    background: #f4f4f4;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+    display: inline-block;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition-property: border, background;
+    transition-duration: 0.1s;
+    transition-timing-function: $easeOutQuad;
+    backface-visibility: hidden;
+
+    @media screen and (min-width: 35.5em) {
+        width: 90%; // so we can have margin
+    }
+}
+
+.mff-toggle__text {
+    position: relative;
+    z-index: 10;
+    color: #444;
+    small {
+        color: #666;
+    }
+}
+
+.mff-toggle__el__fill {
+    background: $blue;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: -60px;
+    right: -60px;
+    bottom: 0;
+    transform: skew(-45deg) scaleX(0.3);
+    backface-visibility: hidden;
+}
+
+.mff-toggle input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+
+    &:checked {
+        + .mff-toggle__el {
+            border: 1px solid #ccc;
+            box-shadow: none;
+
+            .mff-toggle__text {
+                color: #fff;
+                small {
+                    color: #f2f2f2;
+                }
+            }
+
+            .mff-toggle__el__fill {
+                opacity: 1;
+                transform: skew(-45deg) scaleX(1);
+                transition-property: opacity, transform;
+                transition-duration: .25s;
+                transition-timing-function: $easeOutQuad;
+            }
+        }
+    }
+}
+
+
+//
+// Text
+//
+.mff-desc {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 1.5em!important;
+}
+
+.mff-note {
+    font-size: 1em;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1.5em!important;
+    padding-right: 5%;
+    box-sizing: border-box;
+}
+
+.mff-tip,
+.mff-status {
+    visibility: hidden;
+}
+
+
+.mff-form-stacked {
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="week"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    select,
+    label,
+    textarea {
+        display: block;
+        margin: 0.25em 0;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="week"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    select,
+    textarea {
+        width: 100%;
+    }
+
+    /*
+    Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+    since IE8 won't execute CSS that contains a CSS3 selector.
+    */
+    input:not([type]) {
+        display: block;
+        margin: 0.25em 0;
+    }
+
+}
+
+/* Grouped Inputs */
+.mff-form .mff-group fieldset {
+    margin-bottom: 10px;
+}
+.mff-form .mff-group input {
+    display: block;
+    padding: 10px;
+    margin: 0;
+    position: relative;
+    top: -1px;
+}
+.mff-form .mff-group input:focus {
+    z-index: 2;
+}
+.mff-form .mff-group input:first-child {
+    top: 1px;
+}
+.mff-form .mff-group input:last-child {
+    top: -2px;
+}
+.mff-form .mff-group button {
+    margin: 0.35em 0;
+}
+
+.mff-validated-input {
+    width: 100%;
+    @media screen and (min-width: 35.5em) {
+        width: 90%;
+    }
+}
+.mff-form .mff-input-1,
+.mff-form .mff-input-2-3,
+.mff-form .mff-input-1-2,
+.mff-form .mff-input-1-3,
+.mff-form .mff-input-1-4,
+.mff-form .mff-input-3-4,
+.mff-form .mff-input-4-5,
+.mff-form .mff-input-9-20 {
+    width: 100%;
+}
+@media screen and (min-width: 35.5em) {
+    .mff-form .mff-input-1 {
+        width: 100%;
+    }
+    .mff-form .mff-input-2-3 {
+        width: 66%;
+    }
+    .mff-form .mff-input-1-2 {
+        width: 50%;
+    }
+    .mff-form .mff-input-9-20 {
+        width: 45%;
+    }
+    .mff-form .mff-input-1-3 {
+        width: 33%;
+    }
+    .mff-form .mff-input-1-4 {
+        width: 25%;
+    }
+
+    .mff-form .mff-input-3-4 {
+        width: 75%;
+    }
+
+    .mff-form .mff-input-4-5 {
+        width: 80%;
+    }
+}
+
+
+/* Inline help for forms */
+/* NOTE: mff-help-inline is deprecated. Use .mff-form-message-inline instead. */
+.mff-form .mff-help-inline,
+.mff-form-message-inline {
+    display: inline-block;
+    padding-left: 0.3em;
+    color: #666;
+    vertical-align: middle;
+    font-size: 0.875em;
+}
+
+/* Block help for forms */
+.mff-form-message {
+    display: block;
+    color: #666;
+    font-size: 0.875em;
+}
+
+@media only screen and (max-width : 480px) {
+    .mff-form button[type="submit"] {
+        margin: 0.7em 0 0;
+    }
+
+    .mff-form input:not([type]),
+    .mff-form input[type="text"],
+    .mff-form input[type="password"],
+    .mff-form input[type="email"],
+    .mff-form input[type="url"],
+    .mff-form input[type="date"],
+    .mff-form input[type="month"],
+    .mff-form input[type="time"],
+    .mff-form input[type="datetime"],
+    .mff-form input[type="datetime-local"],
+    .mff-form input[type="week"],
+    .mff-form input[type="number"],
+    .mff-form input[type="search"],
+    .mff-form input[type="tel"],
+    .mff-form input[type="color"],
+    .mff-form label {
+        margin-bottom: 0.3em;
+        display: block;
+    }
+
+    .mff-group input:not([type]),
+    .mff-group input[type="text"],
+    .mff-group input[type="password"],
+    .mff-group input[type="email"],
+    .mff-group input[type="url"],
+    .mff-group input[type="date"],
+    .mff-group input[type="month"],
+    .mff-group input[type="time"],
+    .mff-group input[type="datetime"],
+    .mff-group input[type="datetime-local"],
+    .mff-group input[type="week"],
+    .mff-group input[type="number"],
+    .mff-group input[type="search"],
+    .mff-group input[type="tel"],
+    .mff-group input[type="color"] {
+        margin-bottom: 0;
+    }
+
+    .mff-form-aligned .mff-control-group label {
+        margin-bottom: 0.3em;
+        text-align: left;
+        display: block;
+        width: 100%;
+    }
+
+    .mff-form-aligned .mff-controls {
+        margin: 1.5em 0 0 0;
+    }
+
+    /* NOTE: mff-help-inline is deprecated. Use .mff-form-message-inline instead. */
+    .mff-form .mff-help-inline,
+    .mff-form-message-inline,
+    .mff-form-message {
+        display: block;
+        font-size: 0.75em;
+        /* Increased bottom padding to make it group with its related input element. */
+        padding: 0.2em 0 0.8em;
+    }
+}
+
+
+// Layout styles
+
+.mff-individuals-container {
+    margin-top: 10%;
+}
+
+.mff-print-callout-container {
+    border: 1px solid #dfdfdf;
+    padding: 1em 3em;
+}
+.mff-print-callout-container__print {
+    padding: 1em 0 1em;
+}
+.mff-print-callout-container__primary-contact {
+    .mff-tip {
+        font-size: 1.1em;
+        margin: 0.5em;
+    }
+}
+
+
+.mff-select-predefined-amount-row {
+    @media screen and (min-width: 35.5em) {
+        position: relative;
+        .mff-select-predefined-button {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}
+
+.mff-button-group {
+    display: table;
+    width: 100%;
+
+    .mff-button {
+        box-sizing: border-box;
+        min-width: 280px;
+        margin-left: .5em;
+        margin-right: .5em;
+        margin-top: 1em;
+    }
+
+    .reorder {
+        display: table-row-group;
+    }
+    .reorder--first {
+        display: table-header-group;
+    }
+    .reorder--last {
+        display: table-footer-group;
+    }
+
+    @include if-large-breakpoint {
+         display: block;
+        .reorder {
+            display: inline-block;
+        }
+    }
+}
+.mff-footer-next-step {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+

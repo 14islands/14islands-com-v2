@@ -51,17 +51,26 @@
 //
 
 // Santa
-@import "work/google-santa-tracker/_reindeer-animations.scss";
+@import "work/google-santa-tracker/_reindeer-animations";
 
 // Elastica
-@import "work/elastica/_satellites-animation.scss";
-@import "work/elastica/_circular-mask-animation.scss";
-@import "work/elastica/_dancing-circles-animation.scss";
+@import "work/elastica/_satellites-animation";
+@import "work/elastica/_circular-mask-animation";
+@import "work/elastica/_dancing-circles-animation";
 
 // Sthlm6000
-@import "work/sthlm6000/_masking-number-animation.scss";
-@import "work/sthlm6000/_google-streetview-panorama.scss";
-@import "work/sthlm6000/_donut-chart.scss";
+@import "work/sthlm6000/_masking-number-animation";
+@import "work/sthlm6000/_google-streetview-panorama";
+@import "work/sthlm6000/_donut-chart";
 
 // SPG
-@import "work/spg/_spg-logo-animation.scss";
+@import "work/spg/_spg-logo-animation";
+
+// Montgomery
+@import "work/montgomery/_variables";
+@import "work/montgomery/_breakpoints";
+@import "work/montgomery/_grids";
+@import "work/montgomery/_grids-responsive";
+@import "work/montgomery/_forms";
+@import "work/montgomery/_buttons";
+@import "work/montgomery/_buttons-core";

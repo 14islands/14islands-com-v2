@@ -1,0 +1,162 @@
+//
+// /fund-form
+// this are all pages within our module
+.page-fund-form {
+
+	#content {
+		margin: 0;
+	}
+
+	#twocolumns {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+	}
+
+	.content {
+		margin-top: 0;
+	}
+
+	.main-heading {
+		display: none;
+	}
+
+	.view {
+		padding-top: 6em;
+	}
+
+	.template-title {
+		margin-top: 3em;
+		line-height: 1.2;
+	}
+
+	.text-area.mff-text-left {
+	    text-align: left;
+	    padding: 0;
+
+	    .title-text {
+
+	    	font-size: 1.5em;
+	    	line-height: 1.4;
+	    	margin-bottom: 30px;
+
+	    	@include if-large-breakpoint {
+	    		font-size: 24px;
+	        margin-bottom: 1em;
+	        margin-top: 3em;
+	        max-width: 100%;
+	        line-height: 50px;
+	      }
+
+	    }
+	    svg {
+	        fill: #333;
+	    }
+	}
+
+}
+
+//
+// /index
+// this is before the application form pages (step zero)
+.page-fund-form-close,
+.page-fund-form-invalid-token,
+.mff-view-index {
+
+	.main-heading {
+		display: block;
+		background-image: url('../images/funds.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: right center;
+
+		h1 {
+			color: #fff;
+		}
+	}
+
+	.resume-link {
+		display: block;
+		font-size: 1.5em;
+		margin-top: 0.5em;
+	}
+
+	.view {
+		padding-top: 0;
+	}
+
+	.mff-button-group {
+		margin-bottom: 2em;
+		@include if-large-breakpoint {
+			margin-bottom: 5em;
+		}
+	}
+
+	.mff-or {
+		display: block;
+		margin-bottom: 10px;
+		@media (min-width: 760px) and (max-width: 830px) {
+			display: none;
+		}
+		@media (min-width: 831px) {
+			position: relative;
+			top: -60px;
+			display: inline-block;
+			margin-bottom: auto;
+		}
+	}
+
+	.mff-resume {
+		position: relative;
+		padding-bottom: 2em;
+	}
+
+	.mff-resume-email {
+		margin-bottom: 1em !important;
+		margin-top: 1em !important;
+	}
+
+	.mff-resume__success,
+	.mff-resume__error {
+		position: absolute;
+		top: 50%;
+		max-width: 85%;
+	}
+
+	.mff-resume-spinner {
+		display: none; // toggled by JS
+
+		.svg-spinner {
+			position: relative;
+			top: 15px;
+			left: 20px;
+			margin-top: -15px;
+		}
+	}
+
+	.mff-resume-spinner--active {
+		display: inline-block;
+	}
+
+	.mff-button-wrapper__desc {
+		display: none;
+		@include if-large-breakpoint {
+			display: block;
+		}
+	}
+
+	.text-area .title-text {
+		margin-bottom: 40px;
+		max-width: 650px;
+	}
+
+	.text-area .mff-welcome-message {
+		margin-bottom: 10px;
+	}
+
+	.mff-help-link {
+		font-size: 0.8em;
+		display: block;
+		margin-bottom: 30px;
+	}
+
+}

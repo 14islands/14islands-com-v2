@@ -1,0 +1,11 @@
+#mff-form__sessiontimer {
+	
+	position: relative;
+	top: 60px;
+	@include if-large-progressbar {
+		top: 100px;
+	}
+
+	text-align: center;
+
+}
