@@ -129,6 +129,12 @@
   text-align: left;
 }
 
+.box__content__img--max-450 {
+	img {
+		max-width: 450px;
+	}
+}
+
 .box__shape {
   fill: #666;
   position: absolute;
