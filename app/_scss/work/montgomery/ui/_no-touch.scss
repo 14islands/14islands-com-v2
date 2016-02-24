@@ -1,0 +1,155 @@
+.no-touch {
+
+	a,
+	.mff-button {
+		transition: background 0.1s $easeOutQuad;
+	}
+
+	.mff-svg-wrapper {
+		transition: transform 0.1s $easeOutQuad;
+		backface-visibility: hidden;
+	}
+
+	a.mff-button,
+	.mff-button {
+		&:hover,
+		&:focus {
+			color: #fff;
+			background-color: $blue-darker;
+			border-color: $blue-darker;
+    	text-decoration: none;
+    	.mff-svg-wrapper--right {
+    			transform: translateX(3px);
+    	}
+    	.mff-svg-wrapper--left {
+    			transform: translateX(-3px);
+    	}
+		}
+	}
+
+	a.mff-button--dark,
+	.mff-button--dark {
+		&:hover,
+		&:focus {
+			background-color: #111;
+			border-color: #111;
+		}
+	}
+
+	a.mff-button--alert,
+	.mff-button--alert {
+		&:hover,
+		&:focus {
+			background-color: $red-darker;
+			border-color: $red-darker;
+		}
+	}
+
+	a.mff-button--dark--inverted,
+	.mff-button--dark--inverted {
+		&:hover,
+		&:focus {
+			background-color: #333;
+			color: #fff;
+		}
+	}
+
+	a.mff-button--inverted,
+	.mff-button--inverted {
+		&:hover,
+		&:focus {
+	    background-color: transparent;
+	    border-color: $blue-darker;
+	    color: $blue-darker;
+
+	    svg {
+	    	fill: $blue-darker;
+	    }
+	  }
+	}
+	a.mff-button--inverted-white,
+	.mff-button--inverted-white {
+		&:hover,
+		&:focus {
+	    background-color: transparent;
+	    border-color: #fff;
+	    color: #fff;
+
+	    svg {
+	    	fill: #fff;
+	    }
+	  }
+	}
+
+	.mff-toggle__el {
+		&:hover,
+		&:focus {
+			background-color: #e3e3e3;
+			border-color: #959595;
+		}
+
+	}
+
+	.mff-form__progressbar__close {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	#mff-form__progressbar {
+		.mff-form__progressbar--step-completed,
+		.mff-form__progressbar--step-available {
+			&:hover {
+				.mff-form__progressbar__list__step__title {
+					span {
+						color: $blue;
+						border-bottom: 2px solid $blue-darker;
+					}
+					.mff-form__progressbar__list__step__icon {
+						fill: $blue;
+					}
+				}
+			}
+		}
+	}
+
+	.applicants-list__item {
+		&:hover {
+			.js-collapse-toggle:after {
+				color: $blue-darker;
+			}
+		}
+	}
+
+	.applicants-list__item--collapsed {
+		&:hover {
+			border-color: #aaa;
+
+			.mff-applicant-name {
+				transition: color 0.1s $easeInOutQuad;
+				color: $blue-darker;
+			}
+		}
+	}
+
+	.nav__link-bullet {
+		&:hover {
+			transition: all 0.1s $easeOutQuad;
+      background-color: #1485cc;
+      transform: scale(1.4);
+    }
+	}
+
+	.nav__link {
+		&:hover {
+			& + .nav__tooltip {
+				visibility: visible;
+				transform-origin: left center;
+				animation-name: fade-scale-in;
+				animation-duration: 0.2s;
+				animation-timing-function: $easeOutQuad;
+			}
+		}
+	}
+
+} // end of .no-touch

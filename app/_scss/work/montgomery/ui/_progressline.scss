@@ -1,0 +1,180 @@
+$progressline-width: 4px;
+$progressline-top-position-wide: 140px;
+$progressline-bottom-position-wide: 15%;
+
+@mixin if-wide-progressline {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+#mff-form__progressline {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  z-index: 1; // it needs to be on top of the form for the tooltips
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  @include if-wide-progressline {
+    position: fixed;
+    height: auto;
+    top: $progressline-top-position-wide;
+    bottom: $progressline-bottom-position-wide;
+  }
+
+  transition: none;
+
+  @include if-wide-progressline {
+    left: 4%;
+  }
+
+  &.mff-form__progressline--fixed {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+
+    will-change: opacity;
+    transition: opacity 350ms $easeInQuad 150ms;
+
+    @include if-wide-progressline {
+      top: $progressline-top-position-wide;
+      bottom: $progressline-bottom-position-wide;
+    }
+
+
+    &.mff-form__progressline--ready {
+      opacity: 1;
+    }
+  }
+}
+
+.mff-form__progressline__label {
+  position: absolute;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #777;
+  font-weight: bold;
+  left: -50px;
+  right: -50px;
+  text-align: center;
+  line-height: 15px;
+  white-space: nowrap;
+  display: none;
+  @include if-wide-progressline {
+    display: block;
+  }
+}
+.mff-form__progressline__label--begin {
+  top: -30px;
+}
+.mff-form__progressline__label--end {
+  bottom: -65px;
+  .mff-form__progressline__label__group {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .mff-form__progressline__label__sublabel {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+  }
+}
+
+.mff-form__progressline__line {
+    display: block;
+    width: $progressline-width;
+    background-color: #cccccc;
+    overflow: hidden;
+    // position: relative;
+    // height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.mff-form__progressline__line__progress {
+  	display: block;
+    width: $progressline-width;
+    height: 100%;
+    background-color: #1485cc;
+    transform: translateY(-100%);
+    backface-visibility: hidden;
+}
+
+@keyframes bounce {
+    0%{ transform:scale(.8);}
+    30%{ transform:scale(1.3);}
+    100%{ transform:scale(1);}
+}
+
+@keyframes fade-scale-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.4);
+    }
+    100%{
+      opacity: 1;
+      transform: scale(1);
+    }
+}
+
+.nav__link {
+    position: absolute;
+    left: -8px;
+    height: 12px;
+    width: 12px;
+    text-align: center;
+}
+
+.nav__tooltip {
+  background-color: $blue;
+  color: #fff;
+  visibility: hidden;
+  left: 35px;
+  padding-top: 0.5em;
+  padding-right: 0;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  margin-top: -0.5em;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent $blue transparent transparent;
+
+  }
+}
+
+.nav__link-bullet {
+  @include if-wide-progressline {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-color: #cccccc;
+    border-radius: 50%;
+    box-sizing: content-box;
+
+    .nav__link--active & {
+      animation: bounce .40s $easeOutQuad;
+      background-color: #1485cc;
+    }
+  }
+}
+
+a.nav__link-bullet,
+.nav__link-bullet {
+  transition: all 0.1s $easeOutQuad;
+}

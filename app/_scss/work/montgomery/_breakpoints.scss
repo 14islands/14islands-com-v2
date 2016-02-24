@@ -1,0 +1,18 @@
+$progressbar-large-breakpoint: 768px;
+
+@mixin if-large-breakpoint {
+	@media (min-width: $progressbar-large-breakpoint) {
+		@content;
+	}
+}
+
+@mixin if-large-progressbar {
+	@media (min-width: $progressbar-large-breakpoint) {
+		@content;
+	}
+}
+@mixin if-small-progressbar {
+	@media (max-width: $progressbar-large-breakpoint - 1px) {
+		@content;
+	}
+}

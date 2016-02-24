@@ -1,0 +1,50 @@
+//
+// Markup example:
+// <div class="pure-u-1 mff-highlights">
+// 	<ul class="mff-highlights__list">
+// 		<li class="mff-highlights__item">
+//      <div class="mff-svg-wrapper mff-highlights__icon">
+// 	      <svg class="mff-svg mff-highlights__svg"><use xlink:href="#shape-edit" /></svg>
+//      </div>
+// 			<span class="mff-highlights__title legend">Easy Application</span>
+// 			<p class="mff-highlights__desc">We will save your progress throughout the application and you can resume it later at any time.</p>
+// 		</li>
+//    (...)
+// 	</ul>
+// </div>
+
+.mff-highlights__list {
+	list-style: none;
+	padding: 0;
+}
+
+.legend.mff-highlights__title {
+	margin-bottom: 0;
+	width: auto;
+}
+
+.mff-highlights__desc {
+	color: #666;
+	display: block;
+	margin-top: 0;
+	max-width: 70%;
+}
+
+.mff-highlights__item {
+	margin-bottom: 1.7em;
+}
+
+.mff-highlights__icon {
+	margin-top: 20px;
+}
+
+.mff-highlights__svg {
+	fill: #555;
+}
+
+.mff-highlights__title,
+.mff-highlights__desc {
+	// lazy and safe way to make room for the icon
+	// so the text won't go under it
+	margin-left: 70px;
+}

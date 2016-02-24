@@ -1,0 +1,39 @@
+.mff-instructions {
+	display: none;
+}
+
+.mff-show-instructions {
+	.mff-instructions {
+		display: block;
+	}
+}
+
+.mff-instructions__deny {
+	margin-left: 0.5em;
+}
+
+.mff-instructions__container {
+	padding: 1.4em 0 0;
+	overflow: hidden;
+}
+
+.mff-instructions__content {
+	overflow: hidden;
+	overflow-y: scroll;
+	height: 250px;
+}
+
+.mff-instructions__cta {
+	margin-top: 1.5em;
+	width: 100%;
+	padding-top: 1em;
+	padding-left: 5px;
+
+	> em {
+		margin-left: 0.5em;
+	}
+
+	> label {
+		display: inline-block;
+	}
+}

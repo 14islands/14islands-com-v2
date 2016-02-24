@@ -1,0 +1,201 @@
+/*csslint outline-none:false*/
+
+.mff-button {
+    font-family: inherit;
+    border-radius: 2px;
+    font-weight: bold;
+    padding: 1em 2em;
+    color: #fff;
+    border: none;
+    background-color: $blue;
+    border: 2px solid $blue;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1em;
+    strong {
+        display: block;
+        margin-bottom: 1em;
+    }
+    span {
+        text-transform: uppercase;
+    }
+}
+
+.mff-button--busy {
+    cursor: inherit;
+}
+
+.mff-button--dark {
+    background-color: #333;
+    border-color: #333;
+}
+
+.mff-button--alert {
+    background-color: $red;
+    border-color: $red;
+}
+
+.mff-button--inverted {
+    background-color: transparent;
+    border-color: $blue;
+    color: $blue;
+
+    svg {
+        fill: $blue;
+    }
+}
+
+.mff-button--inverted-white {
+    background-color: transparent;
+    border-color: rgba(255,255,255,.6);
+    color: #f2f2f2;
+
+    svg {
+        fill: #f2f2f2;
+    }
+}
+
+.mff-svg-wrapper {
+    float: left;
+    height: 50px;
+    width: 50px;
+    margin-right: 0.6em;
+}
+
+
+.mff-svg-wrapper--right {
+    margin-left: 0.6em;
+    margin-right: 0;
+    float: right;
+}
+
+.mff-svg-wrapper--left {
+    margin-left: 0;
+    margin-right: 0.6em;
+    float: left;
+}
+
+.mff-svg {
+    height: 100%;
+    width: 100%;
+    fill: #fff;
+}
+
+.mff-button--toggle-icon {
+    .mff-svg-wrapper {
+        @media (max-width: 500px) {
+            display: none;
+        }
+    }
+}
+
+.mff-button-group {
+    text-align: center;
+    padding-bottom: 1px; // make sure the border is not cut off
+
+    .mff-button,
+    button[type="submit"] {
+        margin-bottom: 1em;
+
+        @include if-large-breakpoint {
+            margin-right: 20px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+.mff-button--icon {
+    padding: 0.4em 1.8em;
+
+    span {
+        // approx. height of the svg
+        line-height: 50px;
+        text-transform: uppercase;
+    }
+
+}
+
+
+.mff-button--icon--30px {
+
+    .mff-svg-wrapper {
+        height: 34px;
+        width: 20px;
+    }
+
+    span {
+        // approx. height of the svg
+        line-height: 35px;
+    }
+}
+
+.mff-button--dark--inverted {
+    border-color: #333;
+    background-color: transparent;
+    color: #333;
+}
+
+.mff-button:focus {
+    outline: 0;
+}
+.mff-button-active:not(.mff-button--busy),
+.mff-button:not(.mff-button--busy):active {
+    position: relative;
+    top: 1px;
+    // box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
+}
+
+.mff-button[disabled],
+.mff-button-disabled,
+.mff-button-disabled:hover,
+.mff-button-disabled:focus,
+.mff-button-disabled:active {
+    border: none;
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    filter: alpha(opacity=40);
+    -khtml-opacity: 0.40;
+    -moz-opacity: 0.40;
+    opacity: 0.40;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.mff-button-hidden {
+    display: none;
+}
+
+/* Firefox: Get rid of the inner focus border */
+.mff-button::-moz-focus-inner{
+    padding: 0;
+    border: 0;
+}
+
+.mff-button-primary,
+.mff-button-selected,
+a.mff-button-primary,
+a.mff-button-selected {
+    color: #fff;
+}
+
+.mff-button--centered {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.mff-button-wrapper {
+    display: inline-block;
+}
+
+.mff-button-wrapper__desc {
+    color: #666;
+    display: block;
+    text-align: center;
+    margin-top: 0.5em;
+}

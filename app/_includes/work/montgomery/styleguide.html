@@ -1,0 +1,154 @@
+<div class="svg-defs" style="display:none;">
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol viewBox="0 0 100 100" id="shape-check">
+            <title>check</title>
+            <path d="M89.246,12.162c-1.534-1.535-4.05-1.535-5.585,0L34.124,61.702c-1.535,1.535-4.05,1.535-5.585,0l-12.201-12.2  c-1.535-1.535-4.05-1.535-5.585,0l-7.483,7.487c-1.535,1.535-1.535,4.05,0,5.585l25.269,25.264c1.535,1.535,4.05,1.535,5.585,0  L96.729,25.23c1.536-1.536,1.536-4.05,0-5.586L89.246,12.162z"></path>
+        </symbol>
+        <symbol viewBox="0 0 100 100" id="shape-delete">
+            <title>delete</title>
+            <path fill="#020202" d="M76.83,32.561L59.392,50L76.83,67.439c2.594,2.594,2.594,6.798,0,9.392
+	c-1.296,1.296-2.995,1.945-4.694,1.945c-1.7,0-3.399-0.648-4.695-1.945L50,59.391l-17.44,17.44
+	c-1.296,1.296-2.995,1.945-4.695,1.945c-1.699,0-3.397-0.648-4.694-1.945c-2.594-2.593-2.594-6.797,0-9.392L40.608,50L23.17,32.561
+	c-2.594-2.594-2.594-6.798,0-9.392c2.593-2.592,6.795-2.592,9.389,0L50,40.609l17.44-17.44c2.594-2.592,6.796-2.592,9.389,0
+	C79.424,25.763,79.424,29.967,76.83,32.561z"></path>
+        </symbol>
+        <symbol viewBox="0 0 100 100" id="shape-x">
+            <title>x</title>
+            <path id="svgstorea5b580909ed0f1721654cddd01855b06rect11874_3_" d="M13.953,0.016c-0.735-0.08-1.415,0.135-1.922,0.634L0.657,12.031c-0.999,0.995-0.73,2.844,0.518,4.09    l33.872,33.877L1.175,83.871c-1.248,1.247-1.517,3.082-0.518,4.086l11.374,11.377c1.004,1.008,2.851,0.865,4.093-0.378    l33.873-33.881l33.878,33.881c1.246,1.243,3.088,1.386,4.092,0.378l11.378-11.377c0.995-1.004,0.731-2.839-0.516-4.086    L64.956,49.998l33.873-33.877c1.247-1.246,1.511-3.095,0.516-4.09L87.967,0.65c-1.004-0.995-2.846-0.73-4.092,0.513L49.997,35.044    L16.124,1.163C15.501,0.537,14.69,0.096,13.953,0.016z"></path>
+        </symbol>
+    </svg>
+</div>
+<form class="mff-form mff-form-stacked">
+	<fieldset>
+		<legend>Inputs</legend>
+
+		<div class="pure-g">
+
+			<p class="pure-u-1 pure-u-sm-1-2">
+				<label for="email">Email <span class="form-required" title="This field is required.">*</span></label>
+				<span class="mff-validated-input">
+					<input id="email" type="email">
+				</span>
+			</p>
+
+			<p class="pure-u-1 pure-u-sm-1-2">
+				<label for="ready-only">Ready only</label>
+					<span class="mff-validated-input">
+					<input id="ready-only" type="text" value="Read only input here..." readonly="">
+				</span>
+			</p>
+
+			<p class="pure-u-1 pure-u-sm-1-2 mff-success" data-validate-name="someValidInput">
+				<label for="someValidInput">Some valid input</label>
+				<span class="mff-validated-input">
+					<input id="someValidInput" class="default" name="someValidInput" type="text" placeholder="Valid...">
+					<span class="mff-validated-input__icon"><svg class="mff-validated-input__icon__ok"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-check"></use></svg><svg class="mff-validated-input__icon__error"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-x"></use></svg></span>
+				</span>
+				<span class="mff-tip">&nbsp;</span>
+			</p>
+
+			<p class="pure-u-1 pure-u-sm-1-2 mff-error" data-validate-name="someInvalidInput">
+				<label for="someInvalidInput">Some invalid input</label>
+				<span class="mff-validated-input">
+					<input id="someInvalidInput" class="default" name="someInvalidInput" type="text" placeholder="Invalid...">
+					<span class="mff-validated-input__icon"><svg class="mff-validated-input__icon__ok"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-check"></use></svg><svg class="mff-validated-input__icon__error"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-x"></use></svg></span>
+				</span>
+				<span class="mff-tip">&nbsp;</span>
+			</p>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Checkboxes</legend>
+		<div class="pure-g">
+			<p class="pure-u-1">
+				<label for="remember" class="mff-checkbox">
+					<input id="remember" type="checkbox">
+					<span class="mff-checkbox__el">
+						<span class="mff-checkbox__el__fill"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-check"></use></svg></span>
+					</span>
+					Remember me
+				</label>
+			</p>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Radio buttons</legend>
+		<div class="pure-g">
+			<p class="pure-u-1 pure-u-sm-1-2">
+			  <label for="trust-2" class="mff-radio">
+				<input id="trust-2" name="type" type="radio" value="1">
+				<span class="mff-radio__el">
+					<span class="mff-radio__el__fill"></span>
+				</span>
+				Trust/Superannuation Fund
+				<small>(Company/Corporate Trustee)</small>
+			  </label>
+			</p>
+
+			<p class="pure-u-1 pure-u-sm-1-2">
+			  <label for="company" class="mff-radio">
+				<input id="company" name="type" type="radio" value="2">
+				<span class="mff-radio__el">
+					<span class="mff-radio__el__fill"></span>
+				</span>
+				Company
+				<small>(A Company investing on your own behalf)</small>
+			  </label>
+			</p>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Toggle buttons</legend>
+		<div class="pure-g">
+			<p class="pure-u-1 pure-u-sm-1-2">
+			  <label for="toggledemo-yes" class="mff-toggle">
+				<input id="toggledemo-yes" name="toggledemo" type="radio" value="1" checked="">
+				<span class="mff-toggle__el">
+					<span class="mff-toggle__text">Yes</span>
+					<span class="mff-toggle__el__fill"></span>
+				</span>
+			  </label>
+			</p>
+
+			<p class="pure-u-1 pure-u-sm-1-2">
+			  <label for="toggledemo-no" class="mff-toggle">
+				<input id="toggledemo-no" name="toggledemo" type="radio" value="2">
+				<span class="mff-toggle__el">
+					<span class="mff-toggle__text">No</span>
+					<span class="mff-toggle__el__fill"></span>
+				</span>
+			  </label>
+			</p>
+		</div>
+	</fieldset>
+
+	<!-- <fieldset>
+		<legend>Buttons</legend>
+		<div class="pure-g">
+			<p class="pure-u-1">
+				<button type="submit" class="mff-button">Blue</button>
+				<button type="submit" class="mff-button mff-button--inverted">Transparent</button>
+				<button type="submit" class="mff-button mff-button--dark">Dark</button>
+			</p>
+			<p class="pure-u-1">
+				<button class="mff-button mff-button--blue mff-button--icon mff-button--icon--30px">
+					<div class="mff-svg-wrapper mff-svg-wrapper--right">
+						<svg class="mff-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-arrow-right"></use></svg>
+					</div>
+					<span>Continue to next step</span>
+				</button>
+			</p>
+			<p class="pure-u-1">
+				<button class="mff-button mff-button--inverted mff-button--icon">
+					<div class="mff-svg-wrapper">
+						<svg class="mff-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-clipboard"></use></svg>
+					</div>
+					<span>Validate with GreenID</span>
+				</button>
+			</p>
+		</div>
+	</fieldset> -->
+
+</form>
