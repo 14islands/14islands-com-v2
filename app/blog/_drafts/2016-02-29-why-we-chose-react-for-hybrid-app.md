@@ -7,14 +7,22 @@ og_image: /images/blog/why-react/screenshot.jpg
 
 
 
-# Why we picked React.js for our latest hybrid App project
+# How we built a hybrid App using React.js
 
-**14islands were recently brought on by Fjord (Accenture) as mobile web experts, to prototype and produce an HTML5 mobile App for one of the biggest telecom companies in the world, as part of their appearance at the Mobile World Congress.**
-
+**We recently had the pleasure of working with Fjord (Accenture) to prototype and produce an HTML5 hybrid App for a large telecom operator.**
 
 {% include post-image.html alt="HTML5 hybrid App using React.js" src="/images/blog/why-react/screenshot.jpg" margin="both" ratio="custom_35" %}
 
-Using the hybrid approach we were able to replace costly development of individual Android and iOS Apps with one HTML5 version - packaged as native Apps for both iOS and Android using Apache Cordova.
+{% comment %}
+/*Using a hybrid approach we were able to replace costly development of individual Android and iOS Apps with one HTML5 version - packaged as native Apps for both iOS and Android using Apache Cordova.
+In this post we will walk through the parts
+Why hybrid app - experience using React
+{% endcomment %}
+
+[Some kind of parapragh here setting the scene for what the project was about and what the article contains.]
+
+***Note:** React Native was announced during 2015, however when this project started, React Native for Android had not been released making it a no-go for us.*
+
 
 ## The hybrid trap
 Writing hybrid Apps is nothing new and it’s certainly not the right choice for all applications. We’ve ventured down this path [many times](http://blog.14islands.com/post/52546836134/case-study-betting-on-a-fully-responsive-web){:target="_blank"} in [the past](http://blog.14islands.com/post/52934733389/racer-a-chrome-experiment){:target="_blank"} using more conventional JavaScript MVC frameworks such as Backbone.js.
@@ -25,6 +33,8 @@ Most hybrid projects start with a fast responsive UI and smooth animations - unt
 React is a JavaScript library for creating user interfaces by Facebook and is often describes as the *V* in *MVC*. The idea behind React is to build reusable components that automatically manage all UI updates.
 
 React knows when to re-render a component based on its state, and keeps a virtual DOM for efficient re-rendering. This approach is great because it lets us write our code as if we were re-rendering the entire template, and React will make sure to only update the part of the DOM that changed.
+
+
 
 ### JSX
 The big difference from normal frameworks is that JavaScript logic and Markup templates are written in the same file using JSX syntax.
@@ -101,7 +111,6 @@ CSS has a clear separation of concerns and we as web developers already know how
 
 The biggest argument for Inline styles is that "State" is mostly a JavaScript concern, and a lot of times we need to change styles based on dynamic conditions. Though when you think about it, adding and removing modifier classes is a perfect tool for propagating state changes already.
 
-
 ### BEM <3 React
 We opted for writing the majority of our styles using Sass and the BEM class naming convention with a slight twist - we tweak the BEM block name to match the CamelCased JavaScript class name so we have a clear coupling of JavaScript and CSS for each component.
 
@@ -146,17 +155,25 @@ It automatically takes the block name from the JavaScript class name, and assumi
 </div>
 {% endhighlight %}
 
-## Native wrapping
-We used Apache Cordova to package the app for iOS and Android. We've used it before and it's fairly straight forward.
+### Animating with React
+
+For someone who is used to adding classes or modifying styles manually this can be a bit uncomfortable. We have to take a step back and let React handle all updates of the DOM.
+
+*Most popular animation libraries will access the DOM directly so be careful with what you chose.*
+
+Luckily the React team has already provided us with the [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html){:target="_blank"} which solves the most common scenario of applying animation classes and adding/removing animating elements from the DOM. We used this component for all page transitions in the App.
+
+
+## Wrapping it up
+We used [Apache Cordova](https://cordova.apache.org/){:target="_blank"} to package the app for iOS and Android. We've used it before and it's fairly straight forward.
+
 It comes with a bunch of useful plugins that expose a JavaScript API to access certain native features. As an example, we used the [Statusbar plugin](https://github.com/apache/cordova-plugin-statusbar){:target="_blank"} to change the color of the native statusbar during runtime.
 
 {% include post-image.html alt="Crodova statusbar plugin" src="/images/blog/why-react/statusbar.jpg" margin="both" ratio="3_1" %}
 
-
-### Scroll events in iOS
 Since iOS 8 we finally have access to scroll events during scrolling inertia (the scrolling motion that continues after release of the touch). **This is not the case using the old UIWebView which is still default in Cordova.**
 
-There is an official [cordova plugin for the new WKWebView](https://github.com/apache/cordova-plugin-wkwebview-engine){:target="_blank"} for iOS 9 users. However, you are not able to use XHR from the file:// protocol without CORS enabled which prevented us from using it.
+There is an official [cordova plugin for the new WKWebView](https://github.com/apache/cordova-plugin-wkwebview-engine){:target="_blank"} for iOS 9 users. However, its not able to use XHR from the file:// protocol without CORS enabled which prevented us from using it.
 
 
 ## Summary
@@ -178,11 +195,8 @@ We are super happy with our choice to go with React for this project, but we wou
 
 
 
-### Where to go from here
-
-In 2015 React Native was announced, which is a proxy layer between JavaScript and the native SDK. However when this project started React Native for Android had not been released making it a no-go for us.
-
-A key difference of React Native is that it runs JavaScript code in a separate thread, making it possible to have smooth animations while executing other operations. React Native has also chosen inline styles over CSS using a Flexbox approach. It's estimated that over [85% of the codebase will be shareable](http://nerds.airbnb.com/facebook-react-native/){:target="_blank"} when using React Native.
+#### Where to go from here
+*React Native is currently gaining momentum and it will be interesting to follow. The key difference is that has a proxy layer between JavaScript and the native SDK. It runs JavaScript code in a separate thread, making it possible to have smooth animations while executing other operations. React Native has also chosen inline styles over CSS using a Flexbox approach. It's estimated that over [85% of the codebase will be shareable](http://nerds.airbnb.com/facebook-react-native/){:target="_blank"} when using React Native.*
 
 
 {% include blog-author-david.html %}
