@@ -1,40 +1,35 @@
 ---
 layout: post
-title:  "Why we picked React.js for our latest hybrid App project"
-description: "14islands were recently brought on by Fjord (Accenture) as mobile web experts, to prototype and produce an HTML5 mobile App for one of the biggest telecom companies in the world, as part of their appearance at the Mobile World Congress."
+title:  "Why we picked React for our latest hybrid app project"
+description: "We recently had the pleasure of working with Fjord (Accenture) to prototype and build an HTML5 hybrid app for one of their clients."
 og_image: /images/blog/why-react/screenshot.jpg
 ---
 
 
 
-# How we built a hybrid App using React.js
+# How we built a hybrid app using React
 
-**We recently had the pleasure of working with Fjord (Accenture) to prototype and produce an HTML5 hybrid App for a large telecom operator.**
+**We recently had the pleasure of working with [Fjord](https://www.fjordnet.com/){:target="_blank"} (Accenture) to prototype and build an HTML5 hybrid app for one of their clients.**
 
-{% include post-image.html alt="HTML5 hybrid App using React.js" src="/images/blog/why-react/screenshot.jpg" margin="both" ratio="custom_35" %}
+{% include post-image.html alt="HTML5 hybrid app using React" src="/images/blog/why-react/screenshot.jpg" margin="both" ratio="custom_35" %}
 
-{% comment %}
-/*Using a hybrid approach we were able to replace costly development of individual Android and iOS Apps with one HTML5 version - packaged as native Apps for both iOS and Android using Apache Cordova.
-In this post we will walk through the parts
-Why hybrid app - experience using React
-{% endcomment %}
+Hybrid apps provide a way to build an application using web technologies and package it as native apps for multiple mobile platforms.
 
-[Some kind of parapragh here setting the scene for what the project was about and what the article contains.]
+In this article we share the techniques and challenges we faced while building an app for iOS and Android using React &amp; Cordova.
 
 ***Note:** React Native was announced during 2015, however when this project started, React Native for Android had not been released making it a no-go for us.*
 
 
-## The hybrid trap
-Writing hybrid Apps is nothing new and it’s certainly not the right choice for all applications. We’ve ventured down this path [many times](http://blog.14islands.com/post/52546836134/case-study-betting-on-a-fully-responsive-web){:target="_blank"} in [the past](http://blog.14islands.com/post/52934733389/racer-a-chrome-experiment){:target="_blank"} using more conventional JavaScript MVC frameworks such as Backbone.js.
+## Learning from experience
+Writing hybrid apps is nothing new and it’s certainly not the right choice for all applications. The challange is to achieve the premium feeling of a native app with smooth animations and a snappy interface. We’ve ventured down this path [many times](http://blog.14islands.com/post/52546836134/case-study-betting-on-a-fully-responsive-web){:target="_blank"} in [the past](http://blog.14islands.com/post/52934733389/racer-a-chrome-experiment){:target="_blank"} using more conventional JavaScript MVC frameworks such as Backbone.js.
 
-Most hybrid projects start with a fast responsive UI and smooth animations - until you hit a wall. This wall usually appears late in the project, after weeks of adding functionality and more and more content has been injected into the DOM. The relationship of view components has become hard to keep track of, and circular dependencies of event listeners cause too many reads/writes to the DOM.
+Most hybrid projects start with a fast, responsive UI - until you hit a wall. This wall usually appears late in the project, after weeks of adding functionality and more and more content has been injected into the DOM. The relationship of view components has become hard to keep track of, and circular dependencies of event listeners cause too many reads/writes to the DOM.
+
 
 ## Enter React
 React is a JavaScript library for creating user interfaces by Facebook and is often describes as the *V* in *MVC*. The idea behind React is to build reusable components that automatically manage all UI updates.
 
 React knows when to re-render a component based on its state, and keeps a virtual DOM for efficient re-rendering. This approach is great because it lets us write our code as if we were re-rendering the entire template, and React will make sure to only update the part of the DOM that changed.
-
-
 
 ### JSX
 The big difference from normal frameworks is that JavaScript logic and Markup templates are written in the same file using JSX syntax.
@@ -95,7 +90,7 @@ class MyComponent extends Component {
 We used this approach to hook up View components with our Data stores.
 
 ## Unidirectional data flow
-But there's more to an App than just the view layer - and this is where it gets tricky. React can be used in combination with most other frameworks out there to render your existing data model. However the problems with large scale MVC applications and cyclical dependencies are still there, so Facebook created the Flux design pattern which has a "unidirectional data flow" to make it more predictable.
+But there's more to an app than just the view layer - and this is where it gets tricky. React can be used in combination with most other frameworks out there to render your existing data model. However the problems with large scale MVC applications and cyclical dependencies are still there, so Facebook created the Flux design pattern which has a "unidirectional data flow" to make it more predictable.
 
 {% include post-image.html alt="Flux data flow" src="/images/blog/why-react/flux-flow-annotated.png" margin="both" ratio="custom_55" %}
 
@@ -161,7 +156,7 @@ For someone who is used to adding classes or modifying styles manually this can 
 
 *Most popular animation libraries will access the DOM directly so be careful with what you chose.*
 
-Luckily the React team has already provided us with the [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html){:target="_blank"} which solves the most common scenario of applying animation classes and adding/removing animating elements from the DOM. We used this component for all page transitions in the App.
+Luckily the React team has already provided us with the [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html){:target="_blank"} which solves the most common scenario of applying animation classes and adding/removing animating elements from the DOM. We used this component for all page transitions in the app.
 
 
 ## Wrapping it up
