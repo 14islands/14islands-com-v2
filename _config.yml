@@ -33,11 +33,12 @@ paginate: 1
 paginate_path: 'page:num'
 
 # Markdown library
-#markdown: redcarpet
 #extensions: ['with_toc_data', 'link_attributes']
 markdown: Kramdown
 
-highlighter: pygments
+# Kramdown settings
+kramdown:
+  syntax_highlighter: rouge
 
 # should blog posts allow comments by default?
 comments: true
