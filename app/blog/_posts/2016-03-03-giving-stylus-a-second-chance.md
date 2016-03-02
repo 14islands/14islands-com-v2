@@ -3,7 +3,7 @@ layout: post
 title: "Giving Stylus a second chance"
 description: "Stylus has all the features to expect from a CSS pre-processors and even a few nifty ones we like to tell you about it in this post."
 og_image: /images/blog/stylus/open-graph-image.png
-private: true
+private: false
 ---
 
 # Giving Stylus a second chance
@@ -27,15 +27,18 @@ In our CSS, we like group styles into components under one parent selector and i
 
 Example:
 
-    `.MyComponent`
-    `    &amp;-link`
-    `        color: blue     `
-    `        &amp;:hover`
-    `            color: pink`
-    `        &amp;—active &amp;`
-    `            color: yellow`
-    `        @media(min-width: breakpoint.medium)`
-    `            color: hotpink`
+{% highlight Sass %}
+.MyComponent
+  
+  &-link
+    color: blue     
+    &:hover
+      color: pink
+    &—active &
+      color: yellow
+    @media(min-width: breakpoint.medium)
+      color: hotpink
+{% endhighlight %}
 
 The parent selector is part of most other CSS-preprocessors but I like to mention it here as we considered it an essential requirement. 
 
@@ -48,14 +51,16 @@ It’s quite common to re-use the same values under one class. Stylus has a nice
 
 Example:
 
-    `.overlay`
-    `   position: absolute`
-    `   top: 50%`
-    `   left: 50%`
-    `   width: 300px`
-    `   height: 150px`
-    `   margin-left: -(@width / 2)`
-    `   margin-top: -(@height / 2)`
+{% highlight Sass %}
+.overlay
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 300px
+  height: 150px
+  margin-left: -(@width / 2)
+  margin-top: -(@height / 2)
+{% endhighlight %}
 
 By specifying an **@** in front of any property, the value of that property can be received within the same class. Simple, without creating extra variables to hold these values.
 
@@ -66,57 +71,85 @@ In our projects, we usually have a **Variables file** in that specifies common v
 
 Example from this file:
 
-    `// zIndex vari``a``bles`
-    `$zIndexHeader: 100`
-    `$zIndexOverlay: 200`
-    
-    `// Color vari``a``bles`
-    `$colorRed: #f93b5f`
-    `$colorDarkRed: #1d0207`
+{% highlight Sass %}
+// zIndex variables
+zIndexHeader = 100
+zIndexOverlay = 200
 
+// Color variables
+colorRed = #f93b5f
+colorDarkRed = #1d0207
+{% endhighlight %} 
+    
 Stylus offers a helpful feature to organise these variables called Hashes. You can think of it as JSON to structure your CSS.
 
 Example:
 
-    `// zIndex variables`
-    `zIndex = {`
-    `    header: 100,`
-    `    overlay: 200`
-    `}  `
-    
-    `// Color variables`
-    `color = {`
-    `    red: #f93b5f,`
-    `    darkRed: #1d0207,`
-    `};`
+{% highlight Sass %}
+// zIndex variables
+zIndex = {
+  header: 100,
+  overlay: 200
+}  
+
+// Color variables
+color = {
+  red: #f93b5f,
+  darkRed: #1d0207
+};
+{% endhighlight %} 
+   
 
 Usage Example:
 
-    `.myClass`
-    `    color: color.red    `
-    `    zIndex: zIndex.overlay`
-
+{% highlight Sass %}
+.myClass
+  color: color.red    
+  zIndex: zIndex.overlay
+{% endhighlight %}
+    
 This is a good way to organise code and make CSS more readable.
 
-*Note: Sass 3.3 has a feature called Maps with the same intended purpose. Personally prefer the Stylus implementation as is a lot cleaner and nicer to use.*
+*Note: Sass 3.3 has a feature called **Maps** with the same intended purpose.* 
+
+*Example:*
+
+{% highlight Sass %}
+$color: (
+  red: #f93b5f,
+  darkRed: #1d0207
+);
+{% endhighlight %}
+
+*Usage Example:*
+
+{% highlight Sass %}
+.myClass {
+  color: map-get($color, red);
+}
+{% endhighlight %}
+
+*Personally prefer the Stylus implementation as it's cleaner and nicer to use.*
 
 
-## The blend method
+## The blend function
 
 When working with Photoshop files from designers, it’s common to have areas with opacity were colors are blended with the background behind. This can make it tricky to find the actual color value to put in the code. Stylus has a built-in function called blend to help with this problem.
 
 Example:
 
-    `blend(rgba(color.red, 0.5), color.black)`
+{% highlight Sass %}
+blend(rgba(color.red, 0.5), color.black)
+{% endhighlight %}
 
-The rgba function takes in the colour of the area in front with the opacity and the blend function mixes it with the background area returning the correct color.
+The **rgba** function takes in the colour of the area in front with the opacity and the **blend** function mixes it with the background area returning the correct color.
 
 In many cases the input colors are re-usable within the project, so this can help making it possible to use global variables. Stylus has multiple built-in functions.
  
 
 ## One syntax to rule them all
 
-Sass has two different syntaxes, one called SCSS that looks similar to normal CSS and another more stripped syntax called SASS.
+Sass has two different syntaxes, one called **SCSS** that looks similar to normal CSS and another more stripped syntax called **Sass**.
 
 This is good as developers might be more comfortable using one above the other. However, it can also cause confusions when working with Sass in general.
 
@@ -124,14 +157,18 @@ Stylus takes a different approach by allowing you to pick the level of granulari
 
 Stylus Example 1:
 
-    `body {`
-    `  font: 12px Helvetica, Arial, sans-serif;`
-    `}`
+{% highlight SCSS %}
+body {
+  font: 12px Helvetica, Arial, sans-serif;
+}
+{% endhighlight %}
 
 Stylus Example 2:
 
-    `body`
-    `  font: Helvetica, Arial, sans-serif`
+{% highlight Sass %}
+body
+  font: 12px Helvetica, Arial, sans-serif
+{% endhighlight %}
 
 In my opinion this combines the best of both worlds. Developers have the freedom to pick granularity, with the advantage of using one combined syntax.
 
