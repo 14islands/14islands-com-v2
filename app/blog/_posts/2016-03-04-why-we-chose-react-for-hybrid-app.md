@@ -194,7 +194,7 @@ We are super happy with our choice to go with React for this project, but we wou
 
 
 #### Where to go from here
-*React Native is currently gaining momentum and it will be interesting to follow. The key difference is that has a proxy layer between JavaScript and the native SDK. It runs JavaScript code in a separate thread, making it possible to have smooth animations while executing other operations. React Native has also chosen inline styles over CSS using a Flexbox approach. It's estimated that over [85% of the codebase will be shareable](http://nerds.airbnb.com/facebook-react-native/){:target="_blank"} between iOS and Android when using React Native.*
+*React Native is currently gaining momentum and it will be interesting to follow. The key difference is that has a proxy layer between JavaScript and the native SDK. It runs JavaScript code in a separate thread, making it possible to have smooth animations while executing other operations. React Native has also chosen inline styles over CSS using a Flexbox approach. It's estimated that over [85% of the codebase will be shareable](http://nerds.airbnb.com/facebook-react-native/){:target="_blank"} between iOS and Android.*
 
 
 {% include blog-author-david.html %}
