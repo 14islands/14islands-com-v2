@@ -3,26 +3,26 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Making WordPress multilingual and plugins to help</title>
-		<meta name="description" content="One important feature missing when using WordPress as a CMS is multilingual support. Translations of dynamic content for different languages needs a plugin.">
-		<meta name="keywords" content="WordPress, multilingual, multi-lang, multi-languages, internationalisation, Wordpress.org">
+		<title>Why we chose React for our latest hybrid app</title>
+		<meta name="description" content="We recently had the pleasure of working with Fjord to prototype and build an HTML5 hybrid app for one of their clients.">
+		<meta name="keywords" content="Web Development, Web Design, UX, Web Developers, Digital, Studio, Agency, Stockholm, Consulting, Training, HTML, CSS, JavaScript, WordPress">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Making WordPress multilingual and plugins to help" />
-		<meta property="og:description" content="One important feature missing when using WordPress as a CMS is multilingual support. Translations of dynamic content for different languages needs a plugin." />
-		<meta property="og:image" content="https://14islands.com/images/blog/wordpress/multilingual/multilingual-hero.png" />
-		<meta property="og:url" content="https://14islands.com/blog/2015/03/24/making-wordpress-multilingual-and-plugins-to-help/" />
+		<meta property="og:title" content="Why we chose React for our latest hybrid app" />
+		<meta property="og:description" content="We recently had the pleasure of working with Fjord to prototype and build an HTML5 hybrid app for one of their clients." />
+		<meta property="og:image" content="https://14islands.com/images/blog/why-react/screenshot.jpg" />
+		<meta property="og:url" content="https://14islands.com/blog/2016/03/05/why-we-chose-react-for-hybrid-app/" />
 		<meta property="og:site_name" content="14islands" />
 
 		<!-- Twitter Card data -->
 		<meta name="twitter:card" content="summary">
 		<meta name="twitter:site" content="@14islands">
-		<meta name="twitter:title" content="Making WordPress multilingual and plugins to help">
-		<meta name="twitter:description" content="One important feature missing when using WordPress as a CMS is multilingual support. Translations of dynamic content for different languages needs a plugin.">
+		<meta name="twitter:title" content="Why we chose React for our latest hybrid app">
+		<meta name="twitter:description" content="We recently had the pleasure of working with Fjord to prototype and build an HTML5 hybrid app for one of their clients.">
 		<meta name="twitter:creator" content="@14islands">
-		<meta name="twitter:image" content="https://14islands.com/images/blog/wordpress/multilingual/multilingual-hero.png">
+		<meta name="twitter:image" content="https://14islands.com/images/blog/why-react/screenshot.jpg">
 
 		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -56,7 +56,7 @@
 		<link rel="stylesheet" href="/css/main.0791.css"/>
 
 	</head>
-	<body id="" class="page page-/blog/2015/03/24/making-wordpress-multilingual-and-plugins-to-help">
+	<body id="" class="page page-/blog/2016/03/05/why-we-chose-react-for-hybrid-app">
 
 		<!--[if lt IE 9]>
 				<p class="browsehappy"><span>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.<span></p>
@@ -109,94 +109,214 @@
 		<main class="main-content js-pjax-container">
 				<article class="post grid u--pad-both pjax-animate">
 	<section class="grid__row">
-		<span class="post__date">24 March 2015</span>
-		<h1 id="making-wordpress-multilingual-and-plugins-to-help">Making WordPress multilingual and plugins to help</h1>
+		<span class="post__date">5 March 2016</span>
+		<h1 id="why-we-chose-react-for-our-latest-hybrid-app">Why we chose React for our latest hybrid app</h1>
 
-<p>One important feature missing when using WordPress as a CMS is multilingual support. This means that we are on our own to figure out ways to-do this.</p>
+<p><strong>We recently had the pleasure of working with <a href="https://www.fjordnet.com/" target="_blank">Fjord</a> to prototype and build an HTML5 hybrid app for one of their clients.</strong></p>
 
-<p>First, lets set the record straight.</p>
+<figure class="grid__row grid__row--wide content-image u--margin-both--half ">
 
-<ol>
-  <li>WordPress does support <a href="http://codex.wordpress.org/Translating_WordPress">translation of static text strings inside PHP using *.po files</a> in different languages.</li>
-  <li>Also, if you want to show different content for different languages and countries, <a href="http://codex.wordpress.org/Create_A_Network">a multi-site setup</a> might be the path for you.</li>
-</ol>
 
-<p>However, for translation of dynamic content in different languages within WordPress you need a plugin - assuming you don’t wont write this logic yourself.</p>
+  <div class="u-ratio u-ratio--custom_35 u-ratio--placeholder">
+    <img alt="HTML5 hybrid app using React" data-src="/images/blog/why-react/screenshot.jpg" class="u-ratio__content" />
+<noscript>
+  <img alt="HTML5 hybrid app using React" src="/images/blog/why-react/screenshot.jpg" class="u-ratio__content" />
+</noscript>
+  </div>
+  
+</figure>
 
-<h2 id="the-plugins">The plugins</h2>
+<p>Hybrid apps provide a way to build an application using web technologies and package it as native apps for multiple mobile platforms.</p>
 
-<p>Enter the WordPress plugin forest. After doing a lot of research we found two multilingual plugins worthy of our attention. These are <a href="https://polylang.wordpress.com/">Polylang</a> and <a href="https://wpml.org/">WPML</a>. </p>
+<p>In this article we share the techniques and challenges we faced while building an app for iOS and Android using <a href="https://facebook.github.io/react/" target="_blank">React</a> &amp; <a href="https://cordova.apache.org/" target="_blank">Cordova</a>.</p>
 
-<h2 id="polylang">Polylang</h2>
+<p><em><strong>Note:</strong> React Native was announced during 2015, however when this project started, React Native for Android had not been released making it a no-go for us.</em></p>
 
-<p>Polylang is the newer player and looks very promising already. The user interface is good and the code-base is clearly written and crafted by a professional, so it feels good using it. Polylang is free.</p>
+<h2 id="learning-from-experience">Learning from experience</h2>
+<p>Writing hybrid apps is nothing new and it’s certainly not the right choice for all applications. The challenge is to achieve the premium feeling of a native app with smooth animations and a snappy interface. We’ve ventured down this path <a href="http://blog.14islands.com/post/52546836134/case-study-betting-on-a-fully-responsive-web" target="_blank">many times</a> in <a href="http://blog.14islands.com/post/52934733389/racer-a-chrome-experiment" target="_blank">the past</a> using more conventional JavaScript MVC frameworks such as Backbone.js.</p>
 
-<p>It has limitations. As an example, one common “best practise” is to construct urls for different languages like this:</p>
+<p>Most hybrid projects start with a fast, responsive UI - until you hit a wall. This wall usually appears late in the project, after weeks of adding functionality and more and more content has been injected into the DOM. The relationship of view components has become hard to keep track of, and circular dependencies of event listeners cause too many reads/writes to the DOM.</p>
 
-<pre><code>/jobs - Default language 
-/es/jobs - Spanish
-/se/jobs - Swedish
-</code></pre>
+<h2 id="enter-react">Enter React</h2>
+<p>React is a JavaScript library for creating user interfaces by Facebook and is often describes as the <em>V</em> in <em>MVC</em>. The idea behind React is to build reusable components that automatically manage all UI updates.</p>
 
-<p>These urls are simply not possible in Polylang because <a href="https://wordpress.org/support/topic/whats-a-slug">“the slug”</a> is used as a unique identity in WordPress. It makes it really hard to work around the issue. Instead Polylang recommends these kind of urls:</p>
+<p>React knows when to re-render a component based on its state, and keeps a virtual DOM for efficient re-rendering. This approach is great because it lets us write our code as if we were re-rendering the entire template, and React will make sure to only update the part of the DOM that changed.</p>
 
-<pre><code>/jobs
-/es-jobs
-/se-jobs
-</code></pre>
+<h3 id="jsx">JSX</h3>
+<p>The big difference from normal frameworks is that JavaScript logic and Markup templates are written in the same file using JSX syntax.</p>
 
-<p>OR, if you’re lucky and words are not the same in the different languages:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html">class MyTitle extends Component {
+  render() {
+    return (
+      <span class="nt">&lt;header&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>Hello World<span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;/header&gt;</span>
+    )
+  }
+}</code></pre></div>
 
-<pre><code>/jobs
-/empleos
-/jobb
-</code></pre>
+<p>It takes a while getting used to but it does wonders for your productivity.</p>
 
-<p>This is the reason why we looked next into WPML.</p>
+<h3 id="mixins-vs-composition">Mixins vs Composition</h3>
+<p>We are big fans of modern JavaScript and opted for writing ES2015 syntax using <a href="https://babeljs.io/" target="_blank">Babel</a>.</p>
 
-<p>UPDATE: <a href="https://twitter.com/juergengenser">Jürgen Genser</a>  kindly pointed out to us on Twitter <a href="https://github.com/grappler/polylang-slug">this plugin to use the same slug for multiple languages in Polylang</a>.  </p>
+<p>Mixins cannot be used with ES2015 classes and there are other <a href="https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750#.6uq9fmvgn" target="_blank">good reasons not to use them</a>. We used Higher-order-components to compose functionality instead of mixins:</p>
 
-<h2 id="wpml">WPML</h2>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**</span>
+<span class="cm"> * Exports a higher order component wrapping the component to decorate</span>
+<span class="cm"> * @param ComponentToDecorate the component which will be decorated</span>
+<span class="cm"> */</span>
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">withDecoratedData</span> <span class="o">=</span> <span class="nx">ComponentToDecorate</span> <span class="o">=&gt;</span>
+  <span class="kr">class</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">data</span><span class="o">:</span> <span class="kc">null</span> <span class="p">};</span>
+    <span class="p">}</span>
+    <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">data</span><span class="o">:</span> <span class="s1">&#39;Decorated hello!&#39;</span> <span class="p">});</span>
+    <span class="p">}</span>
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="o">&lt;</span><span class="nx">ComponentToDecorate</span> <span class="p">{...</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">}</span> <span class="nx">data</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">data</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span></code></pre></div>
 
-<p>WPML has been around for a long time, it’s widely used and seems to be the most mature option out there. It costs <a href="https://wpml.org/purchase/">$195 as a one time purchase</a> and includes many features.</p>
+<p>Compositions can then be applied using ES2016 Decorators which we chose to enable in Babel:</p>
 
-<p>WPML makes it possible to change “the slug”, making the desired url pattern possible:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span><span class="nx">withDecoratedData</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;...&#39;</span><span class="p">;</span>
 
-<pre><code>/jobs
-/es/jobs
-/se/jobs
-</code></pre>
+<span class="c1">// Decorate component using ES7 decorator &#39;@&#39;</span>
+<span class="err">@</span><span class="nx">withDecoratedData</span>
+<span class="kr">class</span> <span class="nx">MyComponent</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
 
-<p>To accomplish this and other features, WPML goes deep into the core functionality of WordPress. It even adds extra tables to the database, and it unfortunately has a reputation of being slow. They do have some <a href="https://wpml.org/2012/01/can-your-site-run-faster/">caching recommendations</a>, but from what we’ve read: performance is a concern for content heavy websites.</p>
+<p>We used this approach to hook up View components with our Data stores.</p>
 
-<p>Apart from this caveat, the plugin worked well for our needs. We had no conflicts with other plugins such as <a href="http://www.advancedcustomfields.com/">ACF</a>, another core plugin on the project. </p>
+<h2 id="unidirectional-data-flow">Unidirectional data flow</h2>
+<p>There’s more to an app than just the view layer - and this is where it gets tricky. React can be used in combination with most other frameworks out there to render your existing data model. However the problems with large scale MVC applications and cyclical dependencies are still there, so Facebook created the Flux design pattern which has a “unidirectional data flow” to make it more predictable.</p>
 
-<p>At the moment WPML is still the best plugin out there for bigger WordPress sites.</p>
+<figure class="grid__row grid__row--wide content-image u--margin-both--half ">
 
-<h2 id="the-editor-process">The editor process</h2>
 
-<p>As a word of advice, including multilingual plugins in WordPress can make the editorial process quote a lot more complicated. I highly recommend writing easy-to-follow guidelines for editors to prevent them from getting lost. </p>
+  <div class="u-ratio u-ratio--custom_55 u-ratio--placeholder">
+    <img alt="Flux data flow" data-src="/images/blog/why-react/flux-flow-annotated.png" class="u-ratio__content" />
+<noscript>
+  <img alt="Flux data flow" src="/images/blog/why-react/flux-flow-annotated.png" class="u-ratio__content" />
+</noscript>
+  </div>
+  
+</figure>
 
-<p>If you like, take a look at <a href="https://docs.google.com/document/d/14Aw-igKKskUq4TrRkT1o9IGcy5f1glm23812ybXYnYM/edit?usp=sharing">one of the guidelines we wrote for one of our clients</a> on writing pages and posts in different languages using WPML. </p>
+<p>There are endless implementations of Flux and after researching many of them we settled on using <a href="https://github.com/goatslacker/alt" target="_blank"><em>Alt</em> </a>.</p>
 
-<p>This will make the outcome better for everyone.</p>
+<h2 id="ui-styling--animations">UI styling &amp; animations</h2>
+<p>In order for an app to feel native it’s super important that the UI has smooth animations at a steady 60 FPS and no flicker. Mobile browsers have noticeably slow JavaScript performance so we made sure to only use pure CSS animations and transitions.</p>
 
-<h2 id="conclusion">Conclusion</h2>
+<h3 id="inline-styles-vs-css">Inline styles vs CSS</h3>
+<p>One of the hottest topics in the React world lately is whether to use Inline Styles, i.e. setting styles with an element’s style property instead of CSS.</p>
 
-<p>Multilingual support should be a core part of every CMS. </p>
+<p>Let’s be honest, we love CSS and are not too fond of this approach. CSS has a clear separation of concerns and we as web developers already know how to efficently apply Responsive Web Design principles to support different capabilities and screen sizes.</p>
 
-<p>WordPress is still showing its roots as a blogging platform but lets hope it will evolve fast and multilingual additions will be part of the core sooner than later.</p>
+<p>The biggest argument for Inline styles is that “State” is mostly a JavaScript concern, and a lot of times we need to change styles based on dynamic conditions. Though when you think about it, adding and removing modifier classes is a perfect tool for propagating state changes already.</p>
 
-<p>In the meantime, our recommendation is to use Polylang for simple use cases, or when money is a limitation. WPML for bigger sites.</p>
+<h3 id="bem-3-react">BEM &lt;3 React</h3>
+<p>We opted for writing the majority of our styles using Sass and the BEM class naming convention with a slight twist - we tweak the BEM block name to match the CamelCased JavaScript class name so we have a clear coupling of JavaScript and CSS for each component.</p>
 
-<p>Have questions or feedback? Reply to <a href="https://twitter.com/14islands/status/580388887643701249">our tweet</a> or comment below.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html">class MyComponent {
+  render() {
+    const activeClass = this.props.active ? &#39;MyComponent--active&#39; : &#39;&#39;;
+    return (
+      <span class="nt">&lt;div</span> <span class="na">className=</span><span class="s">{&quot;MyComponent</span> <span class="err">&quot;</span> <span class="err">+</span> <span class="na">activeClass</span><span class="err">}</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h1</span> <span class="na">className=</span><span class="s">&quot;MyComponent__title&quot;</span><span class="nt">&gt;</span>
+          My title
+        <span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    );
+  }
+);</code></pre></div>
+
+<p>This can quickly get a bit messy and verbose for a component with many state modifiers, so we created our own <a href="https://github.com/14islands/bem-helper-js" target="_blank">bem-helper</a> to make it easier to work with BEM class names in JSX.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html">import BEM from &#39;bem-helper-js&#39;;
+
+class MyComponent {
+  render() {
+    return (
+      <span class="nt">&lt;div</span> <span class="na">className=</span><span class="s">{BEM(this).is(&#39;active&#39;,</span> <span class="na">this</span><span class="err">.</span><span class="na">props</span><span class="err">.</span><span class="na">active</span><span class="err">)}</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h1</span> <span class="na">className=</span><span class="s">{BEM(this).el(&#39;title&#39;)}</span><span class="nt">&gt;</span>
+          My title
+        <span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    );
+  }
+);</code></pre></div>
+
+<p>It automatically takes the block name from the JavaScript class name, and assuming <code>this.props.active</code> is <code>true</code> the following class names will be rendered:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;MyComponent MyComponent--active&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;MyComponent__title&quot;</span><span class="nt">&gt;</span>My title<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<h3 id="animating-with-react">Animating with React</h3>
+
+<p>For someone who is used to adding classes or modifying styles manually this can be a bit uncomfortable. We have to take a step back and let React handle all updates of the DOM.</p>
+
+<p><em>Most popular animation libraries will access the DOM directly so be careful with what you chose.</em></p>
+
+<p>Luckily the React team has already provided us with the <a href="https://facebook.github.io/react/docs/animation.html" target="_blank">ReactCSSTransitionGroup</a> which solves the most common scenario of applying animation classes and adding/removing animating elements from the DOM. We used this component for all page transitions in the app.</p>
+
+<h2 id="wrapping-it-up">Wrapping it up</h2>
+<p>We used <a href="https://cordova.apache.org/" target="_blank">Apache Cordova</a> to package the app for iOS and Android. We’ve used it before and it’s fairly straight forward.</p>
+
+<p>It comes with a bunch of useful plugins that expose a JavaScript API to access certain native features. As an example, we used the <a href="https://github.com/apache/cordova-plugin-statusbar" target="_blank">Statusbar plugin</a> to change the color of the native statusbar during runtime.</p>
+
+<figure class="grid__row grid__row--wide content-image u--margin-both--half ">
+
+
+  <div class="u-ratio u-ratio--3_1 u-ratio--placeholder">
+    <img alt="Crodova statusbar plugin" data-src="/images/blog/why-react/statusbar.jpg" class="u-ratio__content" />
+<noscript>
+  <img alt="Crodova statusbar plugin" src="/images/blog/why-react/statusbar.jpg" class="u-ratio__content" />
+</noscript>
+  </div>
+  
+</figure>
+
+<p>Since iOS 8 we finally have access to scroll events during scrolling inertia (the scrolling motion that continues after release of the touch). <strong>This is not the case using the old UIWebView which is still default in Cordova.</strong></p>
+
+<p>There is an official <a href="https://github.com/apache/cordova-plugin-wkwebview-engine" target="_blank">cordova plugin for the new WKWebView</a> for iOS 9 users. However, its not able to use XHR from the file:// protocol without CORS enabled which prevented us from using it.</p>
+
+<h2 id="summary">Summary</h2>
+<p>We are super happy with our choice to go with React for this project, but we would keep a few things in mind and make some adjustments for next time.</p>
+
+<p><strong>The good stuff</strong></p>
+
+<ul>
+  <li>Improved render performance - React manages updates to the DOM very efficiently</li>
+  <li>Easy to write reusable components</li>
+  <li>Powerful JSX syntax for combining data and markup templates</li>
+  <li>Productivity is high once all architectural decisions have been made and components start being reused</li>
+  <li>Protects developers from touching the DOM directly (i.e. less risk to do something that hurts performance)</li>
+</ul>
+
+<p><strong>The not so good stuff</strong></p>
+
+<ul>
+  <li>Tricky to implement complex timeline animations using the React State without resorting to manually touching the DOM.</li>
+  <li>Not a complete solution - hard for inexperienced developers to get started. Need to pick a Router, a Flux library / data layer, etc.</li>
+  <li>New React versions released relatively often and the ecosystem is immature - most plugins change even more often than React and API changes happens all the time. We had breaking API changes during this project in both <code>react-router</code> and <code>Alt</code>. <code>Alt</code> proved to be changing quickly and documentation was out of date. We’ll keep our eyes on <a href="https://github.com/reactjs/redux" target="_blank"><em>Redux</em></a> for the next React project.</li>
+</ul>
+
+<h4 id="where-to-go-from-here">Where to go from here</h4>
+<p><em>React Native is currently gaining momentum and it will be interesting to follow. The key difference is that has a proxy layer between JavaScript and the native SDK. It runs JavaScript code in a separate thread, making it possible to have smooth animations while executing other operations. React Native has also chosen inline styles over CSS using a Flexbox approach. It’s estimated that over <a href="http://nerds.airbnb.com/facebook-react-native/" target="_blank">85% of the codebase will be shareable</a> between iOS and Android when using React Native.</em></p>
 
 <div class="post__author u--pad-top">
-	<img alt="Hjörtur Hilmarsson" data-src="/images/about/team-grid/double-Hjortur.jpg" class="post__author-image" />
+	<img alt="David Lindkvist" data-src="/images/about/team-grid/double-David.jpg" class="post__author-image" />
 <noscript>
-  <img alt="Hjörtur Hilmarsson" src="/images/about/team-grid/double-Hjortur.jpg" class="post__author-image" />
+  <img alt="David Lindkvist" src="/images/about/team-grid/double-David.jpg" class="post__author-image" />
 </noscript>
-	<span class="post__author-name"><strong>Hjörtur Hilmarsson</strong> <a href="https://twitter.com/hjortureh" target="_blank">@hjortureh</a></span>
+	<span class="post__author-name"><strong>David Lindkvist</strong> <a href="https://twitter.com/ffdead" target="_blank">@ffdead</a></span>
 	<span class="post__author-job-title">Creative web developer / Co-Founder at 14islands</span>
 </div>
 
@@ -212,13 +332,13 @@
 
 	<section class="js-component-disqus-embed post-comments grid u--pad-bottom"
          data-disqus-shortname="14islands-com"
-         data-disqus-identifier="/blog/2015/03/24/making-wordpress-multilingual-and-plugins-to-help/"
+         data-disqus-identifier="/blog/2016/03/05/why-we-chose-react-for-hybrid-app/"
          data-disqus-expanded="false">
 
 
 	<a href="#" data-disquss-count class="grid__row u-bg-bright" title="Show comments for post">
 		<h4 class="post-comments__cta ">
-			<span class="disqus-comment-count" data-disqus-identifier="/blog/2015/03/24/making-wordpress-multilingual-and-plugins-to-help/">Write a comment</span>
+			<span class="disqus-comment-count" data-disqus-identifier="/blog/2016/03/05/why-we-chose-react-for-hybrid-app/">Write a comment</span>
 		</h4>
 	</a>
 
@@ -234,10 +354,10 @@
 
 
 <section class="related-posts">
-	<a class="related-posts__link grid u--default-v-padding u-bg-natt-dark" href="/blog/2015/03/13/transitioning-to-web-animations-from-greensock-gsap/">
+	<a class="related-posts__link grid u--default-v-padding u-bg-natt-dark" href="">
 		<div class="grid__row">
 	    <p class="related-posts__label">Read Next</p>
-	    <h2 class="related-posts__title">Transitioning from GreenSock GSAP to Web&nbsp;Animations</h2>
+	    <h2 class="related-posts__title"></h2>
 	  </div>
 	</a>
 </section>
