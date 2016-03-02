@@ -13,7 +13,7 @@
 		<meta property="og:title" content="Giving Stylus a second chance" />
 		<meta property="og:description" content="Stylus has all the features to expect from a CSS pre-processors and even a few nifty ones we like to tell you about it in this post." />
 		<meta property="og:image" content="https://14islands.com/images/blog/stylus/open-graph-image.png" />
-		<meta property="og:url" content="https://14islands.com/blog/2016/03/03/giving-stylus-a-second-chance/" />
+		<meta property="og:url" content="https://14islands.com/blog/2016/03/02/giving-stylus-a-second-chance/" />
 		<meta property="og:site_name" content="14islands" />
 
 		<!-- Twitter Card data -->
@@ -56,7 +56,7 @@
 		<link rel="stylesheet" href="/css/main.0791.css"/>
 
 	</head>
-	<body id="" class="page page-/blog/2016/03/03/giving-stylus-a-second-chance">
+	<body id="" class="page page-/blog/2016/03/02/giving-stylus-a-second-chance">
 
 		<!--[if lt IE 9]>
 				<p class="browsehappy"><span>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.<span></p>
@@ -109,7 +109,7 @@
 		<main class="main-content js-pjax-container">
 				<article class="post grid u--pad-both pjax-animate">
 	<section class="grid__row">
-		<span class="post__date">3 March 2016</span>
+		<span class="post__date">2 March 2016</span>
 		<h1 id="giving-stylus-a-second-chance">Giving Stylus a second chance</h1>
 
 <p>Its been few years since we checked out the CSS pre-processor <a href="http://stylus-lang.com/">Stylus</a>. I just remember in the past, it was missing lots of important features that were included in popular tools such as <a href="http://sass-lang.com/">Sass</a>. Well, not anymore.</p>
@@ -128,16 +128,16 @@
 
 <p>Example:</p>
 
-<pre><code>`.MyComponent`
-`    &amp;amp;-link`
-`        color: blue     `
-`        &amp;amp;:hover`
-`            color: pink`
-`        &amp;amp;—active &amp;amp;`
-`            color: yellow`
-`        @media(min-width: breakpoint.medium)`
-`            color: hotpink`
-</code></pre>
+<div class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="nc">.MyComponent</span>
+  
+  <span class="k">&amp;</span><span class="nt">-link</span>
+    <span class="na">color</span><span class="o">:</span> <span class="nb">blue</span>     
+    <span class="k">&amp;</span><span class="nd">:hover</span>
+      <span class="na">color</span><span class="o">:</span> <span class="ni">pink</span>
+    <span class="k">&amp;</span><span class="err">—</span><span class="nt">active</span> <span class="k">&amp;</span>
+      <span class="na">color</span><span class="o">:</span> <span class="nb">yellow</span>
+    <span class="k">@media</span><span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">breakpoint</span><span class="nc">.medium</span><span class="o">)</span>
+      <span class="na">color</span><span class="o">:</span> <span class="ni">hotpink</span></code></pre></div>
 
 <p>The parent selector is part of most other CSS-preprocessors but I like to mention it here as we considered it an essential requirement. </p>
 
@@ -149,15 +149,14 @@
 
 <p>Example:</p>
 
-<pre><code>`.overlay`
-`   position: absolute`
-`   top: 50%`
-`   left: 50%`
-`   width: 300px`
-`   height: 150px`
-`   margin-left: -(@width / 2)`
-`   margin-top: -(@height / 2)`
-</code></pre>
+<div class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="nc">.overlay</span>
+  <span class="na">position</span><span class="o">:</span> <span class="no">absolute</span>
+  <span class="na">top</span><span class="o">:</span> <span class="mi">50</span><span class="kt">%</span>
+  <span class="na">left</span><span class="o">:</span> <span class="mi">50</span><span class="kt">%</span>
+  <span class="na">width</span><span class="o">:</span> <span class="mi">300</span><span class="kt">px</span>
+  <span class="na">height</span><span class="o">:</span> <span class="mi">150</span><span class="kt">px</span>
+  <span class="na">margin-left</span><span class="o">:</span> <span class="nf">-</span><span class="p">(</span><span class="o">@</span><span class="no">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="na">margin-top</span><span class="o">:</span> <span class="nf">-</span><span class="p">(</span><span class="o">@</span><span class="no">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span></code></pre></div>
 
 <p>By specifying an <strong>@</strong> in front of any property, the value of that property can be received within the same class. Simple, without creating extra variables to hold these values.</p>
 
@@ -167,59 +166,70 @@
 
 <p>Example from this file:</p>
 
-<pre><code>`// zIndex vari``a``bles`
-`$zIndexHeader: 100`
-`$zIndexOverlay: 200`
+<div class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="c1">// zIndex variables</span>
+<span class="na">zIndexHeader</span><span class="o"> =</span> <span class="mi">100</span>
+<span class="na">zIndexOverlay</span><span class="o"> =</span> <span class="mi">200</span>
 
-`// Color vari``a``bles`
-`$colorRed: #f93b5f`
-`$colorDarkRed: #1d0207`
-</code></pre>
+<span class="c1">// Color variables</span>
+<span class="na">colorRed</span><span class="o"> =</span> <span class="mh">#f93b5f</span>
+<span class="na">colorDarkRed</span><span class="o"> =</span> <span class="mh">#1d0207</span></code></pre></div>
 
 <p>Stylus offers a helpful feature to organise these variables called Hashes. You can think of it as JSON to structure your CSS.</p>
 
 <p>Example:</p>
 
-<pre><code>`// zIndex variables`
-`zIndex = {`
-`    header: 100,`
-`    overlay: 200`
-`}  `
+<div class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="c1">// zIndex variables</span>
+<span class="na">zIndex</span><span class="o"> =</span> <span class="err">{</span>
+  <span class="na">header</span><span class="o">:</span> <span class="mi">100</span><span class="o">,</span>
+  <span class="na">overlay</span><span class="o">:</span> <span class="mi">200</span>
+<span class="err">}</span>  
 
-`// Color variables`
-`color = {`
-`    red: #f93b5f,`
-`    darkRed: #1d0207,`
-`};`
-</code></pre>
+<span class="c1">// Color variables</span>
+<span class="na">color</span><span class="o"> =</span> <span class="err">{</span>
+  <span class="na">red</span><span class="o">:</span> <span class="mh">#f93b5f</span><span class="o">,</span>
+  <span class="na">darkRed</span><span class="o">:</span> <span class="mh">#1d0207</span>
+<span class="err">}</span><span class="o">;</span></code></pre></div>
 
 <p>Usage Example:</p>
 
-<pre><code>`.myClass`
-`    color: color.red    `
-`    zIndex: zIndex.overlay`
-</code></pre>
+<div class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="nc">.myClass</span>
+  <span class="na">color</span><span class="o">:</span> <span class="no">color</span><span class="o">.</span><span class="nb">red</span>    
+  <span class="na">zIndex</span><span class="o">:</span> <span class="n">zIndex</span><span class="o">.</span><span class="n">overlay</span></code></pre></div>
 
 <p>This is a good way to organise code and make CSS more readable.</p>
 
-<p><em>Note: Sass 3.3 has a feature called Maps with the same intended purpose. Personally prefer the Stylus implementation as is a lot cleaner and nicer to use.</em></p>
+<p><em>Note: Sass 3.3 has a feature called <strong>Maps</strong> with the same intended purpose.</em> </p>
 
-<h2 id="the-blend-method">The blend method</h2>
+<p><em>Example:</em></p>
+
+<div class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="nv">$color</span><span class="o">:</span> <span class="p">(</span>
+  <span class="na">red</span><span class="o">:</span> <span class="mh">#f93b5f</span><span class="o">,</span>
+  <span class="na">darkRed</span><span class="o">:</span> <span class="mh">#1d0207</span>
+<span class="o">);</span></code></pre></div>
+
+<p><em>Usage Example:</em></p>
+
+<div class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="nc">.myClass</span> <span class="err">{</span>
+  <span class="na">color</span><span class="o">:</span> <span class="nf">map-get</span><span class="p">(</span><span class="nv">$color</span><span class="o">,</span> <span class="nb">red</span><span class="p">)</span><span class="err">;</span>
+<span class="err">}</span></code></pre></div>
+
+<p><em>Personally prefer the Stylus implementation as it’s cleaner and nicer to use.</em></p>
+
+<h2 id="the-blend-function">The blend function</h2>
 
 <p>When working with Photoshop files from designers, it’s common to have areas with opacity were colors are blended with the background behind. This can make it tricky to find the actual color value to put in the code. Stylus has a built-in function called blend to help with this problem.</p>
 
 <p>Example:</p>
 
-<pre><code>`blend(rgba(color.red, 0.5), color.black)`
-</code></pre>
+<div class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="nt">blend</span><span class="o">(</span><span class="nt">rgba</span><span class="o">(</span><span class="nt">color</span><span class="nc">.red</span><span class="o">,</span> <span class="nt">0</span><span class="nc">.5</span><span class="o">),</span> <span class="nt">color</span><span class="nc">.black</span><span class="o">)</span></code></pre></div>
 
-<p>The rgba function takes in the colour of the area in front with the opacity and the blend function mixes it with the background area returning the correct color.</p>
+<p>The <strong>rgba</strong> function takes in the colour of the area in front with the opacity and the <strong>blend</strong> function mixes it with the background area returning the correct color.</p>
 
 <p>In many cases the input colors are re-usable within the project, so this can help making it possible to use global variables. Stylus has multiple built-in functions.</p>
 
 <h2 id="one-syntax-to-rule-them-all">One syntax to rule them all</h2>
 
-<p>Sass has two different syntaxes, one called SCSS that looks similar to normal CSS and another more stripped syntax called SASS.</p>
+<p>Sass has two different syntaxes, one called <strong>SCSS</strong> that looks similar to normal CSS and another more stripped syntax called <strong>Sass</strong>.</p>
 
 <p>This is good as developers might be more comfortable using one above the other. However, it can also cause confusions when working with Sass in general.</p>
 
@@ -227,16 +237,14 @@
 
 <p>Stylus Example 1:</p>
 
-<pre><code>`body {`
-`  font: 12px Helvetica, Arial, sans-serif;`
-`}`
-</code></pre>
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">body</span> <span class="p">{</span>
+  <span class="na">font</span><span class="o">:</span> <span class="mi">12</span><span class="kt">px</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="no">sans-serif</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
 
 <p>Stylus Example 2:</p>
 
-<pre><code>`body`
-`  font: Helvetica, Arial, sans-serif`
-</code></pre>
+<div class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="nt">body</span>
+  <span class="na">font</span><span class="o">:</span> <span class="mi">12</span><span class="kt">px</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="no">sans-serif</span></code></pre></div>
 
 <p>In my opinion this combines the best of both worlds. Developers have the freedom to pick granularity, with the advantage of using one combined syntax.</p>
 
@@ -267,13 +275,13 @@
 
 	<section class="js-component-disqus-embed post-comments grid u--pad-bottom"
          data-disqus-shortname="14islands-com"
-         data-disqus-identifier="/blog/2016/03/03/giving-stylus-a-second-chance/"
+         data-disqus-identifier="/blog/2016/03/02/giving-stylus-a-second-chance/"
          data-disqus-expanded="false">
 
 
 	<a href="#" data-disquss-count class="grid__row u-bg-bright" title="Show comments for post">
 		<h4 class="post-comments__cta ">
-			<span class="disqus-comment-count" data-disqus-identifier="/blog/2016/03/03/giving-stylus-a-second-chance/">Write a comment</span>
+			<span class="disqus-comment-count" data-disqus-identifier="/blog/2016/03/02/giving-stylus-a-second-chance/">Write a comment</span>
 		</h4>
 	</a>
 
@@ -289,10 +297,10 @@
 
 
 <section class="related-posts">
-	<a class="related-posts__link grid u--default-v-padding u-bg-natt-dark" href="">
+	<a class="related-posts__link grid u--default-v-padding u-bg-natt-dark" href="/blog/2015/12/29/our-year-in-review-2015/">
 		<div class="grid__row">
 	    <p class="related-posts__label">Read Next</p>
-	    <h2 class="related-posts__title"></h2>
+	    <h2 class="related-posts__title">Our year in review - 2015</h2>
 	  </div>
 	</a>
 </section>
@@ -339,7 +347,7 @@
 
 <script src="//src.responsive.io/r.js"></script>
 
-<script src="/js/footer-scripts.0f21.js"></script>
+<script src="/js/footer-scripts.f52e.js"></script>
 
 		<script>
   (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
