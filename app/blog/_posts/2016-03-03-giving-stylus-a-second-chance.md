@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Giving Stylus a second chance"
-description: "We strive to use the most modern practises for search engine optimisation (SEO) and social networks. Here are few to consider for any site."
+description: "Stylus has all the features to expect from a CSS pre-processors and even a few nifty ones we like to tell you about it in this post."
 og_image: /images/blog/stylus/open-graph-image.png
 private: true
 ---
