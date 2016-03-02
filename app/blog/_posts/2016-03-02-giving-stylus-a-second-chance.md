@@ -110,7 +110,7 @@ Usage Example:
     
 This is a good way to organise code and make CSS more readable.
 
-*Note: Sass 3.3 has a feature called **Maps** with the same intended purpose.* 
+*Note: Sass 3.3 has a feature called **Maps** for the same intended purpose.* 
 
 *Example:*
 
@@ -175,7 +175,7 @@ In my opinion this combines the best of both worlds. Developers have the freedom
 
 ## Conclusion
 
-Using stylus on this project turned out great. The code was readable and easy for new developers to join the project. We still love Sass, but mainly wanted to tell about the pleasant experience of trying out Stylus. 
+Using Stylus on this project turned out great. The code was readable and easy for new developers to join the project. We still love Sass, but mainly wanted to tell about the pleasant experience of trying out Stylus. 
 
 Stylus also got a spanking new responsive website recently and their documentation is good. I encourage you to check it out.
 
