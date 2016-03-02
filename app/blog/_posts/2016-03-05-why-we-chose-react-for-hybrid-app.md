@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Why we picked React for our latest hybrid app"
+title:  "Why we chose React for our latest hybrid app"
 description: "We recently had the pleasure of working with Fjord to prototype and build an HTML5 hybrid app for one of their clients."
 og_image: /images/blog/why-react/screenshot.jpg
 private: true
 ---
 
-# Why we picked React for our latest hybrid app
+# Why we chose React for our latest hybrid app
 
 **We recently had the pleasure of working with [Fjord](https://www.fjordnet.com/){:target="_blank"} to prototype and build an HTML5 hybrid app for one of their clients.**
 
