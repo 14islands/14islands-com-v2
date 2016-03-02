@@ -20,9 +20,13 @@ _**Note:** React Native was announced during 2015, however when this project sta
 
 
 ## The hybrid challenge
-Writing hybrid apps is nothing new and it’s certainly not the right choice for all applications. The challenge is to achieve the premium feeling of a native app with smooth animations and a snappy interface. We’ve ventured down this path [many times](http://blog.14islands.com/post/52546836134/case-study-betting-on-a-fully-responsive-web){:target="_blank"} in [the past](http://blog.14islands.com/post/52934733389/racer-a-chrome-experiment){:target="_blank"} using more conventional JavaScript MVC frameworks such as Backbone.js.
+Writing hybrid apps is nothing new and it’s certainly not the right choice for all applications. The challenge is to achieve the premium feeling of a native app with smooth animations and a snappy interface. 
 
-Most hybrid projects start with a fast, responsive UI - until you hit a wall. This wall usually appears late in the project, after weeks of adding functionality and more and more content has been injected into the DOM. The relationship of view components has become hard to keep track of, and circular dependencies of event listeners cause too many reads/writes to the DOM.
+We’ve ventured down this path [many times](http://blog.14islands.com/post/52546836134/case-study-betting-on-a-fully-responsive-web){:target="_blank"} in [the past](http://blog.14islands.com/post/52934733389/racer-a-chrome-experiment){:target="_blank"} using more conventional JavaScript MVC frameworks such as Backbone.js. 
+
+Most hybrid projects start with a fast, responsive UI - until you hit a wall. This usually appears late in the project, after weeks of adding functionality and more and more content has been injected into the DOM. 
+
+The relationship of view components become hard to keep track of, and circular dependencies of event listeners cause too many reads/writes to the DOM.
 
 
 ## Enter React
