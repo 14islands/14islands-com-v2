@@ -18,7 +18,7 @@ We got the chance to use it on a project lately and it was a pleasant surprise. 
 
 First of all, Stylus has what to expect from a modern CSS Pre-Processors: variables, mixins, extend, imports, functions, plus a good syntax to work with calculations, string interpolation and more.
 
-Stylus is setup by using the popular Node Package Manager (NPM), making it easy for new developers to join the project. Just run *npm install* and be ready to rock.
+Stylus is built for NodeJS and setup by using the popular Node Package Manager (NPM). NPM makes it easy for new developers to join the project, just run *npm install* and be ready to rock.
 
 
 ## The Parent Selector
