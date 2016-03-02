@@ -1,27 +1,26 @@
 ---
 layout: post
-title:  "Why we picked React for our latest hybrid app project"
-description: "We recently had the pleasure of working with Fjord (Accenture) to prototype and build an HTML5 hybrid app for one of their clients."
+title:  "Why we picked React for our latest hybrid app"
+description: "We recently had the pleasure of working with Fjord to prototype and build an HTML5 hybrid app for one of their clients."
 og_image: /images/blog/why-react/screenshot.jpg
+private: true
 ---
 
+# Why we picked React for our latest hybrid app
 
-
-# How we built a hybrid app using React
-
-**We recently had the pleasure of working with [Fjord](https://www.fjordnet.com/){:target="_blank"} (Accenture) to prototype and build an HTML5 hybrid app for one of their clients.**
+**We recently had the pleasure of working with [Fjord](https://www.fjordnet.com/){:target="_blank"} to prototype and build an HTML5 hybrid app for one of their clients.**
 
 {% include post-image.html alt="HTML5 hybrid app using React" src="/images/blog/why-react/screenshot.jpg" margin="both" ratio="custom_35" %}
 
 Hybrid apps provide a way to build an application using web technologies and package it as native apps for multiple mobile platforms.
 
-In this article we share the techniques and challenges we faced while building an app for iOS and Android using React &amp; Cordova.
+In this article we share the techniques and challenges we faced while building an app for iOS and Android using [React](https://facebook.github.io/react/){:target="_blank"} &amp; [Cordova](https://cordova.apache.org/){:target="_blank"}.
 
-***Note:** React Native was announced during 2015, however when this project started, React Native for Android had not been released making it a no-go for us.*
+_**Note:** React Native was announced during 2015, however when this project started, React Native for Android had not been released making it a no-go for us._
 
 
 ## Learning from experience
-Writing hybrid apps is nothing new and it’s certainly not the right choice for all applications. The challange is to achieve the premium feeling of a native app with smooth animations and a snappy interface. We’ve ventured down this path [many times](http://blog.14islands.com/post/52546836134/case-study-betting-on-a-fully-responsive-web){:target="_blank"} in [the past](http://blog.14islands.com/post/52934733389/racer-a-chrome-experiment){:target="_blank"} using more conventional JavaScript MVC frameworks such as Backbone.js.
+Writing hybrid apps is nothing new and it’s certainly not the right choice for all applications. The challenge is to achieve the premium feeling of a native app with smooth animations and a snappy interface. We’ve ventured down this path [many times](http://blog.14islands.com/post/52546836134/case-study-betting-on-a-fully-responsive-web){:target="_blank"} in [the past](http://blog.14islands.com/post/52934733389/racer-a-chrome-experiment){:target="_blank"} using more conventional JavaScript MVC frameworks such as Backbone.js.
 
 Most hybrid projects start with a fast, responsive UI - until you hit a wall. This wall usually appears late in the project, after weeks of adding functionality and more and more content has been injected into the DOM. The relationship of view components has become hard to keep track of, and circular dependencies of event listeners cause too many reads/writes to the DOM.
 
@@ -90,7 +89,7 @@ class MyComponent extends Component {
 We used this approach to hook up View components with our Data stores.
 
 ## Unidirectional data flow
-But there's more to an app than just the view layer - and this is where it gets tricky. React can be used in combination with most other frameworks out there to render your existing data model. However the problems with large scale MVC applications and cyclical dependencies are still there, so Facebook created the Flux design pattern which has a "unidirectional data flow" to make it more predictable.
+There's more to an app than just the view layer - and this is where it gets tricky. React can be used in combination with most other frameworks out there to render your existing data model. However the problems with large scale MVC applications and cyclical dependencies are still there, so Facebook created the Flux design pattern which has a "unidirectional data flow" to make it more predictable.
 
 {% include post-image.html alt="Flux data flow" src="/images/blog/why-react/flux-flow-annotated.png" margin="both" ratio="custom_55" %}
 
@@ -100,9 +99,9 @@ There are endless implementations of Flux and after researching many of them we 
 In order for an app to feel native it’s super important that the UI has smooth animations at a steady 60 FPS and no flicker. Mobile browsers have noticeably slow JavaScript performance so we made sure to only use pure CSS animations and transitions.
 
 ### Inline styles vs CSS
-One of the hottest topics in the React world lately is whether to use Inline Styles, i.e. setting styles with an element’s style property instead of CSS. Let's be honest, we love CSS and are not too fond of this approach.
+One of the hottest topics in the React world lately is whether to use Inline Styles, i.e. setting styles with an element’s style property instead of CSS.
 
-CSS has a clear separation of concerns and we as web developers already know how to efficently apply Responsive Web Design principles to support different capabilities and screen sizes.
+Let's be honest, we love CSS and are not too fond of this approach. CSS has a clear separation of concerns and we as web developers already know how to efficently apply Responsive Web Design principles to support different capabilities and screen sizes.
 
 The biggest argument for Inline styles is that "State" is mostly a JavaScript concern, and a lot of times we need to change styles based on dynamic conditions. Though when you think about it, adding and removing modifier classes is a perfect tool for propagating state changes already.
 
@@ -191,7 +190,7 @@ We are super happy with our choice to go with React for this project, but we wou
 
 
 #### Where to go from here
-*React Native is currently gaining momentum and it will be interesting to follow. The key difference is that has a proxy layer between JavaScript and the native SDK. It runs JavaScript code in a separate thread, making it possible to have smooth animations while executing other operations. React Native has also chosen inline styles over CSS using a Flexbox approach. It's estimated that over [85% of the codebase will be shareable](http://nerds.airbnb.com/facebook-react-native/){:target="_blank"} when using React Native.*
+*React Native is currently gaining momentum and it will be interesting to follow. The key difference is that has a proxy layer between JavaScript and the native SDK. It runs JavaScript code in a separate thread, making it possible to have smooth animations while executing other operations. React Native has also chosen inline styles over CSS using a Flexbox approach. It's estimated that over [85% of the codebase will be shareable](http://nerds.airbnb.com/facebook-react-native/){:target="_blank"} between iOS and Android when using React Native.*
 
 
 {% include blog-author-david.html %}
