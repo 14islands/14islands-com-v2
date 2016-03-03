@@ -3,7 +3,7 @@ layout: post
 title:  "Why we chose React for our latest hybrid app"
 description: "We recently had the pleasure of working with Fjord to prototype and build an HTML5 hybrid app for one of their clients."
 og_image: /images/blog/why-react/screenshot-large.jpg
-private: true
+private: false
 ---
 
 # Why we chose React for our latest hybrid app
