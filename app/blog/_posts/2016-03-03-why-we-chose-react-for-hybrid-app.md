@@ -2,7 +2,7 @@
 layout: post
 title:  "Why we chose React for our latest hybrid app"
 description: "We recently had the pleasure of working with Fjord to prototype and build an HTML5 hybrid app for one of their clients."
-og_image: /images/blog/why-react/screenshot.jpg
+og_image: /images/blog/why-react/screenshot-large.jpg
 private: true
 ---
 
@@ -10,7 +10,7 @@ private: true
 
 **We recently had the pleasure of working with [Fjord](https://www.fjordnet.com/){:target="_blank"} to prototype and build an HTML5 hybrid app for one of their clients.**
 
-{% include post-image.html alt="HTML5 hybrid app using React" src="/images/blog/why-react/screenshot.jpg" margin="both" ratio="custom_35" %}
+{% include post-image.html alt="HTML5 hybrid app using React" src="/images/blog/why-react/screenshot-large.jpg" margin="both" ratio="custom_35" %}
 
 Hybrid apps provide a way to build an application using web technologies and package it as native apps for multiple mobile platforms.
 
