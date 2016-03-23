@@ -20,9 +20,9 @@ We would like to discuss some of these trends in this article:
 * Virtual Reality & Augmented Reality
 * Robots, Artifical Intelligence and Machine Learning
 
-Lets dive into it.
+Let's dive into it.
 
-## Convesational UIs
+## Conversational UIs
 
 Today there is an app for most products and services we use. As more companies will become technology driven and  objects around us will become smarter;  Downloading an app to interact with all these things is time consuming, and requires much effort to manage.
 
@@ -31,7 +31,7 @@ One solution to this problem are chat bots and personal assistants that make it 
 
 ### Your personal assistant
 
-An example of this is the ability to order an Uber through Facebook Messenger. You can click on an address that shows up in a chat and ask for a ride to that place. An Uber will show up and paid for with Facebook Messenger.  All that without leaving the chat thread or opening another app.
+An example of this is the ability to order an Uber through Facebook Messenger. You can click on an address that shows up in a chat and ask for a ride to that place. An Uber will show up and paid for with Facebook Messenger.  All without leaving the chat thread or opening another app.
 
 > Messaging apps have eclipsed social networks in usage.
 
@@ -40,7 +40,7 @@ We'll see more of these kind of interactions in messaging apps such as  Slack, F
 
 ### Make a connection, with a bot.
 
-Lark is a personal coaching service that helps people reach their fitness goals. The interaction is fully experienced as a chat conversation.
+[Lark](http://www.web.lark.com/) is a personal coaching service that helps people reach their fitness goals. The interaction is fully experienced as a chat conversation.
 
 Lark gets profile information using Facebook Connect and connects with Apple Healtkit to collect info from peoples phone and wearables such as the Apple Watch.
 
@@ -51,26 +51,28 @@ This makes it possible for Lark to give personalized advice, and by asking deepe
 
 ### Even more natural
 
-Voice assistances such as Microsoft Cordana, Amazon Alexa, Apple Siri and Google Now are also constantly getting better.
+Voice assistances such as Microsoft Cortana, Amazon Alexa, Apple Siri and Google Now are also constantly getting better.
 
-Expect the lines between physical and digital to blurry
+> Expect the lines between physical and digital to blurry
 
-Its the ability to interact with technology beyond the screen that is so exciting at the moment. There are other innovations  such sensors to detect changes in our enviroment.
+Its the ability to interact with technology beyond the screen is so exciting at the moment. Innovations such sensors to detect changes in our enviroment.
 
-Here is a fun video by Jared Ficklin demostrating this idea, using technologies to control the enviroment around him.
+Here is a fun video by Jared Ficklin demostrating this, using technologies to control the enviroment around him.
 
 {% include blog-youtube.html youtubeId="d-LvtHs-6O0" caption="The software is custom-built, using Microsoft Speech Recognition Engine, Computer Vision, and the Kinect SDK." %}
 
 
 ## Virtual Reality 
 
-This year Virtual Reality (VR) was the talk of town at SXSW.  Currently the use of VR seems to be primarly for gaming and visual experiences. It also works great in combination with 360° video as it allows users to naturally look around as they are at the spot. 
+This year Virtual Reality (VR) was the talk of town at SXSW. Long lines formed in front of Samsung and Google where these were these were being tested out.
 
-Oculus Rift, HTC Vive and Playstation VR will soon be shipped. These options are going to be quite expensive at the start, Oculus Rift has an $599 price tag including accessories as an example. Bets are on that VR hard-core gamers will mainly be ready to pay for it the beginning. 
+The current use of VR seems to be primarly for gaming and visual experiences. It also works great in combination with 360° video as it allows users to naturally look around as they are at the spot. 
+
+Oculus Rift, HTC Vive and Playstation VR will soon be shipped. These options are going to be quite expensive at the start, Oculus Rift has an $599 price tag as an example, including accessories. Bets are on that hard-core gamers will mainly be ready to pay in the early days of VR. 
 
 {% include post-image.html alt="CCP is the first company to ship a fully featured game on the Oculus Rift, its called Valkyrie and it happens in space." src="/images/blog/sxsw/cpp-valkyrie-16_9.jpg" margin="both" ratio="16_9" caption=true %}
 
-Samsung Gear and Google Cardboard are a less pricy option, they use mobile phones to drive the experience. These devices do not have the hardware to provide the same premium experience and they lack assessories such as built-in headphones.
+Samsung Gear and Google Cardboard are a less pricy option, they use mobile phones to drive the experience. These devices do not have the hardware to provide a premium experience and lack assessories such as built-in headphones.
 
 
 ### The promise
@@ -79,7 +81,7 @@ The promise of VR is having the ability to enter another world from your living 
 
 There is also potential for it being used as an utility. [Google Tilt Brush](http://www.tiltbrush.com/) in combination with HTC Vibe is an interesting example. It allows you to draw in 3D from different angles. I missed the oppertunity to try it out but heard it was quote amazing. Users can do things such as bend down to paint from below.
 
-An obvious limitation to VR is to strip a computer on your head and having to close yourself from the real world. Lets be honest, its a bit scary. Hopefully VR will become more social going forward, and thats of course why Facebook is investing heavy in this area.
+An obvious limitation to VR is to strip a computer on your head and having to close yourself from the real world. Let's be honest, its a bit scary. Hopefully VR will become more social going forward, and thats of course why Facebook is investing heavy in this area.
 
 {% include post-image.html alt="Image from the future. Mark Zuckerberg walking out of stage from the Mobile World Conference. Everybody is watching from the VR world, no one sees the millioner icon in reality." src="/images/blog/sxsw/zuck-at-mobile-conference-16_10.jpg" margin="both" ratio="16_10" caption=true %}
 
