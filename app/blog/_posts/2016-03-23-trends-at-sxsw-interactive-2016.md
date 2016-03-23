@@ -108,4 +108,4 @@ We went to an interesting talk at SXSW by Jerry Kaplan about Robots, IA and jobs
 
 In 1790, 96% of US jobs where in farming, because of automation this number is down to 1.9% today. Less people will be needed in todays world. Tasks are being automated by robots and artifical inteligent. At the same time, new fields with new types of jobs are created. A good example are social marketing roles that did not exist few years back. Technology innovation, human touch and special talents will remain in-demand. This is a challange for all of us, to educate people for jobs that are needed in the future.
 
-
+{% include blog-author-hjortur.html %}
