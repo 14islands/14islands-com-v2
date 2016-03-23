@@ -246,3 +246,13 @@ code {
 	font-size: 0.8em;
   color: lighten($default-font-color, 10%);
 }
+
+/**
+ * Emojis
+ */
+
+ .emoji {
+    font-weight: normal;
+    font-style: normal;
+    font-family: "Apple Color Emoji","Segoe UI Emoji","NotoColorEmoji","Segoe UI Symbol","Android Emoji","EmojiSymbols";
+ }

@@ -13,7 +13,6 @@ img[data-src] {
   visibility: hidden;
 }
 
-
 @keyframes fadeInContentImage {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -44,4 +43,13 @@ img[data-src] {
 	img.image-loaded {
 		opacity: 1;
 	}
+}
+
+.u-img-caption {
+  display: block;
+  padding-top: .3rem;
+  text-align: center;
+  font-style: italic;
+
+  color: #999;
 }

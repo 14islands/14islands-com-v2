@@ -1,0 +1,11 @@
+<figure class="grid__row grid__row--wide content-image u--margin-both--half {{include.class}}">
+
+  <div class="u-ratio u-ratio--16_9">
+    <iframe class="u-ratio__content" width="100%" height="100%" src="https://www.youtube.com/embed/{{include.youtubeId}}" frameborder="0" allowfullscreen></iframe>
+  </div>
+  {% if include.caption %}
+    <div class="u-img-caption">
+      <figcaption>{{include.caption}}</figcaption>
+    </div>
+  {% endif %}
+</figure>
