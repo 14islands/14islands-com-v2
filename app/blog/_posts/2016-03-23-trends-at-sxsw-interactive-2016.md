@@ -8,7 +8,7 @@ private: true
 
 # Trends at SXSW Interactive 2016
 
-*Last week we were at SXSW Interactive, a big yearly festival held in Austin, Texas. It was a fun experience. Innovations being discussed, lots of interesting people in our industry and sunny weather* *☀️*{: class="emoji"}
+*Last week our full team went to SXSW Interactive, a big yearly festival held in Austin, Texas. It was a fun experience. Innovations being discussed, lots of interesting people in our industry and sunny weather* *☀️*{: class="emoji"}
 
 {% include post-image.html alt="SXSW Interactive 2016" src="/images/blog/sxsw/convertional-ui-2-16_10.jpg" margin="both" ratio="16_10" %}
 
@@ -46,16 +46,16 @@ Lark gets profile information using Facebook Connect and connects with Apple Hea
 
 This makes it possible for Lark to give personalized advice, and by asking deeper questions about the user. The techology to understand peoples writing is still a bit limited. Lark will lead the conversation by suggesting answers. However, in the future bots will be smarter and and start to understand our natural language. They will feel just like a human being helping us out.
 
-> 25% of people have said "I love you" to a bot
+> 25% of people said "I love you" to [a bot](http://www.nytimes.com/2015/08/04/science/for-sympathetic-ear-more-chinese-turn-to-smartphone-program.html?_r=1)
 
 
 ### Even more natural
 
 Voice assistances such as Microsoft Cortana, Amazon Alexa, Apple Siri and Google Now are also constantly getting better.
 
-> Expect the lines between physical and digital to blurry
+> Expect the lines between physical and digital to blur
 
-Its the ability to interact with technology beyond the screen is so exciting at the moment. Innovations such sensors to detect changes in our enviroment.
+It's the ability to interact with technology beyond the screen that is so exciting at the moment, using innovations such as sensors to detect changes in our enviroment.
 
 Here is a fun video by Jared Ficklin demostrating this, using technologies to control the enviroment around him.
 
@@ -64,13 +64,13 @@ Here is a fun video by Jared Ficklin demostrating this, using technologies to co
 
 ## Virtual Reality 
 
-This year Virtual Reality (VR) was the talk of town at SXSW. Long lines formed in front of Samsung and Google where these were these were being tested out.
+This year Virtual Reality (VR) was the talk of the town at SXSW. Long lines formed in front of Samsung and Google where these were these were being tested out.
 
 The current use of VR seems to be primarly for gaming and visual experiences. It also works great in combination with 360° video as it allows users to naturally look around as they are at the spot. 
 
 Oculus Rift, HTC Vive and Playstation VR will soon be shipped. These options are going to be quite expensive at the start, Oculus Rift has an $599 price tag as an example, including accessories. Bets are on that hard-core gamers will mainly be ready to pay in the early days of VR. 
 
-{% include post-image.html alt="CCP is the first company to ship a fully featured game on the Oculus Rift, its called Valkyrie and it happens in space." src="/images/blog/sxsw/cpp-valkyrie-16_9.jpg" margin="both" ratio="16_9" caption=true %}
+{% include post-image.html alt="CCP is the first company to ship a fully featured game on the Oculus Rift, it's called Valkyrie and it happens in space." src="/images/blog/sxsw/cpp-valkyrie-16_9.jpg" margin="both" ratio="16_9" caption=true %}
 
 Samsung Gear and Google Cardboard are a less pricy option, they use mobile phones to drive the experience. These devices do not have the hardware to provide a premium experience and lack assessories such as built-in headphones.
 
@@ -81,7 +81,7 @@ The promise of VR is having the ability to enter another world from your living 
 
 There is also potential for it being used as an utility. [Google Tilt Brush](http://www.tiltbrush.com/) in combination with HTC Vibe is an interesting example. It allows you to draw in 3D from different angles. I missed the oppertunity to try it out but heard it was quote amazing. Users can do things such as bend down to paint from below.
 
-An obvious limitation to VR is to strip a computer on your head and having to close yourself from the real world. Let's be honest, its a bit scary. Hopefully VR will become more social going forward, and thats of course why Facebook is investing heavy in this area.
+An obvious limitation to VR is to strip a computer on your head and having to close yourself from the real world. Let's be honest, it's a bit scary. Hopefully VR will become more social going forward, and thats of course why Facebook is investing heavy in this area.
 
 {% include post-image.html alt="Image from the future. Mark Zuckerberg walking out of stage from the Mobile World Conference. Everybody is watching from the VR world, no one sees the millioner icon in reality." src="/images/blog/sxsw/zuck-at-mobile-conference-16_10.jpg" margin="both" ratio="16_10" caption=true %}
 
@@ -93,7 +93,7 @@ The best current example is Microsoft Hololens, they are about to ship a develop
 
 {% include blog-youtube.html youtubeId="aThCr0PsyuA" caption="Hololens Concept Video" %}
 
-More players will without a doubt entering this market. AG has huge potential, specially as an utility, for both day-to-day live and at work. The problem is that these devices will be big as a start and clumsy to carry around. Its gonna improve, just imagine when it becomes possible to fit AG into a small lens further in the future.
+More players will without a doubt entering this market. AG has huge potential, specially as an utility, for both day-to-day live and at work. The problem is that these devices will be big as a start and clumsy to carry around. It's gonna improve, just imagine when it becomes possible to fit AG into a small lens further in the future.
 
 Apple are also likely to join the VR/AR category and have already made few hints about it. When Apple put their marketing engines ON product categories are likely go mainstream.
 
@@ -110,6 +110,6 @@ We went to an interesting talk at SXSW by Jerry Kaplan about Robots, AI and jobs
 
 In 1790, 96% of US jobs where in farming, because of automation this number is down to 1.9% today. Less people will be needed in todays world. Tasks are being automated by robots and artifical inteligent. At the same time, new fields with new types of jobs are created. A good example are social marketing roles that did not exist few years back. 
 
-Technology innovation, human touch and special talents will remain in-demand. This is a challange for all of us, to educate people for jobs that are needed in the future.
+Technology innovation, human touch and special talents will remain in-demand. It's is a challange for all of us, to educate people for jobs that are needed in the future.
 
 {% include blog-author-hjortur.html %}
