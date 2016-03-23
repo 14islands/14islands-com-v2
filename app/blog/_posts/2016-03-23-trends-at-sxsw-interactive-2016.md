@@ -2,7 +2,7 @@
 layout: post
 title:  "Trends at SXSW Interactive 2016"
 description: Last week we were at SXSW Interactive, a big yearly festival held in Austin, Texas.  It was a fun experience. Innovations being discussed, lots of interesting people in our industry and sunny weather.
-og_image: /images/blog/sxsw/david-vr-16_10.jpg
+og_image: /images/blog/sxsw/convertional-ui-2-16_10.jpg
 private: true
 ---
 
