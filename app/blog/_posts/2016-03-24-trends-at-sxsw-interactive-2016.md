@@ -24,7 +24,7 @@ Let's dive into it.
 
 ## Conversational UIs
 
-Today there is an app for most products and services we use. As more companies will become technology driven and  objects around us will become smarter;  Downloading an app to interact with all these things is time consuming, and requires much effort to manage.
+Today there is an app for most products and services we use. As more companies will become technology driven and  objects around us will become smarter; Downloading an app to interact with all these things is time consuming, and requires much effort to manage.
 
 One solution to this problem are chat bots and personal assistants that make it possible to communicate to services using our normal way of writing.
 
