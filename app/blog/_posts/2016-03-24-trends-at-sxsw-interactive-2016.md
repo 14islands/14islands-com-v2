@@ -14,7 +14,7 @@ private: true
 
 There are many trends happening at the moment. It was great to gain more clarity about these technologies and how they will impact us humans going forward. 
 
-We would like to discuss some of these trends in this article:
+We would like to discuss some of the trends in this article:
 
 * Conversational UIs
 * The Physical Web
@@ -28,27 +28,22 @@ Let's dive into it.
 
 Today there is an app for most products and services we use. As more companies will become technology driven and  objects around us will become smarter; Downloading an app to interact with all these things is time consuming, and requires much effort to manage.
 
-One solution to this problem are chat bots and personal assistants that make it possible to communicate to services using our normal way of writing.
-
-
-### Your personal assistant
-
-An example of this is the ability to order an Uber through Facebook Messenger. You can click on an address that shows up in a chat and ask for a ride to that place. An Uber will show up and paid for with Facebook Messenger.  All without leaving the chat thread or opening another app.
-
-> Messaging apps have eclipsed social networks in usage.
-
-We'll see more of these kind of interactions in messaging apps such as  Slack, Facebook Messenger, SMS, WeChat (Popular in China) and potentially Twitter.  They will allow us to transfer money, buy things and so forth, right from the chat.
+One solution to this problem are chat bots and personal assistants that make it possible to communicate to services using our normal way of interacting.
 
 
 ### Make a connection, with a bot.
 
-[Lark](http://www.web.lark.com/) is a personal coaching service that helps people reach their fitness goals. The interaction is fully experienced as a chat conversation.
+An example of this is the ability to order an Uber through Facebook Messenger. You can click on an address that shows up in a chat and ask for a ride. An Uber will show up and take you there. All without leaving the chat thread or opening another app.
 
-Lark gets profile information using Facebook Connect and connects with Apple Healtkit to collect info from peoples phone and wearables such as the Apple Watch.
+> Messaging apps have eclipsed social networks in usage.
 
-This makes it possible for Lark to give personalized advice, and by asking deeper questions about the user. The techology to understand peoples writing is still a bit limited. Lark will lead the conversation by suggesting answers. However, in the future bots will be smarter and and start to understand our natural language. They will feel just like a human being helping us out.
+Another example is [Lark](http://www.web.lark.com/), a personal coaching service that helps people reach their fitness goals. The interaction is fully as a chat conversation. It's able to give personalized advice by connecting to users Facebook profile and Apple Healthkit on their phone, and by asking deeper questions about the users health.
+
+Lark will lead the conversation by suggesting answers so its still a bit limited at the moment. However, people feel like they are talking to a person and refer to it as a "she" (Remember the [Her](http://www.imdb.com/title/tt1798709/) movie?). In the future bots will be smarter and understand our natural language, so they will feel even more like chatting to a human being.
 
 > 25% of people said "I love you" to [a bot](http://www.nytimes.com/2015/08/04/science/for-sympathetic-ear-more-chinese-turn-to-smartphone-program.html?_r=1)
+
+We'll are going to see more of bots in messaging apps such as Slack, Facebook Messenger, SMS, WeChat (Popular in China) and potentially Twitter. They will allow us to interact with services and do things such as transfer money and buy things online right from a conversation.
 
 
 ### Even more natural
