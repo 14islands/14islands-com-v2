@@ -1,4 +1,13 @@
-
+.client-list-container {
+	@include if-narrower-than($breakpoint-three-px) {
+    padding-left: 0;
+    padding-right: 0;
+    @include if-wider-than($breakpoint-one-px) {
+			width: 100% - $default-content-spacing * 2;
+    	margin: auto;
+    }
+  }
+}
 .client-list {
   list-style: none;
   display: inline-block;
@@ -15,16 +24,17 @@
   padding-bottom: $default-content-spacing;
 
   // 2 cols
-  width: 40%;
-  @include if-wider-than($breakpoint-one-px) {
-    // three cols
-    width: 27%;
-  }
+  // width: 40%;
+
+  // // three cols
+  // @include if-wider-than($breakpoint-one-px) {
+  //   width: 27%;
+  // }
 
   // 4 cols
-  @include if-wider-than($breakpoint-two-px) {
+  // @include if-wider-than($breakpoint-two-px) {
     width: 20.1%;
-  }
+  // }
 
   a {
     display: block;
