@@ -83,9 +83,9 @@ The current use of VR seems to be primarly for gaming and visual experiences. It
 
 ### The promise
 
-The promise of VR is having the ability to enter another world from your living room. To be entertain and learn new things.
+The promise of VR is having the ability to enter another world from your living room. To be entertained and learn new things.
 
-There is also potential for it being used as an utility. [Google Tilt Brush](http://www.tiltbrush.com/){:target="_blank"} in combination with HTC Vibe is an interesting example. It allows you to draw in 3D from different angles. I missed the oppertunity to try it out at SXSW, but heard from a friend that it was pretty amazing. Users can do things such as bend down to paint from below.
+There is also potential for it being used as an utility. [Google Tilt Brush](http://www.tiltbrush.com/){:target="_blank"} in combination with HTC Vibe is an interesting example. It allows you to draw in 3D from different angles. I missed the opportunity to try it out at SXSW, but heard from a friend that it was pretty amazing. Users can do things such as bend down to paint from below.
 
 An obvious limitation to VR is to strip a computer on your head and having to close yourself from the real world. Let's be honest, it's a bit scary. Hopefully VR will become more social going forward, and thats of course why Facebook is investing heavy in this area.
 
@@ -99,11 +99,11 @@ A good current example is [Microsoft Hololens](https://www.microsoft.com/microso
 
 {% include blog-youtube.html youtubeId="aThCr0PsyuA" caption="Hololens Concept Video" %}
 
-More players will without a doubt entering this market. AG has huge potential, specially as an utility, for both day-to-day live and at work. 
+More players will without a doubt enter this market. AG has huge potential, specially as an utility, for both day-to-day live and at work. 
 
-The problem is that these devices will be big as a start and clumsy to carry around. It's gonna improve, just imagine when it becomes possible to fit AG into a small lens further in the future.
+The problem is that these devices will be big as a start and clumsy to carry around. It's going to improve, just imagine when it becomes possible to fit AG into a small lens further in the future.
 
-[Apple](http://www.apple.com/){:target="_blank"} are also likely to join the VR/AR category and have already made few hints about it. When Apple puts their marketing engines ON product categories often go mainstream.
+[Apple](http://www.apple.com/){:target="_blank"} are also likely to join the VR/AR category and have already made few hints about it. When Apple puts their marketing engines ON, product categories often go mainstream.
 
 ## Machine Learning and Cloud Computing
 
