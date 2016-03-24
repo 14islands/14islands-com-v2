@@ -7,7 +7,7 @@ og_image: /images/blog/sxsw/convertional-ui-2-16_10.jpg
 
 # Trends at SXSW Interactive 2016
 
-*Last week our full team went to [SXSW Interactive](http://www.sxsw.com/interactive), a big yearly festival held in Austin, Texas. It was a fun experience. Innovations being discussed, lots of interesting people in our industry and sunny weather* *☀️*{: class="emoji"}
+*Last week our full team went to [SXSW Interactive](http://www.sxsw.com/interactive){:target="_blank"}, a big yearly festival held in Austin, Texas. It was a fun experience. Innovations being discussed, lots of interesting people in our industry and sunny weather* *☀️*{: class="emoji"}
 
 {% include post-image.html alt="SXSW Interactive 2016" src="/images/blog/sxsw/convertional-ui-2-16_10.jpg" margin="both" ratio="16_10" %}
 
@@ -32,35 +32,35 @@ One solution to this problem are chat bots and personal assistants that make it 
 
 ### Make a connection, with a bot.
 
-An example of this is the ability to order an [Uber](https://www.uber.com/) through [Facebook Messenger](https://www.messenger.com/). You can click on an address that shows up in a chat and ask for a ride. An Uber will show up and take you there. All without leaving the chat thread or opening another app.
+An example of this is the ability to order an [Uber](https://www.uber.com/){:target="_blank"} through [Facebook Messenger](https://www.messenger.com/){:target="_blank"}. You can click on an address that shows up in a chat and ask for a ride. An Uber will show up and take you there. All without leaving the chat thread or opening another app.
 
 > Messaging apps have eclipsed social networks in usage.
 
-Another example is [Lark](http://www.web.lark.com/), a personal coaching service that helps people reach fitness goals. The interaction is fully as a chat, giving personalized advice based on peoples [Facebook](https://www.facebook.com) profile, [Apple Healthkit](https://developer.apple.com/healthkit/), and by asking deeper questions.
+Another example is [Lark](http://www.web.lark.com/){:target="_blank"}, a personal coaching service that helps people reach fitness goals. The interaction is fully as a chat, giving personalized advice based on peoples [Facebook](https://www.facebook.com){:target="_blank"} profile, [Apple Healthkit](https://developer.apple.com/healthkit/){:target="_blank"}, and by asking deeper questions.
 
-Lark will lead the conversation by suggesting answers so it's limited at the moment, but people are already saying it feels like talking to a real person and sometimes refer to it as "she" (Remember the movie [Her](http://www.imdb.com/title/tt1798709/)?). Some people even prefer sharing personalized information with a bot, instead of talking to a human.
+Lark will lead the conversation by suggesting answers so it's limited at the moment, but people are already saying it feels like talking to a real person and sometimes refer to it as "she" (Remember the movie [Her](http://www.imdb.com/title/tt1798709/){:target="_blank"}?). Some people even prefer sharing personalized information with a bot, instead of talking to a human.
 
-> 25% of people said "I love you" to [a bot](http://www.nytimes.com/2015/08/04/science/for-sympathetic-ear-more-chinese-turn-to-smartphone-program.html?_r=1)
+> 25% of people said "I love you" to [a bot](http://www.nytimes.com/2015/08/04/science/for-sympathetic-ear-more-chinese-turn-to-smartphone-program.html?_r=1){:target="_blank"}
 
-We are going to see more of bots in messaging apps such as [Slack](https://slack.com), Facebook Messenger, SMS, [WeChat](http://www.wechat.com/) (Popular in China) and potentially [Twitter](https://twitter.com/). They will allow us to interact with services and do things such as transfer money and buy things online, right from the conversation.
+We are going to see more of bots in messaging apps such as [Slack](https://slack.com){:target="_blank"}, Facebook Messenger, SMS, [WeChat](http://www.wechat.com/){:target="_blank"} (Popular in China) and potentially [Twitter](https://twitter.com/){:target="_blank"}. They will allow us to interact with services and do things such as transfer money and buy things online, right from the conversation.
 
 
 ### Even more natural
 
-Voice assistances such as [Microsoft Cortana](https://www.microsoft.com/en/mobile/experiences/cortana/), [Amazon Alexa](https://www.youtube.com/watch?v=KkOCeAtKHIc), [Apple Siri](http://www.apple.com/ios/siri/) and [Google Now](https://www.google.com/landing/now/) are also constantly getting better.
+Voice assistances such as [Microsoft Cortana](https://www.microsoft.com/en/mobile/experiences/cortana/){:target="_blank"}, [Amazon Alexa](https://www.youtube.com/watch?v=KkOCeAtKHIc){:target="_blank"}, [Apple Siri](http://www.apple.com/ios/siri/){:target="_blank"} and [Google Now](https://www.google.com/landing/now/){:target="_blank"} are also constantly getting better.
 
 > Expect the lines between physical and digital to blur
 
 It's the ability to interact with technology beyond the screen that is so exciting at the moment, using innovations such as sensors to detect changes in our enviroment.
 
-Here is a fun video by [Jared Ficklin](http://jaredficklin.com/) demostrating this, using technologies to control the enviroment around him.
+Here is a fun video by [Jared Ficklin](http://jaredficklin.com/){:target="_blank"} demostrating this, using technologies to control the enviroment around him.
 
 {% include blog-youtube.html youtubeId="d-LvtHs-6O0" caption="The software is custom-built, using Microsoft Speech Recognition Engine, Computer Vision, and the Kinect SDK." %}
 
 
 ## The Physical Web
 
-Another effort to bridge the gap between our physical and digital world is the [Physical Web initiative by Google](https://google.github.io/physical-web/). The idea is that any service or object can broadcast their functions using [low-energy bluetooth beacons](https://github.com/google/eddystone).
+Another effort to bridge the gap between our physical and digital world is the [Physical Web initiative by Google](https://google.github.io/physical-web/){:target="_blank"}. The idea is that any service or object can broadcast their functions using [low-energy bluetooth beacons](https://github.com/google/eddystone){:target="_blank"}.
 
 People that are close by are able to see these services on their phone, and can click for furter details. A web page will show up in the browser, allowing for information and ways to interact with the services.
 
@@ -70,22 +70,22 @@ The Physical Web is already available on in Chrome on iOS and Android. It has th
 
 ## Virtual Reality 
 
-This year Virtual Reality (VR) was the talk of the town at SXSW. Long lines formed in front of [Samsung](http://www.samsung.com/) and [Google](http://www.google.com/) where these were these were being tested out.
+This year Virtual Reality (VR) was the talk of the town at SXSW. Long lines formed in front of [Samsung](http://www.samsung.com/){:target="_blank"} and [Google](http://www.google.com/){:target="_blank"} where these were these were being tested out.
 
 The current use of VR seems to be primarly for gaming and visual experiences. It also works great in combination with 360° video as it allows users to naturally look around as they are at the spot. 
 
-[Oculus Rift](https://www.oculus.com/en-us/rift/), [HTC Vive](https://www.htcvive.com) and [Playstation VR](https://www.playstation.com/en-au/explore/playstation-vr/) will soon be shipped. These options are going to be quite expensive at the start, Oculus Rift has an $599 price tag as an example, including accessories. Bets are on that hard-core gamers will be ready to pay in the early days of VR. 
+[Oculus Rift](https://www.oculus.com/en-us/rift/){:target="_blank"}, [HTC Vive](https://www.htcvive.com){:target="_blank"} and [Playstation VR](https://www.playstation.com/en-au/explore/playstation-vr/){:target="_blank"} will soon be shipped. These options are going to be quite expensive at the start, Oculus Rift has an $599 price tag as an example, including accessories. Bets are on that hard-core gamers will be ready to pay in the early days of VR. 
 
 {% include post-image.html alt="CCP is the first company to ship a fully featured game on the Oculus Rift, it's called Valkyrie and it happens in space." src="/images/blog/sxsw/cpp-valkyrie-16_9.jpg" margin="both" ratio="16_9" caption=true %}
 
-[Samsung Gear](https://www.oculus.com/en-us/gear-vr/) and [Google Cardboard](https://www.google.com/get/cardboard/) are a less pricy option, they use mobile phones to drive the experience. These devices do not have the hardware to provide a premium experience and lack assessories such as built-in headphones.
+[Samsung Gear](https://www.oculus.com/en-us/gear-vr/){:target="_blank"} and [Google Cardboard](https://www.google.com/get/cardboard/){:target="_blank"} are a less pricy option, they use mobile phones to drive the experience. These devices do not have the hardware to provide a premium experience and lack assessories such as built-in headphones.
 
 
 ### The promise
 
 The promise of VR is having the ability to enter another world from your living room. To be entertain and learn new things.
 
-There is also potential for it being used as an utility. [Google Tilt Brush](http://www.tiltbrush.com/) in combination with HTC Vibe is an interesting example. It allows you to draw in 3D from different angles. I missed the oppertunity to try it out at SXSW, but heard from a friend that it was pretty amazing. Users can do things such as bend down to paint from below.
+There is also potential for it being used as an utility. [Google Tilt Brush](http://www.tiltbrush.com/){:target="_blank"} in combination with HTC Vibe is an interesting example. It allows you to draw in 3D from different angles. I missed the oppertunity to try it out at SXSW, but heard from a friend that it was pretty amazing. Users can do things such as bend down to paint from below.
 
 An obvious limitation to VR is to strip a computer on your head and having to close yourself from the real world. Let's be honest, it's a bit scary. Hopefully VR will become more social going forward, and thats of course why Facebook is investing heavy in this area.
 
@@ -95,7 +95,7 @@ An obvious limitation to VR is to strip a computer on your head and having to cl
 
 Augmented Reality (AR) is also on the horizon. AR mixes the virtual with reality. You can see reality with digital structures and information will be mixed in for additional functions.
 
-A good current example is [Microsoft Hololens](https://www.microsoft.com/microsoft-hololens/en-us), they are about to ship a developer version of the device. It will be interesting to read the reviews about how far it has gotten.
+A good current example is [Microsoft Hololens](https://www.microsoft.com/microsoft-hololens/en-us){:target="_blank"}, they are about to ship a developer version of the device. It will be interesting to read the reviews about how far it has gotten.
 
 {% include blog-youtube.html youtubeId="aThCr0PsyuA" caption="Hololens Concept Video" %}
 
@@ -103,17 +103,17 @@ More players will without a doubt entering this market. AG has huge potential, s
 
 The problem is that these devices will be big as a start and clumsy to carry around. It's gonna improve, just imagine when it becomes possible to fit AG into a small lens further in the future.
 
-[Apple](http://www.apple.com/) are also likely to join the VR/AR category and have already made few hints about it. When Apple puts their marketing engines ON product categories often go mainstream.
+[Apple](http://www.apple.com/){:target="_blank"} are also likely to join the VR/AR category and have already made few hints about it. When Apple puts their marketing engines ON product categories often go mainstream.
 
 ## Machine Learning and Cloud Computing
 
 Machine Learning gives computers the ability to learn without being explicitly programmed. It has the potential to improve our user experiences and make intelligent decisions on our behalf.
 
-We might not realise it, Machine Learning is being used all around us. By Google for search results, speech recognition and language translation. By [Spotify](https://www.spotify.com) to automatically generate a weekly playlist based on our taste. By [AirBnb](https://www.airbnb.com/) to suggest a rental price that fits our location and multiple other factors. 
+We might not realise it, Machine Learning is being used all around us. By Google for search results, speech recognition and language translation. By [Spotify](https://www.spotify.com){:target="_blank"} to automatically generate a weekly playlist based on our taste. By [AirBnb](https://www.airbnb.com/){:target="_blank"} to suggest a rental price that fits our location and multiple other factors. 
 
 {% include post-image.html alt="Machine that has better odds of winning Rock, Paper, Scissors then people by using Machine Learning. Picture taken in IBM Watson studio at SXSW." src="/images/blog/sxsw/watson-16_9.jpg" margin="both" ratio="16_9" caption=true %}
 
-Machine Learning requires big amount of data and specialized math skills to be effective. These resources are mainly available to bigger companies. However, tech giants have started making machine learning available for the rest of us, with the use of cloud computing. Examples are [Google Cloud](https://cloud.google.com/products/machine-learning/), [IBM Watson](https://azure.microsoft.com/en-us/services/machine-learning/), [Amazon AWS](https://aws.amazon.com/machine-learning/) and [Microsoft Azure](http://www.ibm.com/smarterplanet/us/en/ibmwatson/).
+Machine Learning requires big amount of data and specialized math skills to be effective. These resources are mainly available to bigger companies. However, tech giants have started making machine learning available for the rest of us, with the use of cloud computing. Examples are [Google Cloud](https://cloud.google.com/products/machine-learning/){:target="_blank"}, [IBM Watson](https://azure.microsoft.com/en-us/services/machine-learning/){:target="_blank"}, [Amazon AWS](https://aws.amazon.com/machine-learning/){:target="_blank"} and [Microsoft Azure](http://www.ibm.com/smarterplanet/us/en/ibmwatson/){:target="_blank"}.
 
 > Cloud Computing will take Machine Learning mainstream
 
