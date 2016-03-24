@@ -19,8 +19,8 @@ We would like to discuss some of the trends in this article:
 * Conversational UIs
 * The Physical Web
 * Virtual Reality & Augmented Reality
-* Robots and Artifical Intelligence
 * Machine Learning and Cloud Computing
+* Robots and Artifical Intelligence
 
 Let's dive into it.
 
@@ -37,9 +37,9 @@ An example of this is the ability to order an [Uber](https://www.uber.com/) thro
 
 > Messaging apps have eclipsed social networks in usage.
 
-Another example is [Lark](http://www.web.lark.com/), a personal coaching service that helps people reach fitness goals. The interaction is fully a chat, giving personalized advice based on peoples [Facebook](https://www.facebook.com) profile, [Apple Healthkit](https://developer.apple.com/healthkit/), and by asking deeper questions.
+Another example is [Lark](http://www.web.lark.com/), a personal coaching service that helps people reach fitness goals. The interaction is fully as a chat, giving personalized advice based on peoples [Facebook](https://www.facebook.com) profile, [Apple Healthkit](https://developer.apple.com/healthkit/), and by asking deeper questions.
 
-Lark will lead the conversation by suggesting answers so it's limited at the moment, but people are already saying it feels like talking to a real person and sometimes refer to it as "she" (Remember the movie [Her](http://www.imdb.com/title/tt1798709/)?). Some people even prefer sharing personalized information with the bot, instead of talking to a human.
+Lark will lead the conversation by suggesting answers so it's limited at the moment, but people are already saying it feels like talking to a real person and sometimes refer to it as "she" (Remember the movie [Her](http://www.imdb.com/title/tt1798709/)?). Some people even prefer sharing personalized information with a bot, instead of talking to a human.
 
 > 25% of people said "I love you" to [a bot](http://www.nytimes.com/2015/08/04/science/for-sympathetic-ear-more-chinese-turn-to-smartphone-program.html?_r=1)
 
@@ -75,7 +75,7 @@ This year Virtual Reality (VR) was the talk of the town at SXSW. Long lines form
 
 The current use of VR seems to be primarly for gaming and visual experiences. It also works great in combination with 360° video as it allows users to naturally look around as they are at the spot. 
 
-[Oculus Rift](https://www.oculus.com/en-us/rift/), [HTC Vive](https://www.htcvive.com) and [Playstation VR](https://www.playstation.com/en-au/explore/playstation-vr/) will soon be shipped. These options are going to be quite expensive at the start, Oculus Rift has an $599 price tag as an example, including accessories. Bets are on that hard-core gamers will mainly be ready to pay in the early days of VR. 
+[Oculus Rift](https://www.oculus.com/en-us/rift/), [HTC Vive](https://www.htcvive.com) and [Playstation VR](https://www.playstation.com/en-au/explore/playstation-vr/) will soon be shipped. These options are going to be quite expensive at the start, Oculus Rift has an $599 price tag as an example, including accessories. Bets are on that hard-core gamers will be ready to pay in the early days of VR. 
 
 {% include post-image.html alt="CCP is the first company to ship a fully featured game on the Oculus Rift, it's called Valkyrie and it happens in space." src="/images/blog/sxsw/cpp-valkyrie-16_9.jpg" margin="both" ratio="16_9" caption=true %}
 
@@ -86,7 +86,7 @@ The current use of VR seems to be primarly for gaming and visual experiences. It
 
 The promise of VR is having the ability to enter another world from your living room. To be entertain and learn new things.
 
-There is also potential for it being used as an utility. [Google Tilt Brush](http://www.tiltbrush.com/) in combination with HTC Vibe is an interesting example. It allows you to draw in 3D from different angles. I missed the oppertunity to try it out but heard it was quote amazing. Users can do things such as bend down to paint from below.
+There is also potential for it being used as an utility. [Google Tilt Brush](http://www.tiltbrush.com/) in combination with HTC Vibe is an interesting example. It allows you to draw in 3D from different angles. I missed the oppertunity to try it out at SXSW, but heard from a friend that it was pretty amazing. Users can do things such as bend down to paint from below.
 
 An obvious limitation to VR is to strip a computer on your head and having to close yourself from the real world. Let's be honest, it's a bit scary. Hopefully VR will become more social going forward, and thats of course why Facebook is investing heavy in this area.
 
@@ -96,14 +96,27 @@ An obvious limitation to VR is to strip a computer on your head and having to cl
 
 Augmented Reality (AR) is also on the horizon. AR mixes the virtual with reality. You can see reality with digital structures and information will be mixed in for additional functions.
 
-The best current example is [Microsoft Hololens](https://www.microsoft.com/microsoft-hololens/en-us), they are about to ship a developer version of the device. It will be interesting to read the reviews about how far it has gotten.
+A good current example is [Microsoft Hololens](https://www.microsoft.com/microsoft-hololens/en-us), they are about to ship a developer version of the device. It will be interesting to read the reviews about how far it has gotten.
 
 {% include blog-youtube.html youtubeId="aThCr0PsyuA" caption="Hololens Concept Video" %}
 
-More players will without a doubt entering this market. AG has huge potential, specially as an utility, for both day-to-day live and at work. The problem is that these devices will be big as a start and clumsy to carry around. It's gonna improve, just imagine when it becomes possible to fit AG into a small lens further in the future.
+More players will without a doubt entering this market. AG has huge potential, specially as an utility, for both day-to-day live and at work. 
 
-[Apple](http://www.apple.com/) are also likely to join the VR/AR category and have already made few hints about it. When Apple put their marketing engines ON product categories are likely go mainstream.
+The problem is that these devices will be big as a start and clumsy to carry around. It's gonna improve, just imagine when it becomes possible to fit AG into a small lens further in the future.
 
+[Apple](http://www.apple.com/) are also likely to join the VR/AR category and have already made few hints about it. When Apple puts their marketing engines ON product categories often go mainstream.
+
+## Machine Learning and Cloud Computing
+
+Machine Learning gives computers the ability to learn without being explicitly programmed. It has the potential to improve our user experiences and make intelligent decisions on our behalf.
+
+We might not realise it, Machine Learning is being used all around us. By Google for search results, speech recognition and language translation. By [Spotify](https://www.spotify.com) to automatically generate a weekly playlist based on our taste. By [AirBnb](https://www.airbnb.com/) to suggest a rental price that fits our location and multiple other factors. 
+
+{% include post-image.html alt="Machine that has better odds of winning Rock, Paper, Scissors then people by using Machine Learning. Picture taken in IBM Watson studio at SXSW." src="/images/blog/sxsw/watson-16_9.jpg" margin="both" ratio="16_9" caption=true %}
+
+Machine Learning requires big amount of data and specialized math skills to be effective. These resources are mainly available to bigger companies. However, tech giants have started making machine learning available for the rest of us, with the use of cloud computing. Examples are [Google Cloud](https://cloud.google.com/products/machine-learning/), [IBM Watson](https://azure.microsoft.com/en-us/services/machine-learning/), [Amazon AWS](https://aws.amazon.com/machine-learning/) and [Microsoft Azure](http://www.ibm.com/smarterplanet/us/en/ibmwatson/).
+
+> Cloud Computing will take Machine Learning mainstream
 
 ## Robots and Artifical Intelligence
 
@@ -111,24 +124,12 @@ The robots are here. They might not look like the one in the movies. They usuall
 
 {% include blog-youtube.html youtubeId="DgRtJTzVTKM" caption="Robot at SXSW, designed to give high fives." %}
 
-We went to an interesting talk at SXSW by [Jerry Kaplan](http://schedule.sxsw.com/2016/events/event_PP57942) about Robots, AI and jobs. Jerry has done research the field for the better part of his life. He sees robots and artifical intelligence as part of a on-going evolution thats been happening for many years; Automation.
+We went to an interesting talk at SXSW by [Jerry Kaplan](http://schedule.sxsw.com/2016/events/event_PP57942) about Robots, AI and jobs. Jerry has done research the field for the better part of his life. He sees robots and artifical intelligence as part of an on-going evolution thats been happening for many years; Automation.
 
 > Progress in AI is progress in automation.
 
-In 1790, 96% of US jobs where in farming, because of automation this number is down to 1.9% today. Less people will be needed in todays world. Tasks are being automated by robots and artifical inteligent. At the same time, new fields with new types of jobs are created. A good example are social marketing roles that did not exist few years back. 
+In 1790, 96% of US jobs where in farming, because of automation this number is down to 1.9% today. Less people will be needed in todays world for certain jobs. Tasks are being automated by robots and artifical inteligent. At the same time, new fields with new types of jobs are created. A good example are social marketing roles that did not exist few years back. 
 
-Technology innovation, human touch and special talents will remain in-demand. It's is a challange for all of us, to educate people for jobs that are needed in the future.
-
-## Machine Learning and Cloud Computing
-
-Machine Learning gives computers the ability to learn without being explicitly programmed. It has the potential to improve our user experiences and make intelligent decisions on our behalf.
-
-We might not realise it, Machine Learning is being used all around us. By Google for search results, speech recognition and language translation. By Spotify to automatically generate a weekly playlist based on our taste. By AirBnb to suggest a rental price that fits our location and multiple other factors. 
-
-{% include post-image.html alt="Machine that has better odds of winning Rock, Paper, Scissors then people by using Machine Learning. Picture taken in IBM Watson studio at SXSW." src="/images/blog/sxsw/watson-16_9.jpg" margin="both" ratio="16_9" caption=true %}
-
-Machine Learning requires big amount of data and specialized math skills to be effective. These resources are mainly available to bigger companies. However, tech giants have started making machine learning available for the rest of us, with the use of cloud computing. Examples are [Google Cloud](https://cloud.google.com/products/machine-learning/), [IBM Watson](https://azure.microsoft.com/en-us/services/machine-learning/), [Amazon AWS](https://aws.amazon.com/machine-learning/) and [Microsoft Azure](http://www.ibm.com/smarterplanet/us/en/ibmwatson/).
-
-> Cloud Computing will take Machine Learning mainstream
+Technology innovation, human touch and special talents will remain in-demand. It is a challange for all of us, to educate people for jobs that are needed in the future.
 
 {% include blog-author-hjortur.html %}
