@@ -128,14 +128,12 @@ Technology innovation, human touch and special talents will remain in-demand. It
 
 Machine Learning gives computers the ability to learn without being explicitly programmed. It has the potential to improve our user experiences and make intelligent decisions on our behalf.
 
-We might not realise it, Machine Learning is all around us. By Google for search results, speech recognition and language translation. By Spotify to automatically generate a weekly playlist based on our taste. By AirBnb to suggest a rental price that fits our location and multiple other factors. 
+We might not realise it, Machine Learning is being used all around us. By Google for search results, speech recognition and language translation. By Spotify to automatically generate a weekly playlist based on our taste. By AirBnb to suggest a rental price that fits our location and multiple other factors. 
 
 {% include post-image.html alt="Machine that has better odds of winning Rock, Paper, Scissors then people by using Machine Learning. Picture taken in IBM Watson studio at SXSW." src="/images/blog/sxsw/watson-16_9.jpg" margin="both" ratio="16_9" caption=true %}
 
 Machine Learning requires big amount of data and specialized math skills to be effective. These resources are mainly available to bigger companies. However, tech giants have started making machine learning available for the rest of us, with the use of cloud computing. Examples are [Google Cloud](https://cloud.google.com/products/machine-learning/), [IBM Watson](https://azure.microsoft.com/en-us/services/machine-learning/), [Amazon AWS](https://aws.amazon.com/machine-learning/) and [Microsoft Azure](http://www.ibm.com/smarterplanet/us/en/ibmwatson/).
 
 > Cloud Computing will take Machine Learning mainstream
-
-
 
 {% include blog-author-hjortur.html %}
