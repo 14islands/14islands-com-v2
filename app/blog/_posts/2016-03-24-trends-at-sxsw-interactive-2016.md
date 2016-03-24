@@ -8,7 +8,7 @@ private: true
 
 # Trends at SXSW Interactive 2016
 
-*Last week our full team went to SXSW Interactive, a big yearly festival held in Austin, Texas. It was a fun experience. Innovations being discussed, lots of interesting people in our industry and sunny weather* *☀️*{: class="emoji"}
+*Last week our full team went to [SXSW Interactive](http://www.sxsw.com/interactive), a big yearly festival held in Austin, Texas. It was a fun experience. Innovations being discussed, lots of interesting people in our industry and sunny weather* *☀️*{: class="emoji"}
 
 {% include post-image.html alt="SXSW Interactive 2016" src="/images/blog/sxsw/convertional-ui-2-16_10.jpg" margin="both" ratio="16_10" %}
 
@@ -26,35 +26,35 @@ Let's dive into it.
 
 ## Conversational UIs
 
-Today there is an app for most products and services we use. As more companies will become technology driven and  objects around us will become smarter; Downloading an app to interact with all these things is time consuming, and requires much effort to manage.
+Today there is an app for most products and services we use. As more companies become technology driven and objects around us smarter; Downloading an app to interact with all these things will be time consuming and requires much effort to manage.
 
 One solution to this problem are chat bots and personal assistants that make it possible to communicate to services using our normal way of interacting.
 
 
 ### Make a connection, with a bot.
 
-An example of this is the ability to order an Uber through Facebook Messenger. You can click on an address that shows up in a chat and ask for a ride. An Uber will show up and take you there. All without leaving the chat thread or opening another app.
+An example of this is the ability to order an [Uber](https://www.uber.com/) through [Facebook Messenger](https://www.messenger.com/). You can click on an address that shows up in a chat and ask for a ride. An Uber will show up and take you there. All without leaving the chat thread or opening another app.
 
 > Messaging apps have eclipsed social networks in usage.
 
-Another example is [Lark](http://www.web.lark.com/), a personal coaching service that helps people reach their fitness goals. The interaction is fully as a chat conversation. It's able to give personalized advice by connecting to users Facebook profile and Apple Healthkit on their phone, and by asking deeper questions about the users health.
+Another example is [Lark](http://www.web.lark.com/), a personal coaching service that helps people reach fitness goals. The interaction is fully a chat, giving personalized advice based on peoples [Facebook](https://www.facebook.com) profile, [Apple Healthkit](https://developer.apple.com/healthkit/), and by asking deeper questions.
 
-Lark will lead the conversation by suggesting answers so its still a bit limited at the moment. However, people feel like they are talking to a person and refer to it as a "she" (Remember the [Her](http://www.imdb.com/title/tt1798709/) movie?). In the future bots will be smarter and understand our natural language, so they will feel even more like chatting to a human being.
+Lark will lead the conversation by suggesting answers so it's limited at the moment, but people are already saying it feels like talking to a real person and sometimes refer to it as "she" (Remember the movie [Her](http://www.imdb.com/title/tt1798709/)?). Some people even prefer sharing personalized information with the bot, instead of talking to a human.
 
 > 25% of people said "I love you" to [a bot](http://www.nytimes.com/2015/08/04/science/for-sympathetic-ear-more-chinese-turn-to-smartphone-program.html?_r=1)
 
-We'll are going to see more of bots in messaging apps such as Slack, Facebook Messenger, SMS, WeChat (Popular in China) and potentially Twitter. They will allow us to interact with services and do things such as transfer money and buy things online right from a conversation.
+We are going to see more of bots in messaging apps such as [Slack](https://slack.com), Facebook Messenger, SMS, [WeChat](http://www.wechat.com/) (Popular in China) and potentially [Twitter](https://twitter.com/). They will allow us to interact with services and do things such as transfer money and buy things online, right from the conversation.
 
 
 ### Even more natural
 
-Voice assistances such as Microsoft Cortana, Amazon Alexa, Apple Siri and Google Now are also constantly getting better.
+Voice assistances such as [Microsoft Cortana](https://www.microsoft.com/en/mobile/experiences/cortana/), [Amazon Alexa](https://www.youtube.com/watch?v=KkOCeAtKHIc), [Apple Siri](http://www.apple.com/ios/siri/) and [Google Now](https://www.google.com/landing/now/) are also constantly getting better.
 
 > Expect the lines between physical and digital to blur
 
 It's the ability to interact with technology beyond the screen that is so exciting at the moment, using innovations such as sensors to detect changes in our enviroment.
 
-Here is a fun video by Jared Ficklin demostrating this, using technologies to control the enviroment around him.
+Here is a fun video by [Jared Ficklin](http://jaredficklin.com/) demostrating this, using technologies to control the enviroment around him.
 
 {% include blog-youtube.html youtubeId="d-LvtHs-6O0" caption="The software is custom-built, using Microsoft Speech Recognition Engine, Computer Vision, and the Kinect SDK." %}
 
@@ -71,15 +71,15 @@ The Physical Web is already available on in Chrome on iOS and Android. It has th
 
 ## Virtual Reality 
 
-This year Virtual Reality (VR) was the talk of the town at SXSW. Long lines formed in front of Samsung and Google where these were these were being tested out.
+This year Virtual Reality (VR) was the talk of the town at SXSW. Long lines formed in front of [Samsung](http://www.samsung.com/) and [Google](http://www.google.com/) where these were these were being tested out.
 
 The current use of VR seems to be primarly for gaming and visual experiences. It also works great in combination with 360° video as it allows users to naturally look around as they are at the spot. 
 
-Oculus Rift, HTC Vive and Playstation VR will soon be shipped. These options are going to be quite expensive at the start, Oculus Rift has an $599 price tag as an example, including accessories. Bets are on that hard-core gamers will mainly be ready to pay in the early days of VR. 
+[Oculus Rift](https://www.oculus.com/en-us/rift/), [HTC Vive](https://www.htcvive.com) and [Playstation VR](https://www.playstation.com/en-au/explore/playstation-vr/) will soon be shipped. These options are going to be quite expensive at the start, Oculus Rift has an $599 price tag as an example, including accessories. Bets are on that hard-core gamers will mainly be ready to pay in the early days of VR. 
 
 {% include post-image.html alt="CCP is the first company to ship a fully featured game on the Oculus Rift, it's called Valkyrie and it happens in space." src="/images/blog/sxsw/cpp-valkyrie-16_9.jpg" margin="both" ratio="16_9" caption=true %}
 
-Samsung Gear and Google Cardboard are a less pricy option, they use mobile phones to drive the experience. These devices do not have the hardware to provide a premium experience and lack assessories such as built-in headphones.
+[Samsung Gear](https://www.oculus.com/en-us/gear-vr/) and [Google Cardboard](https://www.google.com/get/cardboard/) are a less pricy option, they use mobile phones to drive the experience. These devices do not have the hardware to provide a premium experience and lack assessories such as built-in headphones.
 
 
 ### The promise
@@ -96,13 +96,13 @@ An obvious limitation to VR is to strip a computer on your head and having to cl
 
 Augmented Reality (AR) is also on the horizon. AR mixes the virtual with reality. You can see reality with digital structures and information will be mixed in for additional functions.
 
-The best current example is Microsoft Hololens, they are about to ship a developer version of the device. It will be interesting to read the reviews about how far it has gotten.
+The best current example is [Microsoft Hololens](https://www.microsoft.com/microsoft-hololens/en-us), they are about to ship a developer version of the device. It will be interesting to read the reviews about how far it has gotten.
 
 {% include blog-youtube.html youtubeId="aThCr0PsyuA" caption="Hololens Concept Video" %}
 
 More players will without a doubt entering this market. AG has huge potential, specially as an utility, for both day-to-day live and at work. The problem is that these devices will be big as a start and clumsy to carry around. It's gonna improve, just imagine when it becomes possible to fit AG into a small lens further in the future.
 
-Apple are also likely to join the VR/AR category and have already made few hints about it. When Apple put their marketing engines ON product categories are likely go mainstream.
+[Apple](http://www.apple.com/) are also likely to join the VR/AR category and have already made few hints about it. When Apple put their marketing engines ON product categories are likely go mainstream.
 
 
 ## Robots and Artifical Intelligence
@@ -111,7 +111,7 @@ The robots are here. They might not look like the one in the movies. They usuall
 
 {% include blog-youtube.html youtubeId="DgRtJTzVTKM" caption="Robot at SXSW, designed to give high fives." %}
 
-We went to an interesting talk at SXSW by Jerry Kaplan about Robots, AI and jobs. Jerry has done research the field for the better part of his life. He sees robots and artifical intelligence as part of a on-going evolution thats been happening for many years; Automation.
+We went to an interesting talk at SXSW by [Jerry Kaplan](http://schedule.sxsw.com/2016/events/event_PP57942) about Robots, AI and jobs. Jerry has done research the field for the better part of his life. He sees robots and artifical intelligence as part of a on-going evolution thats been happening for many years; Automation.
 
 > Progress in AI is progress in automation.
 
