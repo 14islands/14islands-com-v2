@@ -17,8 +17,10 @@ There are many trends happening at the moment. It was great to gain more clarity
 We would like to discuss some of these trends in this article:
 
 * Conversational UIs
+* The Physical Web
 * Virtual Reality & Augmented Reality
-* Robots, Artifical Intelligence and Machine Learning
+* Robots and Artifical Intelligence
+* Machine Learning and Cloud Computing
 
 Let's dive into it.
 
@@ -62,6 +64,16 @@ Here is a fun video by Jared Ficklin demostrating this, using technologies to co
 {% include blog-youtube.html youtubeId="d-LvtHs-6O0" caption="The software is custom-built, using Microsoft Speech Recognition Engine, Computer Vision, and the Kinect SDK." %}
 
 
+## The Physical Web
+
+Another effort to bridge the gap between our physical and digital world is the [Physical Web initiative by Google](https://google.github.io/physical-web/). The idea is that any service or object can broadcast their functions using [low-energy bluetooth beacons](https://github.com/google/eddystone).
+
+People that are close by are able to see these services on their phone, and can click for furter details. A web page will show up in the browser, allowing for information and ways to interact with the services.
+
+The Physical Web is already available on in Chrome on iOS and Android. It has the potential to allow us to build contextual experiences that people can easily access, without downloading a new app.
+
+
+
 ## Virtual Reality 
 
 This year Virtual Reality (VR) was the talk of the town at SXSW. Long lines formed in front of Samsung and Google where these were these were being tested out.
@@ -98,18 +110,32 @@ More players will without a doubt entering this market. AG has huge potential, s
 Apple are also likely to join the VR/AR category and have already made few hints about it. When Apple put their marketing engines ON product categories are likely go mainstream.
 
 
-## Robots, Artifical Intelligence and Machine Learning
+## Robots and Artifical Intelligence
 
 The robots are here. They might not look like the one in the movies. They usually perform limited number of tasks and look a bit less cooler.
 
 {% include blog-youtube.html youtubeId="DgRtJTzVTKM" caption="Robot at SXSW, designed to give high fives." %}
 
-We went to an interesting talk at SXSW by Jerry Kaplan about Robots, AI and jobs. Jerry has done research the field for the better part of his life. He sees robots, artifical intelligence and machine learning as part of a on-going evolution thats been happening for many years; Automation.
+We went to an interesting talk at SXSW by Jerry Kaplan about Robots, AI and jobs. Jerry has done research the field for the better part of his life. He sees robots and artifical intelligence as part of a on-going evolution thats been happening for many years; Automation.
 
 > Progress in AI is progress in automation.
 
 In 1790, 96% of US jobs where in farming, because of automation this number is down to 1.9% today. Less people will be needed in todays world. Tasks are being automated by robots and artifical inteligent. At the same time, new fields with new types of jobs are created. A good example are social marketing roles that did not exist few years back. 
 
 Technology innovation, human touch and special talents will remain in-demand. It's is a challange for all of us, to educate people for jobs that are needed in the future.
+
+## Machine Learning and Cloud Computing
+
+Machine Learning gives computers the ability to learn without being explicitly programmed. It has the potential to improve our user experiences and make intelligent decisions on our behalf.
+
+We might not realise it, Machine Learning is all around us. By Google for search results, speech recognition and language translation. By Spotify to automatically generate a weekly playlist based on our taste. By AirBnb to suggest a rental price that fits our location and multiple other factors. 
+
+{% include post-image.html alt="Machine that has better odds of winning Rock, Paper, Scissors then people by using Machine Learning. Picture taken in IBM Watson studio at SXSW." src="/images/blog/sxsw/watson-16_9.jpg" margin="both" ratio="16_9" caption=true %}
+
+Machine Learning requires big amount of data and specialized math skills to be effective. These resources are mainly available to bigger companies. However, tech giants have started making machine learning available for the rest of us, with the use of cloud computing. Examples are [Google Cloud](https://cloud.google.com/products/machine-learning/), [IBM Watson](https://azure.microsoft.com/en-us/services/machine-learning/), [Amazon AWS](https://aws.amazon.com/machine-learning/) and [Microsoft Azure](http://www.ibm.com/smarterplanet/us/en/ibmwatson/).
+
+> Cloud Computing will take Machine Learning mainstream
+
+
 
 {% include blog-author-hjortur.html %}
