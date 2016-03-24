@@ -70,11 +70,11 @@ The Physical Web is already available on in Chrome on iOS and Android. It has th
 
 ## Virtual Reality 
 
-This year Virtual Reality (VR) was the talk of the town at SXSW. Long lines formed in front of [Samsung](http://www.samsung.com/){:target="_blank"} and [Google](http://www.google.com/){:target="_blank"} where these were these were being tested out.
+This year Virtual Reality (VR) was the talk of the town at SXSW. Long lines formed in front of [Samsung](http://www.samsung.com/){:target="_blank"} and [Google](http://www.google.com/){:target="_blank"} where these were being tested out.
 
 The current use of VR seems to be primarly for gaming and visual experiences. It also works great in combination with 360° video as it allows users to naturally look around as they are at the spot. 
 
-[Oculus Rift](https://www.oculus.com/en-us/rift/){:target="_blank"}, [HTC Vive](https://www.htcvive.com){:target="_blank"} and [Playstation VR](https://www.playstation.com/en-au/explore/playstation-vr/){:target="_blank"} will soon be shipped. These options are going to be quite expensive at the start, Oculus Rift has an $599 price tag as an example, including accessories. Bets are on that hard-core gamers will be ready to pay in the early days of VR. 
+[Oculus Rift](https://www.oculus.com/en-us/rift/){:target="_blank"}, [HTC Vive](https://www.htcvive.com){:target="_blank"} and [Playstation VR](https://www.playstation.com/en-au/explore/playstation-vr/){:target="_blank"} will soon be shipped. These options are going to be quite expensive at the start, Oculus Rift has an $599 price tag, including accessories. Bets are on that hard-core gamers will be ready to pay in the early days of VR. 
 
 {% include post-image.html alt="CCP is the first company to ship a fully featured game on the Oculus Rift, it's called Valkyrie and it happens in space." src="/images/blog/sxsw/cpp-valkyrie-16_9.jpg" margin="both" ratio="16_9" caption=true %}
 
