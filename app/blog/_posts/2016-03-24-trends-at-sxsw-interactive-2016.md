@@ -25,10 +25,9 @@ Let's dive into it.
 
 ## Conversational UIs
 
-Today there is an app for most products and services we use. As more companies become technology driven and objects around us smarter; Downloading an app to interact with all these things will be time consuming and requires much effort to manage.
+Today there is an app for most products and services we use. We love our apps, but as more companies become technology driven and objects around us smarter; Downloading an app to interact with all these things might not always be the best solution.
 
-One solution to this problem are chat bots and personal assistants that make it possible to communicate to services using our normal way of interacting.
-
+One idea is to use chat bots and personal assistants to make it possible to communicate to services using our normal way of interacting.
 
 ### Make a connection, with a bot.
 
@@ -36,7 +35,7 @@ An example of this is the ability to order an [Uber](https://www.uber.com/){:tar
 
 > Messaging apps have eclipsed social networks in usage.
 
-Another example is [Lark](http://www.web.lark.com/){:target="_blank"}, a personal coaching service that helps people reach fitness goals. The interaction is fully as a chat, giving personalized advice based on peoples [Facebook](https://www.facebook.com){:target="_blank"} profile, [Apple Healthkit](https://developer.apple.com/healthkit/){:target="_blank"}, and by asking deeper questions.
+An interesting example of a bot is [Lark](http://www.web.lark.com/){:target="_blank"}, a personal coaching service that helps people reach fitness goals. The interaction is fully as a chat, giving personalized advice based on peoples [Facebook](https://www.facebook.com){:target="_blank"} profile, [Apple Healthkit](https://developer.apple.com/healthkit/){:target="_blank"}, and by asking deeper questions.
 
 Lark will lead the conversation by suggesting answers so it's limited at the moment, but people are already saying it feels like talking to a real person and sometimes refer to it as "she" (Remember the movie [Her](http://www.imdb.com/title/tt1798709/){:target="_blank"}?). Some people even prefer sharing personalized information with a bot, instead of talking to a human.
 
