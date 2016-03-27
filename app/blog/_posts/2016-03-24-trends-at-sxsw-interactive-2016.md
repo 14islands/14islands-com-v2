@@ -19,7 +19,7 @@ We would like to discuss some of the trends in this article:
 * The Physical Web
 * Virtual Reality & Augmented Reality
 * Machine Learning and Cloud Computing
-* Robots and Artifical Intelligence
+* Robots and Artificial Intelligence
 
 Let's dive into it.
 
@@ -50,9 +50,9 @@ Voice assistances such as [Microsoft Cortana](https://www.microsoft.com/en/mobil
 
 > Expect the lines between physical and digital to blur
 
-It's the ability to interact with technology beyond the screen that is so exciting at the moment, using innovations such as sensors to detect changes in our enviroment.
+It's the ability to interact with technology beyond the screen that is so exciting at the moment, using innovations such as sensors to detect changes in our environment.
 
-Here is a fun video by [Jared Ficklin](http://jaredficklin.com/){:target="_blank"} demostrating this, using technologies to control the enviroment around him.
+Here is a fun video by [Jared Ficklin](http://jaredficklin.com/){:target="_blank"} demonstrating this, using technologies to control the environment around him.
 
 {% include blog-youtube.html youtubeId="d-LvtHs-6O0" caption="The software is custom-built, using Microsoft Speech Recognition Engine, Computer Vision, and the Kinect SDK." %}
 
@@ -61,7 +61,7 @@ Here is a fun video by [Jared Ficklin](http://jaredficklin.com/){:target="_blank
 
 Another effort to bridge the gap between our physical and digital world is the [Physical Web initiative by Google](https://google.github.io/physical-web/){:target="_blank"}. The idea is that any service or object can broadcast their functions using [low-energy bluetooth beacons](https://github.com/google/eddystone){:target="_blank"}.
 
-People that are close by are able to see these services on their phone, and can click for furter details. A web page will show up in the browser, allowing for information and ways to interact with the services.
+People that are close by are able to see these services on their phone, and can click for further details. A web page will show up in the browser, allowing for information and ways to interact with the services.
 
 The Physical Web is already available on in Chrome on iOS and Android. It has the potential to allow us to build contextual experiences that people can easily access, without downloading a new app.
 
@@ -71,13 +71,13 @@ The Physical Web is already available on in Chrome on iOS and Android. It has th
 
 This year Virtual Reality (VR) was the talk of the town at SXSW. Long lines formed in front of [Samsung](http://www.samsung.com/){:target="_blank"} and [Google](http://www.google.com/){:target="_blank"} where these were being tested out.
 
-The current use of VR seems to be primarly for gaming and visual experiences. It also works great in combination with 360° video as it allows users to naturally look around as they are at the spot. 
+The current use of VR seems to be primarily for gaming and visual experiences. It also works great in combination with 360° video as it allows users to naturally look around as they are at the spot. 
 
 [Oculus Rift](https://www.oculus.com/en-us/rift/){:target="_blank"}, [HTC Vive](https://www.htcvive.com){:target="_blank"} and [Playstation VR](https://www.playstation.com/en-au/explore/playstation-vr/){:target="_blank"} will soon be shipped. These options are going to be quite expensive at the start, Oculus Rift has an $599 price tag, including accessories. Bets are on that hard-core gamers will be ready to pay in the early days of VR. 
 
 {% include post-image.html alt="CCP is the first company to ship a fully featured game on the Oculus Rift, it's called Valkyrie and it happens in space." src="/images/blog/sxsw/cpp-valkyrie-16_9.jpg" margin="both" ratio="16_9" caption=true %}
 
-[Samsung Gear](https://www.oculus.com/en-us/gear-vr/){:target="_blank"} and [Google Cardboard](https://www.google.com/get/cardboard/){:target="_blank"} are a less pricy option, they use mobile phones to drive the experience. These devices do not have the hardware to provide a premium experience and lack assessories such as built-in headphones.
+[Samsung Gear](https://www.oculus.com/en-us/gear-vr/){:target="_blank"} and [Google Cardboard](https://www.google.com/get/cardboard/){:target="_blank"} are a less pricy option, they use mobile phones to drive the experience. These devices do not have the hardware to provide a premium experience and lack accessories such as built-in headphones.
 
 
 ### The promise
@@ -116,7 +116,7 @@ Machine Learning requires big amount of data and specialized math skills to be e
 
 > Cloud Computing will take Machine Learning mainstream
 
-## Robots and Artifical Intelligence
+## Robots and Artificial Intelligence
 
 The robots are here. They might not look like the one in the movies. They usually perform limited number of tasks and look a bit less cooler.
 
