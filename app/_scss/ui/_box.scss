@@ -34,6 +34,9 @@
 
   @include if-wider-than(500px) {
     width: 10%;
+    .work--project-montgomery & {
+      width: 14%;
+    }
   }
 }
 
@@ -97,6 +100,10 @@
 
   .work--project-spg & {
     padding-top: 5%;
+  }
+
+  .work--project-montgomery & {
+    padding-top: 10%;
   }
 
   .work--project-oyyo & {
