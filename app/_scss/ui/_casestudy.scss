@@ -1,49 +1,49 @@
 
 a.casestudy__header-label {
-  display: inline-block;
-  font-size: modular-scale(1rem, 1);
-  color: $gray;
+	display: inline-block;
+	font-size: modular-scale(1rem, 1);
+	color: $gray;
 }
 
 .casestudy__header-logo {
-  display: inline-block;
-  height: 3.14rem;
-  margin-left: .3em;
+	display: inline-block;
+	height: 3.14rem;
+	margin-left: .3em;
 
-  svg {
-    display: block;
-    height: 100%;
-    width: auto;
+	svg {
+		display: block;
+		height: 100%;
+		width: auto;
 
-    * {
-      fill: $gray;
-    }
-  }
+		* {
+			fill: $gray;
+		}
+	}
 
-  .google-santa-tracker & {
-    margin-bottom: -0.99rem;
-  }
-  .tictail &,
-  .sthlm6000 & {
-    margin-bottom: -0.73rem;
-  }
-  .elastica & {
-    margin-bottom: -1.15rem;
-  }
-  .spg &,
-  .oyyo & {
-    margin-bottom: -0.43rem
-  }
+	.google-santa-tracker & {
+		margin-bottom: -0.99rem;
+	}
+	.tictail &,
+	.sthlm6000 & {
+		margin-bottom: -0.73rem;
+	}
+	.elastica & {
+		margin-bottom: -1.15rem;
+	}
+	.spg &,
+	.oyyo & {
+		margin-bottom: -0.43rem
+	}
 
-  .montgomery & {
-  	height: 1.6rem;
-  	margin-bottom: -5px;
-  }
+	.montgomery & {
+		height: 1.6rem;
+		margin-bottom: -5px;
+	}
 }
 
 
 .casestudy__video-wrapper {
-  cursor: pointer !important;
+	cursor: pointer !important;
 	iframe,
 	object,
 	embed {
@@ -52,16 +52,16 @@ a.casestudy__header-label {
 		left: 0;
 		width: 100%;
 		height: 100%;
-    cursor: pointer !important;
+		cursor: pointer !important;
 	}
 }
 
 .casestudy__image__caption {
-  margin-top: 1rem;
-  font-style: italic;
-  @include if-wider-than($breakpoint-one-px) {
-    font-size: modular-scale(1rem, 1);
-  }
+	margin-top: 1rem;
+	font-style: italic;
+	@include if-wider-than($breakpoint-one-px) {
+		font-size: modular-scale(1rem, 1);
+	}
 }
 
 .casestudy__responsive-wrapper {
@@ -69,11 +69,11 @@ a.casestudy__header-label {
 	position: relative;
 	max-width: 394px;
 	margin: 0 auto;
-  width: 70%;
+	width: 70%;
 
-  path:nth-child(2) {
-    fill: #abaeb1;
-  }
+	path:nth-child(2) {
+		fill: #abaeb1;
+	}
 }
 
 .casestudy__responsive-screen {
@@ -81,78 +81,83 @@ a.casestudy__header-label {
 	width: 90%;
 	top: 9%;
 	left: 5%;
-  bottom: 12%;
+	bottom: 12%;
 	background-color: $bright;
-  overflow: hidden;
+	overflow: hidden;
 
-  noscript {
-    position: absolute;
-    top: 0;
-  }
+	noscript {
+		position: absolute;
+		top: 0;
+	}
 
-  img {
-    width: 100%;
-    height: auto;
-  }
+	img {
+		width: 100%;
+		height: auto;
+	}
 
-  &.casestudy__responsive-screen--horizontal-scroll {
-    img {
-      height: 100%;
-      width: auto;
-    }
-  }
+	&.casestudy__responsive-screen--horizontal-scroll {
+		img {
+			height: 100%;
+			width: auto;
+		}
+	}
 }
 
 .casestudy__technology-list {
-  text-align: center;
+	text-align: left;
 }
 
 .casestudy__technology-item {
-  display: inline-block;
-  text-align: left;
-  width: 100%;
-  margin-bottom: 1.3rem;
-  svg {
-    width: 70px;
-    max-height: 50px;
-    float: left;
-    margin-top: 0.2rem;
+	display: inline-block;
+	text-align: left;
+	width: 100%;
+	margin-bottom: 1.3rem;
+	svg {
+		width: 70px;
+		max-height: 50px;
+		float: left;
+		margin-top: 0.2rem;
 
-    filter: grayscale(100%);
-    opacity: .7;
-    transition: all 300ms $easeOutQuad;
-  }
-  &:hover svg {
-    filter: grayscale(0%);
-    opacity: 1;
-  }
-  @include if-wider-than($breakpoint-two-px) {
-    width: (100%/2);
-    margin-bottom: 2rem;
-  }
-  @include if-wider-than(1200px) {
-    width: (100%/3);
-  }
+		.no-touch & {
+			filter: grayscale(100%);
+		}
+
+		opacity: .7;
+		transition: all 300ms $easeOutQuad;
+	}
+	&:hover svg {
+		.no-touch & {
+			filter: grayscale(0%);
+		}
+		opacity: 1;
+	}
+	@include if-wider-than($breakpoint-two-px) {
+		width: (100%/2);
+		margin-bottom: 2rem;
+	}
+	@include if-wider-than(1200px) {
+		width: (100%/3);
+	}
 }
 
 %casestudy__technology-text {
-    margin-left: 70px;
-    color: $default-font-color;
+		margin-left: 70px;
+		color: $default-font-color;
 }
 
 .casestudy__technology-title {
-  @extend %casestudy__technology-text;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 1.6rem;
-  .casestudy__technology-item:hover & {
-    color: black;
-  }
+	@extend %casestudy__technology-text;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 1.6rem;
+	.casestudy__technology-item:hover & {
+		color: black;
+	}
 }
 
 .casestudy__technology-description {
-  @extend %casestudy__technology-text;
-  font-size: 1rem;
+	@extend %casestudy__technology-text;
+	font-size: 1rem;
 }
 
 .casestudy__quote {
@@ -187,48 +192,48 @@ a.casestudy__header-label {
 
 // NEXT CASE STUDY FOOTER
 #next-casestudy {
-  overflow: hidden;
-  margin-top: -$default-section-spacing--half;
+	overflow: hidden;
+	margin-top: -$default-section-spacing--half;
 }
 .next-casestudy__link {
-  margin-top: $default-section-spacing; // needed to show sloped shape above bg
-  display: block;
-  position: relative;
+	margin-top: $default-section-spacing; // needed to show sloped shape above bg
+	display: block;
+	position: relative;
 }
 .next-casestudy__link__shape {
-  fill: #666;
-  position: absolute;
-  top: -$default-section-spacing;
-  left: 0;
-  right: 0;
+	fill: #666;
+	position: absolute;
+	top: -$default-section-spacing;
+	left: 0;
+	right: 0;
 
-  height: 0;
-  padding-bottom: 571/1142 * 100%; // need svg ratio for IE10
+	height: 0;
+	padding-bottom: 571/1142 * 100%; // need svg ratio for IE10
 
-  svg {
-    display: block;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+	svg {
+		display: block;
+		width: 100%;
+		height: auto;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
 }
 .next-casestudy__link__shape--hover {
-  display: none;
+	display: none;
 }
 a.next-casestudy__link,
 a.next-casestudy__link:hover,
 a.next-casestudy__link:active {
-  color: #fff;
+	color: #fff;
 }
 .next-casestudy__subline {
-  margin-bottom: 1em;
+	margin-bottom: 1em;
 }
 .next-casestudy__headline {
-  margin-top: 0;
-  width: 100%;
-  max-width: initial;
+	margin-top: 0;
+	width: 100%;
+	max-width: initial;
 }
