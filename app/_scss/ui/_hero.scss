@@ -241,7 +241,7 @@
   	animation-fill-mode: backwards;
   }
   .js-loaded.csstransforms & {
-      animation-name: slide-up;
+    animation-name: slide-up;
   }
   .js-loaded.csstransforms3d & {
     animation-name: slide-up-3d;

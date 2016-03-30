@@ -198,10 +198,10 @@ body {
 
 	// avois showing font replacement flash when loading subpages
 	// don't put will-change on this container since it's MASSIVE
-	transition: opacity 300ms $easeOutQuad;
+	/*transition: opacity 300ms $easeOutQuad;
 	.js-loading & {
 		opacity: 0;
-	}
+	}*/
 }
 
 svg {
