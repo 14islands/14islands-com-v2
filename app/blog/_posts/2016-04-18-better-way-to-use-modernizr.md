@@ -10,7 +10,7 @@ private: true
 
 [Modernizr](https://modernizr.com/){:target="_blank"} is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best experience different user devices.
 
-Modernizr has around 260 built-in feature detections. The minified file with all detections included is 90.65 kB in size. That's quite big, considering that the file is added in the <head> section of the HTML document.
+Modernizr has 259 built-in feature detections. The minified file with all detections included is 90.65 kB in size. That's quite big, considering that the file is added in the <head> section of the HTML document.
 
 This is why most developers [hand-pick features as needed from the Modernizr website](https://modernizr.com/download?setclasses){:target="_blank"}. The process is manual and can be time consuming, but now there is a better way.
 
