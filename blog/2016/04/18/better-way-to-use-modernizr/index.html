@@ -3,26 +3,26 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Blog - 14islands</title>
-		<meta name="description" content="14islands is a web development studio that cares deeply about creating great user experiences.">
+		<title>A better way to use Modernizr</title>
+		<meta name="description" content="Modernizr is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best user experience for each device.">
 		<meta name="keywords" content="Web Development, Web Design, UX, Web Developers, Digital, Studio, Agency, Stockholm, Consulting, Training, HTML, CSS, JavaScript, WordPress">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<meta property="og:locale" content="en_US" />
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Blog - 14islands" />
-		<meta property="og:description" content="14islands is a web development studio that cares deeply about creating great user experiences." />
-		<meta property="og:image" content="https://14islands.com/images/home-page-screenshot.png" />
-		<meta property="og:url" content="https://14islands.com/blog/" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="A better way to use Modernizr" />
+		<meta property="og:description" content="Modernizr is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best user experience for each device." />
+		<meta property="og:image" content="https://14islands.com/images/blog/modernizr/open-graph-image.png" />
+		<meta property="og:url" content="https://14islands.com/blog/2016/04/18/better-way-to-use-modernizr/" />
 		<meta property="og:site_name" content="14islands" />
 
 		<!-- Twitter Card data -->
 		<meta name="twitter:card" content="summary">
 		<meta name="twitter:site" content="@14islands">
-		<meta name="twitter:title" content="Blog - 14islands">
-		<meta name="twitter:description" content="14islands is a web development studio that cares deeply about creating great user experiences.">
+		<meta name="twitter:title" content="A better way to use Modernizr">
+		<meta name="twitter:description" content="Modernizr is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best user experience for each device.">
 		<meta name="twitter:creator" content="@14islands">
-		<meta name="twitter:image" content="https://14islands.com/images/home-page-screenshot.png">
+		<meta name="twitter:image" content="https://14islands.com/images/blog/modernizr/open-graph-image.png">
 
 		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -56,7 +56,7 @@
 		<link rel="stylesheet" href="/css/main.09f1.css"/>
 
 	</head>
-	<body id="" class="page page-blog">
+	<body id="" class="page page-/blog/2016/04/18/better-way-to-use-modernizr">
 
 		<!--[if lt IE 9]>
 				<p class="browsehappy"><span>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.<span></p>
@@ -107,198 +107,94 @@
 
 
 		<main class="main-content js-pjax-container">
-				<section class="grid u--pad-top">
+				<article class="post grid u--pad-both pjax-animate">
+	<section class="grid__row">
+		<span class="post__date">18 April 2016</span>
+		<h1 id="a-better-way-to-use-modernizr">A better way to use Modernizr</h1>
 
-	<header class="grid__row pjax-animate u--margin-bottom--half">
-		<h1>Bloggin'</h1>
-	</header>
+<p><a href="https://modernizr.com/" target="_blank">Modernizr</a> is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best experience different user devices.</p>
+
+<p>Modernizr has around 260 built-in feature detections. The minified file with all detections included is 90.65 kB in size. That’s quite big, considering that the file is added in the &lt;head&gt; section of the HTML document.</p>
+
+<p>This is why most developers <a href="https://modernizr.com/download?setclasses" target="_blank">hand-pick features as needed from the Modernizr website</a>. The process is manual and can be time consuming, but now there is a better way.</p>
+
+<h2 id="command-line-config">Command Line Config</h2>
+
+<p>The team behind the popular JavaScript library has shipped a feature called <a href="https://modernizr.com/docs#command-line-config" target="_blank">Command Line Config</a>. This can automate the process, backed up by a <a href="https://www.npmjs.com/package/modernizr" target="_blank">Modernizr NPM module</a>. This module should be installed globally on the developer’s machine, example:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">npm i -g modernizr</code></pre></div>
+
+<p>Next step is to create a config file at the root of the project and call it something like <strong>modernizr-config.json</strong>. Here is an simple example of a config file.</p>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;setClasses&quot;</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;feature-detects&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;test/svg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;css/flexbox&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;test/touchevents&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;test/css/animations&quot;</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></div>
+
+<p>When you need to add a new feature detection, there is no need to head over to the Modernizr website and manually generate a new file. </p>
+
+<p>Simply define what you need in the config file. You can look at the <a href="https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json" target="_blank">example file with all features included</a> to see what’s possible.</p>
+
+<h2 id="generate">Generate</h2>
+
+<p>The last step of the process is to generate a new **modernizr.js ** file to a desired folder in the project. Run the following command.</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">modernizr -c modernizr-config.json -d path/to/lib/ -u</code></pre></div>
+
+<ul>
+  <li><em>-c</em> stands for <strong>config</strong></li>
+  <li><em>-d</em> is for the <strong>destination folder</strong></li>
+  <li><em>-u</em> is to <strong>uglify/minify</strong> the output </li>
+</ul>
+
+<p>Thanks to the Modernizr team to improve our process. </p>
+
+	</section>
+</article>
 
 
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">24 March 2016</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2016/03/24/trends-at-sxsw-interactive-2016/">
-	      		Trends at SXSW Interactive 2016
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
+	
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">3 March 2016</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2016/03/03/why-we-chose-react-for-hybrid-app/">
-	      		Why we chose React for our latest hybrid app
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">2 March 2016</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2016/03/02/giving-stylus-a-second-chance/">
-	      		Giving Stylus a second chance
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">29 December 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/12/29/our-year-in-review-2015/">
-	      		Our year in review - 2015
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
+	<section class="js-component-disqus-embed post-comments grid u--pad-bottom"
+         data-disqus-shortname="14islands-com"
+         data-disqus-identifier="/blog/2016/04/18/better-way-to-use-modernizr/"
+         data-disqus-expanded="false">
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">9 December 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/12/09/building-for-good-seo-and-socal-sharing/">
-	      		Building sites for good SEO and sharing on social networks
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">8 December 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/12/08/open-position-creative-web-developer/">
-	      		Open Position: Creative Web Developer
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
+	<a href="#" data-disquss-count class="grid__row u-bg-bright" title="Show comments for post">
+		<h4 class="post-comments__cta ">
+			<span class="disqus-comment-count" data-disqus-identifier="/blog/2016/04/18/better-way-to-use-modernizr/">Write a comment</span>
+		</h4>
+	</a>
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">16 October 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/10/16/responsive-web-design-recap/">
-	      		Responsive Web Design Recap
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
+	<div data-disquss-comments class="grid__row" id="disqus_thread"></div>
+</section>
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">26 March 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/03/26/simplified-custom-fields-for-wordpress/">
-	      		How to simplify custom fields for WordPress
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">24 March 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/03/24/making-wordpress-multilingual-and-plugins-to-help/">
-	      		Making WordPress multilingual and plugins to help
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">13 March 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/03/13/transitioning-to-web-animations-from-greensock-gsap/">
-	      		Transitioning from GreenSock GSAP to Web&nbsp;Animations
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">12 March 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/03/12/wordpress-as-a-cms/">
-	      		Lessons learned using WordPress as a CMS
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">6 March 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/03/06/the-good-the-bad-and-the-ugly-with-responsive-web-design/">
-	      		The good, the bad and the ugly with responsive web design
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
-
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">27 February 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/02/27/awwwards-conference-second-day/">
-	      		Awwwards conference - second day highlights
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
-
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">27 February 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/02/27/awwwards-conference-first-day/">
-	      		Awwwards conference - first day highlights
-	      	</a>
-	      </h2>
-      </header>
-    </article>
   
 
 
+
+<section class="related-posts">
+	<a class="related-posts__link grid u--default-v-padding u-bg-natt-dark" href="">
+		<div class="grid__row">
+	    <p class="related-posts__label">Read Next</p>
+	    <h2 class="related-posts__title"></h2>
+	  </div>
+	</a>
 </section>
 
 
