@@ -3,23 +3,23 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>A better way to use Modernizr</title>
+		<title>Better way to use Modernizr with Command Line Config</title>
 		<meta name="description" content="Modernizr is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best user experience for each device.">
 		<meta name="keywords" content="Web Development, Web Design, UX, Web Developers, Digital, Studio, Agency, Stockholm, Consulting, Training, HTML, CSS, JavaScript, WordPress">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="A better way to use Modernizr" />
+		<meta property="og:title" content="Better way to use Modernizr with Command Line Config" />
 		<meta property="og:description" content="Modernizr is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best user experience for each device." />
 		<meta property="og:image" content="https://14islands.com/images/blog/modernizr/open-graph-image.png" />
-		<meta property="og:url" content="https://14islands.com/blog/2016/04/18/better-way-to-use-modernizr/" />
+		<meta property="og:url" content="https://14islands.com/blog/2016/04/18/better-way-to-use-modernizr-with-command-line-config/" />
 		<meta property="og:site_name" content="14islands" />
 
 		<!-- Twitter Card data -->
 		<meta name="twitter:card" content="summary">
 		<meta name="twitter:site" content="@14islands">
-		<meta name="twitter:title" content="A better way to use Modernizr">
+		<meta name="twitter:title" content="Better way to use Modernizr with Command Line Config">
 		<meta name="twitter:description" content="Modernizr is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best user experience for each device.">
 		<meta name="twitter:creator" content="@14islands">
 		<meta name="twitter:image" content="https://14islands.com/images/blog/modernizr/open-graph-image.png">
@@ -56,7 +56,7 @@
 		<link rel="stylesheet" href="/css/main.09f1.css"/>
 
 	</head>
-	<body id="" class="page page-/blog/2016/04/18/better-way-to-use-modernizr">
+	<body id="" class="page page-/blog/2016/04/18/better-way-to-use-modernizr-with-command-line-config">
 
 		<!--[if lt IE 9]>
 				<p class="browsehappy"><span>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.<span></p>
@@ -110,17 +110,17 @@
 				<article class="post grid u--pad-both pjax-animate">
 	<section class="grid__row">
 		<span class="post__date">18 April 2016</span>
-		<h1 id="a-better-way-to-use-modernizr">A better way to use Modernizr</h1>
+		<h1 id="better-way-to-use-modernizr-with-command-line-config">Better way to use Modernizr with Command Line Config</h1>
 
-<p><a href="https://modernizr.com/" target="_blank">Modernizr</a> is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best experience different user devices.</p>
+<p><a href="https://modernizr.com/" target="_blank">Modernizr</a> is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best experience on different user devices.</p>
 
-<p>Modernizr has around 260 built-in feature detections. The minified file with all detections included is 90.65 kB in size. That’s quite big, considering that the file is added in the &lt;head&gt; section of the HTML document.</p>
+<p>Modernizr has 259 built-in feature detections. The minified file with all detections included is 90.65 kB in size. That’s quite big, specially considering that the file is added in the &lt;head&gt; of the HTML document.</p>
 
-<p>This is why most developers <a href="https://modernizr.com/download?setclasses" target="_blank">hand-pick features as needed from the Modernizr website</a>. The process is manual and can be time consuming, but now there is a better way.</p>
+<p>This is why most developers <a href="https://modernizr.com/download?setclasses" target="_blank">hand-pick features as needed from the Modernizr website</a> to include in the library. The process is manual and can take time, but now there is a better way.</p>
 
 <h2 id="command-line-config">Command Line Config</h2>
 
-<p>The team behind the popular JavaScript library has shipped a feature called <a href="https://modernizr.com/docs#command-line-config" target="_blank">Command Line Config</a>. This can automate the process, backed up by a <a href="https://www.npmjs.com/package/modernizr" target="_blank">Modernizr NPM module</a>. This module should be installed globally on the developer’s machine, example:</p>
+<p>Modernizr has shipped with a feature called <a href="https://modernizr.com/docs#command-line-config" target="_blank">Command Line Config</a>. It helps to automate the process, backed up by a <a href="https://www.npmjs.com/package/modernizr" target="_blank">Modernizr NPM module</a>. This module should be installed globally on the developer’s machine, example:</p>
 
 <div class="highlight"><pre><code class="language-text" data-lang="text">npm i -g modernizr</code></pre></div>
 
@@ -138,13 +138,13 @@
   <span class="p">]</span>
 <span class="p">}</span></code></pre></div>
 
-<p>When you need to add a new feature detection, there is no need to head over to the Modernizr website and manually generate a new file. </p>
+<p>When you need to add a new feature detections, there is no need to head over to the Modernizr website and manually generate a new file. </p>
 
 <p>Simply define what you need in the config file. You can look at the <a href="https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json" target="_blank">example file with all features included</a> to see what’s possible.</p>
 
 <h2 id="generate">Generate</h2>
 
-<p>The last step of the process is to generate a new **modernizr.js ** file to a desired folder in the project. Run the following command.</p>
+<p>The last step of the process is to generate a new <strong>modernizr.js</strong> file to a desired folder in the project. Run the following command.</p>
 
 <div class="highlight"><pre><code class="language-text" data-lang="text">modernizr -c modernizr-config.json -d path/to/lib/ -u</code></pre></div>
 
@@ -167,13 +167,13 @@
 
 	<section class="js-component-disqus-embed post-comments grid u--pad-bottom"
          data-disqus-shortname="14islands-com"
-         data-disqus-identifier="/blog/2016/04/18/better-way-to-use-modernizr/"
+         data-disqus-identifier="/blog/2016/04/18/better-way-to-use-modernizr-with-command-line-config/"
          data-disqus-expanded="false">
 
 
 	<a href="#" data-disquss-count class="grid__row u-bg-bright" title="Show comments for post">
 		<h4 class="post-comments__cta ">
-			<span class="disqus-comment-count" data-disqus-identifier="/blog/2016/04/18/better-way-to-use-modernizr/">Write a comment</span>
+			<span class="disqus-comment-count" data-disqus-identifier="/blog/2016/04/18/better-way-to-use-modernizr-with-command-line-config/">Write a comment</span>
 		</h4>
 	</a>
 
