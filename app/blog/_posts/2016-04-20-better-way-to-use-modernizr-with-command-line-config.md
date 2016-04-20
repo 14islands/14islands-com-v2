@@ -3,7 +3,6 @@ layout: post
 title:  "Better way to use Modernizr with Command Line Config"
 description: Modernizr is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best user experience for each device.
 og_image: /images/blog/modernizr/open-graph-image.png
-private: true
 ---
 
 # Better way to use Modernizr with Command Line Config
@@ -55,3 +54,5 @@ modernizr -c modernizr-config.json -d path/to/lib/ -u
 * *-u* is to **uglify/minify** the output 
 
 Thanks to the Modernizr team to improve our process. 
+
+{% include blog-author-hjortur.html %}
