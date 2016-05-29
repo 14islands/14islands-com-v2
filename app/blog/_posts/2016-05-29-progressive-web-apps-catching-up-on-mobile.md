@@ -3,7 +3,6 @@ layout: post
 title:  "The web is catching up on mobile"
 description: Progressive Web Apps making it possible to build web apps with similar to native apps.
 og_image: /images/blog/progressive-web-apps/open-graph-image.jpg
-private: true
 ---
 
 # The web is catching up on mobile
