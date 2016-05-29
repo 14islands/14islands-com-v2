@@ -1,19 +1,19 @@
 ---
 layout: post
 title:  "The web is catching up on mobile"
-description: Progressive Web Apps making it possible to build web apps with similar to native apps.
+description: Progressive Web Apps to improve experience on mobile, similar to native apps.
 og_image: /images/blog/progressive-web-apps/open-graph-image.jpg
 ---
 
 # The web is catching up on mobile
 
-*Watching the web talks from [GoogleIO](https://events.google.com/io2016/){:target="_blank"} last week and it made me want to* 👏👏👏
+*Watching the web talks from [GoogleIO last week](https://events.google.com/io2016/){:target="_blank"} and it made me want to* 👏👏👏
 
 The big story are new capabilities, making it possible to build web apps with similar user experience on mobile as native apps.
 
 Here are some of these new capabilities:
 
-* **Available offline**: *Service Workers* make offline usage possible by caching layout and data of the web app. It will also speed up loading on returning visits.
+* **Available offline**: *Service Workers* make offline usage possible by caching web app layout and data. It will also speed up loading on returning visits.
 * **Push notifications**: Like on native apps, working outside the browser.
 * **Add to Home screen**: Browsers will suggest adding capable web apps to users home screen when used frequently. Great for continued engagement.
 * **Background Sync**: Post updates while offline that will be processed as soon there is an internet connection.
