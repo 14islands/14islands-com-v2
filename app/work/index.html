@@ -40,11 +40,11 @@ title: Our Work - 14islands
               {% include rio-image.html src=post.image alt=post.name %}
             {% endif %}
           </div>
-          <div class="box__content__logo">
+          <div class="box__content__logo {% if post.hasDarkTypography %}box__content__logo--dark{% endif %}">
             {% include svgs/client-logos/{{post.logo}} %}
           </div>
-          <h2 class="box__content__headline">{{ post.headline }}</h2>
-          <span class="box__content__cta">Read Case Study</span>
+          <h2 class="box__content__headline {% if post.hasDarkTypography %}box__content__headline--dark{% endif %}">{{ post.headline }}</h2>
+          <span class="box__content__cta {% if post.hasDarkTypography %}box__content__cta--dark{% endif %}">Read Case Study</span>
         </div>
       </article>
     </a>
