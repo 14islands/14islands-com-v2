@@ -1,0 +1,65 @@
+.cs-bedow-iconography {
+
+	.IconProcess {
+		width: 62px;
+		height: 65px;
+		@include if-wider-than($breakpoint-three) {
+			width: 72px;
+			height: 75px;
+		}
+	}
+
+	.IconProcess-wheel {
+		display: inline-block;
+		animation-duration: 1200ms;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		width: 100%;
+		position: absolute;
+	}
+
+	.IconProcess-wheel--small {
+		animation-duration: 750ms;
+		animation-direction: reverse;
+		transform-origin: 11px 11px;
+		height: 22px;
+		width: 22px;
+		@include if-wider-than($breakpoint-three) {
+			height: 28px;
+			width: 28px;
+			transform-origin: 14px 14px;
+		}
+	}
+
+	.IconProcess-wheel--large {
+		height: 50px;
+		width: 50px;
+		top: 16px;
+		left: 12px;
+		transform-origin: 25px 25px;
+		@include if-wider-than($breakpoint-three) {
+			height: 56px;
+			width: 56px;
+			top: 19px;
+			left: 15px;
+			transform-origin: 28px 28px;
+		}
+	}
+
+	.IconProcess.is-animating .IconProcess-wheel--small {
+		animation-name: spinning;
+	}
+
+	.IconProcess.is-animating .IconProcess-wheel--large {
+		animation-name: spinning;
+	}
+
+	@keyframes spinning {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+}

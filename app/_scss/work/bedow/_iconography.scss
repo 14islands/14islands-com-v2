@@ -1,0 +1,28 @@
+.cs-bedow-iconography {
+
+	display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+	.u-col {
+		// outline: 1px solid red;
+		display: flex;
+		flex: 1 1 50%;
+		justify-content: center;
+		align-items: center;
+		height: 85px;
+
+		@include if-wider-than($breakpoint-two) {
+			height: 120px;
+		}
+	}
+
+	.u-containerIcon {
+		display: block;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		width: 80%;
+	}
+
+}
