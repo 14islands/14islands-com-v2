@@ -6,7 +6,7 @@
 
 	a:active,
 	a:hover {
-	  color: darken( $brand-link-color, 10% );
+	  color: $brand-link-color;
 	  text-decoration: none;
 	  outline: 0;
 	}

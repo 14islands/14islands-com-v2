@@ -5,8 +5,21 @@ a {
 a,
 a:visited {
   cursor: pointer;
-  color: $brand-link-color;
+  color: $default-font-color;
   text-decoration: none;
+
+  p &,
+  .post ul &,
+  .casestudy ul & {
+  	background-image: linear-gradient(to bottom,rgba(0,0,0,0) 50%,$brand-link-color 50%);
+		background-repeat: repeat-x;
+		background-size: 2px 2px;
+		background-position: 0 1.5rem;
+  }
+  .post blockquote &,
+  .casestudy blockquote & {
+  	background-position: 0 4rem;
+  }
 }
 
 a:focus {
