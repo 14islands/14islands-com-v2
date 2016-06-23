@@ -9,12 +9,13 @@ a:visited {
   text-decoration: none;
 
   p &,
+  .footer &,
   .post ul &,
   .casestudy ul & {
   	background-image: linear-gradient(to bottom,rgba(0,0,0,0) 50%,$brand-link-color 50%);
 		background-repeat: repeat-x;
 		background-size: 2px 2px;
-		background-position: 0 1.5rem;
+		background-position: 0 100%;
   }
   .post blockquote &,
   .casestudy blockquote & {
