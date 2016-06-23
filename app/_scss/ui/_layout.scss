@@ -114,13 +114,13 @@ body {
 
 // Add content padding around a wide row child
 .grid__row--wide__content {
-	@extend .u--default-h-padding;
+	@extend .u-default-h-padding;
 }
 
 // A wide row with automatically content padding for all children
 .grid__row--wide-content {
 	@extend .grid__row--wide;
-	@extend .u--default-h-padding;
+	@extend .u-default-h-padding;
 
 	@include if-wider-than($breakpoint-three-px) {
 		// the growign margin introduced by max-width
@@ -138,46 +138,46 @@ body {
 ///////////////////////////////////////////////////////////////////////////////
 // SECTION & CONTENT PADDING
 ///////////////////////////////////////////////////////////////////////////////
-.u--default-h-padding {
+.u-default-h-padding {
 	padding-left: $default-content-spacing;
 	padding-right: $default-content-spacing;
 }
-.u--default-v-padding {
+.u-default-v-padding {
 	padding-top: $default-content-spacing;
 	padding-bottom: $default-content-spacing;
 }
 
-.u--pad-top {
+.u-pad-top {
 	padding-top: $default-section-spacing;
 }
-.u--pad-top--half {
+.u-pad-top-half {
 	padding-top: $default-section-spacing--half;
 }
-.u--margin-top--half {
+.u-margin-top-half {
 	margin-top: $default-section-spacing--half;
 }
 
-.u--pad-bottom {
+.u-pad-bottom {
 	padding-bottom: $default-section-spacing;
 }
-.u--pad-bottom--half {
+.u-pad-bottom-half {
 	padding-bottom: $default-section-spacing--half;
 }
-.u--margin-bottom--half {
+.u-margin-bottom-half {
 	margin-bottom: $default-section-spacing--half;
 }
 
-.u--pad-both {
-	@extend .u--pad-top;
-	@extend .u--pad-bottom;
+.u-pad-both {
+	@extend .u-pad-top;
+	@extend .u-pad-bottom;
 }
-.u--pad-both--half {
-	@extend .u--pad-top--half;
-	@extend .u--pad-bottom--half;
+.u-pad-both-half {
+	@extend .u-pad-top-half;
+	@extend .u-pad-bottom-half;
 }
-.u--margin-both--half {
-	@extend .u--margin-top--half;
-	@extend .u--margin-bottom--half;
+.u-margin-both-half {
+	@extend .u-margin-top-half;
+	@extend .u-margin-bottom-half;
 }
 
 
