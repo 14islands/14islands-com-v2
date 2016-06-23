@@ -21,6 +21,12 @@ a:visited {
   .casestudy blockquote & {
   	background-position: 0 4rem;
   }
+  h1 &,
+	h2 &,
+	h3 &,
+	h4 & {
+		color: $brand-link-color;
+	}
 }
 
 a:focus {
