@@ -7,10 +7,12 @@ class FOURTEEN.BedowIcon extends FOURTEEN.BaseComponent
 	constructor: (@$context, data) ->
 		super(@$context, data)
 
-		@watcher = scrollMonitor.create @$context
-		@watcher.enterViewport( @_onEnterViewport )
-		@watcher.exitViewport( @_onExitViewport )
-		@watcher.recalculateLocation()
+		setTimeout =>
+			@watcher = scrollMonitor.create @$context
+			@watcher.enterViewport( @_onEnterViewport )
+			@watcher.exitViewport( @_onExitViewport )
+			@watcher.recalculateLocation()
+		, TIMEOUT_FIRST_DELAY_MS
 
 	_onEnterViewport: () =>
 		@play()
