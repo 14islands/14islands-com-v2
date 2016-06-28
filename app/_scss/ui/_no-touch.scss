@@ -10,7 +10,16 @@
 	  text-decoration: none;
 	  outline: 0;
 	}
-
+	h1 a:active,
+	h1 a:hover,
+	h2 a:active,
+	h2 a:hover,
+	h3 a:active,
+	h3 a:hover,
+	h4 a:active,
+	h4 a:hover {
+		color: darken($brand-link-color, 10%);
+	}
 
 	// upgrade browser message
 	.browsehappy {
