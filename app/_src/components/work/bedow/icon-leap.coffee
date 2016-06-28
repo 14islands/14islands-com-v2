@@ -42,11 +42,9 @@ class FOURTEEN.BedowLeapIcon extends FOURTEEN.BaseComponent
 		);
 
 	play: =>
-		console.log('play!', @tl, Math.random())
 		@tl.play()
 
 	stop: =>
-		console.log('stop!', @tl, Math.random())
 		@tl.pause()
 
 	pause: =>

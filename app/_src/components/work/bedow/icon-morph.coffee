@@ -1,7 +1,6 @@
 class FOURTEEN.BedowMorphIcon extends FOURTEEN.BaseComponent
 
 	scripts: [
-		'/js/vendor/TweenMax.js',
 		'/js/vendor/MorphSVGPlugin.js'
 	]
 
@@ -34,14 +33,11 @@ class FOURTEEN.BedowMorphIcon extends FOURTEEN.BaseComponent
 			ease: Power0.easeOut
 		}
 		@tween = TweenMax.to(@startSelector, .8, options)
-		console.log("init!", @tween)
 
 	play: =>
-		console.log('play!', @tween, Math.random())
 		@tween.play()
 
 	stop: =>
-		console.log('stop!', @tween, Math.random())
 		@tween.pause()
 
 	pause: =>
