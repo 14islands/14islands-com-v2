@@ -19,7 +19,7 @@ Let’s take a look at the results.
 
 The majority of our answers are from small agencies. That makes it even more interesting to us to get to know how other fellow small companies work.
 
-
+{% include blog/estimation-survey/collision.html %}
 
 ## How many estimations do you usually perform every month?
 
