@@ -23,15 +23,15 @@ The majority of our answers are from small agencies. That makes it even more int
 
 ## How many estimations do you usually perform every month?
 
-Big gap from the "1-5" estimation option to the others. Not unexpected as it aligns with the fact that we are hearing mostly from small companies.
+{% include blog/estimation-survey/number-of-estimations.html %}
 
-GRAPHIC
+Big gap from the "1-5" estimation option to the others. Not unexpected as it aligns with the fact that we are hearing mostly from small companies.
 
 ## When you are estimating a project, what tool do you use to calculate the price?
 
-Using a spread sheet software for the estimation? So do we!
+{% include blog/estimation-survey/tools.html %}
 
-GRAPHIC
+Using a spread sheet software for the estimation? So do we!
 
 ## When you have your estimation ready, how do you share it with the client?
 
