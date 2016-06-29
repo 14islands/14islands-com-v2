@@ -1,4 +1,4 @@
-class FOURTEEN.PostEstimationCollision extends FOURTEEN.BaseComponent
+class FOURTEEN.EstimationPostCollision extends FOURTEEN.BaseComponent
 
 	scripts: [
 	  ''
