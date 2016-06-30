@@ -26,7 +26,7 @@ The majority of our answers are from small agencies. That makes it even more int
 
 ## How many estimations do you usually perform every month?
 
-<div class="js-component-blog-estimation-survey-pie-chart u-margin-bottom-half estimation-post-pie-chart"
+<div class="js-component-blog-estimation-survey-pie-chart u-margin-both-half estimation-post-pie-chart"
      data-labels='["1-5 estimations", "More than 10 estimations", "10+. A LOT of estimations"]'
      data-values="[20, 5, 2]"
      data-type="pie">
@@ -36,7 +36,7 @@ Big gap from the "1-5" estimation option to the others. Not unexpected as it ali
 
 ## When you are estimating a project, what tool do you use to calculate the price?
 
-<div class="js-component-blog-estimation-survey-pie-chart u-margin-bottom-half estimation-post-pie-chart estimation-post-pie-chart--donut"
+<div class="js-component-blog-estimation-survey-pie-chart u-margin-both-half estimation-post-pie-chart estimation-post-pie-chart--donut"
      data-labels='["A spreadsheet software such as Excel or Google Sheets", "Pen, paper and a nice calculator.", "I don´t use anything, I just make up a number.", "Trello", "Notes / Google Docs", "A combination of multiple tools / bespoke software"]'
      data-values="[18, 5, 2, 1, 1, 1]"
      data-type="donut">
@@ -46,7 +46,7 @@ Using a spread sheet to estimate seems to be the most common approach.
 
 ## When you have your estimation ready, how do you share it with the client?
 
-<div class="js-component-blog-estimation-survey-pie-chart u-margin-bottom-half estimation-post-pie-chart estimation-post-pie-chart--donut"
+<div class="js-component-blog-estimation-survey-pie-chart u-margin-both-half estimation-post-pie-chart estimation-post-pie-chart--donut"
      data-labels='[
      	"I simply write an email and send it away", 
      	"I craft a presentation using a software like Keynote", 
@@ -64,7 +64,7 @@ One of the most interesting results, there is a mix here of how the result is sh
 
 ## When you share your estimation, how is the final number presented?
 
-<div class="js-component-blog-estimation-survey-pie-chart u-margin-bottom-half estimation-post-pie-chart estimation-post-pie-chart--donut"
+<div class="js-component-blog-estimation-survey-pie-chart u-margin-both-half estimation-post-pie-chart estimation-post-pie-chart--donut"
      data-labels='[
      	"One fixed total price", 
      	"One fixed price with descriptions of each task", 
