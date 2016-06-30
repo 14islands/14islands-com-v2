@@ -51,7 +51,6 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 		setTimeout =>
 			@watcher = scrollMonitor.create @$context
 			@watcher.enterViewport @_onEnterViewport
-			@watcher.exitViewport @_onExitViewport
 			@watcher.recalculateLocation()
 		, 1
 
