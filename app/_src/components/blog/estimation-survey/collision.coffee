@@ -7,7 +7,7 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 	SELECTOR_CONTAINER = '#js-estimation-post-collision-container'
 
 	NODES = [
-		# 18 of these bad boys
+		# 18 of these bad boys (blue)
 		{ r: 10, fill: "#006457" },
 		{ r: 10, fill: "#006457" },
 		{ r: 10, fill: "#006457" },
@@ -26,18 +26,18 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 		{ r: 10, fill: "#006457" },
 		{ r: 10, fill: "#006457" },
 		{ r: 10, fill: "#006457" },
-		# 3 of these bad boys
-		{ r: 10, fill: "#83aa08" },
-		{ r: 10, fill: "#83aa08" },
-		{ r: 10, fill: "#83aa08" },
-		# 4 of these bad boys
-		{ r: 10, fill: "#daa500" },
-		{ r: 10, fill: "#daa500" },
-		{ r: 10, fill: "#daa500" },
-		{ r: 10, fill: "#daa500" },
-		# 2 of these bad boys
-		{ r: 10, fill: "#f17e0b" }
-		{ r: 10, fill: "#f17e0b" }
+		# 3 of these bad boys (green)
+		{ r: 15, fill: "#83aa08" },
+		{ r: 15, fill: "#83aa08" },
+		{ r: 15, fill: "#83aa08" },
+		# 4 of these bad boys (yellow)
+		{ r: 20, fill: "#daa500" },
+		{ r: 20, fill: "#daa500" },
+		{ r: 20, fill: "#daa500" },
+		{ r: 20, fill: "#daa500" },
+		# 2 of these bad boys (orange)
+		{ r: 25, fill: "#f17e0b" }
+		{ r: 25, fill: "#f17e0b" }
 	]
 
 	W = 600
@@ -48,29 +48,20 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 
 	onScriptsLoaded: =>
 		@init()
+		setTimeout =>
+			@watcher = scrollMonitor.create @$context
+			@watcher.enterViewport @_onEnterViewport
+			@watcher.exitViewport @_onExitViewport
+			@watcher.recalculateLocation()
+		, 1
 
-	init: =>
+	_onEnterViewport: () =>
+		@run()
+		@watcher.destroy()
 
-		@root = NODES[0]
-		@root.radius = 0
-		@root.fixed = true
-
-		@svg = d3.select( SELECTOR_CONTAINER )
-			 .append("svg")
-			 .attr("preserveAspectRatio", "xMinYMin meet")
-			 .attr("viewBox", "0 0 " + W + " " + H)
-			 .classed("svg-content", true)
-
-		@svg.selectAll("circle")
-			.data( NODES )
-			.enter()
-			.append("svg:circle")
-			.attr("r", (d) -> d.r )
-			.style("fill", (d, i) -> d.fill )
-
+	run: =>
 		@force = d3.layout.force()
 			.gravity(0.05)
-			# .charge( (d, i) -> i ? 0 : -2000 )
 			.nodes( NODES )
 			.size([ W, H])
 
@@ -89,17 +80,23 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 				.attr("cy", (d) -> d.y )
 		)
 
-		that = this
 		@svg.on("mousemove", () ->
-		  p1 = d3.mouse(this)
-		  that.root.px = p1[0]
-		  that.root.py = p1[1]
-		  that.force.resume()
-		  return
+			onInteract(this)
+		)
+		@svg.on("touchmove", () ->
+		  onInteract(this)
 		)
 
+		that = this
+		onInteract = (arg) ->
+			p1 = d3.mouse(arg)
+			that.root.px = p1[0]
+			that.root.py = p1[1]
+			that.force.resume()
+			return
+
 		collide = (node) ->
-			r = node.radius + 16
+			r = node.r + 0
 			nx1 = node.x - r
 			nx2 = node.x + r
 			ny1 = node.y - r
@@ -110,7 +107,7 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 					x = node.x - (quad.point.x)
 					y = node.y - (quad.point.y)
 					l = Math.sqrt(x * x + y * y)
-					r = node.radius + quad.point.radius
+					r = node.r + quad.point.r
 					if l < r
 						l = (l - r) / l * .5
 						node.x -= x *= l
@@ -118,6 +115,25 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 						quad.point.x += x
 						quad.point.y += y
 				x1 > nx2 or x2 < nx1 or y1 > ny2 or y2 < ny1
+
+	init: =>
+		@root = NODES[0]
+		@root.r = 0
+		@root.fixed = true
+
+		@svg = d3.select( SELECTOR_CONTAINER )
+			 .append("svg")
+			 .attr("preserveAspectRatio", "xMinYMin meet")
+			 .attr("viewBox", "0 0 " + W + " " + H)
+			 .classed("svg-content", true)
+
+		@svg.selectAll("circle")
+			.data( NODES )
+			.enter()
+			.append("svg:circle")
+			.attr("r", (d) -> d.r )
+			.style("fill", (d, i) -> d.fill )
+
 
 	destroy: ->
 		super()
