@@ -2,7 +2,7 @@
 layout: post
 title:  "Estimation process survey"
 description: A few months ago we created a survey to find out more on how other companies do their estimation process.
-og_image: /images/blog/progressive-web-apps/open-graph-image.jpg
+og_image: /images/blog/estimation-survey/open-graph-image.png
 ---
 
 <script src="//cdn.rawgit.com/mbostock/d3/v3.5.5/d3.min.js"></script>
