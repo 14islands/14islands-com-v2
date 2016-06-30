@@ -10,7 +10,7 @@ og_image: /images/blog/progressive-web-apps/open-graph-image.jpg
 
 # Estimation process survey
 
-A few months ago we created [a survey](http://goo.gl/forms/nwmQ7cQX4WogbH372) to find out more on how other companies do their estimation process.
+A few months ago we created a survey to find out more on how other companies do their estimation process.
 
 The survey attracted *28* responses from different companies.
 
