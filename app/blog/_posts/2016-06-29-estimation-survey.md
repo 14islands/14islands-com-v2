@@ -10,8 +10,6 @@ og_image: /images/blog/progressive-web-apps/open-graph-image.jpg
 
 # Estimation process survey
 
-Small companies should always aim to have improved internal processes. Creating an estimation for a project is a great example on how automation could be able to help. Time spent efficiently can be crucial for 3 jack-of-all-trades partners like us at 14islands.
-
 A few months ago we created a survey to find out more on how other companies do their estimation process.
 
 The survey attracted 28 responses from different companies.
@@ -32,7 +30,7 @@ The majority of our answers are from 1-10 employees agencies. 10-20 and 20-20 em
      data-type="pie">
 </div>
 
-Big gap from the "1-5" estimation option to the others. Not unexpected as it aligns with the fact that we are hearing mostly from small companies.
+May perform "1-5" estimation every month. Good to take that into account when looking at the other results.
 
 ## When you are estimating a project, what tool do you use to calculate the price?
 
