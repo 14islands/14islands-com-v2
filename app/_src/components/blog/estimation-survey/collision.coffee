@@ -64,6 +64,8 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 			 .attr("preserveAspectRatio", "xMinYMin meet")
 			 .attr("viewBox", "0 0 " + W + " " + H)
 			 .classed("svg-content", true)
+			 .attr("width", W)
+			 .attr("height", H);
 
 		@svg.selectAll("circle")
 			.data( NODES )
@@ -86,7 +88,7 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 			n = NODES.length
 
 			while (++i < n)
-				q.visit(() => collide(NODES[i]))
+				q.visit(collide(NODES[i]))
 
 			@svg.selectAll("circle")
 				.attr("cx", (d) -> d.x )
@@ -106,20 +108,19 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 		@svg.on("touchmove", () -> onInteraction(this) )
 
 		collide = (node) ->
-			r = node.r + 25
+			r = node.r
 			nx1 = node.x - r
 			nx2 = node.x + r
 			ny1 = node.y - r
 			ny2 = node.y + r
 			(quad, x1, y1, x2, y2) ->
-				`var r`
 				if quad.point and quad.point != node
 					x = node.x - (quad.point.x)
 					y = node.y - (quad.point.y)
 					l = Math.sqrt(x * x + y * y)
-					r = node.r + quad.point.r + 25
-					if l < r
-						l = (l - r) / l
+					minDistance = node.r + quad.point.r + 5
+					if l < minDistance
+						l = (l - minDistance) / l * .05
 						node.x -= x *= l
 						node.y -= y *= l
 						quad.point.x += x
