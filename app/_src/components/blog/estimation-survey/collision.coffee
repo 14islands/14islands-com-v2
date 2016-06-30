@@ -65,13 +65,13 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 			 .attr("preserveAspectRatio", "xMinYMin meet")
 			 .attr("viewBox", "0 0 " + W + " " + H)
 			 .classed("svg-content", true)
-			 .attr("width", W)
-			 .attr("height", H);
 
 		@svg.selectAll("circle")
 			.data( NODES )
 			.enter()
 			.append("svg:circle")
+			.attr("cy", "-1000")
+			.attr("cx", "-1000")
 			.attr("r", (d) -> d.r )
 			.style("fill", (d, i) -> d.fill )
 
