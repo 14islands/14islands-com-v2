@@ -51,7 +51,6 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 		setTimeout =>
 			@watcher = scrollMonitor.create @$context
 			@watcher.enterViewport @_onEnterViewport
-			@watcher.recalculateLocation()
 		, 1
 
 	_onEnterViewport: () =>
@@ -80,14 +79,14 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 		)
 
 		@svg.on("mousemove", () ->
-			onInteract(this)
+			onInteraction(this)
 		)
 		@svg.on("touchmove", () ->
-		  onInteract(this)
+		  onInteraction(this)
 		)
 
 		that = this
-		onInteract = (arg) ->
+		onInteraction = (arg) ->
 			p1 = d3.mouse(arg)
 			that.root.px = p1[0]
 			that.root.py = p1[1]
