@@ -22,6 +22,7 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 		{ r: 10, fill: "#006457" },
 		{ r: 10, fill: "#006457" },
 		{ r: 10, fill: "#006457" },
+		{ r: 10, fill: "#006457" },
 		# 3 of these bad boys (green)
 		{ r: 15, fill: "#83aa08" },
 		{ r: 15, fill: "#83aa08" },
