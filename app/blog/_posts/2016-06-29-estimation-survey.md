@@ -10,6 +10,8 @@ og_image: /images/blog/progressive-web-apps/open-graph-image.jpg
 
 # Estimation process survey
 
+Small companies should always aim to have improved internal processes. Creating an estimation for a project is a great example on how automation could be able to help. Time spent efficiently can be crucial for 3 jack-of-all-trades partners like us at 14islands.
+
 A few months ago we created a survey to find out more on how other companies do their estimation process.
 
 The survey attracted 28 responses from different companies.
@@ -20,7 +22,7 @@ Let’s take a look at the results.
 
 {% include blog/estimation-survey/collision.html %}
 
-The majority of our answers are from 1-10 employees agencies. 10-20 and 20-20 employees agencies also participated in the survey.
+The majority of our answers are from small agencies. That makes it even more interesting to us to get to know how other fellow small companies work.
 
 ## How many estimations do you usually perform every month?
 
@@ -30,7 +32,7 @@ The majority of our answers are from 1-10 employees agencies. 10-20 and 20-20 em
      data-type="pie">
 </div>
 
-May perform "1-5" estimation every month. Good to take that into account when looking at the other results.
+Big gap from the "1-5" estimation option to the others. Not unexpected as it aligns with the fact that we are hearing mostly from small companies.
 
 ## When you are estimating a project, what tool do you use to calculate the price?
 
@@ -77,23 +79,17 @@ Question related to the previous one. Again we see some mixed results on the pre
 
 ## Do you see any way you could possibly automate or facilitate your estimation/offer process? How?
 
-We selected 3 answers here that called our attention.
+We selected a couple of answers here that called our attention.
 
-> “QUOTE 1”
+> “It's so simple, excel is fine“
 
-> “QUOTE 2”
+> “Unfortunately the estimation process is very different between projects“
 
-> “QUOTE 3”
+> “Yes we use T-shirt Sizing sometimes to quickly estimate“
 
-## If you could have a dream tool to help your estimation process, how would that tool be like? Any wishful feature?
+> “Most of the process is already automated, but you can't automate the insight and client specific notes that show that you care and really show interest in the project.“
 
-We also selected 3 wishes here that we would like to share.
-
-> “QUOTE 1”
-
-> “QUOTE 2”
-
-> “QUOTE 3”
+> “No.“
 
 *Thank you for participating!*
 
