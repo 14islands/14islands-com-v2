@@ -20,7 +20,7 @@ Let’s take a look at the results.
 
 {% include blog/estimation-survey/collision.html %}
 
-The majority of our answers come from *1-10* employees agencies. Some from *10-20* and *20-50* as well.
+The majority of our answers come from *1-10* employee agencies. Some from *10-20* and *20-50* as well.
 
 ## How many estimations do you usually perform every month?
 
@@ -30,12 +30,18 @@ The majority of our answers come from *1-10* employees agencies. Some from *10-2
      data-type="pie">
 </div>
 
-*1-5* estimations is the most common ammount that our users performed in a month.
+Most of the companies that participated perform *1-5* estimations per month.
 
 ## When you are estimating a project, what tool do you use to calculate the price?
 
 <div class="js-component-blog-estimation-survey-pie-chart u-margin-both-half estimation-post-pie-chart estimation-post-pie-chart--donut"
-     data-labels='["A spreadsheet software such as Excel or Google Sheets", "Pen, paper and a nice calculator.", "I don´t use anything, I just make up a number.", "Trello", "Notes / Google Docs", "A combination of multiple tools / bespoke software"]'
+     data-labels='[
+     	"A spreadsheet such as Excel or Google Sheets", 
+     	"Pen, paper and a nice calculator.", 
+     	"I don´t use anything, I just make up a number.", 
+     	"Trello", 
+     	"Notes / Google Docs", 
+     	"A combination of tools / bespoke software"]'
      data-values="[18, 5, 2, 1, 1, 1]"
      data-type="donut">
 </div>
@@ -47,7 +53,7 @@ Using a spread sheet to estimate seems to be the most common approach.
 <div class="js-component-blog-estimation-survey-pie-chart u-margin-both-half estimation-post-pie-chart estimation-post-pie-chart--donut"
      data-labels='[
      	"I simply write an email and send it away", 
-     	"I craft a presentation using a software like Keynote", 
+     	"I craft a presentation using Keynote/Powerpoint", 
      	"I give them a call / meet and go over it",
      	"A Statement of Work (SOW)", 
      	"We use Vantage", 
@@ -58,7 +64,7 @@ Using a spread sheet to estimate seems to be the most common approach.
      data-type="donut">
 </div>
 
-One of the most interesting results, there is a mix here of how the result is shared to the client.
+One of the most interesting results, there is a wide mix of how the result is shared with the client.
 
 ## When you share your estimation, how is the final number presented?
 
@@ -66,7 +72,7 @@ One of the most interesting results, there is a mix here of how the result is sh
      data-labels='[
      	"One fixed total price", 
      	"One fixed price with descriptions of each task", 
-     	"Divide the price in packages and share a cost for each", 
+     	"Divided in priced packages", 
      	"Ballpark of a minimum and maximum price.", 
      	"A combination of the above has been used"]'
      data-values="[5, 8, 4, 5, 5]"
@@ -77,7 +83,7 @@ Question related to the previous one. Again we see some mixed results on the pre
 
 ## Do you see any way you could possibly automate or facilitate your estimation/offer process? How?
 
-Here we have selected a couple of answers that called our attention.
+We have selected a couple of answers that called our attention:
 
 > “It's so simple, excel is fine.“
 
