@@ -10,8 +10,8 @@ class FOURTEEN.BlogEstimationSurveyPieChart extends FOURTEEN.BaseComponent
 		@values = @$context.data('values')
 		@type = @$context.data('type') or 'pie'
 		@colorScheme = ['#01a084', '#b7d02e', '#eccd00', '#f8b334', '#535b82', '#424242', '#006457', '#83aa08', '#daa500', '#f17e0b', '#3e404d', '#2d2d2d']
-		@init()
 		setTimeout =>
+			@init()
 			@watcher = scrollMonitor.create @$context
 			@watcher.enterViewport @_onEnterViewport
 		, 1
@@ -53,5 +53,7 @@ class FOURTEEN.BlogEstimationSurveyPieChart extends FOURTEEN.BaseComponent
 			colors[label] = @colorScheme[i];
 		return colors
 
-	destroy: ->
+	destroy: =>
+		@watcher?.destroy()
+		@chart?.destroy()
 		super()
