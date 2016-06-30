@@ -10,9 +10,7 @@ og_image: /images/blog/progressive-web-apps/open-graph-image.jpg
 
 # Estimation process survey
 
-Small companies should always aim to have improved internal processes. Creating an estimation for a project is a great example on how automation could be able to help. Time spent efficiently can be crucial for 3 jack-of-all-trades partners like us at 14islands.
-
-A few months ago we created a survey to find out more on how other companies do their estimation process.
+A few months ago we created [a survey](http://goo.gl/forms/nwmQ7cQX4WogbH372) to find out more on how other companies do their estimation process.
 
 The survey attracted 28 responses from different companies.
 
@@ -22,7 +20,7 @@ Let’s take a look at the results.
 
 {% include blog/estimation-survey/collision.html %}
 
-The majority of our answers are from small agencies. That makes it even more interesting to us to get to know how other fellow small companies work.
+The majority of our answers come from 1-10 employees agencies. Some from 10-20 and 20-50 as well.
 
 ## How many estimations do you usually perform every month?
 
@@ -32,7 +30,7 @@ The majority of our answers are from small agencies. That makes it even more int
      data-type="pie">
 </div>
 
-Big gap from the "1-5" estimation option to the others. Not unexpected as it aligns with the fact that we are hearing mostly from small companies.
+"1-5" estimations is the most common ammount that our users performed in a month.
 
 ## When you are estimating a project, what tool do you use to calculate the price?
 
@@ -79,13 +77,13 @@ Question related to the previous one. Again we see some mixed results on the pre
 
 ## Do you see any way you could possibly automate or facilitate your estimation/offer process? How?
 
-We selected a couple of answers here that called our attention.
+Here we have selected a couple of answers that called our attention.
 
-> “It's so simple, excel is fine“
+> “It's so simple, excel is fine.“
 
-> “Unfortunately the estimation process is very different between projects“
+> “Unfortunately the estimation process is very different between projects.“
 
-> “Yes we use T-shirt Sizing sometimes to quickly estimate“
+> “Yes we use T-shirt Sizing sometimes to quickly estimate.“
 
 > “Most of the process is already automated, but you can't automate the insight and client specific notes that show that you care and really show interest in the project.“
 
