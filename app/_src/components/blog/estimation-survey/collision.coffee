@@ -103,7 +103,7 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 			return
 
 		@svg.on("mousemove", () -> onInteraction(this) )
-		# @svg.on("touchmove", () -> onInteraction(this) )
+		@svg.on("touchmove", () -> onInteraction(this) )
 
 		collide = (node) ->
 			r = node.r + 0
