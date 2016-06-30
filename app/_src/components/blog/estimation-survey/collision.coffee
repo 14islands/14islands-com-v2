@@ -1,9 +1,5 @@
 class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 
-	scripts: [
-		'//cdn.rawgit.com/mbostock/d3/v3.5.5/d3.min.js',
-	]
-
 	SELECTOR_CONTAINER = '#js-estimation-post-collision-container'
 
 	NODES = [
@@ -40,13 +36,12 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 		{ r: 25, fill: "#f17e0b" }
 	]
 
-	W = 600
-	H = 400
+	# 16:9
+	W = 480
+	H = 270
 
 	constructor: (@$context, data) ->
 		super(@$context, data)
-
-	onScriptsLoaded: =>
 		@init()
 		setTimeout =>
 			@watcher = scrollMonitor.create @$context
@@ -54,8 +49,28 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 		, 1
 
 	_onEnterViewport: () =>
-		@run()
-		@watcher.destroy()
+		setTimeout =>
+			@run()
+			@watcher.destroy()
+		, 500
+
+	init: =>
+		@root = NODES[0]
+		@root.r = 0
+		@root.fixed = true
+
+		@svg = d3.select( SELECTOR_CONTAINER )
+			 .append("svg")
+			 .attr("preserveAspectRatio", "xMinYMin meet")
+			 .attr("viewBox", "0 0 " + W + " " + H)
+			 .classed("svg-content", true)
+
+		@svg.selectAll("circle")
+			.data( NODES )
+			.enter()
+			.append("svg:circle")
+			.attr("r", (d) -> d.r )
+			.style("fill", (d, i) -> d.fill )
 
 	run: =>
 		@force = d3.layout.force()
@@ -78,20 +93,17 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 				.attr("cy", (d) -> d.y )
 		)
 
-		@svg.on("mousemove", () ->
-			onInteraction(this)
-		)
-		@svg.on("touchmove", () ->
-		  onInteraction(this)
-		)
-
 		that = this
-		onInteraction = (arg) ->
-			p1 = d3.mouse(arg)
-			that.root.px = p1[0]
-			that.root.py = p1[1]
-			that.force.resume()
+		onInteraction = (svg) ->
+			if svg?
+				coordinates = d3.mouse(svg)
+				that.root.px = coordinates[0]
+				that.root.py = coordinates[1]
+				that.force.resume()
 			return
+
+		@svg.on("mousemove", () -> onInteraction(this) )
+		# @svg.on("touchmove", () -> onInteraction(this) )
 
 		collide = (node) ->
 			r = node.r + 0
@@ -114,23 +126,6 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 						quad.point.y += y
 				x1 > nx2 or x2 < nx1 or y1 > ny2 or y2 < ny1
 
-	init: =>
-		@root = NODES[0]
-		@root.r = 0
-		@root.fixed = true
-
-		@svg = d3.select( SELECTOR_CONTAINER )
-			 .append("svg")
-			 .attr("preserveAspectRatio", "xMinYMin meet")
-			 .attr("viewBox", "0 0 " + W + " " + H)
-			 .classed("svg-content", true)
-
-		@svg.selectAll("circle")
-			.data( NODES )
-			.enter()
-			.append("svg:circle")
-			.attr("r", (d) -> d.r )
-			.style("fill", (d, i) -> d.fill )
 
 
 	destroy: ->

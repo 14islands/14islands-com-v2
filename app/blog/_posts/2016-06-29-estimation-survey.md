@@ -5,6 +5,9 @@ description: A few months ago we created a survey to find out more on how other 
 og_image: /images/blog/progressive-web-apps/open-graph-image.jpg
 ---
 
+<script src="//cdn.rawgit.com/mbostock/d3/v3.5.5/d3.min.js"></script>
+<script src="//cdn.rawgit.com/c3js/c3/0.4.11/c3.min.js"></script>
+
 # Estimation process survey
 
 Small companies should always aim to have improved internal processes. Creating an estimation for a project is a great example on how automation could be able to help. Time spent efficiently can be crucial for 3 jack-of-all-trades partners like us at 14islands.
