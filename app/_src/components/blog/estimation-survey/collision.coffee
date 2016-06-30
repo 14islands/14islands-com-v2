@@ -106,7 +106,7 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 		@svg.on("touchmove", () -> onInteraction(this) )
 
 		collide = (node) ->
-			r = node.r + 0
+			r = node.r + 25
 			nx1 = node.x - r
 			nx2 = node.x + r
 			ny1 = node.y - r
@@ -117,9 +117,9 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 					x = node.x - (quad.point.x)
 					y = node.y - (quad.point.y)
 					l = Math.sqrt(x * x + y * y)
-					r = node.r + quad.point.r
+					r = node.r + quad.point.r + 25
 					if l < r
-						l = (l - r) / l * .5
+						l = (l - r) / l
 						node.x -= x *= l
 						node.y -= y *= l
 						quad.point.x += x
