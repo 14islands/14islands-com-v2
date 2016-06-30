@@ -12,7 +12,7 @@ og_image: /images/blog/progressive-web-apps/open-graph-image.jpg
 
 A few months ago we created [a survey](http://goo.gl/forms/nwmQ7cQX4WogbH372) to find out more on how other companies do their estimation process.
 
-The survey attracted 28 responses from different companies.
+The survey attracted *28* responses from different companies.
 
 Let’s take a look at the results.
 
@@ -20,7 +20,7 @@ Let’s take a look at the results.
 
 {% include blog/estimation-survey/collision.html %}
 
-The majority of our answers come from 1-10 employees agencies. Some from 10-20 and 20-50 as well.
+The majority of our answers come from *1-10* employees agencies. Some from *10-20* and *20-50* as well.
 
 ## How many estimations do you usually perform every month?
 
@@ -30,7 +30,7 @@ The majority of our answers come from 1-10 employees agencies. Some from 10-20 a
      data-type="pie">
 </div>
 
-"1-5" estimations is the most common ammount that our users performed in a month.
+*1-5* estimations is the most common ammount that our users performed in a month.
 
 ## When you are estimating a project, what tool do you use to calculate the price?
 
