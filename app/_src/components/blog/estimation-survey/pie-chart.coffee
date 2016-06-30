@@ -1,4 +1,8 @@
-class FOURTEEN.EstimationPostPieChart extends FOURTEEN.BaseComponent
+class FOURTEEN.BlogEstimationSurveyPieChart extends FOURTEEN.BaseComponent
+
+
+	TRANSITION_DURATION = 2000 # ms for animation
+
 
 	constructor: (@$context, data) ->
 		super(@$context, data)
@@ -7,6 +11,16 @@ class FOURTEEN.EstimationPostPieChart extends FOURTEEN.BaseComponent
 		@type = @$context.data('type') or 'pie'
 		@colorScheme = ['#01a084', '#b7d02e', '#eccd00', '#f8b334', '#535b82', '#424242', '#006457', '#83aa08', '#daa500', '#f17e0b', '#3e404d', '#2d2d2d']
 		@init()
+		setTimeout =>
+			@watcher = scrollMonitor.create @$context
+			@watcher.enterViewport @_onEnterViewport
+		, 1
+
+
+	_onEnterViewport: () =>
+		@run()
+		@watcher.destroy()
+
 
 	init: =>
 		# init with empty values
@@ -18,17 +32,11 @@ class FOURTEEN.EstimationPostPieChart extends FOURTEEN.BaseComponent
 				colors: @colors()
 			}
 			transition: {
-				duration: 2000
+				duration: TRANSITION_DURATION
 			}
 		});
 
-		# TODO use scrollMonitor
-		setTimeout( () =>
-			@showChart()
-		, 1000)
-
-
-	showChart: =>
+	run: =>
 		@chart.load({
 			columns: @columns()
 		})

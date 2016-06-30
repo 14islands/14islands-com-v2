@@ -26,27 +26,56 @@ The majority of our answers are from small agencies. That makes it even more int
 
 ## How many estimations do you usually perform every month?
 
-{% include blog/estimation-survey/number-of-estimations.html %}
+<div class="js-component-blog-estimation-survey-pie-chart u-margin-bottom-half estimation-post-pie-chart"
+     data-labels='["1-5 estimations", "More than 10 estimations", "10+. A LOT of estimations"]'
+     data-values="[20, 5, 2]"
+     data-type="pie">
+</div>
 
 Big gap from the "1-5" estimation option to the others. Not unexpected as it aligns with the fact that we are hearing mostly from small companies.
 
 ## When you are estimating a project, what tool do you use to calculate the price?
 
-{% include blog/estimation-survey/tools.html %}
+<div class="js-component-blog-estimation-survey-pie-chart u-margin-bottom-half estimation-post-pie-chart estimation-post-pie-chart--donut"
+     data-labels='["A spreadsheet software such as Excel or Google Sheets", "Pen, paper and a nice calculator.", "I don´t use anything, I just make up a number.", "Trello", "Notes / Google Docs", "A combination of multiple tools / bespoke software"]'
+     data-values="[18, 5, 2, 1, 1, 1]"
+     data-type="donut">
+</div>
 
-Using a spread sheet software for the estimation? So do we!
+Using a spread sheet to estimate seems to be the most common approach.
 
 ## When you have your estimation ready, how do you share it with the client?
 
-One of the most interesting results, there is a mix here of how the result is shared to the client.
+<div class="js-component-blog-estimation-survey-pie-chart u-margin-bottom-half estimation-post-pie-chart estimation-post-pie-chart--donut"
+     data-labels='[
+     	"I simply write an email and send it away", 
+     	"I craft a presentation using a software like Keynote", 
+     	"I give them a call / meet and go over it",
+     	"A Statement of Work (SOW)", 
+     	"We use Vantage", 
+     	"Contract system for WordPress", 
+     	"Detailed description and offer of a presentation", 
+     	"Other"]'
+     data-values="[11, 8, 3, 1, 1, 1, 1, 2]"
+     data-type="donut">
+</div>
 
-GRAPHIC
+One of the most interesting results, there is a mix here of how the result is shared to the client.
 
 ## When you share your estimation, how is the final number presented?
 
-Question related to the previous one. Again we see some mixed results on the presentation part.
+<div class="js-component-blog-estimation-survey-pie-chart u-margin-bottom-half estimation-post-pie-chart estimation-post-pie-chart--donut"
+     data-labels='[
+     	"One fixed total price", 
+     	"One fixed price with descriptions of each task", 
+     	"Divide the price in packages and share a cost for each", 
+     	"Ballpark of a minimum and maximum price.", 
+     	"A combination of the above has been used"]'
+     data-values="[5, 8, 4, 5, 5]"
+     data-type="donut">
+</div>
 
-GRAPHIC
+Question related to the previous one. Again we see some mixed results on the presentation part.
 
 ## Do you see any way you could possibly automate or facilitate your estimation/offer process? How?
 
