@@ -8,14 +8,19 @@
 		font-weight: bold;
 	}
 
-	width: auto;
-	margin-left: 20%;
-	margin-right: 20%;
-
-	&--donut {
-		width: 100%;
-		margin-left: 0%;
-		margin-right: 0%;
+	svg {
+		width: auto;
+    margin: auto;
 	}
+
+	// width: auto;
+	// margin-left: 20%;
+	// margin-right: 20%;
+
+	// &--donut {
+	// 	width: 100%;
+	// 	margin-left: 0%;
+	// 	margin-right: 0%;
+	// }
 
 }

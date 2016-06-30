@@ -23,9 +23,16 @@ class FOURTEEN.BlogEstimationSurveyPieChart extends FOURTEEN.BaseComponent
 
 
 	init: =>
+		width = @$context.parent().width()
+		width = if @type is 'pie' then width * 0.8 else width
+		height = Math.max(width * 3/4, 400)
 		# init with empty values
 		@chart = c3.generate({
 			bindto: @$context[0],
+			size: {
+        height: height,
+        width: width
+    	},
 			data: {
 				columns: @columns(false)
 				type : @type

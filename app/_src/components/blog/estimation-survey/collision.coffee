@@ -38,7 +38,7 @@ class FOURTEEN.BlogEstimationSurveyCollision extends FOURTEEN.BaseComponent
 	]
 
 	# 16:9
-	W = 480
+	W = 380
 	H = 270
 
 	constructor: (@$context, data) ->
