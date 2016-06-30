@@ -22,7 +22,7 @@ Let’s take a look at the results.
 
 {% include blog/estimation-survey/collision.html %}
 
-The majority of our answers are from small agencies. That makes it even more interesting to us to get to know how other fellow small companies work.
+The majority of our answers are from 1-10 employees agencies. 10-20 and 20-20 employees agencies also participated in the survey.
 
 ## How many estimations do you usually perform every month?
 
