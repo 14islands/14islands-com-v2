@@ -2,8 +2,10 @@
 	.IconPush {
 		height: 50px;
 		width: auto;
+		margin-left: 25px;
 		@include if-wider-than($breakpoint-two-px) {
 			height: 60px;
+			margin-left: 130px;
 		}
 		@include if-wider-than($breakpoint-three) {
 			height: 80px;
