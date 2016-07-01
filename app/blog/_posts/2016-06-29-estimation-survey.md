@@ -25,9 +25,9 @@ The majority of our answers come from *1-10* employee agencies. Some from *10-20
 ## How many estimations do you usually perform every month?
 
 <div class="js-component-blog-estimation-survey-pie-chart u-margin-both estimation-post-pie-chart"
-     data-labels='["1-5 estimations", "More than 10 estimations", "10+. A LOT of estimations"]'
-     data-values="[20, 5, 2]"
-     data-type="pie">
+	data-labels='["1-5 estimations", "More than 10 estimations", "10+. A LOT of estimations"]'
+	data-values="[20, 5, 2]"
+	data-type="pie">
 </div>
 
 Most of the companies that participated perform *1-5* estimations per month.
@@ -35,15 +35,15 @@ Most of the companies that participated perform *1-5* estimations per month.
 ## When you are estimating a project, what tool do you use to calculate the price?
 
 <div class="js-component-blog-estimation-survey-pie-chart u-margin-both estimation-post-pie-chart estimation-post-pie-chart--donut"
-     data-labels='[
-     	"A spreadsheet such as Excel or Google Sheets", 
-     	"Pen, paper and a nice calculator.", 
-     	"I don´t use anything, I just make up a number.", 
-     	"Trello", 
-     	"Notes / Google Docs", 
-     	"A combination of tools / bespoke software"]'
-     data-values="[18, 5, 2, 1, 1, 1]"
-     data-type="donut">
+	data-labels='[
+		"A spreadsheet such as Excel or Google Sheets", 
+		"Pen, paper and a nice calculator.", 
+		"I don´t use anything, I just make up a number.", 
+		"Trello", 
+		"Notes / Google Docs", 
+		"A combination of tools / bespoke software"]'
+	data-values="[18, 5, 2, 1, 1, 1]"
+	data-type="donut">
 </div>
 
 Using a spread sheet to estimate seems to be the most common approach.
@@ -51,17 +51,17 @@ Using a spread sheet to estimate seems to be the most common approach.
 ## When you have your estimation ready, how do you share it with the client?
 
 <div class="js-component-blog-estimation-survey-pie-chart u-margin-both estimation-post-pie-chart estimation-post-pie-chart--donut"
-     data-labels='[
-     	"I simply write an email and send it away", 
-     	"I craft a presentation using Keynote/Powerpoint", 
-     	"I give them a call / meet and go over it",
-     	"A Statement of Work (SOW)", 
-     	"We use Vantage", 
-     	"Contract system for WordPress", 
-     	"Detailed description and offer of a presentation", 
-     	"Other"]'
-     data-values="[11, 8, 3, 1, 1, 1, 1, 2]"
-     data-type="donut">
+	data-labels='[
+		"I simply write an email and send it away", 
+		"I craft a presentation using Keynote/Powerpoint", 
+		"I give them a call / meet and go over it",
+		"A Statement of Work (SOW)", 
+		"We use Vantage", 
+		"Contract system for WordPress", 
+		"Detailed description and offer of a presentation", 
+		"Other"]'
+	data-values="[11, 8, 3, 1, 1, 1, 1, 2]"
+	data-type="donut">
 </div>
 
 One of the most interesting results, there is a wide mix of how the result is shared with the client.
@@ -69,14 +69,14 @@ One of the most interesting results, there is a wide mix of how the result is sh
 ## When you share your estimation, how is the final number presented?
 
 <div class="js-component-blog-estimation-survey-pie-chart u-margin-both estimation-post-pie-chart estimation-post-pie-chart--donut"
-     data-labels='[
-     	"One fixed total price", 
-     	"One fixed price with descriptions of each task", 
-     	"Divided in priced packages", 
-     	"Ballpark of a minimum and maximum price.", 
-     	"A combination of the above has been used"]'
-     data-values="[5, 8, 4, 5, 5]"
-     data-type="donut">
+	data-labels='[
+		"One fixed total price", 
+		"One fixed price with descriptions of each task", 
+		"Divided in priced packages", 
+		"Ballpark of a minimum and maximum price.", 
+		"A combination of the above has been used"]'
+	data-values="[5, 8, 4, 5, 5]"
+	data-type="donut">
 </div>
 
 Question related to the previous one. Again we see some mixed results on the presentation part.

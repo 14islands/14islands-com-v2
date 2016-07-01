@@ -42,6 +42,7 @@ class FOURTEEN.BlogEstimationSurveyPieChart extends FOURTEEN.BaseComponent
 				duration: TRANSITION_DURATION
 			}
 		});
+		@$context.find('svg').css('height', height)
 
 	run: =>
 		@chart.load({
