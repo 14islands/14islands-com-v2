@@ -20,7 +20,6 @@
 
 	.IconWorld-planet {
 		width: 95%;
-		left: 15%;
 	}
 
 	.IconWorld-satellite,
@@ -34,7 +33,7 @@
 	.IconWorld-satellite {
 		position: absolute;
 		top: 30%;
-		left: 10%;
+		left: -5%;
 		width: 130%;
 	}
 	.IconWorld-satellite:after {
