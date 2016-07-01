@@ -1,0 +1,73 @@
+.cs-bedow-iconography {
+	.IconPush {
+		height: 50px;
+		width: auto;
+		@include if-wider-than($breakpoint-two-px) {
+			height: 60px;
+		}
+		@include if-wider-than($breakpoint-three) {
+			height: 80px;
+		}
+	}
+
+	.IconPush-tipBar {
+		transform-origin: 0% 0%;
+	}
+	.IconPush-tipBar,
+	.IconPush-horizontalBar,
+	.IconPush-verticalBar {
+		display: inline-block;
+		position: absolute;
+		width: 100px;
+		@include if-wider-than($breakpoint-two-px) {
+			width: 120px;
+		}
+		@include if-wider-than($breakpoint-three) {
+			width: 140px;
+		}
+
+		transform-origin: 0% 0%;
+		animation-duration: 2.8s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		animation-fill-mode: forwards;
+		animation-direction: alternate;
+		animation-delay: 1s;
+	}
+	.IconPush-horizontalBar {
+		margin-left: -1px;
+	}
+	.IconPush-tipBar,
+	.IconPush-verticalBar {
+		transform: translateX(-41%);
+	}
+	.IconPush-horizontalBar {
+		transform: scaleX(0.5);
+	}
+	.IconPush.is-animating .IconPush-tipBar,
+	.IconPush.is-animating .IconPush-verticalBar {
+		animation-name: slideRight;
+	}
+	.IconPush.is-animating .IconPush-horizontalBar {
+		animation-name: drawRight;
+	}
+
+	@keyframes drawRight {
+		0%, 25% {
+			transform: scaleX(0.5);
+		}
+		75%, 100% {
+			transform: scaleX(1);
+		}
+	}
+
+	@keyframes slideRight {
+		0%, 25% {
+			transform: translateX(-41%);
+		}
+		75%, 100% {
+			transform: translateX(0%);
+		}
+	}
+
+}

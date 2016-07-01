@@ -40,6 +40,14 @@
   }
 }
 
+.box__content__logo--dark {
+	svg {
+	  * {
+	    fill: #333;
+	  }
+	}
+}
+
 .box__content__headline {
   width: 62%;
   margin-top: .5rem;
@@ -77,6 +85,12 @@
     margin-top: 3rem;
   }
 
+}
+
+h2.box__content__headline--dark,
+.box__content__headline--dark,
+.box__content__cta--dark {
+	color: #333;
 }
 
 .box__content__cta {

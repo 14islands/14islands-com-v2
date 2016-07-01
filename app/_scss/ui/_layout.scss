@@ -179,6 +179,10 @@ body {
 	@extend .u-margin-top-half;
 	@extend .u-margin-bottom-half;
 }
+.u-margin-both {
+	margin-top: $default-section-spacing;
+	margin-bottom: $default-section-spacing;
+}
 
 
 
