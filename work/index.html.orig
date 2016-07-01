@@ -345,9 +345,9 @@
         <div class="grid__row--wide__content box__content u--default-v-padding">
           <div class="box__content__img ">
             
-              <img alt="Oyyo" data-src="/images/work/oyyo/oyyo-illustration.png" class="">
+              <img alt="Oyyo" data-src="/images/work/oyyo/oyyo-illustration.jpg" class="">
 <noscript>
-  <img alt="Oyyo" src="/images/work/oyyo/oyyo-illustration.png" class="">
+  <img alt="Oyyo" src="/images/work/oyyo/oyyo-illustration.jpg" class="">
 </noscript>
             
           </div>
@@ -629,9 +629,9 @@
 				<div class="grid__row--wide__content box__content u-default-v-padding">
 					<div class="box__content__img ">
 						
-							<img alt="Oyyo" data-src="/images/work/oyyo/oyyo-illustration.png" class="">
+							<img alt="Oyyo" data-src="/images/work/oyyo/oyyo-illustration.jpg" class="">
 <noscript>
-  <img alt="Oyyo" src="/images/work/oyyo/oyyo-illustration.png" class="">
+  <img alt="Oyyo" src="/images/work/oyyo/oyyo-illustration.jpg" class="">
 </noscript>
 						
 					</div>
@@ -927,6 +927,9 @@
 <script src="/js/components/work/bedow/icon.js"></script>
 <script src="/js/components/work/bedow/icon-morph.js"></script>
 <script src="/js/components/work/bedow/icon-leap.js"></script>
+
+<script src="/js/components/blog/estimation-survey/collision.js"></script>
+<script src="/js/components/blog/estimation-survey/pie-chart.js"></script>
 
 <script src="/js/main.js"></script>
 
