@@ -63,6 +63,34 @@
 	}
 }
 
+
+/////////////////////////////////////////
+// POST QUOTE
+/////////////////////////////////////////
+
+.post__quote-text {
+  font-size: modular-scale(1rem, 2);
+  margin: 0 0 0.5rem;
+  @media (min-width: $breakpoint-two-px) {
+	  font-size: modular-scale(1rem, 2);
+	}
+	@media (min-width: $breakpoint-three-px) {
+	  font-size: modular-scale(1rem, 3);
+	}
+}
+
+.post__quote-author {
+	font-size: modular-scale(1rem, 1);
+	background-position: 0 100% !important;
+	margin: 0 0 1rem;
+  @media (min-width: $breakpoint-two-px) {
+	  font-size: modular-scale(1rem, 1);
+	}
+	@media (min-width: $breakpoint-three-px) {
+	  font-size: modular-scale(1rem, 1);
+	}
+}
+
 /////////////////////////////////////////
 // POST AUTHOR
 /////////////////////////////////////////
