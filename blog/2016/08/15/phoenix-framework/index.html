@@ -3,14 +3,14 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Why I’m excited about Phoenix Web Framework, with Elixir and Erlang</title>
+		<title>Why Phoenix is exciting for the modern web</title>
 		<meta name="description" content="Phoenix is both fast and productive with powerful underlying technologies; Elixir & Erlang.">
 		<meta name="keywords" content="Web Development, Web Design, UX, Web Developers, Digital, Studio, Agency, Stockholm, Consulting, Training, HTML, CSS, JavaScript, WordPress">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Why I’m excited about Phoenix Web Framework, with Elixir and Erlang" />
+		<meta property="og:title" content="Why Phoenix is exciting for the modern web" />
 		<meta property="og:description" content="Phoenix is both fast and productive with powerful underlying technologies; Elixir & Erlang." />
 		<meta property="og:image" content="https://14islands.com/images/blog/phoenix/open-graph-image.png" />
 		<meta property="og:url" content="https://14islands.com/blog/2016/08/15/phoenix-framework/" />
@@ -19,7 +19,7 @@
 		<!-- Twitter Card data -->
 		<meta name="twitter:card" content="summary">
 		<meta name="twitter:site" content="@14islands">
-		<meta name="twitter:title" content="Why I’m excited about Phoenix Web Framework, with Elixir and Erlang">
+		<meta name="twitter:title" content="Why Phoenix is exciting for the modern web">
 		<meta name="twitter:description" content="Phoenix is both fast and productive with powerful underlying technologies; Elixir & Erlang.">
 		<meta name="twitter:creator" content="@14islands">
 		<meta name="twitter:image" content="https://14islands.com/images/blog/phoenix/open-graph-image.png">
@@ -110,65 +110,73 @@
 				<article class="post grid u-pad-both pjax-animate">
 	<section class="grid__row">
 		<span class="post__date">15 August 2016</span>
-		<h1 id="why-im-excited-about-phoenix-web-framework-with-elixir-and-erlang">Why I’m excited about Phoenix Web Framework, with Elixir and Erlang</h1>
+		<h1 id="why-phoenix-is-exciting-for-the-modern-web">Why Phoenix is exciting for the modern web</h1>
 
 <p><a href="http://rubyonrails.org/" target="_blank">Ruby on Rails</a> is a server-side framework that makes it possible to write database driven web apps in days, instead of weeks. </p>
 
-<p>Using Rails has however always meant sacrificing performance to gain the productivity of using it. Ruby is a slow-ish language and apps grow into big monoliths. </p>
+<p>Using Rails has however always meant sacrificing performance to gain the developer productivity. Ruby is a slow language and apps grow into big monoliths. </p>
 
 <blockquote class="post__quote">
 	<p class="post__quote-text">"The Ruby programming language. Do things that are worse for the machine, that make programs run slower, but widen the smile on a programmer’s face.”</p>
 	<a href="https://twitter.com/chris_mccord" class="post__quote-author" target="_blank">DHH, the creator of Rails, creator of Rails</a>
 </blockquote>
 
-<p><a href="http://www.phoenixframework.org/" target="_blank">The Phoenix Framework</a> is both fast and productive. What came as a surprise is a massive benefit of the underlying technologies, the Elixir programming language and the Erlang Virtual Machine. </p>
+<p><a href="http://www.phoenixframework.org/" target="_blank">The Phoenix Framework</a> is both fast and productive. What came as a surprise was a massive benefit of underlying technologies, the Elixir programming language and the Erlang Virtual Machine. </p>
 
 <h2 id="the-phoenix-framework">The Phoenix Framework</h2>
 
-<p>Phoenix appears on the surface to be similar to Rails. It’s a server-side MVC framework with same concepts such as migrations, generators and more. This makes it simpler for Rails developers to enter Phonenix. Be aware though, the internals are totally different.</p>
+<p>Phoenix appears on the surface to be similar to Rails. It’s a server-side MVC framework with same concepts such as migrations and  generators. </p>
+
+<p>This makes it simpler for Rails developers to enter Phonenix. Be aware though, the internals are totally different.</p>
 
 <h3 id="going-real-time">Going real-time</h3>
 
-<p>Channels are a real-time layer built into Phoenix. The idea is that writing real-time apps should be trivial. Phoenix is also optimised for multiple real-time connections, and said to handle 2 million concurrent connections on one machine at the same time. </p>
+<p>Channels are the real-time layer built into Phoenix. The idea is that writing real-time apps should be trivial to implement. </p>
+
+<p>Phoenix is optimised for multiple real-time connections, and said to handle 2 million concurrent connections on one machine at the same time. </p>
 
 <blockquote class="post__quote">
 	<p class="post__quote-text">"Channels is why I started the Framework.”</p>
 	<a href="https://twitter.com/chris_mccord" class="post__quote-author" target="_blank">Chris McCord, creator of Phoenix</a>
 </blockquote>
 
-<p>Connected devices on the web are increasing, from smart phones to smart toasters. Phoenix is built with this in mind. There are already client libraries available for Web, Swift, ObjectC, Android and C#.</p>
+<p>The amount of connected devices is increasing in the world, from smart phones to smart toasters. Phoenix is built with this in mind.</p>
+
+<p>There are already client libraries available for Web, Swift, ObjectC, Android and C# to communicate with Channels.</p>
 
 <h3 id="modern-front-end-tools">Modern front-end tools</h3>
 
-<p>Phoenix uses Node Package Manager (NPM) for client-side tooling. This is great as most front-end libraries are already available as an NPM package.</p>
+<p>Phoenix uses <a href="https://www.npmjs.com/" target="_blank">Node Package Manager (NPM)</a> for client-side tooling. This is great as most front-end libraries are already available as an NPM package.</p>
 
 <p>The default build tool is the little known <a href="http://brunch.io/" target="_blank">Brunch</a>. It works well out of the box, but can be skipped for using other build tools. Example:</p>
 
 <p><code>mix phoenix.new —no-brunch</code></p>
 
-<p>Phoenix promotes using <a href="https://babeljs.io/docs/learn-es2015/" target="_blank">ES6</a> for JavaScript and includes ready modules to with a Phoenix back-end, such as sockets to communicate to Channels.</p>
+<p>Phoenix promotes using <a href="https://babeljs.io/docs/learn-es2015/" target="_blank">ES6</a> for JavaScript and includes ready modules to talk with  Phoenix back-ends. Example of importing sockets in JavaScript to communicate with Channels.</p>
 
-<p><strong>Live reload</strong> is part front-end stack, so every time a file is saved the page automatically updates in the browser.</p>
+<p><code>import sockets from phoenix</code></p>
 
-<p>Phoenix isn’t opinionated about CSS libraries or other front-end frameworks. You are free to pick yourself.</p>
+<p>Live-reload is included in Phoenix by default, so every time a file is saved the page automatically updates in the browser.</p>
+
+<p>Phoenix is not opinionated about CSS libraries or other front-end frameworks. You are free to pick yourself.</p>
 
 <h2 id="elixir">Elixir</h2>
 
-<p>Phoenix is built with <a href="http://elixir-lang.org/" target="_blank">Elixir</a>, a modern programming language created in 2009. </p>
+<p>Phoenix is built with <a href="http://elixir-lang.org/" target="_blank">Elixir</a>, a modern programming language created by <a href="https://twitter.com/josevalim" target="_blank">José Valim</a> in 2009. </p>
 
 <p>Elixir is a dynamic, functional language. Functional means it has no classes, object instances or inheritance - leading to simpler code.</p>
 
-<p>The syntax is nice and a lot can be accomplished in few lines of code. I recommend reading the <a href="http://elixir-lang.org/">Elixir website to learn more about the language features</a>. </p>
+<p>The syntax is nice and a lot can be accomplished in few lines of code. I recommend reading the <a href="http://elixir-lang.org/" target="_blank">Elixir website to learn more about the language features</a>. </p>
 
-<p>Elixir ships with a great set of tools to ease development. A build tool called Mix, Testing tool called ExUnit, an Interactive Shell called IEX and others.</p>
+<p>Elixir ships with a great set of tools to ease development. A build tool called <a href="http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html" target="_blank">Mix</a>, Testing tool called <a href="http://elixir-lang.org/docs/stable/ex_unit/ExUnit.html" target="_blank">ExUnit</a> and an Interactive Shell called <a href="http://elixir-lang.org/docs/stable/iex/IEx.html" target="_blank">IEX</a>.</p>
 
 <h2 id="erlang-virtual-machine">Erlang Virtual Machine</h2>
 
-<p>Elixir is a compiled language, making it faster. The compiled code runs on the <a href="http://www.erlang.org/" target="_blank">Erlang Virtual Machine</a>. That’s where the magic happens. </p>
+<p>Elixir is a compiled language, making it faster. The compiled code runs on the <a href="http://www.erlang.org/" target="_blank">Erlang Virtual Machine</a>. This is where the magic happens. </p>
 
-<p>Erlang was built for telecom by Ericsson in 1986. It currently handles around 50% of the world telecom traffic. </p>
+<p>Erlang was built for telecom by <a href="https://www.ericsson.com/" target="_blank">Ericsson</a> in 1986. It currently handles around 50% of the world telecom traffic. </p>
 
-<p>A telephone network needs to operate regardless of the number of simultaneous calls, unexpected issues, or upgrades taking place. Those became the Erlang’s design goals:</p>
+<p>A telephone network needs to operate regardless of the number of simultaneous calls, unexpected issues, or upgrades taking place. Those became Erlang’s design goals:</p>
 
 <ul>
   <li>Concurrency</li>
@@ -177,37 +185,41 @@
   <li>High Availability</li>
 </ul>
 
-<p>Surprisingly these goal fit very well with nature of the modern web. </p>
+<p>These goal fit surprisingly well with the nature of the modern web. </p>
 
 <h3 id="concurrency">Concurrency</h3>
 
 <p>The world is not synchronous. Many things are concurrently happening around you now while you read this. </p>
 
-<p>The same is true for software. Software talks to multiple users, on multiple devices and performs multiple tasks, all at the same time.</p>
+<p>The same is true for web apps. Modern web apps talk to multiple users, on multiple devices and perform multiple tasks, all at the same time.</p>
 
-<p>Most platforms offer threads and background processes to deal with concurrency in a performant way. Developers know the complexity of using these technologies.</p>
+<p>Most platforms offer <em>threads</em> and <em>background processes</em> to deal with this kind of concurrency in a performant way. Developers know the complexity of using these technologies.</p>
 
-<p>In Erlang concurrency is made simple by using light-weight processes within the virtual machine. Processes are an isolated unit and only communicate with each others by sending messages.</p>
+<p>In Erlang concurrency is made simple by using light-weight <em>processes</em> within the virtual machine. Processes are an isolated unit and only communicate with each others by sending messages.</p>
 
-<p>An extra benefit is the virtual machine spreads load on multiple CPU cores on the same machine. It can actually harness the power of modern computers better then most other platforms. It can also be scale to multiple machines, bringing us to the next section. </p>
+<p>The virtual machine can spread load on multiple CPU cores on the same machine. It can actually harness the power of modern computers better then most other platforms. </p>
+
+<p>Erlang can also easily be scaled to multiple machines, this brings us to the next section. </p>
 
 <h3 id="distribution">Distribution</h3>
 
-<p>There is a debate in the software industry on whether to build big monoliths of code or smaller micro-services. Monoliths are simpler to build but impossible to scale. Micro-services scale better but are more complex to build and maintain as complexity grows with every new service.</p>
+<p>There is a debate in the software industry on whether to build big <em>monoliths</em> of code or smaller <em>micro-services</em>. Monoliths are simpler to build but don’t scale well. </p>
+
+<p>Micro-services scale better but are more complex to maintain as complexity grows with every new service.</p>
 
 <p>I’ve talked to number of companies that have started with monoliths, but forced to re-write parts of the system as a micro-service to scale and deploy in isolation from other parts of the system. One famous example is Twitter.</p>
 
-<p>Erlang has an elegant solution to this problem. Since every process is an isolated unit and can communicate to the system on multiple machines, apps can be scaled infinitely. Yes infinitely, this blew my mind.</p>
+<p>The virtual machine has an elegant solution to this problem. Since every process is an isolated unit and can communicate to the system on multiple machines, apps can be scaled infinitely. Yes infinitely. This blew my mind.</p>
 
 <h3 id="fault-tolerance">Fault Tolerance</h3>
 
-<p><a href="https://nodejs.org/en/" target="_blank">NodeJS</a> is asynchronous, but runs in one thread on a machine. If something breaks it might take the whole system down.</p>
+<p>Most programming languages run by default in one thread. For example <a href="https://nodejs.org/en/" target="_blank">NodeJS</a>, it’s asynchronous but if something breaks it might take the whole system down.</p>
 
-<p>Erlang has an different approach by using <strong>supervisors</strong> to monitor processes within the virtual machine. If a process goes down it will be restarted by it’s Supervisor without affecting other parts of the system. </p>
+<p>Erlang uses the concept of <em>supervisors</em> to monitor processes within the virtual machine. If a process goes down it will be restarted by it’s Supervisor without affecting other parts of the system. </p>
 
-<p>In Erlang you should in general not write <strong>try-catch</strong> statements. Processes should just fail, log the problem and be restarted again. The system is basically self-healing.</p>
+<p>In Erlang you should in general not write <em>try-catch</em> statements. Processes should just fail, log the problem and be restarted again. Making up a self-healing system.</p>
 
-<h2 id="high-availability">High Availability</h2>
+<h3 id="high-availability">High Availability</h3>
 
 <p>– STILL POLISHING REST OF ARTICLE –</p>
 
