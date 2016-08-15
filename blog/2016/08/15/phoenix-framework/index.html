@@ -114,7 +114,7 @@
 
 <p><a href="http://rubyonrails.org/" target="_blank">Ruby on Rails</a> is a server-side framework that makes it possible to write database driven web apps in days, instead of weeks. </p>
 
-<p>Using Rails has however always meant sacrificing performance to gain the developer productivity. Ruby is a slow language and apps grow into big monoliths. </p>
+<p>Using Rails has however always meant sacrificing performance to gain developer productivity. Ruby is a slow language and apps grow into big monoliths. </p>
 
 <blockquote class="post__quote">
 	<p class="post__quote-text">"The Ruby programming language. Do things that are worse for the machine, that make programs run slower, but widen the smile on a programmer’s face.”</p>
@@ -140,7 +140,7 @@
 	<a href="https://twitter.com/chris_mccord" class="post__quote-author" target="_blank">Chris McCord, creator of Phoenix</a>
 </blockquote>
 
-<p>The amount of connected devices is increasing in the world, from smart phones to smart toasters. Phoenix is built with this in mind.</p>
+<p>The amount of connected devices is increasing in the world, from smartphones to smart toasters. Phoenix is built for this brave new world.</p>
 
 <p>There are already client libraries available for Web, Swift, ObjectC, Android and C# to communicate with Channels.</p>
 
@@ -152,11 +152,11 @@
 
 <p><code>mix phoenix.new —no-brunch</code></p>
 
-<p>Phoenix promotes using <a href="https://babeljs.io/docs/learn-es2015/" target="_blank">ES6</a> for JavaScript and includes ready modules to talk with  Phoenix back-ends. Example of importing sockets in JavaScript to communicate with Channels.</p>
+<p>Phoenix promotes using <a href="https://babeljs.io/docs/learn-es2015/" target="_blank">ES6</a> for modern JavaScript and includes ready modules to talk with  Phoenix back-ends. Example of importing sockets in JavaScript to communicate with Channels.</p>
 
 <p><code>import sockets from phoenix</code></p>
 
-<p>Live-reload is included in Phoenix by default, so every time a file is saved the page automatically updates in the browser.</p>
+<p><em>Live-reload</em> is included in Phoenix by default, so every time a file is saved the page automatically updates in the browser.</p>
 
 <p>Phoenix is not opinionated about CSS libraries or other front-end frameworks. You are free to pick yourself.</p>
 
@@ -164,7 +164,7 @@
 
 <p>Phoenix is built with <a href="http://elixir-lang.org/" target="_blank">Elixir</a>, a modern programming language created by <a href="https://twitter.com/josevalim" target="_blank">José Valim</a> in 2009. </p>
 
-<p>Elixir is a dynamic, functional language. Functional means it has no classes, object instances or inheritance - leading to simpler code.</p>
+<p>Elixir is a dynamic, functional language. Functional means it has no classes, object instances or classic inheritance - leading to simpler code.</p>
 
 <p>The syntax is nice and a lot can be accomplished in few lines of code. I recommend reading the <a href="http://elixir-lang.org/" target="_blank">Elixir website to learn more about the language features</a>. </p>
 
@@ -197,7 +197,7 @@
 
 <p>In Erlang concurrency is made simple by using light-weight <em>processes</em> within the virtual machine. Processes are an isolated unit and only communicate with each others by sending messages.</p>
 
-<p>The virtual machine can spread load on multiple CPU cores on the same machine. It can actually harness the power of modern computers better then most other platforms. </p>
+<p>The Virtual Machine can spread load on multiple CPU cores on the same machine. It can actually harness the power of modern computers better thean most other platforms. </p>
 
 <p>Erlang can also easily be scaled to multiple machines, this brings us to the next section. </p>
 
@@ -207,43 +207,39 @@
 
 <p>Micro-services scale better but are more complex to maintain as complexity grows with every new service.</p>
 
-<p>I’ve talked to number of companies that have started with monoliths, but forced to re-write parts of the system as a micro-service to scale and deploy in isolation from other parts of the system. One famous example is Twitter.</p>
+<p>I’ve talked to number of companies that have started with monoliths, but forced to re-write parts of the system as a micro-service to scale and deploy in isolation from other parts of the system. One famous example is <a href="https://twitter.com/" target="_blank">Twitter</a>.</p>
 
-<p>The virtual machine has an elegant solution to this problem. Since every process is an isolated unit and can communicate to the system on multiple machines, apps can be scaled infinitely. Yes infinitely. This blew my mind.</p>
+<p>The Virtual Machine has an elegant solution to this problem. Since every process is an isolated unit and can communicate to the system on multiple machines, apps can be scaled infinitely. Yes infinitely. This blew my mind.</p>
 
 <h3 id="fault-tolerance">Fault Tolerance</h3>
 
-<p>Most programming languages run by default in one thread. For example <a href="https://nodejs.org/en/" target="_blank">NodeJS</a>, it’s asynchronous but if something breaks it might take the whole system down.</p>
+<p>Most programming languages run by default in one thread. For example <a href="https://nodejs.org/en/" target="_blank">NodeJS</a> is asynchronous, but if something breaks it might take the whole system down.</p>
 
-<p>Erlang uses the concept of <em>supervisors</em> to monitor processes within the virtual machine. If a process goes down it will be restarted by it’s Supervisor without affecting other parts of the system. </p>
+<p>Erlang has a concept of <em>supervisors</em> to deal with this. Supervisors monitor processes within the Virtual Machine. If a process goes down it will be restarted by its Supervisor without affecting other parts of the system. </p>
 
 <p>In Erlang you should in general not write <em>try-catch</em> statements. Processes should just fail, log the problem and be restarted again. Making up a self-healing system.</p>
 
 <h3 id="high-availability">High Availability</h3>
 
-<p>– STILL POLISHING REST OF ARTICLE –</p>
+<p>Because of Erlang built-in fault tolerance, systems have high availability. There is an example of long-running system in Erlang with 99.999999999% availability.</p>
 
-<blockquote>
-  <p>In Erlang, there is an example of 99.999999999% availability</p>
-</blockquote>
-
-<p>Update code live in production - zero downtime deploys. Not like NGinx </p>
+<p>Because of Erlangs process model, it is possible to make zero downtime deploys. Updates are made live to production without taking the system down.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>Phoenix is built to take advantage of the Elixir and Erlang features. Makes it faster (even views and tempaltes in Phoneix are compiled) </p>
+<p>Phoenix takes good advantage of Elixir and Erlang features.</p>
 
-<p>In Phoenix, templates are compiled and routes are compiled.</p>
+<p>The Elixir programming language gives Phoenix an enjoyable developer experience and speed. Phoenix for example uses Elixir to compile HTML templates to bytecode to optmize speed further.</p>
 
-<p>In Phoenix each request and channels gets their own process.</p>
+<p>In Phoenix, each request and channel connection gets it’s own process within Erlangs Virtual Machine. This makes Phoenix great to build highly concurrent systems with good distribution mechanism, fault-tolerance and high availability.</p>
 
-<p>Erlang Virtual Machine spreads load on multiple cores to harness multiple CPU an unusual efficient way. It can also scale to multiple machines making it great to create distributed systems.</p>
+<p>It’s still early days for Phoenix. <a href="https://github.com/h4cc/awesome-elixir" target="_blank">Many libraries</a> are still missing or immature compared to Rails. It’s ready for production and <a href="https://github.com/doomspork/elixir-companies">many companies</a> are already using it live. </p>
 
-<p>It’s early days for Phoenix. It’s still not as mature as Rails and missing many comparable libraries. However, since the underlying technologies are mature - it’s ready for production.</p>
+<p>Services to deploy still seem a bit immature for Phoenix. It can be deployed to <a href="https://www.heroku.com/" target="_blank">Heroku</a> in a simple way, but Heroku is still without suppport for Erlang’s concurrency features. </p>
 
-<p>Deployment is still a problem. It can be deployed to Heroku but it dosn’t suppport Erlang concurrency features. Deploying to your own setup requires time. I trust that somewhere in the world hackers are sitting in a dark room, eating pizza and solving the deployment problem.</p>
+<p>Deploying to your own setup requires time and skills. I trust that somewhere in the world hackers are sitting in a dark room, eating pizza and making this easier for the rest of us.</p>
 
-<p>The roots even go deeper then I imagined </p>
+<p>I’ve been greatly impressed by Phoenix and look forward to use it going forward.</p>
 
 <div class="post__author u-pad-top">
 	<img alt="Hjörtur Hilmarsson" data-src="/images/about/team-grid/double-Hjortur.jpg" class="post__author-image" />
