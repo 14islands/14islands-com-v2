@@ -12,7 +12,7 @@ private: true
 
 Using Rails has however always meant sacrificing performance to gain developer productivity. Ruby is a slow language and apps grow into big monoliths. 
 
-{% include blog-quote.html quote="The Ruby programming language. Do things that are worse for the machine, that make programs run slower, but widen the smile on a programmer’s face." author-image-src="/images/work/montgomery/rm-large.jpg" author-name="DHH, the creator of Rails, creator of Rails" author-link="https://twitter.com/chris_mccord" %}
+{% include blog-quote.html quote="Do things that are worse for the machine, that make programs run slower, but widen the smile on a programmer’s face." author-image-src="/images/work/montgomery/rm-large.jpg" author-name="DHH, the creator of Rails about Ruby" author-link="https://twitter.com/chris_mccord" %}
 
 [The Phoenix Framework](http://www.phoenixframework.org/){:target="_blank"} is both fast and productive. What came as a surprise was a massive benefit of underlying technologies, the Elixir programming language and the Erlang Virtual Machine. 
 
@@ -127,9 +127,9 @@ The Elixir programming language gives Phoenix an enjoyable developer experience 
 
 In Phoenix, each request and channel connection gets it's own process within Erlangs Virtual Machine. This makes Phoenix great to build highly concurrent systems with good distribution mechanism, fault-tolerance and high availability.
 
-It's still early days for Phoenix. [Many libraries](https://github.com/h4cc/awesome-elixir){:target="_blank"} are still missing or immature compared to Rails. It's ready for production and [many companies](https://github.com/doomspork/elixir-companies) are already using it live. 
+It's still early days for Phoenix. [Many libraries](https://github.com/h4cc/awesome-elixir){:target="_blank"} are missing or immature compared to Rails. It's ready for production and [many companies](https://github.com/doomspork/elixir-companies){:target="_blank"} are already using it live. 
 
-Services to deploy still seem a bit immature for Phoenix. It can be deployed to [Heroku](https://www.heroku.com/){:target="_blank"} in a simple way, but Heroku is still without suppport for Erlang's concurrency features. 
+Services to deploy seem a bit immature for Phoenix. It can be deployed to [Heroku](https://www.heroku.com/){:target="_blank"} in a simple way, but Heroku is still without suppport for Erlang's concurrency features. 
 
 Deploying to your own setup requires time and skills. I trust that somewhere in the world hackers are sitting in a dark room, eating pizza and making this easier for the rest of us.
 
