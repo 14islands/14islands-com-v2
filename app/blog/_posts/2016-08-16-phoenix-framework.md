@@ -128,7 +128,7 @@ In Phoenix, each request and channel connection gets it's own process within Erl
 
 It's still early days for Phoenix. [Many libraries](https://github.com/h4cc/awesome-elixir){:target="_blank"} are missing or immature compared to Rails. It's ready for production and [many companies](https://github.com/doomspork/elixir-companies){:target="_blank"} are already using it live. 
 
-Services to deploy seem a bit immature for Phoenix. It can be deployed to [Heroku](https://www.heroku.com/){:target="_blank"} in a simple way, but Heroku is still without suppport for Erlang's concurrency features. 
+Services to deploy seem a bit immature for Phoenix. It can be deployed to [Heroku](https://www.heroku.com/){:target="_blank"} in a simple way, but Heroku is still without support for Erlang's concurrency features. 
 
 Deploying to your own setup requires time and skills. I trust that somewhere in the world hackers are sitting in a dark room, eating pizza and making this easier for the rest of us.
 
