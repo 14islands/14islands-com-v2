@@ -7,9 +7,9 @@ og_image: /images/blog/phoenix/open-graph-image.png
 
 # Why Phoenix is exciting for the modern web
 
-[Ruby on Rails](http://rubyonrails.org/){:target="_blank"} is a server-side framework that makes it possible to write database driven web apps in days, instead of weeks. 
+[Ruby on Rails](http://rubyonrails.org/){:target="_blank"} is a server-side framework that makes it possible to write database driven web apps in days, instead of weeks. I've been a fan of Rails since I discovered Rails many years back.
 
-Using Rails has however always meant sacrificing performance to gain developer productivity. Ruby is a slow language and apps grow into big monoliths. 
+Using Rails has however always meant sacrificing performance to gain developer productivity. Ruby is a slow language and apps can grow into big monoliths. 
 
 {% include blog-quote.html quote="Do things that are worse for the machine, that make programs run slower, but widen the smile on a programmer’s face." author-image-src="/images/work/montgomery/rm-large.jpg" author-name="DHH, the creator of Rails about the Ruby programming language" author-link="https://twitter.com/chris_mccord" %}
 
