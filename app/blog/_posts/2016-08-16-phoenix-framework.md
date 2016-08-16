@@ -3,7 +3,6 @@ layout: post
 title:  "Why Phoenix is exciting for the modern web"
 description: Phoenix is both fast and productive with powerful underlying technologies; Elixir & Erlang.
 og_image: /images/blog/phoenix/open-graph-image.png
-private: true
 ---
 
 # Why Phoenix is exciting for the modern web
