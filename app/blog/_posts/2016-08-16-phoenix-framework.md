@@ -11,16 +11,16 @@ og_image: /images/blog/phoenix/open-graph-image.png
 
 Using Rails has however always meant sacrificing performance to gain developer productivity. Ruby is a slow language and apps grow into big monoliths. 
 
-{% include blog-quote.html quote="Do things that are worse for the machine, that make programs run slower, but widen the smile on a programmer’s face." author-image-src="/images/work/montgomery/rm-large.jpg" author-name="DHH, the creator of Rails about Ruby" author-link="https://twitter.com/chris_mccord" %}
+{% include blog-quote.html quote="Do things that are worse for the machine, that make programs run slower, but widen the smile on a programmer’s face." author-image-src="/images/work/montgomery/rm-large.jpg" author-name="DHH, the creator of Rails about the Ruby programming language" author-link="https://twitter.com/chris_mccord" %}
 
 [The Phoenix Framework](http://www.phoenixframework.org/){:target="_blank"} is both fast and productive. What came as a surprise was a massive benefit of underlying technologies, the Elixir programming language and the Erlang Virtual Machine. 
 
 
 ## The Phoenix Framework 
 
-Phoenix appears on the surface to be similar to Rails. It's a server-side MVC framework with same concepts such as migrations and  generators. 
+Phoenix appears on the surface to be similar to Rails. It's a server-side MVC framework with same concepts such as migrations and generators. This makes it simpler for Rails developers to enter Phonenix. 
 
-This makes it simpler for Rails developers to enter Phonenix. Be aware though, the internals are totally different.
+Be aware though, the internals of Phoenix are totally different.
 
 ### Going real-time
 
