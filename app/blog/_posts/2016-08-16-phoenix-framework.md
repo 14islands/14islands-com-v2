@@ -11,7 +11,7 @@ og_image: /images/blog/phoenix/open-graph-image.png
 
 Using Rails has however always meant sacrificing performance to gain developer productivity. Ruby is a slow language and apps can grow into big monoliths. 
 
-{% include blog-quote.html quote="Do things that are worse for the machine, that make programs run slower, but widen the smile on a programmer’s face." author-image-src="/images/work/montgomery/rm-large.jpg" author-name="DHH, the creator of Rails about the Ruby programming language" author-link="https://twitter.com/chris_mccord" %}
+{% include blog-quote.html quote="Do things that are worse for the machine, that make programs run slower, but widen the smile on a programmer’s face." author-name="DHH, the creator of Rails about the Ruby programming language" author-link="https://m.signalvnoise.com/give-me-less-ill-pay-more-6e13b3844541#.llqii7mhn" %}
 
 [The Phoenix Framework](http://www.phoenixframework.org/){:target="_blank"} promises to be both fast and productive. What came as a surprise was a massive benefit of underlying technologies, the Elixir programming language and the Erlang Virtual Machine. 
 
@@ -87,7 +87,7 @@ Most platforms offer *threads* and *background processes* to deal with this kind
 
 In Erlang concurrency is made simple by using light-weight *processes* within the virtual machine. Processes are an isolated unit and only communicate with each others by sending messages.
 
-The Virtual Machine can spread load on multiple CPU cores on the same machine. It can actually harness the power of modern computers better thean most other platforms. 
+The Virtual Machine can spread load on multiple CPU cores on the same machine. It can actually harness the power of modern computers better than most other platforms. 
 
 Erlang can also easily be scaled to multiple machines, this brings us to the next section. 
 
