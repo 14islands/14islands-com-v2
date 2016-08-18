@@ -1,5 +1,10 @@
-# Convert Stylus to SCSS
+# Convert
 
-1. Run: stylus -o name-of.styl
+## Stylus to SCSS
 
-2. Change ending from .css to .scss
+1. Run: stylus plume-band-together.styl
+2. Change output file extension from .css to .scss
+
+## Sass to SCSS
+
+1. Run: sass plume-prototype.sass:plume-prototype.scss --sourcemap=none --disable-cache
