@@ -3,7 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "description": "Yeoman workflow for 14islands.com",
-  "dependencies": {},
+  "dependencies": {
+    "brfs": "^1.4.3",
+    "minimist": "^1.2.0"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.6.4",

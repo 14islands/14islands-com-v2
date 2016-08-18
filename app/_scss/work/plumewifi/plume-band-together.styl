@@ -1,0 +1,321 @@
+
+/*
+* Colors
+*/
+
+colors = {
+	text: #868686
+	textInverted: #ffffff
+	textCode: #5179e2
+	primaryGreen: #17e3a8
+	background: #efefed
+	backgroundGrey: #b3b3b3
+	backgroundDark: #202020
+	backgroundLightDark: #9c9c9b
+	backgroundBronze: #b5ad99
+	headline: #202020
+	headlineLink: #5179e2
+	testimonialLogo: #4d4d4f
+	strongLabel: #4f5051
+	footerText: #fff
+	footerBackground: #4f5051
+	formButton: #ffffff
+	formInvertedBorder: #868686
+	formInvertedHover: #767879
+	formInvertedTitle: #dbdbdb
+	formInvertedLink: #4d72d4
+	formOverlayBackground: #efefed
+	formErrorColor: #dc2323,
+	buttonIcon: #5179e2
+	buttonIconHover: darken(#5179e2, 10%)
+	closeButtonIcon: #fff
+	closeButtonIconHover: #ccc
+	buttonHover: #6269ff
+	inputBackground: #ffffff
+	inputInvertedBackground: #4f5051
+	inputText: #ffffff
+	inputPlaceholderText: alpha(#ffffff, 20%)
+	supportItemBackground: #ffffff
+}
+
+/*
+* Breakpoints
+*/
+
+breakpoints = {
+	medium: 700px
+	large: 1000px,
+	xLarge: 1800px
+}
+
+when-wider-than(b)
+	@media (min-width: b)
+		{block}
+
+.plume-band-together
+	// animation settings
+	startDelay = 0.5s // delay before animation starts when entering viewport
+	numberOfPulses = 6 // The whole animation consists of a sequence of pulses in the house
+	pulseDuration = 2.5s // length of each pulse animation
+	totalDuration = pulseDuration * numberOfPulses // total duration of CSS animation
+	ringDelay = pulseDuration/4 // delay between rings in same pulse
+
+
+
+	// ANIMATION KEYFRAMES AND MIXINS
+
+	@keyframes howitworks-band-together-pulse
+		0%
+			transform: scale(0.8)
+			opacity: 0
+		10%
+			transform: scale(1)
+			opacity: 1
+		20%, 100%
+			transform: scale(1.2)
+			opacity: 0
+
+	@keyframes howitworks-band-together-blue-item
+		0%
+			stroke: colors.text
+		7%, 10%
+			stroke: colors.textCode
+		20%, 100%
+			stroke: colors.text
+
+	@keyframes howitworks-band-together-blue-pod
+		0%
+			fill: colors.textCode
+			opacity: 0
+		3%, 10%
+			fill: colors.textCode
+			opacity: 1
+		20%, 100%
+			fill: colors.textCode
+			opacity: 0
+
+	@keyframes howitworks-band-together-green-item
+		0%
+			stroke: colors.text
+		7%, 10%
+			stroke: colors.primaryGreen
+		20%, 100%
+			stroke: colors.text
+
+	@keyframes howitworks-band-together-green-pod
+		0%
+			fill: colors.primaryGreen
+			opacity: 0
+		3%, 10%
+			fill: colors.primaryGreen
+			opacity: 1
+		20%, 100%
+			fill: colors.primaryGreen
+			opacity: 0
+
+
+	// generates ring animations with correct delays based on which Pulse it is
+	pulseAnimation(pulseIndex, numberOfRings)
+		animation-duration: totalDuration
+		animation-timing-function: linear
+		animation-iteration-count: infinite
+		animation-fill-mode: both
+		pulseDelay = pulseDuration * pulseIndex
+		for ring in (1..numberOfRings)
+			&:nth-child({ring})
+				width: @width * (ring/numberOfRings)
+				margin-top: - (@width/2)
+				margin-left: - (@width/2)
+				animation-delay: ringDelay * (ring/numberOfRings) + pulseDelay + startDelay
+
+	itemAnimationBlueItem(pulseIndex)
+		pulseDelay = pulseDuration * pulseIndex
+		delay = pulseDelay + startDelay
+		animation: howitworks-band-together-blue-item totalDuration linear infinite backwards delay
+
+	itemAnimationBluePod(pulseIndex)
+		pulseDelay = pulseDuration * pulseIndex
+		delay = pulseDelay + startDelay
+		animation: howitworks-band-together-blue-pod totalDuration linear infinite backwards delay
+
+	itemAnimationGreenItem(pulseIndex)
+		pulseDelay = pulseDuration * pulseIndex
+		delay = pulseDelay + startDelay
+		animation: howitworks-band-together-green-item totalDuration linear infinite backwards delay
+
+	itemAnimationGreenPod(pulseIndex)
+		pulseDelay = pulseDuration * pulseIndex
+		delay = pulseDelay + startDelay
+		animation: howitworks-band-together-green-pod totalDuration linear infinite backwards delay
+
+
+
+
+
+
+	// layout
+	display: flex
+	flex-direction: column
+	justify-content: center
+	height: 100%
+
+	// reserve space below for labels
+	//padding-bottom: 3rem
+
+	// align full right on desktop
+	+when-wider-than(breakpoints.large)
+		width: 100%
+		margin: 0
+
+	&-content
+		position: relative
+		&:before
+			display: block
+			content: ""
+			padding-top: (563.8/758) * 100% // ratio from svg
+
+	&-bg,
+	&-mask,
+	&-ring
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		position: absolute
+
+	&-labels
+		width: 20%
+		margin: 0
+		padding: 0
+		position: absolute
+		top: 16%
+		left: 17%
+		z-index: 2
+
+	&-ring
+		width: 10%
+		border-radius: 100%
+		opacity: 0
+		&--2_4Ghz
+			border: 1px solid colors.textCode
+		&--5Ghz
+			border: 1px solid colors.primaryGreen
+		&:before
+			content: ""
+			display: block
+			padding-top: 100%
+
+	&-mask
+		//overflow: hidden
+		left: auto
+		width: 82.7%
+		top: 0.5%
+		height: 94.1%
+		bottom: auto
+		&--fullHouse .plume-band-together-ring
+				width: 100%
+				margin-top: - (@width/2)
+				margin-left: - (@width/2)
+				top: 67.5%
+				left: 61.7%
+				right: auto
+				bottom: auto
+				pulseAnimation(1, 6)
+
+		&--leftSecondFloor .plume-band-together-ring
+				width: 40%
+				margin-top: - (@width/2)
+				margin-left: - (@width/2)
+				top: 67.5%
+				left: 35.5%
+				right: auto
+				bottom: auto
+				pulseAnimation(2, 3)
+
+		&--rightGroundFloor .plume-band-together-ring
+				width: 40%
+				margin-top: - (@width/2)
+				margin-left: - (@width/2)
+				top: 96%
+				left: 53%
+				right: auto
+				bottom: auto
+				pulseAnimation(3, 3)
+
+		&--leftGroundFloor .plume-band-together-ring
+				width: 40%
+				margin-top: - (@width/2)
+				margin-left: - (@width/2)
+				top: 96%
+				left: 32%
+				right: auto
+				bottom: auto
+				pulseAnimation(0, 3)
+
+		&--groundSecondFloor .plume-band-together-ring
+				width: 100%
+				margin-top: - (@width/2)
+				margin-left: - (@width/2)
+				top: 67.5%
+				left: 61.5%
+				right: auto
+				bottom: auto
+				pulseAnimation(4, 6)
+
+		&--topFloorLeft .plume-band-together-ring
+				width: 40%
+				margin-top: - (@width/2)
+				margin-left: - (@width/2)
+				top: 38.6%;
+				left: 61.5%;
+				right: auto
+				bottom: auto
+				pulseAnimation(5, 3)
+
+		&--topFloorRight .plume-band-together-ring
+				width: 40%
+				margin-top: - (@width/2)
+				margin-left: - (@width/2)
+				top: 38.6%;
+				left: 88%
+				right: auto
+				bottom: auto
+				pulseAnimation(0, 3)
+
+
+	startAnimations()
+		.plume-band-together-ring
+			animation-name: howitworks-band-together-pulse
+		svg
+			#computer > *
+				itemAnimationGreenItem(5)
+			#computerPod
+				itemAnimationGreenPod(5)
+			#washer > *
+				itemAnimationBlueItem(1, stroke)
+			#washerPod
+				itemAnimationBluePod(1, fill)
+			#tv > *
+				itemAnimationGreenItem(2)
+			#tvPod
+				itemAnimationGreenPod(2)
+			#car > *
+				itemAnimationGreenItem(3)
+			#carPod
+				itemAnimationGreenPod(3)
+			#camera > *
+				itemAnimationBlueItem(4)
+			#cameraPod
+				itemAnimationBluePod(4)
+
+			#label24Ghz,
+			#label24Ghz path
+				animation: howitworks-band-together-blue-label totalDuration linear infinite both startDelay
+
+			#label5Ghz,
+			#label5Ghz path
+				animation: howitworks-band-together-green-label totalDuration linear infinite both startDelay
+
+	// mobile - run when scrolled intro view
+	&.is-partially-visible
+		startAnimations()
