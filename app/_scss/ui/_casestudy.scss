@@ -238,9 +238,15 @@ a.next-casestudy__link:active {
 }
 .next-casestudy__subline {
 	margin-bottom: 1em;
+	.next-casestudy__link--dark & {
+		color: #333;
+	}
 }
 .next-casestudy__headline {
 	margin-top: 0;
 	width: 100%;
 	max-width: initial;
+	.next-casestudy__link--dark & {
+		color: #333;
+	}
 }
