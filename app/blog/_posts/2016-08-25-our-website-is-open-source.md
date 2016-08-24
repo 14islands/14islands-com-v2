@@ -37,7 +37,7 @@ With static files security updates are not needed to prevent these kinds of atta
 
 The site is also served over  a secure connection (SSL) using [Cloudflare as a CDN](https://cloudflare.com). CloudFlare offers fast global delivery and free SSL out of the box. 
 
-# It’s version controlled
+## It’s version controlled
 
 Since the website is all static files, we can use [Github Pages](https://pages.github.com/) for hosting. This is great as we already use use [Git](https://git-scm.com/) with [Github](https://github.com/) for version control on all open source projects.
 
