@@ -53,7 +53,7 @@ Jekyll is more flexible as content is added within the source code. It requires 
 
 This approach fits 14islands perfectly as we are all technical people here that care deeply about design. 
 
-[Our blog posts](14islands.com/blog/) are written and stored as [Markdown](https://daringfireball.net/projects/markdown/){:target="_blank"}, also big parts of [our case studies](14islands.com/work/). Other pages are simply made with good’ol HTML.
+[Our blog posts](https://14islands.com/blog/) are written and stored as [Markdown](https://daringfireball.net/projects/markdown/){:target="_blank"}, also big parts of [case studies](https://14islands.com/work/). Other pages are simply made with good’ol HTML.
 
 ## It’s dev friendly
 
