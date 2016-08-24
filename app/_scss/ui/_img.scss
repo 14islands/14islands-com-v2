@@ -28,6 +28,11 @@ img[data-src] {
     will-change: opacity;
     opacity: 0;
   }
+
+  &--outline .u-ratio--placeholder {
+  	border: 1px solid #eee;
+  	box-sizing: border-box;
+  }
 }
   // class added my main.coffee
 .js.cssanimations .content-image {

@@ -1,8 +1,8 @@
 
 {% if include.margin %}
-  <figure class="grid__row grid__row--wide content-image u-margin-{{include.margin}}-half {{include.class}}">
+  <figure class="grid__row grid__row--wide content-image u-margin-{{include.margin}}-half {{include.class}} {% if include.outline %}content-image--outline{% endif %}">
 {% else %}
-  <figure class="grid__row grid__row--wide content-image u-margin-top-half {{include.class}}">
+  <figure class="grid__row grid__row--wide content-image u-margin-top-half {{include.class}} {% if include.outline %}content-image--outline{% endif %}">
 {% endif %}
 
   <div class="u-ratio u-ratio--{{include.ratio}} u-ratio--placeholder">
