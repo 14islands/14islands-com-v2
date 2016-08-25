@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Our Website is open source"
+title:  "Our website is open source"
 description: We built our site using Jekyll with Github for several reasons.
 og_image: /images/blog/website-open-source/cat-16_10.jpg
 ---
