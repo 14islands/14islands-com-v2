@@ -34,8 +34,6 @@ Content Management Systems (CMS) such as [WordPress](https://wordpress.org/){:ta
 
 With static files, security updates are not needed to prevent these kind of attacks. 
 
-The site is also served over a secure connection (SSL) using [Cloudflare as a CDN](https://cloudflare.com){:target="_blank"}. CloudFlare offers fast global delivery with SSL out of the box. 
-
 ## It’s version controlled
 
 Since the website is all static files, we can use [Github Pages](https://pages.github.com/){:target="_blank"} for hosting. This is great as we already use [Git](https://git-scm.com/) with [Github](https://github.com/){:target="_blank"} for version control on all open source projects.
