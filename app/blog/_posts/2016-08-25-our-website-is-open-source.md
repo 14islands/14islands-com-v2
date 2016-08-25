@@ -3,7 +3,6 @@ layout: post
 title:  "Our Website is open source"
 description: We built our site using Jekyll with Github for several reasons.
 og_image: /images/blog/website-open-source/cat-16_10.jpg
-private: true
 ---
 
 # Our website is open source
@@ -33,7 +32,7 @@ The site [currently ranks 75% on PageSpeed insights on mobile and 89% on desktop
 
 Content Management Systems (CMS) such as [WordPress](https://wordpress.org/){:target="_blank"} need to be monitored and kept up to date. This is to prevent attackers from taking down the site if security vulnerabilities come up. 
 
-With static files, security updates are not needed to prevent these kinds of attacks. 
+With static files, security updates are not needed to prevent these kind of attacks. 
 
 The site is also served over a secure connection (SSL) using [Cloudflare as a CDN](https://cloudflare.com){:target="_blank"}. CloudFlare offers fast global delivery with SSL out of the box. 
 
