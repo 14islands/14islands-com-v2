@@ -25,6 +25,7 @@ $nav-item-padding: 1.5rem;
 .nav__item {
 	display: inline-block;
 	vertical-align: top;
+	background: none;
 	@include if-wider-than($breakpoint-three-px) {
     position:relative;
     left: -$nav-item-padding;
