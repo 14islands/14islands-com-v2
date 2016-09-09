@@ -7,9 +7,9 @@ og_image: /images/blog/website-open-source/cat-16_10.jpg
 
 # Our website is open source
 
-[Our website](http://14islands.com/){:target="_blank"} has been fully [open source](https://github.com/14islands/14islands-com){:target="_blank"} since we released it around two years ago. We built the site using [Jekyll](https://jekyllrb.com/){:target="_blank"}, a popular static website generator. 
+[Our website](http://14islands.com/) has been fully [open source](https://github.com/14islands/14islands-com) since we released it around two years ago. We built the site using [Jekyll](https://jekyllrb.com/), a popular static website generator. 
 
-The site is hosted on [Github](https://github.com/){:target="_blank"}. We used Jekyll with Github for several reason:
+The site is hosted on [Github](https://github.com/). We used Jekyll with Github for several reason:
 
 * It’s fast
 * It’s secure
@@ -26,17 +26,17 @@ There is no faster way to store a web pages then as static HTML files. It means 
 
 On top of this we made performance a priority. We optimize images, minify JavaScript/CSS and lazy-load secondary parts on the pages. 
 
-The site [currently ranks 75% on PageSpeed insights on mobile and 89% on desktop](https://developers.google.com/speed/pagespeed/insights/?url=14islands.com){:target="_blank"}. Of course we aim to reach 100% on all devices *👊*{: class="emoji"}
+The site [currently ranks 75% on PageSpeed insights on mobile and 89% on desktop](https://developers.google.com/speed/pagespeed/insights/?url=14islands.com). Of course we aim to reach 100% on all devices *👊*{: class="emoji"}
 
 ## It’s secure
 
-Content Management Systems (CMS) such as [WordPress](https://wordpress.org/){:target="_blank"} need to be monitored and kept up to date. This is to prevent attackers from taking down the site if security vulnerabilities come up. 
+Content Management Systems (CMS) such as [WordPress](https://wordpress.org/) need to be monitored and kept up to date. This is to prevent attackers from taking down the site if security vulnerabilities come up. 
 
 With static files, security updates are not needed to prevent these kind of attacks. 
 
 ## It’s version controlled
 
-Since the website is all static files, we can use [Github Pages](https://pages.github.com/){:target="_blank"} for hosting. This is great as we already use [Git](https://git-scm.com/) with [Github](https://github.com/){:target="_blank"} for version control on all open source projects.
+Since the website is all static files, we can use [Github Pages](https://pages.github.com/) for hosting. This is great as we already use [Git](https://git-scm.com/) with [Github](https://github.com/) for version control on all open source projects.
 
 Github has useful tools for our development process. We can suggest improvements and ideas to the site by creating a *branch* and make a *pull request* to discuss before others can approve it.
 
@@ -50,15 +50,15 @@ Jekyll is more flexible as content is added within the source code. It requires 
 
 This approach fits 14islands perfectly as we are all technical people here that care deeply about design. 
 
-[Our blog posts](https://14islands.com/blog/) are written and stored as [Markdown](https://daringfireball.net/projects/markdown/){:target="_blank"}, also big parts of [case studies](https://14islands.com/work/). Other pages are simply made with good’ol HTML.
+[Our blog posts](https://14islands.com/blog/) are written and stored as [Markdown](https://daringfireball.net/projects/markdown/), also big parts of [case studies](https://14islands.com/work/). Other pages are simply made with good’ol HTML.
 
 ## It’s dev friendly
 
 Jekyll allows us to use any tools we like for our front-end process. 
 
-For the site we used [Gulp](http://gulpjs.com/){:target="_blank"} as a build tool, [Sass](http://sass-lang.com/){:target="_blank"} for CSS, [CoffeeScript](http://coffeescript.org/){:target="_blank"} for JavaScript, [Bower](https://bower.io/){:target="_blank"} as a front-end package manager and [NPM](https://www.npmjs.com/){:target="_blank"} for development dependencies in [NodeJS](https://nodejs.org/en/){:target="_blank"}.
+For the site we used [Gulp](http://gulpjs.com/) as a build tool, [Sass](http://sass-lang.com/) for CSS, [CoffeeScript](http://coffeescript.org/) for JavaScript, [Bower](https://bower.io/) as a front-end package manager and [NPM](https://www.npmjs.com/) for development dependencies in [NodeJS](https://nodejs.org/en/).
 
-As a fun site note, we have totally revampted our process since two years ago. Things move so fast in the technology world. Today we use [Stylus](http://stylus-lang.com/){:target="_blank"} for CSS and [ES6](https://babeljs.io/docs/learn-es2015/){:target="_blank"} (ES2015) for JavaScript. Then we use NPM as a package manager for both front-end, back-end and [as a build tool](https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/){:target="_blank"}. 
+As a fun site note, we have totally revampted our process since two years ago. Things move so fast in the technology world. Today we use [Stylus](http://stylus-lang.com/) for CSS and [ES6](https://babeljs.io/docs/learn-es2015/) (ES2015) for JavaScript. Then we use NPM as a package manager for both front-end, back-end and [as a build tool](https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/). 
 
 The good thing is Jekyll is flexible and allows us adjust the front-end process the way we want.
 
