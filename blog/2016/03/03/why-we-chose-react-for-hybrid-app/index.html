@@ -112,7 +112,7 @@
 		<span class="post__date">3 March 2016</span>
 		<h1 id="why-we-chose-react-for-our-latest-hybrid-app">Why we chose React for our latest hybrid app</h1>
 
-<p><strong>We recently had the pleasure of working with <a href="https://www.fjordnet.com/" target="_blank">Fjord</a> to prototype and build an HTML5 hybrid app for one of their clients.</strong></p>
+<p><strong>We recently had the pleasure of working with <a href="https://www.fjordnet.com/">Fjord</a> to prototype and build an HTML5 hybrid app for one of their clients.</strong></p>
 
 <figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
 
@@ -128,21 +128,21 @@
 
 <p>Hybrid apps provide a way to build an application using web technologies and package it as native apps for multiple mobile platforms.</p>
 
-<p>In this article we share the techniques and challenges we faced while building an app for iOS and Android using <a href="https://facebook.github.io/react/" target="_blank">React</a> &amp; <a href="https://cordova.apache.org/" target="_blank">Cordova</a>.</p>
+<p>In this article we share the techniques and challenges we faced while building an app for iOS and Android using <a href="https://facebook.github.io/react/">React</a> &amp; <a href="https://cordova.apache.org/">Cordova</a>.</p>
 
 <p><em><strong>Note:</strong> React Native was announced during 2015, however when this project started, React Native for Android had not been released making it a no-go for us.</em></p>
 
 <h2 id="the-hybrid-challenge">The hybrid challenge</h2>
 <p>Writing hybrid apps is nothing new and it’s certainly not the right choice for all applications. The challenge is to achieve the premium feeling of a native app with smooth animations and a snappy interface. </p>
 
-<p>We’ve ventured down this path <a href="http://blog.14islands.com/post/52546836134/case-study-betting-on-a-fully-responsive-web" target="_blank">many times</a> in <a href="http://blog.14islands.com/post/52934733389/racer-a-chrome-experiment" target="_blank">the past</a> using more conventional JavaScript MVC frameworks such as Backbone.js. </p>
+<p>We’ve ventured down this path <a href="http://blog.14islands.com/post/52546836134/case-study-betting-on-a-fully-responsive-web">many times</a> in <a href="http://blog.14islands.com/post/52934733389/racer-a-chrome-experiment">the past</a> using more conventional JavaScript MVC frameworks such as Backbone.js. </p>
 
 <p>Most hybrid projects start with a fast, responsive UI - until you hit a wall. This usually appears late in the project, after weeks of adding functionality and more and more content has been injected into the DOM. </p>
 
 <p>The relationship of view components become hard to keep track of, and circular dependencies of event listeners cause too many reads/writes to the DOM.</p>
 
 <h2 id="enter-react">Enter React</h2>
-<p><a href="https://facebook.github.io/react/" target="_blank">React</a> is a JavaScript library for creating user interfaces and is often described as the <em>V</em> in <em>MVC</em>. The idea behind React is to build reusable components that automatically manage all UI updates.</p>
+<p><a href="https://facebook.github.io/react/">React</a> is a JavaScript library for creating user interfaces and is often described as the <em>V</em> in <em>MVC</em>. The idea behind React is to build reusable components that automatically manage all UI updates.</p>
 
 <p>React knows when to re-render a component based on its state, and keeps a virtual DOM for efficient re-rendering. This approach is great because it lets us write our code as if we were re-rendering the entire template, and React will make sure to only update the part of the DOM that changed.</p>
 
@@ -162,9 +162,9 @@
 <p>It takes a while getting used to but it does wonders for your productivity.</p>
 
 <h3 id="mixins-vs-composition">Mixins vs Composition</h3>
-<p>We are big fans of modern JavaScript and opted for writing ES2015 syntax using <a href="https://babeljs.io/" target="_blank">Babel</a>.</p>
+<p>We are big fans of modern JavaScript and opted for writing ES2015 syntax using <a href="https://babeljs.io/">Babel</a>.</p>
 
-<p>Mixins cannot be used with ES2015 classes and there are other <a href="https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750#.6uq9fmvgn" target="_blank">good reasons not to use them</a>. We used Higher-order-components to compose functionality instead of mixins:</p>
+<p>Mixins cannot be used with ES2015 classes and there are other <a href="https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750#.6uq9fmvgn">good reasons not to use them</a>. We used Higher-order-components to compose functionality instead of mixins:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**</span>
 <span class="cm"> * Exports a higher order component wrapping the component to decorate</span>
@@ -212,7 +212,7 @@
   
 </figure>
 
-<p>There are endless implementations of Flux and after researching many of them we settled on using <a href="https://github.com/goatslacker/alt" target="_blank"><em>Alt</em> </a>.</p>
+<p>There are endless implementations of Flux and after researching many of them we settled on using <a href="https://github.com/goatslacker/alt"><em>Alt</em> </a>.</p>
 
 <h2 id="ui-styling--animations">UI styling &amp; animations</h2>
 <p>In order for an app to feel native it’s super important that the UI has smooth animations at a steady 60 FPS and no flicker. Mobile browsers have noticeably slow JavaScript performance so we made sure to only use pure CSS animations and transitions.</p>
@@ -240,7 +240,7 @@
   }
 );</code></pre></div>
 
-<p>This can quickly get a bit messy and verbose for a component with many state modifiers, so we created our own <a href="https://github.com/14islands/bem-helper-js" target="_blank">bem-helper</a> to make it easier to work with BEM class names in JSX.</p>
+<p>This can quickly get a bit messy and verbose for a component with many state modifiers, so we created our own <a href="https://github.com/14islands/bem-helper-js">bem-helper</a> to make it easier to work with BEM class names in JSX.</p>
 
 <div class="highlight"><pre><code class="language-html" data-lang="html">import BEM from &#39;bem-helper-js&#39;;
 
@@ -268,12 +268,12 @@ class MyComponent {
 
 <p><em>Most popular animation libraries will access the DOM directly so be careful with what you chose.</em></p>
 
-<p>Luckily the React team has already provided us with the <a href="https://facebook.github.io/react/docs/animation.html" target="_blank">ReactCSSTransitionGroup</a> which solves the most common scenario of applying animation classes and adding/removing animating elements from the DOM. It worked great for handling the page transitions in our app.</p>
+<p>Luckily the React team has already provided us with the <a href="https://facebook.github.io/react/docs/animation.html">ReactCSSTransitionGroup</a> which solves the most common scenario of applying animation classes and adding/removing animating elements from the DOM. It worked great for handling the page transitions in our app.</p>
 
 <h2 id="wrapping-it-up">Wrapping it up</h2>
-<p>We used <a href="https://cordova.apache.org/" target="_blank">Apache Cordova</a> to package the app for iOS and Android. It’s fairly straightforward to setup, and it comes with a bunch of useful plugins that expose a JavaScript API to access certain native features. </p>
+<p>We used <a href="https://cordova.apache.org/">Apache Cordova</a> to package the app for iOS and Android. It’s fairly straightforward to setup, and it comes with a bunch of useful plugins that expose a JavaScript API to access certain native features. </p>
 
-<p>As an example, we included the <a href="https://github.com/apache/cordova-plugin-statusbar" target="_blank">Statusbar plugin</a> to change the color of the native statusbar during runtime.</p>
+<p>As an example, we included the <a href="https://github.com/apache/cordova-plugin-statusbar">Statusbar plugin</a> to change the color of the native statusbar during runtime.</p>
 
 <figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
 
@@ -289,7 +289,7 @@ class MyComponent {
 
 <p>Since iOS 8 we finally have access to scroll events during scrolling inertia (the scrolling motion that continues after release of the touch). <strong>This is not the case using the old UIWebView which is still default in Cordova.</strong></p>
 
-<p>There is an official <a href="https://github.com/apache/cordova-plugin-wkwebview-engine" target="_blank">cordova plugin for the new WKWebView</a> for iOS 9 users. However, it’s not possible to use XHR from the file:// protocol without CORS enabled which prevented us from using it.</p>
+<p>There is an official <a href="https://github.com/apache/cordova-plugin-wkwebview-engine">cordova plugin for the new WKWebView</a> for iOS 9 users. However, it’s not possible to use XHR from the file:// protocol without CORS enabled which prevented us from using it.</p>
 
 <h2 id="summary">Summary</h2>
 <p>We are super happy with our choice to go with React for this project, but we would keep a few things in mind and make some adjustments for next time.</p>
@@ -309,11 +309,11 @@ class MyComponent {
 <ul>
   <li>Tricky to implement complex timeline animations using the React State without resorting to manually touching the DOM.</li>
   <li>Not a complete solution - hard for inexperienced developers to get started. Need to pick a Router, a Flux library / data layer, etc.</li>
-  <li>New React versions released relatively often and the ecosystem is immature - most plugins change even more often than React and API changes happens all the time. We had breaking API changes during this project in both <code>react-router</code> and <code>Alt</code>. <code>Alt</code> proved to be changing quickly and documentation was out of date. We’ll keep our eyes on <a href="https://github.com/reactjs/redux" target="_blank"><em>Redux</em></a> for the next React project.</li>
+  <li>New React versions released relatively often and the ecosystem is immature - most plugins change even more often than React and API changes happens all the time. We had breaking API changes during this project in both <code>react-router</code> and <code>Alt</code>. <code>Alt</code> proved to be changing quickly and documentation was out of date. We’ll keep our eyes on <a href="https://github.com/reactjs/redux"><em>Redux</em></a> for the next React project.</li>
 </ul>
 
 <h4 id="where-to-go-from-here">Where to go from here</h4>
-<p><em>React Native is currently gaining momentum and it will be interesting to follow. The key difference is that has a proxy layer between JavaScript and the native SDK. It runs JavaScript code in a separate thread, making it possible to have smooth animations while executing other operations. React Native has also chosen inline styles over CSS using a Flexbox approach. It’s estimated that over <a href="http://nerds.airbnb.com/facebook-react-native/" target="_blank">85% of the codebase will be shareable</a> between iOS and Android.</em></p>
+<p><em>React Native is currently gaining momentum and it will be interesting to follow. The key difference is that has a proxy layer between JavaScript and the native SDK. It runs JavaScript code in a separate thread, making it possible to have smooth animations while executing other operations. React Native has also chosen inline styles over CSS using a Flexbox approach. It’s estimated that over <a href="http://nerds.airbnb.com/facebook-react-native/">85% of the codebase will be shareable</a> between iOS and Android.</em></p>
 
 <div class="post__author u-pad-top">
 	<img alt="David Lindkvist" data-src="/images/about/team-grid/double-David.jpg" class="post__author-image" />

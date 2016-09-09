@@ -112,15 +112,15 @@
 		<span class="post__date">20 April 2016</span>
 		<h1 id="better-way-to-use-modernizr-with-command-line-config">Better way to use Modernizr with Command Line Config</h1>
 
-<p><a href="https://modernizr.com/" target="_blank">Modernizr</a> is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best experience on different user devices.</p>
+<p><a href="https://modernizr.com/">Modernizr</a> is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best experience on different user devices.</p>
 
 <p>Modernizr has 259 built-in feature detections. The minified file with all detections included is 90.65 kB in size. That’s quite big, specially considering that the file is added in the &lt;head&gt; of the HTML document.</p>
 
-<p>This is why most developers <a href="https://modernizr.com/download?setclasses" target="_blank">hand-pick features as needed from the Modernizr website</a> to include in the library. The process is manual and can take time, but now there is a better way.</p>
+<p>This is why most developers <a href="https://modernizr.com/download?setclasses">hand-pick features as needed from the Modernizr website</a> to include in the library. The process is manual and can take time, but now there is a better way.</p>
 
 <h2 id="command-line-config">Command Line Config</h2>
 
-<p>Modernizr has shipped with a feature called <a href="https://modernizr.com/docs#command-line-config" target="_blank">Command Line Config</a>. It helps to automate the process, backed up by a <a href="https://www.npmjs.com/package/modernizr" target="_blank">Modernizr NPM module</a>. This module should be installed globally on the developer’s machine, example:</p>
+<p>Modernizr has shipped with a feature called <a href="https://modernizr.com/docs#command-line-config">Command Line Config</a>. It helps to automate the process, backed up by a <a href="https://www.npmjs.com/package/modernizr">Modernizr NPM module</a>. This module should be installed globally on the developer’s machine, example:</p>
 
 <div class="highlight"><pre><code class="language-text" data-lang="text">npm i -g modernizr</code></pre></div>
 
@@ -140,7 +140,7 @@
 
 <p>When you need to add a new feature detections, there is no need to head over to the Modernizr website and manually generate a new file. </p>
 
-<p>Simply define what you need in the config file. You can look at the <a href="https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json" target="_blank">example file with all features included</a> to see what’s possible.</p>
+<p>Simply define what you need in the config file. You can look at the <a href="https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json">example file with all features included</a> to see what’s possible.</p>
 
 <h2 id="generate">Generate</h2>
 
