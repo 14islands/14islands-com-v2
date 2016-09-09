@@ -12,7 +12,7 @@ a:visited {
   .footer &,
  	.post ul &,
   .post blockquote &,
-  .page-handbook ul &,
+  .page-handbook .main-content ul &,
   .casestudy ul & {
   	background-image: linear-gradient(to bottom,rgba(0,0,0,0) 50%,$brand-link-color 50%);
 		background-repeat: repeat-x;
@@ -23,10 +23,10 @@ a:visited {
   .casestudy blockquote & {
   	background-position: 0 4rem;
   }
-  h1 &,
-	h2 &,
-	h3 &,
-	h4 & {
+  .page-blog h1 &,
+	.page-blog h2 &,
+	.page-blog h3 &,
+	.page-blog h4 & {
 		color: $brand-link-color;
 	}
 }
