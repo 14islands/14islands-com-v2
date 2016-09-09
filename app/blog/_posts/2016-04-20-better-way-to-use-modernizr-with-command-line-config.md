@@ -7,15 +7,15 @@ og_image: /images/blog/modernizr/open-graph-image.png
 
 # Better way to use Modernizr with Command Line Config
 
-[Modernizr](https://modernizr.com/){:target="_blank"} is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best experience on different user devices.
+[Modernizr](https://modernizr.com/) is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best experience on different user devices.
 
 Modernizr has 259 built-in feature detections. The minified file with all detections included is 90.65 kB in size. That's quite big, specially considering that the file is added in the <head> of the HTML document.
 
-This is why most developers [hand-pick features as needed from the Modernizr website](https://modernizr.com/download?setclasses){:target="_blank"} to include in the library. The process is manual and can take time, but now there is a better way.
+This is why most developers [hand-pick features as needed from the Modernizr website](https://modernizr.com/download?setclasses) to include in the library. The process is manual and can take time, but now there is a better way.
 
 ## Command Line Config
 
-Modernizr has shipped with a feature called [Command Line Config](https://modernizr.com/docs#command-line-config){:target="_blank"}. It helps to automate the process, backed up by a [Modernizr NPM module](https://www.npmjs.com/package/modernizr){:target="_blank"}. This module should be installed globally on the developer’s machine, example:
+Modernizr has shipped with a feature called [Command Line Config](https://modernizr.com/docs#command-line-config). It helps to automate the process, backed up by a [Modernizr NPM module](https://www.npmjs.com/package/modernizr). This module should be installed globally on the developer’s machine, example:
 
 {% highlight Text %}
 npm i -g modernizr
@@ -39,7 +39,7 @@ Next step is to create a config file at the root of the project and call it some
 
 When you need to add a new feature detections, there is no need to head over to the Modernizr website and manually generate a new file. 
 
-Simply define what you need in the config file. You can look at the [example file with all features included](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json){:target="_blank"} to see what’s possible.
+Simply define what you need in the config file. You can look at the [example file with all features included](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json) to see what’s possible.
 
 ## Generate
 

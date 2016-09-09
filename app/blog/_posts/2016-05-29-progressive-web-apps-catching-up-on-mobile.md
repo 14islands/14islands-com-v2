@@ -7,7 +7,7 @@ og_image: /images/blog/progressive-web-apps/open-graph-image.jpg
 
 # The web is catching up on mobile
 
-*Watching the web talks from [GoogleIO last week](https://events.google.com/io2016/){:target="_blank"} and it made me want to* 👏👏👏
+*Watching the web talks from [GoogleIO last week](https://events.google.com/io2016/) and it made me want to* 👏👏👏
 
 The big story are new capabilities, making it possible to build web apps with similar user experience on mobile as native apps.
 
@@ -26,7 +26,7 @@ These features are made available in Chrome and Firefox, currently mostly on And
  
 ## Progressive Web Apps
 
-The umbrella term for apps using features above is **Progressive Web Apps** (PWA). It was coined by [Alex Russel](https://twitter.com/slightlylate){:target="_blank"} and [his original post](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/){:target="_blank"} explains the common traits of these apps.
+The umbrella term for apps using features above is **Progressive Web Apps** (PWA). It was coined by [Alex Russel](https://twitter.com/slightlylate) and [his original post](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/) explains the common traits of these apps.
 
 The word **Progressive** has two meanings here:
 
@@ -42,15 +42,15 @@ Anyhow. It's good to have an umbrella term to talk about these things.
 
 ## Getting started
 
-As a developer I'm looking forward to get my hands wet and build using these features. To learn more I recommend watching [Jake Archibald](https://twitter.com/jaffathecake){:target="_blank"} epic [talk at GoogleIO about offline-first](https://www.youtube.com/watch?v=cmGr0RszHc8){:target="_blank"} and reading [Addy Osmani's](https://twitter.com/addyosmani){:target="_blank"} [post about getting started using the Shell Architecture](https://addyosmani.com/blog/getting-started-with-progressive-web-apps/){:target="_blank"} to build Progressive Web Apps. 
+As a developer I'm looking forward to get my hands wet and build using these features. To learn more I recommend watching [Jake Archibald](https://twitter.com/jaffathecake) epic [talk at GoogleIO about offline-first](https://www.youtube.com/watch?v=cmGr0RszHc8) and reading [Addy Osmani's](https://twitter.com/addyosmani) [post about getting started using the Shell Architecture](https://addyosmani.com/blog/getting-started-with-progressive-web-apps/) to build Progressive Web Apps. 
 
-There is also a [tool called Lighthouse](https://github.com/googlechrome/lighthouse){:target="_blank"} to audit and perfomance check your Progressive Web App, pointed out by our good friend [Paul Lewis](https://aerotwist.com/){:target="_blank"}.
+There is also a [tool called Lighthouse](https://github.com/googlechrome/lighthouse) to audit and perfomance check your Progressive Web App, pointed out by our good friend [Paul Lewis](https://aerotwist.com/).
 
 ## On the business side
 
 As a business person I would consider how this could help my business going forward. 
 
-Building native apps for different platforms is expensive and hard, and distribution through app stores is challenging. [Research shows](http://techcrunch.com/2015/06/22/consumers-spend-85-of-time-on-smartphones-in-apps-but-only-5-apps-see-heavy-use/){:target="_blank"} that the average person mainly uses 5 native apps on their phone.
+Building native apps for different platforms is expensive and hard, and distribution through app stores is challenging. [Research shows](http://techcrunch.com/2015/06/22/consumers-spend-85-of-time-on-smartphones-in-apps-but-only-5-apps-see-heavy-use/) that the average person mainly uses 5 native apps on their phone.
 
 On desktop back in the days, we mostly used native email clients such as Outlook. Today, most people use web apps like Gmail or Inbox for email on Desktop. Maybe the same evolution is about take place on mobile.
 
