@@ -3,26 +3,26 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Blog - 14islands</title>
-		<meta name="description" content="14islands is a web development studio that cares deeply about creating great user experiences.">
+		<title>Ways to build a mobile app without native technologies</title>
+		<meta name="description" content="We are often asked about the “best” ways to build a native app. It always depends on the needs, but there are few technical possibilities.">
 		<meta name="keywords" content="Web Development, Web Design, UX, Web Developers, Digital, Studio, Agency, Stockholm, Consulting, Training, HTML, CSS, JavaScript, WordPress">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<meta property="og:locale" content="en_US" />
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Blog - 14islands" />
-		<meta property="og:description" content="14islands is a web development studio that cares deeply about creating great user experiences." />
-		<meta property="og:image" content="https://14islands.com/images/home-page-screenshot.png" />
-		<meta property="og:url" content="https://14islands.com/blog/" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Ways to build a mobile app without native technologies" />
+		<meta property="og:description" content="We are often asked about the “best” ways to build a native app. It always depends on the needs, but there are few technical possibilities." />
+		<meta property="og:image" content="https://14islands.com/images/blog/native-app-ways/open-graph-image.png" />
+		<meta property="og:url" content="https://14islands.com/blog/2016/09/21/mobile-apps-without-native-technologies/" />
 		<meta property="og:site_name" content="14islands" />
 
 		<!-- Twitter Card data -->
 		<meta name="twitter:card" content="summary">
 		<meta name="twitter:site" content="@14islands">
-		<meta name="twitter:title" content="Blog - 14islands">
-		<meta name="twitter:description" content="14islands is a web development studio that cares deeply about creating great user experiences.">
+		<meta name="twitter:title" content="Ways to build a mobile app without native technologies">
+		<meta name="twitter:description" content="We are often asked about the “best” ways to build a native app. It always depends on the needs, but there are few technical possibilities.">
 		<meta name="twitter:creator" content="@14islands">
-		<meta name="twitter:image" content="https://14islands.com/images/home-page-screenshot.png">
+		<meta name="twitter:image" content="https://14islands.com/images/blog/native-app-ways/open-graph-image.png">
 
 		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -56,7 +56,7 @@
 		<link rel="stylesheet" href="/css/main.905d.css"/>
 
 	</head>
-	<body id="" class="page page-blog">
+	<body id="" class="page page-/blog/2016/09/21/mobile-apps-without-native-technologies">
 
 		<!--[if lt IE 9]>
 				<p class="browsehappy"><span>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.<span></p>
@@ -107,263 +107,118 @@
 
 
 		<main class="main-content js-pjax-container">
-				<section class="grid u-pad-top">
+				<article class="post grid u-pad-both pjax-animate">
+	<section class="grid__row">
+		<span class="post__date">21 September 2016</span>
+		<h1 id="ways-to-build-a-mobile-app-without-native-technologies">Ways to build a mobile app without native technologies</h1>
 
-	<header class="grid__row pjax-animate u-margin-bottom-half">
-		<h1>Bloggin'</h1>
-	</header>
+<p>Apps are a big part of our lives. They live on our mobile home screen and we use them to socialize, entertain and talk to services. </p>
+
+<p>As a development studio we are often asked about the “best” ways to build a native app. It always depends on the needs, but there are few technical possibilities. </p>
+
+<p>The most basic way is to build apps with native technologies on a given platform. This means writing <a href="https://developer.apple.com/swift/">Swift</a>/<a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html">Object-C</a> on <a href="http://www.apple.com/ios/">iOS</a> for <a href="http://www.apple.com/iphone/">iPhone</a>, <a href="https://java.com">Java</a> for <a href="https://developer.android.com/index.html">Android</a> devices, <a href="https://www.microsoft.com/net">.NET</a> for <a href="https://www.microsoft.com/en-us/windows/view-all?col=phones">Windows Phone</a> and so forth.</p>
+
+<p>To build with native technologies gives most control to create smooth user experiences and use specific capabilities on each device. Most of the popluar apps like <a href="https://www.facebook.com/">Facebook</a>, <a href="https://twitter.com/">Twitter</a>, <a href="https://www.instagram.com/">Instagram</a> and <a href="https://www.uber.com/">Uber</a> are built native. </p>
+
+<p>However, it’s also an expensive way to build apps. Companies create and maintain multiple code-bases, manage multiple teams with different types of developers and then keep work in sync between them all. Complexity multiplies with each platform.</p>
+
+<p>Not all companies have resources to build using native technologies. Many companies have other priorities. There are options, popular ones are:</p>
+
+<ul>
+  <li>Web technologies with <a href="https://cordova.apache.org/">Cordova</a> (PhoneGap)</li>
+  <li><a href="https://facebook.github.io/react-native/">React Native</a></li>
+</ul>
+
+<p>I’ll also mention more alternatives at the end of the article.</p>
+
+<h2 id="web-technologies-with-cordova-phonegap">Web Technologies with Cordova (PhoneGap)</h2>
+
+<p><a href="http://phonegap.com/">PhoneGap</a> is a very successful project. The company behind it was bought up by <a href="https://www.adobe.com/">Adobe</a> and the open source part of it named <a href="https://cordova.apache.org/">Apache Cordova</a>.</p>
+
+<p>Cordova is a native wrapper for web technologies (HTML, CSS, JavaScript). It basically uses native web-view on each platform as a wrapper and provides access to device capabilities through JavaScript APIs. The idea is build once, work everywhere.</p>
+
+<p>iOS, Android, Windows Moble and other platforms are supported by Cordova. This works great for companies that want apps on many platforms and are able to settle for a modest user experience. I’ve seen really nice apps built with Cordova, we’ve even <a href="https://14islands.com/blog/2016/03/03/why-we-chose-react-for-hybrid-app/">built some ourselves</a>. </p>
+
+<p>The main downside is not having the ability to use native components  when working inside web views. Cordova also cannot provide 100% access to all platform features. Check out <a href="https://cordova.apache.org/plugins/">plugin directory</a> to see what capabilites are available.</p>
+
+<p>An extra benefit of Cordova is being able to use same code both on web and native platforms. Responsive web design principles can make it work on all screen sizes.</p>
+
+<h2 id="react-native">React Native</h2>
+
+<p><a href="https://facebook.github.io/react-native/">React Native</a> is the new hotness to build native apps for iOS and Android. It’s an open source project started by Facebook. They’ve used it for apps such as <a href="http://newsroom.fb.com/news/2014/11/introducing-the-facebook-groups-app/">Facebook Groups</a>.</p>
+
+<p>React Native was inspired by <a href="https://facebook.github.io/react/">React</a>, a super popular framework for the web, also incarnated by Facebook. React Native and React web apps are built with JavaScript and share the same architecture pattern. The idea is to learn once, use everywhere.</p>
+
+<p>Developers claim they are able to <a href="http://nerds.airbnb.com/facebook-react-native/">re-use around 85% of the codebase</a> when using React and React Native together. </p>
+
+<p>React Native is a run-time environment inside a native app shell. It runs JavaScript code in a special thread, making it possible to have smooth animations while executing other operations. There are however limits to optimizing performance in complex apps within the run-time.</p>
+
+<p>The cool thing is that React Native allows use of native components and access to device capabilities. <a href="https://facebook.github.io/react-native/docs/native-modules-ios.html">Native modules</a> are create to bridge the gap between native code and React Native code. Most modules exist within the eco-system, but you can build one yourself if needed.</p>
+
+<p>React Native uses inline styles over CSS using a Flexbox approach. I found the ways to style apps a bit limiting. It will hopefully improve over time. </p>
+
+<p>To see what’s possible with React Native it’s good to <a href="https://facebook.github.io/react-native/showcase.html">browse through the showcase apps</a> and see what has already been built. The developer experience is great with React Native, it’s easy to get started and hot-reloads update the app on every code change.</p>
+
+<p>It’s still early days for React Native, but it looks very promising.</p>
+
+<h2 id="other-ways">Other ways</h2>
+
+<p>There are also other ways to build native apps such as <a href="Xamarin">Xamarin</a>, <a href="http://www.appcelerator.com/">Titanium</a> and <a href="https://unity3d.com/">Unity</a>. Unity is popular for games and highly visual experiences. I’m no expert in these technologies but worth the mention.</p>
+
+<p>Then, some companies might not need a native app at all. In some cases, having an online web app is enough. Web apps are accessible anywhere through a web browser and can be built responsive to work on all devices.</p>
+
+<p>Google, Mozilla, Opera and Microsoft are all working towards a future of <a href="https://14islands.com/blog/2016/05/29/progressive-web-apps-catching-up-on-mobile/">Progressive Web Apps</a>. These are native-like web apps with offline capabilities, push notifications, add-to-homescreen enforcement and <a href="https://developers.google.com/web/progressive-web-apps/">many other features</a>. </p>
+
+<p>Web apps remove dependece on app stores. It’s still to be seen <a href="https://medium.com/14islands-stories/does-apple-have-the-courage-to-push-the-web-af71812e6372#.9rwjfdjdw">if Apple joins companies to push for Progressive Web Apps</a> on iOS. </p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>There are a number of options to consider for your mobile app strategy. </p>
+
+<p>It can even be possible to mix some of these together. For example, build an app with native technologies for iOS and go with Progressive Web Apps for other platforms. Or, build an app natively with web-views for specific parts.</p>
+
+<p>It all depends on the use case.</p>
 
 
-  
+	</section>
+</article>
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">25 August 2016</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2016/08/25/our-website-is-open-source/">
-	      		Our website is open source
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">16 August 2016</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2016/08/16/phoenix-framework/">
-	      		Why Phoenix is exciting for the modern web
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">29 June 2016</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2016/06/29/estimation-survey/">
-	      		Estimation process survey
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
+	
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">29 May 2016</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2016/05/29/progressive-web-apps-catching-up-on-mobile/">
-	      		The web is catching up on mobile
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">20 April 2016</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2016/04/20/better-way-to-use-modernizr-with-command-line-config/">
-	      		Better way to use Modernizr with Command Line Config
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">24 March 2016</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2016/03/24/trends-at-sxsw-interactive-2016/">
-	      		Trends at SXSW Interactive 2016
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
+	<section class="js-component-disqus-embed post-comments grid u-pad-bottom"
+         data-disqus-shortname="14islands-com"
+         data-disqus-identifier="/blog/2016/09/21/mobile-apps-without-native-technologies/"
+         data-disqus-expanded="false">
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">3 March 2016</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2016/03/03/why-we-chose-react-for-hybrid-app/">
-	      		Why we chose React for our latest hybrid app
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">2 March 2016</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2016/03/02/giving-stylus-a-second-chance/">
-	      		Giving Stylus a second chance
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
+	<a href="#" data-disquss-count class="grid__row u-bg-bright" title="Show comments for post">
+		<h4 class="post-comments__cta ">
+			<span class="disqus-comment-count" data-disqus-identifier="/blog/2016/09/21/mobile-apps-without-native-technologies/">Write a comment</span>
+		</h4>
+	</a>
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">29 December 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/12/29/our-year-in-review-2015/">
-	      		Our year in review - 2015
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
+	<div data-disquss-comments class="grid__row" id="disqus_thread"></div>
+</section>
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">9 December 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/12/09/building-for-good-seo-and-socal-sharing/">
-	      		Building sites for good SEO and sharing on social networks
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">8 December 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/12/08/open-position-creative-web-developer/">
-	      		Open Position: Creative Web Developer
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">16 October 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/10/16/responsive-web-design-recap/">
-	      		Responsive Web Design Recap
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">26 March 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/03/26/simplified-custom-fields-for-wordpress/">
-	      		How to simplify custom fields for WordPress
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
 
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">24 March 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/03/24/making-wordpress-multilingual-and-plugins-to-help/">
-	      		Making WordPress multilingual and plugins to help
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
-
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">13 March 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/03/13/transitioning-to-web-animations-from-greensock-gsap/">
-	      		Transitioning from GreenSock GSAP to Web&nbsp;Animations
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
-
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">12 March 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/03/12/wordpress-as-a-cms/">
-	      		Lessons learned using WordPress as a CMS
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
-
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">6 March 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/03/06/the-good-the-bad-and-the-ugly-with-responsive-web-design/">
-	      		The good, the bad and the ugly with responsive web design
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
-
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">27 February 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/02/27/awwwards-conference-second-day/">
-	      		Awwwards conference - second day highlights
-	      	</a>
-	      </h2>
-      </header>
-    </article>
-  
-
-  
-    <article class="grid__row post-row pjax-animate">
-    	<header class="post-row__header">
-    		<datetime class="post-row__date">27 February 2015</datetime>
-    		<h2 class="post-row__title post-row__info">
-    			<a class="post-row__link" href="/blog/2015/02/27/awwwards-conference-first-day/">
-	      		Awwwards conference - first day highlights
-	      	</a>
-	      </h2>
-      </header>
-    </article>
   
 
 
+
+<section class="related-posts">
+	<a class="related-posts__link grid u-default-v-padding u-bg-natt-dark" href="">
+		<div class="grid__row">
+	    <p class="related-posts__label">Read Next</p>
+	    <h2 class="related-posts__title"></h2>
+	  </div>
+	</a>
 </section>
 
 
