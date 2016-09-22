@@ -45,7 +45,7 @@ An extra benefit of Cordova is being able to use same code both on web and nativ
 
 React Native was inspired by [React](https://facebook.github.io/react/), a super popular framework for the web, also incarnated by Facebook. React Native and React web apps are built with JavaScript and share the same architecture pattern. The idea is to learn once, use everywhere.
 
-Developers claim they are able to [re-use around 85% of the codebase](http://nerds.airbnb.com/facebook-react-native/) when using React for web and React Native together. 
+Developers claim they are able to [re-use around 85% of the codebase](https://www.quora.com/How-much-will-you-be-able-to-share-code-between-Android-and-iOS-with-React-Native) when using React for iOS and Android together. 
 
 React Native is a run-time environment inside a native app shell. It runs JavaScript code in a special thread, making it possible to have smooth animations while executing other operations. There are though limits to how much it's possible to optimize performance complex apps within the run-time.
 
@@ -53,7 +53,9 @@ The cool thing is that React Native allows use of native components and access t
 
 React Native uses inline styles over CSS using a Flexbox approach. I found the ways to style apps a bit limiting. It will hopefully improve over time. 
 
-To see what's possible with React Native it's good to [browse through the showcase apps](https://facebook.github.io/react-native/showcase.html) and see what has already been built. The developer experience is great with React Native, it's easy to get started and hot-reloads update the app on every code change.
+To see what's possible with React Native it's good to [browse through the showcase apps](https://facebook.github.io/react-native/showcase.html) and see what has already been built. 
+
+The developer experience is great with React Native, it's easy to get started and hot-reloads update the app on every code change.
 
 It’s still early days for React Native, but it looks very promising.
 
