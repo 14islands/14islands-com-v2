@@ -3,15 +3,14 @@ layout: post
 title:  "Ways to build a mobile app without native technologies"
 description: We are often asked about the “best” ways to build a native app. It always depends on the needs, but there are few technical possibilities.
 og_image: /images/blog/native-app-ways/open-graph-image.png
-private: true
 ---
 
 # Ways to build a mobile app without native technologies
 
 
-Apps are a big part of our lives. They live on our mobile home screen and we use them to socialize, entertain and talk to services. 
+Apps are a big part of our lives. They live on our mobile home screen and we use them to socialize, entertain us and use services. 
 
-As a development studio we are often asked about the “best” ways to build a native app. It always depends on the needs, but there are few technical possibilities. 
+As a development studio we are often asked about the “best” ways to build a native app. It always depends on the needs, but there are number of technical possibilities. 
 
 The most basic way is to build apps with native technologies on a given platform. This means writing [Swift](https://developer.apple.com/swift/)/[Object-C](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html) on [iOS](http://www.apple.com/ios/) for [iPhone](http://www.apple.com/iphone/), [Java](https://java.com) for [Android](https://developer.android.com/index.html) devices, [.NET](https://www.microsoft.com/net) for [Windows Phone](https://www.microsoft.com/en-us/windows/view-all?col=phones) and so forth.
 
@@ -33,9 +32,9 @@ I’ll also mention more alternatives at the end of the article.
 
 Cordova is a native wrapper for web technologies (HTML, CSS, JavaScript). It basically uses native web-view on each platform as a wrapper and provides access to device capabilities through JavaScript APIs. The idea is build once, work everywhere.
 
-iOS, Android, Windows Moble and other platforms are supported by Cordova. This works great for companies that want apps on many platforms and are able to settle for a modest user experience. I’ve seen really nice apps built with Cordova, we’ve even [built some ourselves](https://14islands.com/blog/2016/03/03/why-we-chose-react-for-hybrid-app/). 
+iOS, Android, Windows Mobile and other platforms are supported by Cordova. This works great for companies that want apps on many platforms and are able to settle for a modest user experience. I’ve seen really nice apps built with Cordova, we’ve even [built some ourselves](https://14islands.com/blog/2016/03/03/why-we-chose-react-for-hybrid-app/). 
 
-The main downside is not having the ability to use native components  when working inside web views. Cordova also cannot provide 100% access to all platform features. Check out [plugin directory](https://cordova.apache.org/plugins/) to see what capabilites are available.
+The main downside is not having the ability to use native components  when working inside web views. Cordova also cannot provide 100% access to all platform features. Check out the [plugin directory](https://cordova.apache.org/plugins/) to see what capabilites are available.
 
 An extra benefit of Cordova is being able to use same code both on web and native platforms. Responsive web design principles can make it work on all screen sizes.
 
@@ -46,11 +45,11 @@ An extra benefit of Cordova is being able to use same code both on web and nativ
 
 React Native was inspired by [React](https://facebook.github.io/react/), a super popular framework for the web, also incarnated by Facebook. React Native and React web apps are built with JavaScript and share the same architecture pattern. The idea is to learn once, use everywhere.
 
-Developers claim they are able to [re-use around 85% of the codebase](http://nerds.airbnb.com/facebook-react-native/) when using React and React Native together. 
+Developers claim they are able to [re-use around 85% of the codebase](http://nerds.airbnb.com/facebook-react-native/) when using React for web and React Native together. 
 
-React Native is a run-time environment inside a native app shell. It runs JavaScript code in a special thread, making it possible to have smooth animations while executing other operations. There are however limits to optimizing performance in complex apps within the run-time.
+React Native is a run-time environment inside a native app shell. It runs JavaScript code in a special thread, making it possible to have smooth animations while executing other operations. There are though limits to how much it's possible to optimize performance complex apps within the run-time.
 
-The cool thing is that React Native allows use of native components and access to device capabilities. [Native modules](https://facebook.github.io/react-native/docs/native-modules-ios.html) are create to bridge the gap between native code and React Native code. Most modules exist within the eco-system, but you can build one yourself if needed.
+The cool thing is that React Native allows use of native components and access to device capabilities. [Native modules](https://facebook.github.io/react-native/docs/native-modules-ios.html) are created to bridge the gap between native code and React Native code. Most modules exist within the eco-system, but you can build one yourself if needed.
 
 React Native uses inline styles over CSS using a Flexbox approach. I found the ways to style apps a bit limiting. It will hopefully improve over time. 
 
@@ -74,6 +73,8 @@ There are a number of options to consider for your mobile app strategy.
 
 It can even be possible to mix some of these together. For example, build an app with native technologies for iOS and go with Progressive Web Apps for other platforms. Or, build an app natively with web-views for specific parts.
 
-It all depends on the use case.
+In essence, when a smooth experience with heavy graphics and device capabilities are high priority, go with native technologies. For a faster and more cost effective approach on multiple platforms, hyprid technologies can be a better way forward.
+
+{% include blog-author-hjortur.html %}
 
 
