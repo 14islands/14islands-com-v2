@@ -13,7 +13,7 @@
 		<meta property="og:title" content="Ways to build a mobile app without native technologies" />
 		<meta property="og:description" content="We are often asked about the “best” ways to build a native app. It always depends on the needs, but there are few technical possibilities." />
 		<meta property="og:image" content="https://14islands.com/images/blog/native-app-ways/open-graph-image.png" />
-		<meta property="og:url" content="https://14islands.com/blog/2016/09/21/mobile-apps-without-native-technologies/" />
+		<meta property="og:url" content="https://14islands.com/blog/2016/09/22/mobile-apps-without-native-technologies/" />
 		<meta property="og:site_name" content="14islands" />
 
 		<!-- Twitter Card data -->
@@ -56,7 +56,7 @@
 		<link rel="stylesheet" href="/css/main.905d.css"/>
 
 	</head>
-	<body id="" class="page page-/blog/2016/09/21/mobile-apps-without-native-technologies">
+	<body id="" class="page page-/blog/2016/09/22/mobile-apps-without-native-technologies">
 
 		<!--[if lt IE 9]>
 				<p class="browsehappy"><span>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.<span></p>
@@ -109,12 +109,12 @@
 		<main class="main-content js-pjax-container">
 				<article class="post grid u-pad-both pjax-animate">
 	<section class="grid__row">
-		<span class="post__date">21 September 2016</span>
+		<span class="post__date">22 September 2016</span>
 		<h1 id="ways-to-build-a-mobile-app-without-native-technologies">Ways to build a mobile app without native technologies</h1>
 
-<p>Apps are a big part of our lives. They live on our mobile home screen and we use them to socialize, entertain and talk to services. </p>
+<p>Apps are a big part of our lives. They live on our mobile home screen and we use them to socialize, entertain us and use services. </p>
 
-<p>As a development studio we are often asked about the “best” ways to build a native app. It always depends on the needs, but there are few technical possibilities. </p>
+<p>As a development studio we are often asked about the “best” ways to build a native app. It always depends on the needs, but there are number of technical possibilities. </p>
 
 <p>The most basic way is to build apps with native technologies on a given platform. This means writing <a href="https://developer.apple.com/swift/">Swift</a>/<a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html">Object-C</a> on <a href="http://www.apple.com/ios/">iOS</a> for <a href="http://www.apple.com/iphone/">iPhone</a>, <a href="https://java.com">Java</a> for <a href="https://developer.android.com/index.html">Android</a> devices, <a href="https://www.microsoft.com/net">.NET</a> for <a href="https://www.microsoft.com/en-us/windows/view-all?col=phones">Windows Phone</a> and so forth.</p>
 
@@ -137,9 +137,9 @@
 
 <p>Cordova is a native wrapper for web technologies (HTML, CSS, JavaScript). It basically uses native web-view on each platform as a wrapper and provides access to device capabilities through JavaScript APIs. The idea is build once, work everywhere.</p>
 
-<p>iOS, Android, Windows Moble and other platforms are supported by Cordova. This works great for companies that want apps on many platforms and are able to settle for a modest user experience. I’ve seen really nice apps built with Cordova, we’ve even <a href="https://14islands.com/blog/2016/03/03/why-we-chose-react-for-hybrid-app/">built some ourselves</a>. </p>
+<p>iOS, Android, Windows Mobile and other platforms are supported by Cordova. This works great for companies that want apps on many platforms and are able to settle for a modest user experience. I’ve seen really nice apps built with Cordova, we’ve even <a href="https://14islands.com/blog/2016/03/03/why-we-chose-react-for-hybrid-app/">built some ourselves</a>. </p>
 
-<p>The main downside is not having the ability to use native components  when working inside web views. Cordova also cannot provide 100% access to all platform features. Check out <a href="https://cordova.apache.org/plugins/">plugin directory</a> to see what capabilites are available.</p>
+<p>The main downside is not having the ability to use native components  when working inside web views. Cordova also cannot provide 100% access to all platform features. Check out the <a href="https://cordova.apache.org/plugins/">plugin directory</a> to see what capabilites are available.</p>
 
 <p>An extra benefit of Cordova is being able to use same code both on web and native platforms. Responsive web design principles can make it work on all screen sizes.</p>
 
@@ -149,11 +149,11 @@
 
 <p>React Native was inspired by <a href="https://facebook.github.io/react/">React</a>, a super popular framework for the web, also incarnated by Facebook. React Native and React web apps are built with JavaScript and share the same architecture pattern. The idea is to learn once, use everywhere.</p>
 
-<p>Developers claim they are able to <a href="http://nerds.airbnb.com/facebook-react-native/">re-use around 85% of the codebase</a> when using React and React Native together. </p>
+<p>Developers claim they are able to <a href="http://nerds.airbnb.com/facebook-react-native/">re-use around 85% of the codebase</a> when using React for web and React Native together. </p>
 
-<p>React Native is a run-time environment inside a native app shell. It runs JavaScript code in a special thread, making it possible to have smooth animations while executing other operations. There are however limits to optimizing performance in complex apps within the run-time.</p>
+<p>React Native is a run-time environment inside a native app shell. It runs JavaScript code in a special thread, making it possible to have smooth animations while executing other operations. There are though limits to how much it’s possible to optimize performance complex apps within the run-time.</p>
 
-<p>The cool thing is that React Native allows use of native components and access to device capabilities. <a href="https://facebook.github.io/react-native/docs/native-modules-ios.html">Native modules</a> are create to bridge the gap between native code and React Native code. Most modules exist within the eco-system, but you can build one yourself if needed.</p>
+<p>The cool thing is that React Native allows use of native components and access to device capabilities. <a href="https://facebook.github.io/react-native/docs/native-modules-ios.html">Native modules</a> are created to bridge the gap between native code and React Native code. Most modules exist within the eco-system, but you can build one yourself if needed.</p>
 
 <p>React Native uses inline styles over CSS using a Flexbox approach. I found the ways to style apps a bit limiting. It will hopefully improve over time. </p>
 
@@ -177,7 +177,16 @@
 
 <p>It can even be possible to mix some of these together. For example, build an app with native technologies for iOS and go with Progressive Web Apps for other platforms. Or, build an app natively with web-views for specific parts.</p>
 
-<p>It all depends on the use case.</p>
+<p>In essence, when a smooth experience with heavy graphics and device capabilities are high priority, go with native technologies. For a faster and more cost effective approach on multiple platforms, hyprid technologies can be a better way forward.</p>
+
+<div class="post__author u-pad-top">
+	<img alt="Hjörtur Hilmarsson" data-src="/images/about/team-grid/double-Hjortur.jpg" class="post__author-image" />
+<noscript>
+  <img alt="Hjörtur Hilmarsson" src="/images/about/team-grid/double-Hjortur.jpg" class="post__author-image" />
+</noscript>
+	<span class="post__author-name"><strong>Hjörtur Hilmarsson</strong> <a href="https://twitter.com/hjortureh" target="_blank">@hjortureh</a></span>
+	<span class="post__author-job-title">Creative web developer / Co-Founder at 14islands</span>
+</div>
 
 
 	</section>
@@ -191,13 +200,13 @@
 
 	<section class="js-component-disqus-embed post-comments grid u-pad-bottom"
          data-disqus-shortname="14islands-com"
-         data-disqus-identifier="/blog/2016/09/21/mobile-apps-without-native-technologies/"
+         data-disqus-identifier="/blog/2016/09/22/mobile-apps-without-native-technologies/"
          data-disqus-expanded="false">
 
 
 	<a href="#" data-disquss-count class="grid__row u-bg-bright" title="Show comments for post">
 		<h4 class="post-comments__cta ">
-			<span class="disqus-comment-count" data-disqus-identifier="/blog/2016/09/21/mobile-apps-without-native-technologies/">Write a comment</span>
+			<span class="disqus-comment-count" data-disqus-identifier="/blog/2016/09/22/mobile-apps-without-native-technologies/">Write a comment</span>
 		</h4>
 	</a>
 
@@ -213,10 +222,10 @@
 
 
 <section class="related-posts">
-	<a class="related-posts__link grid u-default-v-padding u-bg-natt-dark" href="">
+	<a class="related-posts__link grid u-default-v-padding u-bg-natt-dark" href="/blog/2016/08/25/our-website-is-open-source/">
 		<div class="grid__row">
 	    <p class="related-posts__label">Read Next</p>
-	    <h2 class="related-posts__title"></h2>
+	    <h2 class="related-posts__title">Our website is open source</h2>
 	  </div>
 	</a>
 </section>
