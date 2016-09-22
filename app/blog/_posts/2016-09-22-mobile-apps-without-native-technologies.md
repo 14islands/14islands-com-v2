@@ -75,7 +75,7 @@ There are a number of options to consider for your mobile app strategy.
 
 It can even be possible to mix some of these together. For example, build an app with native technologies for iOS and go with Progressive Web Apps for other platforms. Or, build an app natively with web-views for specific parts.
 
-In essence, when a smooth experience with heavy graphics and device capabilities are high priority, go with native technologies. For a faster and more cost effective approach on multiple platforms, hyprid technologies can be a better way forward.
+In essence, when a smooth experience with heavy graphics and device capabilities are high priority, go with native technologies. For a faster and more cost effective approach on multiple platforms, hybrid technologies can be a better way forward.
 
 {% include blog-author-hjortur.html %}
 
