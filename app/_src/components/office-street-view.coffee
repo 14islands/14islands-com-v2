@@ -24,7 +24,7 @@ class FOURTEEN.OfficeStreetView extends FOURTEEN.BaseComponent
 
   # @override FOURTEEN.BaseComponent.scripts
   scripts: [
-    'https://maps.googleapis.com/maps/api/js?key=AIzaSyDhL8nwKWYtU4LdyiiMUp5zJ_8kRFRoAQA&v=3.exp&callback=FOURTEEN.onGoogleMapsLoaded'
+    'https://maps.googleapis.com/maps/api/js?key=AIzaSyDhL8nwKWYtU4LdyiiMUp5zJ_8kRFRoAQA&v=3.25&callback=FOURTEEN.onGoogleMapsLoaded'
   ]
 
 
