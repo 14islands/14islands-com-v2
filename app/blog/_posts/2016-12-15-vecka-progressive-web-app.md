@@ -14,7 +14,7 @@ In Sweden, people make plans in weeks instead of months. This might seem weird t
 
 The first step is to align yourself with sentences like “What are you doing in week 52?”, “Let's plan our trip in week 24” or “My goal is to finish the TPS report in week 14”. Most calendars don’t show week numbers by default so what should you do? Don’t worry, there is an app for that.
 
-Announcing [vecka.14islands.com](https://vecka.14islands.com/) - A simple app that helps you plan your life in weeks. It helps you know what the current week number is and gives the ability to look into future weeks. Just quickly swipe sideways to scan through week numbers.
+Announcing [vecka.14islands.com](https://vecka.14islands.com/) - A simple web app that helps you plan your life in weeks. It helps you know what the current week number is and gives the ability to look into future weeks. Just quickly swipe sideways to scan through week numbers.
 
 The app is quite Swedish at the moment. Swedish language, timezone and the background color changes based on the seasons in Sweden. You can still use the app from anywhere in the *🌎*{: class="emoji"}.
 
@@ -25,7 +25,7 @@ The Vecka App started as a *hack* to test out the latest [Progressive Web App (P
 
 Progressive Web Apps bring together the best of two worlds; The openness and accessibility of the web, combined with the user experience of native apps. As an example, the Vecka app is blazing fast as all assets are cached on the device, and the app works well offline.
 
-No App Stores are needed to download the app, it is simply accessed on the web. If you access the Vecka App few times on an Android phone, a suggestion to add it to your home screen will pop-up. After adding it to the home screen the app will behave just like a native app.
+No App Stores are needed to download the app, it is simply accessed on the web. If you access the Vecka App a few times on an Android phone, a suggestion to add it to your home screen will pop-up. After adding it to the home screen the app will behave just like a native app.
 
 These capabilities will currently only work on phones with the latest Chrome or Firefox browsers on Android. Microsoft is also introducing support on Windows soon. Unfortunately, Apple doesn’t have support for app-like capabilities yet on the iPhone, but hopefully soon.
 
