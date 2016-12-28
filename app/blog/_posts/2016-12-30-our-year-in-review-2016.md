@@ -16,4 +16,10 @@ What a year! It’s time to look back and reflect on what just happened.
 
 {% include blog-vimeo.html vimeoId="160239432" ratio="16_9" caption="Video from our trip to SXSW" %}
 
+{% include post-image.html alt="Yasuragi" src="/images/blog/2016-12-year-in-review/yasuragi-2-16_10.jpg" margin="both" ratio="16_10" %}
+
+{% include post-image.html alt="Yasuragi" src="/images/blog/2016-12-year-in-review/yasuragi-16_10.jpg" margin="both" ratio="16_10" %}
+
 {% include post-image.html alt="14islands team" src="/images/blog/2016-12-year-in-review/team-fun-sofa-16_10.jpg" margin="both" ratio="16_10" %}
+
+{% include post-image.html alt="14islands team" src="/images/blog/2016-12-year-in-review/team-fun-sofa-2-16_10.jpg" margin="both" ratio="16_10" %}
