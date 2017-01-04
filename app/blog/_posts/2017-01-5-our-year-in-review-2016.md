@@ -30,7 +30,7 @@ The outcome is that we are living a very exciting digital phase in history right
 
 We worked on the [Plume website](https://14islands.com/work/plume-wifi/) with our friends at [North Kingdom](http://www.northkingdom.com/); built a [new company website](https://14islands.com/work/) for our neighbours [Bedow](http://www.bedow.se/); did a campaign site with [Audible in Germany](http://www.audible.de/); worked on many exciting projects with our smashing buddies at [Fjord](https://www.fjordnet.com/); made a [product configurator](https://www.stokke.com/GBR/en-gb/configurator?cid=stokke-xplory#!?cid=stokke-xplory) with our new client [Stokke](https://www.stokke.com); and many other projects.
 
-{% include blog-vimeo.html vimeoId="179321780" ratio="16_9" margin="both-half" caption="A  screen recording of the Plume website" %}
+{% include blog-vimeo.html vimeoId="179321780" ratio="16_9" margin="both-half" caption="A screen recording of the Plume website" %}
 
 At this moment we are cooking one of the coolest projects we’ve worked on yet, with an army of digital talents. More about that later.
 
