@@ -53,7 +53,7 @@ David thought it was a good idea to buy a small sailing boat without knowing how
 
 ## Culture Bible
 
-We made time to write [Our Handbook](https://14islands.com/handbook/) as a reference of who we are and how we run things as a company. We believe writing openly is a form of sharing and being transparent.
+We made time to write [Our Handbook](https://14islands.com/handbook/) as a reference of who we are and how we run things as a company. We believe writing openly can benefit both us and the community.
 
 {% include blog-quote.html quote="We are united by our passion for great user experiences, beautiful design and creative technologies." author-name="The 14islands Handbook" author-link="https://14islands.com/handbook/#its-in-the-water" %}
 
