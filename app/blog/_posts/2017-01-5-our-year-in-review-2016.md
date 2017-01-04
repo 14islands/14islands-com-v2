@@ -2,7 +2,7 @@
 layout: post
 title: "Our year in review - 2016"
 description: "We've had a great year and this time is a good opportunity to take a short pause from the keyboard and look back on everything that has happened."
-og_image: /images/blog/2016-12-year-in-review/team-fun-sofa-2-16_10.jpg
+og_image: /images/blog/2016-12-year-in-review/team-fun-sofa-16_10.jpg
 private: true
 ---
 
@@ -30,7 +30,7 @@ The outcome is that we are living a very exciting digital phase in history right
 
 We worked on the [Plume website](https://14islands.com/work/plume-wifi/) with our friends at [North Kingdom](http://www.northkingdom.com/); built a [new company website](https://14islands.com/work/) for our neighbours [Bedow](http://www.bedow.se/); did a campaign site with [Audible in Germany](http://www.audible.de/); worked on many exciting projects with our smashing buddies at [Fjord](https://www.fjordnet.com/); made a [product configurator](https://www.stokke.com/GBR/en-gb/configurator?cid=stokke-xplory#!?cid=stokke-xplory) with our new client [Stokke](https://www.stokke.com); and many other projects.
 
-{% include blog-vimeo.html vimeoId="179321780" ratio="16_9" margin="both-half" caption="A short screen recording off the Plume website" %}
+{% include blog-vimeo.html vimeoId="179321780" ratio="16_9" margin="both-half" caption="A screen recording of the Plume website" %}
 
 At this moment we are cooking one of the coolest projects we’ve worked on yet, with an army of digital talents. More about that later.
 
@@ -79,13 +79,13 @@ Alfred, of course. Gotta stick with the nerds ;)
 
 ## On the edge
 
-A good way to stay on top of technologies is to create time for hacks and experiments. We did an hack called [Aeronaut](https://14islands.com/blog/2016/11/04/webvr-with-threejs/) to experiment with WebGL and WebVR. Another more useful hack is an app called [vecka.14islands.com](https://14islands.com/blog/2016/12/15/vecka-progressive-web-app/) which we built to try out the latest [Progressive Web App technologies](https://14islands.com/blog/2016/05/29/progressive-web-apps-catching-up-on-mobile/).
+A good way to stay on top of technologies is to create time for hacks and experiments. We did a hack called [Aeronaut](https://14islands.com/blog/2016/11/04/webvr-with-threejs/) to experiment with WebGL and WebVR. Another more useful hack is an app called [vecka.14islands.com](https://14islands.com/blog/2016/12/15/vecka-progressive-web-app/) which we built to try out the latest [Progressive Web App technologies](https://14islands.com/blog/2016/05/29/progressive-web-apps-catching-up-on-mobile/).
 
-{% include post-image.html alt="Hacks and experiments" src="/images/blog/2016-12-year-in-review/hack-collage-16-10.jpg" margin="both" ratio="16_10" %}
+{% include post-image.html alt="Hacks and experiments" caption="true" src="/images/blog/2016-12-year-in-review/hack-collage-16-10.jpg" margin="both" ratio="16_10" %}
 
 We have continued to share open source libraries on [Github](https://github.com/14islands) and playful [Codepens](http://codepen.io/14islands) this year. We wrote a number of [blog posts](https://14islands.com/blog) and shared countless happenings on our [Instagram](https://www.instagram.com/14islands/), [Facebook](https://www.facebook.com/14islands/) and [Twitter](https://twitter.com/14islands). We’ve also given talks to share some behind the scenes of our work.
 
-{% include post-image.html alt="Marco having a talk about animations on the web in Melbourne, Australia" caption="true" src="/images/blog/2016-12-year-in-review/marco-talk-in-australia-16_10.jpg" margin="both" ratio="16_10" %}
+{% include post-image.html alt="Marco having a talk about animations on the web, in Melbourne, Australia" caption="true" src="/images/blog/2016-12-year-in-review/marco-talk-in-australia-16_10.jpg" margin="both" ratio="16_10" %}
 
 ## Meet our new office
 
