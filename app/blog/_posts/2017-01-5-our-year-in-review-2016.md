@@ -2,7 +2,7 @@
 layout: post
 title: "Our year in review - 2016"
 description: "We've had a great year and this time is a good opportunity to take a short pause from the keyboard and look back on everything that has happened."
-og_image: /images/blog/2016-12-year-in-review/team-fun-sofa-16_10.jpg
+og_image: /images/blog/2016-12-year-in-review/team-front-sofa-16_10.jpg
 private: true
 ---
 
@@ -14,11 +14,11 @@ private: true
 
 We feel humbled to have attracted such amazing clients and projects over the years. At some points we’ve had to turn down interesting projects due to “only” being a team of three developers. This year we made a decision to start looking for a new digital talent to join our team.
 
-As we approach March, Marco had been working remotely from Brazil for a few months and we decided it was time for a grand reunion. So, we all jumped on a plane and decided to meet half way..
+As we approached March, Marco had been working remotely from Brazil for a few months and we decided it was time for a grand reunion. So, we all jumped on a plane and decided to meet half way..
 
 ## Off to Texas
 
-We had found the perfect meeting spot - [SXSW Interactive in Austin, Texas](http://www.sxsw.com/interactive/) . The conference featured a lots of amazing talks and smart people in our industry. We wrote a [piece on the current trends today](https://14islands.com/blog/2016/03/24/trends-at-sxsw-interactive-2016/).
+We had found the perfect meeting spot - [SXSW Interactive in Austin, Texas](http://www.sxsw.com/interactive/) . The conference featured lots of amazing talks and smart people in our industry. We wrote a [piece on the current trends today](https://14islands.com/blog/2016/03/24/trends-at-sxsw-interactive-2016/).
 
 The outcome is that we are living a very exciting digital phase in history right now. Talk about to start the year inspired!
 
@@ -28,7 +28,7 @@ The outcome is that we are living a very exciting digital phase in history right
 
 ## What we do best
 
-We worked on the [Plume website](https://14islands.com/work/plume-wifi/) with our friends at [North Kingdom](http://www.northkingdom.com/); built a [new company website](https://14islands.com/work/) for our neighbours [Bedow](http://www.bedow.se/); did a campaign site with [Audible in Germany](http://www.audible.de/); worked on many exciting projects with our smashing buddies at [Fjord](https://www.fjordnet.com/); made a [product configurator](https://www.stokke.com/GBR/en-gb/configurator?cid=stokke-xplory#!?cid=stokke-xplory) with our new client [Stokke](https://www.stokke.com); and many other projects.
+We worked on the [Plume website](https://14islands.com/work/plume-wifi/) with our friends at [North Kingdom](http://www.northkingdom.com/); built a [new company website](https://14islands.com/work/bedow/) for our neighbours [Bedow](http://www.bedow.se/); did a campaign site with [Audible in Germany](http://www.audible.de/); worked on many exciting projects with our smashing buddies at [Fjord](https://www.fjordnet.com/); made a [product configurator](https://www.stokke.com/GBR/en-gb/configurator?cid=stokke-xplory#!?cid=stokke-xplory) with our new client [Stokke](https://www.stokke.com); and many other projects.
 
 {% include blog-vimeo.html vimeoId="179321780" ratio="16_9" margin="both-half" caption="A screen recording of the Plume website" %}
 
@@ -36,7 +36,7 @@ At this moment we are cooking one of the coolest projects we’ve worked on yet,
 
 ## Adventures
 
-Marco visited an old friend who lives in Australia. In this trip he also had the chance to give talks and visit one of our good clients, [Montgomery, in Sydney](http://www.montinvest.com/).
+Marco visited an old friend who lives in Australia. In this trip he also had the chance to give talks and meet one of our good clients, [Montgomery, in Sydney](http://www.montinvest.com/).
 
 {% include post-image.html alt="Marco and Sacha in Melbourne, Australia" caption="true" src="/images/blog/2016-12-year-in-review/marco-sacha-australia-16_10.jpg" margin="both" ratio="16_10" %}
 
