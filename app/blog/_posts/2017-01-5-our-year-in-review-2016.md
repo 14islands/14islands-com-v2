@@ -2,7 +2,7 @@
 layout: post
 title: "Our year in review - 2016"
 description: "We've had a great year and this time is a good opportunity to take a short pause from the keyboard and look back on everything that has happened."
-og_image: /images/blog/2016-12-year-in-review/team-front-sofa-16_10.jpg
+og_image: /images/blog/2016-12-year-in-review/team-fun-sofa-16_10.jpg
 ---
 
 # Our year in review - 2016
