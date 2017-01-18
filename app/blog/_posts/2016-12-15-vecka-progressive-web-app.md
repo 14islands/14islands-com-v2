@@ -7,7 +7,7 @@ og_image: /images/blog/2016-12-vecka-pwa/vecka-cover.png
 
 # Vecka App - Your life in weeks
 
-In Sweden, people make plans in weeks instead of months. This might seem weird to newcomers but once you get used to it, it’s kinda smart. Weeks are short and an agile way to make plans.
+In Sweden, people make plans in weeks instead of months. This might seem weird to newcomers, but once you get used to it, it’s kinda smart. Weeks are short and an agile way to make plans.
 
 {% include post-image.html alt="The Vecka App" src="/images/blog/2016-12-vecka-pwa/vecka-cover.png" margin="both" ratio="16_9" %}
 
@@ -33,6 +33,6 @@ We might add more app-like features soon, such as push notifications when a new 
 
 ## Next step
 
-The code is [open source on Github](https://github.com/14islands/vecka.14islands.com). [Check out the app](https://vecka.14islands.com/), fork the code or shoot us feedback in the comments below.
+The code is [open source on Github](https://github.com/14islands/vecka.14islands.com). [Check out the app](https://vecka.14islands.com/), fork the code or [shoot us feedback](https://twitter.com/14islands).
 
 {% include blog-author-hjortur.html %}
