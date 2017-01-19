@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "???"
-description: Progressive Web Apps bring new capabilities to build native-like web apps that integrate closer with people devices.
+title:  "How we built a Progressive Web App from scratch"
+description: The PWA capabilities make it possible to build native-like web apps.
 og_image: /images/blog/2017-01-pwa-dev/pwa-blog-cover-image_16_10.jpg
 private: true
 ---
 
-# ???
+# How we built a Progressive Web App from scratch
 
 Progressive Web Apps bring a lot of potential to the web. The new capabilities make it possible to build native-like web apps that integrate closer with people devices.
 
