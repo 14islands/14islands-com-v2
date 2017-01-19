@@ -1,16 +1,16 @@
 ---
 layout: post
 title:  "We built a PWA from scratch - This is what we learned"
-description: Our Progressive Web App journey to build a native-like web app.
+description: Our Progressive Web App journey and what we discovered on the way.
 og_image: /images/blog/2017-01-pwa-dev/pwa-blog-cover-image_16_10.jpg
 private: true
 ---
 
 # We built a PWA from scratch - This is what we learned
 
-Progressive Web Apps bring a lot of potential to the web. The new capabilities make it possible to build native-like web apps that integrate closer with people devices.
+Progressive Web Apps bring a lot of potential to the web. The new capabilities make it possible to build native-like web apps that integrate closer with people's devices.
 
-To try out these abilities we built a Progressive Web App (PWA) from scratch. We [had an idea for an app](https://14islands.com/blog/2016/12/15/vecka-progressive-web-app/) and started the hack.
+To try out these abilities we built a Progressive Web App (PWA) from scratch. We already [had a great idea for an app](https://14islands.com/blog/2016/12/15/vecka-progressive-web-app/).
 
 {% include post-image.html alt="Our Progressive Web App" src="/images/blog/2017-01-pwa-dev/pwa-blog-cover-image_16_10.jpg" margin="both" ratio="16_10" %}
 
@@ -19,15 +19,15 @@ To try out these abilities we built a Progressive Web App (PWA) from scratch. We
 On top of making a useful app, these were our goals:
 
 - To use a Service Worker to boost performance and make the app available offline.
-- To make sure an “Add to home-screen“ suggestion will pop-up for users on Android, to access it like a native app.
-- To use a Manifest file to nicely decorate  the app outside the viewport.
+- To make sure an “Add to Home Suggestion" would pop-up for users on Android, to access it like a native app.
+- To nicely decorate the app outside the viewport, using a Manifest file.
 - To get a 100% rating with [Lighthouse](https://github.com/GoogleChrome/lighthouse), to check for all the best PWA practices.
 - Open Source [the code on Github](https://github.com/14islands/vecka.14islands.com) and write a blog post about the lessons we learned (you are reading it now)
 
 
-## Workers to your service
+## Workers at your service
 
-It took a bit of a time to grasp *Service Workers*. It’s not like any other technology we’ve had on the web until this point.
+It took a bit of a time to grasp *Service Workers*. It’s not like any other technology we’ve had on the web, until now.
 
 They’re a part of the web-app, yet they’re not able to touch the DOM in any way. Service Workers are a proxy that live between the web-app and the user. They work in a separate thread and can cache assets, hook into requests, and communicate with the website via messages.
 
