@@ -5,7 +5,7 @@
   <figure class="grid__row grid__row--wide content-image u-margin-top-half {{include.class}} {% if include.outline %}content-image--outline{% endif %}">
 {% endif %}
 
-  <div class="u-ratio u-ratio--{{include.ratio}} u-ratio--placeholder">
+  <div class="u-ratio u-ratio--{{include.ratio}} u-ratio--placeholder {% if include.halfWidthInCenter %}content-image--halfWidthInCenter{% endif %}">
     {% include rio-image.html src=include.src alt=include.alt class="u-ratio__content"%}
   </div>
   {% if include.caption %}
