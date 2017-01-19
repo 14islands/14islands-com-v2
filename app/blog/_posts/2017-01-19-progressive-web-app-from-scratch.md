@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "We built a PWA from scratch - This is what we learned"
-description: Our Progressive Web App journey and what we discovered on the way.
+description: Our Progressive Web App journey on how to build native-like web apps.
 og_image: /images/blog/2017-01-pwa-dev/pwa-blog-cover-image_16_10.jpg
 private: true
 ---
