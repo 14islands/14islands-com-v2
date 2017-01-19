@@ -15,12 +15,12 @@ To try out these abilities we built a Progressive Web App (PWA) from scratch. We
 
 ## The plan
 
-On top of making a useful app, these were our goals:
+On top of making an useful app, these were our goals:
 
 - To use a Service Worker to boost performance and make the app available offline.
 - To make sure an “Add to Home Suggestion" would pop-up for users on Android, to access it like a native app.
 - To nicely decorate the app outside the viewport, using a Manifest file.
-- To get a 100% rating with [Lighthouse](https://github.com/GoogleChrome/lighthouse), to check for all the best PWA practices.
+- To get a 100% rating with [Lighthouse](https://github.com/GoogleChrome/lighthouse), to check for the PWA best practices.
 - Open Source [the code on Github](https://github.com/14islands/vecka.14islands.com) and write a blog post about the lessons we learned (you are reading it now)
 
 
@@ -307,7 +307,7 @@ To confirm the above requirements are met, a tool called [Lighthouse](https://gi
 Lighthouse is great but can be a bit frustrating sometimes as results vary depending on conditions. It’s early days of PWAs and the tools are bound to get better.
 
 
-## Conclusion
+## Let's push the web
 
 I think every website from now on should use some of the Progressive Web App features. It’s even confusing to call it “Apps” as it applies to all websites and apps.
 
