@@ -17,7 +17,7 @@ To try out these abilities we built a Progressive Web App (PWA) from scratch. We
 
 On top of making an useful app, these were our goals:
 
-- To use a Service Worker to boost performance and make the app available offline.
+- To create a Service Worker to boost performance and make the app available offline.
 - To make sure an “Add to Home Suggestion" would pop-up for users on Android, to access it like a native app.
 - To nicely decorate the app outside the viewport, using a Manifest file.
 - To get a 100% rating with [Lighthouse](https://github.com/GoogleChrome/lighthouse), to check for the PWA best practices.
