@@ -1,5 +1,11 @@
-$form-z-index: 1;
+$form-active-z-index: 3;
 $button-z-index: 2;
+$form-z-index: 1;
+$button-active-z-index: 4;
+$breakpoint-show-icons-px: 1000px;
+
+$buttonTransition: all 200ms ease-out;
+$iconTransition: transform 200ms ease-out;
 
 .newsletter__wrapper {
 	position: relative;
@@ -11,8 +17,13 @@ $button-z-index: 2;
 */
 
 .newsletter__email-form {
+	position: relative;
 	width: 100%;
 	height: 100%;
+	z-index: $form-active-z-index;
+	.show-notifications & {
+		z-index: $form-z-index;
+	}
 }
 
 /*
@@ -29,22 +40,49 @@ $button-z-index: 2;
 .newsletter__notify-button,
 .newsletter__email-button {
 	margin: 0;
-}
-
-.newsletter__email-button {
-	right: 0;
-	width: 22%;
-	z-index: $button-z-index;
+	max-width: none;
+	cursor: pointer;
+	border: solid 1px $brand-color;
+	transition: $buttonTransition !important;
 	@include if-narrower-than($breakpoint-two-px) {
 		padding: 18px 15px;
 		font-size: modular-scale(.8rem, 1);
 	}
 }
 
+.newsletter__notify-button {
+	left: 0;
+	opacity: 0;
+	width: 49%;
+	z-index: $button-z-index;
+	.show-notifications & {
+		opacity: 1;
+	}
+	.is-subscribed-to-push & {
+     background: transparent;
+     border: solid 1px silver;
+		 &:hover {
+			 background: transparent;
+		 }
+  }
+}
+
+.newsletter__email-button {
+	right: 0;
+	width: 22%;
+	z-index: $button-active-z-index;
+	.show-notifications & {
+		width: 49%;
+		z-index: $button-z-index;
+	}
+}
+
 .newsletter__email-input,
 .newsletter__email-name-input {
 	width: 37%;
-	z-index: $form-z-index;
+	.show-notifications & {
+		opacity: 0
+	}
 	@include if-narrower-than($breakpoint-two-px) {
 		padding: 17px 14px;
 		font-size: modular-scale(.8rem, 1);
@@ -57,4 +95,101 @@ $button-z-index: 2;
 
 .newsletter__email-name-input {
 	left: 39%;
+}
+
+/*
+* Icons
+*/
+
+.newsletter__notify-button-icon,
+.newsletter__email-button-icon {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -12px;
+	display: none;
+	@include if-wider-than($breakpoint-show-icons-px) {
+		display: block;
+	}
+}
+
+.newsletter__notify-button-icon {
+  width: 22px;
+  height: 24px;
+  transition: $iconTransition;
+  transform: translateX(92px) rotate(10deg);
+  transform-origin: center center;
+
+  .newsletter__notify-icon-line--off {
+    opacity: 0;
+  }
+
+  .is-subscribed-to-push & {
+    transform: translateX(92px) rotate(0deg);
+    path {
+      fill: #949494;
+    }
+    .newsletter__notify-icon-line--off {
+      opacity: 1;
+      &:first-child {
+        stroke: yellow;
+      }
+      &:last-child {
+        stroke: $bright;
+      }
+    }
+  }
+}
+
+.newsletter__email-button-icon {
+	width: 24px;
+	height: 24px;
+	transition: $iconTransition;
+	transform: translateX(25px);
+	.show-notifications & {
+		transform: translateX(95px);
+	}
+}
+
+/*
+* Labels
+*/
+
+.newsletter__notify-button-label,
+.newsletter__notify-button-label--off,
+.newsletter__email-button-label,
+.newsletter__email-button-label--add {
+	@include if-wider-than($breakpoint-show-icons-px) {
+		padding-left: 15px;
+	}
+}
+
+.newsletter__notify-button-label {
+	display: inline-block;
+	.is-subscribed-to-push & {
+		display: none;
+	}
+}
+
+.newsletter__notify-button-label--off {
+	display: none;
+	.is-subscribed-to-push & {
+		display: inline-block;
+		font-size: modular-scale(.8rem, 1);
+		color: silver;
+	}
+}
+
+.newsletter__email-button-label {
+	display: none;
+	.show-notifications & {
+		display: inline-block;
+	}
+}
+
+.newsletter__email-button-label--add {
+	display: inline-block;
+	.show-notifications & {
+		display: none;
+	}
 }
