@@ -23,10 +23,9 @@ $natt: #535b82;
 $natt-dark: #3e404d;
 
 
-$brand-color: $sommar;
-$brand-color-dark: $sommar-dark;
-$brand-link-color: $sommar;
-
+$brand-color: $vinter;
+$brand-color-dark: $vinter-dark;
+$brand-link-color: $vinter;
 
 $bright: #f7f7f7;
 $default-font-color: $gray-dark;
@@ -58,3 +57,7 @@ $breakpoint-two-px: #{$breakpoint-two}px;
 $breakpoint-three: 1400;
 $breakpoint-three-px: #{$breakpoint-three}px;
 
+//
+// Inputs
+//
+$input-border-radius: 3px;

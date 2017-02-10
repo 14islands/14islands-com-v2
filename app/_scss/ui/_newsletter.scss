@@ -1,0 +1,60 @@
+$form-z-index: 1;
+$button-z-index: 2;
+
+.newsletter__wrapper {
+	position: relative;
+	height: 100px;
+}
+
+/*
+	Form
+*/
+
+.newsletter__email-form {
+	width: 100%;
+	height: 100%;
+}
+
+/*
+* Buttons & Inputs
+*/
+.newsletter__notify-button,
+.newsletter__email-button,
+.newsletter__email-input,
+.newsletter__email-name-input {
+	position: absolute;
+	top: 0;
+}
+
+.newsletter__notify-button,
+.newsletter__email-button {
+	margin: 0;
+}
+
+.newsletter__email-button {
+	right: 0;
+	width: 22%;
+	z-index: $button-z-index;
+	@include if-narrower-than($breakpoint-two-px) {
+		padding: 18px 15px;
+		font-size: modular-scale(.8rem, 1);
+	}
+}
+
+.newsletter__email-input,
+.newsletter__email-name-input {
+	width: 37%;
+	z-index: $form-z-index;
+	@include if-narrower-than($breakpoint-two-px) {
+		padding: 17px 14px;
+		font-size: modular-scale(.8rem, 1);
+	}
+}
+
+.newsletter__email-input {
+	left: 0;
+}
+
+.newsletter__email-name-input {
+	left: 39%;
+}
