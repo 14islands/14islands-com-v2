@@ -4,9 +4,10 @@
 	text-decoration: none;
 	cursor: pointer;
 	-webkit-appearance: none;
-	border-radius: 3px;
+	border-radius: $input-border-radius;
 	white-space: nowrap;
 	outline: 0;
+	border: 0;
 }
 
 .button--primary {

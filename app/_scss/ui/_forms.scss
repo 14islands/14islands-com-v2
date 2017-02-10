@@ -1,0 +1,18 @@
+
+.form__input {
+	padding: 14px;
+	border-radius: $input-border-radius;
+	font-size: modular-scale(1rem, 1);
+	outline: 0;
+	background-color: white;
+	border: 1px solid white;
+	transition: border $easeOutQuad 300ms;
+
+	&:focus {
+		border: 1px solid $brand-color;
+	}
+}
+
+::placeholder {
+	font-style: italic;
+}
