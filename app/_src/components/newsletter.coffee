@@ -12,6 +12,7 @@ class FOURTEEN.Newsletter extends FOURTEEN.BaseComponent
 		@$nameInput = @$context.find('.newsletter__email-name-input')
 
 		@$emailButton.on('click', @onEmailClick)
+		@$emailForm.on('submit', @onFormSubmit)
 
 		@$emailInput.focus()
 
@@ -21,5 +22,10 @@ class FOURTEEN.Newsletter extends FOURTEEN.BaseComponent
 	onEmailClick: (e) =>
 		e.preventDefault()
 		@$emailForm.submit()
+		@$emailInput.val('')
+		@$nameInput.val('')
+
+	onFormSubmit: (e) =>
+
 
 	destroy: =>
