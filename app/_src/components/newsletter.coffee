@@ -5,7 +5,7 @@
 class FOURTEEN.Newsletter extends FOURTEEN.BaseComponent
 	UNSUBSCRIBE_TITLE = '14islands';
 	UNSUBSCRIBE_MESSAGE = 'Notifications are now turned off.';
-	UNSUBSCRIBE_ICON_PATH = '/icons/android-chrome-192x192.png';
+	UNSUBSCRIBE_ICON_PATH = '/android-chrome-192x192.png';
 	INPUT_TRANSITION_Y = 10
 	INPUT_EASING = Power0.easeOut
 	ESC_KEY_CODE = 27
