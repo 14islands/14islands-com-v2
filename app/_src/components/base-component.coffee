@@ -116,6 +116,3 @@ class FOURTEEN.BaseComponent
 		if ++@numberOfScriptsLoaded_ is @scripts.length
 			@asyncScriptsLoaded = true
 			@onScriptsLoaded()
-
-
-
