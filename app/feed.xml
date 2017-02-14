@@ -1,0 +1,24 @@
+---
+layout: null
+id: feed
+title: Blog - 14islands
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>14islands - Blog</title>
+    <description>Crafting digital experiences with cutting edge technologies.</description>
+    <link>http://14islands.com/blog</link>
+		{% for post in site.categories.blog %}
+		  {% unless post.private and site.hide_private %}
+        <item>
+          <title>{{ post.title | xml_escape }}</title>
+          <description>{{ post.content | replace: 'data-src=', 'src=' | xml_escape }}</description>
+          <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+          <link>http://14islands.com{{ post.url | prepend: site.url }}</link>
+          <guid isPermaLink="true">http://14islands.com{{ post.url | prepend: site.url }}</guid>
+        </item>
+			{% endunless %}
+		{% endfor %}
+  </channel>
+</rss>
