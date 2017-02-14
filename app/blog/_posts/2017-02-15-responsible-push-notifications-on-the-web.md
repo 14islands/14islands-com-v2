@@ -10,7 +10,7 @@ private: true
 
 Too many websites use push notifications irresponsibly. They will prompt users to signup the moment they visit the site, without providing any value to people first.
 
-This hurts the user experience and it also a risky business. If a user denies a site access at the start, that site might not be able to ask for it again, as permission will be blocked (In Chrome).
+This not only hurts the user experience, it's also a risky business. If a user denies a site access at the start, that site might not be able to ask for it again, as permission will be blocked (In Chrome).
 
 This is not to say push notifications are a bad technology in itself. When used responsibly, they offer a way to form a connection between people and the content they want.
 
@@ -85,7 +85,7 @@ The *allowLocalhostAsSecureOrigin: true* flag will treat **http://localhost** an
 It's important not call the *init* method more than once. Doing so results in an error.
 
 
-## Progressive Enhancement
+## Progressive enhancement
 
 Push Notifications are not supported by all browsers. For those browsers, we only show the Newsletter signup form on our website. In a true progressive enhancement fashion.
 
