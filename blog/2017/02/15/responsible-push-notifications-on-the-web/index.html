@@ -13,7 +13,7 @@
 		<meta property="og:title" content="How we implemented push notifications on our website" />
 		<meta property="og:description" content="When used responsibly, push notifications offer a way to form a connection between people and the content they want." />
 		<meta property="og:image" content="https://14islands.com/images/blog/2017-02-push-notifications/bells_16_9.jpg" />
-		<meta property="og:url" content="https://14islands.com/blog/2017/02/16/responsible-push-notifications-on-the-web/" />
+		<meta property="og:url" content="https://14islands.com/blog/2017/02/15/responsible-push-notifications-on-the-web/" />
 		<meta property="og:site_name" content="14islands" />
 
 		<!-- Twitter Card data -->
@@ -52,10 +52,10 @@
 			});
 		</script>
 
-		<link rel="stylesheet" href="/css/main.6341.css"/>
+		<link rel="stylesheet" href="/css/main.7384.css"/>
 
 	</head>
-	<body id="" class="page page-/blog/2017/02/16/responsible-push-notifications-on-the-web">
+	<body id="" class="page page-/blog/2017/02/15/responsible-push-notifications-on-the-web">
 
 		<!--[if lt IE 9]>
 				<p class="browsehappy"><span>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.<span></p>
@@ -108,22 +108,22 @@
 		<main class="main-content js-pjax-container">
 				<article class="post grid u-pad-both pjax-animate">
 	<section class="grid__row">
-		<span class="post__date">16 February 2017</span>
+		<span class="post__date">15 February 2017</span>
 		<h1 id="how-we-implemented-push-notifications-on-our-website">How we implemented push notifications on our website</h1>
 
-<p>An increasing amount of websites use push notifications irresponsibly. They will prompt users to signup the moment they visit the website, without providing any value to people first.</p>
+<p>Too many websites use push notifications irresponsibly. They will prompt users to signup the moment they visit the site, without providing any value to people first.</p>
 
-<p>This not only hurts the user experience, it’s also a risky business. If a user denies a site access at the start, that site might not be able to ask for it again, as permission will be blocked (In Chrome).</p>
+<p>This hurts the user experience and it also a risky business. If a user denies a site access at the start, that site might not be able to ask for it again, as permission will be blocked (In Chrome).</p>
 
-<p>This is not to say push notifications are a bad technology in itself. When used responsibly, they offer a way to form a connection between people and the content they like.</p>
+<p>This is not to say push notifications are a bad technology in itself. When used responsibly, they offer a way to form a connection between people and the content they want.</p>
 
 <figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
 
 
   <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
-    <img alt="Notifications" data-src="/images/blog/2017-02-push-notifications/bells_16_9.jpg" class="u-ratio__content" />
+    <img alt="Image taken by Igor Ovsyannykov - Manali, India (unsplash.com)" data-src="/images/blog/2017-02-push-notifications/bells_16_9.jpg" class="u-ratio__content" />
 <noscript>
-  <img alt="Notifications" src="/images/blog/2017-02-push-notifications/bells_16_9.jpg" class="u-ratio__content" />
+  <img alt="Image taken by Igor Ovsyannykov - Manali, India (unsplash.com)" src="/images/blog/2017-02-push-notifications/bells_16_9.jpg" class="u-ratio__content" />
 </noscript>
   </div>
   
@@ -131,9 +131,7 @@
 
 <h2 id="our-approach">Our Approach</h2>
 
-<p>We wanted a responsible way of using push notifications on our website (this one). We get good amount of traffic to our blog and like to offer our guests to signup for new post when they are not browsing our website.</p>
-
-<p>At the end of each blog post we show these buttons.</p>
+<p>We wanted a responsible way of using push notifications on our website. At the end of each blog post, we show these buttons to allow guests to get notified when new posts arrive.</p>
 
 <figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
 
@@ -149,9 +147,19 @@
 
 <p>When people click the notification button, the browser will prompt for permissions:</p>
 
-<p>..SCREENSHOT..</p>
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
 
-<p>At any time, we offer users the ability to turn off notifications on the website after signing up.</p>
+
+  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
+    <img alt="Permissions" data-src="/images/blog/2017-02-push-notifications/permissions_16_9.jpg" class="u-ratio__content" />
+<noscript>
+  <img alt="Permissions" src="/images/blog/2017-02-push-notifications/permissions_16_9.jpg" class="u-ratio__content" />
+</noscript>
+  </div>
+  
+</figure>
+
+<p>At any time, users have the ability to turn off notifications on the website after signing up.</p>
 
 <figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
 
@@ -167,19 +175,33 @@
 
 <h2 id="under-the-hood">Under the hood</h2>
 
-<p>There is both front and back-end logic needed for a full push notification solution. The front-end needs a Service Worker to listen to messages from the back-end. Meanwhile, the back-end stores subscriptions and sends messages to its registered browsers.</p>
+<p>There is both front and back-end logic behind the solution. The front-end has a Service Worker to listen to messages when people are not browsing the site. Meanwhile, the back-end stores subscriptions and sends messages to its registered browsers.</p>
 
-<p>Instead of building all this ourselves, we decided to use <a href="https://onesignal.com/">OneSignal</a> as our push notification provider. OneSignal enables to easily send messages, manage subscriptions and <a href="https://documentation.onesignal.com/docs#section-why-should-i-use-onesignal-">more</a>.</p>
+<p>Instead of building all this ourselves, we decided to use <a href="https://onesignal.com/">OneSignal</a> as our push notification provider. OneSignal enables us to easily send messages, manage subscriptions and <a href="https://documentation.onesignal.com/docs#section-why-should-i-use-onesignal-">more</a>.</p>
 
-<p>OneSignal also supports Safari on Desktop that uses a non-standard way for push notifications. Here is the complete browser support:</p>
+<p>OneSignal also has support for Safari on Desktop, it uses a non-standard way for push notifications. Here is the complete browser support:</p>
 
-<p>..BROWSER_SUPPORT..</p>
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
+
+
+  <div class="u-ratio u-ratio--16_7 u-ratio--placeholder ">
+    <img alt="Source: OneSignal website" data-src="/images/blog/2017-02-push-notifications/browser-support_16_7.png" class="u-ratio__content" />
+<noscript>
+  <img alt="Source: OneSignal website" src="/images/blog/2017-02-push-notifications/browser-support_16_7.png" class="u-ratio__content" />
+</noscript>
+  </div>
+  
+    <div class="u-img-caption">
+      <figcaption>Source: OneSignal website</figcaption>
+    </div>
+  
+</figure>
 
 <p>The browser support will broaden further going forward.</p>
 
 <h2 id="show-me-the-code">Show me the code!</h2>
 
-<p>The <a href="https://documentation.onesignal.com/docs/web-push-setup">OneSignal documentation</a> is quite good. Howe er, it doesn’t include a full example for our approach, so lets go through it in this post.</p>
+<p>The <a href="https://documentation.onesignal.com/docs/web-push-setup">OneSignal documentation</a> is quite good. Howe er, it doesn’t include a full example for our approach, so let’s go through it in this post.</p>
 
 <p>As a start, we added OneSignal to our site.</p>
 
@@ -195,25 +217,25 @@
 <p>The next step is to initialise OneSignal.</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">OneSignal</span><span class="p">.</span><span class="nx">push</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">OneSignal</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
-      <span class="nx">appId</span><span class="o">:</span> <span class="s2">&quot;&lt;APP_ID&gt;&quot;</span><span class="p">,</span>
-      <span class="nx">safari_web_id</span><span class="o">:</span> <span class="s1">&#39;&lt;SAFARI_WEB_ID&gt;&#39;</span><span class="p">,</span>
-      <span class="nx">autoRegister</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="nx">allowLocalhostAsSecureOrigin</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="nx">welcomeNotification</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;14islands&#39;</span><span class="p">,</span>
-        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;We will keep you posted!&#39;</span>
-      <span class="p">},</span>
-      <span class="nx">promptOptions</span><span class="o">:</span> <span class="p">{},</span>
-      <span class="nx">notifyButton</span><span class="o">:</span> <span class="p">{</span> <span class="nx">enable</span><span class="o">:</span> <span class="kc">false</span> <span class="p">}</span>
-    <span class="p">})</span>
+  <span class="nx">OneSignal</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+    <span class="nx">appId</span><span class="o">:</span> <span class="s2">&quot;&lt;APP_ID&gt;&quot;</span><span class="p">,</span>
+    <span class="nx">safari_web_id</span><span class="o">:</span> <span class="s1">&#39;&lt;SAFARI_WEB_ID&gt;&#39;</span><span class="p">,</span>
+    <span class="nx">autoRegister</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">allowLocalhostAsSecureOrigin</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">welcomeNotification</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;14islands&#39;</span><span class="p">,</span>
+      <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;We will keep you posted!&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">promptOptions</span><span class="o">:</span> <span class="p">{},</span>
+    <span class="nx">notifyButton</span><span class="o">:</span> <span class="p">{</span> <span class="nx">enable</span><span class="o">:</span> <span class="kc">false</span> <span class="p">}</span>
+  <span class="p">})</span>
 <span class="p">})</span></code></pre></div>
 
-<p>The ids for <em>app_id</em> and <em>safari_id</em> you get under the <em>App Settings</em> in the OneSignal Dashboard, after the app has been created in there.</p>
+<p>We got <em>app_id</em> and <em>safari_id</em> under the <em>App Settings</em> in the OneSignal Dashboard after the app has been created in there.</p>
 
-<p>The <em>allowLocalhostAsSecureOrigin: true</em> flag will treat http://localhost and http://127.0.0.1 as a secure origin. In general, push notifications require HTTPS to work.</p>
+<p>The <em>allowLocalhostAsSecureOrigin: true</em> flag will treat <strong>http://localhost</strong> and <strong>http://127.0.0.1</strong> as a secure origin. In production, push notifications require HTTPS to work.</p>
 
-<p>Do not call the <em>init</em> method more than once. Doing so results in an error.</p>
+<p>It’s important not call the <em>init</em> method more than once. Doing so results in an error.</p>
 
 <h2 id="progressive-enhancement">Progressive Enhancement</h2>
 
@@ -236,10 +258,10 @@
 <p>Next, we check if there is support and show the notification button in those cases.</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">OneSignal</span><span class="p">.</span><span class="nx">push</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">showNotfications</span> <span class="o">=</span> <span class="nx">OneSignal</span><span class="p">.</span><span class="nx">isPushNotificationsSupported</span><span class="p">()</span>
-		<span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">showNotfications</span><span class="p">)</span> <span class="p">{</span>
-			<span class="k">this</span><span class="p">.</span><span class="nx">$context</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;show-notifications&#39;</span><span class="p">)</span>
-		<span class="p">}</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">showNotfications</span> <span class="o">=</span> <span class="nx">OneSignal</span><span class="p">.</span><span class="nx">isPushNotificationsSupported</span><span class="p">()</span>
+	<span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">showNotfications</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">$context</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;show-notifications&#39;</span><span class="p">)</span>
+	<span class="p">}</span>
 <span class="p">})</span></code></pre></div>
 
 <p>In the CSS, the <em>show-notifications</em> class will switch to the view showing buttons.</p>
@@ -261,25 +283,35 @@
 <p>When people <code>click</code> the “Get Notification” button they will be subscribed.</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">OneSignal</span><span class="p">.</span><span class="nx">push</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-		<span class="nx">OneSignal</span><span class="p">.</span><span class="nx">registerForPushNotifications</span><span class="p">()</span>
-		<span class="nx">OneSignal</span><span class="p">.</span><span class="nx">setSubscription</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+	<span class="nx">OneSignal</span><span class="p">.</span><span class="nx">registerForPushNotifications</span><span class="p">()</span>
+	<span class="nx">OneSignal</span><span class="p">.</span><span class="nx">setSubscription</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
 <span class="p">})</span></code></pre></div>
 
 <p>A welcome notification is sent out at this point. It’s a nice way to give feedback to people that they are now receiving notifications.</p>
 
-<p>..SCREENSHOT OF BROWSER WELCOME NOTIFICATION..</p>
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
 
-<p>In the constructor we have the following code to detect if the user is subscribed and respond to subscription changes.</p>
+
+  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
+    <img alt="Permissions" data-src="/images/blog/2017-02-push-notifications/welcome-message_16_9.jpg" class="u-ratio__content" />
+<noscript>
+  <img alt="Permissions" src="/images/blog/2017-02-push-notifications/welcome-message_16_9.jpg" class="u-ratio__content" />
+</noscript>
+  </div>
+  
+</figure>
+
+<p>In the constructor, we have the following code to detect if the user is subscribed and respond to subscription changes.</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">OneSignal</span><span class="p">.</span><span class="nx">push</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-		<span class="c1">// Check if subscribed on load</span>
-		<span class="nx">OneSignal</span><span class="p">.</span><span class="nx">isPushNotificationsEnabled</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">isSubscribed</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-				<span class="k">this</span><span class="p">.</span><span class="nx">$context</span><span class="p">.</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">&#39;is-subscribed-to-push&#39;</span><span class="p">,</span> <span class="nx">isSubscribed</span><span class="p">)</span>
-		<span class="p">})</span>
-		<span class="c1">// Check if user hits the subscribe button</span>
-		<span class="nx">OneSignal</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;subscriptionChange&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">isSubscribed</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-				<span class="k">this</span><span class="p">.</span><span class="nx">$context</span><span class="p">.</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">&#39;is-subscribed-to-push&#39;</span><span class="p">,</span> <span class="nx">isSubscribed</span><span class="p">)</span>
-		<span class="p">})</span>
+	<span class="c1">// Check if subscribed on load</span>
+	<span class="nx">OneSignal</span><span class="p">.</span><span class="nx">isPushNotificationsEnabled</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">isSubscribed</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">$context</span><span class="p">.</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">&#39;is-subscribed-to-push&#39;</span><span class="p">,</span> <span class="nx">isSubscribed</span><span class="p">)</span>
+	<span class="p">})</span>
+	<span class="c1">// Check if user hits the subscribe button</span>
+	<span class="nx">OneSignal</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;subscriptionChange&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">isSubscribed</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">$context</span><span class="p">.</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">&#39;is-subscribed-to-push&#39;</span><span class="p">,</span> <span class="nx">isSubscribed</span><span class="p">)</span>
+	<span class="p">})</span>
 <span class="p">})</span></code></pre></div>
 
 <p>In the CSS, the <code>is-subscribed-to-push</code> will show the “Turn off Notification” button.</p>
@@ -301,16 +333,26 @@
 <p>People unregister when they <code>click</code> the “Turn off” button.</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">new</span> <span class="nb">window</span><span class="p">.</span><span class="nx">Notification</span><span class="p">(</span><span class="s1">&#39;14islands&#39;</span><span class="p">,</span> <span class="p">{</span>
-		<span class="nx">body</span><span class="o">:</span> <span class="s1">&#39;Notifications are now turned off.&#39;</span><span class="p">,</span>
-		<span class="nx">icon</span><span class="o">:</span> <span class="s1">&#39;/icons/android-chrome-192x192.png&#39;</span>
+	<span class="nx">body</span><span class="o">:</span> <span class="s1">&#39;Notifications are now turned off.&#39;</span><span class="p">,</span>
+	<span class="nx">icon</span><span class="o">:</span> <span class="s1">&#39;/icons/android-chrome-192x192.png&#39;</span>
 <span class="p">})</span>
 <span class="nx">OneSignal</span><span class="p">.</span><span class="nx">push</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-		<span class="nx">OneSignal</span><span class="p">.</span><span class="nx">setSubscription</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+	<span class="nx">OneSignal</span><span class="p">.</span><span class="nx">setSubscription</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
 <span class="p">})</span></code></pre></div>
 
 <p>We send out a notification using the standard Notification API. This is nice to give the user feedback for unregistering.</p>
 
-<p>..SCREENSHOT OF BROWSER TURN OFF NOTIFICATION..</p>
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
+
+
+  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
+    <img alt="Permissions" data-src="/images/blog/2017-02-push-notifications/turnoff-message_16_9.jpg" class="u-ratio__content" />
+<noscript>
+  <img alt="Permissions" src="/images/blog/2017-02-push-notifications/turnoff-message_16_9.jpg" class="u-ratio__content" />
+</noscript>
+  </div>
+  
+</figure>
 
 <h2 id="to-summarize">To summarize</h2>
 
@@ -318,7 +360,7 @@
   <p>Users should show intent before a site asks for a permission, and allow users easily to turn notifications off.</p>
 </blockquote>
 
-<p>You can try out our implementation below.</p>
+<p>You can try out our implementation under the comments section below.</p>
 
 <div class="post__author u-pad-top">
 	<img alt="Hjörtur Hilmarsson" data-src="/images/about/team-grid/double-Hjortur.jpg" class="post__author-image" />
@@ -341,13 +383,13 @@
 
 	<section class="js-component-disqus-embed post-comments grid u-pad-bottom"
          data-disqus-shortname="14islands-com"
-         data-disqus-identifier="/blog/2017/02/16/responsible-push-notifications-on-the-web/"
+         data-disqus-identifier="/blog/2017/02/15/responsible-push-notifications-on-the-web/"
          data-disqus-expanded="false">
 
 
 	<a href="#" data-disquss-count class="grid__row u-bg-bright" title="Show comments for post">
 		<h4 class="post-comments__cta ">
-			<span class="disqus-comment-count" data-disqus-identifier="/blog/2017/02/16/responsible-push-notifications-on-the-web/">Write a comment</span>
+			<span class="disqus-comment-count" data-disqus-identifier="/blog/2017/02/15/responsible-push-notifications-on-the-web/">Write a comment</span>
 		</h4>
 	</a>
 
