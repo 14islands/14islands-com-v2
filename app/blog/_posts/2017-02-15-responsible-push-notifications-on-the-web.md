@@ -18,9 +18,7 @@ This is not to say push notifications are a bad technology in itself. When used 
 
 ## Our Approach
 
-We wanted a responsible way of using push notifications on our website. We offer guests on our blog to opt-in to notifications when new posts arrive.
-
-At the end of each blog post, we show these buttons.
+We wanted a responsible way of using push notifications on our website. At the end of each blog post, we show these buttons to allow guests to get notified when new posts arrive.
 
 {% include post-image.html alt="Notifications" src="/images/blog/2017-02-push-notifications/notify-visible.png" margin="both" ratio="16_5" %}
 
@@ -34,9 +32,9 @@ At any time, users have the ability to turn off notifications on the website aft
 
 ## Under the hood
 
-There is both front and back-end logic behind this push notification solution. The front-end has a Service Worker to listen to messages when people are not browsing the site. Meanwhile, the back-end stores subscriptions and sends messages to its registered browsers.
+There is both front and back-end logic behind the solution. The front-end has a Service Worker to listen to messages when people are not browsing the site. Meanwhile, the back-end stores subscriptions and sends messages to its registered browsers.
 
-Instead of building all this ourselves, we decided to use [OneSignal](https://onesignal.com/) as our push notification provider. OneSignal enables to easily send messages, manage subscriptions and [more](https://documentation.onesignal.com/docs#section-why-should-i-use-onesignal-).
+Instead of building all this ourselves, we decided to use [OneSignal](https://onesignal.com/) as our push notification provider. OneSignal enables us to easily send messages, manage subscriptions and [more](https://documentation.onesignal.com/docs#section-why-should-i-use-onesignal-).
 
 OneSignal also has support for Safari on Desktop, it uses a non-standard way for push notifications. Here is the complete browser support:
 
