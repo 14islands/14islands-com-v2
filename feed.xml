@@ -2,8 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>14islands - Blog</title>
+		<language>en-US</language>
     <description>Crafting digital experiences with cutting edge technologies.</description>
-    <link>http://14islands.com/blog</link>
+    <link>http://14islands.com</link>
 		
 		  
 		
