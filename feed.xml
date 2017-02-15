@@ -7,6 +7,276 @@
     <link>http://14islands.com</link>
 		
 		  
+        <item>
+          <title>How we implemented push notifications on our website</title>
+          <description>&lt;h1 id=&quot;how-we-implemented-push-notifications-on-our-website&quot;&gt;How we implemented push notifications on our website&lt;/h1&gt;
+
+&lt;p&gt;Too many websites use push notifications irresponsibly. They will prompt users to signup the moment they visit the site, without providing any value to people first.&lt;/p&gt;
+
+&lt;p&gt;This not only hurts the user experience, it’s also a risky business. If a user denies a site access at the start, that site might not be able to ask for it again, as permission will be blocked (In Chrome).&lt;/p&gt;
+
+&lt;p&gt;This is not to say push notifications are a bad technology in itself. When used responsibly, they offer a way to form a connection between people and the content they want.&lt;/p&gt;
+
+&lt;figure class=&quot;grid__row grid__row--wide content-image u-margin-both-half  &quot;&gt;
+
+
+  &lt;div class=&quot;u-ratio u-ratio--16_9 u-ratio--placeholder &quot;&gt;
+    &lt;img alt=&quot;Image taken by Igor Ovsyannykov - Manali, India (unsplash.com)&quot; src=&quot;/images/blog/2017-02-push-notifications/bells_16_9.jpg&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;noscript&gt;
+  &lt;img alt=&quot;Image taken by Igor Ovsyannykov - Manali, India (unsplash.com)&quot; src=&quot;/images/blog/2017-02-push-notifications/bells_16_9.jpg&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;/noscript&gt;
+  &lt;/div&gt;
+  
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;our-approach&quot;&gt;Our Approach&lt;/h2&gt;
+
+&lt;p&gt;We wanted a responsible way of using push notifications on our website. At the end of each blog post, we show these buttons to allow guests to get notified when new posts arrive.&lt;/p&gt;
+
+&lt;figure class=&quot;grid__row grid__row--wide content-image u-margin-both-half  &quot;&gt;
+
+
+  &lt;div class=&quot;u-ratio u-ratio--16_5 u-ratio--placeholder &quot;&gt;
+    &lt;img alt=&quot;Notifications&quot; src=&quot;/images/blog/2017-02-push-notifications/notify-visible.png&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;noscript&gt;
+  &lt;img alt=&quot;Notifications&quot; src=&quot;/images/blog/2017-02-push-notifications/notify-visible.png&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;/noscript&gt;
+  &lt;/div&gt;
+  
+&lt;/figure&gt;
+
+&lt;p&gt;When people click the notification button, the browser will prompt for permissions:&lt;/p&gt;
+
+&lt;figure class=&quot;grid__row grid__row--wide content-image u-margin-both-half  &quot;&gt;
+
+
+  &lt;div class=&quot;u-ratio u-ratio--16_9 u-ratio--placeholder &quot;&gt;
+    &lt;img alt=&quot;Permissions&quot; src=&quot;/images/blog/2017-02-push-notifications/permissions_16_9.jpg&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;noscript&gt;
+  &lt;img alt=&quot;Permissions&quot; src=&quot;/images/blog/2017-02-push-notifications/permissions_16_9.jpg&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;/noscript&gt;
+  &lt;/div&gt;
+  
+&lt;/figure&gt;
+
+&lt;p&gt;At any time, users have the ability to turn off notifications on the website after signing up.&lt;/p&gt;
+
+&lt;figure class=&quot;grid__row grid__row--wide content-image u-margin-both-half  &quot;&gt;
+
+
+  &lt;div class=&quot;u-ratio u-ratio--16_5 u-ratio--placeholder &quot;&gt;
+    &lt;img alt=&quot;Notifications Turned Off&quot; src=&quot;/images/blog/2017-02-push-notifications/notify-turned-off.png&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;noscript&gt;
+  &lt;img alt=&quot;Notifications Turned Off&quot; src=&quot;/images/blog/2017-02-push-notifications/notify-turned-off.png&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;/noscript&gt;
+  &lt;/div&gt;
+  
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;under-the-hood&quot;&gt;Under the hood&lt;/h2&gt;
+
+&lt;p&gt;There is both front and back-end logic behind the solution. The front-end has a Service Worker to listen to messages when people are not browsing the site. Meanwhile, the back-end stores subscriptions and sends messages to its registered browsers.&lt;/p&gt;
+
+&lt;p&gt;Instead of building all this ourselves, we decided to use &lt;a href=&quot;https://onesignal.com/&quot;&gt;OneSignal&lt;/a&gt; as our push notification provider. OneSignal enables us to easily send messages, manage subscriptions and &lt;a href=&quot;https://documentation.onesignal.com/docs#section-why-should-i-use-onesignal-&quot;&gt;more&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;OneSignal has an additional support for Safari on macOS that uses a non-standard way for push notifications. Here is the complete browser support:&lt;/p&gt;
+
+&lt;figure class=&quot;grid__row grid__row--wide content-image u-margin-both-half  &quot;&gt;
+
+
+  &lt;div class=&quot;u-ratio u-ratio--16_7 u-ratio--placeholder &quot;&gt;
+    &lt;img alt=&quot;Source: OneSignal website&quot; src=&quot;/images/blog/2017-02-push-notifications/browser-support_16_7.png&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;noscript&gt;
+  &lt;img alt=&quot;Source: OneSignal website&quot; src=&quot;/images/blog/2017-02-push-notifications/browser-support_16_7.png&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;/noscript&gt;
+  &lt;/div&gt;
+  
+    &lt;div class=&quot;u-img-caption&quot;&gt;
+      &lt;figcaption&gt;Source: OneSignal website&lt;/figcaption&gt;
+    &lt;/div&gt;
+  
+&lt;/figure&gt;
+
+&lt;p&gt;The browser support will broaden further going forward.&lt;/p&gt;
+
+&lt;h2 id=&quot;show-me-the-code&quot;&gt;Show me the code!&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://documentation.onesignal.com/docs/web-push-setup&quot;&gt;OneSignal documentation&lt;/a&gt; is quite good. However, it doesn’t include a full example for our approach, so let’s go through it in this post.&lt;/p&gt;
+
+&lt;p&gt;As a start, we added OneSignal to our site.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://cdn.onesignal.com/sdks/OneSignalSDK.js&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;OneSignal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;OneSignal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Notice the &lt;em&gt;async&lt;/em&gt; keyword to prevent the script from blocking rendering of the page. All of OneSignal calls are in-fact asynchronous.&lt;/p&gt;
+
+&lt;h2 id=&quot;calling-init&quot;&gt;Calling init&lt;/h2&gt;
+
+&lt;p&gt;The next step is to initialise OneSignal.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;OneSignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;OneSignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;appId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;APP_ID&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;safari_web_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;SAFARI_WEB_ID&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;autoRegister&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;allowLocalhostAsSecureOrigin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;welcomeNotification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;14islands&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;We will keep you posted!&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;promptOptions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;notifyButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;enable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We got &lt;em&gt;app_id&lt;/em&gt; and &lt;em&gt;safari_id&lt;/em&gt; under the &lt;em&gt;App Settings&lt;/em&gt; in the OneSignal Dashboard after creating a new app in there.&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;allowLocalhostAsSecureOrigin: true&lt;/em&gt; flag will treat &lt;strong&gt;http://localhost&lt;/strong&gt; and &lt;strong&gt;http://127.0.0.1&lt;/strong&gt; as a secure origin. In production, push notifications require HTTPS to work.&lt;/p&gt;
+
+&lt;p&gt;It’s important not to call the &lt;em&gt;init&lt;/em&gt; method more than once. Doing so results in an error.&lt;/p&gt;
+
+&lt;h2 id=&quot;progressive-enhancement&quot;&gt;Progressive enhancement&lt;/h2&gt;
+
+&lt;p&gt;Push notifications are not supported by all browsers. For those browsers, we only show the newsletter signup form on our website - in a true progressive enhancement fashion.&lt;/p&gt;
+
+&lt;p&gt;The newsletter signup form works on all browsers and even without JavaScript enabled.&lt;/p&gt;
+
+&lt;figure class=&quot;grid__row grid__row--wide content-image u-margin-both-half  &quot;&gt;
+
+
+  &lt;div class=&quot;u-ratio u-ratio--16_5 u-ratio--placeholder &quot;&gt;
+    &lt;img alt=&quot;Notifications &amp;amp; Newsletter&quot; src=&quot;/images/blog/2017-02-push-notifications/newsletter-visible.png&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;noscript&gt;
+  &lt;img alt=&quot;Notifications &amp;amp; Newsletter&quot; src=&quot;/images/blog/2017-02-push-notifications/newsletter-visible.png&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;/noscript&gt;
+  &lt;/div&gt;
+  
+&lt;/figure&gt;
+
+&lt;p&gt;Next, we check if there is support and show the notification button in those cases.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;OneSignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;showNotfications&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;OneSignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPushNotificationsSupported&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;showNotfications&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;show-notifications&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In the CSS, the &lt;em&gt;show-notifications&lt;/em&gt; class will switch to the view showing both buttons.&lt;/p&gt;
+
+&lt;figure class=&quot;grid__row grid__row--wide content-image u-margin-both-half  &quot;&gt;
+
+
+  &lt;div class=&quot;u-ratio u-ratio--16_5 u-ratio--placeholder &quot;&gt;
+    &lt;img alt=&quot;Notifications&quot; src=&quot;/images/blog/2017-02-push-notifications/notify-visible.png&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;noscript&gt;
+  &lt;img alt=&quot;Notifications&quot; src=&quot;/images/blog/2017-02-push-notifications/notify-visible.png&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;/noscript&gt;
+  &lt;/div&gt;
+  
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;subscribe&quot;&gt;Subscribe&lt;/h2&gt;
+
+&lt;p&gt;When people &lt;code&gt;click&lt;/code&gt; the “Get Notification” button they will be subscribed.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;OneSignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;OneSignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerForPushNotifications&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;OneSignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setSubscription&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;A welcome notification is sent out at this point. It’s a nice way to give feedback to people that they are now receiving notifications.&lt;/p&gt;
+
+&lt;figure class=&quot;grid__row grid__row--wide content-image u-margin-both-half  &quot;&gt;
+
+
+  &lt;div class=&quot;u-ratio u-ratio--16_9 u-ratio--placeholder &quot;&gt;
+    &lt;img alt=&quot;Permissions&quot; src=&quot;/images/blog/2017-02-push-notifications/welcome-message_16_9.jpg&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;noscript&gt;
+  &lt;img alt=&quot;Permissions&quot; src=&quot;/images/blog/2017-02-push-notifications/welcome-message_16_9.jpg&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;/noscript&gt;
+  &lt;/div&gt;
+  
+&lt;/figure&gt;
+
+&lt;p&gt;In the constructor, we have the following code to detect if the user is subscribed and respond to subscription changes.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;OneSignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// Check if subscribed on load&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;OneSignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPushNotificationsEnabled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isSubscribed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toggleClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;is-subscribed-to-push&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isSubscribed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// Check if user hits the subscribe button&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;OneSignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;subscriptionChange&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isSubscribed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toggleClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;is-subscribed-to-push&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isSubscribed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In the CSS, the &lt;code&gt;is-subscribed-to-push&lt;/code&gt; will show the “Turn off Notification” button.&lt;/p&gt;
+
+&lt;figure class=&quot;grid__row grid__row--wide content-image u-margin-both-half  &quot;&gt;
+
+
+  &lt;div class=&quot;u-ratio u-ratio--16_5 u-ratio--placeholder &quot;&gt;
+    &lt;img alt=&quot;Notifications Turned Off&quot; src=&quot;/images/blog/2017-02-push-notifications/notify-turned-off.png&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;noscript&gt;
+  &lt;img alt=&quot;Notifications Turned Off&quot; src=&quot;/images/blog/2017-02-push-notifications/notify-turned-off.png&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;/noscript&gt;
+  &lt;/div&gt;
+  
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;turn-off-notification&quot;&gt;Turn off notification&lt;/h2&gt;
+
+&lt;p&gt;People unregister when they &lt;code&gt;click&lt;/code&gt; the “Turn off” button.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Notification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;14islands&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Notifications are now turned off.&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/icons/android-chrome-192x192.png&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;OneSignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;OneSignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setSubscription&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We send out a notification using the standard Notification API. This is nice to give the user feedback for unregistering.&lt;/p&gt;
+
+&lt;figure class=&quot;grid__row grid__row--wide content-image u-margin-both-half  &quot;&gt;
+
+
+  &lt;div class=&quot;u-ratio u-ratio--16_9 u-ratio--placeholder &quot;&gt;
+    &lt;img alt=&quot;Permissions&quot; src=&quot;/images/blog/2017-02-push-notifications/turnoff-message_16_9.jpg&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;noscript&gt;
+  &lt;img alt=&quot;Permissions&quot; src=&quot;/images/blog/2017-02-push-notifications/turnoff-message_16_9.jpg&quot; class=&quot;u-ratio__content&quot; /&gt;
+&lt;/noscript&gt;
+  &lt;/div&gt;
+  
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;to-summarize&quot;&gt;To summarize&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Users should show intent before a site asks for a permission, and allow users easily to turn notifications off.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You can try out our implementation under the comments section below.&lt;/p&gt;
+
+&lt;div class=&quot;post__author u-pad-top&quot;&gt;
+	&lt;img alt=&quot;Hjörtur Hilmarsson&quot; src=&quot;/images/about/team-grid/double-Hjortur.jpg&quot; class=&quot;post__author-image&quot; /&gt;
+&lt;noscript&gt;
+  &lt;img alt=&quot;Hjörtur Hilmarsson&quot; src=&quot;/images/about/team-grid/double-Hjortur.jpg&quot; class=&quot;post__author-image&quot; /&gt;
+&lt;/noscript&gt;
+	&lt;span class=&quot;post__author-name&quot;&gt;&lt;strong&gt;Hjörtur Hilmarsson&lt;/strong&gt; &lt;a href=&quot;https://twitter.com/hjortureh&quot; target=&quot;_blank&quot;&gt;@hjortureh&lt;/a&gt;&lt;/span&gt;
+	&lt;span class=&quot;post__author-job-title&quot;&gt;Creative web developer / Co-Founder at 14islands&lt;/span&gt;
+&lt;/div&gt;
+
+</description>
+          <pubDate>2017-02-15T00:00:00+01:00</pubDate>
+          <link>http://14islands.com/blog/2017/02/15/responsible-push-notifications-on-the-web/</link>
+          <guid isPermaLink="true">http://14islands.com/blog/2017/02/15/responsible-push-notifications-on-the-web/</guid>
+        </item>
+			
 		
 		  
 		
