@@ -3,7 +3,6 @@ layout: post
 title:  "How we implemented push notifications on our website"
 description: When used responsibly, push notifications offer a way to form a connection between people and the content they want.
 og_image: /images/blog/2017-02-push-notifications/bells_16_9.jpg
-private: true
 ---
 
 # How we implemented push notifications on our website
@@ -87,9 +86,9 @@ It's important not to call the *init* method more than once. Doing so results in
 
 ## Progressive enhancement
 
-Push notifications are not supported by all browsers. For those browsers, we only show the Newsletter signup form on our website - in a true progressive enhancement fashion.
+Push notifications are not supported by all browsers. For those browsers, we only show the newsletter signup form on our website - in a true progressive enhancement fashion.
 
-The Newsletter signup form works on all browsers and even without JavaScript enabled.
+The newsletter signup form works on all browsers and even without JavaScript enabled.
 
 {% include post-image.html alt="Notifications & Newsletter" src="/images/blog/2017-02-push-notifications/newsletter-visible.png" margin="both" ratio="16_5" %}
 
