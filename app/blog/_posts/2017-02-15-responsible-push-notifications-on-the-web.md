@@ -36,7 +36,7 @@ There is both front and back-end logic behind the solution. The front-end has a 
 
 Instead of building all this ourselves, we decided to use [OneSignal](https://onesignal.com/) as our push notification provider. OneSignal enables us to easily send messages, manage subscriptions and [more](https://documentation.onesignal.com/docs#section-why-should-i-use-onesignal-).
 
-OneSignal also has support for Safari on Desktop, it uses a non-standard way for push notifications. Here is the complete browser support:
+OneSignal has an additional support for Safari on macOS that uses a non-standard way for push notifications. Here is the complete browser support:
 
 {% include post-image.html alt="Source: OneSignal website" caption="true" src="/images/blog/2017-02-push-notifications/browser-support_16_7.png" margin="both" ratio="16_7" %}
 
@@ -44,7 +44,7 @@ The browser support will broaden further going forward.
 
 ## Show me the code!
 
-The [OneSignal documentation](https://documentation.onesignal.com/docs/web-push-setup) is quite good. Howe er, it doesn't include a full example for our approach, so let's go through it in this post.
+The [OneSignal documentation](https://documentation.onesignal.com/docs/web-push-setup) is quite good. However, it doesn't include a full example for our approach, so let's go through it in this post.
 
 As a start, we added OneSignal to our site.
 
@@ -78,16 +78,16 @@ OneSignal.push(() => {
 })
 {% endhighlight %}
 
-We got *app_id* and *safari_id* under the *App Settings* in the OneSignal Dashboard after the app has been created in there.
+We got *app_id* and *safari_id* under the *App Settings* in the OneSignal Dashboard after creating a new app in there.
 
 The *allowLocalhostAsSecureOrigin: true* flag will treat **http://localhost** and **http://127.0.0.1** as a secure origin. In production, push notifications require HTTPS to work.
 
-It's important not call the *init* method more than once. Doing so results in an error.
+It's important not to call the *init* method more than once. Doing so results in an error.
 
 
 ## Progressive enhancement
 
-Push Notifications are not supported by all browsers. For those browsers, we only show the Newsletter signup form on our website. In a true progressive enhancement fashion.
+Push notifications are not supported by all browsers. For those browsers, we only show the Newsletter signup form on our website - in a true progressive enhancement fashion.
 
 The Newsletter signup form works on all browsers and even without JavaScript enabled.
 
@@ -104,7 +104,7 @@ OneSignal.push(() => {
 })
 {% endhighlight %}
 
-In the CSS, the *show-notifications* class will switch to the view showing buttons.
+In the CSS, the *show-notifications* class will switch to the view showing both buttons.
 
 {% include post-image.html alt="Notifications" src="/images/blog/2017-02-push-notifications/notify-visible.png" margin="both" ratio="16_5" %}
 
