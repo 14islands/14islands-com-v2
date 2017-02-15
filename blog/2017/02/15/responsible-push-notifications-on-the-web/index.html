@@ -182,7 +182,7 @@
 
 <p>Instead of building all this ourselves, we decided to use <a href="https://onesignal.com/">OneSignal</a> as our push notification provider. OneSignal enables us to easily send messages, manage subscriptions and <a href="https://documentation.onesignal.com/docs#section-why-should-i-use-onesignal-">more</a>.</p>
 
-<p>OneSignal also has support for Safari on Desktop, it uses a non-standard way for push notifications. Here is the complete browser support:</p>
+<p>OneSignal has an additional support for Safari on macOS that uses a non-standard way for push notifications. Here is the complete browser support:</p>
 
 <figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
 
@@ -204,7 +204,7 @@
 
 <h2 id="show-me-the-code">Show me the code!</h2>
 
-<p>The <a href="https://documentation.onesignal.com/docs/web-push-setup">OneSignal documentation</a> is quite good. Howe er, it doesn’t include a full example for our approach, so let’s go through it in this post.</p>
+<p>The <a href="https://documentation.onesignal.com/docs/web-push-setup">OneSignal documentation</a> is quite good. However, it doesn’t include a full example for our approach, so let’s go through it in this post.</p>
 
 <p>As a start, we added OneSignal to our site.</p>
 
@@ -234,15 +234,15 @@
   <span class="p">})</span>
 <span class="p">})</span></code></pre></div>
 
-<p>We got <em>app_id</em> and <em>safari_id</em> under the <em>App Settings</em> in the OneSignal Dashboard after the app has been created in there.</p>
+<p>We got <em>app_id</em> and <em>safari_id</em> under the <em>App Settings</em> in the OneSignal Dashboard after creating a new app in there.</p>
 
 <p>The <em>allowLocalhostAsSecureOrigin: true</em> flag will treat <strong>http://localhost</strong> and <strong>http://127.0.0.1</strong> as a secure origin. In production, push notifications require HTTPS to work.</p>
 
-<p>It’s important not call the <em>init</em> method more than once. Doing so results in an error.</p>
+<p>It’s important not to call the <em>init</em> method more than once. Doing so results in an error.</p>
 
 <h2 id="progressive-enhancement">Progressive enhancement</h2>
 
-<p>Push Notifications are not supported by all browsers. For those browsers, we only show the Newsletter signup form on our website. In a true progressive enhancement fashion.</p>
+<p>Push notifications are not supported by all browsers. For those browsers, we only show the Newsletter signup form on our website - in a true progressive enhancement fashion.</p>
 
 <p>The Newsletter signup form works on all browsers and even without JavaScript enabled.</p>
 
@@ -267,7 +267,7 @@
 	<span class="p">}</span>
 <span class="p">})</span></code></pre></div>
 
-<p>In the CSS, the <em>show-notifications</em> class will switch to the view showing buttons.</p>
+<p>In the CSS, the <em>show-notifications</em> class will switch to the view showing both buttons.</p>
 
 <figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
 
