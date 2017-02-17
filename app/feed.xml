@@ -14,7 +14,7 @@ title: Blog - 14islands
 		  {% unless post.private and site.hide_private %}
         <item>
           <title>{{ post.title | xml_escape }}</title>
-          <description>{{ post.content | replace: 'data-src=', 'src=' | xml_escape }}</description>
+          <description>{{ post.description | xml_escape }}</description>
           <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
           <link>http://14islands.com{{ post.url | prepend: site.url }}</link>
           <guid isPermaLink="true">http://14islands.com{{ post.url | prepend: site.url }}</guid>
