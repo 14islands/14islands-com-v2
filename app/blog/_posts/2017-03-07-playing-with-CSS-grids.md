@@ -58,7 +58,7 @@ And the syntax is simple, each space separated value corresponds to a column. Ad
 grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr)
 {% endhighlight %}
 
-Add some media queries, the `grid-template-rows` and that gives us the [following result](http://codepen.io/14islands/full/ggeJrP/):
+Some media queries and the `grid-template-rows` later and end up with this result [following result](http://codepen.io/14islands/full/ggeJrP/):
 
 {% include post-image.html alt="Codepen Screenshot with result" src="/images/blog/2017-03-07-playing-with-CSS-grids/screenshot-codepen.png" margin="both" ratio="16_9" %}
 
