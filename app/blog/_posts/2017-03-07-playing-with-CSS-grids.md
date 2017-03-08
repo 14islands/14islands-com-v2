@@ -34,7 +34,7 @@ Imagine you have a grid with *columns* and forget about the *rows* for a little 
 
 Let’s use [this design](https://dribbble.com/shots/3257702-Editorial-Layout-1) as an example, from our good friend [Dennys Hess](https://dribbble.com/dennyshess). This is what we will try to build with the new CSS Grid module.
 
-{% include post-image.html alt="Editorial Layout" src="/images/blog/2017-03-07-playing-with-CSS-grids/typography-02.png" margin="both" ratio="16_9" %}
+{% include post-image.html alt="Editorial Layout" src="/images/blog/2017-03-07-playing-with-CSS-grids/typography-02.png" margin="both" ratio="4_3" %}
 
 Now take a look at how many columns it has:
 
