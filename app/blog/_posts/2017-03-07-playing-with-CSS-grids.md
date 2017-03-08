@@ -36,7 +36,7 @@ Let’s use [this design](https://dribbble.com/shots/3257702-Editorial-Layout-1)
 
 {% include post-image.html alt="Editorial Layout" src="/images/blog/2017-03-07-playing-with-CSS-grids/typography-02.png" margin="both" ratio="4_3" %}
 
-Now take a look at how many columns it has:
+Take a look at how many columns it has:
 
 {% include post-image.html alt="Editorial Layout" src="/images/blog/2017-03-07-playing-with-CSS-grids/columns.png" margin="both" ratio="16_9" %}
 
