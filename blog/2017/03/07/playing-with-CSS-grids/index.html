@@ -282,13 +282,15 @@
 <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">grid-row</span><span class="o">:</span> <span class="nt">2</span> <span class="o">/</span> <span class="nt">span</span> <span class="nt">2</span> <span class="c">/* at row 2, spanning 2 rows from it */</span>
 <span class="nt">grid-column</span><span class="o">:</span> <span class="nt">4</span> <span class="c">/* simply at column 4 */</span></code></pre></div>
 
-<p>The values accepted for the properties are also worth mentioning, specially the new functions:</p>
+<p>The values accepted for the properties are also worth mentioning, they can be:</p>
 
 <ul>
   <li>length unit (like <code>px</code>, <code>em</code>, percentages or <code>fr</code> for “fractions”)</li>
   <li><code>auto</code> (or <code>fit-content</code>)</li>
   <li><code>mincontent()</code>, <code>maxcontent()</code>, and <code>minmax()</code>, or the <code>repeat()</code> function.</li>
 </ul>
+
+<p>These new functions specifically make the grid smarter to calculate the row/column sizes.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
