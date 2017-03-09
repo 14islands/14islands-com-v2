@@ -20,7 +20,7 @@ To give you an idea of why this is feature is exciting, take a [look at this](ht
 
 {% include post-image.html alt="Codepen Screenshot" src="/images/blog/2017-03-07-playing-with-CSS-grids/screenshot-before.png" margin="both" ratio="16_10" link="http://codepen.io/14islands/full/BprPvM/" %}
 
-Do you see those boxes? They can be moved around wherever you want, like a deck of cards on a table. Before CSS Grids, you’d have to make sure what you see in the screen follows a proper DOM order. Otherwise things could get a little trickier to build to achieve a similar result.
+Do you see those boxes? They can be moved around wherever you want, like a deck of cards on a table. Before CSS Grids, you’d have to make sure what you see in the screen follows a proper DOM order. Otherwise things could get a little trickier to build to achieve a similar result. To be fair, you could use the `order` [property on Flexbox](https://developer.mozilla.org/en/docs/Web/CSS/order) to change it's order but it still limits you to a 1 dimensional system (row _or_ column, not both).
 
 Also note how a column/row can span into it’s “neighbors”. Like a beautiful spreadsheet without any old school CSS table syntax.
 
@@ -34,7 +34,7 @@ Let’s use [this design](https://dribbble.com/shots/3257702-Editorial-Layout-1)
 
 {% include post-image.html alt="Editorial Layout" src="/images/blog/2017-03-07-playing-with-CSS-grids/typography-02.png" margin="both" ratio="4_3" link="https://dribbble.com/shots/3257702-Editorial-Layout-1" %}
 
-Take a look at how many columns it has:
+Figure out how many columns it has:
 
 {% include post-image.html alt="Editorial Layout" src="/images/blog/2017-03-07-playing-with-CSS-grids/columns.png" margin="both" ratio="16_9" %}
 
@@ -49,6 +49,9 @@ That means that moving them anywhere would not affect what I’m currently readi
 Usually a figure is an image, illustration, diagram, code snippet, etc., that is referenced in the main flow of a document, but that can be moved to another part of the document or to an appendix without affecting the main flow.
 
 With this decided, we can figure out our `grid-template-columns`. The width of each column should be between the minimum that I have specified (300px) or a maximum of 1 "fraction" of the grid. We can use the `minmax()` function for that logic.
+
+> 1fr is one "fractional unit", which is a way of saying "the remaining space in the element".
+- [(MSDN)](http://social.msdn.microsoft.com/Forums/en-US/winappswithhtml5/thread/95fddeb2-04bc-4f2b-bfb6-ffecffe5e8d5/)
 
 The syntax is simple, each space separated value corresponds to a column. Add more values to get more columns.
 
@@ -90,6 +93,12 @@ The syntax to position the element in a different grid row/column position is al
 grid-row: 2 / span 2 /* at row 2, spanning 2 rows from it */
 grid-column: 4 /* simply at column 4 */
 {% endhighlight %}
+
+The values accepted for the properties are also worth mentioning, specially the new functions:
+
+- length unit (like `px`, `em`, percentages or `fr` for "fractions")
+- `auto` (or `fit-content`)
+- `mincontent()`, `maxcontent()`, and `minmax()`, or the `repeat()` function.
 
 
 ## Conclusion
