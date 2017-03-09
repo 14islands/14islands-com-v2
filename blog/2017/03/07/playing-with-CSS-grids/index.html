@@ -4,14 +4,14 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Playing with CSS Grids</title>
-		<meta name="description" content="The CSS Grid layouth has everything it needs to be considered the most powerful layout system in CSS.">
+		<meta name="description" content="The CSS Grid layout has everything it needs to be considered the most powerful layout system in CSS.">
 		<meta name="keywords" content="Web Development, Web Design, UX, Web Developers, Digital, Studio, Agency, Stockholm, Consulting, Training, HTML, CSS, JavaScript, WordPress">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:type" content="article" />
 		<meta property="og:title" content="Playing with CSS Grids" />
-		<meta property="og:description" content="The CSS Grid layouth has everything it needs to be considered the most powerful layout system in CSS." />
+		<meta property="og:description" content="The CSS Grid layout has everything it needs to be considered the most powerful layout system in CSS." />
 		<meta property="og:image" content="https://14islands.com/images/blog/2017-03-07-playing-with-CSS-grids/typography-02.png" />
 		<meta property="og:url" content="https://14islands.com/blog/2017/03/07/playing-with-CSS-grids/" />
 		<meta property="og:site_name" content="14islands" />
@@ -20,7 +20,7 @@
 		<meta name="twitter:card" content="summary">
 		<meta name="twitter:site" content="@14islands">
 		<meta name="twitter:title" content="Playing with CSS Grids">
-		<meta name="twitter:description" content="The CSS Grid layouth has everything it needs to be considered the most powerful layout system in CSS.">
+		<meta name="twitter:description" content="The CSS Grid layout has everything it needs to be considered the most powerful layout system in CSS.">
 		<meta name="twitter:creator" content="@14islands">
 		<meta name="twitter:image" content="https://14islands.com/images/blog/2017-03-07-playing-with-CSS-grids/typography-02.png">
 
@@ -114,31 +114,36 @@
 		<span class="post__date">7 March 2017</span>
 		<h1 id="playing-with-css-grids">Playing with CSS Grids</h1>
 
-<p><strong>Note: CSS Grid is going to become supported-by-default in Chrome and Firefox in March of 2017.  Specifically, Mozilla will ship it in Firefox 52, scheduled for March 7th.  Due to the timing of their making Grid enabled-by-default in Chrome Canary, it appears Google will ship it in Chrome 57, scheduled for March 14th.</strong> <a href="http://meyerweb.com/eric/thoughts/2016/12/05/css-grid/">(Source)</a></p>
+<p>There is a new CSS3 feature getting hotter at the moment and it’s for a good reason. That is the new <a href="https://www.w3.org/TR/css3-grid-layout/">CSS Grid Layout</a>.</p>
 
-<p>There is a new CSS3 feature getting hotter at the moment and it’s for a good reason. That is the new CSS Grid Layout.</p>
+<p>The <a href="https://www.w3.org/TR/css3-grid-layout/">CSS Grid Layout</a> has everything it needs to be considered the most powerful layout system in CSS. It is the first CSS module to feature a 2-dimensional system (rows and columns).</p>
 
-<p>The CSS Grid layout has everything it needs to be considered the most powerful layout system in CSS. It is the first CSS module to feature a 2-dimensional system (rows and columns).</p>
+<p>First things first, at the time of this writting you most probably have to <a href="http://caniuse.com/#feat=css-grid">enable CSS Grids</a> to play with it. Thankfully, it is <a href="https://developers.google.com/web/updates/2014/03/Get-on-the-CSS-Grid#try_it_out">not too difficult to do so</a>.</p>
 
-<p>First things first, at the time of this writting you most probably have to <a href="http://caniuse.com/#feat=css-grid">enable CSS Grids</a> to play with it. Thankfully, it is not too difficult to do so.</p>
+<p><em>Note: CSS Grid is going to become supported-by-default in Chrome and Firefox in March of 2017.  Specifically, Mozilla will ship it in Firefox 52, scheduled for March 7th.  Due to the timing of their making Grid enabled-by-default in Chrome Canary, it appears Google will ship it in Chrome 57, scheduled for March 14th.</em> <a href="http://meyerweb.com/eric/thoughts/2016/12/05/css-grid/">(Source)</a></p>
 
 <p>To give you an idea of why this is feature is exciting, take a <a href="http://codepen.io/14islands/pen/2a76b95ce3a00f7c96805a47f95e8f5b">look at this</a>:</p>
 
 <figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
 
 
-  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
+  <div class="u-ratio u-ratio--16_10 u-ratio--placeholder ">
+		
+		<a href="http://codepen.io/14islands/full/BprPvM/">
+		
     <img alt="Codepen Screenshot" data-src="/images/blog/2017-03-07-playing-with-CSS-grids/screenshot-before.png" class="u-ratio__content" />
 <noscript>
   <img alt="Codepen Screenshot" src="/images/blog/2017-03-07-playing-with-CSS-grids/screenshot-before.png" class="u-ratio__content" />
 </noscript>
+		
+		</a>
+		
+
   </div>
   
 </figure>
 
-<p>This pen may not look a big deal to you yet.</p>
-
-<p>Do you see those boxes? They can be moved around wherever you want, like a deck of cards on a table. Before CSS Grids, you’d have to make sure what you see in the screen follows a proper DOM order (well, you still do). Otherwise things could get a little trickier to builld to achieve a similar result.</p>
+<p>Do you see those boxes? They can be moved around wherever you want, like a deck of cards on a table. Before CSS Grids, you’d have to make sure what you see in the screen follows a proper DOM order. Otherwise things could get a little trickier to build to achieve a similar result.</p>
 
 <p>Also note how a column/row can span into it’s “neighbors”. Like a beautiful spreadsheet without any old school CSS table syntax.</p>
 
@@ -148,16 +153,23 @@
 
 <p>Imagine you have a grid with <em>columns</em> and forget about the <em>rows</em> for a little bit - just to simplify ;).</p>
 
-<p>Let’s use <a href="https://dribbble.com/shots/3257702-Editorial-Layout-1">this design</a> as an example, from our good friend <a href="https://dribbble.com/dennyshess">Dennys Hess</a>. This is what we will try to build with the new CSS Grid module.</p>
+<p>Let’s use <a href="https://dribbble.com/shots/3257702-Editorial-Layout-1">this design</a> as an example, from our good friend <a href="http://dennyshess.ch/">Dennys Hess</a>. This is what we will try to build with the new CSS Grid module.</p>
 
 <figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
 
 
   <div class="u-ratio u-ratio--4_3 u-ratio--placeholder ">
+		
+		<a href="https://dribbble.com/shots/3257702-Editorial-Layout-1">
+		
     <img alt="Editorial Layout" data-src="/images/blog/2017-03-07-playing-with-CSS-grids/typography-02.png" class="u-ratio__content" />
 <noscript>
   <img alt="Editorial Layout" src="/images/blog/2017-03-07-playing-with-CSS-grids/typography-02.png" class="u-ratio__content" />
 </noscript>
+		
+		</a>
+		
+
   </div>
   
 </figure>
@@ -168,10 +180,13 @@
 
 
   <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
+		
     <img alt="Editorial Layout" data-src="/images/blog/2017-03-07-playing-with-CSS-grids/columns.png" class="u-ratio__content" />
 <noscript>
   <img alt="Editorial Layout" src="/images/blog/2017-03-07-playing-with-CSS-grids/columns.png" class="u-ratio__content" />
 </noscript>
+		
+
   </div>
   
 </figure>
@@ -181,44 +196,58 @@
 <figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
 
 
-  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
+  <div class="u-ratio u-ratio--16_10 u-ratio--placeholder ">
+		
+		<a href="http://codepen.io/14islands/full/BprPvM/">
+		
     <img alt="Codepen Screenshot" data-src="/images/blog/2017-03-07-playing-with-CSS-grids/screenshot-before.png" class="u-ratio__content" />
 <noscript>
   <img alt="Codepen Screenshot" src="/images/blog/2017-03-07-playing-with-CSS-grids/screenshot-before.png" class="u-ratio__content" />
 </noscript>
+		
+		</a>
+		
+
   </div>
   
 </figure>
 
 <p>If I’d be reading a magazine, that’s the order that I would follow. I also interpreted the figures to be there for presentation purposes only, not affecting the flow of the text. </p>
 
-<p>That means that moving them anywhere would not affect what I’m currently reading. They are quite literally HTML5 <code>&lt;figure&gt;</code>.</p>
+<p>That means that moving them anywhere would not affect what I’m currently reading. They are quite literally a HTML5 <code>&lt;figure&gt;</code>.</p>
 
-<p><strong>Usually a figure is an image, illustration, diagram, code snippet, etc., that is referenced in the main flow of a document, but that can be moved to another part of the document or to an appendix without affecting the main flow.</strong></p>
+<p>Usually a figure is an image, illustration, diagram, code snippet, etc., that is referenced in the main flow of a document, but that can be moved to another part of the document or to an appendix without affecting the main flow.</p>
 
-<p>So with this decided, we can figure out our <code>grid-template-columns</code>. The width of each column should be between the minimum that I have specified (300px) or a maximum of 1 “fraction” of the grid. We can use the <code>minmax()</code> function for that logic.</p>
+<p>With this decided, we can figure out our <code>grid-template-columns</code>. The width of each column should be between the minimum that I have specified (300px) or a maximum of 1 “fraction” of the grid. We can use the <code>minmax()</code> function for that logic.</p>
 
-<p>And the syntax is simple, each space separated value corresponds to a column. Add more values to get more columns.</p>
+<p>The syntax is simple, each space separated value corresponds to a column. Add more values to get more columns.</p>
 
 <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">grid-template-columns</span><span class="o">:</span> <span class="nt">minmax</span><span class="o">(</span><span class="nt">300px</span><span class="o">,</span> <span class="nt">1fr</span><span class="o">)</span> <span class="nt">minmax</span><span class="o">(</span><span class="nt">300px</span><span class="o">,</span> <span class="nt">1fr</span><span class="o">)</span> <span class="nt">minmax</span><span class="o">(</span><span class="nt">300px</span><span class="o">,</span> <span class="nt">1fr</span><span class="o">)</span> <span class="nt">minmax</span><span class="o">(</span><span class="nt">300px</span><span class="o">,</span> <span class="nt">1fr</span><span class="o">)</span></code></pre></div>
 
-<p>Some media queries and the <code>grid-template-rows</code> later and end up with this result <a href="http://codepen.io/14islands/full/ggeJrP/">following result</a>:</p>
+<p>Some media queries and <code>grid-template-rows</code> later, we end up with this result <a href="http://codepen.io/14islands/full/ggeJrP/">following result</a>:</p>
 
 <figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
 
 
-  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
+  <div class="u-ratio u-ratio--16_10 u-ratio--placeholder ">
+		
+		<a href="http://codepen.io/14islands/full/ggeJrP/">
+		
     <img alt="Codepen Screenshot with result" data-src="/images/blog/2017-03-07-playing-with-CSS-grids/screenshot-codepen.png" class="u-ratio__content" />
 <noscript>
   <img alt="Codepen Screenshot with result" src="/images/blog/2017-03-07-playing-with-CSS-grids/screenshot-codepen.png" class="u-ratio__content" />
 </noscript>
+		
+		</a>
+		
+
   </div>
   
 </figure>
 
 <p>With a few tweaks, we can also re-use the grid for different <a href="http://codepen.io/14islands/full/vgwxQQ/">layout alternatives</a>.</p>
 
-<h2 id="more-syntax">More syntax</h2>
+<h2 id="more-on-the-syntax">More on the syntax</h2>
 
 <p>The main ingredients of a CSS grid are:</p>
 
@@ -230,7 +259,7 @@
 
 <p>If you’re familiar with <code>Flexbox</code>, you probably guessed that <code>display: grid</code> and <code>grid-template-*</code> goes in a “parent” element. Where as <code>grid-&lt;column/row&gt;</code> goes into individual elements.</p>
 
-<p>There are also a few properties worth mentioning, like <code>grid-gap</code> in particular. I decided not to use it here because I appreciate the flexibility of utility classes. This way you can have a gap only on the left/right while in other places you can have in both directions and so on. </p>
+<p>There are also a few properties worth mentioning, like <code>grid-gap</code> in particular. I decided not to use it here because I appreciate the flexibility of utility classes. This way one can have a gap only on the left/right while in other places you can have in both directions and so on. </p>
 
 <p>I’ll let you <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">explore the other properties that are not covered here</a> :)</p>
 
@@ -256,7 +285,7 @@
 
 <p>The flexibility is the beauty of CSS Grids. It is not just “easier” to build a layout like the one showed here. It’s not just about saving time. It’s about building how it’s supposed to be built. Now you can use a hammer to actually hit a nail instead of using some duck tape.</p>
 
-<p>We are finally reaching an era where web design gives you all the <strong>proper</strong> capabilities to achieve more flexible design layouts. There isn’t much left to get there.</p>
+<p>We are finally reaching an era where web design gives you the <strong>proper</strong> capabilities to achieve more flexible design layouts. </p>
 
 <h2 id="references">References:</h2>
 <ul>
