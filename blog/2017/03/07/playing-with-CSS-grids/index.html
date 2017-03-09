@@ -143,7 +143,7 @@
   
 </figure>
 
-<p>Do you see those boxes? They can be moved around wherever you want, like a deck of cards on a table. Before CSS Grids, you’d have to make sure what you see in the screen follows a proper DOM order. Otherwise things could get a little trickier to build to achieve a similar result.</p>
+<p>Do you see those boxes? They can be moved around wherever you want, like a deck of cards on a table. Before CSS Grids, you’d have to make sure what you see in the screen follows a proper DOM order. Otherwise things could get a little trickier to build to achieve a similar result. To be fair, you could use the <code>order</code> <a href="https://developer.mozilla.org/en/docs/Web/CSS/order">property on Flexbox</a> to change it’s order but it still limits you to a 1 dimensional system (row <em>or</em> column, not both).</p>
 
 <p>Also note how a column/row can span into it’s “neighbors”. Like a beautiful spreadsheet without any old school CSS table syntax.</p>
 
@@ -174,7 +174,7 @@
   
 </figure>
 
-<p>Take a look at how many columns it has:</p>
+<p>Figure out how many columns it has:</p>
 
 <figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
 
@@ -219,6 +219,11 @@
 <p>Usually a figure is an image, illustration, diagram, code snippet, etc., that is referenced in the main flow of a document, but that can be moved to another part of the document or to an appendix without affecting the main flow.</p>
 
 <p>With this decided, we can figure out our <code>grid-template-columns</code>. The width of each column should be between the minimum that I have specified (300px) or a maximum of 1 “fraction” of the grid. We can use the <code>minmax()</code> function for that logic.</p>
+
+<blockquote>
+  <p>1fr is one “fractional unit”, which is a way of saying “the remaining space in the element”.
+- <a href="http://social.msdn.microsoft.com/Forums/en-US/winappswithhtml5/thread/95fddeb2-04bc-4f2b-bfb6-ffecffe5e8d5/">(MSDN)</a></p>
+</blockquote>
 
 <p>The syntax is simple, each space separated value corresponds to a column. Add more values to get more columns.</p>
 
@@ -276,6 +281,14 @@
 
 <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">grid-row</span><span class="o">:</span> <span class="nt">2</span> <span class="o">/</span> <span class="nt">span</span> <span class="nt">2</span> <span class="c">/* at row 2, spanning 2 rows from it */</span>
 <span class="nt">grid-column</span><span class="o">:</span> <span class="nt">4</span> <span class="c">/* simply at column 4 */</span></code></pre></div>
+
+<p>The values accepted for the properties are also worth mentioning, specially the new functions:</p>
+
+<ul>
+  <li>length unit (like <code>px</code>, <code>em</code>, percentages or <code>fr</code> for “fractions”)</li>
+  <li><code>auto</code> (or <code>fit-content</code>)</li>
+  <li><code>mincontent()</code>, <code>maxcontent()</code>, and <code>minmax()</code>, or the <code>repeat()</code> function.</li>
+</ul>
 
 <h2 id="conclusion">Conclusion</h2>
 
