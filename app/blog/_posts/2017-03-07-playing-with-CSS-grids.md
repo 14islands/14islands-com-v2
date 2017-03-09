@@ -94,11 +94,13 @@ grid-row: 2 / span 2 /* at row 2, spanning 2 rows from it */
 grid-column: 4 /* simply at column 4 */
 {% endhighlight %}
 
-The values accepted for the properties are also worth mentioning, specially the new functions:
+The values accepted for the properties are also worth mentioning, they can be:
 
 - length unit (like `px`, `em`, percentages or `fr` for "fractions")
 - `auto` (or `fit-content`)
 - `mincontent()`, `maxcontent()`, and `minmax()`, or the `repeat()` function.
+
+These new functions specifically make the grid smarter to calculate the row/column sizes.
 
 
 ## Conclusion
