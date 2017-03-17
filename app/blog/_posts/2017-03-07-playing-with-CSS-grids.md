@@ -70,7 +70,7 @@ With a few tweaks, we can also re-use the grid for different [layout alternative
 The main ingredients of a CSS grid are:
 
 - `display: grid` to enable the grid.
-- `grid-template-column` and/or `grid-template-rows` to specify how your layout looks like.
+- `grid-template-columns` and/or `grid-template-rows` to specify how your layout looks like.
 - `grid-column` and/or `grid-row` to put the elements in the grid that you just specified the layout above.
 
 If you’re familiar with `Flexbox`, you probably guessed that `display: grid` and `grid-template-*` goes in a “parent” element. Where as `grid-<column/row>` goes into individual elements.
