@@ -1,7 +1,9 @@
 ---
 layout: post
-title:  "Playing with CSS Grids"
-description: The CSS Grid layout has everything it needs to be considered the most powerful layout system in CSS.
+title: Playing with CSS Gridz
+description: >-
+  The CSS Grid layout has everything it needs to be considered the most powerful
+  layout system in CSS.
 og_image: /images/blog/2017-03-07-playing-with-CSS-grids/typography-02.png
 ---
 
