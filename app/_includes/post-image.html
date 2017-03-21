@@ -1,4 +1,3 @@
-
 {% if include.margin %}
   <figure class="grid__row grid__row--wide content-image u-margin-{{include.margin}}-half {{include.class}} {% if include.outline %}content-image--outline{% endif %}">
 {% else %}
@@ -6,7 +5,14 @@
 {% endif %}
 
   <div class="u-ratio u-ratio--{{include.ratio}} u-ratio--placeholder {% if include.halfWidthInCenter %}content-image--halfWidthInCenter{% endif %}">
+		{% if include.link %}
+		<a href="{{include.link}}">
+		{% endif %}
     {% include rio-image.html src=include.src alt=include.alt class="u-ratio__content"%}
+		{% if include.link %}
+		</a>
+		{% endif %}
+
   </div>
   {% if include.caption %}
     <div class="u-img-caption">
@@ -14,3 +20,4 @@
     </div>
   {% endif %}
 </figure>
+
