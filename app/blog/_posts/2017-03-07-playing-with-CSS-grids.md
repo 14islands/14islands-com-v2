@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Playing with CSS Gridz
+title: Playing with CSS Grids
 description: >-
   The CSS Grid layout has everything it needs to be considered the most powerful
   layout system in CSS.
 og_image: /images/blog/2017-03-07-playing-with-CSS-grids/typography-02.png
 ---
 
-# Playing with CSS Gridz
+# Playing with CSS Grids
 
 There is a new CSS3 feature getting hotter at the moment and it’s for a good reason. That is the new [CSS Grid Layout](https://www.w3.org/TR/css3-grid-layout/).
 
@@ -75,7 +75,7 @@ The main ingredients of a CSS grid are:
 * `grid-template-columns` and/or `grid-template-rows` to specify how your layout looks like.
 * `grid-column` and/or `grid-row` to put the elements in the grid that you just specified the layout above.
 
-If you’re familiar with `Flexbox`, you probably guessed that `display: grid` and `grid-template-\*` goes in a “parent” element. Where as `grid-<column/row>` goes into individual elements.
+If you’re familiar with `Flexbox`, you probably guessed that `display: grid` and `grid-template-\\\*` goes in a “parent” element. Where as `grid-<column/row>` goes into individual elements.
 
 There are also a few properties worth mentioning, like `grid-gap` in particular. I decided not to use it here because I appreciate the flexibility of utility classes. This way one can have a gap only on the left/right while in other places you can have in both directions and so on.
 
