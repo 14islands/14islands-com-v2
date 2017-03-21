@@ -3,7 +3,6 @@ backend:
   repo: 14islands/14islands-com # Path to your Github repository
   branch: feature/netlifycms # Branch to update
 
-publish_mode: none
 media_folder: "app/images"
 public_folder: "/images"
 
@@ -17,7 +16,6 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Open Graph Image", name: "og_image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
