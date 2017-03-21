@@ -2,3 +2,5 @@ backend:
   name: github
   repo: 14islands/14islands-com # Path to your Github repository
   branch: feature/netlifycms # Branch to update
+
+media_folder: "images"
