@@ -19,9 +19,9 @@ To give you an idea of why this is feature is exciting, take a [look at this](ht
 
 {% include post-image.html alt="Codepen Screenshot" src="/images/blog/2017-03-07-playing-with-CSS-grids/screenshot-before.png" margin="both" ratio="16_10" link="http://codepen.io/14islands/full/BprPvM/" %}
 
-Do you see those boxes? They can be moved around wherever you want, like a deck of cards on a table. Before CSS Grids, you’d have to make sure what you see in the screen follows a proper DOM order. Otherwise things could get a little trickier to build to achieve a similar result. To be fair, you could use the `order` [property on Flexbox](https://developer.mozilla.org/en/docs/Web/CSS/order) to change it's order but it still limits you to a 1 dimensional system (row _or_ column, not both).
+Do you see those boxes? They can be moved around wherever you want, like a deck of cards on a table. Before CSS Grids, you’d have to make sure what you see in the screen follows a proper DOM order. Otherwise things could get a little trickier to build to achieve a similar result. To be fair, you could use the `order` [property on Flexbox](https://developer.mozilla.org/en/docs/Web/CSS/order) to change its order but it still limits you to a 1 dimensional system (row _or_ column, not both).
 
-Also note how a column/row can span into it’s “neighbors”. Like a beautiful spreadsheet without any old school CSS table syntax.
+Also note how a column/row can span into its “neighbors”. Like a beautiful spreadsheet without any old school CSS table syntax.
 
 Let’s break this down a little bit.
 
