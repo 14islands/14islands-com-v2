@@ -5,17 +5,17 @@
 
 .footer__logo {
     display: block;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
     svg {
     	display: inline-block;
-    	width: 70px;
+    	width: 130px;
     }
     @include if-wider-than($breakpoint-two-px) {
-        float: left;
-        width: 25%;
-        padding-bottom: 0;
-        svg {
-            width: 80px;
+      float: left;
+      width: 25%;
+      padding-bottom: 0;
+      svg {
+          width: 110px;
     	}
     }
     @include if-wider-than($breakpoint-three-px) {

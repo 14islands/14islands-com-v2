@@ -21,7 +21,7 @@
 
 
 html {
-  font-family: CalibreWeb, Helvetica, Arial;
+  font-family: 'Aften Screen', sans-serif;
   -webkit-font-smoothing: antialiased;
 
   font-size: 14px;
@@ -45,7 +45,7 @@ html {
   margin-top: 2 * modular-scale(1rem, 1);
   margin-bottom: 2 * modular-scale(1rem, 1);
   @include if-wider-than($breakpoint-two-px) {
-    font-size: modular-scale(1rem, 5);
+    font-size: modular-scale(1rem, 4);
   }
 }
 
@@ -54,7 +54,7 @@ html {
   margin-top: 3 * modular-scale(1rem, 1);
   margin-bottom: 2 * modular-scale(1rem, 1);
   @include if-wider-than($breakpoint-two-px) {
-    font-size: modular-scale(1rem, 4);
+    font-size: modular-scale(1rem, 3);
   }
 }
 
@@ -63,7 +63,7 @@ html {
   margin-top: 2 * modular-scale(1rem, 1);
   margin-bottom: 1 * modular-scale(1rem, 1);
   @include if-wider-than($breakpoint-two-px) {
-    font-size: modular-scale(1rem, 3);
+    font-size: modular-scale(1rem, 2);
   }
 }
 
@@ -72,7 +72,7 @@ html {
   margin-top: 2 * modular-scale(1rem, 1);
   margin-bottom: 1 * modular-scale(1rem, 1);
   @include if-wider-than($breakpoint-two-px) {
-    font-size: modular-scale(1rem, 2);
+    font-size: modular-scale(1rem, 1);
   }
 }
 
@@ -97,12 +97,11 @@ h2,
 h3,
 h4 {
   max-width: 800px;
-  font-weight: 600;
+  font-weight: 400;
   color: #333;
   letter-spacing: -0.03em;
   line-height: 1;
   .u-bg-natt-dark &,
-  &.hero__caption,
   &.box__content__headline,
   &.next-casestudy__headline {
     color: white;

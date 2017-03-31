@@ -22,12 +22,23 @@ $mono-dark: #2d2d2d;
 $natt: #535b82;
 $natt-dark: #3e404d;
 
+//
+// new branding
+//
 
-$brand-color: $vinter;
-$brand-color-dark: $vinter-dark;
-$brand-link-color: $vinter;
+$offblack: #333132;
 
-$bright: #f7f7f7;
+$vulcano: #f47643;
+$vulcanoBright: #fdd2ba;
+$beach: #e5c83d;
+$beachBright: #f5eac3;
+$tropical: #73c9bd;
+
+$brand-color: $beachBright;
+$brand-color-dark: $vulcano;
+$brand-link-color: $vulcano;
+
+$bright: #f1efed;
 $default-font-color: $gray-dark;
 
 
