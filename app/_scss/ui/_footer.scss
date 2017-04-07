@@ -1,21 +1,26 @@
 
 .footer {
+	background-color: #f6ece7; //$vulcanoBright;
+}
+
+.footer__content {
 	@include clearfix;
 }
 
 .footer__logo {
     display: block;
-    padding-bottom: 3rem;
+		padding-top: 3rem;
     svg {
     	display: inline-block;
     	width: 130px;
+			path {
+				mix-blend-mode: multiply;
+			}
     }
     @include if-wider-than($breakpoint-two-px) {
-      float: left;
-      width: 25%;
-      padding-bottom: 0;
+			text-align: center;
       svg {
-          width: 110px;
+          width: 200px;
     	}
     }
     @include if-wider-than($breakpoint-three-px) {
@@ -37,7 +42,7 @@
     position: relative;
     @include if-wider-than($breakpoint-two-px) {
         float: left;
-        width: 55%;
+        width: 80%;
         p {
             margin-bottom: 1.4rem;
         }
@@ -68,16 +73,17 @@
 	clear: both;
 	margin-top: 4%;
 	a {
-		display: block;
-		padding: .2rem 0;
+		display: inline-block;
+		padding: .2rem;
+		margin-right: 0.5rem;
 	}
 	@include if-wider-than($breakpoint-two-px) {
-        clear: none;
-        float: left;
-        width: 20%;
-        padding-left: 5%;
-        margin-top: 0;
-        a {
+      clear: none;
+      float: left;
+      width: 20%;
+      padding-left: 5%;
+      margin: 0;
+      a {
     		padding: 0;
     	}
     }

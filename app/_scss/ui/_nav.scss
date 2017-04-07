@@ -45,6 +45,10 @@ $nav-item-padding: 1.5rem;
 	width: (60px/1.5);
 	margin: 24px 0;
 
+	svg path {
+    mix-blend-mode: multiply;
+  }
+
 	margin-right: .75rem;
 	@include if-wider-than($breakpoint-two-px) {
 		height: 25px;
@@ -66,7 +70,7 @@ $nav-item-padding: 1.5rem;
 	letter-spacing: 0.04rem;
 	line-height: 1;
 	font-size: 1.3rem;
-	padding: 22px .75rem;
+	padding: 26px .75rem;
 
 	&,
 	&:visited {
@@ -94,6 +98,6 @@ $nav-item-padding: 1.5rem;
 		}
   }
 	@include if-wider-than($breakpoint-two-px) {
-		padding: 25px $nav-item-padding;
+		padding: 30px $nav-item-padding;
   }
 }

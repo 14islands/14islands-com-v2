@@ -3,7 +3,7 @@
 //
 
 .hero {
-  background-color: $brand-color;
+  background-color: $offwhite;
 	color: #fff;
 	display: flex;
 	height: 100%;
@@ -24,10 +24,11 @@
   will-change: transform;
 }
 
-.hero__content {
+.hero__content-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   flex-wrap: nowrap;
   overflow: hidden;
 }
@@ -42,25 +43,35 @@
 }
 
 .hero__logo {
-  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  @include if-wider-than(700px) {
+    margin-bottom: 3rem;
+  }
+
+  svg path {
+    mix-blend-mode: multiply;
+  }
 
   .js-loading & {
     will-change: transform;
-    transform: translate3d(0, -160%, 0);
+    transform: translate3d(0, 30%, 0);
+    opacity: 0;
   }
   .js-loaded & {
-    transition: transform 500ms $easeInQuint;
+    transition: all 500ms $easeOutQuint;
+    opacity: 1;
     transform: none;
   }
 }
 
 .hero__caption {
-	font-weight: 600;
-	font-size: modular-scale(1rem, 3);
-  line-height: 1.2;
+	font-weight: 400;
+	font-size: modular-scale(1rem, 1);
+  line-height: 1.3;
 
-  margin-top: auto;
-	margin-bottom: auto;
+  // margin-top: auto;
+	// margin-bottom: auto;
   .no-flexbox & {
   	margin-top: 1em;
   }
@@ -71,30 +82,33 @@
   }
 
   @media (min-height: 600px) and (min-width: 450px) {
-    font-size: modular-scale(1rem, 3);
-    line-height: 1;
+    font-size: modular-scale(1rem, 2);
+    // line-height: 1.2;
   }
 
   @media (min-height: 700px) and (min-width: 700px) {
-    font-size: modular-scale(1rem, 4);
-    line-height: 1;
+    font-size: modular-scale(1rem, 2);
+    // line-height: 1.2;
   }
 
   @media (min-height: 940px) and (min-width: 1600px) {
-		font-size: modular-scale(1.14rem, 4); // not following scale
-		line-height: 1;
+		font-size: modular-scale(1rem, 3); // not following scale
+		// line-height: 1.3;
 	}
 }
 
 .hero__text {
-  max-width: 860px;
   display: inline-block;
+  max-width: 90%;
+  @include if-wider-than(600px) {
+    max-width: 600px;
+  }
 }
 
 .hero__nav {
   position: relative;
   z-index: 1000;
-	background-color: #fff;
+	background-color: $white;
 	height: pxToRem(80);
 	line-height: pxToRem(80);
 	font-size: modular-scale(1rem, 1);
@@ -214,7 +228,7 @@
 	// This will "block" the view for the word
 	// allowing the slide up effect to look nice
 	&:after {
-		background: $brand-color;
+		background: $offwhite;
 		content: '';
 		display: block;
 		position: absolute;
