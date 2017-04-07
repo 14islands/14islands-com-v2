@@ -12,7 +12,7 @@
 
 .post__date {
   display: inline-block;
-  font-size: modular-scale(1rem, 1);
+  font-size: 0.9rem;
   color: $gray;
 
   + h1 {
@@ -39,6 +39,7 @@
 }
 
 .post-row__date {
+	font-size: 0.8rem;
 	font-weight: 400;
 	text-transform: uppercase;
 	color: #888;
@@ -53,13 +54,11 @@
 .post-row__title {
 	margin-top: 0;
 	margin-bottom: 0;
-
-
 }
 
 .post-row__info {
 	@include if-wider-than($breakpoint-two-px) {
-		margin-left: 25%;
+		margin-left: 30%;
 	}
 }
 

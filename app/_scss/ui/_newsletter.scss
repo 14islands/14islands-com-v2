@@ -42,7 +42,7 @@ $iconTransition: transform 200ms ease-out;
 	margin: 0;
 	max-width: none;
 	cursor: pointer;
-	border: solid 1px $brand-color;
+	border: solid 1px $vulcano;
 	transition: $buttonTransition !important;
 	@include if-narrower-than($breakpoint-two-px) {
 		padding: 18px 15px;
