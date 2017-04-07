@@ -36,6 +36,13 @@ html {
   }
 }
 
+.typography__mono {
+  font-family: 'Alma Mono', 'Aften Screen', sans-serif;
+  p, a {
+    font-size: 0.95rem;
+  }
+}
+
 /**
  * Headings
  */
