@@ -23,11 +23,11 @@ Even though our team is all from different parts of the planet, we met each othe
 
 The islands can be represented with abstract shapes.
 
-{% include post-image.html alt="Map of Stockholm with islands as abstract shapes" caption="true" src="/images/blog/2017-04-21-new-branding/stockholm-map-with-shapes_16_7.jpg" margin="both" ratio="16_7" %}
+{% include post-image.html alt="Map of Stockholm with the 14 islands as abstract shapes" caption="true" src="/images/blog/2017-04-21-new-branding/stockholm-map-with-shapes_16_7.jpg" margin="both" ratio="16_7" %}
 
 Using those fourteen shapes together and our name is able to form.
 
-{% include post-image.html alt="Our log being crafted by hand using a grid" caption="true" src="/images/blog/2017-04-21-new-branding/crafting-logo_16_9.jpg" margin="both" ratio="16_9" %}
+{% include post-image.html alt="Our logo being crafted by hand using a grid" caption="true" src="/images/blog/2017-04-21-new-branding/crafting-logo_16_9.jpg" margin="both" ratio="16_9" %}
 
 Say hello to our new logo.
 
