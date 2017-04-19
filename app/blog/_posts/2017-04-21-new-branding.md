@@ -19,19 +19,19 @@ Our new identity had to reflect this and who we are as a creative development st
 
 Even though our team is all from different parts of the planet, we met each other here in Stockholm, Sweden.  Stockholm is a beautiful city spread across 14 islands - hence our name.
 
-{% include post-image.html alt="Map of Stockholm" src="/images/blog/2017-04-21-new-branding/stockholm-map_16_7.jpg" margin="both" ratio="16_7" %}
+{% include post-image.html alt="Map of Stockholm" caption="true" src="/images/blog/2017-04-21-new-branding/stockholm-map_16_7.jpg" margin="both" ratio="16_7" %}
 
 The islands can be represented with abstract shapes.
 
-{% include post-image.html alt="Map of Stockholm with abstract shape for each island" src="/images/blog/2017-04-21-new-branding/stockholm-map-with-shapes_16_7.jpg" margin="both" ratio="16_7" %}
+{% include post-image.html alt="Map of Stockholm with islands as abstract shapes" caption="true" src="/images/blog/2017-04-21-new-branding/stockholm-map-with-shapes_16_7.jpg" margin="both" ratio="16_7" %}
 
 Using those fourteen shapes together and our name is able to form.
 
-{% include post-image.html alt="Logo being hand-crafted" src="/images/blog/2017-04-21-new-branding/crafting-logo_16_9.jpg" margin="both" ratio="16_9" %}
+{% include post-image.html alt="Our log being crafted by hand using a grid" caption="true" src="/images/blog/2017-04-21-new-branding/crafting-logo_16_9.jpg" margin="both" ratio="16_9" %}
 
 Say hello to our new logo.
 
-{% include post-image.html alt="Our new logo" src="/images/blog/2017-04-21-new-branding/new-logo_16_9.jpg" margin="both" ratio="16_9" %}
+{% include post-image.html alt="Our new logo" caption="true" src="/images/blog/2017-04-21-new-branding/new-logo_16_9.jpg" margin="both" ratio="16_9" %}
 
 Well crafted and playful. Just how we like it *😃*{: class="emoji"}
 
@@ -39,17 +39,17 @@ Well crafted and playful. Just how we like it *😃*{: class="emoji"}
 
 The colours are inspired by nature.
 
-{% include post-image.html alt="New branding colours" src="/images/blog/2017-04-21-new-branding/colors_16_9.jpg" margin="both" ratio="16_9" %}
+{% include post-image.html alt="The brand colours" caption="true" src="/images/blog/2017-04-21-new-branding/colors_16_9.jpg" margin="both" ratio="16_9" %}
 
 ## Typography
 
 The primary typeface in our identity is [Aften Screen](https://monokrom.no/fonts/aften).  Aften is specially designed to perform well on digital screens.
 
-{% include post-image.html alt="Aften Screen Font" src="/images/blog/2017-04-21-new-branding/typography-aften-screen_16_9.jpg" margin="both" ratio="16_9" %}
+{% include post-image.html alt="Aften Screen - Our primary typeface" caption="true" src="/images/blog/2017-04-21-new-branding/typography-aften-screen_16_9.jpg" margin="both" ratio="16_9" %}
 
 Secondary font is [Alma Mono](http://almamono.com/).  Alma Mono is a monospace typeface created to help out with relief & charity efforts.
 
-{% include post-image.html alt="Alma Mono Font" src="/images/blog/2017-04-21-new-branding/typography-alma-mono_16_9.jpg" margin="both" ratio="16_9" %}
+{% include post-image.html alt="Alma Mono Font - Our secondary typeface" caption="true" src="/images/blog/2017-04-21-new-branding/typography-alma-mono_16_9.jpg" margin="both" ratio="16_9" %}
 
 ## In Action
 
