@@ -19,11 +19,11 @@ Our new identity had to reflect this and who we are as a creative development st
 
 Even though our team is all from different parts of the planet, we met each other here in Stockholm, Sweden.  Stockholm is a beautiful city spread across 14 islands - hence our name.
 
-[MAP OF STOCKHOLM]
+{% include post-image.html alt="Map of Stockholm" src="/images/blog/2017-04-21-new-branding/stockholm-map_16_7.jpg" margin="both" ratio="16_7" %}
 
 The islands can be represented with abstract shapes.
 
-[IMAGE OF ABSTRACT SHAPES ON TOP OF MAP]
+{% include post-image.html alt="Map of Stockholm with abstract shape for each island" src="/images/blog/2017-04-21-new-branding/stockholm-map-with-shapes_16_7.jpg" margin="both" ratio="16_7" %}
 
 Using those fourteen shapes together and our name is able to form.
 
@@ -33,7 +33,7 @@ Say hello to our new logo.
 
 {% include post-image.html alt="Our new logo" src="/images/blog/2017-04-21-new-branding/new-logo_16_9.jpg" margin="both" ratio="16_9" %}
 
-Well crafted and playful. Just how we like it 😃
+Well crafted and playful. Just how we like it *😃*{: class="emoji"}
 
 ## Colours
 

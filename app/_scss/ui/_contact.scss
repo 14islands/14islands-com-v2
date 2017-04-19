@@ -25,10 +25,10 @@
 	}
 
 	.no-touch &:hover circle {
-		stroke: $brand-color;
+		stroke: $vulcano;
 	}
 	.no-touch &:hover path {
-		fill: $brand-color;
+		fill: $vulcano;
 	}
 	@include if-wider-than($breakpoint-two-px) {
     width: 100px;
