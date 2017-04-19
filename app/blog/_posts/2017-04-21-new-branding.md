@@ -49,7 +49,7 @@ The primary typeface in our identity is [Aften Screen](https://monokrom.no/fonts
 
 Secondary font is [Alma Mono](http://almamono.com/).  Alma Mono is a monospace typeface created to help out with relief & charity efforts.
 
-{% include post-image.html alt="Alma Mono Font - Our secondary typeface" caption="true" src="/images/blog/2017-04-21-new-branding/typography-alma-mono_16_9.jpg" margin="both" ratio="16_9" %}
+{% include post-image.html alt="Alma Mono - Our secondary typeface" caption="true" src="/images/blog/2017-04-21-new-branding/typography-alma-mono_16_9.jpg" margin="both" ratio="16_9" %}
 
 ## In Action
 
