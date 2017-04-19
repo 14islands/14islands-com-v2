@@ -7,9 +7,32 @@ $breakpoint-show-icons-px: 1000px;
 $buttonTransition: all 200ms ease-out;
 $iconTransition: transform 200ms ease-out;
 
+/*
+	Copy
+*/
+
+.newsletter__copy-with-notifications {
+	display: none;
+	.has-notification-support & {
+		display: block;
+	}
+}
+
+.newsletter__copy-without-notifications {
+	display: block;
+	.has-notification-support & {
+		display: none;
+	}
+}
+
+/*
+	Wrapper
+*/
+
 .newsletter__wrapper {
 	position: relative;
 	height: 80px;
+	margin-top: 3rem;
 }
 
 /*
@@ -160,7 +183,7 @@ $iconTransition: transform 200ms ease-out;
 .newsletter__email-button-label,
 .newsletter__email-button-label--add {
 	@include if-wider-than($breakpoint-show-icons-px) {
-		padding-left: 15px;
+		padding-left: 25px;
 	}
 }
 
