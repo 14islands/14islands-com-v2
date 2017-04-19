@@ -18,6 +18,29 @@
   }
 }
 
+@keyframes slide-up-fade {
+	0% {
+		opacity: 0;
+		transform: translateY(70%);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes slide-up-fade-3d {
+  0% {
+		opacity: 0;
+    transform: translate3d(0, 70%, 0);
+  }
+
+  100% {
+		opacity: 1;
+    transform: translate3d(0, 0%, 0);
+  }
+}
+
 
 .delay500 {
 	animation-delay: 500ms;

@@ -63,6 +63,8 @@
 
 .footer__social-nav {
     display: inline-block;
+		list-style: none;
+		margin: 0;
     @include if-wider-than($breakpoint-two-px) {
         float: right;
     }
@@ -71,11 +73,14 @@
 .footer__social {
 	clear: both;
 	margin-top: 4%;
+	li {
+		display: block;
+		margin-right: 0.5rem;
+		margin-bottom: 0.2rem;
+	}
 	a {
 		display: inline-block;
 		padding: .2rem;
-		margin-right: 0.5rem;
-		margin-bottom: 0.5rem;
 	}
 	@include if-wider-than($breakpoint-two-px) {
       clear: none;
@@ -83,10 +88,11 @@
       width: 20%;
       padding-left: 5%;
 			margin: 0;
-
+			li {
+				margin-right: 0;
+			}
       a {
     		padding: 0;
-				margin-right: 0;
     	}
     }
     @include if-wider-than($breakpoint-three-px) {

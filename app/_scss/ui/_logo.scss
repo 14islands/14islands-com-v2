@@ -16,6 +16,12 @@ $logo-rect-width-px: 737px;
     width: $logo-rect-width-px / 1.5;
     height: $logo-rect-height-px / 1.5;
   }
+
+	@include if-wider-than($breakpoint-three-px) {
+    // h1 size
+    width: $logo-rect-width-px / 1.2;
+    height: $logo-rect-height-px /1.2;
+  }
 }
 
 
