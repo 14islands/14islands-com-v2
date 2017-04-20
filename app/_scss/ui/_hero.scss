@@ -75,20 +75,20 @@
 // LOGO ANIMATION
 ////////////////////////////////////////////
 
-$duration: 400ms;
-$delay: 50ms;
-$easing: $easeOutQuint;
 $maxScaleX: 1.1;
 $maxScaleY: 1.1;
 
-@mixin animation($rotateAtStart: 0, $translateXAtStart: 0, $translateYAtStart: 0, $maxScaleX: $maxScaleX, $maxScaleY: $maxScaleY) {
+@mixin animation($origin: left top, $rotateAtStart: 0, $translateXAtStart: 0, $translateYAtStart: 0, $maxScaleX: $maxScaleX, $maxScaleY: $maxScaleY) {
   0% {
     opacity: 0;
+    transform-origin: $origin;
     transform: scale(0,0) rotate($rotateAtStart) translate3d($translateXAtStart, 0, 0);
+    animation-timing-function: $easeInQuart;
   }
-  80% {
+  50% {
     opacity: 1;
     transform: scale($maxScaleX,$maxScaleY) rotate(0deg) translate3d(0, 0, 0);
+    animation-timing-function: $easeOutQuart;
   }
   100% {
     transform: scale(1,1) rotate(0deg) translate3d(0, 0, 0);
@@ -96,129 +96,131 @@ $maxScaleY: 1.1;
 }
 
 @keyframes island-1 {
-  @include animation(30deg, 0)
+  @include animation(left top, 30deg, 0)
 }
 
 @keyframes island-2 {
-  @include animation(5deg, 4px)
+  @include animation(left center, 5deg, 4px)
 }
 
 @keyframes island-3 {
-  @include animation(7deg, 4px, -2px)
+  @include animation(right center, 7deg, 4px, -2px)
 }
 
 @keyframes island-4 {
-  @include animation(-9deg, 4px, 3px)
+  @include animation(top center, -9deg, 4px, 3px)
 }
 
 @keyframes island-5 {
-  @include animation(-2deg)
+  @include animation(left center, -2deg)
 }
 
 @keyframes island-6 {
-  @include animation(14deg, 0, -1px)
+  @include animation(left center, 14deg, 0, -1px)
 }
 
 @keyframes island-7 {
-  @include animation(0, 0, 1px)
+  @include animation(center top, 0, 0, 1px)
 }
 
 @keyframes island-8 {
-  @include animation(5deg)
+  @include animation(left center, 5deg)
 }
 
 @keyframes island-9 {
-  @include animation(5deg)
+  @include animation(left top, 5deg)
 }
 
 @keyframes island-10 {
-   @include animation()
+   @include animation(left center)
 }
 
 @keyframes island-11 {
-  @include animation(-3deg, -1px, -7px)
+  @include animation(center top, -3deg, -1px, -7px)
 }
 
 @keyframes island-12 {
-  @include animation(-5.5deg)
+  @include animation(left center, -5.5deg)
 }
 
 @keyframes island-13 {
-  @include animation(29deg,-6px, 5px, ($maxScaleX * 1.1), ($maxScaleY * 1.1))
+  @include animation(left center, 29deg,-6px, 5px)
 }
 
 @keyframes island-14 {
-  @include animation(-1deg, 0, 1px, ($maxScaleX * 1.2), ($maxScaleY * 1.2))
+  @include animation(left top, -1deg, 0, 1px)
 }
 
-.js-loaded.csstransforms3d .logo-island-1 {
-  transform-origin: left top;
-  animation: $duration $easing (1*$delay) both island-1;
+@function pi() {
+  @return 3.14159265359;
 }
 
-.js-loaded.csstransforms3d .logo-island-2 {
-  transform-origin: left center;
-  animation: $duration $easing (2*$delay) both island-2;
+@function pow($number, $exp) {
+  $value: 1;
+  @if $exp > 0 {
+    @for $i from 1 through $exp {
+      $value: $value * $number;
+    }
+  }
+  @else if $exp < 0 {
+    @for $i from 1 through -$exp {
+      $value: $value / $number;
+    }
+  }
+  @return $value;
 }
 
-.js-loaded.csstransforms3d .logo-island-3 {
-  transform-origin: right center;
-  animation: $duration $easing (3*$delay) both island-3;
+@function fact($number) {
+  $value: 1;
+  @if $number > 0 {
+    @for $i from 1 through $number {
+      $value: $value * $i;
+    }
+  }
+  @return $value;
 }
 
-.js-loaded.csstransforms3d .logo-island-4 {
-  transform-origin: top center;
-  animation: $duration $easing (4*$delay) both island-4;
+@function rad($angle) {
+  $unit: unit($angle);
+  $unitless: $angle / ($angle * 0 + 1);
+  // If the angle has 'deg' as unit, convert to radians.
+  @if $unit == deg {
+    $unitless: $unitless / 180 * pi();
+  }
+  @return $unitless;
 }
 
-.js-loaded.csstransforms3d .logo-island-5 {
-  transform-origin: left center;
-  animation: $duration $easing (5*$delay) both island-5;
+@function sin($angle) {
+  $sin: 0;
+  $angle: rad($angle);
+  // Iterate a bunch of times.
+  @for $i from 0 through 10 {
+    $sin: $sin + pow(-1, $i) * pow($angle, (2 * $i + 1)) / fact(2 * $i + 1);
+  }
+  @return $sin;
 }
 
-.js-loaded.csstransforms3d .logo-island-6 {
-  transform-origin: left center;
-  animation: $duration $easing (6*$delay) both island-6;
+@function cos($angle) {
+  $cos: 0;
+  $angle: rad($angle);
+  // Iterate a bunch of times.
+  @for $i from 0 through 10 {
+    $cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i);
+  }
+  @return $cos;
 }
 
-.js-loaded.csstransforms3d .logo-island-7 {
-  transform-origin: center top;
-  animation: $duration $easing (7*$delay) both island-7;
-}
+$duration: 800ms;
+$delay: 40ms;
+$easingDelay: 120ms;
+$count: 14;
+$decrease: ((2 * pi()) / $count);
 
-.js-loaded.csstransforms3d .logo-island-8 {
-  transform-origin: left center;
-  animation: $duration $easing (8*$delay) both island-8;
-}
-
-.js-loaded.csstransforms3d .logo-island-9 {
-  transform-origin: left top;
-  animation: $duration $easing (9*$delay) both island-9;
-}
-
-.js-loaded.csstransforms3d .logo-island-10 {
-  transform-origin: left center;
-  animation: $duration $easing (10*$delay) both island-10;
-}
-
-.js-loaded.csstransforms3d .logo-island-11 {
-  transform-origin: center top;
-  animation: $duration $easing (11*$delay) both island-11;
-}
-
-.js-loaded.csstransforms3d .logo-island-12 {
-  transform-origin: left center;
-  animation: $duration $easing (12*$delay) both island-12;
-}
-
-.js-loaded.csstransforms3d .logo-island-13 {
-  transform-origin: left center;
-  animation: $duration $easing (13*$delay) both island-13;
-}
-
-.js-loaded.csstransforms3d .logo-island-14 {
-  transform-origin: left top;
-  animation: $duration $easing (14*$delay) both island-14;
+@for $i from 1 through $count {
+  .js-loaded.csstransforms3d .logo-island-#{$i} {
+    $islandDelay: ($i * $delay) + ((cos($decrease * ($i - 1))+1) * $easingDelay);
+    animation: $duration $islandDelay both island-#{$i};
+  }
 }
 
 ////////////////////////////////////////////
@@ -269,10 +271,10 @@ $maxScaleY: 1.1;
     opacity: 0;
   }
   .js-loaded & {
-    animation-duration: 300ms;
+    animation-duration: 500ms;
     animation-timing-function: $easeOutQuint;
     animation-fill-mode: backwards;
-    animation-delay: 1000ms;
+    animation-delay: 1200ms;
   }
   // keep loading animation-name on other pages,
   // otherwise animation will restart when going back to home page
@@ -320,7 +322,7 @@ $maxScaleY: 1.1;
     animation-duration: 500ms;
     animation-timing-function: $easeOutQuint;
     animation-fill-mode: backwards;
-    animation-delay: 1200ms;
+    animation-delay: 1500ms;
   }
   // keep loading animation-name on other pages,
   // otherwise animation will restart when going back to home page
