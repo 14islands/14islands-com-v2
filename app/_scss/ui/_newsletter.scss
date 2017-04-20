@@ -140,7 +140,7 @@ $iconTransition: transform 200ms ease-out;
   width: 22px;
   height: 24px;
   transition: $iconTransition;
-  transform: translateX(84px) rotate(10deg);
+  transform: translateX(78px) rotate(10deg);
   transform-origin: center center;
 
   .newsletter__notify-icon-line--off {
@@ -148,7 +148,7 @@ $iconTransition: transform 200ms ease-out;
   }
 
   .is-subscribed-to-push & {
-    transform: translateX(82px) rotate(0deg);
+    transform: translateX(76px) rotate(0deg);
     path {
       fill: #949494;
     }
@@ -170,7 +170,7 @@ $iconTransition: transform 200ms ease-out;
 	transition: $iconTransition;
 	transform: translateX(22px);
 	.show-notifications & {
-		transform: translateX(90px);
+		transform: translateX(112px);
 	}
 }
 
@@ -183,7 +183,7 @@ $iconTransition: transform 200ms ease-out;
 .newsletter__email-button-label,
 .newsletter__email-button-label--add {
 	@include if-wider-than($breakpoint-show-icons-px) {
-		padding-left: 25px;
+		padding-left: 15px;
 	}
 }
 
