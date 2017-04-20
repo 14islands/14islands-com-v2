@@ -2,7 +2,7 @@
 layout: post
 title:  "New Branding"
 description: Our new identity had to reflect who we are as a creative development studio.
-og_image: /images/blog/2017-04-21-new-branding/hero-image_16_10.jpg.png
+og_image: /images/blog/2017-04-21-new-branding/hero-image_16_10.jpg
 ---
 
 # New Branding
