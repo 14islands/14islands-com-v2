@@ -211,15 +211,15 @@ $maxScaleY: 1.1;
 }
 
 $duration: 800ms;
-$delay: 40ms;
-$easingDelay: 120ms;
+$easingDelay: 50ms;
 $count: 14;
-$decrease: ((2 * pi()) / $count);
+$decrease: (360 / ($count - 1)) * 1deg;
+$totDelay: $easingDelay * -1;
 
 @for $i from 1 through $count {
   .js-loaded.csstransforms3d .logo-island-#{$i} {
-    $islandDelay: ($i * $delay) + ((cos($decrease * ($i - 1))+1) * $easingDelay);
-    animation: $duration $islandDelay both island-#{$i};
+    $totDelay: ($totDelay + ((cos($decrease * ($i - 1)) + 1) * $easingDelay));
+    animation: $duration $totDelay both island-#{$i};
   }
 }
 
