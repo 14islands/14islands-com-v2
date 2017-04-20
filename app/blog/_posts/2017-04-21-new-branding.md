@@ -33,6 +33,8 @@ Putting those fourteen shapes together on a grid and our name is able to form.
 
 {% include post-image.html alt="Our logo being crafted by hand using a grid" caption="true" src="/images/blog/2017-04-21-new-branding/crafting-logo_16_9.jpg" margin="both" ratio="16_9" %}
 
+## Our new logo
+
 Say hello to our new logo.
 
 {% include post-image.html alt="Our new logo, created with the fourteen islands" caption="true" src="/images/blog/2017-04-21-new-branding/new-logo_16_9.jpg" margin="both" ratio="16_9" %}
@@ -41,7 +43,7 @@ Well crafted and playful. Just how we like it *😃*{: class="emoji"}
 
 ## Colours
 
-The colours are inspired by nature.
+The colours are inspired by nature in the different countries we come from.
 
 {% include post-image.html alt="The brand colours" caption="true" src="/images/blog/2017-04-21-new-branding/colors_16_9.jpg" margin="both" ratio="16_9" %}
 
