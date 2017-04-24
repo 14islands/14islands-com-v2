@@ -243,7 +243,8 @@ class FOURTEEN.Grid
 		hasChangedBreakpoint = false
 
 	isUsingRIO: () ->
-		typeof ResponsiveIO is 'object'
+		# typeof ResponsiveIO is 'object'
+		return false
 
 	###
 		Callback for when it's exiting the page view
@@ -680,7 +681,6 @@ class FOURTEEN.Grid
 		numAvailable.cols = Math.ceil( totalAvailableWidth / @getCellWidth('1') )
 		numAvailable.cells = numAvailable.cols * numAvailable.rows
 
-
 	###
 		Reads our data from the HTML
 		given it's keys.
@@ -695,6 +695,7 @@ class FOURTEEN.Grid
 		IS_GRID_REPEATABLE = parseInt( @$context.data( DATA_IS_REPEATABLE ), 10 ) || 1
 		GRID_PATTERN = @getObjFromKey patternKey
 		data = @getObjFromKey modelKey
+
 
 	getObjFromKey: (key) =>
 		if ( !key )
