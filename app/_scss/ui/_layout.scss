@@ -14,7 +14,7 @@ body {
 }
 
 
-.browsehappy{
+.browsehappy {
 	position: absolute;
 	z-index: 999999;
 	top:0;
@@ -22,7 +22,7 @@ body {
 	right: 0;
 	bottom: 0;
 	padding: 5%;
-	background: $host;
+	background: $beach;
 
 	span {
 		text-align: center;
@@ -231,4 +231,3 @@ svg {
 .pjax-animate {
 	will-change: transform;
 }
-
