@@ -243,8 +243,7 @@ class FOURTEEN.Grid
 		hasChangedBreakpoint = false
 
 	isUsingRIO: () ->
-		# typeof ResponsiveIO is 'object'
-		return false
+		typeof ResponsiveIO is 'object' && !(location.hostname is 'localhost' or location.hostname is '127.0.0.1')
 
 	###
 		Callback for when it's exiting the page view
@@ -291,8 +290,7 @@ class FOURTEEN.Grid
 		@updateContextHeight()
 
 		# Show them
-		$.when( imagesLoaded.getState() ).done =>
-
+		$.when( imagesLoaded.getState() ).always =>
 			if spinnerTimerId isnt null
 				clearTimeout spinnerTimerId
 				@spinner.hide(=>
