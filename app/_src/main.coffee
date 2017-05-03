@@ -22,6 +22,7 @@ FOURTEEN.onPjaxEnd = ->
   FOURTEEN.componentLoader.scan document.body, true, {isPjax:true}
 
 
+
 FOURTEEN.onWindowLoad = ->
   # prefetch main pages - must have same path + querystring as pjax request will have
   # This will only work when sending far future headers for HTML
@@ -40,15 +41,17 @@ FOURTEEN.onWindowLoad = ->
 $(window).load(FOURTEEN.onWindowLoad);
 FOURTEEN.listenForResponsive_ioImageLoad()
 
-new FOURTEEN.PjaxNavigation('.js-hero-nav',
+pjaxNav = new FOURTEEN.PjaxNavigation('.js-hero-nav',
                             '.js-nav-link',
                             '.js-nav-home',
                             '.js-pjax-container',
-                            FOURTEEN.onPjaxEnd)
+                            )
+                            # FOURTEEN.onPjaxEnd)
+
+$('body').on(FOURTEEN.PjaxNavigation.EVENT_ANIMATION_SHOWN, FOURTEEN.onPjaxEnd)
 
 # component loader
 FOURTEEN.componentLoader.start()
 
 # init sticky header
 new FOURTEEN.StickyNav($('.hero'))
-
