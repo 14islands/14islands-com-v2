@@ -88,7 +88,7 @@
     animation-duration: 500ms;
     animation-timing-function: $easeOutQuint;
     animation-fill-mode: backwards;
-    animation-delay: 2000ms;
+    // animation-delay: 2000ms;
   }
   // keep loading animation-name on other pages,
   // otherwise animation will restart when going back to home page

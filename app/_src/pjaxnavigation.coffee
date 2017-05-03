@@ -36,7 +36,6 @@ class FOURTEEN.PjaxNavigation
     @currentPageId = @$body.attr('class').match(/page-(\S*)/)[1]
 
     if @currentPageId is @HOMEPAGE_ID
-      console.log('ENABLE HIJACK')
       @hijack.enable()
 
     # enable PJAX

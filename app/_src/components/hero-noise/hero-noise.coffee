@@ -24,7 +24,6 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 		@islands = []
 		logoEl = document.querySelector('.js-logo')
 		@paths = document.querySelectorAll('.js-logo-island')
-
 		@paths.forEach((el) =>
 			island = new FOURTEEN.HeroNoiseIsland(el, env)
 			@islands.push(island)
@@ -32,24 +31,47 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 
 		# bind events
 		@$window.on('mousemove', @onMouseMove)
-		@$body.on(FOURTEEN.PjaxNavigation.EVENT_HERO_IS_HIDING, @stopAnimation)
-		@$body.on(FOURTEEN.PjaxNavigation.EVENT_HERO_IS_VISIBLE, @startAnimation)
+		@$body.on(FOURTEEN.PjaxNavigation.EVENT_HERO_IS_HIDING, @pauseAnimation)
+		@$body.on(FOURTEEN.PjaxNavigation.EVENT_HERO_IS_VISIBLE, @resumeAnimation)
 
 		# init
 		@createAnimationTimeline()
-		@animateIn()
 		@startAnimation()
 
 
-	stopAnimation: =>
-		@isAnimating = false
-		console.log('STOP HERO!')
+	pauseAnimation: =>
+		#target = if @timeline.progress() > 0.5 then 0 else 1
+		# TweenMax.to(@timeline, 1, {
+		# 	progress: target
+		# 	onComplete: =>
+		# 		@timeline.pause()
+		# 		@isAnimating = false
+		# 	ease: Power2.easeOut
+		# })
 
+		@timeline.pause()
+		# TweenMax.staggerTo(@paths, 1, {
+		# 	opacity: 0.5,
+		# 	ease: Power4.easeInOut
+		# }, 0.05)
+		@animateOut(=>
+			@isAnimating = false
+		)
 
 	startAnimation: =>
 		@isAnimating = true
 		@renderLoop()
-		console.log('START HERO!')
+		@animateIn(=>
+			@timeline.resume()
+		)
+
+	resumeAnimation: =>
+		@isAnimating = true
+		@renderLoop()
+		# @timeline.resume()
+		@animateIn(=>
+			@timeline.progress(0).resume()
+		)
 
 
 	# keep track of the mouse position
@@ -77,17 +99,41 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 		if @isAnimating then window.requestAnimationFrame(@renderLoop)
 
 
-	animateIn: =>
-		# Intro tween (fade in)
-		TweenMax.staggerTo(@paths, 0.5, {
-			spread: 40,
-			speed: 0.1,
+	animateIn: (complete) =>
+		# fade in
+		TweenMax.staggerTo(@paths, 1, {
 			opacity: 1,
-			ease: Power4.easeIn
+			ease: Power4.easeInOut
 		}, 0.05)
+		# move in from outer edge
+		TweenMax.fromTo(env, 2, {
+			spread: 150
+			speed: 0.01
+			rotation: Math.PI*10
+			scaleEffect: 1
+		},{
+			spread: 40
+			speed: 0.05
+			rotation: Math.PI*2
+			scaleEffect: 1
+			ease: Expo.easeInOut
+			onComplete: complete
+		})
 
+	animateOut: (complete) =>
+		# move back to outer edge
+		TweenMax.to(env, 1, {
+		  spread: 150
+		  speed: 0.01
+		  rotation: Math.PI*10
+		  scaleEffect: 1
+			ease: Expo.easeInOut
+			onComplete: complete
+		})
+
+	# loop between exploded and logo state
 	createAnimationTimeline: =>
-		@timeline = new TimelineMax({paused: true, repeat:-1, repeatDelay:3, yoyo:true, delay: 4})
+		@timeline = new TimelineMax({paused: true, repeat:-1, repeatDelay:3, yoyo:true, delay: 1})
 		@timeline.fromTo(env, 2, {
 		  spread: 40,
 		  speed: 0.05,
