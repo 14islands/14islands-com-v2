@@ -5,6 +5,8 @@ window.FOURTEEN ?= {}
 class FOURTEEN.PjaxNavigation
 
   @EVENT_ANIMATION_SHOWN: 'pjax-animation:shown'
+  @EVENT_HERO_IS_HIDING: 'pjax-animation:hero-is-hiding'
+  @EVENT_HERO_IS_VISIBLE: 'pjax-animation:hero-is-visible'
 
   # body pageId of home page
   HOMEPAGE_ID: 'home'
@@ -170,6 +172,7 @@ class FOURTEEN.PjaxNavigation
 
 
   hideHero: =>
+    @$body.trigger(@constructor.EVENT_HERO_IS_HIDING)
     TweenLite.to(@$hero[0], 0.8,
     {
       y: @yTo * -1
@@ -195,7 +198,8 @@ class FOURTEEN.PjaxNavigation
       y: 0
       delay: 0.2
       ease: Circ.easeInOut
-      clearProps: 'all'
+      clearProps: 'all',
+      onComplete: => @$body.trigger(@constructor.EVENT_HERO_IS_VISIBLE)
     })
 
 
@@ -278,5 +282,3 @@ class FOURTEEN.PjaxNavigation
         onComplete: (param) =>
           @$body.trigger @constructor.EVENT_ANIMATION_SHOWN
       })
-
-

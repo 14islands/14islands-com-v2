@@ -1,0 +1,139 @@
+////////////////////////////////////////////
+// LOGO NOISE ANIMATION - START
+////////////////////////////////////////////
+
+$logoNativeWidth: 1000;
+$logoNativeHeight: 250;
+$logoRatio: $logoNativeHeight / $logoNativeWidth;
+
+.hero-noise__logo {
+  // don't blend with background - laggy in Chrome...
+  // create stacking context
+  // https://www.sitepoint.com/close-up-css-mix-blend-mode-property/
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
+  //isolation: isolate
+  //z-index: 1
+
+  width: 100%;
+  position: relative;
+  overflow: visible;
+
+  // responsive ratio
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-bottom: $logoRatio * 100%;
+  }
+
+}
+
+.hero-noise__island {
+  opacity: 0;
+  position: absolute;
+  display: inline-block;
+  transform-origin: 50% 50%;
+
+  mix-blend-mode: multiply;
+  will-change: transform;
+
+  // transition between frames to reach 60fps
+  transition: transform (1000/60*3) * 1ms linear;
+
+  top: 0;
+  left: 0;
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.hero-noise__logo {
+  .island-1 {
+    width: (44.63 / $logoNativeWidth * 100%);
+    top: (60.696 / $logoNativeHeight * 100%);
+    left: (43.622 / $logoNativeWidth * 100%);
+  }
+
+  .island-2 {
+    width: (49.962 / $logoNativeWidth * 100%);
+    top: (54.606 / $logoNativeHeight * 100%);
+    left: (74.532 / $logoNativeWidth * 100%);
+  }
+
+  .island-3 {
+    width: (84.421 / $logoNativeWidth * 100%);
+    top: (51.167 / $logoNativeHeight * 100%);
+    left: (139.209 / $logoNativeWidth * 100%);
+  }
+
+  .island-4 {
+    width: (44.023 / $logoNativeWidth * 100%);
+    top: (144.686 / $logoNativeHeight * 100%);
+    left: (167.784 / $logoNativeWidth * 100%);
+  }
+
+  .island-5 {
+    width: (42.908 / $logoNativeWidth * 100%);
+    top: (55.42 / $logoNativeHeight * 100%);
+    left: (255.097 / $logoNativeWidth * 100%);
+  }
+
+  .island-6 {
+    width: (73.304 / $logoNativeWidth * 100%);
+    top: (60.696 / $logoNativeHeight * 100%);
+    left: (332.129 / $logoNativeWidth * 100%);
+  }
+
+  .island-7 {
+    width: (83.074 / $logoNativeWidth * 100%);
+    top: (104.844 / $logoNativeHeight * 100%);
+    left: (315.232 / $logoNativeWidth * 100%);
+  }
+
+  .island-8 {
+    width: (82.84 / $logoNativeWidth * 100%);
+    top: (56.013 / $logoNativeHeight * 100%);
+    left: (425.771 / $logoNativeWidth * 100%);
+  }
+
+  .island-9 {
+    width: (109.946 / $logoNativeWidth * 100%);
+    top: (52.43 / $logoNativeHeight * 100%);
+    left: (529.135 / $logoNativeWidth * 100%);
+  }
+
+  .island-10 {
+    width: (110.441 / $logoNativeWidth * 100%);
+    top: (52.118 / $logoNativeHeight * 100%);
+    left: (654.06 / $logoNativeWidth * 100%);
+  }
+
+  .island-11 {
+    width: (42.769 / $logoNativeWidth * 100%);
+    top: (60.696 / $logoNativeHeight * 100%);
+    left: (728.342 / $logoNativeWidth * 100%);
+  }
+
+  .island-12 {
+    width: (73.811 / $logoNativeWidth * 100%);
+    top: (53.033 / $logoNativeHeight * 100%);
+    left: (785.374 / $logoNativeWidth * 100%);
+  }
+
+  .island-13 {
+    width: (61.165 / $logoNativeWidth * 100%);
+    top: (56.99 / $logoNativeHeight * 100%);
+    left: (895.213 / $logoNativeWidth * 100%);
+  }
+
+  .island-14 {
+    width: (83.073 / $logoNativeWidth * 100%);
+    top: (104.844 / $logoNativeHeight * 100%);
+    left: (867.655 / $logoNativeWidth * 100%);
+  }
+}
+////////////////////////////////////////////
+// LOGO NOISE ANIMATION - STOP
+////////////////////////////////////////////
