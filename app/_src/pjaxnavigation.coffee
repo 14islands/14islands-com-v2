@@ -37,6 +37,11 @@ class FOURTEEN.PjaxNavigation
 
     if @currentPageId is @HOMEPAGE_ID
       @hijack.enable()
+      console.log('trigger visible')
+      setTimeout(=>
+        @$body.trigger(@constructor.EVENT_HERO_IS_VISIBLE)
+      , 0)
+
 
     # enable PJAX
     $.pjax.defaults?.timeout = 10000 # we show a spinner so set this to 10s to prevent a full page reload
@@ -136,7 +141,7 @@ class FOURTEEN.PjaxNavigation
       @$body.trigger(@constructor.EVENT_HERO_IS_HIDING)
       setTimeout( =>
         @hideHero()
-      , 500)
+      , 800)
 
     # hide content fast when navigating between all other pages
     unless @getPageIdFromUrl(options.url) is @HOMEPAGE_ID
@@ -280,7 +285,7 @@ class FOURTEEN.PjaxNavigation
       y: 0
       opacity: 1
       ease: Expo.easeOut
-      delay: 0.8 #0.6 #0.1
+      delay: 1.1 #0.8 #0.6 #0.1
       clearProps: 'all'
       onComplete: (param) =>
         @$body.trigger @constructor.EVENT_ANIMATION_SHOWN

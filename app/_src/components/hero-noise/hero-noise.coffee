@@ -3,7 +3,9 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 	env = {
 	  autoAnimate: true
 	  speed: 0.6
-	  spread: 40
+	  # spread: 40
+	  spreadX: -1
+	  spreadY: -1
 	  rotation: Math.PI/20
 	  scaleEffect: 0
 	  parallaxEffect: 0.01
@@ -22,7 +24,7 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 
 		# find and create all shapes
 		@islands = []
-		logoEl = document.querySelector('.js-logo')
+		@logoEl = document.querySelector('.js-logo')
 		@paths = document.querySelectorAll('.js-logo-island')
 		@paths.forEach((el) =>
 			island = new FOURTEEN.HeroNoiseIsland(el, env)
@@ -35,43 +37,27 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 		@$body.on(FOURTEEN.PjaxNavigation.EVENT_HERO_IS_VISIBLE, @resumeAnimation)
 
 		# init
-		@createAnimationTimeline()
-		@startAnimation()
+		# @createAnimationTimeline()
+		# @startAnimation()
 
 
 	pauseAnimation: =>
-		#target = if @timeline.progress() > 0.5 then 0 else 1
-		# TweenMax.to(@timeline, 1, {
-		# 	progress: target
-		# 	onComplete: =>
-		# 		@timeline.pause()
-		# 		@isAnimating = false
-		# 	ease: Power2.easeOut
-		# })
-
 		@timeline.pause()
-		# TweenMax.staggerTo(@paths, 1, {
-		# 	opacity: 0.5,
-		# 	ease: Power4.easeInOut
-		# }, 0.05)
 		@animateOut(=>
 			@isAnimating = false
 		)
 
 	startAnimation: =>
 		@isAnimating = true
+		@startTimeline()
 		@renderLoop()
-		@animateIn(=>
-			@timeline.resume()
-		)
+		@animateIn()
 
 	resumeAnimation: =>
 		@isAnimating = true
+		@startTimeline()
 		@renderLoop()
-		# @timeline.resume()
-		@animateIn(=>
-			@timeline.progress(0).resume()
-		)
+		@animateIn()
 
 
 	# keep track of the mouse position
@@ -98,55 +84,117 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 
 		if @isAnimating then window.requestAnimationFrame(@renderLoop)
 
+	getIntroSpread: =>
+		if (window.innerHeight > window.innerWidth)
+			return window.innerHeight / 2
+		else
+			return window.innerWidth / 10
 
 	animateIn: (complete) =>
 		# fade in
-		TweenMax.staggerTo(@paths, 1, {
+		TweenMax.staggerTo(@paths, .8, {
 			opacity: 1,
-			ease: Power4.easeInOut
+			ease: Power2.easeInOut,
+			onComplete: complete
 		}, 0.05)
 		# move in from outer edge
-		TweenMax.fromTo(env, 2, {
-			spread: 150
-			speed: 0.01
-			rotation: Math.PI*10
-			scaleEffect: 1
-		},{
-			spread: 40
-			speed: 0.05
-			rotation: Math.PI*2
-			scaleEffect: 1
-			ease: Expo.easeInOut
-			onComplete: complete
-		})
+
+		# TweenMax.fromTo(env, 3, {
+		# 	spreadX:  window.innerWidth * 0.5
+		# 	spreadY: window.innerHeight * 0.66
+		# 	speed: 0.02
+		# 	rotation: Math.PI*10
+		# 	scaleEffect: 1
+		# 	parallaxEffect: 0.2
+		#
+		# # },{
+		# # 	spread: 40
+		# # 	speed: 0.05
+		# # 	rotation: Math.PI*2
+		# # 	scaleEffect: 1
+		# # 	ease: Expo.easeInOut
+		# # 	onComplete: complete
+		# # })
+		# },{
+		# 	# spread: 0.7,
+		# 	spreadX: @logoEl.clientWidth * 0.7 * 0.01
+		# 	spreadY: @logoEl.clientWidth * 0.7 * 0.01
+		# 	speed: 0.8,
+		# 	rotation: Math.PI/20,
+		# 	ease: Expo.easeInOut,
+		# 	scaleEffect: 0,
+		# 	parallaxEffect: 0.01
+		# 	onComplete: complete
+		# 	delay: delay
+		# })
 
 	animateOut: (complete) =>
 		# move back to outer edge
-		TweenMax.to(env, 1, {
-		  spread: 150
-		  speed: 0.01
-		  rotation: Math.PI*10
-		  scaleEffect: 1
+		TweenMax.staggerTo(@paths, 0.2, {
+			opacity: 0,
+			delay: 0.2
+			ease: Power4.easeInOut
+		}, 0.05)
+		TweenMax.killTweensOf(env)
+		TweenMax.to(env, 1.2, {
+		  speed: 0.2
+			spreadX: 0
+			spreadY: 0
+			rotation: Math.PI*30
+			scaleEffect: 0
 			ease: Expo.easeInOut
 			onComplete: complete
 		})
 
 	# loop between exploded and logo state
-	createAnimationTimeline: =>
-		@timeline = new TimelineMax({paused: true, repeat:-1, repeatDelay:3, yoyo:true, delay: 1})
+	startTimeline: =>
+		TweenMax.killTweensOf(env)
+		@timeline = new TimelineMax({paused: false, repeat:-1, repeatDelay:3, yoyo:true, delay: 3})
+		# @timeline.fromTo(env, 2, {
+		#   spread: 40,
+		#   speed: 0.05,
+		#   rotation: Math.PI*2,
+		#   scaleEffect: 1,
+		#   parallaxEffect: 0.2
+		# }, {
+		#   spread: 0.7,
+		#   speed: 0.8,
+		#   rotation: Math.PI/20,
+		#   ease: Expo.easeInOut,
+		#   scaleEffect: 0,
+		#   parallaxEffect: 0.01
+		# })
+
+		# @timeline.fromTo(env, 2, {
+		#   spread: 0.7,
+		#   speed: 0.8,
+		#   rotation: Math.PI/20,
+		#   scaleEffect: 0,
+		#   parallaxEffect: 0.01
+		# }, {
+		#   spread: 40,
+		#   speed: 0.05,
+		#   rotation: Math.PI*2,
+		#   scaleEffect: 1,
+		#   parallaxEffect: 0.2
+		# 	ease: Expo.easeInOut
+		# })
+
 		@timeline.fromTo(env, 2, {
-		  spread: 40,
-		  speed: 0.05,
-		  rotation: Math.PI*2,
-		  scaleEffect: 1,
-		  parallaxEffect: 0.2
-		}, {
-		  spread: 0.7,
-		  speed: 0.8,
-		  rotation: Math.PI/20,
-		  ease: Expo.easeInOut,
-		  scaleEffect: 0,
-		  parallaxEffect: 0.01
+			spreadX:  window.innerWidth * 0.5
+			spreadY: window.innerHeight * 0.66
+			speed: 0.02
+			rotation: Math.PI*5
+			scaleEffect: 1
+			parallaxEffect: 0.2
+		},{
+			spreadX: @logoEl.clientWidth * 0.7 * 0.01
+			spreadY: @logoEl.clientWidth * 0.7 * 0.01
+			speed: 0.8,
+			rotation: Math.PI/20,
+			scaleEffect: 0,
+			parallaxEffect: 0.025
+			ease: Expo.easeInOut
 		})
 
 	destroy: ->

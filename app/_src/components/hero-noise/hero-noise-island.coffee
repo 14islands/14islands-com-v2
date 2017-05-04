@@ -40,11 +40,15 @@ class FOURTEEN.HeroNoiseIsland
     @_logoWidth = @el.parentNode.parentNode.parentNode.clientWidth
 
   # How far to spread out is relative to logo size
-  getSpread: () =>
-    return @_logoWidth * @env.spread * 0.01
+  getSpreadX: () =>
+    # return @_logoWidth * @env.spreadX * 0.01
+    return @env.spreadX
+
+  getSpreadY: () =>
+    # return @_logoWidth * @env.spreadY * 0.01
+    return @env.spreadY
 
   updatePhysics: (index, {mouseX, mouseY}) =>
-    spread = @getSpread()
     @_tX = @_tX + (@env.speed * 0.01)
     @_tY = @_tY + (@env.speed * 0.01)
     @_tA = @_tA + (@env.speed * 0.01)
@@ -59,8 +63,8 @@ class FOURTEEN.HeroNoiseIsland
     depthX = (@_worldPos.x - mouseX) * @_scale * @env.parallaxEffect
     depthY = (@_worldPos.y - mouseY) * @_scale * @env.parallaxEffect
 
-    @_worldPos.x = @_localPos.x + (noiseX * spread) + depthX
-    @_worldPos.y = @_localPos.y + (noiseY * spread) + depthY
+    @_worldPos.x = @_localPos.x + (noiseX * @getSpreadX()) + depthX
+    @_worldPos.y = @_localPos.y + (noiseY * @getSpreadY()) + depthY
 
   getLocalPos: () =>
     return @_localPos
