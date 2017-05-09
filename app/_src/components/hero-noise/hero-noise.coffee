@@ -77,8 +77,8 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 		  island.updatePhysics(index, mouseCurrent)
 		)
 		@islands.forEach((island, index) =>
-		  if (frame % 3 is 0)
-		  	island.render()
+		  #if (frame % 3 is 0)
+		  island.render()
 		)
 		frame++
 

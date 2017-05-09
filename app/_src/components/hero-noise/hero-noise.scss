@@ -38,7 +38,7 @@ $logoRatio: $logoNativeHeight / $logoNativeWidth;
   will-change: transform;
 
   // transition between frames to reach 60fps
-  transition: transform (1000/60*3) * 1ms linear;
+  // transition: transform (1000/60*3) * 1ms linear;
 
   top: 0;
   left: 0;
