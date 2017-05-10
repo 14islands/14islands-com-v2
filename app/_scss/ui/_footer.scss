@@ -17,7 +17,7 @@
 				mix-blend-mode: multiply;
 			}
     }
-    @include if-wider-than($breakpoint-two-px) {
+    @include if-wider-than(400px) {
 			text-align: center;
 			padding-top: 4rem;
       svg {
@@ -40,7 +40,7 @@
     position: relative;
     @include if-wider-than($breakpoint-two-px) {
         float: left;
-        width: 80%;
+        width: 70%;
         p {
 						max-width: 30rem;
             margin-bottom: 1.4rem;
@@ -85,11 +85,12 @@
 	@include if-wider-than($breakpoint-two-px) {
       clear: none;
       float: left;
-      width: 20%;
-      padding-left: 5%;
+      width: 30%;
+      // padding-left: 5%;
 			margin: 0;
 			li {
 				margin-right: 0;
+				margin-bottom: 0;
 			}
       a {
     		padding: 0;

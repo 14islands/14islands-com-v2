@@ -71,20 +71,20 @@ body {
 	display: block;
 	position: relative;
 	margin: 0 auto;
-	max-width: $grid-max-width-px;
+	max-width: $grid-paragraph-max-width;
 
 	// no content padding on mobile
 	width: 100%;
-	@include if-wider-than($breakpoint-one-px) {
+	/*@include if-wider-than($breakpoint-one-px) {
 		// add content padding on wider screen
 		width: 100% - $default-content-spacing * 2;
-	}
+	}*/
 
 	p ,
 	ul,
 	ol {
 		width: auto;
-		max-width: $grid-paragraph-max-width;
+		// max-width: $grid-paragraph-max-width;
 	}
 	figure {
 		width: auto;

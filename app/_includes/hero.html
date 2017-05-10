@@ -60,31 +60,28 @@
 
 		</div>
 	</div>
-  <nav class="grid hero__nav js-hero-nav nav">
-    <div class="grid__row--wide">
-      <ul class="nav__list grid__row--wide__normal">
-        <li class="nav__item--logo">
-            <a href="{{ site.baseurl }}/" class="nav__logo-clean js-nav-home" title="Back to Home page">
-              {% include svgs/logo/logo-new-symbol.min.svg %}
-            </a>
-        </li><!-- Remove space
-        --><li class="nav__item">
-            <a class="nav__link nav__link--work js-nav-link js-nav-link-work" href="{{ site.baseurl }}/work/" title="Explore our work"><span>Our </span>Work</a>
-        </li><!-- Remove space
-        --><li class="nav__item">
-            <a class="nav__link nav__link--about js-nav-link" href="{{ site.baseurl }}/about/" title="Learn more about us">About <span>Us</span></a>
-        </li><!-- Remove space
-        --><li class="nav__item nav__item--show-on-bp2">
-            <a class="nav__link nav__link--blog js-nav-link" href="{{ site.baseurl }}/blog/" title="Read our blog">Blog</a>
-        </li><!-- Remove space
-        --><li class="nav__item">
-            <a class="nav__link nav__link--contact js-nav-link" href="{{ site.baseurl }}/contact/" title="Say hello">Contact</a>
-        </li>
-      </ul>
-      <div class="grid__row--wide__content hero__nav__wide-logo">
-        <a href="{{ site.baseurl }}/" class="nav__logo-clean js-nav-home" title="Back to Home page">
-          {% include svgs/logo/logo-new-symbol.min.svg %}
-        </a>
+  <nav class="grid hero__nav js-hero-nav">
+    <div class="nav grid__row--wide">
+      <div class="grid__row--wide__normal">
+				<div class="nav__list">
+					<div class="nav__item--logo">
+						<a href="{{ site.baseurl }}/" class="nav__logo-clean js-nav-home" title="Back to Home page">
+							{% include svgs/logo/logo-new-symbol.min.svg %}
+						</a>
+					</div><!-- Remove space
+					--><div class="nav__item">
+							<a class="nav__link nav__link--work js-nav-link js-nav-link-work" href="{{ site.baseurl }}/work/" title="Explore our work"><span>Our </span>Work</a>
+					</div><!-- Remove space
+					--><div class="nav__item">
+							<a class="nav__link nav__link--about js-nav-link" href="{{ site.baseurl }}/about/" title="Learn more about us">About <span>Us</span></a>
+					</div><!-- Remove space
+					--><div class="nav__item nav__item--hide-on-small">
+							<a class="nav__link nav__link--blog js-nav-link" href="{{ site.baseurl }}/blog/" title="Read our blog">Blog</a>
+					</div><!-- Remove space
+					--><div class="nav__item">
+							<a class="nav__link nav__link--contact js-nav-link" href="{{ site.baseurl }}/contact/" title="Say hello">Contact</a>
+					</div>
+				</div>
       </div>
     </div>
   </nav>

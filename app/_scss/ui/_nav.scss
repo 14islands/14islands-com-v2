@@ -12,55 +12,73 @@
 //    <li class="nav__item"><a href="/blog">Contact</a></li>
 // 	</ul>
 // </nav>
-$nav-item-padding: 1.5rem;
+$nav-item-padding: 0.75rem;
+$nav-item-padding-bp-two: 1.5rem;
 
 .nav {
+	@include if-wider-than($breakpoint-two-px) {
+		display: flex;
+		justify-content: center;
+  }
 }
 
 .nav__list {
 	list-style: none;
 	margin-bottom: 0;
+	display: flex;
+	justify-content: space-between;
+
+	position: relative;
+	margin-left: -$nav-item-padding;
+	margin-right: -$nav-item-padding;
+	// swidth: auto;
+	@include if-wider-than($breakpoint-two-px) {
+    // justify-content: center;
+		margin-left: -$nav-item-padding-bp-two;
+		margin-right: -$nav-item-padding-bp-two;
+  }
 }
 
+.nav__list-wrapper {
+
+}
+
+/*
 .nav__item {
 	display: inline-block;
 	vertical-align: top;
 	background: none;
 	@include if-wider-than($breakpoint-three-px) {
     position:relative;
-    left: -$nav-item-padding;
+    left: -$nav-item-padding-bp-two;
   }
 }
 
 .nav__item--logo {
 	@extend .nav__item;
-	@include if-wider-than($breakpoint-three-px) {
-    display: none;
-  }
-}
+}*/
 
 .nav__logo-clean {
 	display: block;
-	height: (25px/1.5);
-	width: (60px/1.5);
-	margin: 24px 0;
+	height: (70px/3.4);
+	width: (90px/3.4);
+	margin: 22px $nav-item-padding 0;
 
 	svg path {
     mix-blend-mode: multiply;
   }
 
-	margin-right: .75rem;
 	@include if-wider-than($breakpoint-two-px) {
-		height: 25px;
-		width: 60px;
-		margin: 28px 0 0;
-		margin-right: $nav-item-padding;
+		height: (70px/2.5);
+		width: (90px/2.5);
+		margin: 24px $nav-item-padding-bp-two 0;
+		// margin-right: $nav-item-padding-bp-two;
   }
 }
 
-.nav__item--show-on-bp2 {
+.nav__item--hide-on-small {
 	display: none;
-	@include if-wider-than($breakpoint-two-px) {
+	@include if-wider-than(500px) {
 		display: inline-block;
 	}
 }
@@ -70,7 +88,11 @@ $nav-item-padding: 1.5rem;
 	letter-spacing: 0.04rem;
 	line-height: 1;
 	font-size: 1.3rem;
-	padding: 24px .75rem;
+	padding: 24px $nav-item-padding;
+
+	.nav__link:last-child & {
+		padding-right: 0;
+	}
 
 	&,
 	&:visited {
@@ -98,6 +120,6 @@ $nav-item-padding: 1.5rem;
 		}
   }
 	@include if-wider-than($breakpoint-two-px) {
-		padding: 30px $nav-item-padding;
+		padding: 30px $nav-item-padding-bp-two;
   }
 }

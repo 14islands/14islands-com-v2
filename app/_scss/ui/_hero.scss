@@ -152,16 +152,6 @@
   }
 }
 
-// In the wide grid we move the logo outside the inner grid
-.hero__nav__wide-logo {
-  position: absolute;
-  top: 0;
-  display: none;
-  @include if-wider-than($breakpoint-three-px) {
-    display: block;
-  }
-}
-
 .hero--hidden {
 	.hero__nav {
 		border-bottom: 1px solid #f5f5f5;
