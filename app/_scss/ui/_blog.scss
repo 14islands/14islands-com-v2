@@ -3,7 +3,8 @@
 		//add a slight negative margin when paragraph max width is reached
 		$marignRatio: strip-units(1 + (0.01 * $default-content-spacing*2));
 	 	@include if-wider-than($grid-max-width-px * $marignRatio) {
-			margin-left: - 1rem;
+			margin-left: - 2rem;
+			margin-right: - 2rem;
 			max-width: $grid-paragraph-max-width + 2rem;
 		}
 	}
