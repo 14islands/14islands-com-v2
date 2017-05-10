@@ -5,7 +5,7 @@
 	 	@include if-wider-than($grid-max-width-px * $marignRatio) {
 			margin-left: - 2rem;
 			margin-right: - 2rem;
-			max-width: $grid-paragraph-max-width + 2rem;
+			max-width: $grid-paragraph-max-width + 4rem;
 		}
 	}
 }

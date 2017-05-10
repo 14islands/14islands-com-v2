@@ -11,7 +11,7 @@ og_image: /images/blog/2017-04-21-new-branding/hero-image_16_10.jpg
 
 When Steve Jobs and Steve Wozniak were starting out in a garage, their skills made them stronger as a team. Jobs was a visionary and had the business knowledge. Wozniak was the guy who loved to play with technologies and he knew how to build computers.
 
-At 14islands, we are a bit like Wozniak. We work with designers, agencies and businesses to help them build the things they envision. In our case, it’s responsive websites, progressive web apps, 3D games and other experiences for people.
+At 14islands, we are a bit like Wozniak. We work with businesses to build the things they envision. In our case, it’s responsive websites, progressive web apps, playful games on the web.
 
 Our new identity had to reflect this and who we are as a creative development studio; How we love to play with technologies and to build delightful experiences. That we care about our craft and are ready to push things forward.
 
