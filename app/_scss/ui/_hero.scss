@@ -56,8 +56,7 @@
   position: relative;
   z-index: 1000;
 	background-color: $white;
-	height: pxToRem(80);
-	line-height: pxToRem(80);
+	// line-height: pxToRem(80);
 	font-size: modular-scale(1rem, 1);
   margin-top: 0;
   margin-bottom: 0;
