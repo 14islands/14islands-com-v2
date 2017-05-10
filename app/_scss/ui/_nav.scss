@@ -16,10 +16,10 @@ $nav-item-padding: 0.5rem;
 // $nav-item-padding-bp-two: 1.5rem;
 
 .nav {
-	@include if-wider-than($breakpoint-two-px) {
+	/*@include if-wider-than($breakpoint-two-px) {
 		display: flex;
 		justify-content: center;
-  }
+  }*/
 }
 
 .nav__list {
@@ -64,6 +64,8 @@ $nav-item-padding: 0.5rem;
 	display: block;
 	height: (70px/3.4);
 	width: (90px/3.4);
+	padding: $nav-item-padding;
+	box-sizing: content-box;
 
 	svg path {
     mix-blend-mode: multiply;
@@ -72,6 +74,7 @@ $nav-item-padding: 0.5rem;
 	@include if-wider-than($breakpoint-two-px) {
 		height: (70px/2.5);
 		width: (90px/2.5);
+
 		// margin: 24px $nav-item-padding-bp-two 0;
   }
 	@include if-wider-than($breakpoint-three-px) {
