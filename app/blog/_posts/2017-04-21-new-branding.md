@@ -9,9 +9,7 @@ og_image: /images/blog/2017-04-21-new-branding/hero-image_16_10.jpg
 
 {% include post-image.html alt="New branding in action" src="/images/blog/2017-04-21-new-branding/hero-image_16_10.jpg" margin="both" ratio="16_10" %}
 
-We believe what sets companies apart in the digital age are great user experiences. Good design and performance. Natural and playful interactions.  Working on all devices and screen sizes. This is the work we do. We help companies build sites, apps and enjoyable places using web technologies.
-
-Our new identity had to reflect this and who we are as a creative development studio; How we love to play with technologies and build delightful experiences. That we care about our craft and are ready to push things forward.
+Our new identity had to reflect who we are as a creative development studio; How we love to play with technologies and build delightful experiences. That we care about our craft and are ready to push things forward.
 
 We like to present our new branding, and the idea behind it.
 
