@@ -24,7 +24,8 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 
 		# find and create all shapes
 		@islands = []
-		@logoEl = document.querySelector('.js-logo')
+		@$logoEl = @$context.find('.js-logo')
+		@logoEl = @$logoEl[0]
 		@paths = document.querySelectorAll('.js-logo-island')
 
 		for el in @paths
@@ -59,6 +60,14 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 		@renderLoop()
 		@animateIn()
 
+
+	onLogoClick: =>
+		if @timeline
+			time = @timeline.time()
+			if time is 0
+				@timeline.restart()
+			else
+				@timeline.reverse()
 
 	# keep track of the mouse position
 	onMouseMove: (e) =>
@@ -147,10 +156,17 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 			onComplete: complete
 		})
 
+	addLogoClickListener: =>
+		@removeLogoClickListener()
+		@$logoEl.on('click', @onLogoClick)
+
+	removeLogoClickListener: =>
+		@$logoEl.off('click', @onLogoClick)
+
 	# loop between exploded and logo state
 	startTimeline: =>
 		TweenMax.killTweensOf(env)
-		@timeline = new TimelineMax({paused: false, repeat:-1, repeatDelay:3, yoyo:true, delay: 3})
+		@timeline = new TimelineMax({paused: false, delay: 3})
 		# @timeline.fromTo(env, 2, {
 		#   spread: 40,
 		#   speed: 0.05,
@@ -198,10 +214,13 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 			ease: Expo.easeInOut
 		})
 
+		@timeline.eventCallback('onComplete', @addLogoClickListener)
+
 	destroy: ->
 		@timeline?.kill()
 		@$window.off('mousemove', @onMouseMove) unless Modernizr.touch
 		@$body.off(FOURTEEN.PjaxNavigation.EVENT_HERO_IS_HIDING, @stopAnimation)
 		@$body.off(FOURTEEN.PjaxNavigation.EVENT_HERO_IS_VISIBLE, @startAnimation)
+		@removeLogoClickListener()
 
 		super()
