@@ -63,6 +63,9 @@ Our new identity is already in use on this website.  We also got brand new busin
 
 {% include post-image.html alt="New branding in action" src="/images/blog/2017-04-21-new-branding/in-action-1_16_10.jpg" margin="both" ratio="16_10" %}
 
+{% include post-image.html alt="New branding in action" src="/images/blog/2017-04-21-new-branding/applications_16_10.jpg" margin="both" ratio="16_10" %}
+
+
 Other things are in the making; signs for the office, tote bags and such. We can’t wait and will post those on our [Instagram page](instagram.com/14islands/) as soon as it arrives.
 
 The identity was designed by [Bedow](http://www.bedow.se/).

@@ -26,10 +26,10 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 		@islands = []
 		@logoEl = document.querySelector('.js-logo')
 		@paths = document.querySelectorAll('.js-logo-island')
-		@paths.forEach((el) =>
+
+		for el in @paths
 			island = new FOURTEEN.HeroNoiseIsland(el, env)
 			@islands.push(island)
-		)
 
 		# bind events
 		@$window.on('mousemove', @onMouseMove)
@@ -73,13 +73,13 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 		mouseCurrent.mouseY += (mouseTarget.mouseY - mouseCurrent.mouseY) * 0.1
 
 		# update physics in batch - draw in batch so browser touches Dom efficiently
-		@islands.forEach((island, index) =>
-		  island.updatePhysics(index, mouseCurrent)
-		)
-		@islands.forEach((island, index) =>
-		  #if (frame % 3 is 0)
-		  island.render()
-		)
+		for island, index in @islands
+			island.updatePhysics(index, mouseCurrent)
+
+		for island, index in @islands
+			#if (frame % 3 is 0)
+			island.render()
+
 		frame++
 
 		if @isAnimating then window.requestAnimationFrame(@renderLoop)
