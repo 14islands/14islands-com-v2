@@ -9,13 +9,15 @@ og_image: /images/blog/2017-04-21-new-branding/hero-image_16_10.jpg
 
 {% include post-image.html alt="New branding in action" src="/images/blog/2017-04-21-new-branding/hero-image_16_10.jpg" margin="both" ratio="16_10" %}
 
-Our new identity had to reflect who we are as a creative development studio; How we love to play with technologies and build delightful experiences. That we care about our craft and are ready to push things forward.
+We like to present to you our new branding, and the idea behind it.
 
-We like to present our new branding, and the idea behind it.
+A new identity had to reflect who we are as a creative development studio; How we love to play with technologies and build delightful experiences. That we care about our craft and are ready to push things forward.
 
 ## A solid ground
 
-Even though our team is all from different parts of the planet, we met each other here in Stockholm, Sweden.  Stockholm is a beautiful city spread across 14 islands - hence our name.
+Even though our team is all from different parts of the planet, we met each other here in Stockholm, Sweden.  
+
+Stockholm is a beautiful city spread across 14 islands - hence our name.
 
 {% include post-image.html alt="Map of Stockholm" caption="true" src="/images/blog/2017-04-21-new-branding/stockholm-map_16_7.jpg" margin="both" ratio="16_7" %}
 
