@@ -79,6 +79,17 @@
 	}
 }
 
+.post__quote-text--small {
+  font-size: modular-scale(0.7rem, 2);
+  margin: 0 0 0.5rem;
+  @media (min-width: $breakpoint-two-px) {
+	  font-size: modular-scale(0.7rem, 2);
+	}
+	@media (min-width: $breakpoint-three-px) {
+	  font-size: modular-scale(0.7rem, 3);
+	}
+}
+
 .post__quote-author {
 	font-size: modular-scale(1rem, 1);
 	background-position: 0 100% !important;
