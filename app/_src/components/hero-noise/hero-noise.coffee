@@ -32,7 +32,7 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 			@islands.push(island)
 
 		# bind events
-		@$window.on('mousemove', @onMouseMove)
+		@$window.on('mousemove', @onMouseMove) unless Modernizr.touch
 		@$body.on(FOURTEEN.PjaxNavigation.EVENT_HERO_IS_HIDING, @pauseAnimation)
 		@$body.on(FOURTEEN.PjaxNavigation.EVENT_HERO_IS_VISIBLE, @resumeAnimation)
 
@@ -68,9 +68,10 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 
 	# RENDER LOOP
 	renderLoop: =>
-		# update mouse position towards target slowly
-		mouseCurrent.mouseX += (mouseTarget.mouseX - mouseCurrent.mouseX) * 0.1
-		mouseCurrent.mouseY += (mouseTarget.mouseY - mouseCurrent.mouseY) * 0.1
+		unless Modernizr.touch
+			# update mouse position towards target slowly
+			mouseCurrent.mouseX += (mouseTarget.mouseX - mouseCurrent.mouseX) * 0.1
+			mouseCurrent.mouseY += (mouseTarget.mouseY - mouseCurrent.mouseY) * 0.1
 
 		# update physics in batch - draw in batch so browser touches Dom efficiently
 		for island, index in @islands
@@ -199,7 +200,7 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 
 	destroy: ->
 		@timeline?.kill()
-		@$window.off('mousemove', @onMouseMove)
+		@$window.off('mousemove', @onMouseMove) unless Modernizr.touch
 		@$body.off(FOURTEEN.PjaxNavigation.EVENT_HERO_IS_HIDING, @stopAnimation)
 		@$body.off(FOURTEEN.PjaxNavigation.EVENT_HERO_IS_VISIBLE, @startAnimation)
 
