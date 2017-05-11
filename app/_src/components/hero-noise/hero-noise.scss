@@ -1,4 +1,4 @@
-////////////////////////////////////////////
+
 // LOGO NOISE ANIMATION - START
 ////////////////////////////////////////////
 
@@ -26,6 +26,11 @@ $logoRatio: $logoNativeHeight / $logoNativeWidth;
     padding-bottom: $logoRatio * 100%;
   }
 
+	@media (orientation: portrait) {
+		&:before {
+			padding-bottom: 100%;
+		}
+	}
 }
 
 .hero-noise__island {
@@ -47,6 +52,17 @@ $logoRatio: $logoNativeHeight / $logoNativeWidth;
     width: 100%;
     height: auto;
   }
+
+	@media (orientation: portrait) {
+		display: none;
+    &.island-1,
+    &.island-2,
+    &.island-3,
+    &.island-4 {
+			display: block;
+			margin-left: -7%;
+		}
+	}
 }
 
 .hero-noise__logo {
@@ -54,24 +70,40 @@ $logoRatio: $logoNativeHeight / $logoNativeWidth;
     width: (44.63 / $logoNativeWidth * 100%);
     top: (60.696 / $logoNativeHeight * 100%);
     left: (43.622 / $logoNativeWidth * 100%);
+		@media (orientation: portrait) {
+			width: (44.63 / $logoNativeHeight * 100%);
+	    left: (43.622 / $logoNativeHeight * 100%);
+		}
   }
 
   .island-2 {
     width: (49.962 / $logoNativeWidth * 100%);
     top: (54.606 / $logoNativeHeight * 100%);
     left: (74.532 / $logoNativeWidth * 100%);
+		@media (orientation: portrait) {
+			width: (49.962 / $logoNativeHeight * 100%);
+	    left: (74.532 / $logoNativeHeight * 100%);
+		}
   }
 
   .island-3 {
     width: (84.421 / $logoNativeWidth * 100%);
     top: (51.167 / $logoNativeHeight * 100%);
     left: (139.209 / $logoNativeWidth * 100%);
+		@media (orientation: portrait) {
+			width: (84.421 / $logoNativeHeight * 100%);
+	    left: (139.209 / $logoNativeHeight * 100%);
+		}
   }
 
   .island-4 {
     width: (44.023 / $logoNativeWidth * 100%);
     top: (144.686 / $logoNativeHeight * 100%);
     left: (167.784 / $logoNativeWidth * 100%);
+		@media (orientation: portrait) {
+			width: (44.023 / $logoNativeHeight * 100%);
+	    left: (167.784 / $logoNativeHeight * 100%);
+		}
   }
 
   .island-5 {
