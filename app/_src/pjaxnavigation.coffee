@@ -37,7 +37,6 @@ class FOURTEEN.PjaxNavigation
 
     if @currentPageId is @HOMEPAGE_ID
       @hijack.enable()
-      console.log('trigger visible')
       setTimeout(=>
         @$body.trigger(@constructor.EVENT_HERO_IS_VISIBLE)
       , 0)
