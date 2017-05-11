@@ -60,12 +60,8 @@ class FOURTEEN.HeroNoiseIsland
     @_rotation =+ (@env.rotation) * noiseRot;
     @_scale = 1 + (noiseRot * @env.scaleEffect) # simulates depth in parallax
 
-    depthX = 0
-    depthY = 0
-    if (mouseX > -1)
-      depthX = (@_worldPos.x - mouseX) * @_scale * @env.parallaxEffect
-    if (mouseY > -1)
-      depthY = (@_worldPos.y - mouseY) * @_scale * @env.parallaxEffect
+    depthX = (@_worldPos.x - mouseX) * @_scale * @env.parallaxEffect
+    depthY = (@_worldPos.y - mouseY) * @_scale * @env.parallaxEffect
 
     @_worldPos.x = @_localPos.x + (noiseX * @getSpreadX()) + depthX
     @_worldPos.y = @_localPos.y + (noiseY * @getSpreadY()) + depthY
