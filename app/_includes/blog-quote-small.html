@@ -1,0 +1,8 @@
+<blockquote class="post__quote">
+	<p class="post__quote-text--small">"{{include.quote}}”</p>
+	{% if include.author-link %}
+	<a href="{{include.author-link}}" class="post__quote-author" target="_blank">{{include.author-name}}</a>
+	{% else %}
+	<span class="post__quote-author">{{include.author-name}}</span>
+	{% endif %}
+</blockquote>

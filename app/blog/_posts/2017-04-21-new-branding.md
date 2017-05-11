@@ -9,9 +9,9 @@ og_image: /images/blog/2017-04-21-new-branding/hero-image_16_10.jpg
 
 {% include post-image.html alt="New branding in action" src="/images/blog/2017-04-21-new-branding/hero-image_16_10.jpg" margin="both" ratio="16_10" %}
 
-We like to present to you our new branding, and the idea behind it.
-
 A new identity had to reflect who we are as a creative development studio; How we love to play with technologies and build delightful experiences. That we care about our craft and are ready to push things forward.
+
+We like to present to you our new branding, and the idea behind it.
 
 ## A solid ground
 
