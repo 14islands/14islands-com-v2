@@ -1,13 +1,23 @@
 class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 
+	explodedSpreadX = () =>
+		return window.innerWidth * 0.3
+	explodedSpreadY = () =>
+		return window.innerHeight * 0.6
+	explodedSpeed = 0.04
+	explodedRotation = Math.PI*5
+	explodedParallax = 0.2
+	explodedScale = 1
+
 	env = {
-		spreadX:  window.innerWidth * 0.5
-		spreadY: window.innerHeight * 0.66
-		speed: 0.02
-		rotation: Math.PI*5
+		spreadX: explodedSpreadX()
+		spreadY: explodedSpreadY()
+		speed: explodedSpeed
+		rotation: explodedRotation
 		scaleEffect: 0 # start with no scale to avoid blur
-		parallaxEffect: 0.2
+		parallaxEffect: explodedParallax
 	}
+
 
 	mouseCurrent = {mouseX: window.innerWidth/2, mouseY: window.innerHeight/2}
 	mouseTarget = {mouseX: -1, mouseY: -1}
@@ -40,12 +50,12 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 		@animateOut(=>
 			@isAnimating = false
 			# set back to initial env (copy somehow?)
-			env.spreadX = window.innerWidth * 0.5
-			env.spreadY = window.innerHeight * 0.66
-			env.speed = 0.02
-			env.rotation = Math.PI*5
+			env.spreadX = explodedSpreadX()
+			env.spreadY = explodedSpreadY()
+			env.speed = explodedSpeed
+			env.rotation = explodedRotation
 			env.scaleEffect = 0
-			env.parallaxEffect = 0.2
+			env.parallaxEffect = explodedParallax
 		)
 
 	resumeAnimation: =>
@@ -91,7 +101,7 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 	animateIn: (complete) =>
 		# add scale effect with delay so they render at full size to avoid blur
 		TweenMax.to(env, 1.0, {
-			scaleEffect: 1,
+			scaleEffect: explodedScale,
 			ease: Power2.easeInOut,
 			delay: 0.15,
 			onComplete: complete
@@ -137,12 +147,12 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 		@timeline = new TimelineMax({paused: false, delay: 2})
 
 		@timeline.fromTo(env, 2, {
-			spreadX:  window.innerWidth * 0.5
-			spreadY: window.innerHeight * 0.66
-			speed: 0.02
-			rotation: Math.PI*5
-			scaleEffect: 1
-			parallaxEffect: 0.2
+			spreadX: explodedSpreadX()
+			spreadY: explodedSpreadY()
+			speed: explodedSpeed
+			rotation: explodedRotation
+			scaleEffect: explodedScale
+			parallaxEffect: explodedParallax
 		},{
 			spreadX: @logoEl.clientWidth * 0.7 * 0.01
 			spreadY: @logoEl.clientWidth * 0.7 * 0.01
