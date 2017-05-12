@@ -4,7 +4,7 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 		return window.innerWidth * 0.3
 	explodedSpreadY = () =>
 		return window.innerHeight * 0.6
-	explodedSpeed = 0.04
+	explodedSpeed = 0.03
 	explodedRotation = Math.PI*5
 	explodedParallax = 0.2
 	explodedScale = 1
