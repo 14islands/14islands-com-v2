@@ -45,6 +45,27 @@ $logoRatio: $logoNativeHeight / $logoNativeWidth;
 
   // transition between frames to reach 60fps
   // transition: transform (1000/60*3) * 1ms linear;
+  .animate-out & {
+    svg {
+      transition: transform 1s $easeInOutExpo, opacity 1s $easeInOutExpo;
+      transform: rotate(1080deg);
+      opacity: 0;
+    }
+    &:nth-child(1) {svg{transition-delay: 50ms*0}}
+    &:nth-child(2) {svg{transition-delay: 50ms*1}}
+    &:nth-child(3) {svg{transition-delay: 50ms*2}}
+    &:nth-child(4) {svg{transition-delay: 50ms*3}}
+    &:nth-child(5) {svg{transition-delay: 50ms*4}}
+    &:nth-child(6) {svg{transition-delay: 50ms*5}}
+    &:nth-child(7) {svg{transition-delay: 50ms*6}}
+    &:nth-child(8) {svg{transition-delay: 50ms*7}}
+    &:nth-child(9) {svg{transition-delay: 50ms*8}}
+    &:nth-child(10) {svg{transition-delay: 50ms*9}}
+    &:nth-child(11) {svg{transition-delay: 50ms*10}}
+    &:nth-child(12) {svg{transition-delay: 50ms*11}}
+    &:nth-child(13) {svg{transition-delay: 50ms*12}}
+    &:nth-child(14) {svg{transition-delay: 50ms*13}}
+  }
 
   top: 0;
   left: 0;
