@@ -13,15 +13,14 @@ FOURTEEN.listenForResponsive_ioImageLoad = ->
 
 
 # Logic to run after page has been loaded via PJAX
-FOURTEEN.onPjaxEnd = ->
+FOURTEEN.onTransitionEnd = ->
   # responsive images
   FOURTEEN.listenForResponsive_ioImageLoad()
   ResponsiveIO.refresh()
 
-  # components
-  FOURTEEN.componentLoader.scan document.body, true, {isPjax:true}
-
-
+FOURTEEN.onPjaxEnd = ->
+	# components
+	FOURTEEN.componentLoader.scan document.body, true, {isPjax:true}
 
 FOURTEEN.onWindowLoad = ->
   # prefetch main pages - must have same path + querystring as pjax request will have
@@ -45,10 +44,9 @@ pjaxNav = new FOURTEEN.PjaxNavigation('.js-hero-nav',
                             '.js-nav-link',
                             '.js-nav-home',
                             '.js-pjax-container',
-                            )
-                            # FOURTEEN.onPjaxEnd)
+                            FOURTEEN.onPjaxEnd)
 
-$('body').on(FOURTEEN.PjaxNavigation.EVENT_ANIMATION_SHOWN, FOURTEEN.onPjaxEnd)
+$('body').on(FOURTEEN.PjaxNavigation.EVENT_ANIMATION_SHOWN, FOURTEEN.onTransitionEnd)
 
 # component loader
 FOURTEEN.componentLoader.start()
