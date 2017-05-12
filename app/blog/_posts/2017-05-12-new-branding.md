@@ -27,17 +27,13 @@ The islands can be represented with abstract shapes.
 
 {% include post-image.html alt="Map of Stockholm with the 14 islands as abstract shapes" caption="true" src="/images/blog/2017-04-21-new-branding/stockholm-map-with-shapes_16_7.jpg" margin="both" ratio="16_7" %}
 
-The shapes.
-
 {% include post-image.html alt="The fourteen islands as shapes" caption="true" src="/images/blog/2017-04-21-new-branding/shapes_16_9.jpg" margin="both" ratio="16_9" %}
 
 Putting those fourteen shapes together on a grid and our name is able to form.
 
 {% include post-image.html alt="Our logo being crafted by hand using a grid" caption="true" src="/images/blog/2017-04-21-new-branding/crafting-logo_16_9.jpg" margin="both" ratio="16_9" %}
 
-## Our new logo
-
-Say hello to our new logo.
+## Say hello to our new logo.
 
 {% include post-image.html alt="Our new logo, created with the fourteen islands" caption="true" src="/images/blog/2017-04-21-new-branding/new-logo_16_9.jpg" margin="both" ratio="16_9" %}
 
