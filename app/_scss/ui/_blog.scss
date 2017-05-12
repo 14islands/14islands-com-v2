@@ -3,8 +3,9 @@
 		//add a slight negative margin when paragraph max width is reached
 		$marignRatio: strip-units(1 + (0.01 * $default-content-spacing*2));
 	 	@include if-wider-than($grid-max-width-px * $marignRatio) {
-			margin-left: - 1rem;
-			max-width: $grid-paragraph-max-width + 2rem;
+			margin-left: - 2rem;
+			margin-right: - 2rem;
+			max-width: $grid-paragraph-max-width + 4rem;
 		}
 	}
 }
@@ -12,7 +13,7 @@
 
 .post__date {
   display: inline-block;
-  font-size: modular-scale(1rem, 1);
+  font-size: 0.9rem;
   color: $gray;
 
   + h1 {
@@ -39,6 +40,7 @@
 }
 
 .post-row__date {
+	font-size: 0.8rem;
 	font-weight: 400;
 	text-transform: uppercase;
 	color: #888;
@@ -53,13 +55,11 @@
 .post-row__title {
 	margin-top: 0;
 	margin-bottom: 0;
-
-
 }
 
 .post-row__info {
 	@include if-wider-than($breakpoint-two-px) {
-		margin-left: 25%;
+		margin-left: 30%;
 	}
 }
 
@@ -76,6 +76,17 @@
 	}
 	@media (min-width: $breakpoint-three-px) {
 	  font-size: modular-scale(1rem, 3);
+	}
+}
+
+.post__quote-text--small {
+  font-size: modular-scale(0.7rem, 2);
+  margin: 0 0 0.5rem;
+  @media (min-width: $breakpoint-two-px) {
+	  font-size: modular-scale(0.7rem, 2);
+	}
+	@media (min-width: $breakpoint-three-px) {
+	  font-size: modular-scale(0.7rem, 3);
 	}
 }
 
@@ -122,6 +133,7 @@
 /////////////////////////////////////////
 .related-posts__label {
   margin-top: 0;
+	font-size: 1rem;
 }
 .related-posts__title {
   margin-top: 0;
@@ -135,7 +147,7 @@
 
 }
 .post-comments__cta {
-	color: $gray;
+	color: $offblack;
 	padding: 1em;
 	text-align: center;
 }

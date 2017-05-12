@@ -21,7 +21,7 @@
 
 .client-list__item {
   display: inline-block;
-  padding-bottom: $default-content-spacing;
+  padding-bottom: 3vw; // $default-content-spacing fix for edge;
 
   // 2 cols
   // width: 40%;

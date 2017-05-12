@@ -7,9 +7,32 @@ $breakpoint-show-icons-px: 1000px;
 $buttonTransition: all 200ms ease-out;
 $iconTransition: transform 200ms ease-out;
 
+/*
+	Copy
+*/
+
+.newsletter__copy-with-notifications {
+	display: none;
+	.has-notification-support & {
+		display: block;
+	}
+}
+
+.newsletter__copy-without-notifications {
+	display: block;
+	.has-notification-support & {
+		display: none;
+	}
+}
+
+/*
+	Wrapper
+*/
+
 .newsletter__wrapper {
 	position: relative;
 	height: 80px;
+	margin-top: 3rem;
 }
 
 /*
@@ -42,7 +65,7 @@ $iconTransition: transform 200ms ease-out;
 	margin: 0;
 	max-width: none;
 	cursor: pointer;
-	border: solid 1px $brand-color;
+	border: solid 1px $vulcano;
 	transition: $buttonTransition !important;
 	@include if-narrower-than($breakpoint-two-px) {
 		padding: 18px 15px;
@@ -117,7 +140,7 @@ $iconTransition: transform 200ms ease-out;
   width: 22px;
   height: 24px;
   transition: $iconTransition;
-  transform: translateX(84px) rotate(10deg);
+  transform: translateX(47px) rotate(10deg);
   transform-origin: center center;
 
   .newsletter__notify-icon-line--off {
@@ -125,7 +148,7 @@ $iconTransition: transform 200ms ease-out;
   }
 
   .is-subscribed-to-push & {
-    transform: translateX(82px) rotate(0deg);
+    transform: translateX(44px) rotate(0deg);
     path {
       fill: #949494;
     }
@@ -145,9 +168,9 @@ $iconTransition: transform 200ms ease-out;
 	width: 24px;
 	height: 24px;
 	transition: $iconTransition;
-	transform: translateX(22px);
+	transform: translateX(11px);
 	.show-notifications & {
-		transform: translateX(90px);
+		transform: translateX(77px);
 	}
 }
 

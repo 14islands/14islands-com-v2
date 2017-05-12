@@ -2,20 +2,25 @@
 // Logo variations
 //
 
-$logo-rect-height-px: 65px;
-$logo-rect-width-px: 190px;
+$logo-rect-height-px: 126px;
+$logo-rect-width-px: 737px;
 
 .logo-rect {
 	display: block;
-	height: $logo-rect-height-px/1.5;;
-	width: $logo-rect-width-px/1.5;
+	height: $logo-rect-height-px / 3;
+	width: $logo-rect-width-px / 3;
 	margin-top: 1rem;
 
 	@include if-wider-than($breakpoint-two-px) {
     // h1 size
-    font-size: modular-scale(1rem, 5);
-    width: $logo-rect-width-px;
-    height: $logo-rect-height-px;
+    width: $logo-rect-width-px / 1.5;
+    height: $logo-rect-height-px / 1.5;
+  }
+
+	@include if-wider-than($breakpoint-three-px) {
+    // h1 size
+    width: $logo-rect-width-px / 1.2;
+    height: $logo-rect-height-px /1.2;
   }
 }
 
@@ -26,29 +31,24 @@ $logo-rect-width-px: 190px;
     cursor: pointer;
   }
 
-	.polygon {
+	.logo-item {
 		transition-property: fill;
 		transition-duration: 0.8s;
-		transition-delay: 1s;
+		transition-delay: 500ms;
 		transition-timing-function: $easeOutQuad;
 	}
 
-	.polygon-down--light {
-		fill: $brand-color;
+	.logo-item--beach {
+		fill: $beach;
 	}
 
-	.polygon-down--dark {
-		fill: $brand-color-dark;
+	.logo-item--tropical {
+		fill: $tropical;
 	}
 
-	.polygon-up--light {
-		fill: $brand-color;
+	.logo-item--vulcano {
+		fill: $vulcano;
 	}
-
-	.polygon-up--dark {
-		fill: $brand-color-dark;
-	}
-
 }
 
 .page-home {
@@ -57,21 +57,15 @@ $logo-rect-width-px: 190px;
     cursor: default;
   }
 
-
-	.hero__nav .polygon-down--light {
+	.hero__nav .logo-item--beach {
 		fill: $gray;
 	}
 
-	.hero__nav .polygon-down--dark {
-		fill: $gray-dark;
-	}
-
-	.hero__nav .polygon-up--light {
+	.hero__nav .logo-item--tropical {
 		fill: $gray;
 	}
 
-	.hero__nav .polygon-up--dark {
-		fill: $gray-dark;
+	.hero__nav .logo-item--vulcano {
+		fill: $gray;
 	}
-
 }

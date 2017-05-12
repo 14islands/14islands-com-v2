@@ -5,6 +5,8 @@ window.FOURTEEN ?= {}
 class FOURTEEN.PjaxNavigation
 
   @EVENT_ANIMATION_SHOWN: 'pjax-animation:shown'
+  @EVENT_HERO_IS_HIDING: 'pjax-animation:hero-is-hiding'
+  @EVENT_HERO_IS_VISIBLE: 'pjax-animation:hero-is-visible'
 
   # body pageId of home page
   HOMEPAGE_ID: 'home'
@@ -22,10 +24,23 @@ class FOURTEEN.PjaxNavigation
     @$body = $('body')
     @spinner = new FOURTEEN.Spinner @$body
     @spinnerTimer = null
+
+    @hijack = new FOURTEEN.ScrollHijack()
+    @hijack.onScroll = @onScroll
+    @hijack.preventDefault = true
+    @canSrollToWork = true
     @init()
+
 
   init: ->
     @currentPageId = @$body.attr('class').match(/page-(\S*)/)[1]
+
+    if @currentPageId is @HOMEPAGE_ID
+      @hijack.enable()
+      setTimeout(=>
+        @$body.trigger(@constructor.EVENT_HERO_IS_VISIBLE)
+      , 0)
+
 
     # enable PJAX
     $.pjax.defaults?.timeout = 10000 # we show a spinner so set this to 10s to prevent a full page reload
@@ -43,6 +58,13 @@ class FOURTEEN.PjaxNavigation
     @$content.on('pjax:start', @onPjaxStart)
     @$content.on('pjax:popstate', @onPopState)
     @$content.on('pjax:end', @onPjaxEnd)
+
+
+  onScroll: (delta) =>
+    if (@canSrollToWork and delta < 0)
+      @canSrollToWork = false
+      $('.js-nav-link-work').click()
+
 
 
   # slides in hero and slides out content
@@ -114,7 +136,11 @@ class FOURTEEN.PjaxNavigation
 
     # hide hero if we were standing on the home page before navigating
     if @currentPageId is @HOMEPAGE_ID
-      @hideHero()
+      #wait 300ms to allow browser to load and paint
+      @$body.trigger(@constructor.EVENT_HERO_IS_HIDING)
+      setTimeout( =>
+        @hideHero()
+      , 800)
 
     # hide content fast when navigating between all other pages
     unless @getPageIdFromUrl(options.url) is @HOMEPAGE_ID
@@ -177,6 +203,7 @@ class FOURTEEN.PjaxNavigation
       clearProps: 'all'
       onComplete: =>
         @$hero.addClass('hero--hidden')
+        @hijack.disable()
     })
 
 
@@ -195,9 +222,12 @@ class FOURTEEN.PjaxNavigation
       y: 0
       delay: 0.2
       ease: Circ.easeInOut
-      clearProps: 'all'
+      clearProps: 'all',
+      onComplete: =>
+        @$body.trigger(@constructor.EVENT_HERO_IS_VISIBLE)
+        @hijack.enable()
+        @canSrollToWork = true
     })
-
 
   hideContent: =>
     TweenLite.set(@$content[0], {
@@ -206,22 +236,36 @@ class FOURTEEN.PjaxNavigation
 
 
   slideOutContent: (callback) =>
-    TweenLite.fromTo(@$content[0], 0.8, {
+    # TweenLite.fromTo(@$content[0], 0.8, {
+    #   y: 0
+    #   display: 'block'
+    # },
+    # {
+    #   y: @yTo
+    #   ease: Circ.easeInOut
+    #   display: 'none',
+    #   clearProps: 'all'
+    #   onComplete: callback
+    # })
+    TweenLite.fromTo(@$content[0], 0.6, {
       y: 0
+      opacity: 1
       display: 'block'
     },
     {
       y: @yTo
+      opacity: 0
       ease: Circ.easeInOut
       display: 'none',
-      clearProps: 'all'
       onComplete: callback
     })
+
 
 
   # long transition from hero
   slideInContent: (isPoppingHistory) =>
     TweenLite.set(@$content[0], {
+      clearProps: 'all',
       display: 'block'
       visibility: 'hidden'
     })
@@ -230,18 +274,18 @@ class FOURTEEN.PjaxNavigation
     # UNLESS user is navigating back/forward - then we have to move everything because of scroll history
     $el = if isPoppingHistory then @$content else @$content.find('.pjax-animate')
 
-    TweenLite.fromTo($el, 0.8, {
-      y: @yTo
+    TweenLite.fromTo($el, 0.6, {
+      # y: 100
+      y: @yTo/4
+      opacity: 0
+      visibility: 'visible'
     },
     {
       y: 0
-      ease: Circ.easeInOut
-      delay: 0.1
+      opacity: 1
+      ease: Expo.easeOut
+      delay: 1.1 #0.8 #0.6 #0.1
       clearProps: 'all'
-      onStart: =>
-        TweenLite.set(@$content[0], {
-          visibility: 'visible'
-        })
       onComplete: (param) =>
         @$body.trigger @constructor.EVENT_ANIMATION_SHOWN
     })
@@ -249,7 +293,6 @@ class FOURTEEN.PjaxNavigation
 
   # fast content transition between normal pages
   showContent: (isPoppingHistory) =>
-
     # only animate if user is navigating using links and we know scroll is at top of new page
     if isPoppingHistory
       TweenLite.set(@$content[0], {
@@ -258,25 +301,33 @@ class FOURTEEN.PjaxNavigation
       @$body.trigger @constructor.EVENT_ANIMATION_SHOWN
 
     else
-      TweenLite.set(@$content[0], {
+      # TweenLite.set(@$content[0], {
+      #   display: 'block'
+      #   visibility: 'hidden'
+      # })
+
+      TweenLite.fromTo(@$content[0], .3, {
+        opacity: 0
         display: 'block'
-        visibility: 'hidden'
+      }, {
+        opacity: 1
+        display: 'block'
+        ease: Power2.easeOut
+        onComplete: => @$body.trigger @constructor.EVENT_ANIMATION_SHOWN
       })
-
+      #     @$body.trigger @constructor.EVENT_ANIMATION_SHOWN
       # slide
-      TweenLite.fromTo(@$content.find('.pjax-animate'), 0.5, {
-        y: @yTo/4
-      },
-      {
-        y: 0,
-        ease: Circ.easeOut
-        clearProps: 'all'
-        onStart: =>
-          TweenLite.set(@$content[0], {
-            visibility: 'visible'
-          })
-        onComplete: (param) =>
-          @$body.trigger @constructor.EVENT_ANIMATION_SHOWN
-      })
-
-
+      # TweenLite.fromTo(@$content.find('.pjax-animate'), 0.5, {
+      #   y: @yTo/4
+      # },
+      # {
+      #   y: 0,
+      #   ease: Circ.easeOut
+      #   clearProps: 'all'
+      #   onStart: =>
+      #     TweenLite.set(@$content[0], {
+      #       visibility: 'visible'
+      #     })
+      #   onComplete: (param) =>
+      #     @$body.trigger @constructor.EVENT_ANIMATION_SHOWN
+      # })

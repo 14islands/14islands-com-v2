@@ -7,10 +7,10 @@ name: 14islands.com
 # this is necessary for jekyll + gh-pages
 # see here: http://jekyllrb.com/docs/github-pages/
 baseurl:
-description: 14islands is a web development studio that cares deeply about creating great user experiences.
+description: We build experiences that people love.
 keywords: "Web Development, Web Design, UX, Web Developers, Digital, Studio, Agency, Stockholm, Consulting, Training, HTML, CSS, JavaScript, WordPress"
 og_type: website
-og_image: "/images/home-page-screenshot.png"
+og_image: "/images/about/new/we-love-2.jpg"
 encoding: utf-8
 locale: en_US
 author:

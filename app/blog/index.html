@@ -4,7 +4,7 @@ id: blog
 title: Blog - 14islands
 ---
 
-<section class="grid u-pad-top">
+<section class="grid u-pad-both">
 
 	<header class="grid__row pjax-animate u-margin-bottom-half">
 		<h1>Bloggin'</h1>
@@ -14,7 +14,7 @@ title: Blog - 14islands
   {% unless post.private and site.hide_private %}
     <article class="grid__row post-row pjax-animate">
     	<header class="post-row__header">
-    		<datetime class="post-row__date">{{ post.date | date: "%-d %B %Y" }}</datetime>
+    		<datetime class="post-row__date typography__mono">{{ post.date | date: "%-d %B %Y" }}</datetime>
     		<h2 class="post-row__title post-row__info">
     			<a class="post-row__link" href="{{ post.url }}">
 	      		{{ post.title }}

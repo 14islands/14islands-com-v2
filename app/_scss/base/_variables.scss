@@ -1,35 +1,26 @@
 //
-// colors
+// colols
 //
-$vinter: #01a084;
-$vinter-dark: #006457;
 
-$var: #b7d02e;
-$var-dark: #83aa08;
+$offblack: #333132;
+$offwhite: #f1efed;
+$white: #ffffff;
 
-$sommar: #eccd00;
-$sommar-dark: #daa500;
+$vulcano: #f47643;
+$vulcanoBright: #fdd2ba;
+$beach: #e5c83d;
+$beachBright: #f5eac3;
+$tropical: #73c9bd;
 
-$host: #f8b334;
-$host-dark: #f17e0b;
+$brand-color: $beachBright;
+$brand-color-dark: $vulcano;
+$brand-link-color: $vulcano;
 
+$bright: #f1efed;
 $gray: #999;
 $gray-dark: #444;
 
-$mono: #424242;
-$mono-dark: #2d2d2d;
-
-$natt: #535b82;
-$natt-dark: #3e404d;
-
-
-$brand-color: $vinter;
-$brand-color-dark: $vinter-dark;
-$brand-link-color: $vinter;
-
-$bright: #f7f7f7;
 $default-font-color: $gray-dark;
-
 
 //
 // LAYOUT GRID SETUP

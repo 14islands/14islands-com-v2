@@ -14,7 +14,7 @@ body {
 }
 
 
-.browsehappy{
+.browsehappy {
 	position: absolute;
 	z-index: 999999;
 	top:0;
@@ -22,7 +22,7 @@ body {
 	right: 0;
 	bottom: 0;
 	padding: 5%;
-	background: $host;
+	background: $beach;
 
 	span {
 		text-align: center;
@@ -71,20 +71,20 @@ body {
 	display: block;
 	position: relative;
 	margin: 0 auto;
-	max-width: $grid-max-width-px;
+	max-width: $grid-paragraph-max-width;
 
 	// no content padding on mobile
 	width: 100%;
-	@include if-wider-than($breakpoint-one-px) {
+	/*@include if-wider-than($breakpoint-one-px) {
 		// add content padding on wider screen
 		width: 100% - $default-content-spacing * 2;
-	}
+	}*/
 
 	p ,
 	ul,
 	ol {
 		width: auto;
-		max-width: $grid-paragraph-max-width;
+		// max-width: $grid-paragraph-max-width;
 	}
 	figure {
 		width: auto;
@@ -231,4 +231,3 @@ svg {
 .pjax-animate {
 	will-change: transform;
 }
-
