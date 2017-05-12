@@ -46,7 +46,7 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 
 
 	pauseAnimation: =>
-		@timeline.pause()
+		@timeline?.pause()
 		@animateOut(=>
 			@isAnimating = false
 			# set back to initial env (copy somehow?)
@@ -111,28 +111,35 @@ class FOURTEEN.HeroNoise extends FOURTEEN.BaseComponent
 		TweenMax.staggerTo(@paths, .8, {
 			opacity: 1,
 			ease: Power2.easeInOut,
-			# onComplete: complete
 		}, staggerDelay)
 
 	animateOut: (complete) =>
 		# spin out
-		numVisible = @$logoEl.children(':visible').length
-		staggerDelay = 0.7 / numVisible
-		TweenMax.staggerTo(@paths, 0.2, {
-			opacity: 0,
-			delay: 0.2
-			ease: Power4.easeInOut
-		}, staggerDelay)
-		TweenMax.killTweensOf(env)
-		TweenMax.to(env, 1.2, {
-		  speed: 0.2
-			spreadX: 0
-			spreadY: 0
-			rotation: Math.PI*30
-			scaleEffect: 0
-			ease: Expo.easeInOut
-			onComplete: complete
-		})
+		# numVisible = @$logoEl.children(':visible').length
+		# staggerDelay = 0.7 / numVisible
+		# TweenMax.staggerTo(@paths, 0.2, {
+		# 	opacity: 0,
+		# 	delay: 0.2
+		# 	ease: Power4.easeInOut
+		# }, staggerDelay)
+		# TweenMax.killTweensOf(env)
+		# TweenMax.to(env, 1.2, {
+		#   speed: 0.2
+		# 	spreadX: 0
+		# 	spreadY: 0
+		# 	rotation: Math.PI*30
+		# 	scaleEffect: 0
+		# 	ease: Expo.easeInOut
+		# 	onComplete: complete
+		# })
+
+		# USE CSS FOR BETTER PERFORMANCE WHILE LOADING NEXT PAGE
+		@$logoEl.addClass('animate-out')
+		TweenMax.delayedCall(1.5, () =>
+			@$logoEl.removeClass('animate-out')
+			TweenMax.set(@paths, {opacity:0})
+			complete?()
+		)
 
 	addLogoClickListener: =>
 		@removeLogoClickListener()
