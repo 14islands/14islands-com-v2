@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Making engaging VR experinences on the web"
+title:  "Making engaging VR experiences on the web"
 description: The CSS Grid layout has everything it needs to be considered the most powerful layout system in CSS.
 og_image: /images/blog/2017-05-17-interactive-webvr/moose-experiment.jpg
 ---
 
-# Making engaging VR experinences on the web
+# Making engaging VR experiences on the web
 
 WebVR is a JavaScript API for creating Virtual Reality experiences in the browser. It is the easiest entry point to dive into VR. It’s open for anyone, mobile, cross-platform and it’s just a click away, without the need to download anything.
 
@@ -24,7 +24,7 @@ We believe VR is here to stay so we built a [starter kit](https://github.com/14i
 
 To display 3D graphics in the browser we use [THREE.js](https://threejs.org/), a JavaScript library built on top of WebGL.
 
-_Note: The current version of Chrome supports Google Cardboard and Daydream and works best on Android devices. Other browsers and iOS don’t fully support WebVR yet. You still need an experimental desktop version of Chrome in order to access the experience in HTC Vive._
+_Note: The current version of Chrome supports Google Cardboard and Daydream and works best on Android devices. Other browsers and iOS don’t fully support WebVR yet. You still need an [experimental desktop version of Chrome](https://webvr.rocks/chromium) in order to access the experience in HTC Vive._
 
 
 ## Exporting 3D models with Blender
