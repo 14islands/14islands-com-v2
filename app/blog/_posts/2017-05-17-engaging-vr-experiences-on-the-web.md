@@ -11,10 +11,10 @@ WebVR is a JavaScript API for creating Virtual Reality experiences in the browse
 
 Inspired by our most recent project which involved lots of 3D, we turned our explorations into a fun project and created two new WebVR experiments. You can try them out on HTC Vive and Google Cardboard or simply view them in 2D if you don't have access to a VR headset. 
 
-[And a dreamy hot air balloon ride](https://14islands.github.io/webvr-balloon-ride/)
+[A dreamy hot air balloon ride](https://14islands.github.io/webvr-balloon-ride/)
 {% include post-image.html alt="Hot air balloon Experiment" src="/images/blog/2017-05-17-interactive-webvr/balloon-experiment.jpg" margin="both" ratio="16_9" link="https://14islands.github.io/webvr-balloon-ride/" %}
 
-[A frosty forest encounter with a moose](https://14islands.github.io/webvr-moose-explorer/)
+[And a frosty forest encounter with a moose](https://14islands.github.io/webvr-moose-explorer/)
 {% include post-image.html alt="Moose Experiment" src="/images/blog/2017-05-17-interactive-webvr/moose-experiment.jpg" margin="both" ratio="16_9" link="https://14islands.github.io/webvr-moose-explorer/" %}
 
 
