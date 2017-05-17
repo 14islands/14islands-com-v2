@@ -1,22 +1,21 @@
 ---
 layout: post
-title:  "Room-scale interactive WebVR"
+title:  "Making an engaging VR experinence on the web"
 description: The CSS Grid layout has everything it needs to be considered the most powerful layout system in CSS.
-og_image: /images/blog/2017-05-10-interactive-webvr/moose-experiment.jpg
-private: true
+og_image: /images/blog/2017-05-17-interactive-webvr/moose-experiment.jpg
 ---
 
-# Room-scale interactive WebVR 
+# Making an engaging VR experinence on the web
 
-WebVR is a JavaScript API for creating Virtual Reality experiences in the browser. It is the easiest entry point to dive into VR. It’s free, mobile, cross-platform and it’s just a click away, without the need to download anything.
+WebVR is a JavaScript API for creating Virtual Reality experiences in the browser. It is the easiest entry point to dive into VR. It’s open for anyone, mobile, cross-platform and it’s just a click away, without the need to download anything.
 
-Inspired by our most recent project which involved lots of 3D, we turned our explorations into a fun project and created two new WebVR experiments. You can try them out on HTC Vive and Google Cardboard or simply view them in the browser if you don't have access to a VR headset. 
+Inspired by our most recent project which involved lots of 3D, we turned our explorations into a fun project and created two new WebVR experiments. You can try them out on HTC Vive and Google Cardboard or simply view them in 2D if you don't have access to a VR headset. 
 
 [And a dreamy hot air balloon ride](https://14islands.github.io/webvr-balloon-ride/)
-{% include post-image.html alt="Hot air balloon Experiment" src="/images/blog/2017-05-10-interactive-webvr/balloon-experiment.jpg" margin="both" ratio="16_9" link="https://14islands.github.io/webvr-balloon-ride/" %}
+{% include post-image.html alt="Hot air balloon Experiment" src="/images/blog/2017-05-17-interactive-webvr/balloon-experiment.jpg" margin="both" ratio="16_9" link="https://14islands.github.io/webvr-balloon-ride/" %}
 
 [A frosty forest encounter with a moose](https://14islands.github.io/webvr-moose-explorer/)
-{% include post-image.html alt="Moose Experiment" src="/images/blog/2017-05-10-interactive-webvr/moose-experiment.jpg" margin="both" ratio="16_9" link="https://14islands.github.io/webvr-moose-explorer/" %}
+{% include post-image.html alt="Moose Experiment" src="/images/blog/2017-05-17-interactive-webvr/moose-experiment.jpg" margin="both" ratio="16_9" link="https://14islands.github.io/webvr-moose-explorer/" %}
 
 
 ## Project setup
@@ -32,7 +31,7 @@ _Note: The current version of Chrome supports Google Cardboard and Daydream and 
 
 We found [Sketchfab](https://sketchfab.com/) to be a great platform with lots of amazing, downloadable 3D models and used this [sky island](https://sketchfab.com/models/ab92d9b324724e18968377264d05774d) by [Leonid Tsvetkov](https://www.artstation.com/artist/ntrtd) as a base for the Balloon Experience.
 
-{% include post-image.html alt="Exporting models from Blender" src="/images/blog/2017-05-10-interactive-webvr/blender.jpg" margin="both" ratio="16_9" %}
+{% include post-image.html alt="Exporting models from Blender" src="/images/blog/2017-05-17-interactive-webvr/blender.jpg" margin="both" ratio="16_9" %}
 
 The models are imported into the scenes with [Blender](https://www.blender.org/), an open source software for 3D modeling. With the [Blender to THREE.js exporter](https://github.com/mrdoob/three.js/tree/master/utils/exporters/blender), you can export meshes and scenes as JSON files.
 
@@ -56,10 +55,10 @@ The triangles which float around the sky island
 To make both experiments more playable we incorporated subtle user interactions. 
 
 In the balloon ride, a user can click the rope hanging inside to make it fly higher up. The [THREE.js RayCaster](https://threejs.org/docs/#api/core/Raycaster) class enables features like object picking or clicking. In a 3D scene it’s hard to know where the user is clicking. You have to imagine a line from the camera through the mouse/controller and find which objects are colliding with that line. The ones intersecting with the ray caster, in our case the rope, will be highlighted red to tell the user that the object is interactive. When clicked, the fire expands and the balloon flies higher up.
-{% include post-image.html alt="Interacting with the balloon" src="/images/blog/2017-05-10-interactive-webvr/nat-balloon.gif" margin="both" ratio="16_9"%}
+{% include post-image.html alt="Interacting with the balloon" src="/images/blog/2017-05-17-interactive-webvr/nat-balloon.gif" margin="both" ratio="16_9"%}
 
 The moose experience uses custom hand models instead of HTC Vive controller models which makes the experience feel more immersive. The hands we used were created by the Mozilla VR team and come from the [Puzzle Rain](https://blog.mozvr.com/puzzle-rain/) experiment. 
-{% include post-image.html alt="Custom hands models" src="/images/blog/2017-05-10-interactive-webvr/david-hands.gif" margin="both" ratio="16_9"%}
+{% include post-image.html alt="Custom hands models" src="/images/blog/2017-05-17-interactive-webvr/david-hands.gif" margin="both" ratio="16_9"%}
 
 
 ## Exciting times ahead
@@ -72,7 +71,7 @@ There are however new cool tools on the block such as A-Frame, which uses a DOM 
 
 {% include blog-quote-small.html quote="Adding models should be as easy as adding images. A &lt;model&gt; element with glTF support would trigger an explosion of creative possibilities." author-name="Josh Carpenter, UX Lead for WebXR @ Google" author-link="https://twitter.com/joshcarpenter"%}
 
-{% include post-image.html alt="A slide from WebVR Workshop by Josh Carpenter" caption="true" src="/images/blog/2017-05-10-interactive-webvr/webvr-slide.gif" margin="both" ratio="16_9" link="https://docs.google.com/presentation/d/1CSgOsiyn2PeLGlJCnrmmTYv9FLE_dmCaVKp7fZ-SF2I/edit#slide=id.g186a1bfda4_0_58" %}
+{% include post-image.html alt="A slide from WebVR Workshop by Josh Carpenter" caption="true" src="/images/blog/2017-05-17-interactive-webvr/webvr-slide.gif" margin="both" ratio="16_9" link="https://docs.google.com/presentation/d/1CSgOsiyn2PeLGlJCnrmmTYv9FLE_dmCaVKp7fZ-SF2I/edit#slide=id.g186a1bfda4_0_58" %}
 
 
 ## Summing up 
