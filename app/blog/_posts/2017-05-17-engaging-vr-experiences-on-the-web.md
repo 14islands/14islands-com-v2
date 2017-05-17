@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Making engaging VR experiences on the web"
-description: The CSS Grid layout has everything it needs to be considered the most powerful layout system in CSS.
+description: WebVR is the easiest entry point to dive into VR. We created two new, interactive experiments to explore its potential.
 og_image: /images/blog/2017-05-17-interactive-webvr/moose-experiment.jpg
 ---
 
