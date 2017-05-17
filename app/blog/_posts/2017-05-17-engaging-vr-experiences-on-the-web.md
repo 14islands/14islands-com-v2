@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Making an engaging VR experinence on the web"
+title:  "Making engaging VR experinences on the web"
 description: The CSS Grid layout has everything it needs to be considered the most powerful layout system in CSS.
 og_image: /images/blog/2017-05-17-interactive-webvr/moose-experiment.jpg
 ---
 
-# Making an engaging VR experinence on the web
+# Making engaging VR experinences on the web
 
 WebVR is a JavaScript API for creating Virtual Reality experiences in the browser. It is the easiest entry point to dive into VR. It’s open for anyone, mobile, cross-platform and it’s just a click away, without the need to download anything.
 
