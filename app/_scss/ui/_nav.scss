@@ -67,6 +67,10 @@ $nav-item-padding: 0.5rem;
 	padding: $nav-item-padding;
 	box-sizing: content-box;
 
+	svg {
+		isolation: isolate;
+	}
+
 	svg path {
     mix-blend-mode: multiply;
   }
