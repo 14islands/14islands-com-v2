@@ -78,4 +78,8 @@ There are however new cool tools on the block such as A-Frame, which uses a DOM 
 
 THREE.js has once again turned out to be a great library for creating simple WebVR experiments. Even though it occasionally makes you struggle and reverse engineer one of its many examples to find the functionality you’re looking for. It’s without a doubt one of the best 3D libraries which allows you to explore all the wonders of WebGL. As we dive deeper into it we find it more and more fun to work with. 
 
+## Get the code
+
+[The Moose Explorer](https://github.com/14islands/webvr-moose-explorer) and the [Hot Air Balloon Ride](https://github.com/14islands/webvr-balloon-ride) are open-source GitHub. Check them out and tell us what you think!
+
 {% include blog-author-natalia.html %}
