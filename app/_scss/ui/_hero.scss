@@ -3,7 +3,7 @@
 //
 
 .hero {
-  background-color: $brand-color;
+  background-color: $offwhite;
 	color: #fff;
 	display: flex;
 	height: 100%;
@@ -15,6 +15,11 @@
   position: fixed;
   z-index: 99999;
   top: 0;
+  // reset on hero because fixed position lowers the framerate on the noise animation
+  .page-home & {
+    position: static;
+    z-index: initial;
+  }
 
   // reserve space in hero to always shows absolute nav when no flexgox
 	.no-flexbox & {
@@ -24,12 +29,14 @@
   will-change: transform;
 }
 
-.hero__content {
+.hero__content-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   flex-wrap: nowrap;
   overflow: hidden;
+  cursor: pointer; //click to explode logo
 }
 
 .hero--hidden {
@@ -41,62 +48,16 @@
   }
 }
 
-.hero__logo {
-  margin-top: 2rem;
 
-  .js-loading & {
-    will-change: transform;
-    transform: translate3d(0, -160%, 0);
-  }
-  .js-loaded & {
-    transition: transform 500ms $easeInQuint;
-    transform: none;
-  }
-}
-
-.hero__caption {
-	font-weight: 600;
-	font-size: modular-scale(1rem, 3);
-  line-height: 1.2;
-
-  margin-top: auto;
-	margin-bottom: auto;
-  .no-flexbox & {
-  	margin-top: 1em;
-  }
-
-  display: none;
-  @include if-taller-than(350px) {
-    display: block;
-  }
-
-  @media (min-height: 600px) and (min-width: 450px) {
-    font-size: modular-scale(1rem, 4);
-    line-height: 1;
-  }
-
-  @media (min-height: 700px) and (min-width: 700px) {
-    font-size: modular-scale(1rem, 5);
-    line-height: 1;
-  }
-
-  @media (min-height: 940px) and (min-width: 1600px) {
-		font-size: modular-scale(1.14rem, 5); // not following scale
-		line-height: 1;
-	}
-}
-
-.hero__text {
-  max-width: 860px;
-  display: inline-block;
-}
+////////////////////////////////////////////
+// NAV STYLES
+////////////////////////////////////////////
 
 .hero__nav {
   position: relative;
   z-index: 1000;
-	background-color: #fff;
-	height: pxToRem(80);
-	line-height: pxToRem(80);
+	background-color: $white;
+	// line-height: pxToRem(80);
 	font-size: modular-scale(1rem, 1);
   margin-top: 0;
   margin-bottom: 0;
@@ -109,8 +70,6 @@
   	right: 0;
   }
 }
-
-
 
 ////////////////////////////////////////////
 // NAV LOADING ANIMATION
@@ -129,6 +88,7 @@
     animation-duration: 500ms;
     animation-timing-function: $easeOutQuint;
     animation-fill-mode: backwards;
+    // animation-delay: 2000ms;
   }
   // keep loading animation-name on other pages,
   // otherwise animation will restart when going back to home page
@@ -172,6 +132,7 @@
 
   // only animate nagivation if hero is hidden
   &.hero--hidden {
+
     &.sticky-nav--hidden {
       .csstransforms & {
         animation: sticky-nav-hide 350ms $easeOutQuad 1 forwards;
@@ -191,56 +152,8 @@
   }
 }
 
-// In the wide grid we move the logo outside the inner grid
-.hero__nav__wide-logo {
-  position: absolute;
-  top: 0;
-  display: none;
-  @include if-wider-than($breakpoint-three-px) {
-    display: block;
-  }
-}
-
 .hero--hidden {
 	.hero__nav {
 		border-bottom: 1px solid #f5f5f5;
 	}
-}
-
-.hero__word {
-	display: inline-block;
-	position: relative;
-
-	// This will "block" the view for the word
-	// allowing the slide up effect to look nice
-	&:after {
-		background: $brand-color;
-		content: '';
-		display: block;
-		position: absolute;
-		top: 115%;
-		left: 0;
-		height: 110%;
-		width: 110%;
-	}
-}
-
-.hero__word__inner {
-	display: inline-block;
-  .js-loading & {
-    opacity: 0;
-    will-change: transform;
-  }
-  .js-loaded & {
-    opacity: 1;
-  	animation-duration: 500ms;
-  	animation-timing-function: $easeOutQuint;
-  	animation-fill-mode: backwards;
-  }
-  .js-loaded.csstransforms & {
-      animation-name: slide-up;
-  }
-  .js-loaded.csstransforms3d & {
-    animation-name: slide-up-3d;
-  }
 }

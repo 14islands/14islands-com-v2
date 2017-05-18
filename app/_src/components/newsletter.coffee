@@ -75,6 +75,7 @@ class FOURTEEN.Newsletter extends FOURTEEN.BaseComponent
 	showNotficationsIfSupport: () =>
 		OneSignal.push(() =>
 			@hasPushSupport = OneSignal.isPushNotificationsSupported();
+			@$context.toggleClass('has-notification-support', @hasPushSupport)
 			@showNotfications = @hasPushSupport
 			if @showNotfications
 				@$context.addClass('show-notifications')

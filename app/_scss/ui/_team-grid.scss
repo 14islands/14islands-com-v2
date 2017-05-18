@@ -84,6 +84,11 @@ $grid-block-size: 360px;
 			top: $grid-block-size * 2; // third row
 			left: $grid-block-size * 0; // first col
 		}
+
+		&:nth-of-type(4) {
+			top: $grid-block-size * 3; // fourth row
+			left: $grid-block-size * 1; // second col
+		}
 	}
 
 }
@@ -214,7 +219,7 @@ $grid-block-size: 360px;
 				}
 
 				.team-grid__text-points__item {
-					@for $i from 1 through 3 {
+					@for $i from 1 through 4 {
 						&:nth-of-type(#{$i}) {
 							transition-delay: $i * 100ms;
 						}

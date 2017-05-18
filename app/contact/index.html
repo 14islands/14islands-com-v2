@@ -5,31 +5,32 @@ title: Contact - 14islands
 og_image: /images/contact/office-map-fallback2.png
 ---
 
-<section id="contact" class="grid u-pad-top">
+<section id="contact" class="grid u-pad-both">
   <div class="grid__row pjax-animate">
-  	<h1>We'd love to hear<br> from you!</h1>
+  	<h1>Let's collaborate!</h1>
   	<p class="no-hyphens">Send us an email to <a href="mailto:hello@14islands.com">hello@14islands.com</a>.</p>
-  	<nav class="contact__social">
+		<p>Our office is at <a href="https://www.google.se/maps/place/14islands/@59.3173821,18.0558304,17z/data=!3m1!4b1!4m2!3m1!1s0x465f9e8a15555555:0xe1d19c2b5224dcb2?hl=en">Krukmakargatan 22, Stockholm, Sweden</a></p>
+		<nav class="contact__social">
   		<a class="contact__social-button" href="mailto:hello@14islands.com">
   			{% include svgs/social/social-email.min.svg %}
   		</a>
+			<a class="contact__social-button" target="_blank" href="http://instagram.com/14islands">
+				{% comment %}
+				Note: something funky with instagram on hover so don't use minified here.
+				{% endcomment %}
+				{% include svgs/social/social-instagram.svg %}
+			</a>
+			<a class="contact__social-button" target="_blank" href="https://twitter.com/14islands">
+				{% include svgs/social/social-twitter.min.svg %}
+			</a>
   		<a class="contact__social-button" target="_blank" href="https://www.facebook.com/14islands">
   			{% include svgs/social/social-facebook.min.svg %}
-  		</a>
-  		<a class="contact__social-button" target="_blank" href="https://twitter.com/14islands">
-  			{% include svgs/social/social-twitter.min.svg %}
-  		</a>
-  		<a class="contact__social-button" target="_blank" href="http://instagram.com/14islands">
-        {% comment %}
-          Note: something funky with instagram on hover so don't use minified here.
-        {% endcomment %}
-  			{% include svgs/social/social-instagram.svg %}
   		</a>
   	</nav>
   </div>
 </section>
 
-<!-- https://www.google.se/maps/@59.31731,18.055996,3a,75y,336.54h,107.47t/data=!3m4!1e1!3m2!1sXfGjednmzh0QRHmrlnOYLQ!2e0?hl=en -->
+<!-- https://www.google.se/maps/@59.31731,18.055996,3a,75y,336.54h,107.47t/data=!3m4!1e1!3m2!1sXfGjednmzh0QRHmrlnOYLQ!2e0?hl=en
 <section id="office" class="office u-pad-top">
 	<div class="office__street-view-wrapper u-ratio u-ratio--custom_40 pjax-animate">
 		<figure class="u-ratio__content js-component-office-street-view office__street-view" data-latitude="59.31731" data-longitude="18.055996" data-heading="336.54" data-pitch="30" data-zoom="0.9" data-is-touch-disabled="true" data-fallback="../images/contact/office-map-fallback2.png">
@@ -39,8 +40,8 @@ og_image: /images/contact/office-map-fallback2.png
     {% include svgs/shapes/contact-map-pointer.min.svg %}
     <div class="office__title-wrapper">
 			<h2 class="office__subtitle">Our Office.</h2>
-			<h4 class="office__title">Krukmakargatan 22<br>Stockholm, Sweden</h4>
+			<h4 class="office__title"></h4>
 			<a class="office__link" href="https://www.google.se/maps/place/14islands/@59.3173821,18.0558304,17z/data=!3m1!4b1!4m2!3m1!1s0x465f9e8a15555555:0xe1d19c2b5224dcb2?hl=en" target="_blank">View on a map</a>
     </div>
   </div>
-</section>
+</section> -->
