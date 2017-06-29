@@ -164,6 +164,11 @@ h2.box__content__headline--dark,
 		max-width: 350px;
 	}
 }
+.box__content__img--max-300 {
+	img {
+		max-width: 300px;
+	}
+}
 
 .box__shape {
 	fill: #666;
