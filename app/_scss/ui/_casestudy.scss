@@ -20,6 +20,7 @@ a.casestudy__header-label {
 		}
 	}
 
+	.google-interland &,
 	.google-santa-tracker &,
 	.plumewifi & {
 		margin-bottom: -0.99rem;
@@ -48,6 +49,11 @@ a.casestudy__header-label {
 
 }
 
+.work--project-stokke {
+	.box__content__logo {
+		width: 6%;
+	}
+}
 
 .casestudy__video-wrapper {
 	cursor: pointer !important;
