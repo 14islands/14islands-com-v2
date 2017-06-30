@@ -1,5 +1,24 @@
+
+@keyframes google-interland-box-image {
+  from {
+    transform: translate(0, -1%) rotate(-9deg)
+  }
+  to {
+    transform: translate(0, 1%) rotate(-7deg)
+  }
+}
+
+// work page box
 .work--project-google-interland {
   .box__content__img img {
-    transform: rotate(-10deg)
+    transform: rotate(-10deg);
+    animation: google-interland-box-image 3s ease-in-out infinite alternate;
   }
+}
+
+// Internaut component
+.google-interland__internaut {
+    border: 1px solid red
+
+
 }
