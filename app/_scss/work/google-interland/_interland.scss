@@ -1,18 +1,23 @@
 
 @keyframes google-interland-box-image {
   from {
-    transform: translate(0, -1%) rotate(-9deg)
+    transform: translate(0, -1%) rotate(-8deg)
   }
   to {
-    transform: translate(0, 1%) rotate(-7deg)
+    transform: translate(0, 1%) rotate(-9deg)
   }
 }
 
 // work page box
 .work--project-google-interland {
+  .box__content__headline {
+    @include if-wider-than(1100px) {
+  		max-width: 460px;
+  	}
+  }
   .box__content__img img {
     transform: rotate(-10deg);
-    animation: google-interland-box-image 3s ease-in-out infinite alternate;
+    animation: google-interland-box-image 1.5s ease-in-out infinite alternate;
   }
 }
 
