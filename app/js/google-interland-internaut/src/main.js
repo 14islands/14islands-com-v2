@@ -5,17 +5,9 @@ import mathutil from './mathutil'
 import * as ANIMATIONS from './animations'
 
 const loadAsset = (name, file) => {
-  return fetch(file)
-    .then(
-      function(response) {
-        return response.json().then(function(data) {
-          globalAssets.addJSON( {[name]:data} )
-        });
-      }
-    )
-    .catch(function(err) {
-      console.log('Fetch Error :-S', err);
-    });
+  return $.getJSON(file).then((data) => {
+    globalAssets.addJSON({[name]: data})
+  })
 }
 
 let width
@@ -30,7 +22,7 @@ let contextEl
 let isRendering = false
 
 const animations = [
-	ANIMATIONS.INTERNAUT_WIGGLE,
+  ANIMATIONS.INTERNAUT_WIGGLE,
   ANIMATIONS.INTERNAUT_SUPERHAPPYTRIGGER,
   ANIMATIONS.INTERNAUT_BOUNCEWALL,
   ANIMATIONS.INTERNAUT_REPORT,
@@ -41,27 +33,23 @@ function getRandomAnimation () {
   return animations[randomIndex]
 }
 
-
 const init = (el) => {
   contextEl = el
 
   // create scene
   scene = new THREE.Scene()
-	camera = new THREE.PerspectiveCamera( 45, width / height, 0.1, 1000 );
-	renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
-	renderer.setSize( width, height );
+  camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000)
+  renderer = new THREE.WebGLRenderer({antialias: true, alpha: true})
+  renderer.setSize(width, height)
   renderer.gammaInput = false
   renderer.gammaOutput = false
-  renderer.physicallyBasedShading = false
-  renderer.shadowMap.enabled = true
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap
   renderer.setPixelRatio(window.devicePixelRatio)
 
   // add rendered canvas
   contextEl.appendChild(renderer.domElement)
 
-  camera.position.z = 25;
-  camera.position.y = 17;
+  camera.position.z = 25
+  camera.position.y = 17
   camera.lookAt(new THREE.Vector3(0, 8, 0))
 
   // add internaut
@@ -129,27 +117,7 @@ function initLights () {
   const _dirLight = new THREE.DirectionalLight(dirColor, settings.dirLightIntensity)
   _dirLight.position.set(6, 7, 4)
   _dirLight.position.normalize()
-
-  if (false) {
-    _dirLight.castShadow = true
-    _dirLight.shadow.camera.left = -SCENE_SIZE_PX * 0.75
-    _dirLight.shadow.camera.right = SCENE_SIZE_PX * 0.7
-    _dirLight.shadow.camera.top = SCENE_SIZE_PX * 0.5
-    _dirLight.shadow.camera.bottom = -SCENE_SIZE_PX * 0.5
-    _dirLight.shadow.camera.near = -SCENE_SIZE_PX * 0.5
-    _dirLight.shadow.camera.far = SCENE_SIZE_PX * 0.55
-  }
-
-  // define the resolution of the shadow the higher the better,
-  // but also the more expensive and less performant
-  _dirLight.shadow.mapSize.width = 1024 * 1
-  _dirLight.shadow.mapSize.height = 1024 * 1
   scene.add(_dirLight)
-
-  // debug light
-  //if (query.debugCamera) {
-  //  this.scene.add(new THREE.CameraHelper(_dirLight.shadow.camera))
-  //}
 
   // lighten shadow using ambient light
   const ambientColor = new THREE.Color(settings.ambientLightColor) // .convertGammaToLinear()
@@ -226,10 +194,10 @@ function onLoaded () {
 // load assets before init
 loadAsset('internaut', '/js/google-interland-internaut/data/internaut.json')
   .then(() => loadAsset('internaut_anim_idle', '/js/google-interland-internaut/data/internaut_anim_idle.json'))
-	.then(() => loadAsset('internaut_anim_look', '/js/google-interland-internaut/data/internaut_anim_look.json'))
-	.then(() => loadAsset('internaut_anim_wiggle', '/js/google-interland-internaut/data/internaut_anim_wiggle.json'))
-	.then(() => loadAsset('internaut_anim_report', '/js/google-interland-internaut/data/internaut_anim_report.json'))
-	.then(() => loadAsset('internaut_anim_superhappytrigger', '/js/google-interland-internaut/data/internaut_anim_superhappytrigger.json'))
-	.then(() => loadAsset('internaut_anim_wrongreported', '/js/google-interland-internaut/data/internaut_anim_wrongreported.json'))
-	.then(() => loadAsset('internaut_anim_bouncewall', '/js/google-interland-internaut/data/internaut_anim_bouncewall.json'))
+  .then(() => loadAsset('internaut_anim_look', '/js/google-interland-internaut/data/internaut_anim_look.json'))
+  .then(() => loadAsset('internaut_anim_wiggle', '/js/google-interland-internaut/data/internaut_anim_wiggle.json'))
+  .then(() => loadAsset('internaut_anim_report', '/js/google-interland-internaut/data/internaut_anim_report.json'))
+  .then(() => loadAsset('internaut_anim_superhappytrigger', '/js/google-interland-internaut/data/internaut_anim_superhappytrigger.json'))
+  .then(() => loadAsset('internaut_anim_wrongreported', '/js/google-interland-internaut/data/internaut_anim_wrongreported.json'))
+  .then(() => loadAsset('internaut_anim_bouncewall', '/js/google-interland-internaut/data/internaut_anim_bouncewall.json'))
   .then(onLoaded)
