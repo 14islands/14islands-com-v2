@@ -5,16 +5,16 @@ import mathutil from './mathutil'
 import * as ANIMATIONS from './animations'
 
 const loadAsset = (name, file) => {
-  return fetch(file)  
-    .then(  
+  return fetch(file)
+    .then(
       function(response) {
         return response.json().then(function(data) {
           globalAssets.addJSON( {[name]:data} )
-        });  
-      }  
-    )  
-    .catch(function(err) {  
-      console.log('Fetch Error :-S', err);  
+        });
+      }
+    )
+    .catch(function(err) {
+      console.log('Fetch Error :-S', err);
     });
 }
 
@@ -49,19 +49,19 @@ const init = () => {
   renderer.shadowMap.enabled = true
   renderer.shadowMap.type = THREE.PCFSoftShadowMap
   renderer.setPixelRatio(window.devicePixelRatio)
-	
+
   // add rendered canvas
   document.querySelector('.js-interland').appendChild( renderer.domElement );
-  
+
   camera.position.z = 25;
   camera.position.y = 17;
   camera.lookAt(new THREE.Vector3(0, 8, 0))
-  
+
   // add internaut
   internaut = new Internaut()
   scene.add(internaut.mesh)
   internaut.mesh.scale.setScalar(0.3)
-  
+
   // button
   document.querySelector('.js-interland').addEventListener('click', (e) => {
     const anim = getRandomAnimation()
@@ -80,7 +80,7 @@ function render() {
   const delta = 1000/60/1000 //clock.getDelta()
 	internaut.update(delta)
   renderer.render( scene, camera );
-} 
+}
 
 function initLookAt() {
 	internaut.updateLookAt(lookAt)
@@ -128,14 +128,12 @@ function initLights () {
 }
 
 // load assets before init
-loadAsset('internaut', './internaut.json')
-  .then(() => loadAsset('internaut_anim_idle', './internaut_anim_idle.json'))
-	.then(() => loadAsset('internaut_anim_look', './internaut_anim_look.json'))
-	.then(() => loadAsset('internaut_anim_wiggle', './internaut_anim_wiggle.json'))
-	.then(() => loadAsset('internaut_anim_report', './internaut_anim_report.json'))
-	.then(() => loadAsset('internaut_anim_superhappytrigger', './internaut_anim_superhappytrigger.json'))
-	.then(() => loadAsset('internaut_anim_wrongreported', './internaut_anim_wrongreported.json'))
-	.then(() => loadAsset('internaut_anim_bouncewall', './internaut_anim_bouncewall.json'))
+loadAsset('internaut', '/js/google-interland-internaut/data/internaut.json')
+  .then(() => loadAsset('internaut_anim_idle', '/js/google-interland-internaut/data/internaut_anim_idle.json'))
+	.then(() => loadAsset('internaut_anim_look', '/js/google-interland-internaut/data/internaut_anim_look.json'))
+	.then(() => loadAsset('internaut_anim_wiggle', '/js/google-interland-internaut/data/internaut_anim_wiggle.json'))
+	.then(() => loadAsset('internaut_anim_report', '/js/google-interland-internaut/data/internaut_anim_report.json'))
+	.then(() => loadAsset('internaut_anim_superhappytrigger', '/js/google-interland-internaut/data/internaut_anim_superhappytrigger.json'))
+	.then(() => loadAsset('internaut_anim_wrongreported', '/js/google-interland-internaut/data/internaut_anim_wrongreported.json'))
+	.then(() => loadAsset('internaut_anim_bouncewall', '/js/google-interland-internaut/data/internaut_anim_bouncewall.json'))
   .then(init)
-
-
