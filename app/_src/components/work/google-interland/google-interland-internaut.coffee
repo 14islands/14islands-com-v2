@@ -14,7 +14,7 @@ class FOURTEEN.GoogleInterlandInternaut extends FOURTEEN.ElementScrollVisibility
 
 	# define async scripts to load
 	scripts: [
-		'/js/bundles/interland-internaut.min.js'
+		'/js/bundles/interland/interland-internaut.min.js'
 	]
 
 

@@ -192,12 +192,12 @@ function onLoaded () {
 }
 
 // load assets before init
-loadAsset('internaut', '/js/google-interland-internaut/data/internaut.json')
-  .then(() => loadAsset('internaut_anim_idle', '/js/google-interland-internaut/data/internaut_anim_idle.json'))
-  .then(() => loadAsset('internaut_anim_look', '/js/google-interland-internaut/data/internaut_anim_look.json'))
-  .then(() => loadAsset('internaut_anim_wiggle', '/js/google-interland-internaut/data/internaut_anim_wiggle.json'))
-  .then(() => loadAsset('internaut_anim_report', '/js/google-interland-internaut/data/internaut_anim_report.json'))
-  .then(() => loadAsset('internaut_anim_superhappytrigger', '/js/google-interland-internaut/data/internaut_anim_superhappytrigger.json'))
-  .then(() => loadAsset('internaut_anim_wrongreported', '/js/google-interland-internaut/data/internaut_anim_wrongreported.json'))
-  .then(() => loadAsset('internaut_anim_bouncewall', '/js/google-interland-internaut/data/internaut_anim_bouncewall.json'))
+loadAsset('internaut', '/js/bundles/interland/data/internaut.json')
+  .then(() => loadAsset('internaut_anim_idle', '/js/bundles/interland/data/internaut_anim_idle.json'))
+  .then(() => loadAsset('internaut_anim_look', '/js/bundles/interland/data/internaut_anim_look.json'))
+  .then(() => loadAsset('internaut_anim_wiggle', '/js/bundles/interland/data/internaut_anim_wiggle.json'))
+  .then(() => loadAsset('internaut_anim_report', '/js/bundles/interland/data/internaut_anim_report.json'))
+  .then(() => loadAsset('internaut_anim_superhappytrigger', '/js/bundles/interland/data/internaut_anim_superhappytrigger.json'))
+  .then(() => loadAsset('internaut_anim_wrongreported', '/js/bundles/interland/data/internaut_anim_wrongreported.json'))
+  .then(() => loadAsset('internaut_anim_bouncewall', '/js/bundles/interland/data/internaut_anim_bouncewall.json'))
   .then(onLoaded)

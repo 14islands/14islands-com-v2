@@ -4,8 +4,9 @@
   "description": "Google Interland - character demo",
   "main": "src/main.js",
   "scripts": {
+    "prebuild": "cp -R ./data ../bundles/interland",
     "build": "browserify ./src/main.js -t [ babelify ] -g [ uglifyify ] | uglifyjs -c > ./main.processed.js",
-    "postbuild": "uglifyjs ./third_party/three.min.js ./main.processed.js -c --comments -o ../bundles/interland-internaut.min.js"
+    "postbuild": "uglifyjs ./third_party/three.min.js ./main.processed.js -c --comments -o ../bundles/interland/interland-internaut.min.js"
   },
   "browser": {},
   "browserify": {
