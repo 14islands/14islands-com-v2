@@ -1,6 +1,6 @@
 ###
 #
-# GoogleInterlandInternaut component.
+# GoogleInterlandShouter component.
 #
 # For Google Interland Case Study
 #
@@ -8,14 +8,14 @@
 #
 ###
 
-class FOURTEEN.GoogleInterlandInternaut extends FOURTEEN.ElementScrollVisibility
+class FOURTEEN.GoogleInterlandShouter extends FOURTEEN.ElementScrollVisibility
 
 	ROTATE_DISTANCE = 0.1 #degrees per frame
 
 	# define async scripts to load
-	# scripts: [
-	# 	'/js/bundles/interland/interland-internaut.min.js'
-	# ]
+	scripts: [
+		'/js/bundles/interland/interland-internaut.min.js'
+	]
 
 
 	constructor: (@$context, data) ->
@@ -33,17 +33,17 @@ class FOURTEEN.GoogleInterlandInternaut extends FOURTEEN.ElementScrollVisibility
 		super()
 
 		# we need a global callback for the maps api load event
-		FOURTEEN.onInterlandInternautLoaded = @_onInternautLoaded
+		FOURTEEN.onInterlandShouterLoaded = @_onInternautLoaded
 
 		# internaut already loaded? init directly
-		if FOURTEEN.InterlandInternaut
+		if FOURTEEN.InterlandShouter
 			@_onInternautLoaded()
 
 
 	# @private
 	_onInternautLoaded: =>
 		@spinner.hide(=>
-			FOURTEEN.InterlandInternaut.init(@context)
+			FOURTEEN.InterlandShouter.init(@context)
 			@onEnterViewport() if @isInViewport
 		)
 
@@ -51,19 +51,19 @@ class FOURTEEN.GoogleInterlandInternaut extends FOURTEEN.ElementScrollVisibility
 	destroy: ->
 		super()
 		@spinner.removeEl()
-		FOURTEEN.InterlandInternaut.destroy()
+		FOURTEEN.InterlandShouter.destroy()
 
 	# @protected
 	onEnterViewport: =>
 		super()
-		FOURTEEN.InterlandInternaut?.startRender()
+		FOURTEEN.InterlandShouter?.startRender()
 
 	# @protected
 	onFullyEnterViewport: =>
 		super()
-		FOURTEEN.InterlandInternaut?.triggerAnimation()
+		FOURTEEN.InterlandShouter?.triggerAnimation()
 
 	# @protected
 	onExitViewport: =>
 		super()
-		FOURTEEN.InterlandInternaut?.stopRender()
+		FOURTEEN.InterlandShouter?.stopRender()
