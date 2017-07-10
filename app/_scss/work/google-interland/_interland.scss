@@ -21,17 +21,21 @@
   }
 }
 
+.google-interland__internaut,
+.google-interland__shouter {
+  position: relative;
+  text-align: center;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  outline: none;
+}
+
 // Internaut component
 .google-interland__internaut {
-    position: relative;
-    text-align: center;
-    height: 70vh;
-    margin-top: -14vh;
+  height: 70vh;
+  margin-top: -14vh;
 }
 // Shouter component
 .google-interland__shouter {
-    position: relative;
-    text-align: center;
-    height: 70vh;
-    margin-top: -5vh;
+  height: 70vh;
+  margin-top: -5vh;
 }
