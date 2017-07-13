@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Interland standalone test </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta charset="utf-8">
+  <style>
+    body {
+      margin: 0;
+      background: #f1efed;
+    }
+
+    .InterlandDemo-buttons {
+      position: absolute;
+      bottom: 5%;
+      left: 0;
+      right: 0;
+      border 1px solid red;
+      text-align: center
+    }
+
+    .InterlandDemo-buttons button {
+      -webkit-appearance: none;
+      display: inline-block;
+      background: transparent;
+      border: 2px solid #4285F4;
+      color: #4285F4;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      margin: 0.5rem;
+      cursor: pointer;
+    }
+
+    .InterlandDemo-buttons button:hover {
+      background: #4285F4;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="InterlandDemo js-interland">
+    <div class="InterlandDemo-buttons"><button>Poke me!</button></div>
+  </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+  <script src="three.min.js"></script>
+  <script src="main.processed.js"></script>
+</body>
+
+</html>
