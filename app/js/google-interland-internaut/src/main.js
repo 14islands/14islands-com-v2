@@ -199,6 +199,7 @@ class CharacterAnimation {
     this.character = undefined
     this.el.removeEventListener('click', this.triggerAnimation)
     window.removeEventListener('mousemove', this.onMouseMoveLookAt)
+    window.removeEventListener('resize', this.resize)
   }
 }
 
