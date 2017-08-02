@@ -18,11 +18,7 @@ og_image: /images/work/google-interland/interland.png
 ---
 
 
-
-{% include casestudy-header.html about="Interland is an adventure-packed game experience on the web that teaches kids the fundamentals of digital citizenship and online safety." %}
-
-
-
+{% include casestudy-header.html about="Interland is an adventure-packed game experience on the web that teaches kids online safety. We loved the purpose and jumped at the opportunity to be the main development partner." %}
 
 {% include casestudy-video.html vimeoId="223623059" ratio="16_9" class="pjax-animate" %}
 
@@ -31,120 +27,179 @@ og_image: /images/work/google-interland/interland.png
 {% markdown %}
 ## A fantastic journey
 
-Together with North Kingdom we created an immersive world consisting of 4 individual games - each one focusing on different aspect of online life. The project took almost 6 months to complete with user testing to make sure the games were fun and understandable for young kids.
+Together with North Kingdom we created an immersive world consisting of 4 individual games - each one focusing on different aspect of online safety.
+
 {% endmarkdown %}
 	</div>
 
-{% include wide-content-image.html src="/images/work/google-interland/interland-tablet.png" alt="Interland - intro" ratio="16_10" margin="top" %}
+	{% include wide-content-image.html src="/images/work/google-interland/mindful-mountain.jpg" alt="Interland - intro" ratio="16_10" margin="both" %}
 
-</section>
-
-
-<section class="grid u-pad-bottom">
 	<div class="grid__row">
 {% markdown %}
-## Mobile friendly
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent convallis tellus ut erat pretium, et porta sapien sagittis. Curabitur mi mi, convallis quis ipsum pretium, cursus pulvinar ligula. In a blandit sem. Aenean in interdum justo.
-
-Sed sed est ultricies, congue ipsum quis, tincidunt nibh. Nulla sit amet magna a elit eleifend convallis. Sed ut finibus eros, nec rhoncus magna.
+This project has been a long and fantastic journey for us and we were happy to bring many creative solutions to the table. It included multiple runs of user tests to make sure the games were fun and understandable for young kids.
 
 {% endmarkdown %}
+
 	</div>
 
 </section>
 
-{% include casestudy-image.html src="/images/work/google-interland/mindful-mountain.jpg" alt="Interland - intro" ratio="16_10" margin="top" %}
+
+<section class="grid u-pad-both u-bg-bright">
+	<div class="grid__row">
+{% markdown %}
+## Interactive story telling
+
+The inhabitants of Interland give life and personality to each part of the Interland story. The blue Internaut is the protagonist of the story and is with us throughout the experience.
+
+{% endmarkdown %}
+	</div>
+
+	{% include work/google-interland/internaut.html %}
+
+	<div class="grid__row">
+{% markdown %}
+
+Each game also has an antagonist, or Blabh as we like to call them in Interland, which the player needs to overcome.
+
+{% endmarkdown %}
+	</div>
+
+	{% include work/google-interland/shouter.html %}
+
+	<div class="grid__row">
+{% markdown %}
+
+The characters all have a number of animations that are triggered based on what happens around them, making them feel more life-like.
+
+{% endmarkdown %}
+	</div>
+</section>
+
 
 <section class="grid u-pad-both">
 	<div class="grid__row">
 {% markdown %}
-## 3D all the things
+## Bully-free
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent convallis tellus ut erat pretium, et porta sapien sagittis. Curabitur mi mi, convallis quis ipsum pretium, cursus pulvinar ligula. In a blandit sem. Aenean in interdum justo.
+An important part of Interland is the ability to use it in schools, where hardware often consists of tablets or Chromebooks with relatively small screens and less powerful CPUs.
 
 {% endmarkdown %}
-
 	</div>
 
-	{% include wide-content-image.html src="/images/work/stokke/" alt="Stokke configurators" ratio="16_10" margin="top" %}
+	{% include wide-content-image.html src="/images/work/google-interland/interland-tablet.png" alt="Interland - intro" ratio="16_10" margin="top" %}
 
+	<div class="grid__row">
+{% markdown %}
+
+We take great pride in the fact that the whole experience runs smooth even on older mobile phones.
+
+{% endmarkdown %}
+	</div>
 </section>
+
+
+<section class="grid u-pad-both u-bg-bright">
+	<div class="grid__row">
+{% markdown %}
+## Be Internet Awesome
+
+Interland is part of the “Be Interland Awesome” initiative by Google, to teach kids about digital citizenship and online safety. On top of Interland, Google asked for a site to explain the overall project for parents and people that are interested this worthy cause.
+
+{% endmarkdown %}
+	</div>
+
+	{% include wide-content-image.html src="/images/work/google-interland/InterlandHub-screenshot_16_9.jpg" alt="The Interland Hub" ratio="16_9" margin="both" %}
+
+	<div class="grid__row">
+{% markdown %}
+
+We delivered the companion site as part of the Interland framework --- focusing on providing quality content in a friendly, informative and responsive manner.
+
+{% endmarkdown %}
+	</div>
+</section>
+
 
 <section class="grid u-pad-both">
 	<div class="grid__row">
 {% markdown %}
-## Technologies
+## Creative Tech
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent convallis tellus ut erat pretium, et porta sapien sagittis.
+This was a complex project that required many tools and a combination of creative technologies.
 
+At the core we built a responsive web site using standard HTML, JavaScript and CSS.
+The 3D world is rendered on a canvas inside this framework using WebGl.
 {% endmarkdown %}
 
 	</div>
 
 	<div class="grid__row--wide-content casestudy__technology-list u-pad-top-half">
-		<a class="casestudy__technology-item" href="https://github.com/pugjs/pug">
-			 {% include svgs/technology-logos/logo_pug.min.svg %}
-			 <h3 class="casestudy__technology-title">Pug</h3>
-			 <p class="casestudy__technology-description">Template Engine.</p>
+		<a class="casestudy__technology-item" href="http://threejs.org/">
+			 {% include svgs/technology-logos/logo_threejs.min.svg %}
+			 <h3 class="casestudy__technology-title">Three.js</h3>
+			 <p class="casestudy__technology-description">Javascript 3D library.</p>
 		</a><!-- Remove spacing
-		--><a class="casestudy__technology-item" href="https://www.npmjs.com/">
-			 {% include svgs/technology-logos/logo_npm.min.svg %}
-			 <h3 class="casestudy__technology-title">NPM</h3>
-			 <p class="casestudy__technology-description">Package manager for JavaScript.</p>
+		--><a class="casestudy__technology-item" href="https://www.khronos.org/webgl/">
+			 {% include svgs/technology-logos/logo_webgl.min.svg %}
+			 <h3 class="casestudy__technology-title">WebGL</h3>
+			 <p class="casestudy__technology-description">Low-level 3D graphics for the web</p>
 		</a><!-- Remove spacing
 		--><a class="casestudy__technology-item" href="https://greensock.com/">
 			 {% include svgs/technology-logos/logo_greensock.min.svg %}
 			 <h3 class="casestudy__technology-title">GreenSock</h3>
 			 <p class="casestudy__technology-description">Animation Library.</p>
 		</a><!-- Remove spacing
-		--><a class="casestudy__technology-item" href="http://mustache.github.com/">
-			 {% include svgs/technology-logos/logo_github.min.svg %}
-			 <h3 class="casestudy__technology-title">Mustache</h3>
-			 <p class="casestudy__technology-description">Minimal templating in JavaScript.</p>
+		--><a class="casestudy__technology-item" href="https://www.blender.org/">
+			{% include svgs/technology-logos/logo_blender.min.svg %}
+			<h3 class="casestudy__technology-title">Blender</h3>
+			<p class="casestudy__technology-description">3D creation suite.</p>
 		</a><!-- Remove spacing
-		--><a class="casestudy__technology-item" href="http://stylus-lang.com/">
-			 {% include svgs/technology-logos/logo_stylus.min.svg %}
-			 <h3 class="casestudy__technology-title">Stylus</h3>
-			 <p class="casestudy__technology-description">CSS pre-processing.</p>
+		--><a class="casestudy__technology-item" href="https://github.com/bodymovin/bodymovin">
+			 {% include svgs/technology-logos/logo_github.min.svg %}
+			 <h3 class="casestudy__technology-title">bodymovin</h3>
+			 <p class="casestudy__technology-description">After Effects exporter.</p>
+		</a><!-- Remove spacing
+		--><a class="casestudy__technology-item" href="https://github.com/pugjs/pug">
+			 {% include svgs/technology-logos/logo_pug.min.svg %}
+			 <h3 class="casestudy__technology-title">Pug</h3>
+			 <p class="casestudy__technology-description">Template Engine.</p>
 		</a><!-- Remove spacing
 		--><a class="casestudy__technology-item" href="https://babeljs.io/">
-			 {% include svgs/technology-logos/logo_github.min.svg %}
+			 {% include svgs/technology-logos/logo_babel.min.svg %}
 			 <h3 class="casestudy__technology-title">Babel</h3>
 			 <p class="casestudy__technology-description">Compiles future JavaScript.</p>
 		</a><!-- Remove spacing
 		--><a class="casestudy__technology-item" href="http://modernizr.com/">
 			 {% include svgs/technology-logos/logo_modernizr.min.svg %}
 			 <h3 class="casestudy__technology-title">Modernizr</h3>
-			 <p class="casestudy__technology-description">Browser and device feature detection.</p>
+			 <p class="casestudy__technology-description">Browser feature detection.</p>
 		</a><!-- Remove spacing
 		--><a class="casestudy__technology-item" href="http://jquery.com/">
-			 {% include svgs/technology-logos/logo_jquery.min.svg %}
-			 <h3  class="casestudy__technology-title">jQuery</h3>
-			 <p class="casestudy__technology-description">DOM manipulation and more.</p>
-		</a><!-- Remove spacing
-		--><a class="casestudy__technology-item" href="https://github.com/14islands/component-loader">
-			 {% include svgs/technology-logos/logo_github.min.svg %}
-			 <h3 class="casestudy__technology-title">Component Loader</h3>
-			 <p class="casestudy__technology-description">Simple JavaScript components.</p>
+			 {% include svgs/technology-logos/logo_appengine.min.svg %}
+			 <h3  class="casestudy__technology-title">Google App Engine</h3>
+			 <p class="casestudy__technology-description">Cloud computing platform.</p>
 		</a>
 		</div>
 
 </section>
 
-{% include casestudy-quote.html quote="14islands did an awesome job as development partners. They delivered high quality, attention to details and creative solutions to problems. I highly recommend to partner up with them." author-image-src="/images/work/plumewifi/plume-isak-nk.jpg" author-name="Daniel Isaksson" author-job-title="Technical Director at North Kingdom" %}
+{% include casestudy-quote.html quote="14islands proved once again that they are a reliable and trusted partner to work with. Always with a positive and problem solving attitude, making sure each project becomes as good as it possibly can be. Highly recommended." author-image-src="/images/work/google-interland/JakobNylund.jpg" author-name="Jakob Nylund" author-job-title="Design Director and Partner at North Kingdom" %}
 
 <section class="grid u-pad-both">
 	<div class="grid__row">
 		{% markdown %}
 
-## Game on
+## Game on!
 
-Now it's your turn to play your way to being Internet Awesome!
+Now it's your turn to play your way to being Internet Awesome.
+
+And remember, it's cool to be kind!
 
 {% endmarkdown %}
 
-{% include casestudy-button.html site-url="beinternetawesome.withgoogle.com" %}
+{% include casestudy-button.html text="Go be awesome" site-url="http://plumewifi.com/" %}
 
 {% markdown %}
 

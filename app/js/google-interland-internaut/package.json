@@ -1,0 +1,72 @@
+{
+  "name": "google-interland-character-demo",
+  "version": "0.1.0",
+  "description": "Google Interland - character demo",
+  "main": "src/main.js",
+  "scripts": {
+    "prebuild": "cp -R ./data ../bundles/interland",
+    "build": "browserify ./src/main.js -t [ babelify ] -g [ uglifyify ] | uglifyjs -c > ./main.processed.js",
+    "postbuild": "uglifyjs ./third_party/three.min.js ./main.processed.js -c --comments -o ../bundles/interland/interland-internaut.min.js"
+  },
+  "browser": {},
+  "browserify": {
+    "transform": [
+      "browserify-shader",
+      "browserify-shim"
+    ]
+  },
+  "browserify-shader": {
+    "parameterize": true,
+    "module": "es6"
+  },
+  "browserify-shim": {
+    "jQuery": "global:jQuery",
+    "three": "global:THREE",
+    "TweenMax": "global:TweenMax",
+    "TimelineMax": "global:TimelineMax",
+    "Power0": "global:Power0",
+    "Power1": "global:Power1",
+    "Power2": "global:Power2",
+    "Power3": "global:Power3",
+    "Power4": "global:Power4",
+    "Back": "global:Back",
+    "Elastic": "global:Elastic",
+    "Bounce": "global:Bounce",
+    "Rough": "global:Rough",
+    "SlowMo": "global:SlowMo",
+    "Stepped": "global:Stepped",
+    "Circ": "global:Circ",
+    "Expo": "global:Expo",
+    "Cubic": "global:Cubic",
+    "Sine": "global:Sine",
+    "Linear": "global:Linear"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NorthKingdom/google-interland.git"
+  },
+  "author": "14islands",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NorthKingdom/google-interland/issues"
+  },
+  "homepage": "https://github.com/NorthKingdom/google-interland#readme",
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-plugin-transform-es2015-classes": "^6.6.5",
+    "babel-plugin-transform-object-rest-spread": "^6.19.0",
+    "babel-preset-es2015": "^6.6.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "browserify-shader": "^0.1.2",
+    "browserify-shim": "^3.8.12",
+    "eventemitter3": "^2.0.2",
+    "onchange": "^2.2.0",
+    "uglify-js": "^2.7.5",
+    "uglifyify": "^3.0.1"
+  },
+  "dependencies": {}
+}

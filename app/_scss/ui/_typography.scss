@@ -227,12 +227,13 @@ q {
     font-size: modular-scale(1rem, 3);
   }
 }
-@media (min-width: $breakpoint-three-px) {
-  blockquote p,
-  q {
-    font-size: modular-scale(1rem, 4);
-  }
-}
+// too big! //David
+// @media (min-width: $breakpoint-three-px) {
+//   blockquote p,
+//   q {
+//     font-size: modular-scale(1rem, 4);
+//   }
+// }
 
 blockquote:before,
 blockquote:after,
