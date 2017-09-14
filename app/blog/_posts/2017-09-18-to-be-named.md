@@ -59,9 +59,9 @@ You can import your model into [Blender](https://www.blender.org/), a free 3D so
 ## Making it pretty
 
 Sometimes, when importing a model into the scene, the vision of your masterpiece might get crushed after it’s loaded.
-{% include iframe-embed.html src="https://gem-stone.glitch.me/" title="Flamingo model" height="400" %}
+{% include iframe-embed.html src="https://plain-gem-stones.glitch.me/" title="Flamingo model" height="400" %}
 Don't flip the table though, we have a couple of tips for making it look much better.
-{% include iframe-embed.html src="https://gem-stone-lights.glitch.me/" title="Flamingo model" height="400" %}
+{% include iframe-embed.html src="https://magic-gem-stones.glitch.me/" title="Flamingo model" height="400" %}
 
 ### 1. Play with the lights
 
@@ -87,8 +87,9 @@ Apart from creating elemental effects like rain, snow or fire, the particles can
 
 If you’ve spent hours tweaking your lights and composition, but still not satisfied with the final render, it's worth trying some post processing effects. We have added some noise to the sunset scene to achieve a more retro look, but there are a lot more filters to play with. 
 
-[examples]
+{% include iframe-embed.html src="https://flamingo-sunset-cartoon.glitch.me" title="Flamingo model" height="400" caption="Sunset scene with a cartoonish look"%}
 
+{% include iframe-embed.html src="https://flamingo-sunset-glitch.glitch.me" title="Flamingo model" height="400" caption="Glitch effect"%}
 ## Sharing is caring
 
 A great thing about A-Frame is its thriving community of creative thinkers. Often times new experiments and components are shared out freely for all to learn from. Thanks to A-Frame’s [ECS architecture](https://aframe.io/docs/0.6.0/introduction/entity-component-system.html) (Entity-Component-System), it’s easy to extend and share new features.  This benefits both developers, who save time by reusing components instead of building them from scratch, and coding beginners as they can easily attach otherwise complex elements to their projects.
