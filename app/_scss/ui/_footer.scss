@@ -13,6 +13,7 @@
     svg {
     	display: inline-block;
     	width: 130px;
+			isolation: isolate;
 			path {
 				mix-blend-mode: multiply;
 			}

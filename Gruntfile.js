@@ -310,6 +310,7 @@ module.exports = function (grunt) {
             'images/**/*',
             'fonts/**/*',
             'js/vendor/*',
+            'js/bundles/**/*',
             // Like Jekyll, exclude files & folders prefixed with an underscore.
             '!**/_*{,/**}',
             // Explicitly add any files your site needs for distribution here.
@@ -345,6 +346,7 @@ module.exports = function (grunt) {
         files: [{
           src: [
             '<%= yeoman.dist %>/js/**/*.js',
+            '!<%= yeoman.dist %>/js/bundles/**/*',
             '!<%= yeoman.dist %>/js/vendor/*.js',
             '<%= yeoman.dist %>/css/**/*.css',
             // '<%= yeoman.dist %>/images/**/*.{gif,jpg,jpeg,png,svg,webp}',
@@ -357,7 +359,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           dir: '<%= yeoman.dist %>',
-          remote: 'git@github.com:14islands/14islands-com.git',
+          remote: 'https://github.com/14islands/14islands-com.git',
           branch: 'gh-pages',
           commit: true,
           push: true,

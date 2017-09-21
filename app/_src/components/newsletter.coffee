@@ -11,9 +11,11 @@ class FOURTEEN.Newsletter extends FOURTEEN.BaseComponent
 	ESC_KEY_CODE = 27
 
 	# @override FOURTEEN.BaseComponent.scripts
+	###
 	scripts: [
 		'https://cdn.onesignal.com/sdks/OneSignalSDK.js'
 	]
+	###
 
 	constructor: (@$context, @data) ->
 
@@ -44,11 +46,13 @@ class FOURTEEN.Newsletter extends FOURTEEN.BaseComponent
 		super(@$context, @data)
 
 	# Init Push Notifications
+	###
 	onScriptsLoaded: () =>
 		OneSignal = window.OneSignal || []
 		@initNotifications()
 		@showNotficationsIfSupport()
 		@toggleViewIfSubscribed()
+	###
 
 	initNotifications: () =>
 		OneSignal.push(() =>
