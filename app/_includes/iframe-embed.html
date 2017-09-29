@@ -1,0 +1,24 @@
+{% if include.ratio %}
+{% capture ratioClass %}u-ratio u-ratio--{{include.ratio}}{% endcapture %}
+{% capture ratioContentClass %}u-ratio__content{% endcapture %}
+{% endif %}
+
+{% if include.height %}
+{% capture ratioStyle %}height: {{include.height}}px{% endcapture %}
+{% endif %}
+<div>
+	<iframe
+		class="iframe-embed grid__row--wide u-margin-top-half {{ratioClass}}"
+		src="{{include.src}}"
+		{% unless include.ratio %}style="{{ratioStyle}}"{% endunless %}
+		frameBorder="0"
+		title="{{include.title}}"
+		height="{{include.height}}">
+	  <p>Your browser does not support iframes.</p>
+	</iframe>
+	{% if include.caption %}
+    <div class="u-img-caption">
+      <figcaption>{{include.caption}}</figcaption>
+    </div>
+  {% endif %}
+</div>

@@ -1,5 +1,42 @@
-.work--project-google-interland {
-  .box__content__img img {
-    transform: rotate(-10deg)
+
+@keyframes google-interland-box-image {
+  from {
+    transform: translate(0, -0.5%) rotate(-8deg)
   }
+  to {
+    transform: translate(0, 1%) rotate(-9deg)
+  }
+}
+
+// work page box
+.work--project-google-interland {
+  .box__content__headline {
+    @include if-wider-than(1100px) {
+  		max-width: 460px;
+  	}
+  }
+  .box__content__img img {
+    transform: rotate(-9deg);
+    // animation: google-interland-box-image 1.2s ease-in-out infinite alternate;
+  }
+}
+
+.google-interland__internaut,
+.google-interland__shouter {
+	cursor: pointer;
+  position: relative;
+  text-align: center;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  outline: none;
+}
+
+// Internaut component
+.google-interland__internaut {
+  height: 70vh;
+  margin-top: -14vh;
+}
+// Shouter component
+.google-interland__shouter {
+  height: 70vh;
+  margin-top: -5vh;
 }
