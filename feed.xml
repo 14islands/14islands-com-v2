@@ -8,9 +8,19 @@
 		
 		  
         <item>
+          <title>WebVR is for everyone. This is how to design and develop an experience.</title>
+          <description>Anyone with little coding experience can design and develop beautiful scenes in 3D.</description>
+          <pubDate>2017-09-29T00:00:00+02:00</pubDate>
+          <link>http://14islands.com/blog/2017/09/29/webvr-for-everyone/</link>
+          <guid isPermaLink="true">http://14islands.com/blog/2017/09/29/webvr-for-everyone/</guid>
+        </item>
+			
+		
+		  
+        <item>
           <title>Making engaging VR experiences on the web</title>
           <description>WebVR is the easiest entry point to dive into VR. We created two new, interactive experiments to explore its potential.</description>
-          <pubDate>2017-05-17T00:00:00-03:00</pubDate>
+          <pubDate>2017-05-17T00:00:00+02:00</pubDate>
           <link>http://14islands.com/blog/2017/05/17/engaging-vr-experiences-on-the-web/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2017/05/17/engaging-vr-experiences-on-the-web/</guid>
         </item>
@@ -20,7 +30,7 @@
         <item>
           <title>New Branding</title>
           <description>Our new identity had to reflect who we are as a creative development studio.</description>
-          <pubDate>2017-05-12T00:00:00-03:00</pubDate>
+          <pubDate>2017-05-12T00:00:00+02:00</pubDate>
           <link>http://14islands.com/blog/2017/05/12/new-branding/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2017/05/12/new-branding/</guid>
         </item>
@@ -30,7 +40,7 @@
         <item>
           <title>Playing with CSS Grids</title>
           <description>The CSS Grid layout has everything it needs to be considered the most powerful layout system in CSS.</description>
-          <pubDate>2017-03-07T00:00:00-03:00</pubDate>
+          <pubDate>2017-03-07T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2017/03/07/playing-with-CSS-grids/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2017/03/07/playing-with-CSS-grids/</guid>
         </item>
@@ -40,7 +50,7 @@
         <item>
           <title>How we implemented push notifications on our website</title>
           <description>When used responsibly, push notifications offer a way to form a connection between people and the content they want.</description>
-          <pubDate>2017-02-15T00:00:00-02:00</pubDate>
+          <pubDate>2017-02-15T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2017/02/15/responsible-push-notifications-on-the-web/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2017/02/15/responsible-push-notifications-on-the-web/</guid>
         </item>
@@ -52,7 +62,7 @@
         <item>
           <title>We built a PWA from scratch - This is what we learned</title>
           <description>Our Progressive Web App journey on how to build native-like web apps.</description>
-          <pubDate>2017-01-19T00:00:00-02:00</pubDate>
+          <pubDate>2017-01-19T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2017/01/19/progressive-web-app-from-scratch/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2017/01/19/progressive-web-app-from-scratch/</guid>
         </item>
@@ -62,7 +72,7 @@
         <item>
           <title>Our year in review - 2016</title>
           <description>We&#39;ve had a great year and this time is a good opportunity to take a short pause from the keyboard and look back on everything that has happened.</description>
-          <pubDate>2017-01-05T00:00:00-02:00</pubDate>
+          <pubDate>2017-01-05T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2017/01/05/our-year-in-review-2016/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2017/01/05/our-year-in-review-2016/</guid>
         </item>
@@ -72,7 +82,7 @@
         <item>
           <title>Vecka App - Your life in weeks</title>
           <description>Always know what the week number it is. Essential when living in Sweden.</description>
-          <pubDate>2016-12-15T00:00:00-02:00</pubDate>
+          <pubDate>2016-12-15T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2016/12/15/vecka-progressive-web-app/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2016/12/15/vecka-progressive-web-app/</guid>
         </item>
@@ -82,7 +92,7 @@
         <item>
           <title>WebVR experiment with three.js</title>
           <description>Exploring the magic world of WebGL and the WebVR API.</description>
-          <pubDate>2016-11-04T00:00:00-02:00</pubDate>
+          <pubDate>2016-11-04T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2016/11/04/webvr-with-threejs/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2016/11/04/webvr-with-threejs/</guid>
         </item>
@@ -92,7 +102,7 @@
         <item>
           <title>Ways to build a mobile app without native technologies</title>
           <description>We are often asked about the “best” ways to build a native app. It always depends on the needs, but there are few technical possibilities.</description>
-          <pubDate>2016-09-22T00:00:00-03:00</pubDate>
+          <pubDate>2016-09-22T00:00:00+02:00</pubDate>
           <link>http://14islands.com/blog/2016/09/22/mobile-apps-without-native-technologies/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2016/09/22/mobile-apps-without-native-technologies/</guid>
         </item>
@@ -102,7 +112,7 @@
         <item>
           <title>Our website is open source</title>
           <description>We built our site using Jekyll with Github for several reasons.</description>
-          <pubDate>2016-08-25T00:00:00-03:00</pubDate>
+          <pubDate>2016-08-25T00:00:00+02:00</pubDate>
           <link>http://14islands.com/blog/2016/08/25/our-website-is-open-source/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2016/08/25/our-website-is-open-source/</guid>
         </item>
@@ -112,7 +122,7 @@
         <item>
           <title>Why Phoenix is exciting for the modern web</title>
           <description>Phoenix is both fast and productive with powerful underlying technologies; Elixir &amp; Erlang.</description>
-          <pubDate>2016-08-16T00:00:00-03:00</pubDate>
+          <pubDate>2016-08-16T00:00:00+02:00</pubDate>
           <link>http://14islands.com/blog/2016/08/16/phoenix-framework/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2016/08/16/phoenix-framework/</guid>
         </item>
@@ -122,7 +132,7 @@
         <item>
           <title>Estimation process survey</title>
           <description>A few months ago we created a survey to find out more on how other companies do their estimation process.</description>
-          <pubDate>2016-06-29T00:00:00-03:00</pubDate>
+          <pubDate>2016-06-29T00:00:00+02:00</pubDate>
           <link>http://14islands.com/blog/2016/06/29/estimation-survey/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2016/06/29/estimation-survey/</guid>
         </item>
@@ -132,7 +142,7 @@
         <item>
           <title>The web is catching up on mobile</title>
           <description>Progressive Web Apps to improve experience on mobile, similar to native apps.</description>
-          <pubDate>2016-05-29T00:00:00-03:00</pubDate>
+          <pubDate>2016-05-29T00:00:00+02:00</pubDate>
           <link>http://14islands.com/blog/2016/05/29/progressive-web-apps-catching-up-on-mobile/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2016/05/29/progressive-web-apps-catching-up-on-mobile/</guid>
         </item>
@@ -142,7 +152,7 @@
         <item>
           <title>Better way to use Modernizr with Command Line Config</title>
           <description>Modernizr is a useful JavaScript library to detect user browser capabilities on websites. We use it on most of our projects to provide the best user experience for each device.</description>
-          <pubDate>2016-04-20T00:00:00-03:00</pubDate>
+          <pubDate>2016-04-20T00:00:00+02:00</pubDate>
           <link>http://14islands.com/blog/2016/04/20/better-way-to-use-modernizr-with-command-line-config/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2016/04/20/better-way-to-use-modernizr-with-command-line-config/</guid>
         </item>
@@ -152,7 +162,7 @@
         <item>
           <title>Trends at SXSW Interactive 2016</title>
           <description>Last week we were at SXSW Interactive, a big yearly festival held in Austin, Texas.  It was a fun experience. Innovations being discussed, lots of interesting people in our industry and sunny weather.</description>
-          <pubDate>2016-03-24T00:00:00-03:00</pubDate>
+          <pubDate>2016-03-24T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2016/03/24/trends-at-sxsw-interactive-2016/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2016/03/24/trends-at-sxsw-interactive-2016/</guid>
         </item>
@@ -162,7 +172,7 @@
         <item>
           <title>Why we chose React for our latest hybrid app</title>
           <description>We recently had the pleasure of working with Fjord to prototype and build an HTML5 hybrid app for one of their clients.</description>
-          <pubDate>2016-03-03T00:00:00-03:00</pubDate>
+          <pubDate>2016-03-03T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2016/03/03/why-we-chose-react-for-hybrid-app/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2016/03/03/why-we-chose-react-for-hybrid-app/</guid>
         </item>
@@ -172,7 +182,7 @@
         <item>
           <title>Giving Stylus a second chance</title>
           <description>Stylus has all the features to expect from a CSS pre-processors and even a few nifty ones we like to tell you about it in this post.</description>
-          <pubDate>2016-03-02T00:00:00-03:00</pubDate>
+          <pubDate>2016-03-02T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2016/03/02/giving-stylus-a-second-chance/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2016/03/02/giving-stylus-a-second-chance/</guid>
         </item>
@@ -182,7 +192,7 @@
         <item>
           <title>Our year in review - 2015</title>
           <description>We&#39;ve had a great year and this time is a good opportunity to take a short pause from the keyboard and look back on everything that has happened.</description>
-          <pubDate>2015-12-29T00:00:00-02:00</pubDate>
+          <pubDate>2015-12-29T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2015/12/29/our-year-in-review-2015/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2015/12/29/our-year-in-review-2015/</guid>
         </item>
@@ -192,7 +202,7 @@
         <item>
           <title>Building sites for good SEO and sharing on social networks</title>
           <description>We strive to use the most modern practises for search engine optimisation (SEO) and social networks. Here are few to consider for any site.</description>
-          <pubDate>2015-12-09T00:00:00-02:00</pubDate>
+          <pubDate>2015-12-09T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2015/12/09/building-for-good-seo-and-socal-sharing/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2015/12/09/building-for-good-seo-and-socal-sharing/</guid>
         </item>
@@ -202,7 +212,7 @@
         <item>
           <title>Open Position: Creative Web Developer</title>
           <description>We&#39;re hiring!</description>
-          <pubDate>2015-12-08T00:00:00-02:00</pubDate>
+          <pubDate>2015-12-08T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2015/12/08/open-position-creative-web-developer/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2015/12/08/open-position-creative-web-developer/</guid>
         </item>
@@ -212,7 +222,7 @@
         <item>
           <title>Responsive Web Design Recap</title>
           <description>How about a recap on what Responsive Web Design means?</description>
-          <pubDate>2015-10-16T00:00:00-03:00</pubDate>
+          <pubDate>2015-10-16T00:00:00+02:00</pubDate>
           <link>http://14islands.com/blog/2015/10/16/responsive-web-design-recap/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2015/10/16/responsive-web-design-recap/</guid>
         </item>
@@ -222,7 +232,7 @@
         <item>
           <title>How to simplify custom fields for WordPress</title>
           <description>For creating new posts, pages or other post types - WordPress only includes two fields by default, a title and free-form WYSIWYG editor. In reality, there is most often a need for more dynamic content for our sites.</description>
-          <pubDate>2015-03-26T00:00:00-03:00</pubDate>
+          <pubDate>2015-03-26T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2015/03/26/simplified-custom-fields-for-wordpress/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2015/03/26/simplified-custom-fields-for-wordpress/</guid>
         </item>
@@ -232,7 +242,7 @@
         <item>
           <title>Making WordPress multilingual and plugins to help</title>
           <description>One important feature missing when using WordPress as a CMS is multilingual support. Translations of dynamic content for different languages needs a plugin.</description>
-          <pubDate>2015-03-24T00:00:00-03:00</pubDate>
+          <pubDate>2015-03-24T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2015/03/24/making-wordpress-multilingual-and-plugins-to-help/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2015/03/24/making-wordpress-multilingual-and-plugins-to-help/</guid>
         </item>
@@ -242,7 +252,7 @@
         <item>
           <title>Transitioning from GreenSock GSAP to Web&amp;nbsp;Animations</title>
           <description>We recently got a chance to work with the new Web Animations specification when building this year’s Google Santa Tracker. We normally use GreenSock GSAP for complex animation sequences so we were interested to see if the standards are catching up.</description>
-          <pubDate>2015-03-13T00:00:00-03:00</pubDate>
+          <pubDate>2015-03-13T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2015/03/13/transitioning-to-web-animations-from-greensock-gsap/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2015/03/13/transitioning-to-web-animations-from-greensock-gsap/</guid>
         </item>
@@ -252,7 +262,7 @@
         <item>
           <title>Lessons learned using WordPress as a CMS</title>
           <description>WordPress was initially designed as a blogging platform, but is now being used to drive content for full-blown websites. This talk will explore ways to make WordPress work as an CMS and lessons learned while building unique themes for clients.</description>
-          <pubDate>2015-03-12T00:00:00-03:00</pubDate>
+          <pubDate>2015-03-12T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2015/03/12/wordpress-as-a-cms/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2015/03/12/wordpress-as-a-cms/</guid>
         </item>
@@ -262,7 +272,7 @@
         <item>
           <title>The good, the bad and the ugly with responsive web design</title>
           <description>Responsive Web Design has been around for a while and it’s worth taking a step back to see what a successful responsive project actually requires.</description>
-          <pubDate>2015-03-06T00:00:00-03:00</pubDate>
+          <pubDate>2015-03-06T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2015/03/06/the-good-the-bad-and-the-ugly-with-responsive-web-design/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2015/03/06/the-good-the-bad-and-the-ugly-with-responsive-web-design/</guid>
         </item>
@@ -272,7 +282,7 @@
         <item>
           <title>Awwwards conference - second day highlights</title>
           <description>We had the chance to attend the Awwwards conference. Here are the talks highlights of the first day.</description>
-          <pubDate>2015-02-27T00:00:00-03:00</pubDate>
+          <pubDate>2015-02-27T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2015/02/27/awwwards-conference-second-day/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2015/02/27/awwwards-conference-second-day/</guid>
         </item>
@@ -282,7 +292,7 @@
         <item>
           <title>Awwwards conference - first day highlights</title>
           <description>We had the chance to attend the Awwwards conference. Here are the talks highlights of the first day.</description>
-          <pubDate>2015-02-27T00:00:00-03:00</pubDate>
+          <pubDate>2015-02-27T00:00:00+01:00</pubDate>
           <link>http://14islands.com/blog/2015/02/27/awwwards-conference-first-day/</link>
           <guid isPermaLink="true">http://14islands.com/blog/2015/02/27/awwwards-conference-first-day/</guid>
         </item>
