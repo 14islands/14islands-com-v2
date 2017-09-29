@@ -1,0 +1,7 @@
+.iframe-embed.u-ratio {
+  // this wrapper has the ratio
+
+	.embed__content {
+		@extend .u-ratio__content;
+	}
+}
