@@ -107,12 +107,16 @@ $nav-item-padding: 0.5rem;
 	}
 
 	.no-touch &:hover {
-    color: black;
+		color: $vulcano;
+		.hero--hidden & {
+    	color: black;
+		}
+
   }
-	body[class*=' page-work'] &.nav__link--work,
-	body.page-about &.nav__link--about,
-	body[class*=' page-blog'] &.nav__link--blog,
-	.page-contact &.nav__link--contact {
+	body[class*=' page-work'] .hero--hidden &.nav__link--work,
+	body.page-about .hero--hidden &.nav__link--about,
+	body[class*=' page-blog'] .hero--hidden &.nav__link--blog,
+	.page-contact .hero--hidden &.nav__link--contact {
     color: black;
     cursor: default;
 	}

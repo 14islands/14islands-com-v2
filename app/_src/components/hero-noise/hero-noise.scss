@@ -19,6 +19,8 @@ $logoRatio: $logoNativeHeight / $logoNativeWidth;
   position: relative;
   overflow: visible;
 
+  filter: contrast(5);
+
   // responsive ratio
   &:before {
     display: block;
@@ -40,8 +42,18 @@ $logoRatio: $logoNativeHeight / $logoNativeWidth;
   display: inline-block;
   transform-origin: 50% 50%;
 
-  mix-blend-mode: multiply;
+  //mix-blend-mode: multiply;
   will-change: transform;
+
+  padding: 1rem;
+  margin-left: -1rem;
+	box-sizing: content-box;
+  svg {
+    filter: blur(5px);
+    path {
+			fill: $vulcano;
+    }
+  }
 
   // transition between frames to reach 60fps
   // transition: transform (1000/60*3) * 1ms linear;

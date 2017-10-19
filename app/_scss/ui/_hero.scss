@@ -3,7 +3,8 @@
 //
 
 .hero {
-  background-color: $offwhite;
+  // background-color: $offwhite;
+  background-color: #000;
 	color: #fff;
 	display: flex;
 	height: 100%;
@@ -56,9 +57,13 @@
 .hero__nav {
   position: relative;
   z-index: 1000;
-	background-color: $white;
-	// line-height: pxToRem(80);
-	font-size: modular-scale(1rem, 1);
+
+  transition: background 200ms ease-in;
+  .hero--hidden & {
+    background-color: $white;
+  }
+
+  font-size: modular-scale(1rem, 1);
   margin-top: 0;
   margin-bottom: 0;
 
