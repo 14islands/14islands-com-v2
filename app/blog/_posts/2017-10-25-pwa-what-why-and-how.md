@@ -2,7 +2,7 @@
 layout: post
 title:  "Progressive Web Apps: What, Why and How (Slides/Video)"
 description: A talk held at the SthlmJS meetup hosted at MyNewsDesk on the 24th October 2007 in Stockholm, Sweden.
-og_image: /images/blog/2017-10-25-pwa-what-why-and-how/hjortur-talking.jpg
+og_image: /images/blog/2017-10-25-pwa-what-why-and-how/first-slide.png
 ---
 
 # Progressive Web Apps: What, Why and How (Slides/Video)
