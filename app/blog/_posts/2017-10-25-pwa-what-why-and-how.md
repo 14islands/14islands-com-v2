@@ -11,7 +11,7 @@ Yesterday we had a talk at a [SthlmJS meetup](http://sthlmjs.com/), hosted by [M
 
 {% include post-image.html alt="Speaking about Progressive Web Apps" src="/images/blog/2017-10-25-pwa-what-why-and-how/hjortur-talking.jpg" margin="both" ratio="16_10" caption="true" %}
 
-The goal of the talk was to show how to built the core functions of a Progressive Web App, what they are about and why they matter for the web.
+The goal of the talk was to show how to built the core functions of a Progressive Web App, what they are and why they matter for the web.
 
 The slides and a recorded video of the talk below. Enjoy!
 
