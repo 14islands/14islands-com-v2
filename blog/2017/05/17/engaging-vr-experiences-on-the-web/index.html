@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Making engaging VR experiences on the web</title>
+		<meta name="description" content="WebVR is the easiest entry point to dive into VR. We created two new, interactive experiments to explore its potential.">
+		<meta name="keywords" content="Web Development, Web Design, UX, Web Developers, Digital, Studio, Agency, Stockholm, Consulting, Training, HTML, CSS, JavaScript, WordPress">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Making engaging VR experiences on the web" />
+		<meta property="og:description" content="WebVR is the easiest entry point to dive into VR. We created two new, interactive experiments to explore its potential." />
+		<meta property="og:image" content="https://14islands.com/images/blog/2017-05-17-interactive-webvr/moose-experiment.jpg" />
+		<meta property="og:url" content="https://14islands.com/blog/2017/05/17/engaging-vr-experiences-on-the-web/" />
+		<meta property="og:site_name" content="14islands" />
+
+		<!-- Twitter Card data -->
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@14islands">
+		<meta name="twitter:title" content="Making engaging VR experiences on the web">
+		<meta name="twitter:description" content="WebVR is the easiest entry point to dive into VR. We created two new, interactive experiments to explore its potential.">
+		<meta name="twitter:creator" content="@14islands">
+		<meta name="twitter:image" content="https://14islands.com/images/blog/2017-05-17-interactive-webvr/moose-experiment.jpg">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<meta name="theme-color" content="#ffffff">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f47643">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="alternate" type="application/rss+xml" title="14islands - Blog" href="/feed.xml">
+
+		<script>
+			// hide body to avoid flashing unstyled content
+			var htmlEL = document.documentElement;
+			htmlEL.className += ' js-loading';
+			// make body visible after dom loaded
+			document.addEventListener('DOMContentLoaded', function() {
+				htmlEL.className = htmlEL.className.replace('js-loading', 'js-loaded');
+			});
+		</script>
+
+		<link rel="stylesheet" href="/css/main.31c5.css"/>
+
+	</head>
+	<body id="" class="page page-/blog/2017/05/17/engaging-vr-experiences-on-the-web">
+
+		<!--[if lt IE 9]>
+				<p class="browsehappy"><span>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.<span></p>
+		<![endif]-->
+
+		
+<section class="hero hero--hidden js-component-hero-noise">
+
+	<div class="hero__content-wrapper js-btn-explode-logo">
+
+		<div class="hero__content grid">
+
+			<div class="grid__row--wide hero__logo">
+				<div class="grid__row--wide__content">
+
+			<div class="hero-noise__logo js-logo">
+				<div class="hero-noise__island island-1 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.2 26.1"><path d="M22.2,26.1H0L22.2,0Z" fill="#f47643"/></svg>
+				</div>
+				<div class="hero-noise__island island-2 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.8 68.3"><path d="M24.8,66.6,5.7,68.3,0,1.7,19.1,0Z" fill="#e5c83d"/></svg>
+				</div>
+				<div class="hero-noise__island island-3 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 54.6"><path d="M42,49.4,0,54.6,35.9,0Z" fill="#f47643"/></svg>
+				</div>
+				<div class="hero-noise__island island-4 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.9 21.9"><path d="M18.9,21.9,0,18.9,3,0,21.9,3Z" fill="#73c9bd"/></svg>
+				</div>
+				<div class="hero-noise__island island-5 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.3 67.4"><path d="M19.1,67.4,0,66.8,2.2,0,21.3.6Z" fill="#e5c83d"/></svg>
+				</div>
+				<div class="hero-noise__island island-6 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.45 45.14"><path d="M36.45,3.34,12,45.14a24.23,24.23,0,0,1,24.5-41.8Z" fill="#73c9bd"/></svg>
+				</div>
+				<div class="hero-noise__island island-7 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.32 41.33"><path d="M0,34.2,34.2,0A24.18,24.18,0,0,1,0,34.2Z" fill="#f47643"/></svg>
+				</div>
+				<div class="hero-noise__island island-8 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.3 68.3"><path d="M25.4,66.5h0L6.3,68.3,0,1.8,19.1,0l4.7,49.5L39.7,48l1.6,17Z" fill="#e5c83d"/></svg>
+				</div>
+				<div class="hero-noise__island island-9 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.6 71"><path d="M20.8,0,37.7,32.9,54.6,65.8,27.3,68.4,0,71,10.4,35.5Z" fill="#f47643"/></svg>
+				</div>
+				<div class="hero-noise__island island-10 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 68.8"><path d="M.1,0,55,68.8H0V0Z" fill="#73c9bd"/></svg>
+				</div>
+				<div class="hero-noise__island island-11 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.6 72.7"><path d="M17.9,72.7,0,47.8,2.5,0,21.6,1Z" fill="#e5c83d"/></svg>
+				</div>
+				<div class="hero-noise__island island-12 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.66 66.66"><path d="M36.5,36.5A33.42,33.42,0,0,1,0,66.5L6.6,0A33.3,33.3,0,0,1,36.5,36.5Z" fill="#f47643"/></svg>
+				</div>
+				<div class="hero-noise__island island-13 js-logo-island">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.69 47.69"><path d="M30.85.89l-12.4,46.8A24.21,24.21,0,0,1,30.17.71Z" fill="#73c9bd"/></svg>
+				</div>
+				<div class="hero-noise__island island-14 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.33 41.29"><path d="M0,34.2,34.2,0A24.18,24.18,0,0,1,0,34.2Z" fill="#e5c83d"/></svg>
+				</div>
+			</div>
+
+			</div>
+			</div>
+
+		</div>
+	</div>
+  <nav class="grid hero__nav js-hero-nav">
+    <div class="nav grid__row--wide">
+      <div class="grid__row--wide__normal">
+				<div class="nav__list">
+					<div class="nav__item">
+						<a href="/" class="nav__logo-clean js-nav-home" title="Back to Home page">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89.5 69.9" enable-background="new 0 0 89.5 69.9"><path class="logo-item logo-item--beach" fill="#E5C83D" d="M15.345 3.356l19.03-1.652 5.778 66.553-19.03 1.652z"/><path class="logo-item logo-item--tropical" fill="#73C9BD" d="M64.71 46.516L83.575 49.5 80.59 68.363 61.727 65.38z"/><path class="logo-item logo-item--vulcano" fill="#F47643" d="M22.2 30.8H0L22.2 4.7z"/><path class="logo-item logo-item--vulcano" fill="#F47643" d="M89.5 49.4l-42 5.2L83.4 0z"/></svg>
+						</a>
+					</div><!-- Remove space
+					--><div class="nav__item">
+							<a class="nav__link nav__link--work js-nav-link js-nav-link-work" href="/work/" title="Explore our work"><span>Our </span>Work</a>
+					</div><!-- Remove space
+					--><div class="nav__item">
+							<a class="nav__link nav__link--about js-nav-link" href="/about/" title="Learn more about us">About <span>Us</span></a>
+					</div><!-- Remove space
+					--><div class="nav__item nav__item--hide-on-small">
+							<a class="nav__link nav__link--blog js-nav-link" href="/blog/" title="Read our blog">Blog</a>
+					</div><!-- Remove space
+					--><div class="nav__item">
+							<a class="nav__link nav__link--contact js-nav-link" href="/contact/" title="Say hello">Contact</a>
+					</div>
+				</div>
+      </div>
+    </div>
+  </nav>
+</section>
+
+
+		<main class="main-content js-pjax-container">
+				<article class="post grid u-pad-both pjax-animate">
+	<section class="grid__row">
+		<span class="post__date typography__mono">17 May 2017</span>
+		<h1 id="making-engaging-vr-experiences-on-the-web">Making engaging VR experiences on the web</h1>
+
+<p>WebVR is a JavaScript API for creating Virtual Reality experiences in the browser. It is the easiest entry point to dive into VR. It’s open for anyone, mobile, cross-platform and it’s just a click away, without the need to download anything.</p>
+
+<p>Inspired by our most recent project which involved lots of 3D, we turned our explorations into a fun project and created two new WebVR experiments. You can try them out on HTC Vive and Google Cardboard or simply view them in 2D if you don’t have access to a VR headset. </p>
+
+<p><a href="https://14islands.github.io/webvr-balloon-ride/">A dreamy hot air balloon ride</a></p>
+
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
+
+
+  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
+		
+		<a href="https://14islands.github.io/webvr-balloon-ride/">
+		
+    <img alt="Hot air balloon Experiment" data-src="/images/blog/2017-05-17-interactive-webvr/balloon-experiment.jpg" class="u-ratio__content" />
+<noscript>
+  <img alt="Hot air balloon Experiment" src="/images/blog/2017-05-17-interactive-webvr/balloon-experiment.jpg" class="u-ratio__content" />
+</noscript>
+		
+		</a>
+		
+
+  </div>
+  
+</figure>
+
+<p><a href="https://14islands.github.io/webvr-moose-explorer/">And a frosty forest encounter with a moose</a></p>
+
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
+
+
+  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
+		
+		<a href="https://14islands.github.io/webvr-moose-explorer/">
+		
+    <img alt="Moose Experiment" data-src="/images/blog/2017-05-17-interactive-webvr/moose-experiment.jpg" class="u-ratio__content" />
+<noscript>
+  <img alt="Moose Experiment" src="/images/blog/2017-05-17-interactive-webvr/moose-experiment.jpg" class="u-ratio__content" />
+</noscript>
+		
+		</a>
+		
+
+  </div>
+  
+</figure>
+
+<h2 id="project-setup">Project setup</h2>
+
+<p>We believe VR is here to stay so we built a <a href="https://github.com/14islands/webvr-three-es6-boilerplate">starter kit</a> to help us quickly create WebVR projects. The starter kit uses ES6 JavaScript with <a href="https://babeljs.io/">Babel</a> as the compiler and comes with <a href="https://www.vive.com/">HTC Vive</a> controllers models. It is based on the <a href="https://github.com/borismus/webvr-boilerplate">webvr-boilerplate</a>, which lets you enter and exit VR mode and works well on all VR headsets. It also works with Room Scale VR, allowing the user to freely walk around in the virtual space. </p>
+
+<p>To display 3D graphics in the browser we use <a href="https://threejs.org/">THREE.js</a>, a JavaScript library built on top of WebGL.</p>
+
+<p><em>Note: The current version of Chrome supports Google Cardboard and Daydream and works best on Android devices. Other browsers and iOS don’t fully support WebVR yet. You still need an <a href="https://webvr.rocks/chromium">experimental desktop version of Chrome</a> in order to access the experience in HTC Vive.</em></p>
+
+<h2 id="exporting-3d-models-with-blender">Exporting 3D models with Blender</h2>
+
+<p>We found <a href="https://sketchfab.com/">Sketchfab</a> to be a great platform with lots of amazing, downloadable 3D models and used this <a href="https://sketchfab.com/models/ab92d9b324724e18968377264d05774d">sky island</a> by <a href="https://www.artstation.com/artist/ntrtd">Leonid Tsvetkov</a> as a base for the Balloon Experience.</p>
+
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
+
+
+  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
+		
+    <img alt="Exporting models from Blender" data-src="/images/blog/2017-05-17-interactive-webvr/blender.jpg" class="u-ratio__content" />
+<noscript>
+  <img alt="Exporting models from Blender" src="/images/blog/2017-05-17-interactive-webvr/blender.jpg" class="u-ratio__content" />
+</noscript>
+		
+
+  </div>
+  
+</figure>
+
+<p>The models are imported into the scenes with <a href="https://www.blender.org/">Blender</a>, an open source software for 3D modeling. With the <a href="https://github.com/mrdoob/three.js/tree/master/utils/exporters/blender">Blender to THREE.js exporter</a>, you can export meshes and scenes as JSON files.</p>
+
+<h2 id="making-it-move">Making it move</h2>
+
+<p>We quickly noticed that VR scenes need animations in order to feel more engaging. To bring more life into them, both experiences feature animated animal models, inspired by <em><a href="http://www.ro.me/tech/">Rome: 3 Dreams of Black</a></em> interactive movie. All the creatures featured in the film are open source and can be found <a href="https://github.com/dataarts/3-dreams-of-black/tree/master/deploy/asset_viewer/files/models/animals">here</a>.  </p>
+
+<p>We added motion to the scenes by creating several particle systems. <a href="https://threejs.org/docs/#api/objects/Points">THREE.Points</a> is great for generating cool, elemental effects like snow or fire. All our particle systems use shaders, a piece of code which runs directly on the GPU, which means you get a lot of graphical power for free. Thanks to the GPU’s parallel architecture, the transformations are applied to a large set of elements at a time, instead of looping through each particle.</p>
+
+<p>It was great to see how straight-forward applying shaders in THREE.js is and how efficiently and smoothly they run.</p>
+
+<p>The snow shader in the Moose Explorer experience</p>
+
+<figure class="js-component-code-pen-embed-on-scroll codepen-embed grid__row--wide u-margin-both-half " style="height: 333px" data-slug="bBXZPd" data-ratio="" data-height="333" data-tab="result">
+  <div class="codepen-embed__content "></div>
+	<noscript>See the Pen <a href="http://codepen.io/14islands/pen/bBXZPd/">bBXZPd</a> by 14islands (<a href="http://codepen.io/14islands">@14islands</a>) on <a href="http://codepen.io">CodePen</a>.</noscript>
+</figure>
+
+<p>The fire used in in the Balloon Ride</p>
+
+<figure class="js-component-code-pen-embed-on-scroll codepen-embed grid__row--wide u-margin-both-half " style="height: 333px" data-slug="LboXYm" data-ratio="" data-height="333" data-tab="result">
+  <div class="codepen-embed__content "></div>
+	<noscript>See the Pen <a href="http://codepen.io/14islands/pen/LboXYm/">LboXYm</a> by 14islands (<a href="http://codepen.io/14islands">@14islands</a>) on <a href="http://codepen.io">CodePen</a>.</noscript>
+</figure>
+
+<p>The triangles which float around the sky island</p>
+
+<figure class="js-component-code-pen-embed-on-scroll codepen-embed grid__row--wide u-margin-both-half " style="height: 333px" data-slug="GmvZJO" data-ratio="" data-height="333" data-tab="result">
+  <div class="codepen-embed__content "></div>
+	<noscript>See the Pen <a href="http://codepen.io/14islands/pen/GmvZJO/">GmvZJO</a> by 14islands (<a href="http://codepen.io/14islands">@14islands</a>) on <a href="http://codepen.io">CodePen</a>.</noscript>
+</figure>
+
+<h2 id="engaging-the-users">Engaging the users</h2>
+
+<p>To make both experiments more playable we incorporated subtle user interactions. </p>
+
+<p>In the balloon ride, a user can click the rope hanging inside to make it fly higher up. The <a href="https://threejs.org/docs/#api/core/Raycaster">THREE.js RayCaster</a> class enables features like object picking or clicking. In a 3D scene it’s hard to know where the user is clicking. You have to imagine a line from the camera through the mouse/controller and find which objects are colliding with that line. The ones intersecting with the ray caster, in our case the rope, will be highlighted red to tell the user that the object is interactive. When clicked, the fire expands and the balloon flies higher up.</p>
+
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
+
+
+  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
+		
+    <img alt="Interacting with the balloon" data-src="/images/blog/2017-05-17-interactive-webvr/nat-balloon.gif" class="u-ratio__content" />
+<noscript>
+  <img alt="Interacting with the balloon" src="/images/blog/2017-05-17-interactive-webvr/nat-balloon.gif" class="u-ratio__content" />
+</noscript>
+		
+
+  </div>
+  
+</figure>
+
+<p>The moose experience uses custom hand models instead of HTC Vive controller models which makes the experience feel more immersive. The hands we used were created by the Mozilla VR team and come from the <a href="https://blog.mozvr.com/puzzle-rain/">Puzzle Rain</a> experiment. </p>
+
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
+
+
+  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
+		
+    <img alt="Custom hands models" data-src="/images/blog/2017-05-17-interactive-webvr/david-hands.gif" class="u-ratio__content" />
+<noscript>
+  <img alt="Custom hands models" src="/images/blog/2017-05-17-interactive-webvr/david-hands.gif" class="u-ratio__content" />
+</noscript>
+		
+
+  </div>
+  
+</figure>
+
+<h2 id="exciting-times-ahead">Exciting times ahead</h2>
+
+<p>As for now, WebGL is the main solution for WebVR. We have been seeing an increasing amount of WebGL sites recently and for a good reason. It encourages the most imaginative and abstract ideas and designs. Thus creating some truly amazing and innovative web experiences. </p>
+
+<p>There are however new cool tools on the block such as A-Frame, which uses a DOM declarative approach. This means that developers can create 3D and WebVR scenes using HTML. The ease of building 3D/VR content this way lets web developers and designers get into the WebVR ecosystem with very little effort. It’s predicted that we will soon be able to build DOM-only virtual reality experiences.</p>
+
+<blockquote class="post__quote">
+	<p class="post__quote-text--small">"Developers should be able to create compelling VR experiences, or adapt existing sites, without having to use WebGL. HTML and CSS are the languages we have. They may not seem obvious candidates to be great VR design tools, but we believe they will be, with relatively little effort.”</p>
+	
+	<span class="post__quote-author"></span>
+	
+</blockquote>
+
+<blockquote class="post__quote">
+	<p class="post__quote-text--small">"Adding models should be as easy as adding images. A &lt;model&gt; element with glTF support would trigger an explosion of creative possibilities.”</p>
+	
+	<a href="https://twitter.com/joshcarpenter" class="post__quote-author" target="_blank">Josh Carpenter, UX Lead for WebXR @ Google</a>
+	
+</blockquote>
+
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
+
+
+  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
+		
+		<a href="https://docs.google.com/presentation/d/1CSgOsiyn2PeLGlJCnrmmTYv9FLE_dmCaVKp7fZ-SF2I/edit#slide=id.g186a1bfda4_0_58">
+		
+    <img alt="A slide from WebVR Workshop by Josh Carpenter" data-src="/images/blog/2017-05-17-interactive-webvr/webvr-slide.gif" class="u-ratio__content" />
+<noscript>
+  <img alt="A slide from WebVR Workshop by Josh Carpenter" src="/images/blog/2017-05-17-interactive-webvr/webvr-slide.gif" class="u-ratio__content" />
+</noscript>
+		
+		</a>
+		
+
+  </div>
+  
+    <div class="u-img-caption">
+      <figcaption>A slide from WebVR Workshop by Josh Carpenter</figcaption>
+    </div>
+  
+</figure>
+
+<h2 id="summing-up">Summing up</h2>
+
+<p>THREE.js has once again turned out to be a great library for creating simple WebVR experiments. Even though it occasionally makes you struggle and reverse engineer one of its many examples to find the functionality you’re looking for. It’s without a doubt one of the best 3D libraries which allows you to explore all the wonders of WebGL. As we dive deeper into it we find it more and more fun to work with. </p>
+
+<h2 id="get-the-code">Get the code</h2>
+
+<p><a href="https://github.com/14islands/webvr-moose-explorer">The Moose Explorer</a> and the <a href="https://github.com/14islands/webvr-balloon-ride">Hot Air Balloon Ride</a> are open-source GitHub. Check them out and tell us what you think!</p>
+
+<div class="post__author u-pad-top">
+	<img alt="Natalia Wojtkowska" data-src="/images/about/team-grid/double-nat.jpg" class="post__author-image" />
+<noscript>
+  <img alt="Natalia Wojtkowska" src="/images/about/team-grid/double-nat.jpg" class="post__author-image" />
+</noscript>
+	<span class="post__author-name"><strong>Natalia Wojtkowska</strong> <a href="https://twitter.com/titol92" target="_blank">@titol92</a></span>
+	<span class="post__author-job-title">Creative Web Developer at 14islands</span>
+</div>
+
+
+	</section>
+</article>
+
+
+
+	
+
+
+
+	<section class="js-component-disqus-embed post-comments grid u-pad-bottom"
+         data-disqus-shortname="14islands-com"
+         data-disqus-identifier="/blog/2017/05/17/engaging-vr-experiences-on-the-web/"
+         data-disqus-expanded="false">
+
+
+	<a href="#" data-disquss-count class="grid__row u-bg-bright" title="Show comments for post">
+		<h4 class="post-comments__cta ">
+			<span class="disqus-comment-count" data-disqus-identifier="/blog/2017/05/17/engaging-vr-experiences-on-the-web/">Write a comment</span>
+		</h4>
+	</a>
+
+	<div data-disquss-comments class="grid__row" id="disqus_thread"></div>
+</section>
+
+
+
+<section class="u-bg-bright u-default-v-padding grid js-component-newsletter">
+	<div class="grid__row">
+		<h2>Keep me posted!</h2>
+		<p class="newsletter__copy-without-notifications">Signup to get our latest thoughts about cutting-edge technologies and creative development. We only send out few emails per year. Like you, we also hate spam <em class="emoji">☠️</em></p>
+		<p class="newsletter__copy-with-notifications">Stay on top of this unpredictable industry we are in. Get a notification in your browser or an email with our latest thoughts. Like you, we also hate spam <em class="emoji">☠️</em></p>
+		<div class="newsletter__wrapper">
+			<button class="newsletter__notify-button button button--primary">
+				<div class="newsletter__notify-button-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 24">
+	<path d="M12,24a3.07,3.07,0,0,0,3-3H9A3.12,3.12,0,0,0,12,24Z" transform="translate(-1.76)" fill="#ffffff"/>
+	<path d="M15.14,3.95a2.1,2.1,0,0,1-1-1.82h0a2.1,2.1,0,1,0-4.19,0h0a2.1,2.1,0,0,1-1,1.82C4.2,6.66,6.88,15.66,2,17.25V19H22V17.25C17.12,15.66,19.8,6.66,15.14,3.95ZM12,3a1,1,0,1,1,1-1A1,1,0,0,1,12,3Z" transform="translate(-1.76)" fill="#ffffff"/>
+	<line class="newsletter__notify-icon-line--off" x1="21.24" y1="2.65" x2="0.92" y2="22.97" stroke="" stroke-miterlimit="10"/>
+	<line class="newsletter__notify-icon-line--off" x1="20.24" y1="1.98" x2="0.53" y2="21.69" fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="1.5"/>
+</svg>
+
+				</div>
+				<span class="newsletter__notify-button-label">Get notifications</span>
+				<span class="newsletter__notify-button-label--off">Turn Off Notifications</span>
+			</button>
+			<form class="newsletter__email-form" action="//14islands.us7.list-manage.com/subscribe/post?u=490492cf1e6a559f7d31be38e&amp;id=9fcb86e4a6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				<input class="newsletter__email-input form__input" type="email" placeholder="Your email..." value="" name="EMAIL"  id="mce-EMAIL">
+				<input class="newsletter__email-name-input form__input" type="text" placeholder="Your name..." value="" name="NAME" id="mce-NAME">
+				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" style="display:none">
+			</form>
+			<button class="newsletter__email-button button button--primary">
+				<div class="newsletter__email-button-icon">
+					<svg version="1.1" id="iconmonstr" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<path id="paper-plane-1" style="fill:#FFFFFF;" d="M24,0l-6,22l-8.129-7.239l7.802-8.234L7.215,13.754L0,12L24,0z M9,16.669V24l3.258-4.431L9,16.669z"/>
+</svg>
+
+				</div>
+				<span class="newsletter__email-button-label">Get email</span>
+				<span class="newsletter__email-button-label--add">Add</span>
+			</button>
+		</div>
+	</div>
+</section>
+
+
+
+  
+
+
+
+<section class="related-posts">
+	<a class="related-posts__link grid u-default-v-padding u-bg-natt-dark" href="/blog/2017/05/12/new-branding/">
+		<div class="grid__row">
+	    <p class="related-posts__label typography__mono">Read Next</p>
+	    <h2 class="related-posts__title">New Branding</h2>
+	  </div>
+	</a>
+</section>
+
+
+<footer class="grid typography__mono-wrapper footer u-pad-both">
+  <div class="grid__row--wide">
+    <div class="footer__content grid__row--wide__normal">
+      <div class="footer__info">
+        <p class="footer__description nano no-hyphens">
+          A creative development studio that loves to build great user experiences. We help our clients craft sites, apps and playful games on the web.
+        </p>
+        <p class="footer__description nano no-hyphens">
+          14islands is based in Stockholm, Sweden and was founded in 2011.
+        </p>
+        <p class="nano">
+          <a href="mailto:hello@14islands.com">Say hello</a>
+        </p>
+      </div>
+      <div class="footer__social">
+        <ul class="footer__social-nav">
+          <li>
+            <a class="nano" href="/blog/" target="_blank">Blog</a>
+          </li>
+          <li>
+            <a class="nano" href="https://instagram.com/14islands" target="_blank">Instagram</a>
+          </li>
+          <li>
+            <a class="nano" href="https://twitter.com/14islands" target="_blank">Twitter</a>
+          </li>
+          <li>
+            <a class="nano" href="https://www.facebook.com/14islands" target="_blank">Facebook</a>
+          </li>
+          <li>
+            <a class="nano" href="http://codepen.io/14islands/" target="_blank">Codepen</a>
+          </li>
+          <li>
+            <a class="nano" href="/handbook/" target="_blank">Handbook</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+		<div class="footer__logo">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 454 77.4" enable-background="new 0 0 454 77.4"><path class="logo-island logo-island-2" fill="#E5C83D" d="M40.2 68.3L21.1 70 15.4 3.4l19.1-1.7 5.7 66.6z"/><path class="logo-island logo-island-1" fill="#F47643" d="M22.2 30.8H0L22.2 4.7v26.1z"/><path class="logo-island logo-island-3" fill="#F47643" d="M89.5 49.4l-42 5.2L83.4 0l6.1 49.4z"/><path class="logo-island logo-island-4" fill="#73C9BD" d="M80.7 68.4l-18.9-3 3-18.9 18.9 3-3 18.9z"/><path class="logo-island logo-island-5" fill="#E5C83D" d="M124.3 69.5l-19.1-.6 2.2-66.8 19.1.6-2.2 66.8z"/><path class="logo-island logo-island-7" fill="#F47643" d="M135.1 60.9l34.2-34.2c9.5 9.5 9.5 24.8 0 34.2-9.4 9.5-24.7 9.5-34.2 0z"/><path class="logo-island logo-island-6" fill="#73C9BD" d="M180 8.1l-24.5 41.8c-11.5-6.8-15.4-21.6-8.6-33.1 6.7-11.6 21.5-15.5 33.1-8.7z"/><path class="logo-island logo-island-8" fill="#E5C83D" d="M215.4 68.9l-19.1 1.8L190 4.2l19.1-1.8 4.7 49.5 15.9-1.5 1.6 17-15.9 1.5z"/><path class="logo-island logo-island-9" fill="#F47643" d="M262.4.6l16.9 32.9 16.9 32.9-27.3 2.6-27.3 2.6L252 36.1 262.4.6z"/><path class="logo-island logo-island-10" fill="#73C9BD" d="M303.6.5l54.9 68.8h-55V.5z"/><path class="logo-island logo-island-11" fill="#E5C83D" d="M358.2 77.4l-17.9-24.9 2.5-47.8 19.1 1-3.7 71.7z"/><path class="logo-island logo-island-12" fill="#F47643" d="M405.5 37.5c-1.8 18.4-18.2 31.8-36.5 30L375.6 1c18.3 1.7 31.7 18.1 29.9 36.5z"/><path class="logo-island logo-island-14" fill="#E5C83D" d="M409.9 60.9l34.2-34.2c9.5 9.5 9.5 24.8 0 34.2s-24.7 9.5-34.2 0z"/><path class="logo-island logo-island-13" fill="#73C9BD" d="M454 3.7l-12.4 46.8c-12.9-3.4-20.6-16.7-17.2-29.6S441.1.3 454 3.7z"/></svg>
+		</div>
+  </div>
+</footer>
+
+
+		</main>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>window.jQuery || document.write('<script src="/_bower_components/jquery/dist/jquery.min.js"><\/script>')</script>
+
+<script src="//src.responsive.io/r.js"></script>
+
+<script src="/js/footer-scripts.0c8f.js"></script>
+
+		<script>
+  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+  function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+  e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+  e.src='//www.google-analytics.com/analytics.js';
+  r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+  ga('create','UA-31151822-1');ga('send','pageview');
+</script>
+
+	</body>
+</html>

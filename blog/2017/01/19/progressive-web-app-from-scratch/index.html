@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>We built a PWA from scratch - This is what we learned</title>
+		<meta name="description" content="Our Progressive Web App journey on how to build native-like web apps.">
+		<meta name="keywords" content="Web Development, Web Design, UX, Web Developers, Digital, Studio, Agency, Stockholm, Consulting, Training, HTML, CSS, JavaScript, WordPress">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="We built a PWA from scratch - This is what we learned" />
+		<meta property="og:description" content="Our Progressive Web App journey on how to build native-like web apps." />
+		<meta property="og:image" content="https://14islands.com/images/blog/2017-01-pwa-dev/pwa-blog-cover-image_16_10.jpg" />
+		<meta property="og:url" content="https://14islands.com/blog/2017/01/19/progressive-web-app-from-scratch/" />
+		<meta property="og:site_name" content="14islands" />
+
+		<!-- Twitter Card data -->
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@14islands">
+		<meta name="twitter:title" content="We built a PWA from scratch - This is what we learned">
+		<meta name="twitter:description" content="Our Progressive Web App journey on how to build native-like web apps.">
+		<meta name="twitter:creator" content="@14islands">
+		<meta name="twitter:image" content="https://14islands.com/images/blog/2017-01-pwa-dev/pwa-blog-cover-image_16_10.jpg">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<meta name="theme-color" content="#ffffff">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f47643">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="alternate" type="application/rss+xml" title="14islands - Blog" href="/feed.xml">
+
+		<script>
+			// hide body to avoid flashing unstyled content
+			var htmlEL = document.documentElement;
+			htmlEL.className += ' js-loading';
+			// make body visible after dom loaded
+			document.addEventListener('DOMContentLoaded', function() {
+				htmlEL.className = htmlEL.className.replace('js-loading', 'js-loaded');
+			});
+		</script>
+
+		<link rel="stylesheet" href="/css/main.31c5.css"/>
+
+	</head>
+	<body id="" class="page page-/blog/2017/01/19/progressive-web-app-from-scratch">
+
+		<!--[if lt IE 9]>
+				<p class="browsehappy"><span>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.<span></p>
+		<![endif]-->
+
+		
+<section class="hero hero--hidden js-component-hero-noise">
+
+	<div class="hero__content-wrapper js-btn-explode-logo">
+
+		<div class="hero__content grid">
+
+			<div class="grid__row--wide hero__logo">
+				<div class="grid__row--wide__content">
+
+			<div class="hero-noise__logo js-logo">
+				<div class="hero-noise__island island-1 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.2 26.1"><path d="M22.2,26.1H0L22.2,0Z" fill="#f47643"/></svg>
+				</div>
+				<div class="hero-noise__island island-2 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.8 68.3"><path d="M24.8,66.6,5.7,68.3,0,1.7,19.1,0Z" fill="#e5c83d"/></svg>
+				</div>
+				<div class="hero-noise__island island-3 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 54.6"><path d="M42,49.4,0,54.6,35.9,0Z" fill="#f47643"/></svg>
+				</div>
+				<div class="hero-noise__island island-4 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.9 21.9"><path d="M18.9,21.9,0,18.9,3,0,21.9,3Z" fill="#73c9bd"/></svg>
+				</div>
+				<div class="hero-noise__island island-5 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.3 67.4"><path d="M19.1,67.4,0,66.8,2.2,0,21.3.6Z" fill="#e5c83d"/></svg>
+				</div>
+				<div class="hero-noise__island island-6 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.45 45.14"><path d="M36.45,3.34,12,45.14a24.23,24.23,0,0,1,24.5-41.8Z" fill="#73c9bd"/></svg>
+				</div>
+				<div class="hero-noise__island island-7 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.32 41.33"><path d="M0,34.2,34.2,0A24.18,24.18,0,0,1,0,34.2Z" fill="#f47643"/></svg>
+				</div>
+				<div class="hero-noise__island island-8 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.3 68.3"><path d="M25.4,66.5h0L6.3,68.3,0,1.8,19.1,0l4.7,49.5L39.7,48l1.6,17Z" fill="#e5c83d"/></svg>
+				</div>
+				<div class="hero-noise__island island-9 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.6 71"><path d="M20.8,0,37.7,32.9,54.6,65.8,27.3,68.4,0,71,10.4,35.5Z" fill="#f47643"/></svg>
+				</div>
+				<div class="hero-noise__island island-10 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 68.8"><path d="M.1,0,55,68.8H0V0Z" fill="#73c9bd"/></svg>
+				</div>
+				<div class="hero-noise__island island-11 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.6 72.7"><path d="M17.9,72.7,0,47.8,2.5,0,21.6,1Z" fill="#e5c83d"/></svg>
+				</div>
+				<div class="hero-noise__island island-12 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.66 66.66"><path d="M36.5,36.5A33.42,33.42,0,0,1,0,66.5L6.6,0A33.3,33.3,0,0,1,36.5,36.5Z" fill="#f47643"/></svg>
+				</div>
+				<div class="hero-noise__island island-13 js-logo-island">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.69 47.69"><path d="M30.85.89l-12.4,46.8A24.21,24.21,0,0,1,30.17.71Z" fill="#73c9bd"/></svg>
+				</div>
+				<div class="hero-noise__island island-14 js-logo-island">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.33 41.29"><path d="M0,34.2,34.2,0A24.18,24.18,0,0,1,0,34.2Z" fill="#e5c83d"/></svg>
+				</div>
+			</div>
+
+			</div>
+			</div>
+
+		</div>
+	</div>
+  <nav class="grid hero__nav js-hero-nav">
+    <div class="nav grid__row--wide">
+      <div class="grid__row--wide__normal">
+				<div class="nav__list">
+					<div class="nav__item">
+						<a href="/" class="nav__logo-clean js-nav-home" title="Back to Home page">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89.5 69.9" enable-background="new 0 0 89.5 69.9"><path class="logo-item logo-item--beach" fill="#E5C83D" d="M15.345 3.356l19.03-1.652 5.778 66.553-19.03 1.652z"/><path class="logo-item logo-item--tropical" fill="#73C9BD" d="M64.71 46.516L83.575 49.5 80.59 68.363 61.727 65.38z"/><path class="logo-item logo-item--vulcano" fill="#F47643" d="M22.2 30.8H0L22.2 4.7z"/><path class="logo-item logo-item--vulcano" fill="#F47643" d="M89.5 49.4l-42 5.2L83.4 0z"/></svg>
+						</a>
+					</div><!-- Remove space
+					--><div class="nav__item">
+							<a class="nav__link nav__link--work js-nav-link js-nav-link-work" href="/work/" title="Explore our work"><span>Our </span>Work</a>
+					</div><!-- Remove space
+					--><div class="nav__item">
+							<a class="nav__link nav__link--about js-nav-link" href="/about/" title="Learn more about us">About <span>Us</span></a>
+					</div><!-- Remove space
+					--><div class="nav__item nav__item--hide-on-small">
+							<a class="nav__link nav__link--blog js-nav-link" href="/blog/" title="Read our blog">Blog</a>
+					</div><!-- Remove space
+					--><div class="nav__item">
+							<a class="nav__link nav__link--contact js-nav-link" href="/contact/" title="Say hello">Contact</a>
+					</div>
+				</div>
+      </div>
+    </div>
+  </nav>
+</section>
+
+
+		<main class="main-content js-pjax-container">
+				<article class="post grid u-pad-both pjax-animate">
+	<section class="grid__row">
+		<span class="post__date typography__mono">19 January 2017</span>
+		<h1 id="we-built-a-pwa-from-scratch---this-is-what-we-learned">We built a PWA from scratch - This is what we learned</h1>
+
+<p>Progressive Web Apps bring a lot of potential to the web. The new capabilities make it possible to build native-like web apps that integrate closer with people’s devices.</p>
+
+<p>To try out these abilities we built a Progressive Web App (PWA) from scratch. We already <a href="https://14islands.com/blog/2016/12/15/vecka-progressive-web-app/">had a great idea for an app</a>.</p>
+
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
+
+
+  <div class="u-ratio u-ratio--16_10 u-ratio--placeholder ">
+		
+    <img alt="Our Progressive Web App" data-src="/images/blog/2017-01-pwa-dev/pwa-blog-cover-image_16_10.jpg" class="u-ratio__content" />
+<noscript>
+  <img alt="Our Progressive Web App" src="/images/blog/2017-01-pwa-dev/pwa-blog-cover-image_16_10.jpg" class="u-ratio__content" />
+</noscript>
+		
+
+  </div>
+  
+</figure>
+
+<h2 id="the-plan">The plan</h2>
+
+<p>On top of making an useful app, these were our goals:</p>
+
+<ul>
+  <li>To create a Service Worker to boost performance and make the app available offline.</li>
+  <li>To make sure an “Add to Home Suggestion” would pop-up for users on Android, to access it like a native app.</li>
+  <li>To nicely decorate the app outside the viewport, using a Manifest file.</li>
+  <li>To get a 100% rating with <a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a>, to check for the PWA best practices.</li>
+  <li>Open Source <a href="https://github.com/14islands/vecka.14islands.com">the code on Github</a> and write a blog post about the lessons we learned (you are reading it now)</li>
+</ul>
+
+<h2 id="workers-at-your-service">Workers at your service</h2>
+
+<p>It took a bit of a time to grasp <em>Service Workers</em>. It’s not like any other technology we’ve had on the web, until now.</p>
+
+<p>They’re a part of the web-app, yet they’re not able to touch the DOM in any way. Service Workers are a proxy that live between the web-app and the user. They work in a separate thread and can cache assets, hook into requests, and communicate with the website via messages.</p>
+
+<p>Service Workers are <em>installed</em> on the user browser after the page has loaded for the first time. After the first <code>install</code> event, the worker can start interfering with requests using the <code>fetch</code> event. When a new version of the Service Worker is deployed, the browser will automatically detect byte differences and <code>activate</code> the worker version on next visit.</p>
+
+<p>A Service Worker Boilerplate:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">self</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;install&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Perform install steps</span>
+<span class="p">})</span>
+
+<span class="nx">self</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;fetch&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+ <span class="c1">// Handle requests</span>
+<span class="p">})</span>
+
+<span class="nx">self</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;activate&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Clean up old cache versions</span>
+<span class="p">})</span></code></pre></div>
+
+<p>We built our Service Worker mostly based on a <a href="https://www.smashingmagazine.com/2016/02/making-a-service-worker/">Smashing Magazine article about it</a>. We found this article to provide the most complete example to fit our needs.</p>
+
+<p>For simple cases, it’s also possible to use a plugin called <a href="https://github.com/GoogleChrome/sw-precache">sw-precache</a> for caching purposes, but we wanted to get into the grunts of it and craft our own from the ground.</p>
+
+<h2 id="caching-gotchas">Caching gotchas</h2>
+
+<p>We start by caching all assets when the <code>install</code> event fires.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">urlsToCache</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;/&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;/style.caf603aca47521f652fd678377752dd0.css&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;/main-compiled.9b0987235e60d1a3d1dc571a586ce603.js&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;/fonts/swedensans-webfont.woff&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;/fonts/swedensans-webfont.woff2&#39;</span>
+<span class="p">]</span>
+
+<span class="c1">// Open cache and store assets</span>
+<span class="nx">self</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;install&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Perform install steps</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">waitUntil</span><span class="p">(</span>
+    <span class="nx">caches</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;vecka-14islands-com-cache-v1&#39;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">cache</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">cache</span><span class="p">.</span><span class="nx">addAll</span><span class="p">(</span><span class="nx">urlsToCache</span><span class="p">);</span>
+      <span class="p">})</span>
+  <span class="p">)</span>
+<span class="p">})</span></code></pre></div>
+
+<p>The tricky part is that there is more than just one cache. The browser also has its cache and in our case, we use a global CDN for better performance.</p>
+
+<p>Lets take an example, a JavaScript or a CSS files changes, how do we make sure the new version is used by the browser?</p>
+
+<p>A way would be to use a HTTP header with <code>Cache-Control: no-cache</code> on these assets to make sure the file is fetched on every request. Problem is, we miss out of all the benefits of browser and CDN catching.</p>
+
+<p>The solution we used is not a new one, to append version numbers to these files that are subject to change.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">&#39;/style.caf603aca47521f652fd678377752dd0.css&#39;</span><span class="p">,</span>
+<span class="s1">&#39;/main-compiled.9b0987235e60d1a3d1dc571a586ce603.js&#39;</span><span class="p">,</span></code></pre></div>
+
+<p>This way we can keep a long max-age HTTP headers with <code>Cache-Control: max-age=31536000</code> and enjoy the benefits of browser/CDN caching.  I recommend <a href="https://jakearchibald.com/2016/caching-best-practices/">Jake Archibald post</a> about this to dive deeper, he is the biological father of Service Workers.</p>
+
+<p>Make sure to include the same version numbers in the HTML as in the Service Worker:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&#39;stylesheet&#39;</span> <span class="na">href=</span><span class="s">&quot;/style.caf603aca47521f652fd678377752dd0.css&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/main-compiled.9b0987235e60d1a3d1dc571a586ce603.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+
+<p>In our app we used a NodeJS module called <a href="https://github.com/errorception/staticify">Stacify</a> to automatically create new version numbers in all the places when a file is changed.</p>
+
+<h2 id="caching-strategy">Caching strategy</h2>
+
+<p>For our caching strategy we had to consider two kinds of content, static assets and a dynamic page HTML.</p>
+
+<p>Our static assets include CSS, JavaScript and Font files. For these we use <em>a cache first strategy</em>, this means we’ll fetch first from the cache before requesting the page.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">respondFromCacheThenNetwork</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Check cache first, then network</span>
+  <span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">request</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">respondWith</span><span class="p">(</span>
+    <span class="nx">fetchFromCache</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">request</span><span class="p">))</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">addToCache</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">))</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">offlineResponse</span><span class="p">())</span>
+    <span class="p">)</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Since the dynamic page HTML might change each time you open the app, we used <em>a network first strategy</em> for it, checking the network first before the cache.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">respondFromNetworkThenCache</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Check network first, then cache</span>
+  <span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">request</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">respondWith</span><span class="p">(</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">addToCache</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">))</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">fetchFromCache</span><span class="p">(</span><span class="nx">event</span><span class="p">))</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">offlineResponse</span><span class="p">())</span>
+  <span class="p">)</span>
+<span class="p">}</span></code></pre></div>
+
+<p>The cool thing about Service Workers is, we are able to cache whatever we want at the start. There are <a href="http://stackoverflow.com/questions/35242869/what-is-the-storage-limit-for-a-service-worker">size limits</a> but we can be smart as developers and prioritise what is most important first.</p>
+
+<h2 id="going-offline">Going offline</h2>
+
+<p>After the Service Worker has been installed and the user is offline, we show a banner on top of the app to let people know that they are browsing offline. If we have the app in cache because they browsed to that page in the past, they still get the full experience.</p>
+
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
+
+
+  <div class="u-ratio u-ratio--9_16 u-ratio--placeholder ">
+		
+    <img alt="App when Offline" data-src="/images/blog/2017-01-pwa-dev/nexus_offline_9_16.png" class="u-ratio__content" />
+<noscript>
+  <img alt="App when Offline" src="/images/blog/2017-01-pwa-dev/nexus_offline_9_16.png" class="u-ratio__content" />
+</noscript>
+		
+
+  </div>
+  
+    <div class="u-img-caption">
+      <figcaption>App when Offline</figcaption>
+    </div>
+  
+</figure>
+
+<p>We use <em>offline</em> and <em>online</em> events to detect changes in connectivity and display the banner when users go offline.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">bindEvents</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;offline&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">onOfflineStatus</span><span class="p">)</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;online&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">onOnlineStatus</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">onOfflineStatus</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">showOfflineBanner</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="nx">onOnlineStatus</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">hideOfflineBanner</span><span class="p">()</span>
+<span class="p">}</span></code></pre></div>
+
+<p>To show the banner if users access the app while offline, we add this extra check when loading the app.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span> <span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">onLine</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">showOfflineBanner</span><span class="p">()</span>
+<span class="p">}</span></code></pre></div>
+
+<p>This app is simple, so we are able to cache all assets for the app on the first visit. In more complex situation you might not be able to cache everything. In those cases, it is good to show a special “Offline” page if users access content that is not cached, and <a href="https://justmarkup.com/log/2016/08/indicating-offline/#grey-out-things-not-available-offline">gray out links that are not available offline</a>.</p>
+
+<h2 id="word-about-devtools">Word about DevTools</h2>
+
+<p>There is a Service Worker view in Chrome DevTools under the “Application” tab.</p>
+
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
+
+
+  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
+		
+    <img alt="Service Workers in Chrome DevTools" data-src="/images/blog/2017-01-pwa-dev/devtools_16_9.jpg" class="u-ratio__content" />
+<noscript>
+  <img alt="Service Workers in Chrome DevTools" src="/images/blog/2017-01-pwa-dev/devtools_16_9.jpg" class="u-ratio__content" />
+</noscript>
+		
+
+  </div>
+  
+    <div class="u-img-caption">
+      <figcaption>Service Workers in Chrome DevTools</figcaption>
+    </div>
+  
+</figure>
+
+<p>This view is essential to test the app when <em>Offline</em> and to <em>Bypass for Network</em> to test the app without using any Service Worker.</p>
+
+<p>To understand the <em>Upload on reload</em> checkbox, remember that Service Worker changes don’t take effect until the page has been closed and opened again on next visit. This check makes sure all changes takes effect on the next page refresh (shortcut: ⌘+R).</p>
+
+<p>This is useful, but I found that sometimes I had to <em>Unregister</em> the service worker and load it again for changes to take affect. Hopefully this will improve soon.</p>
+
+<h2 id="add-to-home-suggestion">Add to Home suggestion</h2>
+
+<p>A superpower of PWAs is that users get prompted to add the app to their home screen when used frequently. It is one of PWAs biggest selling points as it allows app-makers to bypass App Stores and simply share apps via links.</p>
+
+<p>There are <a href="https://developers.google.com/web/updates/2015/03/increasing-engagement-with-app-install-banners-in-chrome-for-android">number of criterias</a> that apps need to meet for “Add to Home Suggestion” to work properly. To see it in action, the following flag can be set in the Chrome address bar on the mobile device.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">chrome://flags/#bypass-app-banner-engagement-checks</code></pre></div>
+
+<p>You have to <em>Relaunch the browser</em> after the flag has been enabled. If everything is correct, this prompt should show up:</p>
+
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  content-image--outline">
+
+
+  <div class="u-ratio u-ratio--9_16 u-ratio--placeholder ">
+		
+    <img alt="Add to Home Suggestion" data-src="/images/blog/2017-01-pwa-dev/nexus_add_9_16.png" class="u-ratio__content" />
+<noscript>
+  <img alt="Add to Home Suggestion" src="/images/blog/2017-01-pwa-dev/nexus_add_9_16.png" class="u-ratio__content" />
+</noscript>
+		
+
+  </div>
+  
+    <div class="u-img-caption">
+      <figcaption>Add to Home Suggestion</figcaption>
+    </div>
+  
+</figure>
+
+<p>The app will live on the user home screen onwards:</p>
+
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
+
+
+  <div class="u-ratio u-ratio--9_16 u-ratio--placeholder ">
+		
+    <img alt="App on Android Home Screen" data-src="/images/blog/2017-01-pwa-dev/nexus_home_9_16.png" class="u-ratio__content" />
+<noscript>
+  <img alt="App on Android Home Screen" src="/images/blog/2017-01-pwa-dev/nexus_home_9_16.png" class="u-ratio__content" />
+</noscript>
+		
+
+  </div>
+  
+    <div class="u-img-caption">
+      <figcaption>App on Android Home Screen</figcaption>
+    </div>
+  
+</figure>
+
+<p>The app will open without any address bar when launched from the home screen:</p>
+
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
+
+
+  <div class="u-ratio u-ratio--9_16 u-ratio--placeholder ">
+		
+    <img alt="App in Full Screen" data-src="/images/blog/2017-01-pwa-dev/nexus_fullscreen_9_16.png" class="u-ratio__content" />
+<noscript>
+  <img alt="App in Full Screen" src="/images/blog/2017-01-pwa-dev/nexus_fullscreen_9_16.png" class="u-ratio__content" />
+</noscript>
+		
+
+  </div>
+  
+    <div class="u-img-caption">
+      <figcaption>App in Full Screen</figcaption>
+    </div>
+  
+</figure>
+
+<p>We can only hope that Apple will add an “Add to Home Suggestion” to Safari on the iPhone soon, as this ability is currently only on Android devices.</p>
+
+<h2 id="splash-screen-app-icons-and-more">Splash Screen, App Icons and More.</h2>
+
+<p>Time to add decorations to the mix using a Manifest file. The Manifest gives the browser information about the app and how to style it outside the viewport.</p>
+
+<p>The Manifest is included in the &lt;head&gt; of the HTML page:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;manifest&quot;</span> <span class="na">href=</span><span class="s">&quot;/manifest.json&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<p>This is our current manifest.json file:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+  <span class="s2">&quot;manifest_version&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Vecka App&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;short_name&quot;</span><span class="o">:</span> <span class="s2">&quot;Vecka&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;När du vill veta vilken vecka det är.&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;default_locale&quot;</span><span class="o">:</span> <span class="s2">&quot;se&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;icons&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;src&quot;</span><span class="o">:</span> <span class="s2">&quot;/icons/android-chrome-192x192.png&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sizes&quot;</span><span class="o">:</span> <span class="s2">&quot;192x192&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;image/png&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;src&quot;</span><span class="o">:</span> <span class="s2">&quot;/icons/android-chrome-256x256.png&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sizes&quot;</span><span class="o">:</span> <span class="s2">&quot;256x256&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;image/png&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+  <span class="s2">&quot;start_url&quot;</span><span class="o">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;display&quot;</span><span class="o">:</span> <span class="s2">&quot;standalone&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;background_color&quot;</span><span class="o">:</span> <span class="s2">&quot;#121738&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;theme_color&quot;</span><span class="o">:</span> <span class="s2">&quot;#d17c78&quot;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>The <em>name</em> and <em>background_color</em> are combined to create a <a href="https://developers.google.com/web/updates/2015/10/splashscreen">Splash Screen</a> that will show instantly while the app is loading. This gives a snappy feeling when launcing the app.</p>
+
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
+
+
+  <div class="u-ratio u-ratio--9_16 u-ratio--placeholder ">
+		
+    <img alt="App Splash-Screen on Android" data-src="/images/blog/2017-01-pwa-dev/nexus_splashscreen_9_16.png" class="u-ratio__content" />
+<noscript>
+  <img alt="App Splash-Screen on Android" src="/images/blog/2017-01-pwa-dev/nexus_splashscreen_9_16.png" class="u-ratio__content" />
+</noscript>
+		
+
+  </div>
+  
+    <div class="u-img-caption">
+      <figcaption>App Splash-Screen on Android</figcaption>
+    </div>
+  
+</figure>
+
+<p>The <em>theme_color</em> is used to style the browser bar in a fitting colour. Sweeet!</p>
+
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  ">
+
+
+  <div class="u-ratio u-ratio--9_16 u-ratio--placeholder ">
+		
+    <img alt="App browser bar with custom color" data-src="/images/blog/2017-01-pwa-dev/nexus_browserbar_9_16.png" class="u-ratio__content" />
+<noscript>
+  <img alt="App browser bar with custom color" src="/images/blog/2017-01-pwa-dev/nexus_browserbar_9_16.png" class="u-ratio__content" />
+</noscript>
+		
+
+  </div>
+  
+    <div class="u-img-caption">
+      <figcaption>App browser bar with custom color</figcaption>
+    </div>
+  
+</figure>
+
+<p>Additionally, app icons for Android should be included in the manifest file.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s2">&quot;icons&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;src&quot;</span><span class="o">:</span> <span class="s2">&quot;/icons/android-chrome-192x192.png&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sizes&quot;</span><span class="o">:</span> <span class="s2">&quot;192x192&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;image/png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;src&quot;</span><span class="o">:</span> <span class="s2">&quot;/icons/android-chrome-256x256.png&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sizes&quot;</span><span class="o">:</span> <span class="s2">&quot;256x256&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;image/png&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span></code></pre></div>
+
+<p>We still specify icons in the &lt;head&gt; of the HTML page for Apple Safari, the good old way.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- icons --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon&quot;</span> <span class="na">sizes=</span><span class="s">&quot;180x180&quot;</span> <span class="na">href=</span><span class="s">&quot;/icons/apple-touch-icon.png&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;icon&quot;</span> <span class="na">type=</span><span class="s">&quot;image/png&quot;</span> <span class="na">href=</span><span class="s">&quot;/icons/favicon-32x32.png&quot;</span> <span class="na">sizes=</span><span class="s">&quot;32x32&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;icon&quot;</span> <span class="na">type=</span><span class="s">&quot;image/png&quot;</span> <span class="na">href=</span><span class="s">&quot;/icons/favicon-16x16.png&quot;</span> <span class="na">sizes=</span><span class="s">&quot;16x16&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;mask-icon&quot;</span> <span class="na">href=</span><span class="s">&quot;/icons/safari-pinned-tab.svg&quot;</span> <span class="na">color=</span><span class="s">&quot;&lt;%= themeColor %&gt;&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<p>To generate icons with code, we used the <a href="http://realfavicongenerator.net/">Real Favicon Generator</a>. It provides the ability to customise the look of app icons for different browsers. This generator works really well for modern PWAs to speed up the process.</p>
+
+<h2 id="lighthouse-guides-the-ship">Lighthouse guides the ship</h2>
+
+<p>There are a lot of quality checks to do when building PWAs, here are some of them:</p>
+
+<ul>
+  <li>App can load on offline/flaky connections and page load performance is fast</li>
+  <li>App is built using <em>Progressive Enhancement</em> principles</li>
+  <li>App is using HTTPS for secure communications</li>
+  <li>Users will be prompted to <em>Add to Home screen</em></li>
+  <li>Installed web app will launch with <em>Custom Splash Screen</em> and address bar will match brand colours</li>
+</ul>
+
+<p>To confirm the above requirements are met, a tool called <a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> is the golden standard. Lighthouse is a <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en">Chrome extension</a> that will analyze any site for Progressive Web App best practices. It shouldn’t be taken as gospel (even though we did), but it’s super helpful.</p>
+
+<figure class="grid__row grid__row--wide content-image u-margin-both-half  content-image--outline">
+
+
+  <div class="u-ratio u-ratio--16_9 u-ratio--placeholder ">
+		
+    <img alt="App browser bar with custom color" data-src="/images/blog/2017-01-pwa-dev/lighthouse_16_9.jpg" class="u-ratio__content" />
+<noscript>
+  <img alt="App browser bar with custom color" src="/images/blog/2017-01-pwa-dev/lighthouse_16_9.jpg" class="u-ratio__content" />
+</noscript>
+		
+
+  </div>
+  
+</figure>
+
+<blockquote class="post__quote">
+	<p class="post__quote-text">"Lighthouse analyzes web apps and web pages, collecting modern performance metrics and insights on developer best practices.”</p>
+	
+	<span class="post__quote-author"></span>
+	
+</blockquote>
+
+<p>Lighthouse is great but can be a bit frustrating sometimes as results vary depending on conditions. It’s early days of PWAs and the tools are bound to get better.</p>
+
+<h2 id="lets-push-the-web">Let’s push the web</h2>
+
+<p>I think every website from now on should use some of the Progressive Web App features. It’s even confusing to call it “Apps” as it applies to all websites and apps.</p>
+
+<p>Additionally, there are countless APIs available that fall under the PWA umbrella that enable us to push the web further. Push Notifications. Painless Web Payments. Access to the camera and other device capabilities. Access to surrounding devices via Web Bluetooth. Web Beacons to give contextual information. Access to VR capabilities. The list goes on and on and on.</p>
+
+<p>Exciting times ahead for the web!</p>
+
+<div class="post__author u-pad-top">
+	<img alt="Hjörtur Hilmarsson" data-src="/images/about/team-grid/double-Hjortur.jpg" class="post__author-image" />
+<noscript>
+  <img alt="Hjörtur Hilmarsson" src="/images/about/team-grid/double-Hjortur.jpg" class="post__author-image" />
+</noscript>
+	<span class="post__author-name"><strong>Hjörtur Hilmarsson</strong> <a href="https://twitter.com/hjortureh" target="_blank">@hjortureh</a></span>
+	<span class="post__author-job-title">Creative web developer / Co-Founder at 14islands</span>
+</div>
+
+
+	</section>
+</article>
+
+
+
+	
+
+
+
+	<section class="js-component-disqus-embed post-comments grid u-pad-bottom"
+         data-disqus-shortname="14islands-com"
+         data-disqus-identifier="/blog/2017/01/19/progressive-web-app-from-scratch/"
+         data-disqus-expanded="false">
+
+
+	<a href="#" data-disquss-count class="grid__row u-bg-bright" title="Show comments for post">
+		<h4 class="post-comments__cta ">
+			<span class="disqus-comment-count" data-disqus-identifier="/blog/2017/01/19/progressive-web-app-from-scratch/">Write a comment</span>
+		</h4>
+	</a>
+
+	<div data-disquss-comments class="grid__row" id="disqus_thread"></div>
+</section>
+
+
+
+<section class="u-bg-bright u-default-v-padding grid js-component-newsletter">
+	<div class="grid__row">
+		<h2>Keep me posted!</h2>
+		<p class="newsletter__copy-without-notifications">Signup to get our latest thoughts about cutting-edge technologies and creative development. We only send out few emails per year. Like you, we also hate spam <em class="emoji">☠️</em></p>
+		<p class="newsletter__copy-with-notifications">Stay on top of this unpredictable industry we are in. Get a notification in your browser or an email with our latest thoughts. Like you, we also hate spam <em class="emoji">☠️</em></p>
+		<div class="newsletter__wrapper">
+			<button class="newsletter__notify-button button button--primary">
+				<div class="newsletter__notify-button-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 24">
+	<path d="M12,24a3.07,3.07,0,0,0,3-3H9A3.12,3.12,0,0,0,12,24Z" transform="translate(-1.76)" fill="#ffffff"/>
+	<path d="M15.14,3.95a2.1,2.1,0,0,1-1-1.82h0a2.1,2.1,0,1,0-4.19,0h0a2.1,2.1,0,0,1-1,1.82C4.2,6.66,6.88,15.66,2,17.25V19H22V17.25C17.12,15.66,19.8,6.66,15.14,3.95ZM12,3a1,1,0,1,1,1-1A1,1,0,0,1,12,3Z" transform="translate(-1.76)" fill="#ffffff"/>
+	<line class="newsletter__notify-icon-line--off" x1="21.24" y1="2.65" x2="0.92" y2="22.97" stroke="" stroke-miterlimit="10"/>
+	<line class="newsletter__notify-icon-line--off" x1="20.24" y1="1.98" x2="0.53" y2="21.69" fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="1.5"/>
+</svg>
+
+				</div>
+				<span class="newsletter__notify-button-label">Get notifications</span>
+				<span class="newsletter__notify-button-label--off">Turn Off Notifications</span>
+			</button>
+			<form class="newsletter__email-form" action="//14islands.us7.list-manage.com/subscribe/post?u=490492cf1e6a559f7d31be38e&amp;id=9fcb86e4a6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				<input class="newsletter__email-input form__input" type="email" placeholder="Your email..." value="" name="EMAIL"  id="mce-EMAIL">
+				<input class="newsletter__email-name-input form__input" type="text" placeholder="Your name..." value="" name="NAME" id="mce-NAME">
+				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" style="display:none">
+			</form>
+			<button class="newsletter__email-button button button--primary">
+				<div class="newsletter__email-button-icon">
+					<svg version="1.1" id="iconmonstr" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<path id="paper-plane-1" style="fill:#FFFFFF;" d="M24,0l-6,22l-8.129-7.239l7.802-8.234L7.215,13.754L0,12L24,0z M9,16.669V24l3.258-4.431L9,16.669z"/>
+</svg>
+
+				</div>
+				<span class="newsletter__email-button-label">Get email</span>
+				<span class="newsletter__email-button-label--add">Add</span>
+			</button>
+		</div>
+	</div>
+</section>
+
+
+
+  
+
+
+
+<section class="related-posts">
+	<a class="related-posts__link grid u-default-v-padding u-bg-natt-dark" href="/blog/2017/01/05/our-year-in-review-2016/">
+		<div class="grid__row">
+	    <p class="related-posts__label typography__mono">Read Next</p>
+	    <h2 class="related-posts__title">Our year in review - 2016</h2>
+	  </div>
+	</a>
+</section>
+
+
+<footer class="grid typography__mono-wrapper footer u-pad-both">
+  <div class="grid__row--wide">
+    <div class="footer__content grid__row--wide__normal">
+      <div class="footer__info">
+        <p class="footer__description nano no-hyphens">
+          A creative development studio that loves to build great user experiences. We help our clients craft sites, apps and playful games on the web.
+        </p>
+        <p class="footer__description nano no-hyphens">
+          14islands is based in Stockholm, Sweden and was founded in 2011.
+        </p>
+        <p class="nano">
+          <a href="mailto:hello@14islands.com">Say hello</a>
+        </p>
+      </div>
+      <div class="footer__social">
+        <ul class="footer__social-nav">
+          <li>
+            <a class="nano" href="/blog/" target="_blank">Blog</a>
+          </li>
+          <li>
+            <a class="nano" href="https://instagram.com/14islands" target="_blank">Instagram</a>
+          </li>
+          <li>
+            <a class="nano" href="https://twitter.com/14islands" target="_blank">Twitter</a>
+          </li>
+          <li>
+            <a class="nano" href="https://www.facebook.com/14islands" target="_blank">Facebook</a>
+          </li>
+          <li>
+            <a class="nano" href="http://codepen.io/14islands/" target="_blank">Codepen</a>
+          </li>
+          <li>
+            <a class="nano" href="/handbook/" target="_blank">Handbook</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+		<div class="footer__logo">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 454 77.4" enable-background="new 0 0 454 77.4"><path class="logo-island logo-island-2" fill="#E5C83D" d="M40.2 68.3L21.1 70 15.4 3.4l19.1-1.7 5.7 66.6z"/><path class="logo-island logo-island-1" fill="#F47643" d="M22.2 30.8H0L22.2 4.7v26.1z"/><path class="logo-island logo-island-3" fill="#F47643" d="M89.5 49.4l-42 5.2L83.4 0l6.1 49.4z"/><path class="logo-island logo-island-4" fill="#73C9BD" d="M80.7 68.4l-18.9-3 3-18.9 18.9 3-3 18.9z"/><path class="logo-island logo-island-5" fill="#E5C83D" d="M124.3 69.5l-19.1-.6 2.2-66.8 19.1.6-2.2 66.8z"/><path class="logo-island logo-island-7" fill="#F47643" d="M135.1 60.9l34.2-34.2c9.5 9.5 9.5 24.8 0 34.2-9.4 9.5-24.7 9.5-34.2 0z"/><path class="logo-island logo-island-6" fill="#73C9BD" d="M180 8.1l-24.5 41.8c-11.5-6.8-15.4-21.6-8.6-33.1 6.7-11.6 21.5-15.5 33.1-8.7z"/><path class="logo-island logo-island-8" fill="#E5C83D" d="M215.4 68.9l-19.1 1.8L190 4.2l19.1-1.8 4.7 49.5 15.9-1.5 1.6 17-15.9 1.5z"/><path class="logo-island logo-island-9" fill="#F47643" d="M262.4.6l16.9 32.9 16.9 32.9-27.3 2.6-27.3 2.6L252 36.1 262.4.6z"/><path class="logo-island logo-island-10" fill="#73C9BD" d="M303.6.5l54.9 68.8h-55V.5z"/><path class="logo-island logo-island-11" fill="#E5C83D" d="M358.2 77.4l-17.9-24.9 2.5-47.8 19.1 1-3.7 71.7z"/><path class="logo-island logo-island-12" fill="#F47643" d="M405.5 37.5c-1.8 18.4-18.2 31.8-36.5 30L375.6 1c18.3 1.7 31.7 18.1 29.9 36.5z"/><path class="logo-island logo-island-14" fill="#E5C83D" d="M409.9 60.9l34.2-34.2c9.5 9.5 9.5 24.8 0 34.2s-24.7 9.5-34.2 0z"/><path class="logo-island logo-island-13" fill="#73C9BD" d="M454 3.7l-12.4 46.8c-12.9-3.4-20.6-16.7-17.2-29.6S441.1.3 454 3.7z"/></svg>
+		</div>
+  </div>
+</footer>
+
+
+		</main>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>window.jQuery || document.write('<script src="/_bower_components/jquery/dist/jquery.min.js"><\/script>')</script>
+
+<script src="//src.responsive.io/r.js"></script>
+
+<script src="/js/footer-scripts.0c8f.js"></script>
+
+		<script>
+  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+  function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+  e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+  e.src='//www.google-analytics.com/analytics.js';
+  r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+  ga('create','UA-31151822-1');ga('send','pageview');
+</script>
+
+	</body>
+</html>
