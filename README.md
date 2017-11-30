@@ -16,6 +16,7 @@ Running
 ==================
 - `grunt serve` to run the site in develpment mode at [localhost:9000](http://localhost:9000) to see it.
 
+Tested with ruby version 2.2.0.
 
 Deploying
 ==================
