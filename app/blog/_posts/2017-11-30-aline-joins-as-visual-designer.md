@@ -2,10 +2,12 @@
 layout: post
 title:  "Aline Kesting joins as a Visual Designer"
 description: We have known Aline for a long time and been impressed with her amazing design skills and personality.
-og_image: /images/blog/2017-04-21-new-branding/new-logo_16_9.jpg
+og_image: /images/blog/2017-11-30-aline-joins/aline-kesting.jpg
 ---
 
 # Aline Kesting joins as a Visual Designer
+
+{% include post-image.html alt="Aline Kesting - Visual Designer" src="/images/blog/2017-11-30-aline-joins/aline-kesting.jpg" margin="both" ratio="16_10" %}
 
 We are very happy to announce that Aline Kesting has joined the islands as a Senior Visual Designer. We have known Aline for a long time and been impressed with her amazing design skills and personality.
 
