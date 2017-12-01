@@ -5,7 +5,7 @@ description: We have known Aline for a long time and been impressed with her ama
 og_image: /images/blog/2017-11-30-aline-joins/aline-kesting.jpg
 ---
 
-# Aline has joined and we offer designs
+# A designer has landed on the islands
 
 {% include post-image.html alt="Aline Kesting - Visual Designer" src="/images/blog/2017-11-30-aline-joins/aline-kesting.jpg" margin="both" ratio="16_10" %}
 
@@ -15,4 +15,4 @@ Aline was a Senior Designer at Fjord in Stockholm for many years and before that
 
 What makes Aline a great fit for 14islands is her experience with interactive designs. As a studio that loves to build user experiences, she complements our technology skills and makes it possible for us to help our partners on both digital designs and development.
 
-We are happy to have Aline on-board and are looking forward to make even prettier things on the web.
+We are happy to have Aline on-board and are looking forward to make even nicer things on the web.
