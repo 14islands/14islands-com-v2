@@ -89,6 +89,11 @@ $grid-block-size: 360px;
 			top: $grid-block-size * 3; // fourth row
 			left: $grid-block-size * 1; // second col
 		}
+
+		&:nth-of-type(5) {
+			top: $grid-block-size * 4; // fith row
+			left: $grid-block-size * 0; // second col
+		}
 	}
 
 }
