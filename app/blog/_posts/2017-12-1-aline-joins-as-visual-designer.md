@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Aline Kesting joins as a Visual Designer"
+title:  "Aline has joined and we offer designs"
 description: We have known Aline for a long time and been impressed with her amazing design skills and personality.
 og_image: /images/blog/2017-11-30-aline-joins/aline-kesting.jpg
 ---
 
-# Aline Kesting joins as a Visual Designer
+# Aline has joined and we offer designs
 
 {% include post-image.html alt="Aline Kesting - Visual Designer" src="/images/blog/2017-11-30-aline-joins/aline-kesting.jpg" margin="both" ratio="16_10" %}
 
@@ -13,6 +13,6 @@ We are very happy to announce that Aline Kesting has joined the islands as a Sen
 
 Aline was a Senior Designer at Fjord in Stockholm for many years and before that an Art Director at DigitasLBi in Paris. She studied multimedia design at Gobelins and has ever since made beautiful designs for brands such as Armani, Louis Vuitton, Dior and Sephora, as well as Digital Services for some of Sweden’s biggest players in e-commerce and banking.
 
-What makes Aline a great fit for 14islands is her experience with interactive designs. As a studio that loves to build user experiences, she complements our technology skills and makes it possible for us to help on both digital designs and development for our partners.
+What makes Aline a great fit for 14islands is her experience with interactive designs. As a studio that loves to build user experiences, she complements our technology skills and makes it possible for us to help our partners on both digital designs and development.
 
-We are happy to have Aline on-board and are looking forward to this new chapter.
+We are happy to have Aline on-board and are looking forward to make even prettier things on the web.
