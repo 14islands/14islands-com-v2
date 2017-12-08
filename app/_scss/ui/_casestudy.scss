@@ -153,6 +153,35 @@ a.casestudy__header-label {
 	}
 }
 
+.casestudy__technology-item--half {
+	@include if-wider-than($breakpoint-two-px) {
+		width: (80%/2);
+		margin-right: 10%;
+		margin-bottom: 0;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	@include if-wider-than(1200px) {
+		width: (80%/2);
+	}
+	.casestudy__technology-title,
+	.casestudy__technology-description {
+		margin-left: 0;
+	}
+	.casestudy__technology-description {
+		opacity: .6;
+		margin-bottom: 0;
+	}
+}
+
+.casestudy__technology-top-divider {
+	border-top: 1px solid rgba(35, 35, 36, 0.15);
+}
+
+.casestudy__technology-bottom-divider {
+	border-bottom: 1px solid rgba(35, 35, 36, 0.15);
+}
+
 %casestudy__technology-text {
 		margin-left: 70px;
 		color: $default-font-color;
