@@ -1,0 +1,27 @@
+---
+layout: page
+id: jobs
+title: Jobs - 14islands
+---
+
+<section class="grid u-pad-both">
+
+	<header class="grid__row pjax-animate u-margin-bottom-half">
+		<h1>Open Positions</h1>
+	</header>
+
+{% for post in site.categories.careers %}
+  {% unless post.private and site.hide_private %}
+    <article class="grid__row post-row pjax-animate">
+    	<header class="post-row__header">
+    		<h2 class="post-row__title">
+    			<a class="post-row__link" href="{{ post.url }}">
+	      		{{ post.title }}
+	      	</a>
+	      </h2>
+      </header>
+    </article>
+  {% endunless %}
+{% endfor %}
+
+</section>
