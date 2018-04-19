@@ -2,6 +2,7 @@
 layout: job
 title: "Creative Web Developer"
 description: We're hiring!
+og_title: "Creative Web Developer - Join Us"
 og_image: /images/about/we-are-14islands-2.jpg
 comments: false
 ---
