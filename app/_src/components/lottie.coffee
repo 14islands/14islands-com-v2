@@ -11,6 +11,7 @@ class FOURTEEN.Lottie extends FOURTEEN.ElementScrollVisibility
   constructor: (@$context, @data, @instanceId) ->
     @context = @$context.get(0)
     @path = @$context.data('path')
+    @delay = parseInt(@$context.data('delay'), 10) || 0
     super(@$context, @data)
 
   onScriptsLoadedSync: =>
@@ -30,7 +31,8 @@ class FOURTEEN.Lottie extends FOURTEEN.ElementScrollVisibility
   	@animationEl = window.bodymovin.loadAnimation data
 
   play: =>
-  	@animationEl.play()
+  	console.log('>>>>>>', @delay)
+  	setTimeout (=> @animationEl.play() ), @delay
 
   stop: =>
   	@animationEl.stop()

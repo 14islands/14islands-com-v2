@@ -59,7 +59,7 @@
 }
 
 .jffd-dog-animation {
-	max-width: 712px;
+	max-width: 790px;
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
@@ -77,8 +77,8 @@
 	transform: translateX(50%);
 	@include if-wider-than(720px) {
 	  width: 500px;
-	  margin-right: 100px;
-	  top: -50px;
+	  margin-right: 60px;
+	  top: -80px;
 	}
 }
 
@@ -87,7 +87,54 @@
 	display: block;
 	margin-left: 50%;
 	@include if-wider-than(720px) {
-	  width: 300px;
+	  width: 400px;
 	  // margin-left: 320px;
+	}
+}
+
+.jffd-top-image {
+	position: relative;
+}
+
+.jffd-logo-ratio {
+	position: relative;
+	overflow: hidden; // to make sure no reflow happens when images load
+
+	&:before {
+	  content: '';
+	  display: block;
+	  padding-top: 73%; /* default 1:1 ratio */
+	  @include if-wider-than(720px) {
+	  	padding-top: 56.25%;
+	  }
+	}
+}
+
+.jffd-phone {
+	max-width: 265px;
+	&:first-child {
+		margin-bottom: 40px;
+		@include if-wider-than(640px) {
+			margin-bottom: 0;
+			margin-right: 5%;
+		}
+		@include if-wider-than(780px) {
+			margin-right: 135px;
+		}
+	}
+	&:last-child {
+		@include if-wider-than(604px) {
+			float: right;
+		}
+	}
+}
+
+.jffd-phone-group {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 680px;
+	text-align: center;
+	@include if-wider-than(640px) {
+		text-align: left;
 	}
 }
