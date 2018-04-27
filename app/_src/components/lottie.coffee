@@ -31,7 +31,6 @@ class FOURTEEN.Lottie extends FOURTEEN.ElementScrollVisibility
   	@animationEl = window.bodymovin.loadAnimation data
 
   play: =>
-  	console.log('>>>>>>', @delay)
   	setTimeout (=> @animationEl.play() ), @delay
 
   stop: =>
