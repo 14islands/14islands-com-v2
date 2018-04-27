@@ -311,6 +311,7 @@ module.exports = function (grunt) {
             'fonts/**/*',
             'js/vendor/*',
             'js/bundles/**/*',
+            'js/lottie/**/*',
             // Like Jekyll, exclude files & folders prefixed with an underscore.
             '!**/_*{,/**}',
             // Explicitly add any files your site needs for distribution here.
