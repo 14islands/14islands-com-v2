@@ -146,6 +146,13 @@ a.casestudy__header-label {
 		opacity: .7;
 		transition: all 300ms $easeOutQuad;
 	}
+	&--postcss,
+	&--stripe,
+	&--avalara {
+		svg {
+			width: 60px;
+		}
+	}
 	&:hover svg {
 		.no-touch & {
 			filter: grayscale(0%);
