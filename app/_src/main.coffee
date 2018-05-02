@@ -6,11 +6,13 @@ $( ->
 
 # listen for load even on image tags loaded by responsive.io
 FOURTEEN.listenForResponsive_ioImageLoad = ->
-  $('img[src]').one('load', ->
-    $(this).addClass('image-loaded')
-    $(this).closest('.content-image').addClass('image-loaded')
-  )
 
+	$('.main-content').imagesLoaded().progress( ( instance, image ) ->
+		console.log( 'image is ' + image.isLoaded + ' for ' + image.img.src )
+		if image.isLoaded
+			$(image.img).addClass('image-loaded')
+			$(image.img).closest('.content-image').addClass('image-loaded') if image.isLoaded
+	 )
 
 # Logic to run after page has been loaded via PJAX
 FOURTEEN.onTransitionEnd = ->
