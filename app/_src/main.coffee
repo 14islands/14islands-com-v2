@@ -8,7 +8,6 @@ $( ->
 FOURTEEN.listenForResponsive_ioImageLoad = ->
 
 	$('.main-content').imagesLoaded().progress( ( instance, image ) ->
-		console.log( 'image is ' + image.isLoaded + ' for ' + image.img.src )
 		if image.isLoaded
 			$(image.img).addClass('image-loaded')
 			$(image.img).closest('.content-image').addClass('image-loaded') if image.isLoaded
