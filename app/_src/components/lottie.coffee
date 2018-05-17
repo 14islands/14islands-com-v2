@@ -17,8 +17,11 @@ class FOURTEEN.Lottie extends FOURTEEN.ElementScrollVisibility
   onScriptsLoadedSync: =>
     @initializeAnimation()
 
-  onEnterViewportSync: =>
-  	@play()
+  onEnterViewport: =>
+  	unless @isPlaying then @play()
+
+  onExitViewport: =>
+  	if @isPlaying then @stop()
 
   initializeAnimation: =>
   	data =
@@ -31,9 +34,13 @@ class FOURTEEN.Lottie extends FOURTEEN.ElementScrollVisibility
   	@animationEl = window.bodymovin.loadAnimation data
 
   play: =>
-  	setTimeout (=> @animationEl.play() ), @delay
+  	setTimeout (=>
+  		@isPlaying = true
+  		@animationEl.play()
+  	), @delay
 
   stop: =>
+  	@isPlaying = false
   	@animationEl.stop()
 
   destroy: =>
