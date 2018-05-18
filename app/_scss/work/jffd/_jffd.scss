@@ -8,6 +8,12 @@
 	margin-right: auto;
 }
 
+.jffd-logo-animation .u-ratio__content {
+	@include if-narrower-than(720px) {
+		transform: scale(0.75);
+	}
+}
+
 .jffd-animation-group {
 	// margin-top: 25px;
 	@include if-wider-than(720px) {
@@ -74,20 +80,22 @@
 	top: -10px;
 	right: 50%;
 	margin-right: 50px;
-	transform: translateX(50%);
+	transform: translateX(56%);
 	@include if-wider-than(720px) {
 	  width: 500px;
 	  margin-right: 60px;
 	  top: -80px;
+		transform: translateX(50%);
 	}
 }
 
 .jffd-dog-animation-image {
 	width: 170px;
 	display: block;
-	margin-left: 50%;
+	margin-left: 53%;
 	@include if-wider-than(720px) {
 	  width: 400px;
+		margin-left: 50%;
 	  // margin-left: 320px;
 	}
 }
