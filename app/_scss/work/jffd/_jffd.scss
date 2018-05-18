@@ -72,6 +72,9 @@
 	overflow: hidden;
 	padding-top: 70px;
 	margin-top: -4%;
+	@include if-narrower-than(720px) {
+		margin-top: 4%;
+	}
 }
 
 .jffd-dog-animation svg {
