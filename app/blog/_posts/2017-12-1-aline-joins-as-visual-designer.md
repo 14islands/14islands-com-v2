@@ -3,6 +3,7 @@ layout: post
 title:  "A designer has landed on the islands"
 description: We have known Aline for a long time and been impressed with her amazing design skills and personality.
 og_image: /images/blog/2017-11-30-aline-joins/aline-kesting.jpg
+comments: false
 ---
 
 # A designer has landed on the islands
