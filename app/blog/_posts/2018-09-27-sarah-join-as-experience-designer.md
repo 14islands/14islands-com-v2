@@ -12,7 +12,7 @@ comments: false
 
 We would like to announce that Sarah Lee Létourneau has joined 14islands as a Senior Experience Designer.
 
-With many years of experience within digital, she has been part of diverse teams dedicated on shaping outstanding products & services for different clients such as Volvo, ICA, Save the Children, Swedbank and Ericsson. She never brags about it though, being a very nice and humble Canadian person. Or, we shall specify French-Canadian *🇨🇦*{: class="emoji"}
+With many years of experience within digital, she has been part of diverse teams dedicated on shaping outstanding products & services for some of the world leading companies, start-ups and non-profit organisations. She never brags about it though, being a very nice and humble Canadian person. Or, we shall specify French-Canadian *🇨🇦*{: class="emoji"}
 
 Sarah worked as an Interaction Designer at Fjord in Stockholm for many years as well as an Experience Designer at R/GA in both London and Stockholm. She studied Digital Creative Strategy at Academy of Art University in San Fransisco and Interactive Communication at Berghs School of Communication in Sweden.
 
