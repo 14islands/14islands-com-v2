@@ -1,0 +1,30 @@
+---
+layout: job
+title: "Designer"
+description: We're hiring!
+og_title: "Digital - Join Us"
+og_image: /images/about/we-are-14islands-2.jpg
+comments: false
+---
+
+# Open Position: Designer
+
+We are looking for a creative mind to join us. A person that loves to imagine and craft experiences on the web. Someone who wants to make an impact and tackle challenging problems in collaboration with a talented team. Nice to meet you!
+
+What we are looking for:
+
+* Great visual design skills and attention to details
+* Firm understanding of information architecture and interaction design
+* Interest in technology and enjoy of working closely with developers
+* Organization skills and ability to work within project constraints (goals/timelines/budget)
+* Minimum 2 years of experience in the digital field.
+* Knowledge of Sketch and other design tools.
+* Bonus points for Motion and 3D abilities.
+
+Our team of designers and developers has many years of experience in the industry. You’ll join us full-time in our office in Stockholm and together we’ll grow as people, professionals and as a group.
+
+We believe in quality over quantity and always set the bar high for the work we produce.
+
+## I’m excited, what to do next?
+
+Drop a line to [jobs@14islands.com](mailto:jobs@14islands.com) and tell us a bit about yourself. Share some work you have done, maybe a portfolio or a Dribbble/Behance account. We look forward to hearing more about you!
