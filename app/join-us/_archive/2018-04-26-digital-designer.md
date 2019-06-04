@@ -5,6 +5,7 @@ description: We're hiring!
 og_title: "Digital Designer - Join Us"
 og_image: /images/about/we-are-14islands-2.jpg
 comments: false
+private: true
 ---
 
 # Open Position: Digital Designer
