@@ -13,9 +13,9 @@ We are looking for a web developer who is enthusiastic to build great things. A 
 
 We want a creative developer with a keen eye for animations and design. You should be specialised in front-end technologies like HTML, CSS and JavaScript, but also happy to dive into back-end tools such as NodeJS, Ruby on Rails and Headless CMS systems. It’s a big plus if you have experience with other creative technologies such as 3D, VR, AR and Web Audio.
 
-We are a small company which means you will be a big part in our projects and get an opportunity to both develop and iterate until final production.
+We are a nimble team which means you will be a big part in our projects and get an opportunity to both develop and iterate until final production.
 
-Our team has many years of experience in the digital field. You’ll join us full-time in our office in Stockholm. We are always looking into ways to improve, we even reserve one day for each week to experiment, learn new tools and make sure we stay on top of things.
+Our team has many years of experience in the digital field. You’ll join us full-time in our office in Stockholm, Sweden or Floripa, Brazil. We are always looking into ways to improve, we even reserve one day for each week to experiment, learn new tools and make sure we stay on top of things.
 
 We believe in quality over quantity and always set the bar high for the work we produce.
 
