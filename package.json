@@ -5,7 +5,7 @@
   "description": "Yeoman workflow for 14islands.com",
   "dependencies": {
     "brfs": "^1.4.3",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.3"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
